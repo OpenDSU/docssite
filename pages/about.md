@@ -2,7 +2,6 @@
 title: About
 layout: home
 ---
-<!DOCTYPE html>
 <html>
 <body>
   
