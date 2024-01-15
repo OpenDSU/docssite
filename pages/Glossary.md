@@ -40,32 +40,32 @@ layout: home
             <td>A distributed ledger</th>
         </tr>
         <tr>
-            <td>DLT</th>
-            <td>Distributed ledger technology</th>
+            <td>DLT</td>
+            <td>Distributed ledger technology</td>
         </tr>
         <tr>
-            <td>Blockchain Anchoring</th>
-            <td>Storing hash of another blockchain or of data in a blockchain</th>
+            <td>Blockchain Anchoring</td>
+            <td>Storing hash of another blockchain or of data in a blockchain</td>
         </tr>
         <tr>
-            <td>DMZ</th>
-            <td>Demilitarized zone (Networking)</th>
+            <td>DMZ</td>
+            <td>Demilitarized zone (Networking)</td>
         </tr>
         <tr>
-            <td>SDN</th>
-            <td>Software-defined networking</th>
+            <td>SDN</td>
+            <td>Software-defined networking</td>
         </tr>
         <tr>
-            <td>VPN</th>
-            <td>Virtual private network</th>
+            <td>VPN</td>
+            <td>Virtual private network</td>
         </tr>
         <tr>
-            <td>Near-Chain</th>
+            <td>Near-Chain</td>
             <td>A special type of blockchain that is cryptographically shared with a group of users</td>
         </tr>
         <tr>
-            <td>Far-Chain</th>
-            <td>Databases, applications and systems touching any data extracted using DLT technologies</th>
+            <td>Far-Chain</td>
+            <td>Databases, applications and systems touching any data extracted using DLT technologies</td>
         </tr>
         <tr>
             <td>Container</td>
