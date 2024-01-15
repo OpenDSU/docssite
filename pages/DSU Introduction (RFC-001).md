@@ -1,3 +1,7 @@
+---
+title: About
+layout: home
+---
 # DSU Introduction (RFC-001)
 Accepted
 {: .label .label-green }
