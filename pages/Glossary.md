@@ -1,3 +1,9 @@
+
+---
+title: Glossary
+layout: home
+permalink: /other/example/
+---
 | Concept                | Definition                                                                             | 
 |:-----------------------|:---------------------------------------------------------------------------------------|
 | API                    | Application Programming Interface                                                      | 

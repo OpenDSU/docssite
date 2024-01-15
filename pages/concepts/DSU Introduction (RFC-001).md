@@ -1,13 +1,17 @@
 ---
-title: About
+title: DSU Introduction (RFC-001)
 layout: home
+parent: OpenDSU Concepts
+nav_order: 1
 ---
 # DSU Introduction (RFC-001)
 Accepted
-{: .label .label-green }
-The proposal has been accepted and has an implementation.
+{: .label .label-green } The proposal has been accepted and has an implementation.
+
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
 **Copyright: MIT license**
+
  **Copyright**
 Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
