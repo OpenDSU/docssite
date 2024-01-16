@@ -1,6 +1,6 @@
 ---
 title: HashLinkSSI, SignedHashLinkSSI (RFC-015)
 layout: home
-parent: contributors
+parent: OpenDSU Contributors
 nav_order: 4
 ---

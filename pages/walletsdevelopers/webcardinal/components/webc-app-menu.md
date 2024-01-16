@@ -1,6 +1,6 @@
 ---
 title: webc-app-menu
 layout: home
-parent: components
+parent: Components
 nav_order: 6
 ---

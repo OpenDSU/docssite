@@ -1,6 +1,6 @@
 ---
 title: PasswordSSIs (RFC-013)
 layout: home
-parent: contributors
+parent: OpenDSU Contributors
 nav_order: 2
 ---

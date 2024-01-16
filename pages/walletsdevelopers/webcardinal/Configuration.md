@@ -1,6 +1,6 @@
 ---
 title: Configuration
 layout: home
-parent: webcardinal
+parent: WebCardinal
 nav_order: 2
 ---

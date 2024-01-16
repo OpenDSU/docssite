@@ -1,6 +1,6 @@
 ---
 title: A site with WebCardinal
 layout: home
-parent: howtocreate
+parent: How to create
 nav_order: 2
 ---

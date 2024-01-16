@@ -1,6 +1,6 @@
 ---
 title: data-view-model
 layout: home
-parent: attributes
+parent: Attributes
 nav_order: 3
 ---

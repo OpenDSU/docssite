@@ -1,6 +1,6 @@
 ---
 title: APIHub SSO Implementation (RFC-101)
 layout: home
-parent: contributors
+parent: OpenDSU Contributors
 nav_order: 22
 ---

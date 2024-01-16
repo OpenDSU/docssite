@@ -1,6 +1,6 @@
 ---
 title: webc-link
 layout: home
-parent: components
+parent: Components
 nav_order:12
 ---

@@ -1,6 +1,6 @@
 ---
 title: CredentialsDSU (RFC-057)
 layout: home
-parent: contributors
+parent: OpenDSU Contributors
 nav_order: 9
 ---

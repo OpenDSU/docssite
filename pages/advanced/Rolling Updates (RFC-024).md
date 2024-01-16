@@ -1,6 +1,6 @@
 ---
 title: Rolling Updates (RFC-024)
 layout: home
-parent: advanced
+parent: Open DSU Advanced
 nav_order: 6
 ---

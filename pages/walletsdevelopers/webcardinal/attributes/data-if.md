@@ -1,6 +1,6 @@
 ---
 title: data-if
 layout: home
-parent: attributes
+parent: Attributes
 nav_order: 1
 ---

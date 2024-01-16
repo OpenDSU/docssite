@@ -1,6 +1,6 @@
 ---
 title: Security Context (RFC-075)
 layout: home
-parent: beginners
+parent: OpenDSU for Beginners
 nav_order: 5
 ---

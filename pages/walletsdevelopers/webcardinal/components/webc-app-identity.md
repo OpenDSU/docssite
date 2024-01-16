@@ -1,6 +1,6 @@
 ---
 title: webc-app-identity
 layout: home
-parent: components
+parent: Components
 nav_order: 7
 ---

@@ -1,6 +1,6 @@
 ---
 title: Config (RFC-078)
 layout: home
-parent: contributors
+parent: OpenDSU Contributors
 nav_order: 19
 ---

@@ -1,6 +1,6 @@
 ---
 title: webc-template
 layout: home
-parent: components
+parent: Components
 nav_order:16
 ---

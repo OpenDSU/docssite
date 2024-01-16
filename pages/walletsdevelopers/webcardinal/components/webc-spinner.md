@@ -1,6 +1,6 @@
 ---
 title: webc-spinner
 layout: home
-parent: components
+parent: Components
 nav_order:15
 ---

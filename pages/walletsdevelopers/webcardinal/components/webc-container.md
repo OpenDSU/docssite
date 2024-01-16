@@ -1,6 +1,6 @@
 ---
 title: webc-container
 layout: home
-parent: components
+parent: Components
 nav_order: 9
 ---

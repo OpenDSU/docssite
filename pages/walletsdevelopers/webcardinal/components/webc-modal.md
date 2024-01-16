@@ -1,6 +1,6 @@
 ---
 title: webc-modal
 layout: home
-parent: components
+parent: Components
 nav_order:13
 ---

@@ -1,6 +1,6 @@
 ---
 title: webc-docs
 layout: home
-parent: components
+parent: Components
 nav_order:11
 ---

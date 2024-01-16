@@ -1,6 +1,6 @@
 ---
 title: Crypto (RFC-066)
 layout: home
-parent: advanced
+parent: Open DSU Advanced
 nav_order: 10
 ---

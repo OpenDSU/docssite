@@ -1,6 +1,6 @@
 ---
 title: Anchoring (RFC-069)
 layout: home
-parent: contributors
+parent: OpenDSU Contributors
 nav_order: 13
 ---

@@ -1,6 +1,6 @@
 ---
 title: APIHub Configuration (RFC-100)
 layout: home
-parent: beginners
+parent: OpenDSU for Beginners
 nav_order: 7
 ---

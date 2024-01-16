@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Web Cardinal
+title: WebCardinal
 nav_order: 1
 has_children: true
 ---

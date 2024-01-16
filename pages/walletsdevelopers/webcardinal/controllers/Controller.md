@@ -1,6 +1,6 @@
 ---
 title: Controllers
 layout: home
-parent: controller
+parent: Controllers
 nav_order: 1
 ---

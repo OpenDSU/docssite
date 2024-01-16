@@ -1,6 +1,6 @@
 ---
 title: ConstValue (RFC-018)
 layout: home
-parent: contributors
+parent: OpenDSU Contributors
 nav_order: 6
 ---

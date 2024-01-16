@@ -1,6 +1,6 @@
 ---
 title: webc-app-error-toast
 layout: home
-parent: components
+parent: Components
 nav_order: 8
 ---

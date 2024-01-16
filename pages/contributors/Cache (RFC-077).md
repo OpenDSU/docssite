@@ -1,6 +1,6 @@
 ---
 title: Cache (RFC-077)
 layout: home
-parent: contributors
+parent: OpenDSU Contributors
 nav_order: 18
 ---

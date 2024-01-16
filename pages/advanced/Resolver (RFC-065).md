@@ -1,6 +1,6 @@
 ---
 title: Resolver (RFC-065)
 layout: home
-parent: advanced
+parent: Open DSU Advanced
 nav_order: 9
 ---

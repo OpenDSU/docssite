@@ -1,6 +1,6 @@
 ---
 title: Enclaves (RFC-097)
 layout: home
-parent: beginners
+parent: OpenDSU for Beginners
 nav_order: 6
 ---

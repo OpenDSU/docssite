@@ -1,6 +1,6 @@
 ---
 title: WebcController
 layout: home
-parent: controller
+parent: Controllers
 nav_order: 2
 ---
