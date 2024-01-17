@@ -1,6 +1,6 @@
 ---
 title: FAQ
 layout: home
-parent: WebCardinal
+parent: OpenDSU Wallets Developers
 nav_order: 4
 ---
