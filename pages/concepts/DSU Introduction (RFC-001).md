@@ -28,7 +28,7 @@ Accepted {: .label .label-green }
  **Copyright**
 Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-| Contributors               | Description                                                                                                                       | 
+| Contributors               | Description                                                                                                                        | 
 |:-------------------------------------------------:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Axiologic Research www.axiologic.net            | New content and improvements. Original texts under PharmaLedger    Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the www.opendsu.com site.| 
 | PharmaLedger Project Members www.pharmaledger.eu| Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.                                                                             | 
