@@ -4,6 +4,18 @@ layout: home
 parent: OpenDSU Concepts
 nav_order: 1
 ---
+
+<style>
+.imgMain{
+    display.block;
+    margin-left:200px;
+    margin-right:auto;
+} 
+
+</style>
+<img src="https://docs.google.com/drawings/d/sz8cyVsXZqyqpKqSxS7vqsg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=7o1Qr4tz1E8Xgg&h=372&w=596&ac=1" class="imgMain">
+
+<p style="text-align:center"> Figure 1: Data Sharing Units (DSU) </p>
 # DSU Introduction (RFC-001)
 
 Accepted {: .label .label-green }   
