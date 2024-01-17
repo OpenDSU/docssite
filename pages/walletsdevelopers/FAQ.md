@@ -2,5 +2,5 @@
 title: FAQ
 layout: home
 parent: OpenDSU Wallets Developers
-nav_order: 4
+nav_order: 3
 ---

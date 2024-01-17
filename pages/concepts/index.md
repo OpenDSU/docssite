@@ -2,6 +2,7 @@
 layout: default
 title: OpenDSU Concepts
 has_children: true
+nav_order: 2
 ---
 <details>
   <summary>OpendDSU Concepts</summary>
