@@ -2,6 +2,8 @@ title: Just the Docs Template
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
+# Set a path/url to a logo that will be displayed instead of the title
+#logo: "/desktop/OpenDSU/DSU LOGO.png"
 url: https://opendsu.org
 
 aux_links:
