@@ -1,6 +1,6 @@
 ---
 title: Forms
 layout: home
-parent: WebCardinal
+parent: Web Cardinal
 nav_order: 3
 ---

@@ -1,6 +1,6 @@
 ---
 title: Skins
 layout: home
-parent: WebCardinal
+parent: Web Cardinal
 nav_order: 4
 ---

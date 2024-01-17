@@ -1,6 +1,6 @@
 ---
 title: Migration
 layout: home
-parent: WebCardinal
+parent: Web Cardinal
 nav_order: 5
 ---
