@@ -36,11 +36,11 @@ Accepted
  **Copyright**
 Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-| Contributors               | Description                                                                                                                       | 
-|:-------------------------------------------------:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Axiologic Research www.axiologic.net            | New content and improvements. Original texts under PharmaLedger    Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the www.opendsu.com site.| 
-| PharmaLedger Project Members www.pharmaledger.eu| Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.                                                                             | 
-| PrivateSky Research Project                     | Initial content (www.privatesky.xyz). MIT licensed content accordingly with the contracts.https://profs.info.uaic.ro/~ads/PrivateSky/                                                                | 
+| Contributors                            | Description                                           |
+|:----------------------------------------|:------------------------------------------------------|
+| Axiologic Research www.axiologic.net    | New content and improvements. Original texts under PharmaLedger    Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the www.opendsu.com site.| 
+| PharmaLedger Project www.pharmaledger.eu| Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements. | 
+| PrivateSky Research Project             | Initial content (www.privatesky.xyz). MIT licensed content accordingly with the contracts.https://profs.info.uaic.ro/~ads/PrivateSky/  | 
 
 
 
