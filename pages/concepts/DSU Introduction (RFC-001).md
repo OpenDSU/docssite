@@ -19,7 +19,7 @@ nav_order: 1
   {: .text-delta }
 1. TOC
 {:toc}
-</Abstract>
+
 
 # DSU Introduction (RFC-001)
 
@@ -39,21 +39,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | PharmaLedger Project Members www.pharmaledger.eu| Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.                                                                             | 
 | PrivateSky Research Project                     | Initial content (www.privatesky.xyz). MIT licensed content accordingly with the contracts.https://profs.info.uaic.ro/~ads/PrivateSky/                                                                | 
 
-Table of Content
-+ Abstract
-+ Overview
-+  Data Sharing Unit (DSU)
-+  Brick Storage
-+ Anchoring
-+ DSU Mounting
-+ DSU Reconstruction
-+ KeySSI
-+ DSU Use Cases
-7.1. DSU Based Self Sovereign Applications (SSApps)
-7.2. DSU-Based Web APIs
-7.3. DSU-Based Web APIs
-+ OpenDSU and IPFS
-+ Annex 1. Contributors
+
 
 ## Abstract
 This RFC introduces the critical components of the OpenDSU project, such as DSU, as well as domain anchoring and brick storage services. Then, it introduces some essential mechanisms known as DSU mounting and DSU reconstruction. It also explains RFC’s role of keySSIs in the management of the DSU. Finally, it presents some primary use cases of DSUs.
@@ -114,13 +100,13 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 Supplementary sophistications are required only in cases where we have to implement access revocation to the shared data or implement an expiration date for access to data as requested by a third party.
 More details are available in Brick Storages (RFC-003).
 
-## 3. Anchoring
+##  Anchoring
 
 DSUs are anchored in the blockchain, and the anchoring feature brings the capability of digitally signing data and code in the initial version and any subsequent versions. In some situations, use cases can exist in which a centralized system provides DSU anchoring. For example, a use case that only needed anchoring could support better internal auditability. This example is excellent, as it could be later decentralized if needed or required.
 
 More details are available in Anchoring (RFC-005).
 
-## 4. DSU Mounting
+## DSU Mounting
 
 The code in a DSU instance is not copied to each instantiation. Starting from the perspective that a DSU can be seen as a file system, this file system allows the mounting of a DSU in another DSU. The DSU mounted in all instances and containing the code is called DSU Types. This DSU Type behaves similarly to a class compared to its instances. The DSU Type is a DSU in itself and, as such, is anchored and must have credentials (digital signatures) that mark it safe for use. It should also be noted that a DSU Type can be updated, leading to the automatic update of all instances. We also name the code from DSU Type as DSU constitution.
 
@@ -135,7 +121,7 @@ We can also observe that DSU mounting can mount arbitrary DSUs and make them loo
 More details are available in DSU Mounting (RFC-006).
 More details are available in DSU Types (RFC-007).
 
-## 5. DSU Reconstruction
+##  DSU Reconstruction
 
 DSUs are encrypted at rest and in transit using a key derived from an identifier we call KeySSI. A DSU can be imagined as a multi-directory file system with granular access and security properties for each “directory”. Instead of being stored as a whole, the files are stored as encrypted bricks. That is why we need DSU reconstruction to reassemble our files, and we reassemble them only for a limited time in an “execution environment”. These OpenDSU mechanisms implement the usage of “client-side encryption” as a means to enable data self-sovereignty.
 
@@ -150,13 +136,13 @@ Sandboxes will perform a “DSU reconstruction” operation that can be compared
 
 More details are available in DSU Reconstruction (RFC-008).
 
-## 6. KeySSI
+## KeySSI
 
 The KeySSI concept's purpose is to provide blockchain-anchored identities for things and processes, and companies and individuals. They are used as secret symmetrical encryption/decryption keys for DSUs (or parts of the DSUs).
 
 More details are available in KeySSI (RFC-002).
 
-## 7. DSU Use Cases
+##  DSU Use Cases
 
 Currently, DSUs can be used in three ways:
 + As a full-stack to develop Self Sovereign Applications (SSApps);
@@ -165,7 +151,7 @@ Currently, DSUs can be used in three ways:
 
 These three use cases will be developed in the following subsections.
 
-7.1. DSU-Based Self Sovereign Applications (SSApps)
+### DSU-Based Self Sovereign Applications (SSApps)
 
 ![alt text](https://docs.google.com/drawings/d/sD3RniCRYQaNZDZaBiIEOOg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=u6kir2jtScVgLw&h=193&w=513&ac=1)
 
@@ -181,7 +167,7 @@ A DSU can contain any code (e.g., HTML, CSS, JS) required to launch and run an a
 SSApp Architecture is described in SSApp Architecture (RFC-028).
 SSApp Implementation is described in SSApp implementation (RFC-034).
 
-### 7.2. DSU-Based Web APIs
+### DSU-Based Web APIs
 
 DSU APIs become available after DSU reconstruction is complete (recall from earlier: DSU reconstruction is similar to booting) in all the OpenDSU execution environments implemented for a particular use case. This thing allows for the DSU to be available not only on edge devices but also on servers and the cloud if desired. In a server-side environment, in many cases, it will be required to communicate with systems that are listening for requests on Web Services, such as Web APIs, Restful APIs, Web RPC, SOAP, etc. In these cases, the DSU APIs could be wrapped, and specific APIs could be implemented.
 
@@ -202,7 +188,7 @@ OpenDSU does not try to fix any specific rules about these Web APIs, and they sh
 
 APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.
 
-### 7.3. DSU-Based Web APIs
+### DSU-Based Web APIs
 
 In many cases, the location where the data contained in the DSU will be read and processed does not coincide with the location where the encryption keys are stored.
 
@@ -217,7 +203,7 @@ A “security context” is similar to an “execution environment” where DSU 
 
 Even within the same wallet, we can have hardware sandboxing or darkening mechanisms (for example, Trusted Execution Environments - TEEs), and thus, we have “differently powered” security contexts. When used in enterprise environments, these security contexts can be on different hardware systems, separate from the network. Even for average users, it is quite possible to use a web application that uses DSUs on a personal computer, with the sensitive keys stored safely on the mobile. In such a case, the execution environments from regular servers or web applications will have read access. However, they cannot sign anything in the user's name without their approval. OpenDSU promotes an elegant programming model called “executable choreographies'' that makes it easier to handle this unavoidable complexity.
 
-## 8. OpenDSU and IPFS
+## OpenDSU and IPFS
 
 DSU storage is a content-addressable service similar to IPFS (InterPlanetary File System). The main differences are:
 
