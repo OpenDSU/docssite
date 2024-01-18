@@ -4,6 +4,14 @@ layout: home
 parent: OpenDSU Concepts
 nav_order: 1
 ---
+<style>
+.imgMain{
+    display.block;
+    margin-left:200px;
+    margin-right:auto;
+}
+
+</style>
 # DSU Introduction (RFC-001)
 
 Accepted {: .label .label-green }   
@@ -47,6 +55,10 @@ The main concept, the central thread on which OpenDSU is created, is based on Di
 Following our research in PrivateSky, but also according to those existing in OpenDSU, we have noted that having a single large blockchain containing all the world’s data is impossible. The vision envisaged from specific projects, for example, Ethereum, in which there is only one world in which everything happens uniformly, does not seem realistic. Therefore, the OpenDSU team introduced the concept of Hierarchical Blockchains, which are several blockchains that have a naming and identification system. Everything is done through blockchains, providing interoperability between applications, meaning it does not matter in which blockchain we anchor our data. We approach the data from the perspective of DSUs (Data Sharing Units), so that is where the name OpenDSU comes from. OpenDSU is an evolving standard that creates data storage systems that are off-chain but permanently anchored in a blockchain to obtain security properties and provenance to ensure the data’s quality.
 
 ![alt text](https://docs.google.com/drawings/d/sz8cyVsXZqyqpKqSxS7vqsg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=7o1Qr4tz1E8Xgg&h=372&w=596&ac=1 )
+
+<img src="https://docs.google.com/drawings/d/sz8cyVsXZqyqpKqSxS7vqsg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=7o1Qr4tz1E8Xgg&h=372&w=596&ac=1" class="imgMain">
+
+<p style="text-align:center"> Figure 1: Data Sharing Units (DSU) </p>
 
 **Figure 1: Data Sharing Units (DSU)**
 
