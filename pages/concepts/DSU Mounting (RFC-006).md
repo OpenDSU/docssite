@@ -6,18 +6,12 @@ nav_order: 5
 ---
 
 Accepted 
-{: .label .label-green } The proposal has been accepted and has an implementation.
-
+{: .label .label-green } 
 {: .highlight }
-A paragraph
+The proposal has been accepted and has an implementation.
 enable_copy_code_button: true
 
 
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
 
 [Link button](https://just-the-docs.com){: .btn }
 
@@ -28,12 +22,4 @@ var fun = function lang(l) {
 </div>
 ```markdown
 [Link button](https://just-the-docs.com){: .btn }
-```
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
 ```

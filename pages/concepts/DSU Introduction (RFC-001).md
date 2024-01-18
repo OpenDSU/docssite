@@ -12,6 +12,9 @@ nav_order: 1
 } 
 </style>
 
+
+# DSU Introduction (RFC-001)
+
 <details open markdown="block">
   <summary>
     Table of contents
@@ -21,7 +24,6 @@ nav_order: 1
 {:toc}
 
 
-# DSU Introduction (RFC-001)
 
 Accepted 
 {: .label .label-green }   
