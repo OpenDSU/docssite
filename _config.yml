@@ -2,13 +2,31 @@ title: OpenDSU RFC Documentation
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
-# Set a path/url to a logo that will be displayed instead of the title
 #logo: "/LOGO/DSU LOGO.png"
 
-# Set a path/url to a favicon that will be displayed by the browser
 favicon_ico: "/LOGO/DSU LOGO.png"
 
 url: https://opendsu.org
+
+# For copy button on code
+enable_copy_code_button: true
+
+# Aux links for the upper right navigation
+aux_links:
+  "OpenDSU on GitHub":
+    - "https://github.com/OpenDSU/docssite/tree/main"
+
+    # Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: false
+
+# External navigation links
+nav_external_links:
+  - title: OpenDSU on GitHub
+    url: https://github.com/OpenDSU/docssite/tree/main
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
 
 search_enabled: true
 
@@ -21,7 +39,7 @@ search:
   rel_url: true
   button: false
 
-  
+
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template

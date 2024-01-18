@@ -2,6 +2,6 @@
 title: A site with WebCardinal
 layout: home
 parent: How to create
-grandparent: Web Cardinal
+grand_parent: OpenDSU Wallets Developers
 nav_order: 1
 ---
