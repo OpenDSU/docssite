@@ -44,6 +44,5 @@ search:
   button: false
 
 
-
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  OpenDSU on GitHub: https://github.com/OpenDSU/docssite/tree/main
