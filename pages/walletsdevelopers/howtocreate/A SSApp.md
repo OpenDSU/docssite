@@ -1,5 +1,5 @@
 ---
-title: A site with WebCardinal
+title: A SSApp
 layout: home
 parent: How to create
 grand_parent: OpenDSU Wallets Developers
