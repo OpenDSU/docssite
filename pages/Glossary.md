@@ -1,9 +1,10 @@
-
 ---
 title: Glossary
 layout: home
-permalink: /other/example/
+nav_order: 12
 ---
+
+
 | Concept                | Definition                                                                             | 
 |:-----------------------|:---------------------------------------------------------------------------------------|
 | API                    | Application Programming Interface                                                      | 
