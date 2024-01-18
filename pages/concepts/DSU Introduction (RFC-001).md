@@ -10,6 +10,7 @@ nav_order: 1
     margin-left:70px;
     margin-right:auto;
 } 
+</style>
 
 <details open markdown="block">
   <summary>
