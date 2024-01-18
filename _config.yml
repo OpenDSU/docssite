@@ -1,12 +1,12 @@
 title: OpenDSU RFC Documentation
-description: OpenDSU RFC Documentation
+description: https://www.opendsu.org
 theme: just-the-docs
 
 #logo: "/LOGO/DSU LOGO.png"
 
 favicon_ico: "/LOGO/DSU LOGO.png"
 
-url: https://opendsu.org
+url: https://www.opendsu.org
 
 repository: https://github.com/OpenDSU/docssite/tree/main # for github-metadata
 
