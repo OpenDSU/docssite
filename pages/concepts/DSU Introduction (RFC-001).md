@@ -23,7 +23,8 @@ nav_order: 1
 
 # DSU Introduction (RFC-001)
 
-Accepted {: .label .label-green }   
+Accepted 
+{: .label .label-green }   
   The proposal has been accepted and has an implementation.
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
