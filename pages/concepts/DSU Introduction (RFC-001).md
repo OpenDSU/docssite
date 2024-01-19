@@ -36,11 +36,7 @@ Accepted
  **Copyright**
 Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-| Contributors                            | Description                                           |
-|:----------------------------------------|:------------------------------------------------------|
-| Axiologic Research www.axiologic.net    | New content and improvements. Original texts under PharmaLedger    Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the www.opendsu.com site.| 
-| PharmaLedger Project www.pharmaledger.eu| Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements. | 
-| PrivateSky Research Project             | Initial content (www.privatesky.xyz). MIT licensed content accordingly with the contracts.https://profs.info.uaic.ro/~ads/PrivateSky/  | 
+
 
 
 
@@ -222,18 +218,63 @@ OpenDSU is intended to be used in enterprise blockchain solutions, so the aim is
 
 OpenDSU is an iteration of the IPFS intuition, providing new tools for programmers and architects.
 
+## Contributors                   
+1. [Axiologic Research] (www.axiologic.net): New content and improvements. Original texts under PharmaLedger    Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the www.opendsu.com site.| 
+2. [PharmaLedger Project] (www.pharmaledger.eu) Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+3. [PrivateSky Research Project](www.privatesky.xyz)  MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/ 
+
 ## Annex 1. Contributors
-| Current Editors                |                                                                            | 
-|:-----------------------|:---------------------------------------------------------------------------------------|
-| Sînică Alboaie                | Application Programming Interface                                                      | 
-| Blockchain             | A distributed ledger                                                                   | 
-| DLT                    | Distributed ledger technology                                                          | 
-| Blockchain Anchoring   | Storing hash of another blockchain or of data in a blockchain                          | 
-| DMZ                    | Demilitarized zone (Networking)                                                        | 
-| SDN                    | Software-defined networking                                                            | 
-| VPN                    | Virtual private network                                                                | 
-| Near-Chain             | A special type of blockchain that is cryptographically shared with a group of users    | 
-| Far-Chain              | Databases, applications and systems touching any data extracted using DLT technologies | 
-| Container              | A virtualized node using Linux Containers technology                                   | 
-| Logical View           | An entity existing at the logical view level is just a concept, not a physical entity  | 
-| BI                     | Business Intelligence                                                                  |
+
+|**Current Editors**                  |**Email**                                 |
+|:------------------------------------|:-----------------------------------------|
+
+|Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+  
+|Cosmin Ursache                       | cosmin@axiologic.net                     |
+  
+|Teodor Lupu                          | teodor@axiologic.net                     |
+  
+|Andi-Gabriel Țan                     | andi@axiologic.net                       |
+  
+|**Contributors Axiologic Research**  | **Email**                                |
+  
+|Adrian Ganga                         | adrian@axiologic.net                     |
+  
+|Andi-Gabriel Țan                     | andi@axiologic.net                       |
+  
+|Cosmin Ursache                       | cosmin@axiologic.net                     |
+    
+|Daniel Sava                          | daniel@axiologic.net                     |
+  
+|Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+  
+|Valentin Gérard                      | valentin@axiologic.net                   |
+  
+|**PrivateSky Contributors**          |**Email**                                 |
+	  
+|Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+  
+|Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+
+|Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+
+|Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+
+|Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+
+|Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+
+|Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+
+|Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+
+|**PharmaLedger Contributors**        | **Email**                                |
+
+|Ana Balan                            | bam@rms.ro (RMS)                         |
+
+|Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+
+|Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+
+|Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+
