@@ -1,9 +1,12 @@
 ---
-title: DSU Mounting (RFC-006)
+title: DSU Mounting 
 layout: home
 parent: OpenDSU Concepts
 nav_order: 5
 ---
+
+
+DSU Mounting (RFC-006)
 
 Accepted 
 {: .label .label-green } 

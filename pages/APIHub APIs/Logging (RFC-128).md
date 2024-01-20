@@ -1,6 +1,8 @@
 ---
-title: Logging (RFC-128)
+title: Logging 
 layout: home
 parent: APIHub APIs
 nav_order: 9
 ---
+
+Logging (RFC-128)

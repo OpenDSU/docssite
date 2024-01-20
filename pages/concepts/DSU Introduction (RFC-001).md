@@ -1,5 +1,5 @@
 ---
-title: DSU Introduction (RFC-001)
+title: DSU Introduction 
 layout: home
 parent: OpenDSU Concepts
 nav_order: 1
@@ -15,6 +15,21 @@ nav_order: 1
 
 # DSU Introduction (RFC-001)
 
+{: .Accepted }
+The proposal has been accepted and has an implementation.
+
+{: .Feedback }
+The proposal has been accepted and has an implementation.
+
+{: .Proposal }
+The proposal has been accepted and has an implementation.
+
+{: .Draft }
+The proposal has been accepted and has an implementation.
+
+{: .Obsolete/Replaced }
+The proposal has been accepted and has an implementation.
+
 <details open markdown="block">
   <summary>
     Table of contents
@@ -25,9 +40,6 @@ nav_order: 1
 
 
 
-Accepted 
-{: .label .label-green }   
-  The proposal has been accepted and has an implementation.
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
@@ -219,9 +231,9 @@ OpenDSU is intended to be used in enterprise blockchain solutions, so the aim is
 OpenDSU is an iteration of the IPFS intuition, providing new tools for programmers and architects.
 
 ## Contributors                   
-1. [Axiologic Research] (www.axiologic.net): New content and improvements. Original texts under PharmaLedger    Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the www.opendsu.com site.| 
-2. [PharmaLedger Project] (www.pharmaledger.eu) Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz)  MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/ 
+1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.| 
+2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
 
 ## Annex 1. Contributors
 

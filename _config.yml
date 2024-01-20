@@ -44,5 +44,24 @@ search:
   button: false
 
 
+callouts:
+  Accepted:
+    title: Accepted
+    color: green
+  Feedback:
+    title: Feedback
+    color: yellow
+  Proposal:
+    title: Proposal
+    color: blue
+  Draft:
+    title: Draft
+    color: grey-dk
+  Obsolete/Replaced:
+    title: Obsolete/Replaced
+    color: purple
+
+
+
 aux_links:
   OpenDSU on GitHub: https://github.com/opendsu/

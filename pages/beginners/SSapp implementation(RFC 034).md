@@ -1,6 +1,8 @@
 ---
-title: SSapp implementation (RFC 034)
+title: SSapp implementation 
 layout: home
 parent: OpenDSU for Beginners
 nav_order: 1
 ---
+
+SSapp implementation (RFC 034)

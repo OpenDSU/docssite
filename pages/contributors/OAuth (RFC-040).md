@@ -1,6 +1,8 @@
 ---
-title: OAuth (RFC-040)
+title: OAuth 
 layout: home
 parent: OpenDSU Contributors
 nav_order: 8
 ---
+
+OAuth (RFC-040)

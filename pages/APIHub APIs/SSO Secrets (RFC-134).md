@@ -1,6 +1,8 @@
 ---
-title: SSO Secrets (RFC-134)
+title: SSO Secrets 
 layout: home
 parent: APIHub APIs
 nav_order: 15
 ---
+
+SSO Secrets (RFC-134)

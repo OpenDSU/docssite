@@ -1,6 +1,8 @@
 ---
-title: ConstValue (RFC-018)
+title: ConstValue 
 layout: home
 parent: OpenDSU Contributors
 nav_order: 6
 ---
+
+ConstValue (RFC-018)

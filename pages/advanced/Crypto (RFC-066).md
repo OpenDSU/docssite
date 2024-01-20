@@ -1,6 +1,8 @@
 ---
-title: Crypto (RFC-066)
+title: Crypto 
 layout: home
 parent: Open DSU Advanced
 nav_order: 10
 ---
+
+Crypto (RFC-066)
