@@ -45,20 +45,20 @@ search:
 
 
 callouts:
-  Accepted:
-    title: Accepted
+  accepted:
+    title: accepted
     color: green
-  Feedback:
-    title: Feedback
+  feedback:
+    title: feedback
     color: yellow
-  Proposal:
-    title: Proposal
+  proposal:
+    title: proposal
     color: blue
-  Draft:
-    title: Draft
+  draft:
+    title: draft
     color: grey-dk
-  Replaced:
-    title: Replaced
+  replaced:
+    title: replaced
     color: purple
 
 

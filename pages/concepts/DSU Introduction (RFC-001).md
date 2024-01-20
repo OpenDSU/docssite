@@ -15,19 +15,19 @@ nav_order: 1
 
 # DSU Introduction (RFC-001)
 
-{: .Accepted }
+{: .accepted }
 The proposal has been accepted and has an implementation.
 
-{: .Feedback }
+{: .feedback }
 The proposal has been accepted and has an implementation.
 
 {: .Proposal }
 The proposal has been accepted and has an implementation.
 
-{: .Draft }
+{: .draft }
 The proposal has been accepted and has an implementation.
 
-{: .Replaced }
+{: .replaced }
 The proposal has been accepted and has an implementation.
 
 <details open markdown="block">
