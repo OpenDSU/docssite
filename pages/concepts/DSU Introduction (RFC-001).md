@@ -27,7 +27,7 @@ The proposal has been accepted and has an implementation.
 {: .Draft }
 The proposal has been accepted and has an implementation.
 
-{: .Obsolete/Replaced }
+{: .Replaced }
 The proposal has been accepted and has an implementation.
 
 <details open markdown="block">
