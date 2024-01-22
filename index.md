@@ -4,6 +4,6 @@ layout: home
 nav_order: 1
 ---
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="![DSU](image.png)" width="240" height="180" border="10" /></a>
+<a href="https://www.youtube.com/watch?v=n6YiWk8t3W0&t=26s
+" target="_blank"><img src="![dsu](<Screenshot 2024-01-22 at 11-27-54 OpenDSU Pitch in 3 minutes - YouTube.png>)" 
+alt="![DSU](image.png)" width="736" height="522" border="10" /></a>
