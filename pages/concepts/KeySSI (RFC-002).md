@@ -139,7 +139,7 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 
 Description:  Load parameters for KeySSI from a keySSI Identifier.
 
-|Name        |Type      |Value  |Description                                                                                    |
+|Name        |Type      |Value     |Description                                                                                    |
 | ---------- |:--------:|:--------:|-------------------------------------------------------------------------------------------:|
 
 |identifier  |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
@@ -153,7 +153,7 @@ Returns: This function does not return anything; it just changes the type of the
 Description: Is used to create a new type of KeySSI from a similar KeySSI. You should first create a well-known keySSI, then use the cast function to change the type.
 
 
-|Name        |Type      |Value  |Description                                                          |
+|Name        |Type      |Value     |Description                                                       |
 | ---------- |:--------:|:--------:|-----------------------------------------------------------------:|
 
 |identifier  |String    |*required | A string that uses the keySSI identifier syntax.icStr:control:vn*|
@@ -487,9 +487,6 @@ string
 Additional information for the keySSI.
 
 Returns: This function does not return anything.
-
-
-
 
 
 

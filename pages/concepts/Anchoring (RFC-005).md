@@ -5,7 +5,10 @@ parent: OpenDSU Concepts
 nav_order: 4
 ---
 
-Anchoring (RFC-005)
+## Anchoring (RFC-005)
+
+{: .accepted }
+The proposal has been accepted and has an implementation.
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
@@ -15,8 +18,6 @@ Anchoring (RFC-005)
 Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-{: .accepted }
-The proposal has been accepted and has an implementation.
 
 
 <details open markdown="block">
@@ -31,7 +32,7 @@ The proposal has been accepted and has an implementation.
 
 
 
-Abstract
+## Abstract
 
 This RFC introduces the anchoring concept from the OpenDSU project.
 Overview
