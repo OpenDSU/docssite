@@ -13,7 +13,15 @@ nav_order: 1
 </style>
 
 
-# DSU Introduction (RFC-001)
+# **DSU Introduction (RFC-001)**
+
+**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright**
+Copyright © 2018-2022 Axiologic Research and Contributors.
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 {: .accepted }
 The proposal has been accepted and has an implementation.
@@ -31,14 +39,6 @@ The proposal has been accepted and has an implementation.
 
 
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
-
-**Copyright: MIT license**
-
- **Copyright**
-Copyright © 2018-2022 Axiologic Research and Contributors.
-This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-
 
 
 
@@ -50,13 +50,12 @@ The main concept, the central thread on which OpenDSU is created, is based on Di
 
 Following our research in PrivateSky, but also according to those existing in OpenDSU, we have noted that having a single large blockchain containing all the world’s data is impossible. The vision envisaged from specific projects, for example, Ethereum, in which there is only one world in which everything happens uniformly, does not seem realistic. Therefore, the OpenDSU team introduced the concept of Hierarchical Blockchains, which are several blockchains that have a naming and identification system. Everything is done through blockchains, providing interoperability between applications, meaning it does not matter in which blockchain we anchor our data. We approach the data from the perspective of DSUs (Data Sharing Units), so that is where the name OpenDSU comes from. OpenDSU is an evolving standard that creates data storage systems that are off-chain but permanently anchored in a blockchain to obtain security properties and provenance to ensure the data’s quality.
 
-![alt text](https://docs.google.com/drawings/d/sz8cyVsXZqyqpKqSxS7vqsg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=7o1Qr4tz1E8Xgg&h=372&w=596&ac=1 )
+
 
 <img src="https://docs.google.com/drawings/d/sz8cyVsXZqyqpKqSxS7vqsg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=7o1Qr4tz1E8Xgg&h=372&w=596&ac=1" class="imgMain">
 
 <p style="text-align:center"> Figure 1: Data Sharing Units (DSU) </p>
 
-**Figure 1: Data Sharing Units (DSU)**
 
 Starting from the user, we first have the User environment where DSUs exist and KeySSIs are managed. These environments are also called agents. An agent is software that can be located either in the cloud or locally (on a computer or a mobile). This software is in charge of managing special identifiers named KeySSIs, and it is also responsible for the creation and reconstruction of DSUs. When a keySSI is used to create a DSU, the agent will use anchoring and brick storage from the domain associated with the key (here by default) to ensure the DSU will be accessible for other users to access the DSU if they own the corresponding keys.
 
@@ -73,7 +72,7 @@ From the perspective of OpenDSU, a DSU is an entity that exists temporarily in a
 
 ![alt text](https://docs.google.com/drawings/d/sgqHMdkcmeSZl8XLRGz5lVA/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=ZRBIjDNAMXZRCA&h=332&w=465&ac=1 )
 
-**Figure 2: DSU usage pattern**
+**Figure 2: DSU usage pattern** 
 
 The Execution Environment interacts with a DSU in 3 major ways:
 1.Read/write files from the file system;
@@ -257,39 +256,3 @@ OpenDSU is an iteration of the IPFS intuition, providing new tools for programme
 |Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
 
 
-
-## Contributors   
-
-1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
-
-## Annex 1. Contributors
-
-|**Current Editors**                  |**Email**                                 |
-|:------------------------------------|:-----------------------------------------|
-|Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
-|Cosmin Ursache                       | cosmin@axiologic.net                     |
-|Teodor Lupu                          | teodor@axiologic.net                     |
-|Andi-Gabriel Țan                     | andi@axiologic.net                       |
-|**Contributors Axiologic Research**  | **Email**                                |
-|Adrian Ganga                         | adrian@axiologic.net                     |
-|Andi-Gabriel Țan                     | andi@axiologic.net                       |
-|Cosmin Ursache                       | cosmin@axiologic.net                     |
-|Daniel Sava                          | daniel@axiologic.net                     |
-|Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
-|Valentin Gérard                      | valentin@axiologic.net                   |
-|**PrivateSky Contributors**          |**Email**                                 |
-|Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
-|Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
-|Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
-|Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
-|Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
-|Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
-|Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
-|Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
-|**PharmaLedger Contributors**        | **Email**                                |
-|Ana Balan                            | bam@rms.ro (RMS)                         |
-|Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
-|Cosmin Ursache                       | cos@rms.ro (RMS)                         |
-|Rafael Mastaleru                     | raf@rms.ro (RMS)                         |

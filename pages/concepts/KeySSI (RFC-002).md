@@ -8,38 +8,42 @@ nav_order: 2
 KeySSI (RFC-002)
 
 
+**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright**
+Copyright © 2018-2022 Axiologic Research and Contributors.
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
 {: .accepted }
 The proposal has been accepted and has an implementation.
 
 
-Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.
-
-Copyright: MIT license
-
-Copyright
-
-Copyright (c) <2018-2022> Axiologic Research and Contributors.
-
-This document is licensed under MIT license:
-
-(https://en.wikipedia.org/wiki/MIT_License)
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
 
 
 
 
 
-
-Abstract
+## Abstract
 
 This RFC introduces one of the main components of OpenDSU: the concept of KeySSIs (Self-Sovereign Identifiers). We will go through:
 
-    The syntax of the identifiers and how they are constructed;
-    The key resolution that is necessary to retrieve all key information embedded in the identifier;
-    The different KeySSI families that were designed for different use cases, their specificity and the functions that are specific to each family;
-    The functions that are common to all KeySSIs and necessary to get useful information about our keys.
++ The syntax of the identifiers and how they are constructed;
++ The key resolution that is necessary to retrieve all key information embedded in the identifier;
++ The different KeySSI families that were designed for different use cases, their specificity and the functions that are specific to each family;
++ The functions that are common to all KeySSIs and necessary to get useful information about our keys.
 
 Note: For creating different types of keySSIs, the code can be checked at KeySSI (RFC-068).
-1. Introduction
+
+##  Introduction
 
 The purpose of the KeySSI concept is to provide blockchain-anchored identities for things and processes but potentially also for companies and individuals. The concept of KeySSI is more general than the concept proposed by the W3C DID web standard. DIDs and KeySSIs are two different methods of creating SSIs (Self-Sovereign Identifiers).
 
@@ -52,13 +56,13 @@ A KeySSI never comes alone but in a group that we call a family. Each KeySSI fam
 Typically (but not always), KeySSIs are anchored in ledgers for integrity and traceability using a special KeySSI called Zero Access SSI (szaSSI). Having a szaSSI gives the user access only to a list of hashes (the versions of the anchored DSU) but nothing else. Without an upper-level KeySSI, the szaSSI has no practical value except giving access to the number of versions of a DSU.
 
 API note: The KeySSI (RFC-068) is used to create the different KeySSIs.
-2. Syntax of KeySSI identifiers
+Syntax of KeySSI identifiers
 
 The syntax of KeySSI is inspired by the W3C DID and is similar to it, but has several key differences, such as - it starts with the “ssi” string. It allows users to define additional attributes, such as types, ledger domains etc. Equivalent to the DID method string, SSI also consists of types (or subtypes). The purpose of types is not to introduce incompatible methods to W3C DIDs, but rather to add different types of KeySSIs. The different KeySSI types are designed to be compatible, which allows for a standard KeySSI resolver to implement all the standard types. Another unique aspect of the SSI syntax compared to the W3C DIDs is that the 3rd group in the identifier represents a ledger/blockchain domain. OpenDSU is based on the objective that a KeySSI supports multiple hierarchical ledgers/blockchains. The current definition of the blockchain domain and the proposed implementation on resolving these domains are part of the OpenDSU specification and may be found in the BDNS chapters.
 
 Figure 1:  Syntax of KeySSI Identifiers
 
-Examples:             
+** Examples: **            
 
 ssi:seed:ePI.pharma:RANDOMSEEDKEY:HASHRANDOMKEY:vn
 
@@ -75,7 +79,7 @@ The “vn” field is a string reflecting the version number of the type. The vn
 The “hint” part is optional and subtype-specific. Typically, it hints at some optional information for the KeySSI resolver, for example, the favorite server proposed by the owner of the KeySSI.
 
 This part could also be called “tag” as it is a way of tagging KeySSIs for specific purposes, for example, to tag a DSU containing sensitive information to help indicate that it will require additional data protection mechanisms. This “Hint” or “Tag” extends the KeySSI for countless purposes that could not be imagined now.
-3. Trustless KeySSI Resolvers
+## Trustless KeySSI Resolvers
 
 The primary purpose of standard KeySSI resolvers is to be able to use an SSI identifier to create or load a specific DSU instance. Information embedded in the keySSI will give the resolver everything it needs to ensure the DSUs are stored securely through encryption. Key derivation is also used to give different access rights, and the resolver will ensure these rights are applied when reconstructing a DSU.
 
@@ -84,42 +88,45 @@ Figure 3:  KeySSI Resolvers role
 KeySSI Resolvers are libraries loaded in the DSU reconstruction environments. OpenDSU implements client-side encryption, therefore avoiding the need for any delegation of trust to any intermediaries or certificate authorities. The KeySSI resolver can call an adapter to a ledger or blockchain and call the Brick Storage, but its usage of any other intermediary Web API is not recommended. The node doing the resolving (the DSU reconstruction environments) should provide the result as an instance of a DSU. The reconstruction environment of DSUs should handle the decryption and the other operations required for resolving a KeySSI to a DSU.
 
 The KeySSI Resolvers should benefit from the BDNS (Blockchain Domain Name System) and other schemes to create a trustless KeySSI resolver so that, when possible, there should be multiple “gateways” for the “anchoring service” as opposed to just one. The “anchoring service” is located where a specific anchor is stored in the ledger. When required, a multiple gateways approach will introduce better decentralization and security, since the difficulty of attacking the network increases with the number of nodes making up the network (see implementation recommendations).
-4. KeySSIs families
+## KeySSIs families
 
 Depending on the use case, different types of KeySSIs can be used. This table summarizes the different families of KeySSIs and references the links for more detailed information.
 
-Family
-	
 
-Description
+
 
 SeedSSIs
 	
 
 SeedSSI identifiers are a good method for identifying DSUs that are not shared with many people. A good example is the DSUs that implement some form of digital wallet for users and companies.
 
+
 ConstSSIs
-	
 
 Aim to provide human-readable identifiers that can be remembered easily.
 
 This RFC also contains information about ArraySSI, WalletSSI and PasswordSSI, since they are all derived to obtain constSSIs.
 
-HashLinkSSIs
 
-	
+
+HashLinkSSIs
 
 Brick-pointing KeySSIs that allow finding and decrypting un-anchored bricks/DSUs.
 
+
+
 SymetricalEncryptionSSI
 	
-
 SymetricalEncryptionSSIs are used with HashLinkSeedSSIs for bricks’ construction and reconstruction.
-5. KeySSIs common functions
+
+
+## KeySSIs common functions
 
 KeySSIs share a set of common functions. They serve to initialize KeySSIs with desired parameters or to get their parameters when they are needed.
 
+
 How to use KeySSI functions:
+
 
 variable = keySSI.function();
 
@@ -127,63 +134,36 @@ dlDomain = keySSI.getDLDomain();
 
 seedKeyIdentifier = seedSSI.getIdentifier();
 
-Function keySSI.autoLoad(identifier)
+
+### Function keySSI.autoLoad(identifier)
 
 Description:  Load parameters for KeySSI from a keySSI Identifier.
 
-Name
-	
+|Name        |Type      |Value  |Description                                                                                    |
+| ---------- |:--------:|:--------:|-------------------------------------------------------------------------------------------:|
 
-Type
-	
+|identifier  |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
 
-Value
-	
 
-Description
-
-identifier
-	
-
-String
-	
-
-*required
-	
-
-A string that uses the keySSI identifier syntax.
-
- Ex:  ssi:za:domain:specificStr:control:vn
 
 Returns: This function does not return anything; it just changes the type of the existing key.
-Function keySSI.cast(newType)
+
+### Function keySSI.cast(newType)
 
 Description: Is used to create a new type of KeySSI from a similar KeySSI. You should first create a well-known keySSI, then use the cast function to change the type.
 
-Name
-	
 
-Type
-	
+|Name        |Type      |Value  |Description                                                          |
+| ---------- |:--------:|:--------:|-----------------------------------------------------------------:|
 
-Value
-	
+|identifier  |String    |*required | A string that uses the keySSI identifier syntax.icStr:control:vn*|
 
-Description
-
-newType
-	
-
-String
-	
-
-*required
-	
-
-A string that uses the keySSI identifier syntax.
 
 Returns: This function does not return anything.
-Function keySSI.clone()
+
+
+
+### Function keySSI.clone()
 
 Description: Create a clone of an already existing keySSI.
 
@@ -198,7 +178,9 @@ KeySSI Object
 	
 
 A clone of your KeySSI
-Function keySSI.getAnchorID()
+
+
+### Function keySSI.getAnchorID()
 
 Description: Retrieve the keySSI anchor identifier.
 
@@ -210,10 +192,10 @@ Name
 Description
 
 String
-	
 
 Your KeySSI anchor Identifier. It is used for Anchoring operations.
-Function keySSI.getControlString()
+
+### Function keySSI.getControlString()
 
 Description: Retrieve the keySSI control string.
 
@@ -225,10 +207,11 @@ Name
 Description
 
 String
-	
 
 Your KeySSI control string. It is used for Anchoring operations for validation purposes.
-Function keySSI.getDLDomain()
+
+
+### Function keySSI.getDLDomain()
 
 Description: Retrieve the keySSI DL Domain.
 
@@ -243,7 +226,9 @@ String
 	
 
 Your keySSI DL Domain. It represents the ledger/blockchain domain name, and the personal key that was created and used. More info in BDNS.
-Function keySSI.getDSURepresentationName()
+
+
+### Function keySSI.getDSURepresentationName()
 
 Description: Retrieve the keySSI DSU Representation Name.
 
@@ -258,22 +243,22 @@ String
 	
 
 Your keySSI DSU Representation Name. This function is not fully implemented and will only return “RawDossier” if your key is from the seed subtype.
-Function keySSI.getHint()
+
+### Function keySSI.getHint()
 
 Description: Retrieve the keySSI hint (tag).
 
 Returns
 
 Name
-	
 
 Description
 
 String
 	
-
 Your keySSI hint. The hint is optional for keySSI but can contain helpful information for the resolver.
-Function keySSI.getIdentifier(plain)
+
+### Function keySSI.getIdentifier(plain)
 
 Description: Retrieve the keySSI identifier.
 
@@ -317,12 +302,13 @@ plain
 boolean
 	
 
-Function keySSI.getName()
+### Function keySSI.getName()
 
 Description: Retrieve the keySSI subtype name. This function is obsolete, please use keySSI.getTypeName() instead.
 
 Returns: The subtype name (e.g.: seed, sza etc.) for your KeySSI.
-Function keySSI.getRelatedType(ssiType, callback)
+
+### Function keySSI.getRelatedType(ssiType, callback)
 
 Description: Get the KeySSI that is related to your KeySSI and that is derived from the selected “ssiType”. A keySSI is returned if the ssiType can be derived from your KeySSI. It works only for lower subtypes for security reasons.
 
@@ -359,7 +345,7 @@ function
 *required
 	
 
-Callback parameters
+** Callback parameters ** 
 
 Name
 	
@@ -382,7 +368,9 @@ KeySSI object
 	
 
 Description: Error message and the error. / The KeySSI of the selected type if it can be derived from your key. If it is the same subtype, it will return the same key.
-Function keySSI.getSpecificString()
+
+
+### Function keySSI.getSpecificString()
 
 Description: Retrieve the keySSI specific string.
 
@@ -399,7 +387,9 @@ String
 Your keySSI specific string. The specific string is a string that should contain enough random bytes for good security. The more the key is at a higher level, the more it should be secure.
 
 Public keySSI, like sza KeySSIs do not need this string.
-Function keySSI.getVn()
+
+
+### Function keySSI.getVn()
 
 Description: Retrieve the keySSI version number.
 
@@ -414,7 +404,8 @@ String
 	
 
 Your keySSI Vn (version number). It represents the version of your keySSI so your resolver knows how to deal with it.
-Function keySSI.load(subType, dlDomain, subtypeSpecificString, control, vn, hint)
+
+### Function keySSI.load(subType, dlDomain, subtypeSpecificString, control, vn, hint)
 
 Description: Change the parameters of a KeySSI to replace the existing one.
 

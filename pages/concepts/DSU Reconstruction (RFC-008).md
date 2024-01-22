@@ -9,22 +9,26 @@ DSU Reconstruction (RFC-008)
 
 
 
+**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright**
+Copyright © 2018-2022 Axiologic Research and Contributors.
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
 {: .accepted }
 The proposal has been accepted and has an implementation.
 
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
 
-Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.
-
-Copyright: MIT license
-
-Copyright
-
-Copyright (c) <2018-2022> Axiologic Research and Contributors.
-
-This document is licensed under MIT license:
-
-(https://en.wikipedia.org/wiki/MIT_License)
 
 
 
