@@ -57,18 +57,18 @@ A KeySSI never comes alone but in a group that we call a family. Each KeySSI fam
 Typically (but not always), KeySSIs are anchored in ledgers for integrity and traceability using a special KeySSI called Zero Access SSI (szaSSI). Having a szaSSI gives the user access only to a list of hashes (the versions of the anchored DSU) but nothing else. Without an upper-level KeySSI, the szaSSI has no practical value except giving access to the number of versions of a DSU.
 
 API note: The KeySSI (RFC-068) is used to create the different KeySSIs.
-Syntax of KeySSI identifiers
+
+## Syntax of KeySSI identifiers
 
 The syntax of KeySSI is inspired by the W3C DID and is similar to it, but has several key differences, such as - it starts with the “ssi” string. It allows users to define additional attributes, such as types, ledger domains etc. Equivalent to the DID method string, SSI also consists of types (or subtypes). The purpose of types is not to introduce incompatible methods to W3C DIDs, but rather to add different types of KeySSIs. The different KeySSI types are designed to be compatible, which allows for a standard KeySSI resolver to implement all the standard types. Another unique aspect of the SSI syntax compared to the W3C DIDs is that the 3rd group in the identifier represents a ledger/blockchain domain. OpenDSU is based on the objective that a KeySSI supports multiple hierarchical ledgers/blockchains. The current definition of the blockchain domain and the proposed implementation on resolving these domains are part of the OpenDSU specification and may be found in the BDNS chapters.
 
 Figure 1:  Syntax of KeySSI Identifiers
 
-** Examples: **            
-
+**Examples:**            
+'''
 ssi:seed:ePI.pharma:RANDOMSEEDKEY:HASHRANDOMKEY:vn
-
 ssi:za:ePI.pharma:HASHSERIALISATION:HASHPUBLICKEY:vn
-
+'''
 Figure 2:  Syntax of KeySSI Identifiers
 
 The “Type Specific Substrings” contain strings that typically should contain enough random bits for good security.
@@ -127,11 +127,11 @@ KeySSIs share a set of common functions. They serve to initialize KeySSIs with d
 How to use KeySSI functions:
 
 
-'variable = keySSI.function();
-
+'''
+variable = keySSI.function();
 dlDomain = keySSI.getDLDomain();
-
-seedKeyIdentifier = seedSSI.getIdentifier();'
+seedKeyIdentifier = seedSSI.getIdentifier();
+'''
 
 
 ### Function keySSI.autoLoad(identifier)
