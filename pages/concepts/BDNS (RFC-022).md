@@ -5,7 +5,8 @@ parent: OpenDSU Concepts
 nav_order: 8
 ---
 
-BDNS (RFC-022)
+# BDNS (RFC-022)
+{: .no_toc }
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
@@ -31,22 +32,7 @@ A period when the community can review the RFC (comment Docs).
 
 
 
-Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.
-
-Copyright: MIT license
-
-Copyright
-
-Copyright (c) <2018-2022> Axiologic Research and Contributors.
-
-This document is licensed under MIT license:
-
-(https://en.wikipedia.org/wiki/MIT_License)
-
-
-
-
-Abstract
+## Abstract
 
 This RFC presents the vision and the technical details that explain BDNS concepts. BDNS concept is used by the OpenDSU KeySSI as explained in KeySSI (RFC-002). For developers, the existing support for BDNS is documented in BDNS (RFC-067) and KeySSI (RFC-068).
 
@@ -59,7 +45,7 @@ OpenDSU makes the transitions from the DNS to a naming system that is suitable f
 In OpenDSU, the concept of KeySSIs offers programmers and architects a tool that allows a direct handling of this complex reality from a security (cryptography) point of view and performance implications. For example, OpenDSU allows clients to check their "paranoia level”, i.e. if they believe a random node from the list is declared in BDNS or does deeper checks, the software should query a percentage of these nodes until they trust a result.
 
 While, theoretically, the current level of BDNS functionality could be simulated using DNS, BDNS offers a simpler way of handling the change of the DNS root servers, and it allows faster experimentation for future extensions such as blockchain-to-blockchain anchoring by allowing new types of records.
-1. Hierarchical Blockchains and Naming Schema
+## Hierarchical Blockchains and Naming Schema
 
 OpenDSU proposes an approach to improve the concept of heterogeneous blockchains in the enterprise area (applications developed around the idea of digital wallets). OpenDSU does not intend to offer a solution for cryptocurrency-centric applications that require a global consensus or atomic transactions between multiple blockchains.
 
@@ -84,45 +70,31 @@ Data sharing and collaboration with several organizations is inevitable and, in 
 DSUs are ledgers by nature, and they have an identity given by their KeySSIs; therefore, they are left in the naming system.
 
 Anchoring the ledgers into a parent ledger allows better security and auditability for the enterprise use cases and has a positive effect on simplifying the governance of complex blockchain platforms comprising numerous use cases and numerous actors with conflicting interests. There are multiple ways of implementing the anchoring between ledgers. However, OpenDSU does not currently offer implementation and only focuses on anchoring the DSUs in the ledgers. BDNS offers just a naming service for DSUs. Future efforts are required to generalize this approach for anchoring between ledgers.
-2. Blockchain Domain Name System (BDNS) Concepts Summary
 
-Concept
-	
+## Blockchain Domain Name System (BDNS) Concepts Summary
 
-Description
+|Concept          |Description                                                                                       |
 
-BDNS
-	
+|BDNS             |Equivalent to the internet DNS for blockchains (distributed ledgers in general).                  |
 
-Equivalent to the internet DNS for blockchains (distributed ledgers in general).
+|BDNS Root Info   |A BDNS file containing the information about all root domains  and eventually other BDNS domains. |
 
-BDNS Root Info
-	
+|BDNS Domain      |A string with alphanumeric identifiers separated by “.” characters.                               |
 
-A BDNS file containing the information about all root domains  and eventually other BDNS domains.
+|BDNS Root Domain |A BDNS domain without any “.” (a single identifier).                                              |
 
-BDNS Domain
-	
-
-A string with alphanumeric identifiers separated by “.” characters.
-
-BDNS Root Domain
-	
-
-A BDNS domain without any “.” (a single identifier)
-
-BDNS SubDomain
-	
-
-A domain that contains additional prefixes to a BDNS Root Domain
+|BDNS SubDomain   |A domain that contains additional prefixes to a BDNS Root Domain.                                 |
 
 Table 1: BDNS specific terminology summary
-3. BDNS.hosts file (BDNS Root Info)
+
+## BDNS.hosts file (BDNS Root Info)
 
 Creating a system that can replace DNS would be complicated, and the maturation of such a system could take several years. In this sense, it is perfectly normal for OpenDSU-based systems to use a very simplified version that resembles the idea of host files from Unix systems.
 
 BDNS.hosts is a JSON-type file containing each known domain name on the current node and the configuration associated with each domain. Below, there is an example of a BDNS.hosts file. These files are encoded in the wallets and are a replacement for the WHOIS protocol, offering each application the chance to start a new “internet”.
-3.1. BDNS Domains example: a root and subdomain
+
+
+### BDNS Domains example: a root and subdomain
 
 {
 
@@ -168,29 +140,21 @@ BDNS.hosts is a JSON-type file containing each known domain name on the current 
 
 }
 
+
+
 This is the config for one root domain, “demoroot”, and a subdomain. Depending on their record type (“brickStorage” or “anchorService”), the endpoints are the addresses for either the node on which the Brick Storage service is running or the node running the Anchoring Service.
 
 The below table describes the existing record types for BDNS domains.
 
-Selection
-	
+|Selection        |Description                                                       |
 
-Description
+|brickStorages       |List of URLs that offer brick storage services for the domain. |
 
-brickStorages
-	
+|anchoringServices   |List of URLs that offer anchoring services for the domain.     |
 
-List of URLs that offer brick storage services for the domain.
+|notifications       |List of URLs that offer notification services for the domain.  |
 
-anchoringServices
-	
 
-List of URLs that offer anchoring services for the domain.
-
-notifications
-	
-
-List of URLs that offer notification services for the domain.
 
 Table 2: BDNS Domains record types
 

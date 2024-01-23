@@ -5,7 +5,8 @@ parent: OpenDSU Concepts
 nav_order: 2
 ---
 
-KeySSI (RFC-002)
+# KeySSI (RFC-002)
+{: .no_toc }
 
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
@@ -79,6 +80,7 @@ The “vn” field is a string reflecting the version number of the type. The vn
 The “hint” part is optional and subtype-specific. Typically, it hints at some optional information for the KeySSI resolver, for example, the favorite server proposed by the owner of the KeySSI.
 
 This part could also be called “tag” as it is a way of tagging KeySSIs for specific purposes, for example, to tag a DSU containing sensitive information to help indicate that it will require additional data protection mechanisms. This “Hint” or “Tag” extends the KeySSI for countless purposes that could not be imagined now.
+
 ## Trustless KeySSI Resolvers
 
 The primary purpose of standard KeySSI resolvers is to be able to use an SSI identifier to create or load a specific DSU instance. Information embedded in the keySSI will give the resolver everything it needs to ensure the DSUs are stored securely through encryption. Key derivation is also used to give different access rights, and the resolver will ensure these rights are applied when reconstructing a DSU.
@@ -88,6 +90,7 @@ Figure 3:  KeySSI Resolvers role
 KeySSI Resolvers are libraries loaded in the DSU reconstruction environments. OpenDSU implements client-side encryption, therefore avoiding the need for any delegation of trust to any intermediaries or certificate authorities. The KeySSI resolver can call an adapter to a ledger or blockchain and call the Brick Storage, but its usage of any other intermediary Web API is not recommended. The node doing the resolving (the DSU reconstruction environments) should provide the result as an instance of a DSU. The reconstruction environment of DSUs should handle the decryption and the other operations required for resolving a KeySSI to a DSU.
 
 The KeySSI Resolvers should benefit from the BDNS (Blockchain Domain Name System) and other schemes to create a trustless KeySSI resolver so that, when possible, there should be multiple “gateways” for the “anchoring service” as opposed to just one. The “anchoring service” is located where a specific anchor is stored in the ledger. When required, a multiple gateways approach will introduce better decentralization and security, since the difficulty of attacking the network increases with the number of nodes making up the network (see implementation recommendations).
+
 ## KeySSIs families
 
 Depending on the use case, different types of KeySSIs can be used. This table summarizes the different families of KeySSIs and references the links for more detailed information.
@@ -136,7 +139,6 @@ seedKeyIdentifier = seedSSI.getIdentifier();'
 Description:  Load parameters for KeySSI from a keySSI Identifier.
 
 |Name       |Type      |Value     |Description                                                                                 |
-|----------:|:--------:|:--------:|-------------------------------------------------------------------------------------------:|
 |identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
 
 
@@ -149,7 +151,6 @@ Description: Is used to create a new type of KeySSI from a similar KeySSI. You s
 
 
 |Name       |Type      |Value     |Description                                                       |
-|----------:|:--------:|:--------:|-----------------------------------------------------------------:|
 |identifier |String    |*required | A string that uses the keySSI identifier syntax.icStr:control:vn*|
 
 
@@ -192,7 +193,6 @@ Returns
 
 |Name     |Description                                                                                  |
 |String   |Your keySSI DSU Representation Name. This function is not fully implemented and will only return “RawDossier” if your key is from the seed subtype|
-
 
 
 
@@ -254,8 +254,9 @@ Description: Retrieve the keySSI specific string.
 
 
 ### Function keySSI.getVn()
-|Name            |Description                                                                                                          |
-|String          |Your keySSI Vn (version number). It represents the version of your keySSI so your resolver knows how to deal with it.|
+
+|Name     |Description                                                                                                          |
+|String   |Your keySSI Vn (version number). It represents the version of your keySSI so your resolver knows how to deal with it.|
 
 
 

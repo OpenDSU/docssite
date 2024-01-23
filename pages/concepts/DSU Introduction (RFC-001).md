@@ -14,6 +14,7 @@ nav_order: 1
 
 
 # **DSU Introduction (RFC-001)**
+{: .no_toc }
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 

@@ -5,7 +5,8 @@ parent: OpenDSU Concepts
 nav_order: 6
 ---
 
-DSU Types (RFC-007)
+# **DSU Types (RFC-007)**
+{: .no_toc }
 
 
 
@@ -34,7 +35,7 @@ A period when the community can review the RFC (comment Docs).
 {:toc}
 
 
-Abstract
+## Abstract
 
 DSUs are data, verifiable code. Through the use of cryptographic techniques, they are encrypted and identifiable in a certain way. DSUs can be assimilated into the programming model because there are DSU instances and classes.
 
@@ -58,21 +59,17 @@ The file system can also be used as a key-value database. It obtains interrogabl
 
 Different types of DSUs were implemented for different use cases. Each type is associated with different types of KeySSIs (see RFC 002).
 
-SU Representation
-	
+|SU Representation    |KeySSIs, anchoring strategies, versioning strategies etc|
 
-KeySSIs, anchoring strategies, versioning strategies etc
-
-SecretDSU
-	
-
-KeySSIs: SecretSSI family
+|SecretDSU|
+|KeySSIs: SecretSSI family
 
 Anchoring: zaSSI
 
 Versioning: microledger
 
-Other: None
+Other: None|
+
 
 SeedDSU
 	
@@ -150,120 +147,57 @@ Anchoring: None
 Versioning: None
 
 Other: contains a JSON with information about a Blockchain Domain
-1. Public Methods from dt API
-Function getDossierBuilder(sourceDSU, varStore)
+## Public Methods from dt API
+
+### Function getDossierBuilder(sourceDSU, varStore)
 
 Description: Creates a new MappingEngine Object.
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-sourceDSU
-	
-
-object
+|Name       | Type   | Value  | Description                                                                    |
+|sourceDSU  | object |        | This will perform all OPERATIONS from the sourceDSU as a source and not the fs.|
+|varStore   | object |        |                                                                                |
 	
 
 	
 
-This will perform all OPERATIONS from the sourceDSU as a source and not the fs.
-
-varStore
-	
-
-object
-	
-
-	
-
-Function initialiseBuildWallet(callback)
+### Function initialiseBuildWallet(callback)
 
 Description: Initialise a new wallet.
 
-Name
-	
+|Name       | Type    | Value      | Description   |
+|callback  | function | *required  |               |
 
-Type
-	
 
-Value
-	
 
-Description
-
-callback
-	
-
- function
-	
-
-*required
-	
-
-Commands
+### Commands
 
 Description: Exposes more classes that are able to handle different commands, such as:
 
-    AddFileCommand
-    AddFolderCommand
-    CreateDSUCommand
-    CreateFileCommand
-    DefineCommand
-    DeleteCommand
-    DeriveCommand
-    EndWithCommand
-    GenKeyCommand
-    GetIdentifierCommand
-    MountCommand
-    ObjToArrayCommand
-    ReadFileCommand
-    WithCommand
-    _getByName
+    + AddFileCommand
+    + AddFolderCommand
+    + CreateDSUCommand
+    + CreateFileCommand
+    + DefineCommand
+    + DeleteCommand
+    + DeriveCommand
+    + EndWithCommand
+    + GenKeyCommand
+    + GetIdentifierCommand
+    + MountCommand
+    + ObjToArrayCommand
+    + ReadFileCommand
+    + WithCommand
+    + _getByName
 
-AppBuilderService
+### AppBuilderService
 
-Description:
+**Description:**
 
-Name
+
+|Name         | Type   | Value  | Description                                                                            |
+|environment  | object |        | Typically comes from an environment.js file which is the SSApps. Overrides some options|
+|opts         | object |        | Options object mimicking                                                               |
 	
-
-Type
-	
-
-Value
-	
-
-Description
-
-environment
-	
-
-object
-	
-
-	
-
-Typically comes from an environment.js file which is the SSApps. Overrides some options
-
-opts
-	
-
-object
-	
-
-	
-
-Options object mimicking
-
-
 
 
 ## Contributors   

@@ -5,7 +5,8 @@ parent: OpenDSU Concepts
 nav_order: 10
 ---
 
-Cloud and Edge Wallets  (RFC-032)
+# Cloud and Edge Wallets  (RFC-032)
+{: .no_toc }
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
@@ -29,17 +30,19 @@ The proposal has been accepted and has an implementation.
 
 
 
-Abstract
+## Abstract
 
 This RFC shows the particular importance of the “wallet” concept so as not to lose the benefits of blockchain. In this document, we present the “Clouds Agents” and “Edge Agents” concepts, the difference between them, and the “No size fits all“ principle.
-1. Introduction
+
+## Introduction
 
 To securely exchange data with OpenDSU, the actors will need an OpenDSU agent or wallet that will take care of all operations related to OpenDSU, such as DSU storage key, storing the bricks on a local or remote server, and anchoring the key anchor ID in the blockchain. These agents can be used either locally (which is optimal for obtaining data self-sovereignty) or remotely,  in the cloud, when needed (for example, if you need the agent to be available 24 hours a day). We will often have a mix of local agents (or edge) – where the most sensitive data will be stored – and cloud agents – to get the benefits of cloud storage, such as availability.
 
 Blockchain benefits are immutability (involves chaining permanent transaction blocks), trustlessness (provides trust in the network and not in a single entity - digital signatures and identities appear), decentralization (intermediaries do not own the system and they can easily change service providers), transparency, data privacy and digital sovereignty. Transparency is closely related to immutability and trustlessness: it can quickly become a source for data leakages at any time. Data privacy is possible, but it is difficult. Native encryption or keeping hashes in the blockchain is usually not enough; metadata leakage can occur, which can be a problem. Digital sovereignty involves encrypting all data and reducing key exchange (data minimization). These benefits are reduced until the user gets to interact with the application. Blockchain architecture's benefits can be lost depending on the architecture.
 
 To avoid this, OpenDSU gives particular importance to the Wallet idea. A Wallet, by definition, is a software system under an agent's control. It is a system that controls encryption keys or signature keys. The Wallets are used for storing different types of keys and users' private data. We have identified two types of wallets: the Cloud Wallet and the Edge Wallet.
-2. Cloud Agents
+
+## Cloud Agents
 
 Cloud Agents tend to compromise many of the properties of privacy and data control, for example, digital sovereignty or decentralization. Data stored in the DSU is only accessible with the help of associated keys. These keys will be resolved to obtain the necessary information about brick repositories or anchoring services that will allow agents to rebuild the DSU in the execution environment.
 
@@ -58,7 +61,8 @@ The figure above suggests that a client has access to APIHub and Cloud Agent. Th
 Cloud Agents are easy to integrate into existing systems, but their use tends to create a specific type of centralization, a confident trust in a specific node. Depending on the level at which the problem appears, difficulties may occur.
 
 More details on Enclaves are available in Enclaves (RFC-097).
-3. Edge Agents
+
+## Edge Agents
 
 Generally, the Edge Wallet is necessary when you want as much decentralization and digital sovereignty as possible.
 
@@ -73,14 +77,16 @@ The Edge Agent, besides custom code, has at its core the Wallet concept to ensur
 Generally, the safest way to implement these Edge Agents is to use a mobile or a native application, which, based on our technologies, can be implemented as a wrapper as a container for a browser, so that we can create portable applications. The trust is obtained from the fact that it is a notable instance, particular to each agent user. In some implementations, the APIHub is embedded inside the mobile Edge Agent.
 
 More details on SSApps are available in SSapp Implementation (RFC-034).
-4. DSU: No size fits all
+
+## DSU: No size fits all
 
 Figure 3: OpenDSU - No size fits all
 
 In OpenDSU, we have a "No size fits all" principle. In an ecosystem called the "Digital Trust Ecosystem", we have big companies that will tend to use Cloud Agents because they respect their internal rules about data management, security policies, backup etc.
 
 In the case of smaller companies or simple internet users (e.g. patients), respecting their rights to digital sovereignty rather than creating a more secure and decentralized solution means using OpenDSU in a way that does not give the server access to their data. Specifically, they choose to use Edge Agents and trust a service provider to host blockchain domains, avoiding Cloud Agents. Of course, this approach can create problems for architects in the way of implementation, but in some situations, it cannot be avoided.
-5. Cloud Agents vs Edge Agents
+
+## Cloud Agents vs Edge Agents
 
 Figure 4: Cloud Agents vs Edge Agents
 

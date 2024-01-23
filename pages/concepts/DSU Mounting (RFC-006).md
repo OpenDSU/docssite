@@ -6,7 +6,8 @@ nav_order: 5
 ---
 
 
-DSU Mounting (RFC-006)
+# DSU Mounting (RFC-006)
+{: .no_toc }
 
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
@@ -31,10 +32,10 @@ The proposal has been accepted and has an implementation.
 
 
 
-Abstract
+## Abstract
 
 This RFC about DSU Mounting is structured in 2 parts. The first part consists of the first two chapters, in which we present the introductory notions and the actual process of mounting a DSU into another DSU. The second part contains the last chapter (chapter 3), where we are presented with valuable examples to deepen our knowledge. The document focuses on Security Context but also presents the possibility of obtaining read and/or write rights in a mounted DSU.
-1. Introduction
+## Introduction
 
 The Data Sharing Units (DSU) concept presents the idea of a data structure anchored in the blockchain (on-chain), stored in an off-chain encryption system called brick storage. The anchoring operation refers to changes in a DSU, which are reflected in the blockchain. There is an anchor that contains the history of a DSU. Anchoring is a logical concept that appears as an instance (could be an element or a document type) inside an execution environment.
 
@@ -43,7 +44,7 @@ OpenDSU will split the DSUs into several pieces called bricks to provide data pr
 OpenDSU aims to facilitate the creation of a blockchain that supports multiple blockchains. Furthermore, it should support blockchains with various capabilities and security models (heterogeneous blockchains). For OpenDSU, the primary purpose of these blockchains is to function as an authentication mechanism for the DSU.
 
 More details about DSUs are available in Brick Storages (RFC-003).
-2. Description of the Mounting Process
+## Description of the Mounting Process
 
 A DSU can be seen as a file system. Like every other file system in the UNIX world (UNIX is a family of operating systems designed for flexibility and adaptability), it allows the mounting of other file systems, mainly other DSUs. So, we can create a file system composed hierarchically and recursively of multiple file systems from multiple DSUs.
 
@@ -84,7 +85,7 @@ A DID is the same as a URI that is resolved in a DID document. A DID document is
 More details are available in W3C DIDs (RFC-082).
 
 More details are available in Message Queues (RFC-073).
-3. Example
+## Example
 
 In a mounted DSU, any reading or writing is done with the information available in the Security Context (SC). Mounting a DSU can also be done with zero access SSIs, not only with SReadSSIs or SeedSSIs. Zero access SSIs only show us that there exists a DSU and that a certain public key controls it, and it has SReadSSIs or Seed SSIs that we can read and write. In other words, users with few rights will only be able to see another DSU mounted there, but they will not be able to access any of the information in that DSU.
 

@@ -5,7 +5,8 @@ parent: OpenDSU Concepts
 nav_order: 7
 ---
 
-DSU Reconstruction (RFC-008)
+# DSU Reconstruction (RFC-008)
+{: .no_toc }
 
 
 
@@ -32,69 +33,31 @@ The proposal has been accepted and has an implementation.
 
 
 
-Abstract
+## Abstract
 
 This RFC describes the reconstruction mechanism of a DSU (Data Sharing Unit), and it focuses on better understanding the terms used in OpenDSU. DSU Reconstruction helps create an overview of the connection mode of DSUs and presents specifications related to Bricks, Anchors, Security Context and Enclaves. It contains information found in other RFCs (see the table below). However, its primary goal is to deepen the knowledge of OpenDSU concepts so that everyone who reads this document can understand it.
 
-Number
-	
+Number    Name    Link
 
-Name
-	
+|RFC 001  |DSU Introduction      |  https://opendsu.com/rfc001 |
 
-Link
+|RFC 002  |KeySSIs Introduction  | https://opendsu.com/rfc002  |
 
-RFC 001
-	
+|RFC 003  |Brick storages        |  https://opendsu.com/rfc003 |
 
-DSU Introduction
-	
+|RFC 005  |Anchoring             | https://opendsu.com/rfc005  |
 
-https://opendsu.com/rfc001
+|RFC 070  |Bricking              |  https://opendsu.com/rfc070 |
 
-RFC 002
-	
+|RFC 075  |Security Context      |  https://opendsu.com/rfc075 |
 
-KeySSIs Introduction
-	
 
-https://opendsu.com/rfc002
-
-RFC 003
-	
-
-Brick storages
-	
-
-https://opendsu.com/rfc003
-
-RFC 005
-	
-
-Anchoring
-	
-
-https://opendsu.com/rfc005
-
-RFC 070
-	
-
-Bricking
-	
-
-https://opendsu.com/rfc070
-
-RFC 075
-	
-
-Security Context
-	
-
-https://opendsu.com/rfc075
-Overview
+## Overview
 
 The reconstruction of a DSU starts from an Execution Environment, from a KeySSI. We arrive in the blockchain, we take the anchor, and from the anchor, we get the bricks we need for rebuilding the DSU in the Execution Environment. Here, they are processed, we anchor again, we create bricks, and so on. The reconstruction of a DSU can be comparable with the booting of a computer. It is created to recognize different types of DSUs so that it will control how the validation will be managed for previous versions of DSUs.
-1. DSU Versions
+
+
+## DSU Versions
 
 From the perspective of OpenDSU, a DSU is an entity that exists temporarily in an execution environment (usually in a sandboxed container). Logically, a DSU can be seen as a micro-file system that contains data and code, which is booted in a sandboxed environment. It can also be understood as a key/value micro-database (each path to a file being a key, and the value being the content of that file).
 
@@ -120,14 +83,15 @@ The Brick concept assumes that a brick is a buffer, meaning data is encrypted an
 
 More details are available at the following links:
 
-DSU Introduction (RFC-001)
+[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html)
+[KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)
+[Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)
+[Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html)
 
-KeySSI (RFC-002)
 
-Anchoring (RFC-005)
 
-Bricking (RFC-070)
-2. Bricks Storage
+
+## Bricks Storage
 
 Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI, an anchor identifier is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its HashLinkSSI will be created and associated with the anchor identifier to keep track of all different BrickMap versions.
 
@@ -148,7 +112,7 @@ In the first strategy (diffs), we need to load all history and make a history re
 More details are available in Bricks Storages (RFC-003).
 
 More details are available in Bricking (RFC-070).
-3. DSU Reconstruction from Bricks
+## DSU Reconstruction from Bricks
 
 DSUs are encrypted at rest and in transit using a key derived from an identifier called KeySSI. A DSU can be imagined as a multi-directory file system with granular access and security properties for each “directory”. Instead of being stored as a whole, the files are stored as encrypted bricks. That is why we need DSU reconstruction to reassemble our files, and we reassemble them only for a limited time in an “Execution Environment”. These OpenDSU mechanisms implement “client-side encryption” as a means to enable Data Self-Sovereignty.
 
@@ -159,7 +123,7 @@ Figure 4: DSU Reconstruction from Bricks
 As mentioned above, we start from an Execution Environment from a KeySSI,  we go into a blockchain, we get the anchor, and from this anchor, we get the bricks needed to rebuild a DSU in the Execution Environment. Here, we process, and then we anchor again, we create bricks, and so on.
 
 Reconstruction of this DSU is done lazily (“lazy loading”). That means it loads just what is needed and when it is needed. The corresponding bricks are brought in when a particular file is needed inside a DSU. These BricksMaps, as we call them, contain a map with the necessary bricks from all DSUs.
-4. Security Context (SC) and DSU Reconstruction
+## Security Context (SC) and DSU Reconstruction
 
 A vital concept introduced by OpenDSU is the concept of Security Context. A Security Context is about the same as the idea of an Execution Environment where DSU reconstruction takes place. The difference is that the emphasis is on the required level of security. For example, we may have Security Contexts that have access to DSU signing and anchoring keys and Security Contexts that only have read access to data. Its purpose is to suggest to the OpenDSU programmers that working with secrets, cryptographic material, private keys, secret keys, and confidential/private records is always associated with a Security Context.
 
