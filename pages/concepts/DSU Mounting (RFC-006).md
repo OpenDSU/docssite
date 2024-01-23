@@ -9,6 +9,8 @@ nav_order: 5
 # DSU Mounting (RFC-006)
 {: .no_toc }
 
+{: .accepted }
+The proposal has been accepted and has an implementation.
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
@@ -18,8 +20,6 @@ nav_order: 5
 Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-{: .accepted }
-The proposal has been accepted and has an implementation.
 
 
 <details open markdown="block">

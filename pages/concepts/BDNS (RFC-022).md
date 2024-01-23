@@ -8,6 +8,10 @@ nav_order: 8
 # BDNS (RFC-022)
 {: .no_toc }
 
+{: .feedback }
+A period when the community can review the RFC (comment Docs).
+
+
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
@@ -16,8 +20,6 @@ nav_order: 8
 Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-{: .feedback }
-A period when the community can review the RFC (comment Docs).
 
 
 <details open markdown="block">

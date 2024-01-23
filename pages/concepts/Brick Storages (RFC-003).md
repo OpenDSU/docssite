@@ -8,6 +8,9 @@ nav_order: 3
 # Brick Storages (RFC-003)
 {: .no_toc }
 
+{: .accepted }
+The proposal has been accepted and has an implementation.
+
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
@@ -16,8 +19,6 @@ nav_order: 3
 Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-{: .accepted }
-The proposal has been accepted and has an implementation.
 
 
 <details open markdown="block">

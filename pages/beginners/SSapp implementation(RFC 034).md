@@ -46,9 +46,9 @@ The best way to understand SSApps is to start with the tutorial, where you will 
 
 This demonstration shows us 3 different SSApp:
 
-    One that is used by a pharmaceutical company to issue certificates for drug authenticity.
-    The second SSApp is the patient mobile app that can verify the authenticity of their medicine as well as have more informations on the product by flashing a QR Code (generated in 1)
-    The third one is a DSU explorer and allows anyone with a keySSI to see the content of the corresponding DSU.
+1. One that is used by a pharmaceutical company to issue certificates for drug authenticity.
+2. The second SSApp is the patient mobile app that can verify the authenticity of their medicine as well as have more informations on the product by flashing a QR Code (generated in 1)
+3. The third one is a DSU explorer and allows anyone with a keySSI to see the content of the corresponding DSU.
 
 
 ## Contributors   
