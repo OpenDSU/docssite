@@ -93,31 +93,27 @@ The KeySSI Resolvers should benefit from the BDNS (Blockchain Domain Name System
 Depending on the use case, different types of KeySSIs can be used. This table summarizes the different families of KeySSIs and references the links for more detailed information.
 
 
-
-
-SeedSSIs
+**[SeedSSIs](https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html)**
 	
-
 SeedSSI identifiers are a good method for identifying DSUs that are not shared with many people. A good example is the DSUs that implement some form of digital wallet for users and companies.
 
 
-ConstSSIs
+**[ConstSSIs](https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html)**
 
 Aim to provide human-readable identifiers that can be remembered easily.
 
 This RFC also contains information about ArraySSI, WalletSSI and PasswordSSI, since they are all derived to obtain constSSIs.
 
 
-
-HashLinkSSIs
+**[HashLinkSSI](hhttps://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html)**
 
 Brick-pointing KeySSIs that allow finding and decrypting un-anchored bricks/DSUs.
 
 
-
-SymetricalEncryptionSSI
+**[SymetricalEncryptionSSI](https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI%20(RFC-016).html)**
 	
 SymetricalEncryptionSSIs are used with HashLinkSeedSSIs for bricks’ construction and reconstruction.
+
 
 
 ## KeySSIs common functions
@@ -128,21 +124,20 @@ KeySSIs share a set of common functions. They serve to initialize KeySSIs with d
 How to use KeySSI functions:
 
 
-variable = keySSI.function();
+'variable = keySSI.function();
 
 dlDomain = keySSI.getDLDomain();
 
-seedKeyIdentifier = seedSSI.getIdentifier();
+seedKeyIdentifier = seedSSI.getIdentifier();'
 
 
 ### Function keySSI.autoLoad(identifier)
 
 Description:  Load parameters for KeySSI from a keySSI Identifier.
 
-|Name        |Type      |Value     |Description                                                                                    |
-| ---------- |:--------:|:--------:|-------------------------------------------------------------------------------------------:|
-
-|identifier  |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
+|Name       |Type      |Value     |Description                                                                                 |
+|----------:|:--------:|:--------:|-------------------------------------------------------------------------------------------:|
+|identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
 
 
 
@@ -153,10 +148,9 @@ Returns: This function does not return anything; it just changes the type of the
 Description: Is used to create a new type of KeySSI from a similar KeySSI. You should first create a well-known keySSI, then use the cast function to change the type.
 
 
-|Name        |Type      |Value     |Description                                                       |
-| ---------- |:--------:|:--------:|-----------------------------------------------------------------:|
-
-|identifier  |String    |*required | A string that uses the keySSI identifier syntax.icStr:control:vn*|
+|Name       |Type      |Value     |Description                                                       |
+|----------:|:--------:|:--------:|-----------------------------------------------------------------:|
+|identifier |String    |*required | A string that uses the keySSI identifier syntax.icStr:control:vn*|
 
 
 Returns: This function does not return anything.
@@ -169,203 +163,81 @@ Description: Create a clone of an already existing keySSI.
 
 Returns
 
-Name
-	
-
-Description
-
-KeySSI Object
-	
-
-A clone of your KeySSI
+|Name            |Description           |
+|KeySSI Object   |A clone of your KeySSI|
 
 
 ### Function keySSI.getAnchorID()
 
-Description: Retrieve the keySSI anchor identifier.
+|Name     |Description                                                       |
+|String   |Your KeySSI anchor Identifier. It is used for Anchoring operations|
 
-Returns
 
-Name
-	
-
-Description
-
-String
-
-Your KeySSI anchor Identifier. It is used for Anchoring operations.
 
 ### Function keySSI.getControlString()
 
-Description: Retrieve the keySSI control string.
+|Name     |Description                                                                            |
+|String   |Your KeySSI control string. It is used for Anchoring operations for validation purposes|
 
-Returns
-
-Name
-	
-
-Description
-
-String
-
-Your KeySSI control string. It is used for Anchoring operations for validation purposes.
 
 
 ### Function keySSI.getDLDomain()
 
-Description: Retrieve the keySSI DL Domain.
+|Name     |Description                                                                                  |
+|String   |Your keySSI DL Domain. It represents the ledger/blockchain domain name, and the personal key that was created and used. More info in BDNS|
 
-Returns
-
-Name
-	
-
-Description
-
-String
-	
-
-Your keySSI DL Domain. It represents the ledger/blockchain domain name, and the personal key that was created and used. More info in BDNS.
 
 
 ### Function keySSI.getDSURepresentationName()
 
-Description: Retrieve the keySSI DSU Representation Name.
+|Name     |Description                                                                                  |
+|String   |Your keySSI DSU Representation Name. This function is not fully implemented and will only return “RawDossier” if your key is from the seed subtype|
 
-Returns
 
-Name
-	
 
-Description
-
-String
-	
-
-Your keySSI DSU Representation Name. This function is not fully implemented and will only return “RawDossier” if your key is from the seed subtype.
 
 ### Function keySSI.getHint()
 
-Description: Retrieve the keySSI hint (tag).
+|Name     |Description                                                                                            |
+|String   |Your keySSI hint. The hint is optional for keySSI but can contain helpful information for the resolver.|
 
-Returns
-
-Name
-
-Description
-
-String
-	
-Your keySSI hint. The hint is optional for keySSI but can contain helpful information for the resolver.
 
 ### Function keySSI.getIdentifier(plain)
 
-Description: Retrieve the keySSI identifier.
+|Name  |Type      |Value     |Description                                                                        |
+|plain |string    |*required | Enter true if you want the identifier in the ssi format (ssi:za:domain:specificStr:control:vn).
 
-Name
+Else the identifier will be encoded in Base58.|
 	
 
-Type
-	
+**Returns**
 
-Value
-	
+|Name     |Type    |
+|plain   |boolean  |
 
-Description
-
-plain
-	
-
-string
-	
-
-*required
-	
-
-Enter true if you want the identifier in the ssi format (ssi:za:domain:specificStr:control:vn).
-
-Else the identifier will be encoded in Base58.
-
-Returns
-
-Name
-	
-
-Type
-	
-
-Response example
-
-plain
-	
-
-boolean
-	
 
 ### Function keySSI.getName()
 
-Description: Retrieve the keySSI subtype name. This function is obsolete, please use keySSI.getTypeName() instead.
+**Description:** Retrieve the keySSI subtype name. This function is obsolete, please use keySSI.getTypeName() instead.
 
-Returns: The subtype name (e.g.: seed, sza etc.) for your KeySSI.
+**Returns:** The subtype name (e.g.: seed, sza etc.) for your KeySSI.
 
 ### Function keySSI.getRelatedType(ssiType, callback)
 
 Description: Get the KeySSI that is related to your KeySSI and that is derived from the selected “ssiType”. A keySSI is returned if the ssiType can be derived from your KeySSI. It works only for lower subtypes for security reasons.
 
-Name
-	
 
-Type
-	
+|Name     |Type  |Value    |Description                                                                        |
+|plain    |string|*required|The ssi type you want to derive from your key.Need to be from the same family and at a lower level than your keySSI|
+|callback |functiong    |*required |                 |
 
-Value
-	
 
-Description
+**Callback parameters** 
 
-ssiType
-	
+|Name            |Type          |
+|err             |Error object  |
+|relatedKeySSI   |KeySSI object |
 
-string
-	
-
-*required
-	
-
-The ssi type you want to derive from your key.
-
-Need to be from the same family and at a lower level than your keySSI.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-** Callback parameters ** 
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-relatedKeySSI
-	
-
-KeySSI object
-	
 
 Description: Error message and the error. / The KeySSI of the selected type if it can be derived from your key. If it is the same subtype, it will return the same key.
 
@@ -374,117 +246,31 @@ Description: Error message and the error. / The KeySSI of the selected type if i
 
 Description: Retrieve the keySSI specific string.
 
-Returns
+**Returns**
 
-Name
-	
+|Name            |Description                                            |
+|String          |Your keySSI specific string. The specific string is a string that should contain enough random bytes for good security. The more the key is at a higher level, the more it should be secure.Public keySSI, like sza KeySSIs do not need this string.|
 
-Description
-
-String
-	
-
-Your keySSI specific string. The specific string is a string that should contain enough random bytes for good security. The more the key is at a higher level, the more it should be secure.
-
-Public keySSI, like sza KeySSIs do not need this string.
 
 
 ### Function keySSI.getVn()
+|Name            |Description                                                                                                          |
+|String          |Your keySSI Vn (version number). It represents the version of your keySSI so your resolver knows how to deal with it.|
 
-Description: Retrieve the keySSI version number.
 
-Returns
-
-Name
-	
-
-Description
-
-String
-	
-
-Your keySSI Vn (version number). It represents the version of your keySSI so your resolver knows how to deal with it.
 
 ### Function keySSI.load(subType, dlDomain, subtypeSpecificString, control, vn, hint)
 
 Description: Change the parameters of a KeySSI to replace the existing one.
 
-Name
-	
+|Name                  |Type  |Value    |Description                                 |
+|subType               |string|*required|TSubtype name of the keySSI.                |
+|dlDomain              |string|*required|Blockchain/ledger domain name of the keySSI.|
+|subtypeSpecific String|string|*required|The subtype specific string of the keySSI.  |
+|control               |string|*required|The control substring.                      |
+|vn                    |string|*required|The version number of the keySSI type.      |
+|hint                  |string|*required|Additional information for the keySSI.      |
 
-Type
-	
-
-Value
-	
-
-Description
-
-subType
-	
-
-string
-	
-
-*required
-	
-
-Subtype name of the keySSI.
-
-dlDomain
-	
-
-string
-	
-
-*required
-	
-
-Blockchain/ledger domain name of the keySSI.
-
-subtypeSpecificString
-	
-
-string
-	
-
-*required
-	
-
-The subtype specific string of the keySSI.
-
-control
-	
-
-string
-	
-
-*required
-	
-
-The control substring.
-
-vn
-	
-
-string
-	
-
-*required
-	
-
-The version number of the keySSI type.
-
-hint
-	
-
-string
-	
-
-*required
-	
-
-Additional information for the keySSI.
 
 Returns: This function does not return anything.
 

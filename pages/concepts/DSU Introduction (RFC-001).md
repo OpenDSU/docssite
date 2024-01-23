@@ -41,7 +41,6 @@ The proposal has been accepted and has an implementation.
 
 
 
-
 ## Abstract
 This RFC introduces the critical components of the OpenDSU project, such as DSU, as well as domain anchoring and brick storage services. Then, it introduces some essential mechanisms known as DSU mounting and DSU reconstruction. It also explains RFC’s role of keySSIs in the management of the DSU. Finally, it presents some primary use cases of DSUs.
 
