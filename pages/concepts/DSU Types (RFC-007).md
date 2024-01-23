@@ -9,10 +9,6 @@ nav_order: 6
 {: .no_toc }
 
 
-
-{: .feedback }
-A period when the community can review the RFC (comment Docs).
-
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
@@ -173,21 +169,21 @@ Description: Initialise a new wallet.
 
 Description: Exposes more classes that are able to handle different commands, such as:
 
-    + AddFileCommand
-    + AddFolderCommand
-    + CreateDSUCommand
-    + CreateFileCommand
-    + DefineCommand
-    + DeleteCommand
-    + DeriveCommand
-    + EndWithCommand
-    + GenKeyCommand
-    + GetIdentifierCommand
-    + MountCommand
-    + ObjToArrayCommand
-    + ReadFileCommand
-    + WithCommand
-    + _getByName
++ AddFileCommand
++ AddFolderCommand
++ CreateDSUCommand
++ CreateFileCommand
++ DefineCommand
++ DeleteCommand
++ DeriveCommand
++ EndWithCommand
++ GenKeyCommand
++ GetIdentifierCommand
++ MountCommand
++ ObjToArrayCommand
++ ReadFileCommand
++ WithCommand
++ _getByName
 
 ### AppBuilderService
 

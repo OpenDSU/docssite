@@ -74,15 +74,10 @@ Anchoring the ledgers into a parent ledger allows better security and auditabili
 ## Blockchain Domain Name System (BDNS) Concepts Summary
 
 |Concept          |Description                                                                                       |
-
 |BDNS             |Equivalent to the internet DNS for blockchains (distributed ledgers in general).                  |
-
 |BDNS Root Info   |A BDNS file containing the information about all root domains  and eventually other BDNS domains. |
-
 |BDNS Domain      |A string with alphanumeric identifiers separated by “.” characters.                               |
-
 |BDNS Root Domain |A BDNS domain without any “.” (a single identifier).                                              |
-
 |BDNS SubDomain   |A domain that contains additional prefixes to a BDNS Root Domain.                                 |
 
 Table 1: BDNS specific terminology summary
@@ -96,50 +91,30 @@ BDNS.hosts is a JSON-type file containing each known domain name on the current 
 
 ### BDNS Domains example: a root and subdomain
 
+'''
 {
-
 "demoroot": {
-
    "brickStorages": [
-
      “https://example1.com”,
-
      “https://example2.com”,
-
    ],
-
    "anchoringServices": [
-
      “https://example1.com”,
-
      “https://example2.com”,
-
    ]
-
  },
-
 "demo1.demoroot": {
-
    "brickStorages": [
-
      “https://example1.com”,
-
      “https://example2.com”,
-
    ],
-
    "anchoringServices": [
-
      “https://example1.com”,
-
      “https://example2.com”,
-
    ]
-
  }
-
 }
-
+'''
 
 
 This is the config for one root domain, “demoroot”, and a subdomain. Depending on their record type (“brickStorage” or “anchorService”), the endpoints are the addresses for either the node on which the Brick Storage service is running or the node running the Anchoring Service.

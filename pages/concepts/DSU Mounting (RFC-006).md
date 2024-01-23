@@ -91,6 +91,7 @@ In a mounted DSU, any reading or writing is done with the information available 
 
 If the Security Context (SC) controlled or used by users has at least one key with reading rights, they will be able to read that information. Users can also note/write in the respective DSU, but only if the Security Context has a key with write rights.
 
+```
 require("../../../psknode/bundles/testsRuntime");
 
 const tir = require("../../../psknode/tests/util/tir");
@@ -144,8 +145,7 @@ assert.callback("Trying to mount ", (testFinishCallback) => {
  });
 
 }, 5000);
-
-
+```
 
 
 ## Contributors   
