@@ -40,15 +40,10 @@ This RFC describes the reconstruction mechanism of a DSU (Data Sharing Unit), an
 Number    Name    Link
 
 |RFC 001  |DSU Introduction      |  https://opendsu.com/rfc001 |
-
 |RFC 002  |KeySSIs Introduction  | https://opendsu.com/rfc002  |
-
 |RFC 003  |Brick storages        |  https://opendsu.com/rfc003 |
-
 |RFC 005  |Anchoring             | https://opendsu.com/rfc005  |
-
 |RFC 070  |Bricking              |  https://opendsu.com/rfc070 |
-
 |RFC 075  |Security Context      |  https://opendsu.com/rfc075 |
 
 
