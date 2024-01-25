@@ -203,19 +203,18 @@ Even within the same wallet, we can have hardware sandboxing or darkening mechan
 
 <p>DSU storage is a content-addressable service similar to IPFS (InterPlanetary File System). The main differences are:</p>
 <ol>
-<li><p align="justify">OpenDSU encrypts everything by default and can reconstruct data from big "archives" lazily. Imagine that each DSU is like an encrypted virtual file system stored in a cloud optimized for lazy loading. Blockchain is used as a naming service to preserve data history, similar to IPNS (InterPlanetary Name System), but with specific immutability properties.</li></p>
-<li><p align="justify">OpenDSU provides a concept called BDNS (Blockchain Domain Naming Service) that allows you to segregate data:</li></p>
+<li>OpenDSU encrypts everything by default and can reconstruct data from big "archives" lazily. Imagine that each DSU is like an encrypted virtual file system stored in a cloud optimized for lazy loading. Blockchain is used as a naming service to preserve data history, similar to IPNS (InterPlanetary Name System), but with specific immutability properties.</li>
+<li>OpenDSU provides a concept called BDNS (Blockchain Domain Naming Service) that allows you to segregate data:</li>
 <ol type="a">
  <li>off-chain content as encrypted bricks;</li>
  <li>on-chain content in the form of anchors stored in multiple ledgers/blockchains.</li>
 </ol>
 
-  <li><p align="justify">OpenDSU provides a concept called KeySSI that improves secret management and secret data sharing (each DSU has something that resembles a recovery key, but from this key, you could derive a read-only access key in a decentralized environment).</li></p>
-
+  <li>OpenDSU provides a concept called KeySSI that improves secret management and secret data sharing (each DSU has something that resembles a recovery key, but from this key, you could derive a read-only access key in a decentralized environment).</li>
 </ol>
 
 <p align="justify">OpenDSU is intended to be used in enterprise blockchain solutions, so the aim is performance and strict data control/ownership. OpenDSU could easily use IPFS as the actual storage, but in the performance tests from previous years, the results could have been better. In cases where decentralization requires data replication in a P2P network, the IPFS brick storage strategy for OpenDSU could be a viable solution. For now, the use cases where we use OpenDSU use cloud-based storage strictly controlled by different companies. In a way, this is also a form of decentralization: the blockchain anchoring unifies the anchoring of the DSU (to provide data integrity in a digital ecosystem like an entire industry), but the actual data belong to separate companies.</p>
-<p>OpenDSU is an iteration of the IPFS intuition, providing new tools for programmers and architects.</p>
+OpenDSU is an iteration of the IPFS intuition, providing new tools for programmers and architects.
 
 
 Contributors   
@@ -224,9 +223,10 @@ Contributors
 2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
 
+
 ## Annex 1. Contributors
 
-|**Current Editors**                  |**Email**                                 |
+|**Current Editors**                  | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
 |Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
 |Cosmin Ursache                       | cosmin@axiologic.net                     |
@@ -239,7 +239,7 @@ Contributors
 |Daniel Sava                          | daniel@axiologic.net                     |
 |Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
 |Valentin Gérard                      | valentin@axiologic.net                   |
-|**PrivateSky Contributors**          |**Email**                                 |
+|**PrivateSky Contributors**          | **Email**                                |
 |Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
 |Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
 |Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
