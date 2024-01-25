@@ -74,7 +74,7 @@ From the perspective of OpenDSU, a DSU is an entity that exists temporarily in a
 
 ![alt text](https://docs.google.com/drawings/d/sgqHMdkcmeSZl8XLRGz5lVA/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=ZRBIjDNAMXZRCA&h=332&w=465&ac=1 )
 
-**Figure 2: DSU usage pattern** 
+<p style="text-align:center"> Figure 2: DSU usage pattern </p>
 
 The Execution Environment interacts with a DSU in 3 major ways:
 1.Read/write files from the file system;
