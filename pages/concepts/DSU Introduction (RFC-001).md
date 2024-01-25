@@ -65,7 +65,7 @@ By using the anchor identifier of the DSU, the agent will be able to anchor in t
 
 Now, owners of the same key or a special derivation of this key can find the reference to the map in the anchoring service. With this map, the agent can reconstruct the DSU in the execution environment for the user.</p>
 
- ## Data Sharing Unit (DSU)
+<h2> Data Sharing Unit (DSU)</h2>
 
 <p align="justify">From the perspective of OpenDSU, a DSU is an entity that exists temporarily in an execution environment (usually in a sandboxed container). Logically, a DSU can be understood as a micro-file system containing data and code booted in a sandboxed environment. It can also be understood as a key/value micro-database (each key being the path to a file and each value the contents of that file).</p>
 
