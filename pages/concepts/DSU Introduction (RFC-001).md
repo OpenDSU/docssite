@@ -13,7 +13,7 @@ nav_order: 1
 </style>
 
 
-# ** abc DSU Introduction (RFC-001)**
+# **DSU Introduction (RFC-001)**
 {: .no_toc }
 
 
