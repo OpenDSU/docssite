@@ -9,7 +9,7 @@ nav_order: 1
 {: .no_toc }
 
 {: .feedback }
-The proposal has been accepted and has an implementation.
+A period when the community can review the RFC (comment Docs).
 
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
@@ -74,138 +74,38 @@ The identifier contains the subtype and the domain. This is very important for f
 
 ### SeedSSI
 
-### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
-
-|Name       |Type      |Value     |Description                                                                                 |
-|identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
+#### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
 Description: Initialize a SeedSSI with your own parameters.
 
-Name
-	
+|**Name**       |**Type**      |**Value**     |**Description**                                                                                 |
+|dlDomain |string    |*required | The blockchain domain wanted to be used.|
+|typeSpecific(Optional) |string    | | TypeSpecific is the string that should provide enough security. For SeedSSI, as we can see in section 2, it is represented by a version of the personal private key encoded in Base58. If left empty, the function will generate a private key.|
+|control (optional) |string    | | Should be empty for the SeedSSI. Default value: undefined.|
+|Vn (optional) |string    | | The version number of the SeedSSI you want to use. Default value: “v0”.|
+|Hint (optional) |string    | | Optional information for the keySSI resolver. Default value: undefined.|
+|callback |function    |*required | Optional information for the keySSI resolver. Default value: undefined.|
 
-Type
-	
+**Callback parameters**
 
-Value
-	
+|**Name**       |**Type**          |**Response example**                                                             |
+|err            |Error object      |                                                                                 |
+|keySSI         |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html) |
 
-Description
-
-dlDomain
-	
-
-string
-	
-
-*required
-	
-
-The blockchain domain wanted to be used.
-
-typeSpecific
-
-(optional)
-	
-
-string
-	
-
-	
-
-TypeSpecific is the string that should provide enough security. For SeedSSI, as we can see in section 2, it is represented by a version of the personal private key encoded in Base58.
-
-If left empty, the function will generate a private key.
-
-control
-
-(optional)
-	
-
-string
-	
-
-	
-
-Should be empty for the SeedSSI.
-
-Default value: undefined.
-
-Vn
-
-(optional)
-	
-
-string
-	
-
-	
-
-The version number of the SeedSSI you want to use.
-
-Default value: “v0”.
-
-Hint
-
-(optional)
-	
-
-string
-	
-
-	
-
-Optional information for the keySSI resolver.
-
-Default value: undefined.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-keySSI
-	
-
-keySSI Object
-	
 
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
 Function seedSSI.derive()
 
+#### Function seedSSI.derive()
+
 Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
 Returns
+|**Name**             |**Type**                           |
+|sReadSSI object      |A sReadSSI object is returned.     |
+    |
 
-Name
-	
 
-Description
-
-sReadSSI object
-	
-
-A sReadSSI object is returned.
 Function seedSSI.getPrivateKey(format)
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
