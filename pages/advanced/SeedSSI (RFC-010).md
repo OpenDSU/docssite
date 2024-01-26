@@ -58,11 +58,7 @@ Description:  Load parameters for KeySSI from a keySSI Identifier.
 
 |**SubType**                  | **Description**                                |
 |:------------------------------------|:-----------------------------------------|
-|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU).
-
-Example of SeedSSI:
-
- ssi:seed:domain:private_key_base64::v0                                          |
+|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: ssi:seed:domain:private_key_base64::v0                                           |
 |Cosmin Ursache                       | cosmin@axiologic.net                     |
 |Teodor Lupu                          | teodor@axiologic.net                     |
 |Andi-Gabriel Țan                     | andi@axiologic.net                       |
