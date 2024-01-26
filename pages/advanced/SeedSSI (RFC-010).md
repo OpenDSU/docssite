@@ -53,11 +53,18 @@ Here is a summary of the different subtypes present in the SeedSSI family, from 
 |sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: ssi:sread:domain:hash_private_key_base64:public_key:v0                           |
 |sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: ssi:sza:domain::public_key:v0                                                    |
 
+<p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
-Table: SeedSSI’s family subtypes
-2. Type-specific and control substrings
+
+## 2. Type-specific and control substrings
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
+
+|**Type**                  | **Description**                                |
+|:------------------------------------|:-----------------------------------------|
+|seed                                 | text                                     |
+
+
 
 Type
 	
