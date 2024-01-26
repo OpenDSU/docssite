@@ -78,9 +78,11 @@ The identifier contains the subtype and the domain. This is very important for f
 
 |**Name**       |**Type**      |**Value**     |**Description**                                                                                 |
 |dlDomain |string    |*required | The blockchain domain wanted to be used.|
-|dlDomain |string    |*required | The blockchain domain wanted to be used.|
-|dlDomain |string    |*required | The blockchain domain wanted to be used.|
-|dlDomain |string    |*required | The blockchain domain wanted to be used.|
+|typeSpecific(Optional) |string    | | TypeSpecific is the string that should provide enough security. For SeedSSI, as we can see in section 2, it is represented by a version of the personal private key encoded in Base58. If left empty, the function will generate a private key.|
+|control (optional) |string    | | Should be empty for the SeedSSI. Default value: undefined.|
+|Vn (optional) |string    | | The version number of the SeedSSI you want to use. Default value: “v0”.|
+|Hint (optional) |string    | | Optional information for the keySSI resolver. Default value: undefined.|
+|callback |function    |*required | Optional information for the keySSI resolver. Default value: undefined.|
 
 
 
