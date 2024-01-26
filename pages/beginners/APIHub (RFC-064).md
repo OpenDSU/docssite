@@ -1,5 +1,5 @@
 ---
-title: Error Reporting (RFC-064)
+title: Error Reporting
 layout: home
 parent: OpenDSU for Beginners
 nav_order: 4
@@ -14,7 +14,6 @@ nav_order: 4
 
 
 # **Error Reporting (RFC-064)**
-
 {: .no_toc }
 
 
@@ -39,6 +38,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   {: .text-delta }
 1. TOC
 {:toc}
+
+
+
 
 
 
