@@ -23,13 +23,16 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <details open markdown="block">
   <summary>
-    Table of contents
+    Cuprins
   </summary>
   {: .text-delta }
-1. TOC
+1. [Secțiunea 1](#secțiunea-1)
+    1.0. [Subsecțiunea 1.0](#subsecțiunea-10)
+    1.1. [Subsecțiunea 1.1](#subsecțiunea-11)
+        1.1.1. [Sub-subsecțiunea 1.1.1](#sub-subsecțiunea-111)
 {:toc}
 
-## Abstract 123
+## Abstract
 
 SeedSSI is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
 
@@ -96,7 +99,7 @@ Description: Initialize a SeedSSI with your own parameters.
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
 Function seedSSI.derive()
 
-#### Function seedSSI.derive()
+### Function seedSSI.derive()
 
 Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
