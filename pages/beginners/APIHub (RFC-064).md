@@ -51,7 +51,7 @@ This API space allows the user to set up custom error reporting.
 ## System functions ##
 
 
-| **Functions**          | **Description**                                           |
+| Functions              | Description                                               |
 |:-----------------------|:----------------------------------------------------------|
 | getFS                  | This function is used to load the File System (fs) module |
 | getPath                | This function is used to load the path module.            |
@@ -63,7 +63,7 @@ This API space allows the user to set up custom error reporting.
 ## Error ##
 
 
-### **Function createOpenDSUErrorWrapper(message, err, otherErrors)** 
+### Function createOpenDSUErrorWrapper(message, err, otherErrors)
 **Description**: Create a new error wrapper.
 
 | Name         | Type          | Value      | Description                                                 |
@@ -83,7 +83,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function OpenDSUSafeCallback(callback)** 
+### Function OpenDSUSafeCallback(callback)
 **Description**: Verify that there is a callback. If not, report an error or a warning.
 
 | Name       | Type     | Value     | Description                      |
@@ -100,7 +100,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function observeUserRelevantMessages(type, callback)**
+### Function observeUserRelevantMessages(type, callback)
 **Description**: Register to one observer (error, info, warn, or dev) to get the associated messages.
 
 | Name     | Type     | Value     | Description                                                                                              |
@@ -111,7 +111,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function unobserveUserRelevantMessages(type, callback)**
+### Function unobserveUserRelevantMessages(type, callback)
 **Description**: Stop observing and receiving associated messages.
 
 | Name     | Type     | Value      | Description                                                                |
@@ -123,7 +123,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function printOpenDSUError(...args)**
+### Function printOpenDSUError(...args)
 **Description**: Print openDSU errors.
 
 | Name  | Type | Value | Description                                              |
@@ -134,7 +134,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function registerMandatoryCallback(callback, timeout)**
+### Function registerMandatoryCallback(callback, timeout)
 **Description**: Make sure that callback is called within the specified time (5s by default).
 
 | Name     | Type     | Value            | Description                                                                |
@@ -145,7 +145,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function reportDevRelevantInfo(message)**
+### Function reportDevRelevantInfo(message)
 **Description**: Report additional information about the error to developers.
 
 | Name    | Type  | Value     | Description                                            |
@@ -155,7 +155,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function reportUserRelevantError(message, err, showIntermediateErrors)**
+### Function reportUserRelevantError(message, err, showIntermediateErrors)
 **Description**: Report an error to the user in the console.
 
 | Name                   | Type         | Value     | Description                                              |
@@ -167,7 +167,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function reportUserRelevantInfo(message)**
+### Function reportUserRelevantInfo(message)
 **Description**: Report additional information about the error to users.
 
 | Name    | Type   | Value     | Description                                       |
@@ -178,7 +178,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function reportUserRelevantWarning(message)**
+### Function reportUserRelevantWarning(message)
 **Description**: Report a warning to the user in the console.
 
 | Name    | Type   | Value     | Description                                              |
@@ -188,12 +188,12 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **DB_INSERT_EXISTING_RECORD_ERROR**
+### DB_INSERT_EXISTING_RECORD_ERROR
 **Description**: A predefined error with the following message: "Trying to insert into the existing record".
 
 
 
-Contributors   
+**Contributors**  
 
 1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
 2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
