@@ -64,39 +64,8 @@ The identifier contains the subtype and the domain. This is very important for f
 |:------------------------------------|:-----------------------------------------|:----------------------------------------|
 |seed                                 | An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation).                                     |empty.                                     |
 |sread                                | Hash of the  secp256k1 private key.                                     | The public secp256k1 key.                                     |
+|sza                                | empty                                     | The public secp256k1 key.                                     |
 
-
-
-
-Type
-	
-
-Type Specific substring
-	
-
-Control substring
-
-seed
-	
-
-An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation).
-	
-
-empty.
-
-sread
-	
-
-Hash of the  secp256k1 private key.
-	
-
-The public secp256k1 key.
-
-sza
-	
-
-empty
-	
 
 The public secp256k1 key.
 3. Specific functions for SeedSSI’s family subtypes
