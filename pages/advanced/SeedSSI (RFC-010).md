@@ -39,7 +39,7 @@ SzaSSI is then derived from the sReadSSI (or two times from the SeedSSI). It pro
 
 The SeedSSI family is currently the easiest and most used way to generate and interact with
 
-[https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html](DSU Objects).
+[DSU Objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html).
 
 Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2)
 1. SeedSSI’s family subtypes with examples
