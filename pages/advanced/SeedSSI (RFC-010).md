@@ -76,14 +76,15 @@ The identifier contains the subtype and the domain. This is very important for f
 
 ### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
-|Name       |Type      |Value     |Description                                                                                 |
-|identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
+|**Name**       |**Type**      |**Value**     |**Description**                                                                                 |
+|dlDomain |string    |*required | The blockchain domain wanted to be used.|
+|dlDomain |string    |*required | The blockchain domain wanted to be used.|
+|dlDomain |string    |*required | The blockchain domain wanted to be used.|
+|dlDomain |string    |*required | The blockchain domain wanted to be used.|
 
-|**Name**          | **Type**                  | **Value**                            | **Description**                            |
-|:------------------------------------|:-----------------------------------------|:----------------------------------------|
-|dlDomain                                 | string                                     | *required
 
-.                                     | The blockchain domain wanted to be used.                                     
+
+                                  
 
 
 
