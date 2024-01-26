@@ -43,7 +43,7 @@ The SeedSSI family is currently the easiest and most used way to generate and in
 
 <p style="text-align:center"> <b>Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2) </b></p>
 
-## 1. SeedSSI’s family subtypes with examples
+## SeedSSI’s family subtypes with examples
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
@@ -73,7 +73,11 @@ The identifier contains the subtype and the domain. This is very important for f
 (Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
 
 ### SeedSSI
-Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
+
+### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
+
+|Name       |Type      |Value     |Description                                                                                 |
+|identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
 
 Description: Initialize a SeedSSI with your own parameters.
 
