@@ -26,10 +26,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     Cuprins
   </summary>
   {: .text-delta }
-1. [Secțiunea 1](#secțiunea-1)
-    1.1. [Subsecțiunea 1.1](#subsecțiunea-11)
-        1.1.1. [Sub-subsecțiunea 1.1.1](#sub-subsecțiunea-111)
-            1.1.1.1. [Sub-sub-subsecțiunea 1.1.1.1](#sub-sub-subsecțiunea-1111)
+1. [Abstract](#abstract)
+2. [SeedSSI’s family subtypes with examples](#seedssis-family-subtypes-with-examples)
+3. [Type-specific and control substrings](#type-specific-and-control-substrings)
+4. [Specific functions for SeedSSI’s family subtypes](#specific-functions-for-seedssis-family-subtypes)
+    4.1. [SeedSSI](#seedssi)
 {:toc}
 
 ## Abstract
