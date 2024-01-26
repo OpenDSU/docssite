@@ -12,8 +12,24 @@ nav_order: 1
 The proposal has been accepted and has an implementation.
 
 
+**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
-Abstract
+**Copyright: MIT license**
+
+ **Copyright**
+Copyright © 2018-2022 Axiologic Research and Contributors.
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+
+## Abstract
 
 SeedSSI is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
 
