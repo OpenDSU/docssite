@@ -60,9 +60,9 @@ Here is a summary of the different subtypes present in the SeedSSI family, from 
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 
-|**Type**                  | **Description**                                |
+|**Type**                  | **Description**                                | **Text**                            |
 |:------------------------------------|:-----------------------------------------|
-|seed                                 | text                                     |
+|seed                                 | text                                     |text                                     |
 
 
 
