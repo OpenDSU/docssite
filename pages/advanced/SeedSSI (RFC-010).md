@@ -76,6 +76,8 @@ The identifier contains the subtype and the domain. This is very important for f
 
 ### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
+Description: Initialize a SeedSSI with your own parameters.
+
 |**Name**       |**Type**      |**Value**     |**Description**                                                                                 |
 |dlDomain |string    |*required | The blockchain domain wanted to be used.|
 |typeSpecific(Optional) |string    | | TypeSpecific is the string that should provide enough security. For SeedSSI, as we can see in section 2, it is represented by a version of the personal private key encoded in Base58. If left empty, the function will generate a private key.|
@@ -84,125 +86,13 @@ The identifier contains the subtype and the domain. This is very important for f
 |Hint (optional) |string    | | Optional information for the keySSI resolver. Default value: undefined.|
 |callback |function    |*required | Optional information for the keySSI resolver. Default value: undefined.|
 
+**Callback parameters**
+|**Name**       |**Type**      |**Response example**     |
+|err       |Error object      |    |
+|keySSI       |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)   |
 
-
-                                  
-
-
-
-
-
-Description: Initialize a SeedSSI with your own parameters.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-dlDomain
-	
-
-string
-	
-
-*required
-	
-
-The blockchain domain wanted to be used.
-
-typeSpecific
-
-(optional)
-	
-
-string
-	
 
 	
-
-TypeSpecific is the string that should provide enough security. For SeedSSI, as we can see in section 2, it is represented by a version of the personal private key encoded in Base58.
-
-If left empty, the function will generate a private key.
-
-control
-
-(optional)
-	
-
-string
-	
-
-	
-
-Should be empty for the SeedSSI.
-
-Default value: undefined.
-
-Vn
-
-(optional)
-	
-
-string
-	
-
-	
-
-The version number of the SeedSSI you want to use.
-
-Default value: “v0”.
-
-Hint
-
-(optional)
-	
-
-string
-	
-
-	
-
-Optional information for the keySSI resolver.
-
-Default value: undefined.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-keySSI
-	
-
-keySSI Object
-	
-
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
 Function seedSSI.derive()
 
