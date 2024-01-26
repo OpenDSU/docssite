@@ -100,13 +100,15 @@ Function seedSSI.derive()
 
 Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
-Returns
-|**Name**             |**Type**                           |
-|sReadSSI object      |A sReadSSI object is returned.     |
-    |
+**Returns**
+
+| **Name**        | **Description**                |
+|-----------------|--------------------------------|
+| sReadSSI object | A sReadSSI object is returned. |
 
 
-Function seedSSI.getPrivateKey(format)
+
+**Function seedSSI.getPrivateKey(format)**
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
 
