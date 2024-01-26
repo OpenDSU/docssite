@@ -5,10 +5,31 @@ parent: Open DSU Advanced
 nav_order: 1
 ---
 
-SeedSSI (RFC-010)
+# SeedSSI (RFC-010)
+{: .no_toc }
+
+{: .feedback }
+The proposal has been accepted and has an implementation.
 
 
-Abstract
+**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright**
+Copyright © 2018-2022 Axiologic Research and Contributors.
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+
+## Abstract
 
 SeedSSI is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
 
@@ -16,86 +37,47 @@ SReadSSI is the first key that can be derived from the SeedSSI and shared. It gr
 
 SzaSSI is then derived from the sReadSSI (or two times from the SeedSSI). It provides no access to the DSU but can serve as proof that the DSU (and the seedSSI it was generated from) exists and was anchored (blockchain-based timestamping).
 
-The SeedSSI family is currently the easiest and most used way to generate and interact with DSU objects.
+The SeedSSI family is currently the easiest and most used way to generate and interact with [DSU Objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html).
 
-Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2)
-1. SeedSSI’s family subtypes with examples
+<img alt="" align="center" src="" class="imgMain"/>
+
+<p style="text-align:center"> <b>Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2) </b></p>
+
+## SeedSSI’s family subtypes with examples
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
-SubType
-	
+|**SubType**                  | **Description**                                |
+|:------------------------------------|:-----------------------------------------|
+|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                           |
+|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_                           |
+|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                    |
 
-Description
+<p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
-seed
-	
 
-Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU).
-
-Example of SeedSSI:
-
- ssi:seed:domain:private_key_base64::v0
-
-sread
-	
-
-DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU.
-
-Example of SReadSSI:
-
- ssi:sread:domain:hash_private_key_base64:public_key:v0
-
-sza
-	
-
-Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions.
-
-Example of SzaSSI:
-
-ssi:sza:domain::public_key:v0
-
-Table: SeedSSI’s family subtypes
-2. Type-specific and control substrings
+## Type-specific and control substrings
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 
-Type
-	
+|**Type**          | **Type Specific substring**                  | **Control substring**                            |
+|:------------------------------------|:-----------------------------------------|:----------------------------------------|
+|seed                                 | An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation).                                     |empty.                                     |
+|sread                                | Hash of the  secp256k1 private key.                                     | The public secp256k1 key.                                     |
+|sza                                | empty                                     | The public secp256k1 key.                                     |
 
-Type Specific substring
-	
 
-Control substring
 
-seed
-	
+## Specific functions for SeedSSI’s family subtypes
 
-An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation).
-	
+(Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
 
-empty.
+### SeedSSI
 
-sread
-	
+### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
-Hash of the  secp256k1 private key.
-	
-
-The public secp256k1 key.
-
-sza
-	
-
-empty
-	
-
-The public secp256k1 key.
-3. Specific functions for SeedSSI’s family subtypes
-
-(Common functions for all keySSIs are available here.)
-3.1. SeedSSI
-Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
+|Name       |Type      |Value     |Description                                                                                 |
+|identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
 
 Description: Initialize a SeedSSI with your own parameters.
 
