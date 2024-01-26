@@ -23,14 +23,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <details open markdown="block">
   <summary>
-    Cuprins
+    Table of contents
   </summary>
   {: .text-delta }
-1. [Abstract](#abstract)
-2. [SeedSSI’s family subtypes with examples](#seedssis-family-subtypes-with-examples)
-3. [Type-specific and control substrings](#type-specific-and-control-substrings)
-4. [Specific functions for SeedSSI’s family subtypes](#specific-functions-for-seedssis-family-subtypes)
-    4.1. [SeedSSI](#seedssi)
+1. TOC
 {:toc}
 
 ## Abstract
