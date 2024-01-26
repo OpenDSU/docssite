@@ -9,7 +9,7 @@ nav_order: 1
 {: .no_toc }
 
 {: .feedback }
-The proposal has been accepted and has an implementation.
+A period when the community can review the RFC (comment Docs).
 
 
 **Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
@@ -88,17 +88,10 @@ Description: Initialize a SeedSSI with your own parameters.
 
 **Callback parameters**
 
-|**Name**       |**Type**          |**Response example**     |
-|err            |Error object      |                         |
+|**Name**       |**Type**          |**Response example**                                                             |
+|err            |Error object      |                                                                                 |
+|keySSI         |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html) |
 
-
-
-
-
-**Callback parameters**
-|**Name**       |**Type**      |**Response example**     |
-|err       |Error object      |    |
-|keySSI       |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)   |
 
 
 	
