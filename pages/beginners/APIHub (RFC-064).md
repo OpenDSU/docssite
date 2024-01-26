@@ -188,7 +188,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### ** DB_INSERT_EXISTING_RECORD_ERROR**
+### **DB_INSERT_EXISTING_RECORD_ERROR**
 **Description**: A predefined error with the following message: "Trying to insert into the existing record".
 
 
