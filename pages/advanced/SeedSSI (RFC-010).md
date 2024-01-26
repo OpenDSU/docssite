@@ -54,6 +54,36 @@ Description:  Load parameters for KeySSI from a keySSI Identifier.
 |identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
 
 
+## Annex 1. Contributors
+
+|**Current Editors**                  | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+|Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+|Cosmin Ursache                       | cosmin@axiologic.net                     |
+|Teodor Lupu                          | teodor@axiologic.net                     |
+|Andi-Gabriel Țan                     | andi@axiologic.net                       |
+|**Contributors Axiologic Research**  | **Email**                                |
+|Adrian Ganga                         | adrian@axiologic.net                     |
+|Andi-Gabriel Țan                     | andi@axiologic.net                       |
+|Cosmin Ursache                       | cosmin@axiologic.net                     |
+|Daniel Sava                          | daniel@axiologic.net                     |
+|Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+|Valentin Gérard                      | valentin@axiologic.net                   |
+|**PrivateSky Contributors**          | **Email**                                |
+|Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+|Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+|Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+|Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+|Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+|Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+|Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+|Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+|**PharmaLedger Contributors**        | **Email**                                |
+|Ana Balan                            | bam@rms.ro (RMS)                         |
+|Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+|Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+|Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+
 
 Returns: This function does not return anything; it just changes the type of the existing key.
 	
