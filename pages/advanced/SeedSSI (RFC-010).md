@@ -79,6 +79,16 @@ The identifier contains the subtype and the domain. This is very important for f
 |Name       |Type      |Value     |Description                                                                                 |
 |identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
 
+|**Name**          | **Type**                  | **Value**                            | **Description**                            |
+|:------------------------------------|:-----------------------------------------|:----------------------------------------|
+|dlDomain                                 | string                                     | *required
+
+.                                     | The blockchain domain wanted to be used.                                     
+
+
+
+
+
 Description: Initialize a SeedSSI with your own parameters.
 
 Name
