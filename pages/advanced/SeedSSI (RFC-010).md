@@ -60,7 +60,7 @@ Here is a summary of the different subtypes present in the SeedSSI family, from 
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 
-|**Type**                  | **Type Specific substring**                                | **Control substring**                            |
+|**Type**          | **Type Specific substring**                  | **Control substring**                            |
 |:------------------------------------|:-----------------------------------------|:----------------------------------------|
 |seed                                 | An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation).                                     |empty.                                     |
 |sread                                | Hash of the  secp256k1 private key.                                     | The public secp256k1 key.                                     |
