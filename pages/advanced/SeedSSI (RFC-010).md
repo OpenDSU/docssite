@@ -37,7 +37,7 @@ SReadSSI is the first key that can be derived from the SeedSSI and shared. It gr
 
 SzaSSI is then derived from the sReadSSI (or two times from the SeedSSI). It provides no access to the DSU but can serve as proof that the DSU (and the seedSSI it was generated from) exists and was anchored (blockchain-based timestamping).
 
-The SeedSSI family is currently the easiest and most used way to generate and interact with DSU objects.
+The SeedSSI family is currently the easiest and most used way to generate and interact with [https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html]: DSU Objects
 
 Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2)
 1. SeedSSI’s family subtypes with examples
