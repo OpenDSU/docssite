@@ -69,9 +69,11 @@ The Security Context can have two enclaves:
      <li>Is a secure storage that keeps data specific to the current wallet</li>
      <li>Typically a “WalletDB” (but configurable from environment.js)</li>
    </ol>
- <li>The Shared Enclave:</li>
+   <ol>
+  <li>The Shared Enclave:</li>
    <ol>An optional secure storage for enterprise use cases</ol>
    <ol>The type is configurable from the demiurge tool</ol>
+   </ol>
 </ol>
 
 Security Contexts are storing (indirectly, through enclaves):
@@ -536,9 +538,9 @@ Here is the list of operations available on the security context object created 
 
 **Contributors**   
 
-1. [Axiologic Research](www.axiologic.net):<p align="justify"> New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
+1. [Axiologic Research](www.axiologic.net):New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
 2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)</p> 
+3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/) 
 
 
 ## Annex 1. Contributors
