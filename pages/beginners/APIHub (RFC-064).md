@@ -1,93 +1,100 @@
 ---
-title: APIHub 
+title: Error Reporting (RFC-064)
 layout: home
 parent: OpenDSU for Beginners
 nav_order: 4
 ---
+<style>
+.imgMain{
+    display.block;
+    margin-left:70px;
+    margin-right:auto;
+} 
+</style>
 
-APIHub (RFC-064)
 
-Abstract
+# **Error Reporting (RFC-064)**
+
+{: .no_toc }
+
+
+{: .draft }
+A period when the community can review the RFC (commnent Docs)
+
+
+**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright**
+
+Copyright © 2018-2022 Axiologic Research and Contributors.
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+   
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+
+
+
+## Abstract ##
 
 This API space allows the user to set up custom error reporting.
-1. System functions
 
-Functions
-	
+## System functions ##
 
-Description
 
-getFS
-	
+| **Functions**          | **Description**                                           |
+|:-----------------------|:----------------------------------------------------------|
+| getFS                  | This function is used to load the File System (fs) module |
+| getPath                | This function is used to load the path module.            |
+| getEnvironmentVariable | Get the value of the selected environment variable.       |
+| setEnvironmentVariable | Set a value for the selected environment variable.        |
 
-This function is used to load the File System (fs) module.
 
-getPath
-	
 
-This function is used to load the path module.
+## Error ##
 
-getEnvironmentVariable
-	
+### **Function createOpenDSUErrorWrapper(message, err, otherErrors)** ### 
+**Description**: Create a new error wrapper.
 
-Get the value of the selected environment variable.
+|Name |Type |Value |Description | |message |string |*required | The message that will be sent in case there is an error. | |err |Error object| The error you want to create a wrapper for (previous error). | |otherErrors| | |Other errors you want to store in the ErrorWrapper.|
 
-setEnvironmentVariable
-	
 
-Set a value for the selected environment variable.
-2. Error
-Function createOpenDSUErrorWrapper(message, err, otherErrors)
+| Name         | Type          | Value      | Description                                                 |
+|--------------|---------------|------------|-------------------------------------------------------------|
+| message      | string        | *required  | The message that will be sent in case there is an error.    |
+| err          | Error object  |            | The error you want to create a wrapper for (previous error).|
+| otherErrors  |               |            | Other errors you want to store in the ErrorWrapper.                                                           |
 
-Description: Create a new error wrapper.
 
-Name
-	
 
-Type
-	
+**Returns**
 
-Value
-	
 
-Description
+| head1        | head two          | three |   |
+|:-------------|:------------------|:------|---|
+| ok           | good swedish fish | nice  |   |
+| out of stock | good and plenty   | nice  |   |
+| ok           | good `oreos`      | hmm   |   |
+| ok           | good `zoute` drop | yumm  |   |
 
-message
-	
 
-string
-	
 
-*required
-	
+| Name                                             | Description                                                                                                                                                                                        |
+|--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ErrorWrapper object                              | A new ErrorWrapper object containing information about an issue, such as the previous error that led to the actual error, a debug message, and other information the developer judged relevantly.| >see operations available on ErrorWrapper object.
 
-The message that will be sent in case there is an error.
 
-err
-	
 
-Error object
-	
 
-	
 
-The error you want to create a wrapper for (previous error).
 
-otherErrors
-	
-
-	
-
-	
-
-Other errors you want to store in the ErrorWrapper.
-
-Returns
-
-Name
-	
-
-Description
 
 ErrorWrapper object
 	
