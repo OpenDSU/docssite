@@ -87,6 +87,15 @@ Description: Initialize a SeedSSI with your own parameters.
 |callback |function    |*required | Optional information for the keySSI resolver. Default value: undefined.|
 
 **Callback parameters**
+
+|**Name**       |**Type**          |**Response example**     |
+|err            |Error object      |                         |
+
+
+
+
+
+**Callback parameters**
 |**Name**       |**Type**      |**Response example**     |
 |err       |Error object      |    |
 |keySSI       |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)   |
