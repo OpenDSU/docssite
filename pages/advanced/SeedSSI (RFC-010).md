@@ -47,70 +47,12 @@ The SeedSSI family is currently the easiest and most used way to generate and in
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
-
-Description:  Load parameters for KeySSI from a keySSI Identifier.
-
-|Name       |Type      |Value     |Description                                                                                 |
-|identifier |String    |*required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn*|
-
-
-## Annex 1. Contributors
-
 |**SubType**                  | **Description**                                |
 |:------------------------------------|:-----------------------------------------|
 |seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: ssi:seed:domain:private_key_base64::v0                                           |
-|Cosmin Ursache                       | cosmin@axiologic.net                     |
-|Teodor Lupu                          | teodor@axiologic.net                     |
-|Andi-Gabriel Țan                     | andi@axiologic.net                       |
-|**Contributors Axiologic Research**  | **Email**                                |
-|Adrian Ganga                         | adrian@axiologic.net                     |
-|Andi-Gabriel Țan                     | andi@axiologic.net                       |
-|Cosmin Ursache                       | cosmin@axiologic.net                     |
-|Daniel Sava                          | daniel@axiologic.net                     |
-|Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
-|Valentin Gérard                      | valentin@axiologic.net                   |
-|**PrivateSky Contributors**          | **Email**                                |
-|Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
-|Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
-|Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
-|Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
-|Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
-|Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
-|Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
-|Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
-|**PharmaLedger Contributors**        | **Email**                                |
-|Ana Balan                            | bam@rms.ro (RMS)                         |
-|Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
-|Cosmin Ursache                       | cos@rms.ro (RMS)                         |
-|Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: ssi:sread:domain:hash_private_key_base64:public_key:v0                           |
+|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: ssi:sza:domain::public_key:v0                                                    |
 
-
-Returns: This function does not return anything; it just changes the type of the existing key.
-	
-
-Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU).
-
-Example of SeedSSI:
-
- ssi:seed:domain:private_key_base64::v0
-
-sread
-	
-
-DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU.
-
-Example of SReadSSI:
-
- ssi:sread:domain:hash_private_key_base64:public_key:v0
-
-sza
-	
-
-Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions.
-
-Example of SzaSSI:
-
-ssi:sza:domain::public_key:v0
 
 Table: SeedSSI’s family subtypes
 2. Type-specific and control substrings
