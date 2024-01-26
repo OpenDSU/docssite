@@ -49,9 +49,9 @@ Here is a summary of the different subtypes present in the SeedSSI family, from 
 
 |**SubType**                  | **Description**                                |
 |:------------------------------------|:-----------------------------------------|
-|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: **ssi:seed:domain:private_key_base64::v0**                                           |
-|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: **ssi:sread:domain:hash_private_key_base64:public_key:v0**                           |
-|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: **ssi:sza:domain::public_key:v0**                                                    |
+|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: __ssi:seed:domain:private_key_base64::v0__                                           |
+|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: __ssi:sread:domain:hash_private_key_base64:public_key:v0__                           |
+|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                    |
 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
@@ -67,10 +67,11 @@ The identifier contains the subtype and the domain. This is very important for f
 |sza                                | empty                                     | The public secp256k1 key.                                     |
 
 
-The public secp256k1 key.
-3. Specific functions for SeedSSI’s family subtypes
 
-(Common functions for all keySSIs are available here.)
+## 3. Specific functions for SeedSSI’s family subtypes
+
+(Common functions for all keySSIs are available [Here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
+
 3.1. SeedSSI
 Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
