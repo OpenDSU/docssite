@@ -42,6 +42,26 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
+<!-- TOC -->
+* [**Error Reporting (RFC-064)**](#error-reporting-rfc-064)
+  * [Abstract](#abstract-)
+  * [System functions](#system-functions-)
+  * [Error](#error-)
+    * [Function createOpenDSUErrorWrapper(message, err, otherErrors)](#function-createopendsuerrorwrappermessage-err-othererrors)
+    * [Function OpenDSUSafeCallback(callback)](#function-opendsusafecallbackcallback)
+    * [Function observeUserRelevantMessages(type, callback)](#function-observeuserrelevantmessagestype-callback)
+    * [Function unobserveUserRelevantMessages(type, callback)](#function-unobserveuserrelevantmessagestype-callback)
+    * [Function printOpenDSUError(...args)](#function-printopendsuerrorargs)
+    * [Function registerMandatoryCallback(callback, timeout)](#function-registermandatorycallbackcallback-timeout)
+    * [Function reportDevRelevantInfo(message)](#function-reportdevrelevantinfomessage)
+    * [Function reportUserRelevantError(message, err, showIntermediateErrors)](#function-reportuserrelevanterrormessage-err-showintermediateerrors)
+    * [Function reportUserRelevantInfo(message)](#function-reportuserrelevantinfomessage)
+    * [Function reportUserRelevantWarning(message)](#function-reportuserrelevantwarningmessage)
+    * [DB_INSERT_EXISTING_RECORD_ERROR](#db_insert_existing_record_error)
+  * [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
+
+
 
 
 ## Abstract ##
