@@ -5,7 +5,12 @@ parent: Open DSU Advanced
 nav_order: 1
 ---
 
-SeedSSI (RFC-010)
+# SeedSSI (RFC-010)
+{: .no_toc }
+
+{: .feedback }
+The proposal has been accepted and has an implementation.
+
 
 
 Abstract
