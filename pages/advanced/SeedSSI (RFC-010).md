@@ -23,10 +23,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <details open markdown="block">
   <summary>
-    Table of contents
+    Cuprins
   </summary>
   {: .text-delta }
-1. TOC
+1. [Secțiunea 1](#secțiunea-1)
+    1.0. [Subsecțiunea 1.0](#subsecțiunea-10)
+    1.1. [Subsecțiunea 1.1](#subsecțiunea-11)
+        1.1.1. [Sub-subsecțiunea 1.1.1](#sub-subsecțiunea-111)
 {:toc}
 
 ## Abstract
@@ -47,11 +50,11 @@ The SeedSSI family is currently the easiest and most used way to generate and in
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
-|**SubType**                  | **Description**                                |
-|:------------------------------------|:-----------------------------------------|
-|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                           |
-|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_                           |
-|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                    |
+|**SubType**                  | **Description**                                                                                                                                                                                                                                    |
+|:------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                                |
+|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_ |
+|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                                      |
 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
@@ -96,17 +99,19 @@ Description: Initialize a SeedSSI with your own parameters.
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
 Function seedSSI.derive()
 
-#### Function seedSSI.derive()
+### Function seedSSI.derive()
 
 Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
-Returns
-|**Name**             |**Type**                           |
-|sReadSSI object      |A sReadSSI object is returned.     |
-    |
+**Returns**
+
+| **Name**        | **Description**                |
+|-----------------|--------------------------------|
+| sReadSSI object | A sReadSSI object is returned. |
 
 
-Function seedSSI.getPrivateKey(format)
+
+**Function seedSSI.getPrivateKey(format)**
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
 
