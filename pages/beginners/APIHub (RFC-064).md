@@ -62,7 +62,7 @@ This API space allows the user to set up custom error reporting.
 
 ## Error ##
 
-### **Function createOpenDSUErrorWrapper(message, err, otherErrors)** ### 
+### *3.1 Function createOpenDSUErrorWrapper(message, err, otherErrors)* ### 
 **Description**: Create a new error wrapper.
 
 | Name         | Type          | Value      | Description                                                 |
@@ -81,7 +81,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function OpenDSUSafeCallback(callback)** ###
+### *3.2 Function OpenDSUSafeCallback(callback)* ###
 **Description**: Verify that there is a callback. If not, report an error or a warning.
 
 | Name       | Type     | Value     | Description                      |
@@ -98,7 +98,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function observeUserRelevantMessages(type, callback)** ###
+### *3.3 Function observeUserRelevantMessages(type, callback)* ### 
 **Description**: Register to one observer (error, info, warn, or dev) to get the associated messages.
 
 | Name     | Type     | Value     | Description                                                                                              |
@@ -108,7 +108,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function unobserveUserRelevantMessages(type, callback)** ###
+### *3.4 Function unobserveUserRelevantMessages(type, callback)* ###
 **Description**: Stop observing and receiving associated messages.
 
 | Name     | Type     | Value      | Description                                                                |
@@ -119,7 +119,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function printOpenDSUError(...args)** ###
+### *3.5 Function printOpenDSUError(...args)* ###
 **Description**: Print openDSU errors.
 
 | Name  | Type | Value | Description                                              |
@@ -129,7 +129,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function registerMandatoryCallback(callback, timeout)** ###
+### *3.6 Function registerMandatoryCallback(callback, timeout)* ###
 **Description**: Make sure that callback is called within the specified time (5s by default).
 
 | Name     | Type     | Value            | Description                                                                |
@@ -139,7 +139,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function reportDevRelevantInfo(message)** ###
+### *3.7 Function reportDevRelevantInfo(message)* ###
 **Description**: Report additional information about the error to developers.
 
 | Name    | Type  | Value     | Description                                            |
@@ -148,7 +148,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function reportUserRelevantError(message, err, showIntermediateErrors)** ##
+### *3.8 Function reportUserRelevantError(message, err, showIntermediateErrors)* ###
 **Description**: Report an error to the user in the console.
 
 | Name                   | Type         | Value     | Description                                              |
@@ -159,7 +159,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function reportUserRelevantInfo(message)** ###
+### *3.9 Function reportUserRelevantInfo(message)* ###
 **Description**: Report additional information about the error to users.
 
 | Name    | Type   | Value     | Description                                       |
@@ -169,7 +169,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **Function reportUserRelevantWarning(message)** ###
+### *3.10 Function reportUserRelevantWarning(message)* ###
 **Description**: Report a warning to the user in the console.
 
 | Name    | Type   | Value     | Description                                              |
@@ -178,7 +178,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-### **DB_INSERT_EXISTING_RECORD_ERROR** ###
+### *3.11 DB_INSERT_EXISTING_RECORD_ERROR* ###
 **Description**: A predefined error with the following message: "Trying to insert into the existing record".
 
 
