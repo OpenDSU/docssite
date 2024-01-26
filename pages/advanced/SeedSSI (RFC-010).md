@@ -49,9 +49,9 @@ Here is a summary of the different subtypes present in the SeedSSI family, from 
 
 |**SubType**                  | **Description**                                |
 |:------------------------------------|:-----------------------------------------|
-|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: ssi:seed:domain:private_key_base64::v0                                           |
-|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: ssi:sread:domain:hash_private_key_base64:public_key:v0                           |
-|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: ssi:sza:domain::public_key:v0                                                    |
+|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: **ssi:seed:domain:private_key_base64::v0**                                           |
+|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: **ssi:sread:domain:hash_private_key_base64:public_key:v0**                           |
+|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: **ssi:sza:domain::public_key:v0**                                                    |
 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
