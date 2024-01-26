@@ -49,14 +49,14 @@ Here is a summary of the different subtypes present in the SeedSSI family, from 
 
 |**SubType**                  | **Description**                                |
 |:------------------------------------|:-----------------------------------------|
-|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: __ssi:seed:domain:private_key_base64::v0__                                           |
-|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: __ssi:sread:domain:hash_private_key_base64:public_key:v0__                           |
+|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                           |
+|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_                           |
 |sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                    |
 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
 
-## 2. Type-specific and control substrings
+## Type-specific and control substrings
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 
@@ -68,11 +68,11 @@ The identifier contains the subtype and the domain. This is very important for f
 
 
 
-## 3. Specific functions for SeedSSI’s family subtypes
+## Specific functions for SeedSSI’s family subtypes
 
-(Common functions for all keySSIs are available [Here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
+(Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
 
-3.1. SeedSSI
+### SeedSSI
 Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
 Description: Initialize a SeedSSI with your own parameters.
