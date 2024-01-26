@@ -27,9 +27,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   </summary>
   {: .text-delta }
 1. [Secțiunea 1](#secțiunea-1)
-    1.0. [Subsecțiunea 1.0](#subsecțiunea-10)
     1.1. [Subsecțiunea 1.1](#subsecțiunea-11)
         1.1.1. [Sub-subsecțiunea 1.1.1](#sub-subsecțiunea-111)
+            1.1.1.1. [Sub-sub-subsecțiunea 1.1.1.1](#sub-sub-subsecțiunea-1111)
 {:toc}
 
 ## Abstract
