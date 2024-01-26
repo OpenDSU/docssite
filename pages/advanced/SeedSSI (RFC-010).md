@@ -74,7 +74,7 @@ The identifier contains the subtype and the domain. This is very important for f
 
 ### SeedSSI
 
-### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
+#### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
 Description: Initialize a SeedSSI with your own parameters.
 
@@ -93,24 +93,19 @@ Description: Initialize a SeedSSI with your own parameters.
 |keySSI         |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html) |
 
 
-
-	
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
 Function seedSSI.derive()
+
+#### Function seedSSI.derive()
 
 Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
 Returns
+|**Name**             |**Type**                           |
+|sReadSSI object      |A sReadSSI object is returned.     |
+    |
 
-Name
-	
 
-Description
-
-sReadSSI object
-	
-
-A sReadSSI object is returned.
 Function seedSSI.getPrivateKey(format)
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
