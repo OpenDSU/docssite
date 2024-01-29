@@ -105,14 +105,14 @@ Description: Derive your seedSSI and return a sReadSSI. In the derivation proces
 
 **Returns**s
 
-| **Name**        | **Description**                |
-|-----------------|:-------------------------------|
-| sReadSSI object | A sReadSSI object is returned. |
+| **Name**         | **Description**                |
+|:-----------------|:-------------------------------|
+| sReadSSI object  | A sReadSSI object is returned. |
 
 
-| **Name** | **Description** |
-|:---------|:----------------|
-|          | The private key |
+| **Name**  | **Description** |
+|:----------|:----------------|
+|           | The private key |
 
 
 
@@ -120,9 +120,9 @@ Description: Derive your seedSSI and return a sReadSSI. In the derivation proces
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
 
-| **Name**          | **Type** | **Value** | **Description**                                                                                                                                                                   |
-|-------------------|----------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| format (optional) | String   |           | You can use the parameter “pem” to specify that you want to get the private key in the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) mail) format. 
+| **Name**           | **Type**  | **Value**  | **Description**                                                                                                                                                                    |
+|:-------------------|:----------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| format (optional)  | String    |            | You can use the parameter “pem” to specify that you want to get the private key in the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) mail) format.  
 
 Returns
 
@@ -136,8 +136,8 @@ Returns
 Description: Derive your seedSSI and return a sReadSSI.
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                  |
-|----------|----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| format   | String   |           | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. 
+|:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| format   | String   |           | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. |
 
 Returns
 
