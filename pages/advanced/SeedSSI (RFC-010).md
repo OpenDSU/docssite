@@ -33,6 +33,18 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     * [Function seedSSI.getEncryptionKey()](#function-seedssigetencryptionkey)
     * [Function seedSSI.getKeyPair()](#function-seedssigetkeypair)
     * [Function seedSSI.sign(dataToSign, callback)](#function-seedssisigndatatosign-callback)
+    * [Function seedSSI.getTypeName()](#function-seedssigettypename)
+  * [3.2. SReadSSI](#32-sreadssi)
+    * [Function sReadSSI.initialize(dlDomain, vn, hint, callback)](#function-sreadssiinitializedldomain-vn-hint-callback)
+    * [Function sReadSSI.derive()](#function-sreadssiderive)
+    * [Function sReadSSI.getEncryptionKey()](#function-sreadssigetencryptionkey)
+    * [Function sReadSSI.getTypeName()](#function-sreadssigettypename)
+    * [Function sReadSSI.getPublicKey(options)](#function-sreadssigetpublickeyoptions)
+  * [3.3 SzaSSI](#33-szassi)
+    * [Function szaSSI.initialize(dlDomain, hpk, vn, hint)](#function-szassiinitializedldomain-hpk-vn-hint)
+    * [Function szaSSI.getTypeName()](#function-szassigettypename)
+    * [Function szaSSI.getPublicKey(options)](#function-szassigetpublickeyoptions)
+* [4. Cryptographic algorithms used by SeedSSIs (advanced)](#4-cryptographic-algorithms-used-by-seedssis-advanced)
 <!-- TOC -->
 
 
@@ -247,9 +259,9 @@ Description: Get the encryption key associated with the keySSI. To obtain sReadS
 
 Returns
 
-| **Name**   | **Description**      |
-|:-----=--|:---------------------|
-| String | The encryption key.  |
+| **Name**  | **Description**      |
+|:----------|:---------------------|
+| String    | The encryption key.  |
 
 
 ### Function sReadSSI.getTypeName()
@@ -263,7 +275,7 @@ Returns
 | SSITypes.SREAD_SSI | A string representing the type of the SSI. |
 
 
-Function sReadSSI.getPublicKey(options)
+### Function sReadSSI.getPublicKey(options)
 
 Description: 
 
@@ -281,119 +293,48 @@ Returns
 
 	
 
-3.3. SzaSSI
-Function szaSSI.initialize(dlDomain, hpk, vn, hint)
+## 3.3 SzaSSI
+
+### Function szaSSI.initialize(dlDomain, hpk, vn, hint)
 
 Description: Initialize the SzaSSI and load it with the desired parameters.
 
-Name
-	
+| **Name**         | **Type** | **Value** | **Description**                                                         |
+|:-----------------|:---------|:----------|:------------------------------------------------------------------------|
+| dlDomain         | String   | *required | The blockchain domain wanted to be used.                                |
+| hpk (optional)   | String   |           | The hash (sha256) of a public key obtained from the seedSSI keyPair.    |
+| Vn (optional)    | String   |           | The version number of the SeedSSI you want to use. Default value: “v0”. |
+| Hint (optional)  | String   |           | Optional information for the keySSI resolver. Default value: undefined. |
 
-Type
-	
 
-Value
-	
-
-Description
-
-dlDomain
-	
-
-String
-	
-
-*required
-	
-
-The blockchain domain wanted to be used.
-
-hpk
-
-(optional)
-	
-
-String
-	
-
-	
-
-The hash (sha256) of a public key obtained from the seedSSI keyPair.
-
-Vn
-
-(optional)
-	
-
-String
-	
-
-	
-
-The version number of the SeedSSI you want to use.
-
-Default value: “v0”.
-
-Hint
-
-(optional)
-	
-
-String
-	
-
-	
-
-Optional information for the keySSI resolver.
-
-Default value: undefined.
-Function szaSSI.getTypeName()
+### Function szaSSI.getTypeName()
 
 Description: 
 
 Returns
 
-Name
-	
+| **Name**                   | **Description**                             |
+|:---------------------------|:--------------------------------------------|
+| SSITypes.SZERO_ACCESS_SSI  | A string representing the type of the SSI.  |
 
-Description
 
-SSITypes.SZERO_ACCESS_SSI
-	
-
-A string representing the type of the SSI.
-Function szaSSI.getPublicKey(options)
+### Function szaSSI.getPublicKey(options)
 
 Description: 
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-options
-	
-
-	
-
-	
+| **Name** | **Type** | **Value** | **Description** |
+|:---------|:---------|:----------|:----------------|
+| options  |          |           |                 |
 
 Returns
 
-Name
-	
+| **Name**                   | **Description**                             |
+|:---------------------------|:--------------------------------------------|
+| SSITypes.SZERO_ACCESS_SSI  | A string representing the type of the SSI.  |
 
-Description
 
-	
 
-4. Cryptographic algorithms used by SeedSSIs (advanced)
+# 4. Cryptographic algorithms used by SeedSSIs (advanced)
 
 In this chapter, we present the algorithms that the SeedSSI and its derivations use to perform cryptographic operations. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the NodeJS crypto library.
 
