@@ -16,11 +16,10 @@ A period when the community can review the RFC (comment Docs).
 
 **Copyright: MIT license**
 
- **Copyright**
-Copyright © 2018-2022 Axiologic Research and Contributors.
+ **Copyright** © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-
+<!-- TOC -->
   * [Abstract](#abstract)
   * [SeedSSI’s family subtypes with examples](#seedssis-family-subtypes-with-examples)
   * [Type-specific and control substrings](#type-specific-and-control-substrings)
@@ -29,7 +28,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
       * [Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)](#function-seedssiinitializedldomain-typespecific-control-vn-hint-callback)
     * [Function seedSSI.derive()](#function-seedssiderive)
 <!-- TOC -->
-# Abstract #
+
+
+#  Abstract #
 
 SeedSSI is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
 
