@@ -116,7 +116,7 @@ Description: Derive your seedSSI and return a sReadSSI. In the derivation proces
 
 
 
-**Function seedSSI.getPrivateKey(format)**
+### Function seedSSI.getPrivateKey(format)
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
 
@@ -131,7 +131,7 @@ Returns
 |          | The private key |
 
 
-### Function seedSSI.getPublicKey(format) ###
+### Function seedSSI.getPublicKey(format)
 
 Description: Derive your seedSSI and return a sReadSSI.
 
@@ -147,7 +147,7 @@ Returns
 
 
 
-### Function seedSSI.getEncryptionKey() ###
+### Function seedSSI.getEncryptionKey()
 
 Description: Get the encryption key associated with the keySSI. For SeedSSI, the encryption key is the same as the sReadSSI key.
 
@@ -158,56 +158,28 @@ Returns
 |          | The encryption key. |
 
 
-	
+## Function seedSSI.getKeyPair()
 
-
-## Function seedSSI.getKeyPair() ## 
-
-Description: SS
+Description:
 
 Returns
 
-Name
-	
+| **Name**  | **Description**                                 |
+|:----------|:------------------------------------------------|
+| keyPair   | A pair with the private key and the public key. |
 
-Description
 
-keyPair
-	
-
-A pair with the private key and the public key.
-Function seedSSI.sign(dataToSign, callback)
+## Function seedSSI.sign(dataToSign, callback)
 
 Description: 
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-dataToSign
-	
-
-	
-
-*required
-	
-
-callback
-	
-
-function
-	
-
-	
+| **Name     | Type     | Value     | Description** |
+|:-----------|:---------|:----------|:--------------|
+| dataToSign |          | *required |               |
+| callback   | function |           |               |
 
 Callback parameters
+
 
 Name
 	
