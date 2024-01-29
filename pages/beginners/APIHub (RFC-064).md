@@ -13,7 +13,6 @@ nav_order: 4
 </style>
 
 
-# **Error Reporting (RFC-064)**
 {: .no_toc }
 
 
