@@ -336,104 +336,52 @@ Returns
 
 # 4. Cryptographic algorithms used by SeedSSIs (advanced)
 
-In this chapter, we present the algorithms that the SeedSSI and its derivations use to perform cryptographic operations. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the NodeJS crypto library.
+In this chapter, we present the algorithms that the SeedSSI and its derivations use to perform cryptographic operations. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the [0NodeJS crypto](https://nodejs.org/docs/latest-v12.x/api/crypto.html#crypto_crypto) library.
 
-Type
-	
 
-Operations
-	
+| Type      | Operations               | Algorithms                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|-----------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Default   | hash                     | Create a hash of the data using the sha256 algorithm.                                                                                                                                                                                                                                                                                                                                                                          |
+|           | encryptionKeyGeneration  | Generate a random encryption key compatible with the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                               |
+|           | encryption               | Encrypt data using a symmetric key and [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                                             |
+|           | decryption               | Decrypt data using a symmetric key and the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                                         |
+|           | encoding                 | [Base58](https://learnmeabitcoin.com/technical/base58) encoding.                                                                                                                                                                                                                                                                                                                                                               |
+|           | decoding                 | [Base58](https://learnmeabitcoin.com/technical/base58) encoding.                                                                                                                                                                                                                                                                                                                                                               |
+|           | keyPairGenerato          | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                                                                      |
+| Seed v0   | keyPairGenerato          | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                                                                      |
+|           | signature                | Use the SeedSSI private key, the sha256 algorithm, and the createSign function from the NodeJS [crypto library](Use the SeedSSI private key, the sha256 algorithm, and the createSign function from the NodeJS crypto library to create a signature.) to create a signature.                                                                                                                                                   |
+|           | signature verification   | Use the SeedSSI public key, the sha256 algorithm, to verify the signature.                                                                                                                                                                                                                                                                                                                                                     |
+|           | derivePublicKey          | Derive the public key from the SeedSSI’s private key either in [pem](https://www.google.com/url?q=https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail&sa=D&source=editors&ust=1706527954021188&usg=AOvVaw3Q1jNK98DMedSVwwD7dkAK) or raw format using the [secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954021354&usg=AOvVaw3FQEMwztYdY6AIMsgRXxvg) elliptic curve.  |
+| sRead v0  | verify                   | No function sReadSSI.getPublicKey, so it will not work.                                                                                                                                                                                                                                                                                                                                                                        |
 
-Algorithms
 
-Default
-	
 
-hash
-	
+# Annex 1. Contributors
 
-Create a hash of the data using the sha256 algorithm.
-
-	
-
-encryptionKeyGeneration
-	
-
-Generate a random encryption key compatible with the aes-256-gcm algorithm.
-
-	
-
-encryption
-	
-
-Encrypt data using a symmetric key and aes-256-gcm algorithm.
-
-	
-
-decryption
-	
-
-Decrypt data using a symmetric key and the aes-256-gcm algorithm.
-
-	
-
-encoding
-	
-
-Base58 encoding.
-
-	
-
-decoding
-	
-
-Base58 decoding.
-
-	
-
-keyPairGenerato
-	
-
-Use an elliptic curve ‘secp256k1’ to generate a key pair (public/private key).
-
-Seed
-
-v0
-	
-
-keyPairGenerator
-	
-
-Use an elliptic curve ‘secp256k1’ to generate a key pair (public/private key).
-
-	
-
-signature
-	
-
-Use the SeedSSI private key, the sha256 algorithm, and the createSign function from the NodeJS crypto library to create a signature.
-
-	
-
-signature verification
-	
-
-Use the SeedSSI public key, the sha256 algorithm, to verify the signature.
-
-	
-
-derivePublicKey
-	
-
-Derive the public key from the SeedSSI’s private key either in pem or raw format using the secp256k1 elliptic curve.
-
-sRead
-
-v0
-	
-
-verify
-	
-
-No function sReadSSI.getPublicKey, so it will not work.
-
+|**Current Editors**                  | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+|Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+|Cosmin Ursache                       | cosmin@axiologic.net                     |
+|Teodor Lupu                          | teodor@axiologic.net                     |
+|Andi-Gabriel Țan                     | andi@axiologic.net                       |
+|**Contributors Axiologic Research**  | **Email**                                |
+|Adrian Ganga                         | adrian@axiologic.net                     |
+|Andi-Gabriel Țan                     | andi@axiologic.net                       |
+|Cosmin Ursache                       | cosmin@axiologic.net                     |
+|Daniel Sava                          | daniel@axiologic.net                     |
+|Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+|Valentin Gérard                      | valentin@axiologic.net                   |
+|**PrivateSky Contributors**          | **Email**                                |
+|Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+|Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+|Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+|Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+|Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+|Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+|Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+|Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+|**PharmaLedger Contributors**        | **Email**                                |
+|Ana Balan                            | bam@rms.ro (RMS)                         |
+|Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+|Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+|Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
