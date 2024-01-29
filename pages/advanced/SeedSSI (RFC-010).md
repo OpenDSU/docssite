@@ -95,7 +95,7 @@ The identifier contains the subtype and the domain. This is very important for f
 
 ### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
-Description: Initialize a SeedSSI with your own parameters.
+**Description**: Initialize a SeedSSI with your own parameters.
 
 |**Name**       |**Type**      |**Value**     |**Description**                                                                                 |
 |dlDomain |string    |*required | The blockchain domain wanted to be used.|
@@ -112,11 +112,11 @@ Description: Initialize a SeedSSI with your own parameters.
 |keySSI         |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html) |
 
 
-Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
+**Description**: Contains a message and the error. / The template keySSI object of the chosen type that was created.
 
 ### Function seedSSI.derive() 
 
-Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
+**Description**: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
 **Returns**
 
@@ -133,13 +133,13 @@ Description: Derive your seedSSI and return a sReadSSI. In the derivation proces
 
 ### Function seedSSI.getPrivateKey(format)
 
-Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
+**Description**: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
 
 | **Name**           | **Type**  | **Value**  | **Description**                                                                                                                                                                    |
 |:-------------------|:----------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | format (optional)  | String    |            | You can use the parameter “pem” to specify that you want to get the private key in the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) mail) format.  
 
-Returns
+**Returns**
 
 | **Name** | **Description** |
 |:---------|:----------------|
@@ -148,13 +148,13 @@ Returns
 
 ### Function seedSSI.getPublicKey(format)
 
-Description: Derive your seedSSI and return a sReadSSI.
+**Description**: Derive your seedSSI and return a sReadSSI.
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                  |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | format   | String   |           | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. |
 
-Returns
+**Returns**
 
 | **Name** | **Description** |
 |:---------|:----------------|
@@ -164,9 +164,9 @@ Returns
 
 ### Function seedSSI.getEncryptionKey()
 
-Description: Get the encryption key associated with the keySSI. For SeedSSI, the encryption key is the same as the sReadSSI key.
+**Description**: Get the encryption key associated with the keySSI. For SeedSSI, the encryption key is the same as the sReadSSI key.
 
-Returns
+**Returns**
 
 | **Name** | **Description**     |
 |:---------|:--------------------|
@@ -175,9 +175,9 @@ Returns
 
 ### Function seedSSI.getKeyPair()
 
-Description:
+**Description**:
 
-Returns
+**Returns**
 
 | **Name**  | **Description**                                 |
 |:----------|:------------------------------------------------|
@@ -186,7 +186,7 @@ Returns
 
 ### Function seedSSI.sign(dataToSign, callback)
 
-Description: 
+**Description**: 
 
 | **Name**    | **Type**  | **Value**  | **Description**  |
 |:------------|:----------|:-----------|:-----------------|
@@ -200,9 +200,9 @@ Callback parameters
 | err       | Error object |                      |
 | signature |              |                      |
 
-Description: Contains a message and the error.
+**Description**: Contains a message and the error.
 
-Returns
+**Returns**
 
 | **Name**  | **Description**                                 |
 |:----------|:------------------------------------------------|
@@ -211,9 +211,9 @@ Returns
                  
 ### Function seedSSI.getTypeName()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 | Name              | Description                                |
 |-------------------|--------------------------------------------|
@@ -224,7 +224,7 @@ Returns
 
 ### Function sReadSSI.initialize(dlDomain, vn, hint, callback)
 
-Description: Initialize the sReadSSI with desired parameters.
+**Description**: Initialize the sReadSSI with desired parameters.
 
 | **Name**                   | **Type**      | **Value**    | **Description**                                                                  |
 |:-----------------------|:----------|:---------|:-----------------------------------------------------------------------------|
@@ -240,13 +240,13 @@ Callback parameters
 | err      | Error object                                   |                      |
 | keySSI   | [keySSI Object](https://opendsu.com/rfc002)    |                      |
 
-Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
+**Description**: Contains a message and the error. / The template keySSI object of the chosen type that was created.
 
 ### Function sReadSSI.derive()
 
-Description: Derive your sReadSSI to obtain a szaSSI. In the derivation process, the dlDomain is conserved. The type-specific substring is set to empty. The control substring, Vn and Hint are conserved.
+**Description**: Derive your sReadSSI to obtain a szaSSI. In the derivation process, the dlDomain is conserved. The type-specific substring is set to empty. The control substring, Vn and Hint are conserved.
 
-Returns
+**Returns**
 
 | **Name**          | **Description**                  |
 |:--------------|:-----------------------------|
@@ -255,9 +255,9 @@ Returns
 
 ### Function sReadSSI.getEncryptionKey()
 
-Description: Get the encryption key associated with the keySSI. To obtain sReadSSI’s encryption key, we decode its control substring in Base58.
+**Description**: Get the encryption key associated with the keySSI. To obtain sReadSSI’s encryption key, we decode its control substring in Base58.
 
-Returns
+**Returns**
 
 | **Name**  | **Description**      |
 |:----------|:---------------------|
@@ -266,9 +266,9 @@ Returns
 
 ### Function sReadSSI.getTypeName()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 | **Name**           | **Description**                            |
 |:-------------------|:-------------------------------------------|
@@ -277,13 +277,13 @@ Returns
 
 ### Function sReadSSI.getPublicKey(options)
 
-Description: 
+**Description**: 
 
 | **Name**  | **Type**  | **Value**  | **Description**  |
 |:----------|:----------|:-----------|:-----------------|
 | options   |           |            |                  |
 
-Returns
+**Returns**
 
 | **Name**  | **Description**  |
 |:----------|:-----------------|
@@ -297,7 +297,7 @@ Returns
 
 ### Function szaSSI.initialize(dlDomain, hpk, vn, hint)
 
-Description: Initialize the SzaSSI and load it with the desired parameters.
+**Description**: Initialize the SzaSSI and load it with the desired parameters.
 
 | **Name**         | **Type** | **Value** | **Description**                                                         |
 |:-----------------|:---------|:----------|:------------------------------------------------------------------------|
@@ -309,9 +309,9 @@ Description: Initialize the SzaSSI and load it with the desired parameters.
 
 ### Function szaSSI.getTypeName()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 | **Name**                   | **Description**                             |
 |:---------------------------|:--------------------------------------------|
@@ -320,13 +320,13 @@ Returns
 
 ### Function szaSSI.getPublicKey(options)
 
-Description: 
+**Description**: 
 
 | **Name** | **Type** | **Value** | **Description** |
 |:---------|:---------|:----------|:----------------|
 | options  |          |           |                 |
 
-Returns
+**Returns**
 
 | **Name**                   | **Description**                             |
 |:---------------------------|:--------------------------------------------|
@@ -336,23 +336,23 @@ Returns
 
 # 4. Cryptographic algorithms used by SeedSSIs (advanced)
 
-In this chapter, we present the algorithms that the SeedSSI and its derivations use to perform cryptographic operations. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the [0NodeJS crypto](https://nodejs.org/docs/latest-v12.x/api/crypto.html#crypto_crypto) library.
+In this chapter, we present the algorithms that the SeedSSI and its derivations use to perform cryptographic operations. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the [NodeJS crypto](https://nodejs.org/docs/latest-v12.x/api/crypto.html#crypto_crypto) library.
 
 
-| Type      | Operations               | Algorithms                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|-----------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Default   | hash                     | Create a hash of the data using the sha256 algorithm.                                                                                                                                                                                                                                                                                                                                                                          |
-|           | encryptionKeyGeneration  | Generate a random encryption key compatible with the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                               |
-|           | encryption               | Encrypt data using a symmetric key and [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                                             |
-|           | decryption               | Decrypt data using a symmetric key and the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                                         |
-|           | encoding                 | [Base58](https://learnmeabitcoin.com/technical/base58) encoding.                                                                                                                                                                                                                                                                                                                                                               |
-|           | decoding                 | [Base58](https://learnmeabitcoin.com/technical/base58) encoding.                                                                                                                                                                                                                                                                                                                                                               |
-|           | keyPairGenerato          | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                                                                      |
-| Seed v0   | keyPairGenerato          | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                                                                      |
-|           | signature                | Use the SeedSSI private key, the sha256 algorithm, and the createSign function from the NodeJS [crypto library](Use the SeedSSI private key, the sha256 algorithm, and the createSign function from the NodeJS crypto library to create a signature.) to create a signature.                                                                                                                                                   |
-|           | signature verification   | Use the SeedSSI public key, the sha256 algorithm, to verify the signature.                                                                                                                                                                                                                                                                                                                                                     |
-|           | derivePublicKey          | Derive the public key from the SeedSSI’s private key either in [pem](https://www.google.com/url?q=https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail&sa=D&source=editors&ust=1706527954021188&usg=AOvVaw3Q1jNK98DMedSVwwD7dkAK) or raw format using the [secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954021354&usg=AOvVaw3FQEMwztYdY6AIMsgRXxvg) elliptic curve.  |
-| sRead v0  | verify                   | No function sReadSSI.getPublicKey, so it will not work.                                                                                                                                                                                                                                                                                                                                                                        |
+| **Type**   | **Operations**            | **Algorithms**                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|:-----------|:--------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Default    | hash                      | Create a hash of the data using the sha256 algorithm.                                                                                                                                                                                                                                                                                                                                                                           |
+|            | encryptionKeyGeneration   | Generate a random encryption key compatible with the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                                |
+|            | encryption                | Encrypt data using a symmetric key and [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                                              |
+|            | decryption                | Decrypt data using a symmetric key and the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                                                                          |
+|            | encoding                  | [Base58](https://learnmeabitcoin.com/technical/base58) encoding.                                                                                                                                                                                                                                                                                                                                                                |
+|            | decoding                  | [Base58](https://learnmeabitcoin.com/technical/base58) encoding.                                                                                                                                                                                                                                                                                                                                                                |
+|            | keyPairGenerato           | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                                                                       |
+| Seed v0    | keyPairGenerato           | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                                                                       |
+|            | signature                 | Use the SeedSSI private key, the sha256 algorithm, and the createSign function from the NodeJS [crypto library](Use the SeedSSI private key, the sha256 algorithm, and the createSign function from the NodeJS crypto library to create a signature.) to create a signature.                                                                                                                                                    |
+|            | signature verification    | Use the SeedSSI public key, the sha256 algorithm, to verify the signature.                                                                                                                                                                                                                                                                                                                                                      |
+|            | derivePublicKey           | Derive the public key from the SeedSSI’s private key either in [pem](https://www.google.com/url?q=https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail&sa=D&source=editors&ust=1706527954021188&usg=AOvVaw3Q1jNK98DMedSVwwD7dkAK) or raw format using the [secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954021354&usg=AOvVaw3FQEMwztYdY6AIMsgRXxvg) elliptic curve.   |
+| sRead v0   | verify                    | No function sReadSSI.getPublicKey, so it will not work.                                                                                                                                                                                                                                                                                                                                                                         |
 
 
 
