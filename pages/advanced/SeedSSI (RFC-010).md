@@ -12,11 +12,11 @@ nav_order: 1
 A period when the community can review the RFC (comment Docs).
 
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2022 Axiologic Research and Contributors.
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
@@ -75,7 +75,7 @@ The identifier contains the subtype and the domain. This is very important for f
 
 ### SeedSSI
 
-#### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
+### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback) ###
 
 Description: Initialize a SeedSSI with your own parameters.
 
