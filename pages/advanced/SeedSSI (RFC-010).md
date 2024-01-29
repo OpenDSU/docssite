@@ -215,9 +215,9 @@ Callback parameters
 
 **Returns**
 
-| Name              | Description                                |
-|-------------------|--------------------------------------------|
-| SSITypes.SEED_SSI | A string representing the type of the SSI. |
+| **Name**           | **Description**                             |
+|:-------------------|:--------------------------------------------|
+| SSITypes.SEED_SSI  | A string representing the type of the SSI.  |
 
 
 ## 3.2. SReadSSI
