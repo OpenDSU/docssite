@@ -144,7 +144,12 @@ Returns
 
 Description: Get the encryption key associated with the keySSI. For SeedSSI, the encryption key is the same as the sReadSSI key.
 
-Returns x
+Returns xy
+
+| aa | a aaa  |
+|:---|:-------|
+| a  | aaaaaa |
+
 
 | **Name**|**Description**     |
 |---------|--------------------|
