@@ -214,104 +214,34 @@ Returns
 
 Description: Initialize the sReadSSI with desired parameters.
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-dlDomain
-	
-
-String
-	
-
-*required
-	
-
-The blockchain domain wanted to be used.
-
-Vn
-
-(optional)
-	
-
-String
-	
-
-	
-
-The version number of the SeedSSI you want to use.
-
-Default value: “v0”.
-
-Hint
-
-(optional)
-	
-
-String
-	
-
-	
-
-Optional information for the keySSI resolver.
-
-Default value: undefined.
-
-callback
-	
-
-function
-	
-
-*required
-	
+| **Name**                   | **Type**      | **Value**    | **Description**                                                                  |
+|:-----------------------|:----------|:---------|:-----------------------------------------------------------------------------|
+| dlDomain               | String    | *required| The blockchain domain wanted to be used.                                     |
+| Vn (optional)          | String    |          | The version number of the SeedSSI you want to use. Default value: “v0”.      |
+| Hint (optional)        | String    |          | Optional information for the keySSI resolver.Default value: undefined.       |
+| callback               | function  | *required|                                                                              |
 
 Callback parameters
 
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-keySSI
-	
-
-keySSI Object
-	
+| **Name** | **Type**                                       | **Response example** |
+|:---------|:-----------------------------------------------|:---------------------|
+| err      | Error object                                   |                      |
+| keySSI   | [keySSI Object](https://opendsu.com/rfc002)    |                      |
 
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
-Function sReadSSI.derive()
+
+### Function sReadSSI.derive()
 
 Description: Derive your sReadSSI to obtain a szaSSI. In the derivation process, the dlDomain is conserved. The type-specific substring is set to empty. The control substring, Vn and Hint are conserved.
 
 Returns
 
-Name
-	
+| Name          | Description                  |
+|:--------------|:-----------------------------|
+| szaSSI object | A szaSSI object is returned. 
 
-Description
 
-szaSSI object
-	
-
-A szaSSI object is returned.
-Function sReadSSI.getEncryptionKey()
+### Function sReadSSI.getEncryptionKey()
 
 Description: Get the encryption key associated with the keySSI. To obtain sReadSSI’s encryption key, we decode its control substring in Base58.
 
