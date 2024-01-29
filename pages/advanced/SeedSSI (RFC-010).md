@@ -208,8 +208,9 @@ Returns
 | SSITypes.SEED_SSI | A string representing the type of the SSI. |
 
 
-3.2. SReadSSI
-Function sReadSSI.initialize(dlDomain, vn, hint, callback)
+## 3.2. SReadSSI
+
+### Function sReadSSI.initialize(dlDomain, vn, hint, callback)
 
 Description: Initialize the sReadSSI with desired parameters.
 
