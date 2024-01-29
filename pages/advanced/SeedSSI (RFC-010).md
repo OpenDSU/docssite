@@ -28,8 +28,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [3.1 SeedSSI](#31-seedssi)
     * [Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)](#function-seedssiinitializedldomain-typespecific-control-vn-hint-callback)
     * [Function seedSSI.derive()](#function-seedssiderive-)
-    * [Function seedSSI.getPublicKey(format)](#function-seedssigetpublickeyformat-)
-    * [Function seedSSI.getEncryptionKey()](#function-seedssigetencryptionkey-)
+    * [Function seedSSI.getPrivateKey(format)](#function-seedssigetprivatekeyformat)
+    * [Function seedSSI.getPublicKey(format)](#function-seedssigetpublickeyformat)
+    * [Function seedSSI.getEncryptionKey()](#function-seedssigetencryptionkey)
+    * [Function seedSSI.getKeyPair()](#function-seedssigetkeypair)
+    * [Function seedSSI.sign(dataToSign, callback)](#function-seedssisigndatatosign-callback)
 <!-- TOC -->
 
 
@@ -158,7 +161,7 @@ Returns
 |          | The encryption key. |
 
 
-## Function seedSSI.getKeyPair()
+### Function seedSSI.getKeyPair()
 
 Description:
 
@@ -169,65 +172,42 @@ Returns
 | keyPair   | A pair with the private key and the public key. |
 
 
-## Function seedSSI.sign(dataToSign, callback)
+### Function seedSSI.sign(dataToSign, callback)
 
 Description: 
 
-| **Name     | Type     | Value     | Description** |
-|:-----------|:---------|:----------|:--------------|
-| dataToSign |          | *required |               |
-| callback   | function |           |               |
+| **Name**    | **Type**  | **Value**  | **Description**  |
+|:------------|:----------|:-----------|:-----------------|
+| dataToSign  |           | *required  |                  |
+| callback    | function  |            |                  |
 
 Callback parameters
 
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-signature
-	
-
-	
+  | **Name**  | **Type**     | **Response example** |
+|:----------|:-------------|:---------------------|
+| err       | Error object |                      |
+| signature |              |                      |
 
 Description: Contains a message and the error.
 
 Returns
 
-Name
-	
+| **Name**  | **Description**                                 |
+|:----------|:------------------------------------------------|
+| keyPair   | A pair with the private key and the public key. 
 
-Description
-
-keyPair
-	
-
-A pair with the private key and the public key.
-Function seedSSI.getTypeName()
+                 
+### Function seedSSI.getTypeName()
 
 Description: 
 
 Returns
 
-Name
-	
+| Name              | Description                                |
+|-------------------|--------------------------------------------|
+| SSITypes.SEED_SSI | A string representing the type of the SSI. |
 
-Description
 
-SSITypes.SEED_SSI
-	
-
-A string representing the type of the SSI.
 3.2. SReadSSI
 Function sReadSSI.initialize(dlDomain, vn, hint, callback)
 
