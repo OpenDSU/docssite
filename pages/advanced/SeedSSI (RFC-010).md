@@ -20,13 +20,14 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-  * [Abstract](#abstract)
-  * [SeedSSI’s family subtypes with examples](#seedssis-family-subtypes-with-examples)
-  * [Type-specific and control substrings](#type-specific-and-control-substrings)
+* [SeedSSI (RFC-010)](#seedssi-rfc-010)
+* [Abstract](#abstract-)
+  * [SeedSSI’s family subtypes with examples](#seedssis-family-subtypes-with-examples-)
+  * [Type-specific and control substrings](#type-specific-and-control-substrings-)
   * [Specific functions for SeedSSI’s family subtypes](#specific-functions-for-seedssis-family-subtypes)
     * [SeedSSI](#seedssi)
-      * [Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)](#function-seedssiinitializedldomain-typespecific-control-vn-hint-callback)
-    * [Function seedSSI.derive()](#function-seedssiderive)
+    * [Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)](#function-seedssiinitializedldomain-typespecific-control-vn-hint-callback-)
+    * [Function seedSSI.derive()](#function-seedssiderive-)
 <!-- TOC -->
 
 
