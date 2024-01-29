@@ -13,7 +13,7 @@ nav_order: 5
 </style>
 
 
-## **Security Context (RFC-075)** ##
+
 {: .no_toc }
 
 
@@ -21,31 +21,56 @@ nav_order: 5
 A period when the community can review the RFC (comment Docs).
 
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
 
  **Copyright**
-
-Copyright © 2018-2022 Axiologic Research and Contributors.
+Copyright © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. Public functions from the Security Context API Space](#1-public-functions-from-the-security-context-api-space-)
+  * [Function getSecurityContext()](#function-getsecuritycontext)
+  * [Function refreshSecurityContext()](#function-refreshsecuritycontext)
+  * [Function securityContextIsInitialised()](#function-securitycontextisinitialised)
+  * [Function configEnvironment(config, refreshSC, callback)](#function-configenvironmentconfig-refreshsc-callback)
+  * [Function getMainDSU(callback)](#function-getmaindsucallback)
+  * [Function setMainDSU(mainDSU)](#function-setmaindsumaindsu)
+  * [Function getVaultDomain(callback)](#function-getvaultdomaincallback)
+  * [Function getMainEnclave(callback)](#function-getmainenclavecallback)
+  * [Function setMainEnclave(enclave, callback)](#function-setmainenclaveenclave-callback)
+  * [Function getSharedEnclave(callback)](#function-getsharedenclavecallback)
+  * [Function setSharedEnclave(enclave, callback)](#function-setsharedenclaveenclave-callback)
+  * [Function setEnclave(enclave, type, callback)](#function-setenclaveenclave-type-callback)
+  * [Function deleteSharedEnclave(callback)](#function-deletesharedenclavecallback)
+  * [Function sharedEnclaveExists()](#function-sharedenclaveexists)
+  * [Function getDIDDomain(callback)](#function-getdiddomaincallback)
+  * [Function setPIN(pin)](#function-setpinpin)
+  * [Function setEnclaveKeySSI(type, keySSI, config)](#function-setenclavekeyssitype-keyssi-config)
+  * [Function isPINNeeded()](#function-ispinneeded)
+  * [Function mainEnclaveIsInitialised()](#function-mainenclaveisinitialised)
+  * [Function setMainDID()](#function-setmaindid)
+  * [Function getMainDID()](#function-getmaindid)
+  * [Function setMainDIDAsync()](#function-setmaindidasync)
+  * [Function getMainDIDAsync()](#function-getmaindidasync)
+* [2. Security context instance API](#2-security-context-instance-api)
+  * [Function registerKeySSI(forDID, keySSI, callback)](#function-registerkeyssifordid-keyssi-callback)
+  * [Function registerDID(didDocument, callback)](#function-registerdiddiddocument-callback)
+  * [Function addPrivateKeyForDID(didDocument, privateKey, callback)](#function-addprivatekeyfordiddiddocument-privatekey-callback)
+  * [Function signForKeySSI(forDID, keySSI, data, callback)](#function-signforkeyssifordid-keyssi-data-callback)
+  * [Function signAsDID(didDocument, data, callback)](#function-signasdiddiddocument-data-callback)
+  * [Function verifyForDID(didDocument, data, signature, callback)](#function-verifyfordiddiddocument-data-signature-callback)
+  * [Function encryptForDID(senderDIDDocument, receiverDIDDocument, message, callback)](#function-encryptfordidsenderdiddocument-receiverdiddocument-message-callback)
+  * [Function decryptAsDID(didDocument, encryptedMessage, callback)](#function-decryptasdiddiddocument-encryptedmessage-callback)
+  * [Function getDb(callback)](#function-getdbcallback)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 
-
-
-
-
-## Abstract
+# Abstract
 
 <p align="justify">The Security Context (SC) API space offers a set of portable functions that represent functionalities of the “Security Context” that enables executable choreographies between various types of DSU reconstruction environments.</p>
 
@@ -63,31 +88,30 @@ The Main DSU can:
 </ol>
 
 The Security Context can have two enclaves:
-<ol>
-  <li>The Main Enclave:</li>
+* The Main Enclave:
    <ol>
-     <li>Is a secure storage that keeps data specific to the current wallet</li>
-     <li>Typically a “WalletDB” (but configurable from environment.js)</li>
+     <li>Is a secure storage that keeps data specific to the current wallet.</li>
+     <li>Typically a “WalletDB” (but configurable from environment.js).</li>
    </ol>
-   <ol>
-  <li>The Shared Enclave:</li>
-   <ol>An optional secure storage for enterprise use cases</ol>
-   <ol>The type is configurable from the demiurge tool</ol>
-   </ol>
-</ol>
-
-Security Contexts are storing (indirectly, through enclaves):
-<ol>
- <li>Private keys for SSIs and DIDs  (automatically)</li>
- <li>Secret keys (for symmetric encryption)</li>
- <li>Secret records</li>
-</ol>
-
-
+  
+* The Shared Enclave:
+  <ol>
+    <li>An optional secure storage for enterprise use cases.</li>
+    <li>The type is configurable from the demiurge tool. </li>
+  </ol>
+ 
+**Security Contexts** are storing (indirectly, through enclaves):
+ <ol>
+  <li>Private keys for SSIs and DIDs  (automatically)</li>
+  <li>Secret keys (for symmetric encryption)</li>
+  <li>Secret records</li>
+ </ol>
 
 
-## Public functions from the Security Context API Space 
-### Function getSecurityContext()
+
+
+# 1. Public functions from the Security Context API Space 
+##  Function getSecurityContext()
 **Description**: Get the security context instance. If the security context does not exist, this function will create it.
 **Returns**
 
@@ -98,7 +122,7 @@ Security Contexts are storing (indirectly, through enclaves):
 
 
 
-### Function refreshSecurityContext()
+## Function refreshSecurityContext()
 **Description**: Create a new security context instance. If an instance exists, it will be overwritten.
 **Returns**
 
@@ -107,7 +131,7 @@ Security Contexts are storing (indirectly, through enclaves):
 | Security Context Object | The security context is a safe place for storing keySSIs. |
 
 
-### Function securityContextIsInitialised()
+## Function securityContextIsInitialised()
 **Description**:  Check if the security context is initialized.
 **Returns**
 
@@ -116,7 +140,7 @@ Security Contexts are storing (indirectly, through enclaves):
 | Security Context Object | The security context is a safe place for storing keySSIs. |
 
 
-### Function configEnvironment(config, refreshSC, callback)
+## Function configEnvironment(config, refreshSC, callback)
 **Description**: Updates the main DSU environment with the entries in the config parameter.
 
 | Name      | Type    | Value     | Description                                                                                                                                                                   |
@@ -137,7 +161,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message. / The security context instance.
 
 
-### Function getMainDSU(callback)
+## Function getMainDSU(callback)
 **Description**: Retrieve the Main DSU.
 
 | Name     | Type     | Value     | Description |
@@ -156,7 +180,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message. / The main DSU associated with the rawDossier global variable.
 
 
-### Function setMainDSU(mainDSU)
+##  Function setMainDSU(mainDSU)
 **Description**: Set your DSU as the main one by associating it with the “rawDossier” global variable. The main DSU is the default DSU in the current environment and is used to store environment variables. In a browser environment, the main DSU also stores the SSApp data.
 
 | Name    | Type       | Value     | Description                              |
@@ -164,7 +188,7 @@ Security Contexts are storing (indirectly, through enclaves):
 | mainDSU | DSU Object | *required | The DSU you want to set as your mainDSU. |
 
 
-### Function getVaultDomain(callback)
+##  Function getVaultDomain(callback)
 **Description**: Get the name of the vault domain. The vault is the blockchain domain that stores sensitive data, such as private keys and KeySSIs.
 
 | Name     | Type     | Value     | Description |
@@ -183,7 +207,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message. / Vault domain from main DSU.
 
 
-### Function getMainEnclave(callback)
+## Function getMainEnclave(callback)
 **Description**: Get the main enclave in the current security context. The main enclave is created when the security context is initialised. The main enclave is used by the security context to store private data such as KeySSIs and private keys for DIDs.
 
 | Name     | Type     | Value     | Description |
@@ -202,7 +226,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message. / The main enclave instance.
 
 
-### Function setMainEnclave(enclave, callback)
+## Function setMainEnclave(enclave, callback)
 **Description**:  Set the main enclave for the current security context. The main enclave is used by the security context to store private data such as KeySSIs and private keys for DIDs.
 
 | Name     | Type             | Value     | Description                                                                          |
@@ -222,7 +246,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message. / The security context instance.
 
 
-### Function getSharedEnclave(callback)
+##  Function getSharedEnclave(callback)
 **Description**: Get the current security context’s shared enclave. The shared enclave is used to store data meant to be shared with other users.
 
 | Name     | Type     | Value     | Description |
@@ -241,7 +265,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message. / Vault domain from main DSU.
 
 
-### Function setSharedEnclave(enclave, callback)
+## Function setSharedEnclave(enclave, callback)
 **Description**: Update the current security context’s shared enclave.
 
 | Name     | Type             | Value     | Description                                                                          |
@@ -261,7 +285,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message. / The security context instance.
 
 
-### Function setEnclave(enclave, type, callback)
+## Function setEnclave(enclave, type, callback)
 **Description**: 
 
 | Name     | Type             | Value     | Description                                                                                              |
@@ -282,7 +306,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message. / The security context instance.
 
 
-### Function deleteSharedEnclave(callback)
+## Function deleteSharedEnclave(callback)
 **Description**: Delete the Shared Enclave.
 
 | Name     | Type     | Value     | Description |
@@ -300,7 +324,7 @@ Security Contexts are storing (indirectly, through enclaves):
 **Description**: An error object containing a message.
 
 
-### Function sharedEnclaveExists()
+## Function sharedEnclaveExists()
 **Description**: Check if a shared enclave exists.
 **Returns**
 
@@ -309,48 +333,48 @@ Security Contexts are storing (indirectly, through enclaves):
 | sc.sharedEnclaveExists() | A boolean value: true if a shared enclave exists, false if it does not. |
 
 
-### Function getDIDDomain(callback)
+##  Function getDIDDomain(callback)
 **Description**: Retrieve the environment DID Domain.
 
 
-### Function setPIN(pin)
+## Function setPIN(pin)
 **Description**: Set a PIN for the security context.
 
 
-### Function setEnclaveKeySSI(type, keySSI, config)
+##  Function setEnclaveKeySSI(type, keySSI, config)
 **Description**: Set a KeySSI for the enclave.
 
 
-### Function isPINNeeded()
+##  Function isPINNeeded()
 **Description**: Check to see if the security context needs a PIN.
 
 
-### Function mainEnclaveIsInitialised()
+##  Function mainEnclaveIsInitialised()
 **Description**: Check to see if the security context main enclave has been initialised.
 
 
-### Function setMainDID()
+## Function setMainDID()
 **Description**: Set the main DID Key for the environment.
 
 
-### Function getMainDID()
+## Function getMainDID()
 **Description**: Retrieve the main DID Key for the environment.
 
 
-### Function setMainDIDAsync()
+## Function setMainDIDAsync()
 **Description**: Asynchronously set the main DID Key for the environment.
 
 
-### Function getMainDIDAsync()
+## Function getMainDIDAsync()
 **Description**: Asynchronously retrieve the main DID Key for the environment.
 
 
-## Security context instance API
+# 2. Security context instance API
 
 Here is the list of operations available on the security context object created through the getSecurityContext:
 
 
-### Function registerKeySSI(forDID, keySSI, callback)
+## Function registerKeySSI(forDID, keySSI, callback)
 **Description**:  Register a keySSI and all its possible derivations in the security context.
 
 | Name     | Type                    | Value     | Description                                                                                                                                     |
@@ -370,7 +394,7 @@ Here is the list of operations available on the security context object created 
 **Description**: An error object containing a message.
 
 
-### Function registerDID(didDocument, callback)
+## Function registerDID(didDocument, callback)
 **Description**: Register private keys associated with didDocument.
 
 | Name        | Type     | Value     | Description                                                        |
@@ -388,7 +412,7 @@ Here is the list of operations available on the security context object created 
 **Description**: An error object containing a message.
 
 
-### Function addPrivateKeyForDID(didDocument, privateKey, callback)
+## Function addPrivateKeyForDID(didDocument, privateKey, callback)
 **Description**: Add a private key associated with didDocument.
 
 | Name        | Type     | Value     | Description                                                           |
@@ -407,7 +431,7 @@ Here is the list of operations available on the security context object created 
 **Description**: An error object containing a message.
 
 
-### Function signForKeySSI(forDID, keySSI, data, callback)
+## Function signForKeySSI(forDID, keySSI, data, callback)
 **Description**: Sign data with a keySSI within the security context.
 
 | Name     | Type                     | Value     | Description                                                                     | 
@@ -429,7 +453,7 @@ Here is the list of operations available on the security context object created 
 **Description**: An error object containing a message./Signature or credential in the JSON format.
 
 
-### Function signAsDID(didDocument, data, callback)
+## Function signAsDID(didDocument, data, callback)
 **Description**: Sign data with didDocument within the security context.
 
 | Name        | Type             | Value     | Description                                      |
@@ -450,7 +474,7 @@ Here is the list of operations available on the security context object created 
 **Description**: An error object containing a message./Signature or credential in the JSON format.
 
 
-### Function verifyForDID(didDocument, data, signature, callback)
+## Function verifyForDID(didDocument, data, signature, callback)
 **Description**: Verify signature for didDocument data.
 
 | Name        | Type             | Value      | Description                                      |
@@ -472,7 +496,7 @@ Here is the list of operations available on the security context object created 
 **Description**: An error object containing a message./Returns true/false.
 
 
-### Function encryptForDID(senderDIDDocument, receiverDIDDocument, message, callback)
+## Function encryptForDID(senderDIDDocument, receiverDIDDocument, message, callback)
 **Description**: Encrypts a message with privateKey of senderDIDDocument.
 
 | Name                | Type     | Value     | Description                   |
@@ -494,7 +518,7 @@ Here is the list of operations available on the security context object created 
 **Description**: An error object containing a message./Encrypted message.
 
 
-### Function decryptAsDID(didDocument, encryptedMessage, callback)
+## Function decryptAsDID(didDocument, encryptedMessage, callback)
 **Description**: Decrypts a message didDocument.
 
 | Name             | Type     | Value     | Description                                      |
@@ -515,7 +539,7 @@ Here is the list of operations available on the security context object created 
 **Description**: An error object containing a message./Decrypted message.
 
 
-### Function getDb(callback)
+## Function getDb(callback)
 **Description**: Get wallet database.
 
 | Name     | Type     | Value     | Description |
@@ -543,7 +567,7 @@ Here is the list of operations available on the security context object created 
 3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/) 
 
 
-## Annex 1. Contributors
+# Annex 1. Contributors
 
 |**Current Editors**                  | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
