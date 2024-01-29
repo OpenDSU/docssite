@@ -103,7 +103,7 @@ Description: Contains a message and the error. / The template keySSI object of t
 
 Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
-**Returns**s
+**Returns**
 
 | **Name**         | **Description**                |
 |:-----------------|:-------------------------------|
@@ -161,9 +161,9 @@ Returns
 	
 
 
-## Function seedSSI.getKeyPair() ##
+## Function seedSSI.getKeyPair() ## 
 
-Description: 
+Description: SS
 
 Returns
 
