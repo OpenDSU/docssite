@@ -28,6 +28,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [3.1 SeedSSI](#31-seedssi)
     * [Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)](#function-seedssiinitializedldomain-typespecific-control-vn-hint-callback)
     * [Function seedSSI.derive()](#function-seedssiderive-)
+    * [Function seedSSI.getPublicKey(format)](#function-seedssigetpublickeyformat-)
+    * [Function seedSSI.getEncryptionKey()](#function-seedssigetencryptionkey-)
 <!-- TOC -->
 
 
@@ -144,9 +146,9 @@ Description: Get the encryption key associated with the keySSI. For SeedSSI, the
 
 Returns
 
-| **Name** | **Description**     |
-|----------|---------------------|
-|          | The encryption key. |
+|**Name** |**Description**     |
+|---------|--------------------|
+|         |The encryption key. |
 
 
 
