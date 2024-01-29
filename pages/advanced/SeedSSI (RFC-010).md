@@ -96,7 +96,6 @@ Description: Initialize a SeedSSI with your own parameters.
 
 
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
-Function seedSSI.derive()
 
 ### Function seedSSI.derive() 
 
@@ -114,84 +113,42 @@ Description: Derive your seedSSI and return a sReadSSI. In the derivation proces
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-format
-
-(optional)
-	
-
-String
-	
-
-	
-
-You can use the parameter “pem” to specify that you want to get the private key in the pem (private enhanced mail) format.
+| **Name**           | **Type** | **Value**   | **Description**                                                                                                          |
+|--------------------|----------|-------------|--------------------------------------------------------------------------------------------------------------------------|
+| format (optional)  |String    |             | You can use the parameter “pem” to specify that you want to get the private key in the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) mail) format.
 
 Returns
 
-Name
-	
+| **Name** | **Description** |
+|----------|-----------------|
+|          | The private key |
 
-Description
 
-	
-
-The private key
-Function seedSSI.getPublicKey(format)
+### Function seedSSI.getPublicKey(format) ###
 
 Description: Derive your seedSSI and return a sReadSSI.
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-format
-
-	
-
-String
-	
-
-	
-
-The parameter can be set to “pem” to specify that you want to get the public key in the pem (private enhanced mail) format.
-
-Alternatively, it can be used “raw” to specify that you want the raw secp256k1 public key.
-
-By default, the pem format is returned.
+| **Name** | **Type**  | **Value**  | **Description**                                                                                                             |
+|----------|-----------|------------|-----------------------------------------------------------------------------------------------------------------------------|
+|format    | String    |            | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. 
 
 Returns
 
-Name
-	
+| **Name** | **Description**  |
+|----------|------------------|
+|          | The private key  |
 
-Description
-
-	
-
-The private key
-Function seedSSI.getEncryptionKey()
+### Function seedSSI.getEncryptionKey() ###
 
 Description: Get the encryption key associated with the keySSI. For SeedSSI, the encryption key is the same as the sReadSSI key.
 
 Returns
+
+| **Name** | **Description**     |
+|----------|---------------------|
+|          | The encryption key. |
+
+
 
 Name
 	
