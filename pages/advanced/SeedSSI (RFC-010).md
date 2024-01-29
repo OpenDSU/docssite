@@ -51,11 +51,11 @@ The SeedSSI family is currently the easiest and most used way to generate and in
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
-|**SubType**                  | **Description**                                                                                                                                                                                                                                    |
-|:------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                                |
-|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_ |
-|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                                      |
+| **SubType** | **Description**                                                                                                                                                                                                                                    |
+|:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| seed        | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                                |
+| sread       | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_ |
+| sza         | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                                      |
 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
@@ -64,11 +64,11 @@ Here is a summary of the different subtypes present in the SeedSSI family, from 
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 
-|**Type**          | **Type Specific substring**                  | **Control substring**                            |
-|:------------------------------------|:-----------------------------------------|:----------------------------------------|
-|seed                                 | An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation).                                     |empty.                                     |
-|sread                                | Hash of the  secp256k1 private key.                                     | The public secp256k1 key.                                     |
-|sza                                | empty                                     | The public secp256k1 key.                                     |
+| **Type** | **Type Specific substring**                                                                                    | **Control substring**     |
+|:---------|:---------------------------------------------------------------------------------------------------------------|:--------------------------|
+| seed     | An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation). | empty.                    |
+| sread    | Hash of the  secp256k1 private key.                                                                            | The public secp256k1 key. |
+| sza      | empty                                                                                                          | The public secp256k1 key. |
 
 
 
@@ -103,11 +103,16 @@ Description: Contains a message and the error. / The template keySSI object of t
 
 Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
-**Returns**
+**Returns**s
 
 | **Name**        | **Description**                |
-|-----------------|--------------------------------|
+|-----------------|:-------------------------------|
 | sReadSSI object | A sReadSSI object is returned. |
+
+
+| **Name** | **Description** |
+|:---------|:----------------|
+|          | The private key |
 
 
 
@@ -115,14 +120,14 @@ Description: Derive your seedSSI and return a sReadSSI. In the derivation proces
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
 
-| **Name**           | **Type** | **Value**   | **Description**                                                                                                          |
-|--------------------|----------|-------------|--------------------------------------------------------------------------------------------------------------------------|
-| format (optional)  |String    |             | You can use the parameter “pem” to specify that you want to get the private key in the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) mail) format.
+| **Name**          | **Type** | **Value** | **Description**                                                                                                                                                                   |
+|-------------------|----------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| format (optional) | String   |           | You can use the parameter “pem” to specify that you want to get the private key in the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) mail) format. 
 
 Returns
 
 | **Name** | **Description** |
-|----------|-----------------|
+|:---------|:----------------|
 |          | The private key |
 
 
@@ -130,15 +135,17 @@ Returns
 
 Description: Derive your seedSSI and return a sReadSSI.
 
-| **Name** | **Type**  | **Value**  | **Description**                                                                                                             |
-|----------|-----------|------------|-----------------------------------------------------------------------------------------------------------------------------|
-|format    | String    |            | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. 
+| **Name** | **Type** | **Value** | **Description**                                                                                                                                                                  |
+|----------|----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| format   | String   |           | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. 
 
 Returns
 
-| **Name** | **Description**  |
-|----------|------------------|
-|          | The private key  |
+| **Name** | **Description** |
+|:---------|:----------------|
+|          | The private key |
+
+
 
 ### Function seedSSI.getEncryptionKey() ###
 
