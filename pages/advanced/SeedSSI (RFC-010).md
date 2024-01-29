@@ -22,16 +22,21 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 * [SeedSSI (RFC-010)](#seedssi-rfc-010)
 * [Abstract](#abstract-)
-  * [SeedSSI’s family subtypes with examples](#seedssis-family-subtypes-with-examples-)
-  * [Type-specific and control substrings](#type-specific-and-control-substrings-)
-  * [Specific functions for SeedSSI’s family subtypes](#specific-functions-for-seedssis-family-subtypes)
-    * [SeedSSI](#seedssi)
-    * [Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)](#function-seedssiinitializedldomain-typespecific-control-vn-hint-callback-)
+* [1. SeedSSI’s family subtypes with examples](#1-seedssis-family-subtypes-with-examples)
+* [2. Type-specific and control substrings](#2-type-specific-and-control-substrings)
+* [3. Specific functions for SeedSSI’s family subtypes](#3-specific-functions-for-seedssis-family-subtypes)
+  * [3.1 SeedSSI](#31-seedssi)
+    * [Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)](#function-seedssiinitializedldomain-typespecific-control-vn-hint-callback)
     * [Function seedSSI.derive()](#function-seedssiderive-)
+    * [Function seedSSI.getPrivateKey(format)](#function-seedssigetprivatekeyformat)
+    * [Function seedSSI.getPublicKey(format)](#function-seedssigetpublickeyformat)
+    * [Function seedSSI.getEncryptionKey()](#function-seedssigetencryptionkey)
+    * [Function seedSSI.getKeyPair()](#function-seedssigetkeypair)
+    * [Function seedSSI.sign(dataToSign, callback)](#function-seedssisigndatatosign-callback)
 <!-- TOC -->
 
 
-#  Abstract #
+#  Abstract 
 
 SeedSSI is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
 
@@ -45,38 +50,38 @@ The SeedSSI family is currently the easiest and most used way to generate and in
 
 <p style="text-align:center"> <b>Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2) </b></p>
 
-## SeedSSI’s family subtypes with examples ##
+# 1. SeedSSI’s family subtypes with examples
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
-|**SubType**                  | **Description**                                                                                                                                                                                                                                    |
-|:------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|seed                                 | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                                |
-|sread                                | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_ |
-|sza                                  | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                                      |
+| **SubType** | **Description**                                                                                                                                                                                                                                    |
+|:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| seed        | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                                |
+| sread       | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_ |
+| sza         | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                                      |
 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
 
-## Type-specific and control substrings ##
+# 2. Type-specific and control substrings
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 
-|**Type**          | **Type Specific substring**                  | **Control substring**                            |
-|:------------------------------------|:-----------------------------------------|:----------------------------------------|
-|seed                                 | An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation).                                     |empty.                                     |
-|sread                                | Hash of the  secp256k1 private key.                                     | The public secp256k1 key.                                     |
-|sza                                | empty                                     | The public secp256k1 key.                                     |
+| **Type** | **Type Specific substring**                                                                                    | **Control substring**     |
+|:---------|:---------------------------------------------------------------------------------------------------------------|:--------------------------|
+| seed     | An secp256k1 private key in Base58 (that is used to obtain type specific and control substring by derivation). | empty.                    |
+| sread    | Hash of the  secp256k1 private key.                                                                            | The public secp256k1 key. |
+| sza      | empty                                                                                                          | The public secp256k1 key. |
 
 
 
-## Specific functions for SeedSSI’s family subtypes
+# 3. Specific functions for SeedSSI’s family subtypes
 
 (Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
 
-### SeedSSI
+## 3.1 SeedSSI
 
-### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback) ###
+### Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)
 
 Description: Initialize a SeedSSI with your own parameters.
 
@@ -96,309 +101,147 @@ Description: Initialize a SeedSSI with your own parameters.
 
 
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
-Function seedSSI.derive()
 
-### Function seedSSI.derive() ###
+### Function seedSSI.derive() 
 
 Description: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
 
 **Returns**
 
-| **Name**        | **Description**                |
-|-----------------|--------------------------------|
-| sReadSSI object | A sReadSSI object is returned. |
+| **Name**         | **Description**                |
+|:-----------------|:-------------------------------|
+| sReadSSI object  | A sReadSSI object is returned. |
+
+
+| **Name**  | **Description** |
+|:----------|:----------------|
+|           | The private key |
 
 
 
-**Function seedSSI.getPrivateKey(format)**
+### Function seedSSI.getPrivateKey(format)
 
 Description: Get the private key associated with your SeedSSI. To obtain it, we decode the specific substring in Base58.
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-format
-
-(optional)
-	
-
-String
-	
-
-	
-
-You can use the parameter “pem” to specify that you want to get the private key in the pem (private enhanced mail) format.
+| **Name**           | **Type**  | **Value**  | **Description**                                                                                                                                                                    |
+|:-------------------|:----------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| format (optional)  | String    |            | You can use the parameter “pem” to specify that you want to get the private key in the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) mail) format.  
 
 Returns
 
-Name
-	
+| **Name** | **Description** |
+|:---------|:----------------|
+|          | The private key |
 
-Description
 
-	
-
-The private key
-Function seedSSI.getPublicKey(format)
+### Function seedSSI.getPublicKey(format)
 
 Description: Derive your seedSSI and return a sReadSSI.
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-format
-
-	
-
-String
-	
-
-	
-
-The parameter can be set to “pem” to specify that you want to get the public key in the pem (private enhanced mail) format.
-
-Alternatively, it can be used “raw” to specify that you want the raw secp256k1 public key.
-
-By default, the pem format is returned.
+| **Name** | **Type** | **Value** | **Description**                                                                                                                                                                  |
+|:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| format   | String   |           | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. |
 
 Returns
 
-Name
-	
+| **Name** | **Description** |
+|:---------|:----------------|
+|          | The private key |
 
-Description
 
-	
 
-The private key
-Function seedSSI.getEncryptionKey()
+### Function seedSSI.getEncryptionKey()
 
 Description: Get the encryption key associated with the keySSI. For SeedSSI, the encryption key is the same as the sReadSSI key.
 
 Returns
 
-Name
-	
+| **Name** | **Description**     |
+|:---------|:--------------------|
+|          | The encryption key. |
 
-Description
 
-	
+### Function seedSSI.getKeyPair()
 
-The encryption key.
-Function seedSSI.getKeyPair()
-
-Description: 
+Description:
 
 Returns
 
-Name
-	
+| **Name**  | **Description**                                 |
+|:----------|:------------------------------------------------|
+| keyPair   | A pair with the private key and the public key. |
 
-Description
 
-keyPair
-	
-
-A pair with the private key and the public key.
-Function seedSSI.sign(dataToSign, callback)
+### Function seedSSI.sign(dataToSign, callback)
 
 Description: 
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-dataToSign
-	
-
-	
-
-*required
-	
-
-callback
-	
-
-function
-	
-
-	
+| **Name**    | **Type**  | **Value**  | **Description**  |
+|:------------|:----------|:-----------|:-----------------|
+| dataToSign  |           | *required  |                  |
+| callback    | function  |            |                  |
 
 Callback parameters
 
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-signature
-	
-
-	
+  | **Name**  | **Type**     | **Response example** |
+|:----------|:-------------|:---------------------|
+| err       | Error object |                      |
+| signature |              |                      |
 
 Description: Contains a message and the error.
 
 Returns
 
-Name
-	
+| **Name**  | **Description**                                 |
+|:----------|:------------------------------------------------|
+| keyPair   | A pair with the private key and the public key. 
 
-Description
-
-keyPair
-	
-
-A pair with the private key and the public key.
-Function seedSSI.getTypeName()
+                 
+### Function seedSSI.getTypeName()
 
 Description: 
 
 Returns
 
-Name
-	
+| Name              | Description                                |
+|-------------------|--------------------------------------------|
+| SSITypes.SEED_SSI | A string representing the type of the SSI. |
 
-Description
 
-SSITypes.SEED_SSI
-	
+## 3.2. SReadSSI
 
-A string representing the type of the SSI.
-3.2. SReadSSI
-Function sReadSSI.initialize(dlDomain, vn, hint, callback)
+### Function sReadSSI.initialize(dlDomain, vn, hint, callback)
 
 Description: Initialize the sReadSSI with desired parameters.
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-dlDomain
-	
-
-String
-	
-
-*required
-	
-
-The blockchain domain wanted to be used.
-
-Vn
-
-(optional)
-	
-
-String
-	
-
-	
-
-The version number of the SeedSSI you want to use.
-
-Default value: “v0”.
-
-Hint
-
-(optional)
-	
-
-String
-	
-
-	
-
-Optional information for the keySSI resolver.
-
-Default value: undefined.
-
-callback
-	
-
-function
-	
-
-*required
-	
+| **Name**                   | **Type**      | **Value**    | **Description**                                                                  |
+|:-----------------------|:----------|:---------|:-----------------------------------------------------------------------------|
+| dlDomain               | String    | *required| The blockchain domain wanted to be used.                                     |
+| Vn (optional)          | String    |          | The version number of the SeedSSI you want to use. Default value: “v0”.      |
+| Hint (optional)        | String    |          | Optional information for the keySSI resolver.Default value: undefined.       |
+| callback               | function  | *required|                                                                              |
 
 Callback parameters
 
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-keySSI
-	
-
-keySSI Object
-	
+| **Name** | **Type**                                       | **Response example** |
+|:---------|:-----------------------------------------------|:---------------------|
+| err      | Error object                                   |                      |
+| keySSI   | [keySSI Object](https://opendsu.com/rfc002)    |                      |
 
 Description: Contains a message and the error. / The template keySSI object of the chosen type that was created.
-Function sReadSSI.derive()
+
+### Function sReadSSI.derive()
 
 Description: Derive your sReadSSI to obtain a szaSSI. In the derivation process, the dlDomain is conserved. The type-specific substring is set to empty. The control substring, Vn and Hint are conserved.
 
 Returns
 
-Name
-	
+| Name          | Description                  |
+|:--------------|:-----------------------------|
+| szaSSI object | A szaSSI object is returned. 
 
-Description
 
-szaSSI object
-	
-
-A szaSSI object is returned.
-Function sReadSSI.getEncryptionKey()
+### Function sReadSSI.getEncryptionKey()
 
 Description: Get the encryption key associated with the keySSI. To obtain sReadSSI’s encryption key, we decode its control substring in Base58.
 
