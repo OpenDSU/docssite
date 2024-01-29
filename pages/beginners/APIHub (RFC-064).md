@@ -32,7 +32,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**Error Reporting (RFC-064)**](#error-reporting-rfc-064)
   * [Abstract](#abstract-)
   * [1. System functions](#1-system-functions-)
   * [2. Error](#2-error-)
