@@ -236,7 +236,7 @@ Description: Derive your sReadSSI to obtain a szaSSI. In the derivation process,
 
 Returns
 
-| Name          | Description                  |
+| **Name**          | **Description**                  |
 |:--------------|:-----------------------------|
 | szaSSI object | A szaSSI object is returned. 
 
@@ -247,58 +247,37 @@ Description: Get the encryption key associated with the keySSI. To obtain sReadS
 
 Returns
 
-Name
-	
+| **Name**   | **Description**      |
+|:-----=--|:---------------------|
+| String | The encryption key.  |
 
-Description
 
-String
-	
-
-The encryption key.
-Function sReadSSI.getTypeName()
+### Function sReadSSI.getTypeName()
 
 Description: 
 
 Returns
 
-Name
-	
+| **Name**           | **Description**                            |
+|:-------------------|:-------------------------------------------|
+| SSITypes.SREAD_SSI | A string representing the type of the SSI. |
 
-Description
 
-SSITypes.SREAD_SSI
-	
-
-A string representing the type of the SSI.
 Function sReadSSI.getPublicKey(options)
 
 Description: 
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-options
-	
-
-	
-
-	
+| **Name**  | **Type**  | **Value**  | **Description**  |
+|:----------|:----------|:-----------|:-----------------|
+| options   |           |            |                  |
 
 Returns
 
-Name
-	
+| **Name**  | **Description**  |
+|:----------|:-----------------|
+|           |                  |
 
-Description
+
 
 	
 
