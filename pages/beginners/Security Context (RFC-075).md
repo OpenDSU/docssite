@@ -116,9 +116,9 @@ The Security Context can have two enclaves:
 **Description**: Get the security context instance. If the security context does not exist, this function will create it.
 **Returns**
 
-| Name                      | Description                                               |
-|---------------------------|-----------------------------------------------------------|
-| Security Context Object   | The security context is a safe place for storing keySSIs. |
+| Name    |Description                                               |
+|-------------------------|----------------------------------------------------------|
+| Security Context Object |The security context is a safe place for storing keySSIs. |
 
 
 
