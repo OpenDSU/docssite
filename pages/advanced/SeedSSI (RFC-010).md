@@ -144,28 +144,17 @@ Returns
 
 Description: Get the encryption key associated with the keySSI. For SeedSSI, the encryption key is the same as the sReadSSI key.
 
-Returns xy
+Returns
 
-| aa | a aaa  |
-|:---|:-------|
-| a  | aaaaaa |
+| **Name** | **Description**     |
+|:---------|:--------------------|
+|          | The encryption key. |
 
-
-| **Name**|**Description**     |
-|---------|--------------------|
-|         |The encryption key. |
-
-
-
-Name
-	
-
-Description
 
 	
 
-The encryption key.
-Function seedSSI.getKeyPair()
+
+## Function seedSSI.getKeyPair() ##
 
 Description: 
 
