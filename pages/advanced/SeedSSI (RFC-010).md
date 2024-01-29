@@ -29,7 +29,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
       * [Function seedSSI.initialize(dlDomain, typeSpecific, control, vn, hint, callback)](#function-seedssiinitializedldomain-typespecific-control-vn-hint-callback)
     * [Function seedSSI.derive()](#function-seedssiderive)
 <!-- TOC -->
-# Abstract
+# Abstract #
 
 SeedSSI is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
 
@@ -43,7 +43,7 @@ The SeedSSI family is currently the easiest and most used way to generate and in
 
 <p style="text-align:center"> <b>Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2) </b></p>
 
-## SeedSSI’s family subtypes with examples
+## SeedSSI’s family subtypes with examples ##
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
@@ -56,7 +56,7 @@ Here is a summary of the different subtypes present in the SeedSSI family, from 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
 
-## Type-specific and control substrings
+## Type-specific and control substrings ##
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 
