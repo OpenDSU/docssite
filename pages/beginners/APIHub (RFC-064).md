@@ -25,27 +25,28 @@ A period when the community can review the RFC (commnent Docs)
 **Copyright: MIT license**
 
  **Copyright**
- <p>Copyright © 2018-2024 Axiologic Research and Contributors.
-This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)</p>
+
+Copyright © 2018-2024 Axiologic Research and Contributors.
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
 
 <!-- TOC -->
-  * [Abstract](#abstract-)
-  * [1. System functions](#1-system-functions-)
-  * [2. Error](#2-error-)
-    * [2.1 Function createOpenDSUErrorWrapper(message, err, otherErrors)](#21-function-createopendsuerrorwrappermessage-err-othererrors)
-    * [2.2 Function OpenDSUSafeCallback(callback)](#22-function-opendsusafecallbackcallback)
-    * [2.3 Function observeUserRelevantMessages(type, callback)](#23-function-observeuserrelevantmessagestype-callback)
-    * [2.4 Function unobserveUserRelevantMessages(type, callback)](#24-function-unobserveuserrelevantmessagestype-callback)
-    * [2.5 Function printOpenDSUError(...args)](#25-function-printopendsuerrorargs)
-    * [2.6 Function registerMandatoryCallback(callback, timeout)](#26-function-registermandatorycallbackcallback-timeout)
-    * [2.7 Function reportDevRelevantInfo(message)](#27-function-reportdevrelevantinfomessage)
-    * [2.8 Function reportUserRelevantError(message, err, showIntermediateErrors)](#28-function-reportuserrelevanterrormessage-err-showintermediateerrors)
-    * [2.9 Function reportUserRelevantInfo(message)](#29-function-reportuserrelevantinfomessage)
-    * [2.10 Function reportUserRelevantWarning(message)](#210-function-reportuserrelevantwarningmessage)
-    * [2.11 DB_INSERT_EXISTING_RECORD_ERROR](#211-db_insert_existing_record_error)
-  * [Annex 1. Contributors](#annex-1-contributors)
+* [Abstract](#abstract-)
+* [1. System functions](#1-system-functions-)
+* [2. Error](#2-error-)
+  * [Function createOpenDSUErrorWrapper(message, err, otherErrors)](#function-createopendsuerrorwrappermessage-err-othererrors)
+  * [Function OpenDSUSafeCallback(callback)](#function-opendsusafecallbackcallback)
+  * [Function observeUserRelevantMessages(type, callback)](#function-observeuserrelevantmessagestype-callback)
+  * [Function unobserveUserRelevantMessages(type, callback)](#function-unobserveuserrelevantmessagestype-callback)
+  * [Function printOpenDSUError(...args)](#function-printopendsuerrorargs)
+  * [Function registerMandatoryCallback(callback, timeout)](#function-registermandatorycallbackcallback-timeout)
+  * [Function reportDevRelevantInfo(message)](#function-reportdevrelevantinfomessage)
+  * [Function reportUserRelevantError(message, err, showIntermediateErrors)](#function-reportuserrelevanterrormessage-err-showintermediateerrors)
+  * [Function reportUserRelevantInfo(message)](#function-reportuserrelevantinfomessage)
+  * [Function reportUserRelevantWarning(message)](#function-reportuserrelevantwarningmessage)
+  * [DB_INSERT_EXISTING_RECORD_ERROR](#db_insert_existing_record_error)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
 
@@ -71,7 +72,7 @@ This API space allows the user to set up custom error reporting.
 # 2. Error #
 
 
-## 2.1 Function createOpenDSUErrorWrapper(message, err, otherErrors)
+## Function createOpenDSUErrorWrapper(message, err, otherErrors)
 **Description**: Create a new error wrapper.
 
 | Name         | Type          | Value      | Description                                                 |
@@ -91,7 +92,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.2 Function OpenDSUSafeCallback(callback)
+## Function OpenDSUSafeCallback(callback)
 **Description**: Verify that there is a callback. If not, report an error or a warning.
 
 | Name       | Type     | Value     | Description                      |
@@ -108,7 +109,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-##  2.3 Function observeUserRelevantMessages(type, callback)
+##  Function observeUserRelevantMessages(type, callback)
 **Description**: Register to one observer (error, info, warn, or dev) to get the associated messages.
 
 | Name     | Type     | Value     | Description                                                                                              |
@@ -119,7 +120,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.4 Function unobserveUserRelevantMessages(type, callback)
+##  Function unobserveUserRelevantMessages(type, callback)
 **Description**: Stop observing and receiving associated messages.
 
 | Name     | Type     | Value      | Description                                                                |
@@ -131,7 +132,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.5 Function printOpenDSUError(...args)
+##  Function printOpenDSUError(...args)
 **Description**: Print openDSU errors.
 
 | Name  | Type | Value | Description                                              |
@@ -142,7 +143,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.6 Function registerMandatoryCallback(callback, timeout)
+##  Function registerMandatoryCallback(callback, timeout)
 **Description**: Make sure that callback is called within the specified time (5s by default).
 
 | Name     | Type     | Value            | Description                                                                |
@@ -153,7 +154,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.7 Function reportDevRelevantInfo(message)
+## Function reportDevRelevantInfo(message)
 **Description**: Report additional information about the error to developers.
 
 | Name    | Type  | Value     | Description                                            |
@@ -163,7 +164,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.8 Function reportUserRelevantError(message, err, showIntermediateErrors)
+##  Function reportUserRelevantError(message, err, showIntermediateErrors)
 **Description**: Report an error to the user in the console.
 
 | Name                   | Type         | Value     | Description                                              |
@@ -175,7 +176,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.9 Function reportUserRelevantInfo(message)
+##  Function reportUserRelevantInfo(message)
 **Description**: Report additional information about the error to users.
 
 | Name    | Type   | Value     | Description                                       |
@@ -186,7 +187,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.10 Function reportUserRelevantWarning(message)
+##  Function reportUserRelevantWarning(message)
 **Description**: Report a warning to the user in the console.
 
 | Name    | Type   | Value     | Description                                              |
@@ -196,7 +197,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## 2.11 DB_INSERT_EXISTING_RECORD_ERROR
+##  DB_INSERT_EXISTING_RECORD_ERROR
 **Description**: A predefined error with the following message: "Trying to insert into the existing record".
 
 
@@ -209,7 +210,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-## Annex 1. Contributors
+# Annex 1. Contributors
 
 | **Current Editors**                 | **Email**                                                   |
 |:------------------------------------|:------------------------------------------------------------|
