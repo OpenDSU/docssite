@@ -127,7 +127,7 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 
 ### Function listFiles(dsuPath, options, callback)
-**Description**:<p align="justify"> If not specified otherwise, dsuPath is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under dsuPath is composed. Optionally, it can also recursively descend into subfolders of dsuPath (if recursive is set to “true”). Configuration options may encapsulate the flags ignoreMounts (default: false) and recursive (default: true).</p>
+**Description**<p align="justify">:If not specified otherwise, dsuPath is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under dsuPath is composed. Optionally, it can also recursively descend into subfolders of dsuPath (if recursive is set to “true”). Configuration options may encapsulate the flags ignoreMounts (default: false) and recursive (default: true).</p>
 
 <p align="justify">Returns an Error err if the manifest of this DSU instance is corrupt or if an externally mounted DSU instance under dsuPath cannot be loaded.</p>
 
@@ -156,10 +156,10 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 If ignoreMounts is set to “false”, it also lists externally mounted DSU instances.
 
-| **Name**| **Type**| **Value** | **Description**                                                                                                        |
-|:--------|:--------|:----------|:-----------------------------------------------------------------------------------------------------------------------|
-| dsuPath | string  | *required | The path in your DSU from which you want to retrieve the list of folders.                                              |
-| options | object  |           | <br/>The default options are the following: <br/> {  <br/> **recursive**: true, <br/>  **ignoreMounts**: false  <br/>} 
+| **Name**| **Type**| **Value** | **Description**                                                                                                       |
+|:--------|:--------|:----------|:----------------------------------------------------------------------------------------------------------------------|
+| dsuPath | string  | *required | The path in your DSU from which you want to retrieve the list of folders.                                             |
+| options | object  |           | <br/>The default options are the following: <br/> {  <br/> **recursive**: true, <br/>  **ignoreMounts**: false  <br/>}|
 
 
 **Callback parameters**
