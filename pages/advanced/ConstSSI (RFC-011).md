@@ -24,71 +24,42 @@ ConstSSI (RFC-011)
 
 One of OpenDSU’s objectives is to provide a solution to the famous trilemma regarding naming systems known as Zooko’s Triangle. It is challenging to design a naming system with human-meaningful identifiers that are also secure and decentralized. The trilemma tells us you can only choose two. But we think there is a workaround: Human Meaningful Identifiers could be resolved to cryptographically safe identifiers using a key derivation function.[1] Obtained identifiers would be secure and self-certifying, as well as provide the required levels of decentralization and security.
 
-Figure 1: Zooko’s Triangle
+<img alt="" align="center" src="" class="imgMain"/>
+
+<p style="text-align:center"> <b> Figure 1: Zooko’s Triangle </b></p>
 
 The solution that OpenDSU proposes is a special KeySSI called ConstSSI that is resolved to an immutable DSU. Immutable means that the item can not be updated after being assigned its initial value. This immutable DSU can contain links to one or multiple KeySSIs under the owner’s control (such as the seedSSI).
 
 Compared to randomly generated identifiers, the ConstSSI is based on human meaningful strings, which allows people to remember it easily and improve user experience. By redirecting the ConstSSI to properly secured keys, decentralization and security properties can be achieved. Security can still be a risk, but there is a set of best practices and methods that help mitigate most security issues without sacrificing the decentralization (self-sovereignty) or the human meaningfulness of the identifier.
 
-Figure 2: ConstSSI family
+<img alt="" align="center" src="" class="imgMain"/>
+
+<p style="text-align:center"> <b> Figure 2: ConstSSI family </b></p>
+
 # 1. ConstSSI subtypes derivation with examples
 
-A constSSI is built from the hash of readable strings embedded in other keySSI such as ArraySSI, PasswordSSI, and WalletSSI.
+A constSSI is built from the hash of readable strings embedded in other keySSI such as [ArraySSI](https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html), [PasswordSSI](https://www.opendsu.org/pages/contributors/PasswordSSIs%20(RFC-013).html), and [WalletSSI](https://www.opendsu.org/pages/contributors/WalletSSI%20(RFC-014).html).
 
-SubType
-	
+| **SubType** | **Description**                                                                                                                                                                                                                                                                 |
+|:------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| const       | Owning a ConstSSI provides read access to the immutable DSU anchored by the ConstSSI. However, the DSU is encrypted, and you need the ConstSSI in order to read it. See the Security Considerations to understand the security aspects. Example: _ssi:const:domain:string::v0_  |
+| cza         | Owning a czaSSI provides no access. Having a czaSSI indicates that a ConstSSI exists and has only a version (it redirects to an immutable DSU). Example: ssi:sza:domain:hash::v0.                                                                                               |
 
-Description
 
-const
-	
-
-Owning a ConstSSI provides read access to the immutable DSU anchored by the ConstSSI. However, the DSU is encrypted, and you need the ConstSSI in order to read it.
-
-See the Security Considerations to understand the security aspects.
-
-Example:
-
-ssi:const:domain:string::v0
-
-cza
-	
-
-Owning a czaSSI provides no access. Having a czaSSI indicates that a ConstSSI exists and has only a version (it redirects to an immutable DSU).
-
-Example:
-
-ssi:sza:domain:hash::v0. 
  # 2. Type-specific and control substrings
 
 The “control key” part of the ConstSSI is always empty, which means the anchor can not be updated (it is immutable, constant value, read-only).
 
-Type
-	
+| **Type** | **Type Specific substring** | **Control substring**  |
+|:---------|:----------------------------|:-----------------------|
+| const    | String                      | empty                  |
+| cza      |                             | Hash of the public key |
 
-Type Specific substring
-	
-
-Control substring
-
-const
-	
-
-String
-	
-
-empty
-
-cza
-	
-
-	
-
-Hash of the public key 
 
 # 3. Specific functions for ConstSSI
 
-(Common functions for all keySSI types are available here.)
+(Common functions for all keySSI types are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
+
 ## Function constSSI.initialize(dlDomain, constArray, vn, hint)
 
 Description: Initialize ConstSSI with your own parameters.
