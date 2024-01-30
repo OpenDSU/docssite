@@ -5,7 +5,7 @@ parent: Open DSU Advanced
 nav_order: 2
 ---
 
-ConstSSI (RFC-011)
+# ConstSSI (RFC-011)
 <!-- TOC -->
 * [Abstract](#abstract)
 * [1. ConstSSI subtypes derivation with examples](#1-constssi-subtypes-derivation-with-examples)
@@ -177,3 +177,4 @@ Algorithms used for cryptographic operations can differ according to the type of
 | Rafael Mastaleru                    | raf@rms.ro (RMS)                                            |
 
 
+[1] Key Derivation Function Definition: https://en.wikipedia.org/wiki/Key_derivation_function 
