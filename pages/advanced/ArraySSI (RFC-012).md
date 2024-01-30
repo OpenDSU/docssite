@@ -112,3 +112,34 @@ Callback parameters
 | anchorValue |              |                      |
 
 
+# 3. Common KeySSI functions from KeySSIMixin
+
+## Function autoload(identifier)
+
+Description:
+
+| **Name**   | **Type** | **Value**  | **Description** |
+|:-----------|:---------|:-----------|:----------------|
+| identifier | string   | *required  |                 |
+
+
+## Function validateKeySSICharLength()
+
+Description: Throws an error if the length of the identifier exceeds the maximum char length.
+
+## Function load(subtype, dlDomain, subtypeSpecificString, control, vn, hint)
+
+Description: Initialize ArraySSI with your own parameters.
+
+| **Name**               | **Type** | **Value**  | **Description**                                                          |
+|:-----------------------|:---------|:-----------|:-------------------------------------------------------------------------|
+| subtype                | string   |            |                                                                          |
+| dldomain               | string   | *required  | The blockchain domain wanted to be used.                                 |
+| subtypeSpecificString  | string   |            |                                                                          |
+| control                | string   |            |                                                                          |
+| vn (optional)          | string   |            | The version number of the SeedSSI you want to use. Default value: “v0”   |
+| hint (optional)        | string   |            | Optional information for the keySSI resolver. Default value: undefined.  |
+
+
+## Function getDerivedType(ssiType, callback)
+
