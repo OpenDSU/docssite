@@ -111,11 +111,11 @@ The encryption key
 
 **Description**:
 
-| **Name**            | **Type**  | **Value** | **Description** |
-|:--------------------|:----------|:----------|:----------------|
-| brickMapHash        |           |           |                 |
-| previousAnchorValue |           |           |                 |
-| callback            | function  |           |                 |
+| **Name**            | **Type** | **Value** | **Description** |
+|:--------------------|:---------|:----------|:----------------|
+| brickMapHash        |          |           |                 |
+| previousAnchorValue |          |           |                 |
+| callback            | function |           |                 |
 
 
 **Callback parameters**
