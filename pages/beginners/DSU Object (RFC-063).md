@@ -47,7 +47,7 @@ A DSU object is an entity that exists temporarily in the Execution Environment (
 
 # Creating and Configuring a DSU Instance
 
-Creating a DSU container requires a KeySSI object. A DSU object is instantiated through the Resolver API see [RFC065] (https://www.opendsu.org/pages/advanced/Resolver%20(RFC-065).html), by calling resolver.createSeedDSU() as sketched in the code example below (Example 1).
+Creating a DSU container requires a KeySSI object. A DSU object is instantiated through the Resolver API see [RFC065](https://www.opendsu.org/pages/advanced/Resolver%20(RFC-065).html), by calling resolver.createSeedDSU() as sketched in the code example below (Example 1).
 
 ```js
 //Load openDSU environment, openDSU SDK, resolver library
@@ -132,12 +132,15 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 
 ### Function listFiles(dsuPath, options, callback)
+<p style="text-align: justify;">
 
 **Description**: If not specified otherwise, **dsuPath** is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under **dsuPath** is composed. Optionally, it can also recursively descend into subfolders of **dsuPath** (if **recursive** is set to “true”). Configuration **options** may encapsulate the flags **ignoreMounts** (default: false) and **recursive** (default: true).
 
 Returns an Error **err** if the manifest of this DSU instance is corrupt or if an externally mounted DSU instance under dsuPath cannot be loaded.
 
 If **ignoreMounts** is set to “false”, it also lists externally mounted DSU instances.
+
+</p>
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                      |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------|
