@@ -19,7 +19,7 @@ A period when the community can review the RFC (comment Docs).
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-<!-- TOC -->
+
 * [ArraySSI (RFC-012)](#arrayssi-rfc-012)
 <!-- TOC -->
 
@@ -60,7 +60,7 @@ Description: Initialize ArraySSI with owned parameters.
 | dlDomain        | string    | *required   | The blockchain domain wanted to be used.                                                                       |
 | constArray      | string    | *required   | An array with keys that will be used in the initialization to get the final specific string of your ArraySSI.  |
 | vn (optional)   | string    |             | The version number of the SeedSSI you want to use. Default value: “v0”.                                        |
-| hint (optional) | string    |             | Optional information for the keySSI resolver. Default value: undefine.                                         
+| hint (optional) | string    |             | Optional information for the keySSI resolver. Default value: undefine.                                         |
 
 ## Function arraySSI.derive()
 
@@ -112,3 +112,96 @@ Callback parameters
 | anchorValue |              |                      |
 
 
+# 3. Common KeySSI functions from KeySSIMixin
+
+## Function autoload(identifier)
+
+Description:
+
+| **Name**   | **Type** | **Value**  | **Description** |
+|:-----------|:---------|:-----------|:----------------|
+| identifier | string   | *required  |                 |
+
+
+## Function validateKeySSICharLength()
+
+Description: Throws an error if the length of the identifier exceeds the maximum char length.
+
+## Function load(subtype, dlDomain, subtypeSpecificString, control, vn, hint)
+
+Description: Initialize ArraySSI with your own parameters.
+
+| **Name**               | **Type** | **Value**  | **Description**                                                          |
+|:-----------------------|:---------|:-----------|:-------------------------------------------------------------------------|
+| subtype                | string   |            |                                                                          |
+| dldomain               | string   | *required  | The blockchain domain wanted to be used.                                 |
+| subtypeSpecificString  | string   |            |                                                                          |
+| control                | string   |            |                                                                          |
+| vn (optional)          | string   |            | The version number of the SeedSSI you want to use. Default value: “v0”   |
+| hint (optional)        | string   |            | Optional information for the keySSI resolver. Default value: undefined.  |
+
+
+## Function getDerivedType(ssiType, callback)
+
+**Description**: 
+
+| **Name** | **Type** | **Value** | **Description** |
+|:---------|:---------|:----------|:----------------|
+| ssiType  | string   |           |                 |      
+| callback | function |           |                 |
+
+
+**Callback parameters**
+
+| **Name**  | **Type**     | **Response example** |
+|:----------|:-------------|:---------------------|
+| err       | Error object |                      |
+
+**Description**: 
+
+## Function getRelatedType(ssiType, callback)
+
+Description: 
+
+
+| **Name** | **Type** | **Value** | **Description**  |
+|:---------|:---------|:----------|:-----------------|
+| ssiType  | string   |           |                  |      
+| callback | function |           |                  | 
+
+**Callback parameters**
+
+| **Name**  | **Type**     | **Response example** |
+|:----------|:-------------|:---------------------|
+| err       | Error object |                      |
+
+Description: 
+
+## Function getRootKeySSITypeName()
+
+Description: 
+
+Returns
+
+| **Name** | **Description** |
+|:---------|:----------------|
+| String   |                 |
+
+
+## Function getAnchorId(plain)
+
+Description: 
+
+| **Name** | **Type** | **Value** | **Description**                                                                      |
+|:---------|:---------|:----------|:-------------------------------------------------------------------------------------|
+| plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58.  |
+
+
+Returns
+
+| **Name**  | **Description**                                   |
+|:----------|:--------------------------------------------------|
+| anchor id | The identifier for the anchor, without any hints. |
+
+
+<p align="justify"> Description: Derive your arraySSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the arraySSI using the array of inputs. It is then **possible to create** and load a DSU using the ConstSSI.</p>

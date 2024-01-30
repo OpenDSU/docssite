@@ -46,7 +46,7 @@ A constSSI is built from the hash of readable strings embedded in other keySSI s
 | cza         | Owning a czaSSI provides no access. Having a czaSSI indicates that a ConstSSI exists and has only a version (it redirects to an immutable DSU). Example: ssi:sza:domain:hash::v0.                                                                                               |
 
 
- # 2. Type-specific and control substrings
+# 2. Type-specific and control substrings
 
 The “control key” part of the ConstSSI is always empty, which means the anchor can not be updated (it is immutable, constant value, read-only).
 
