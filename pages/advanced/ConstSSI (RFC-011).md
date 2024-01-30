@@ -90,160 +90,59 @@ Description: Derive your constSSI to obtain a czaSSI (ConstZeroAccessSSI) that i
 
 **Returns**
 
+| **Name** | **Description**     |
+|:---------|:--------------------|
+| String   | The encryption key  |
 
-
-Name
-	
-
-Description
-
-String
-	
 
 The encryption key
 ## Function const.getTypeName()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
-Name
-	
+| **Name**            | **Description**                            |
+|:--------------------|:-------------------------------------------|
+| SSITypes.CONST_SSI  | A string representing the type of the SSI. |
 
-Description
 
-SSITypes.CONST_SSI
-	
-
-A string representing the type of the SSI.
 ## Function constSSI.createAnchorValue(brickMapHash, previousAnchorValue, callback)
 
-Description:
+**Description**:
 
-Name
-	
+| **Name**            | **Type**  | **Value** | **Description** |
+|:--------------------|:----------|:----------|:----------------|
+| brickMapHash        |           |           |                 |
+| previousAnchorValue |           |           |                 |
+| callback            | function  |           |                 |
 
-Type
-	
 
-Value
-	
+**Callback parameters**
 
-Description
+| **Name**     | **Type**      | **Response** example |
+|:-------------|:--------------|:---------------------|
+| err          | Error object  |                      |
+| anchorValue  |               |                      |
 
-brickMapHash
-	
+**Description**: Contains a message and the error. / The anchor value that was just created.
 
-	
 
-	
-
-previousAnchorValue
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-anchorValue
-	
-
-	
-
-Description: Contains a message and the error. / The anchor value that was just created.
 # 4. Cryptographic algorithms used by ConstSSIs (advanced)
 
-Algorithms used for cryptographic operations can differ according to the type of keySSI that is used and its version number. Most of the functions use the nodejs crypto library.
+Algorithms used for cryptographic operations can differ according to the type of keySSI that is used and its version number. Most of the functions use the [nodejs](https://www.google.com/url?q=https://nodejs.org/docs/latest-v12.x/api/crypto.html%23crypto_crypto&sa=D&source=editors&ust=1706607081104078&usg=AOvVaw1DljX3frZ2fzzNiA4otEna) crypto library.
 
-Type
-	
 
-Operations
-	
-
-Algorithms
-
-Default
-	
-
-hash
-	
-
-Create a hash of the data using the sha256 algorithm.
-
-	
-
-keyDerivation
-	
-
-Generate an aes-256-gcm compatible key using a password (the const), salt, a number of iterations and the sha26 algorithm as parameters for the pbkdf2Sync function.
-
-	
-
-encryptionKeyGeneration
-	
-
-Generate a random encryption key compatible with the aes-256-gcm algorithm.
-
-	
-
-encryption
-	
-
-Encrypt data using a symmetric key and the aes-256-gcm algorithm.
-
-	
-
-decryption
-	
-
-Decrypt data using a symmetric key and the aes-256-gcm algorithm.
-
-	
-
-encoding
-	
-
-Base58 encoding.
-
-	
-
-decoding
-	
-
-Base58 decoding.
-
-	
-
-keyPairGenerator
-	
-
-Use an elliptic curve ‘secp256k1’ to generate a key pair (public/private key).
-
+| **Type**    | **Operations**              | **Algorithms**                                                                                                                                                                                                                                                                                                                                                                       |
+|:------------|:----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Default     | hash                        | Create a hash of the data using the [sha256](https://www.google.com/url?q=https://xorbin.com/tools/sha256-hash-calculator&sa=D&source=editors&ust=1706607081106307&usg=AOvVaw3Py4Ug4Zo2BwJwoMuDCZ9E) algorithm.                                                                                                                                                                      |
+|             | keyDerivation               | Generate an aes-256-gcm compatible key using a password (the const), salt, a number of iterations and the sha26 algorithm as parameters for the [pbkdf2Sync](https://www.google.com/url?q=https://nodejs.org/api/crypto.html%23crypto_crypto_pbkdf2sync_password_salt_iterations_keylen_digest&sa=D&source=editors&ust=1706607081107431&usg=AOvVaw1Fhi1NC01iqeKy5GrrgBxW) function.  |
+|             | encryptionKeyGeneration     | Generate a random encryption key compatible with the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                     |
+|             | encryption                  | Encrypt data using a symmetric key and the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                               |
+|             | decryption                  | Decrypt data using a symmetric key and the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.                                                                                                                                                                                                                                                               |
+|             | encoding                    | [Base58](https://learnmeabitcoin.com/technical/base58) encoding.                                                                                                                                                                                                                                                                                                                     |
+|             | decoding                    | [Base58](https://learnmeabitcoin.com/technical/base58) decoding.                                                                                                                                                                                                                                                                                                                     |
+|             | keyPairGenerator            | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                            |
 
 
 **Contributors**  
