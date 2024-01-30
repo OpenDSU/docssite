@@ -143,3 +143,64 @@ Description: Initialize ArraySSI with your own parameters.
 
 ## Function getDerivedType(ssiType, callback)
 
+**Description**: 
+
+| **Name** | **Type** | **Value** | **Description** |
+|:---------|:---------|:----------|:----------------|
+| ssiType  | string   |           |                 |      
+| callback | function |           |                 |
+
+
+**Callback parameters**
+
+| **Name**  | **Type**     | **Response example** |
+|:----------|:-------------|:---------------------|
+| err       | Error object |                      |
+
+**Description**: 
+
+## Function getRelatedType(ssiType, callback)
+
+Description: 
+
+
+| **Name** | **Type** | **Value** | **Description**  |
+|:---------|:---------|:----------|:-----------------|
+| ssiType  | string   |           |                  |      
+| callback | function |           |                  | 
+
+**Callback parameters**
+
+| **Name**  | **Type**     | **Response example** |
+|:----------|:-------------|:---------------------|
+| err       | Error object |                      |
+
+Description: 
+
+## Function getRootKeySSITypeName()
+
+Description: 
+
+Returns
+
+| **Name** | **Description** |
+|:---------|:----------------|
+| String   |                 |
+
+
+## Function getAnchorId(plain)
+
+Description: 
+
+| **Name** | **Type** | **Value** | **Description**                                                                      |
+|:---------|:---------|:----------|:-------------------------------------------------------------------------------------|
+| plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58.  |
+
+
+Returns
+
+| **Name**  | **Description**                                   |
+|:----------|:--------------------------------------------------|
+| anchor id | The identifier for the anchor, without any hints. |
+
+
