@@ -19,7 +19,7 @@ A period when the community can review the RFC (comment Docs).
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-<!-- TOC -->
+
 * [ArraySSI (RFC-012)](#arrayssi-rfc-012)
 <!-- TOC -->
 
@@ -38,7 +38,7 @@ There are no restrictions regarding the number of inputs we can use to create th
 |:------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
 | array       | An arraySSI is built using an array of multiple identifiers, such as productID, companyID etc. Example:  ssi:array:domain:encodedArray::v0  |
 
-# 1. Type-specific and control substringsy
+# 1. Type-specific and control substrings
 
 As stated before, the specific string of the ArraySSI corresponds to the array of inputs that passes through a key derivation function. The result of the derivation is used to get the specific string.
 
@@ -60,7 +60,7 @@ Description: Initialize ArraySSI with owned parameters.
 | dlDomain        | string    | *required   | The blockchain domain wanted to be used.                                                                       |
 | constArray      | string    | *required   | An array with keys that will be used in the initialization to get the final specific string of your ArraySSI.  |
 | vn (optional)   | string    |             | The version number of the SeedSSI you want to use. Default value: “v0”.                                        |
-| hint (optional) | string    |             | Optional information for the keySSI resolver. Default value: undefine.                                         
+| hint (optional) | string    |             | Optional information for the keySSI resolver. Default value: undefine.                                         |
 
 ## Function arraySSI.derive()
 
@@ -204,3 +204,4 @@ Returns
 | anchor id | The identifier for the anchor, without any hints. |
 
 
+<p align="justify"> Description: Derive your arraySSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the arraySSI using the array of inputs. It is then **possible to create** and load a DSU using the ConstSSI.</p>
