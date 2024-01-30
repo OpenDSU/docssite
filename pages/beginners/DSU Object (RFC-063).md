@@ -89,9 +89,9 @@ Each method for file handling requires at least one target file system to operat
 <p style="text-align:center"><b>Figure 1: The impact of global configuration options</b></p>
 
 
-<p align="justify">Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (A) The flag recursive allows operations to descend recursively into subfolders of a target. (B) When set, the flag ignoreMounted prevents operations from considering the contents of external DSU objects mounted to this instance. (C) The flag embedded forces data of an operation to be stored in the BrickMap rather than in Bricks. (D) The flag “encrypt” controls the encryption of the data stored in the Bricks.</p>
+Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (**A**) The flag **recursive** allows operations to descend recursively into subfolders of a target. (**B**) When set, the flag **ignoreMounte**d prevents operations from considering the contents of external DSU objects mounted to this instance. (**C**) The flag **embedded** forces data of an operation to be stored in the BrickMap rather than in Bricks. (D) The flag “**encrypt**” controls the encryption of the data stored in the Bricks.
 
-<p align="justify">The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:</p>
+The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:
 
 
 | **Name**     | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                          |
@@ -106,7 +106,7 @@ Each method for file handling requires at least one target file system to operat
 
 <p style="text-align:center"><b>Figure 2: Logical overview of file operation methods of DSU objects</b></p>
 
-<p align="justify">Methods are invoked on the central DSU instance, which can mount other DSU objects at given mounting points. According to the kind of operation, file handling methods can be segregated into units: (A) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (B) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (C) methods that move data within the DSU instance: rename(), cloneFolder(); (D) methods that add/remove file structures within the DSU: createFolder(), delete(); (E) methods that report on the file structure of the DSU container: getArchiveForPath(), listFiles(), listFolders(), listMountedDossiers(), readDir(). In Figure 2, control flows are depicted by regular arrows, and data flows by bold arrows.</p>
+Methods are invoked on the central DSU instance, which can mount other DSU objects at given mounting points. According to the kind of operation, file handling methods can be segregated into units: (**A**) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (**B**) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (**C**) methods that move data within the DSU instance: rename(), cloneFolder(); (**D**) methods that add/remove file structures within the DSU: createFolder(), delete(); (**E**) methods that report on the file structure of the DSU container: getArchiveForPath(), listFiles(), listFolders(), listMountedDossiers(), readDir(). In Figure 2, control flows are depicted by regular arrows, and data flows by bold arrows.
 
 ## Methods querying files & folders of a DSU object
 
@@ -413,12 +413,12 @@ Returns an error **err** if an external DSU mounted to a prefix of **dsuPath** c
 **Description**: Creates a file entry at **dsuPath** in this DSU instance and subsequently writes **data** to it. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).
 Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only.
 
-| **Name** | **Type**                    | **Value** | **Description**                                                                                                      |
-|:---------|:----------------------------|:----------|:---------------------------------------------------------------------------------------------------------------------|
-| dsuPath  | string                      | *required | The path in the current DSU where you want to create a new file.                                                     |
-| data     | String/buffer/readbleStream | *required | The data to be written in the file.                                                                                  |
-| options  | options                     |           | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false  <br/>} |                                                                  |
-| callback | function                    | *required |                                                                                                                      |
+| **Name** | **Type**                    | **Value** | **Description**                                                                                                                                                                  |
+|:---------|:----------------------------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| dsuPath  | string                      | *required | The path in the current DSU where you want to create a new file.                                                                                                                 |
+| data     | String/buffer/readbleStream | *required | The data to be written in the file.                                                                                                                                              |
+| options  | options                     |           |                                                                                                                                                                                  |
+| callback | function                    | *required | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false  <br/>}                                                             |
 
 
 **Callback parameters**
@@ -749,7 +749,7 @@ Returns an Error **err** if **mountingPoint** points to a non-empty directory or
 
 ## Function unmount(mountingPoint, callback)
 
-**Description**: Removes the external DSU container mounted at mountingPoint. If the external DSU at mountingPoint has been mounted persistently, a new manifest file after removal of the externally mounted DSU container is saved to this DSU instance accordingly.</p>
+**Description**: Removes the external DSU container mounted at mountingPoint. If the external DSU at mountingPoint has been mounted persistently, a new manifest file after removal of the externally mounted DSU container is saved to this DSU instance accordingly.
 Returns an Error err if no mounted DSU is found at dsuPath.
 
 | **Name**      | **Type** | **Value** | **Description**                                                  |
