@@ -20,7 +20,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [SeedSSI (RFC-010)](#seedssi-rfc-010)
 * [Abstract](#abstract-)
 * [1. SeedSSI’s family subtypes with examples](#1-seedssis-family-subtypes-with-examples)
 * [2. Type-specific and control substrings](#2-type-specific-and-control-substrings)
