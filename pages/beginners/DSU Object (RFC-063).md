@@ -132,7 +132,6 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 
 ### Function listFiles(dsuPath, options, callback)
-<p style="text-align: justify;">
 
 **Description**: If not specified otherwise, **dsuPath** is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under **dsuPath** is composed. Optionally, it can also recursively descend into subfolders of **dsuPath** (if **recursive** is set to “true”). Configuration **options** may encapsulate the flags **ignoreMounts** (default: false) and **recursive** (default: true).
 
@@ -140,7 +139,7 @@ Returns an Error **err** if the manifest of this DSU instance is corrupt or if a
 
 If **ignoreMounts** is set to “false”, it also lists externally mounted DSU instances.
 
-</p>
+
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                      |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------|
