@@ -62,7 +62,7 @@ The “control key” part of the ConstSSI is always empty, which means the anch
 
 ## Function constSSI.initialize(dlDomain, constArray, vn, hint)
 
-Description: Initialize ConstSSI with your own parameters.
+**Description**: Initialize ConstSSI with your own parameters.
 
 | **Name**        | **Type**  | **Value**   | **Description**                                                                                                |
 |:----------------|:----------|:------------|:---------------------------------------------------------------------------------------------------------------|
@@ -75,7 +75,7 @@ Description: Initialize ConstSSI with your own parameters.
 
 ## Function constSSI.derive()
 
-Description: Derive your constSSI to obtain a czaSSI (ConstZeroAccessSSI) that is used to anchor the DSU in the ledger. The czaSSI provides no access to the DSU.
+**Description**: Derive your constSSI to obtain a czaSSI (ConstZeroAccessSSI) that is used to anchor the DSU in the ledger. The czaSSI provides no access to the DSU.
 
 **Returns**
 
@@ -143,14 +143,6 @@ Algorithms used for cryptographic operations can differ according to the type of
 |             | encoding                    | [Base58](https://learnmeabitcoin.com/technical/base58) encoding.                                                                                                                                                                                                                                                                                                                     |
 |             | decoding                    | [Base58](https://learnmeabitcoin.com/technical/base58) decoding.                                                                                                                                                                                                                                                                                                                     |
 |             | keyPairGenerator            | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                            |
-
-
-**Contributors**  
-
-1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
-
 
 
 # Annex 1. Contributors
