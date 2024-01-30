@@ -113,6 +113,7 @@ Methods are invoked on the central DSU instance, which can mount other DSU objec
 ### Function getArchiveForPath(dsuPath, callback)
 
 **Description**: Obtains the DSU instance that stores the file system entry provided by dsuPath. Persistently mounted DSU containers are resolved by the manifest file of this DSU instance, while transiently mounted DSU containers are resolved by temporary variables accordingly.
+
 Returns an Error err if the manifest of this DSU instance is corrupt or in case the externally mounted DSU instance for dsuPath cannot be loaded.
 
 | **Name** | **Type** | **Value** | **Description**                                                      |
@@ -205,6 +206,7 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 ### Function readDir(dsuPath, options, callback)
 
 **Description**: Retrieves all the files and folders contained in this DSU instance's folder specified by **dsuPath** by calling listFiles() and listFolders() with the options **ignoreMounts**: true and **recursive**: false and, additionally, it collects external DSU containers mounted directly under **dsuPath**. By default (withFileTypes: false), all files, folders, and dossiers mounted under **dsuPath** are concatenated in **entries.files**, an Array of String objects. If **withFileTypes** is set to “true”, the different entry types are collected in separate Array instances of String objects, as provided by **entries.files**, **entries.folders**, and **entries.mounts**, respectively. Configuration **options** may encapsulate the flag **withFileTypes** (default: false).
+
 Returns an Error **err** if the manifest of this DSU instance is corrupt or in case an external DSU instance mounted under **dsuPath** cannot be loaded.
 
 | **Name** | **Type** | **Value** | **Description**                                                                           |
@@ -229,6 +231,7 @@ Returns an Error **err** if the manifest of this DSU instance is corrupt or in c
 ### Function cloneFolder(srcPath, destPath, options, callback)
 
 **Description**: Create a new folder in this DSU instance at the specified **destPath**. The new folder will contain all the data existing in the folder being cloned from the specified **srcPath**. Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
+
 Returns an Error **err** if **srcPath** or **dsuPath** cannot be accessed or if the dossier context is read-only.
 
 | **Name** | **Type** | **Value** | **Description**                                                                             |
@@ -251,6 +254,7 @@ Returns an Error **err** if **srcPath** or **dsuPath** cannot be accessed or if 
 ### Function createFolder(dsuPath, options, callback)
 
 **Description**: Create an empty folder in this DSU instance at the specified **dsuPath**. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).</p>
+
 Returns an Error **err** if **dsuPath** cannot be accessed or when an external DSU object in the path prefix is mounted read-only.
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                      |
@@ -294,6 +298,7 @@ Returns an Error **err** if **dsuPath** cannot be accessed or when an external D
 ### Function rename(srcPath, destPath, options, callback)
 
 **Description**: Renames and moves a file accessible at **srcPath** in the DSU instance to the destination specified by **destPath**. If **ignoreMounts** is set to “false”, both **srcPath** and **destPath** may involve external DSU objects mounted to this DSU instance.
+
 Returns an Error **err** if the manifest of the DSU instance is corrupt or if the external DSU instance mounted under srcPath or **destPath** cannot be loaded, or if the DSU object at **destPath** is mounted read-only.
 
 | **Name** | **Type** | **Value** | **Description**                                                                              |
@@ -366,6 +371,7 @@ Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** c
 ### Function readFile(dsuPath, options, callback)
 
 **Description**: Reads a file in the DSU. Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
+
 Returns an error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only, or the file is a big one (the bricks list contains as the first element a **SizeSSI**). Otherwise, the Buffer **buffer** with the content of the specified file from the DSU file system is provided.
 
 | **Name** | **Type** | **Value** | **Description**                                                                        |
@@ -411,6 +417,7 @@ Returns an error **err** if an external DSU mounted to a prefix of **dsuPath** c
 ### Function writeFile(dsuPath, data, options, callback)
 
 **Description**: Creates a file entry at **dsuPath** in this DSU instance and subsequently writes **data** to it. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).
+
 Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only.
 
 | **Name** | **Type**                    | **Value** | **Description**                                                                                                                                                                  |
@@ -434,6 +441,7 @@ Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** c
 ### Function refresh(callback)
 
 **Description**: Reloads an existing BrickMap using the BrickMapStrategy.
+
 Returns an Error **err** if it fails to get the latest anchored hash link.
 
 | **Name** | **Type** | **Value** |
@@ -609,6 +617,7 @@ The callback is called with an error if batchInProgress() reports that no batch 
 ### Function getCreationSSI(plain)
 
 **Description**: Determines the String identifier of the KeySSI object employed for instantiating this DSU object. The identifier is returned directly as a plain string of ASCII characters (if the “plain” attribute is set to “true”), or the string is additionally transformed into base-58 encoded symbols (if plain: false). Note that calls to getCreationSSI() are handled synchronously. Therefore, the method will block until the result is computed.
+
 Returns the KeySSI instance.
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                           |
@@ -622,6 +631,7 @@ Returns the KeySSI instance.
 ### Function getKeySSIAsObject(KeySSIType, callback)
 
 **Description**: Get an instance of the KeySSI corresponding to the DSU providing the keySSIType. If **KeySSIType** is "undefined" or not provided, the keySSI object for this DSU instance is lazily returned. Otherwise, the KeySSI object of this DSU instance is transformed into an object of type **KeySSIType**.
+
 Returns an Error **err** if **KeySSIType** is not any of the registered KeySSI types or if this DSU instance's KeySSI object cannot be transformed to an object of type **KeySSIType**.
 
 | **Name**   | **Type** | **Value** | **Desription**                                                                                                                  |
@@ -642,6 +652,7 @@ Returns an Error **err** if **KeySSIType** is not any of the registered KeySSI t
 ### Function getKeySSIAsString(KeySSIType, callback)
 
 **Description**: Lazy wrapper for [getKeySSIAsObject](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html) for providing the identifier String of the computed **KeySSI** object to the callback function.
+
 Returns an Error **err** if KeySSIType is not any of the registered **KeySSI** types or if this DSU instance's **KeySSI** object cannot be transformed to an object of type KeySSIType.
 
 | **Name**   | **Type** | **Value** |
@@ -662,6 +673,7 @@ The **mount()** method makes the contents of an external DSU container, as ident
 ## Function getManifest(callback)
 
 **Description**: Each DSU uses a manifest file containing the DSU metadata to keep references of the mount points to other DSUs.
+
 Returns a manifest instance of the DSU.
 
 | **Name** | **Type** | **Value** | **Description**  |
@@ -685,6 +697,7 @@ Returns a manifest instance of the DSU.
 ## Function getSSIForMount(mountPoint, callback) 
 
 **Description**: Retrieves the KeySSI used to mount the specified mountPoint by obtaining the **archiveSSI** identifier for the DSU instance mounted at the path **mountPoint** in this DSU object.
+
 Returns an Error **err** if no DSU instance is mounted at the path **mountPoint** of this DSU object.
 
 | **Name**   | **Type** | **Value** | **Description**                                                                 |
@@ -706,6 +719,7 @@ Returns an Error **err** if no DSU instance is mounted at the path **mountPoint*
 ## Function listMountedDossiers(mountPoint, callback)
 
 **Description**: List all the DSUs that were mounted at the **mountPoint** path.
+
 Returns an Array with all these mounted DSUs.
 
 
@@ -729,6 +743,7 @@ Returns an Array with all these mounted DSUs.
 ## Function mount(mountPoint, archieveSSI, options, callback)
 
 **Description**: Mounts the external DSU container identified by **archiveSSI** at the path **mountingPoint** of the DSU instance. The **options** parameter may encapsulate the flag **persist** (default: true) to save the updated manifest file after successfully mounting the external DSU object at mountingPoint to the manifest file of this DSU instance. Otherwise, the mounting point is stored only in a temporary variable of this DSU instance.
+
 Returns an Error **err** if **mountingPoint** points to a non-empty directory or if another DSU instance is already mounted at **mountingPoint**.
 
 | **Name**      | **Type** | **Value** | **Description**                                                                           |
@@ -750,6 +765,7 @@ Returns an Error **err** if **mountingPoint** points to a non-empty directory or
 ## Function unmount(mountingPoint, callback)
 
 **Description**: Removes the external DSU container mounted at mountingPoint. If the external DSU at mountingPoint has been mounted persistently, a new manifest file after removal of the externally mounted DSU container is saved to this DSU instance accordingly.
+
 Returns an Error err if no mounted DSU is found at dsuPath.
 
 | **Name**      | **Type** | **Value** | **Description**                                                  |
@@ -779,6 +795,7 @@ The methods a DSU object provides for file handling are listed below, where all 
 
 **Description**: Copies one single file entry, specified by **fsPath** in the local file system, to the folder **dsuPath** of this DSU instance. Follows symbolic links in **fsPath**; if **ignoreMounts** is set to false (the default), it also loads externally mounted DSUs in **dsuPath**.
 Configuration **options** may encapsulate the flags **encrypt** (default: true), and **ignoreMounts** (default: false).
+
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                        |
@@ -800,6 +817,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 **Description**: Copies one or more files specified by the Array **fsPaths** from their paths in the local file system to the folder **dsuPath** of this DSU instance. Follows symbolic links in fsPath and loads externally mounted DSUs in dsuPath for default ignoreMounts: false.
 Configuration **options** may encapsulate the flags **encrypt** (default: true), **ignoreMounts** (default: false), and embedded (default: false). Note that setting embedded to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.
+
 Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be accessed.
 
 | **Name** | **Type**                | **Value** | **Description**                                                                                                                             |
@@ -822,6 +840,7 @@ Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be a
 
 **Description**: Iterates the contents of a folder **fsPath** in the local file system and copies each entry to a folder **dsuPath** in the DSU instance. Follows symbolic links in **fsPath** and loads externally mounted DSUs in **dsuPath** if **ignoreMounts** is set to false (which is the default).
 Configuration **options** may encapsulate the flags encrypt (default: true), **ignoreMounts** (default: false), and embedded (default: false).
+
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                                             |
@@ -843,6 +862,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 ### Function extractFile(fsPath, dsuPath, options, callback)
 
 **Description**: Restores data stored in Brick objects under **dsuPath** to a file in the local file system as specified by **fsPath**. Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
+
 Returns an Error **err** if an externally mounted DSU object in **dsuPath** cannot be loaded or if one of the Bricks objects for **dsuPath** cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by **fsPath**.
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                               |
@@ -865,6 +885,7 @@ Returns an Error **err** if an externally mounted DSU object in **dsuPath** cann
 ### Function extractFolder(fsPath, dsuPath, options, callback)
 
 **Description**: Restores for all files under **dsuPath** the data stored in Brick objects to a local file system folder qualified by **fsPath** by lazy calls to extractFile(). Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
+
 Returns an Error **err** if an externally mounted DSU object in **dsuPath** cannot be loaded or if one of the Bricks objects for **dsuPath** cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by **fsPath**.
 
 | **Name** | **Type** | **Value** | **Description**                                                                              |
