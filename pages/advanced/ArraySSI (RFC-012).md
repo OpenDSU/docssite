@@ -38,7 +38,7 @@ There are no restrictions regarding the number of inputs we can use to create th
 |:------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
 | array       | An arraySSI is built using an array of multiple identifiers, such as productID, companyID etc. Example:  ssi:array:domain:encodedArray::v0  |
 
-# 1. Type-specific and control substrings
+# 1. Type-specific and control substringsy
 
 As stated before, the specific string of the ArraySSI corresponds to the array of inputs that passes through a key derivation function. The result of the derivation is used to get the specific string.
 
