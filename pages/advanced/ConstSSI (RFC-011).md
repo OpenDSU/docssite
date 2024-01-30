@@ -64,86 +64,33 @@ The “control key” part of the ConstSSI is always empty, which means the anch
 
 Description: Initialize ConstSSI with your own parameters.
 
-Name
-	
+| **Name**        | **Type**  | **Value**   | **Description**                                                                                                |
+|:----------------|:----------|:------------|:---------------------------------------------------------------------------------------------------------------|
+| dlDomain        | string    | *required   | The blockchain domain wanted to be used.                                                                       |
+| constArray      | string    | *required   | An array with keys that will be used in the initialization to get the final specific string of your ArraySSI.  |
+| vn (optional)   | string    |             | The version number of the SeedSSI you want to use. Default value: “v0”.                                        |
+| hint (optional) | string    |             | Optional information for the keySSI resolver. Default value: undefine.                                         
 
-Type
-	
 
-Value
-	
 
-Description
-
-dlDomain
-	
-
-string
-	
-
-*required
-	
-
-The blockchain domain you want to use.
-
-constArray
-	
-
-string
-	
-
-*required
-	
-
-An array with keys that will be used in the initialization to get the final specific string of your ArraySSI.
-
-vn
-
-(optional)
-	
-
-string
-	
-
-	
-
-The version number of the SeedSSI you want to use.
-
-Default value: “v0”.
-
-hint
-
-(optional)
-	
-
-string
-	
-
-	
-
-Optional information for the keySSI resolver.
-
-Default value: undefine.
 ## Function constSSI.derive()
 
 Description: Derive your constSSI to obtain a czaSSI (ConstZeroAccessSSI) that is used to anchor the DSU in the ledger. The czaSSI provides no access to the DSU.
 
-Returns
+**Returns**
 
-Name
-	
+| **Name**       | **Description**             |
+|:---------------|:----------------------------|
+| czaSSI object  | A czaSSI object is returned |
 
-Description
 
-czaSSI object
-	
-
-A czaSSI object is returned.
 ## Function constSSI.getEncryptionKey()
 
-Description: Get the encryption key associated with the ConstSSI.
+**Description**: Get the encryption key associated with the ConstSSI.
 
-Returns
+**Returns**
+
+
 
 Name
 	
