@@ -14,7 +14,7 @@ nav_order: 3
 } 
 </style>
 
-
+# DSU Object (RFC-063)
 {: .no_toc }
 
 
@@ -139,12 +139,11 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 
 ## Global overview and options
 
-Each method for file handling requires at least one target file system to operate on, specified by a string representation of its path. The path can be located in the local file system (**fsPath**) or inside the DSU container (**dsuPath**). Generally, access to **fsPath**. is handled through the node.js "fs" API. Strings representing a **dsuPath** are usually "normalized" by replacing backslash characters (‘\’) or multiple slash characters ('/') with a single path separator slash character ('/').
-
+<p style='text-align: justify;'>Each method for file handling requires at least one target file system to operate on, specified by a string representation of its path. The path can be located in the local file system (<b>fsPath</b>) or inside the DSU container (<b>dsuPath</b>). Generally, access to <b>fsPath</b>. is handled through the node.js "fs" API. Strings representing a <b>dsuPath</b> are usually "normalized" by replacing backslash characters (‘\’) or multiple slash characters ('/') with a single path separator slash character ('/').</p>
 <p style="text-align:center"><b>Figure 1: The impact of global configuration options</b></p>
 
 
-Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (**A**) The flag **recursive** allows operations to descend recursively into subfolders of a target. (**B**) When set, the flag **ignoreMounted** prevents operations from considering the contents of external DSU objects mounted to this instance. (**C**) The flag **embedded** forces data of an operation to be stored in the BrickMap rather than in Bricks. (**D**) The flag “**encrypt**” controls the encryption of the data stored in the Bricks.
+Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (<b>A</b>) The flag <b>recursive</b> allows operations to descend recursively into subfolders of a target. (<b>B</b>) When set, the flag <b>ignoreMounted</b> prevents operations from considering the contents of external DSU objects mounted to this instance. (<b>C</b>) The flag <b>embedded</b> forces data of an operation to be stored in the BrickMap rather than in Bricks. (<b>D</b>) The flag “<b>encrypt</b>” controls the encryption of the data stored in the Bricks.
 
 The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:
 
