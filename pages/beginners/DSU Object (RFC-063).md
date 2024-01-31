@@ -144,9 +144,10 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 <p style="text-align:center"><b>Figure 1: The impact of global configuration options</b></p>
 
 
-<p align="justify">Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (<b>A</b>) The flag <b>recursive</b> allows operations to descend recursively into subfolders of a target. (<b>B</b>) When set, the flag <b>ignoreMounted</b> prevents operations from considering the contents of external DSU objects mounted to this instance. (<b>C</b>) The flag <b>embedded</b> forces data of an operation to be stored in the BrickMap rather than in Bricks. (D) The flag <b>“encrypt”</b>controls the encryption of the data stored in the Bricks.<p/>
+Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (**A**) The flag **recursive** allows operations to descend recursively into subfolders of a target. (**B**) When set, the flag **ignoreMounted** prevents operations from considering the contents of external DSU objects mounted to this instance. (**C**) The flag **embedded** forces data of an operation to be stored in the BrickMap rather than in Bricks. (D) The flag “**encrypt**”controls the encryption of the data stored in the Bricks.
 
-<p align="justify">The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:</p>
+The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:
+
 
 
 | **Name**     | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                          |
@@ -157,19 +158,20 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 | recursive    | boolean  | true      | Triggers the corresponding operation to be applied recursively to subfolders of the target(s).                                                                                                                                                                                                           |
 
 
-<p align="justify">The remainder of this chapter will introduce methods of a DSU object that control file I/O operations, subdivided according to their purpose.</p>
+The remainder of this chapter will introduce methods of a DSU object that control file I/O operations, subdivided according to their purpose.</
 
 <p style="text-align:center"><b>Figure 2: Logical overview of file operation methods of DSU objects</b></p>
 
-<p align="justify">Methods are invoked on the central DSU instance, which can mount other DSU objects at given mounting points. According to the kind of operation, file handling methods can be segregated into units: (<b>A</b>) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (<b>B</b>) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (<b>C</b>) methods that move data within the DSU instance: rename(), cloneFolder(); (<b>D</b>) methods that add/remove file structures within the DSU: createFolder(), delete(); (<b>E</b>) methods that report on the file structure of the DSU container: getArchiveForPath(), listFiles(), listFolders(), listMountedDossiers(), readDir(). In Figure 2, control flows are depicted by regular arrows, and data flows by bold arrows.</p>
+Methods are invoked on the central DSU instance, which can mount other DSU objects at given mounting points. According to the kind of operation, file handling methods can be segregated into units: (<b>A</b>) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (<b>B</b>) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (<b>C</b>) methods that move data within the DSU instance: rename(), cloneFolder(); (<b>D</b>) methods that add/remove file structures within the DSU: createFolder(), delete(); (<b>E</b>) methods that report on the file structure of the DSU container: getArchiveForPath(), listFiles(), listFolders(), listMountedDossiers(), readDir(). In Figure 2, control flows are depicted by regular arrows, and data flows by bold arrows.
 
 ## Methods querying files & folders of a DSU object
 
 ### Function getArchiveForPath(dsuPath, callback)
 
-<b>Description</b>:<p align="justify">Obtains the DSU instance that stores the file system entry provided by dsuPath. Persistently mounted DSU containers are resolved by the manifest file of this DSU instance, while transiently mounted DSU containers are resolved by temporary variables accordingly.</p>
+**Description**: Obtains the DSU instance that stores the file system entry provided by dsuPath. Persistently mounted DSU containers are resolved by the manifest file of this DSU instance, while transiently mounted DSU containers are resolved by temporary variables accordingly.
 
 Returns an Error err if the manifest of this DSU instance is corrupt or in case the externally mounted DSU instance for dsuPath cannot be loaded.
+
 
 | **Name** | **Type** | **Value** | **Description**                                                      |
 |:---------|:---------|:----------|:---------------------------------------------------------------------|
