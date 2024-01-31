@@ -4,7 +4,13 @@ layout: home
 parent: OpenDSU for Beginners
 nav_order: 3
 ---
-
+<style>
+.imgMain{
+    display.block;
+    margin-left:70px;
+    margin-right:auto;
+} 
+</style>
 
 
 # DSU Object (RFC-063)
