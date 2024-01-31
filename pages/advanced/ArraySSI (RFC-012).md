@@ -190,18 +190,83 @@ Returns
 
 ## Function getAnchorId(plain)
 
-Description: 
+**Description**: 
 
 | **Name** | **Type** | **Value** | **Description**                                                                      |
 |:---------|:---------|:----------|:-------------------------------------------------------------------------------------|
 | plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58.  |
 
 
-Returns
+**Returns**
 
 | **Name**  | **Description**                                   |
 |:----------|:--------------------------------------------------|
 | anchor id | The identifier for the anchor, without any hints. |
 
+## Function getSpecificString()
 
-<p align="justify"> Description: Derive your arraySSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the arraySSI using the array of inputs. It is then **possible to create** and load a DSU using the ConstSSI.</p>
+Description: 
+Returns
+
+| **Name** | **Description**                                    |
+|:---------|:---------------------------------------------------|
+| _subtype |                                                    |
+
+## Function getDLDomain()
+
+Description: 
+Returns
+
+| **Name**   | **Description**                                                          |
+|:-----------|:-------------------------------------------------------------------------|
+| _dlDomain  | If the domain is undefined or empty, the function will return undefined. |
+
+## Function getControlString()
+
+Description: 
+Returns
+
+| **Name**       | **Description**                                                           |
+|:---------------|:--------------------------------------------------------------------------|
+| _controlString |                                                                           |
+
+## Function getHint()
+
+Description: 
+Returns
+
+
+| **Name** | **Description**                                                           |
+|:---------|:--------------------------------------------------------------------------|
+| _hint    |                                                                           |
+
+## Function getVn()
+
+Description: 
+Returns
+
+
+| **Name** | **Description**                                                           |
+|:---------|:--------------------------------------------------------------------------|
+| _vn      |                                                                           |
+
+## Function getDSURepresentationName()
+
+Description: 
+Returns
+
+
+| **Name**                          | **Description**                                                           |
+|:----------------------------------|:--------------------------------------------------------------------------|
+| DSURepresentationNames [_subtype] |                                                                           |
+
+
+## Function getNoHintIdentifier(plain)
+
+Description: 
+
+| **Name** | **Type** | **Value** | **Description**                                                                     |
+|:---------|:---------|:----------|:------------------------------------------------------------------------------------|
+| plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58. |
+
+
