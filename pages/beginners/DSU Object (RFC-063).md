@@ -6,13 +6,6 @@ nav_order: 3
 ---
 
 
-<style>
-.imgMain{
-    display.block;
-    margin-left:70px;
-    margin-right:auto;
-} 
-</style>
 
 # DSU Object (RFC-063)
 {: .no_toc }
@@ -261,7 +254,7 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 <p style='text-align: justify;'><b>Description</b>: Retrieves all the files and folders contained in this DSU instance's folder specified by <b>dsuPath</b> by calling listFiles() and listFolders() with the options <b>ignoreMounts</b>: true and <b>recursive</b>: false and, additionally, it collects external DSU containers mounted directly under <b>dsuPath</b>. By default (withFileTypes: false), all files, folders, and dossiers mounted under <b>dsuPath</b> are concatenated in <b>entries.files</b>, an Array of String objects. If <b>withFileTypes</b> is set to “true”, the different entry types are collected in separate Array instances of String objects, as provided by <b>entries.files</b>, <b>entries.folders</b>, and <b>entries.mounts</b>, respectively. Configuration <b>options</b> may encapsulate the flag <b>withFileTypes</b> (default: false).</p>
 
-<p style='text-align: justify;'>Returns an Error <b>err</b> if the manifest of this DSU instance is corrupt or in case an external DSU instance mounted under **dsuPath** cannot be loaded.</p>
+<p style='text-align: justify;'>Returns an Error <b>err</b> if the manifest of this DSU instance is corrupt or in case an external DSU instance mounted under <b>dsuPath</b> cannot be loaded.</p>
 
 
 | **Name** | **Type** | **Value** | **Description**                                                                           |
@@ -334,7 +327,7 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 <p style='text-align: justify;'><b>Description</b>: Delete a file or folder specified by <b>dsuPath</b> from this DSU instance. Configuration options may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
 
-<p style='text-align: justify;'>Returns an Error <p style='text-align: justify;'>err</p> if <p style='text-align: justify;'>dsuPath</p> cannot be accessed or when an external DSU object in the path prefix is mounted read-only.</p>
+<p style='text-align: justify;'>Returns an Error <b>err</b> if <b>dsuPath</b> cannot be accessed or when an external DSU object in the path prefix is mounted read-only.</p>
 
 
 | **Name** | **Type** | **Value** | **Description**                                             |
@@ -579,7 +572,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 
 # Batch operations on DSUs
 
-<p style='text-align: justify;'>A batch is a sequence of operations to be executed on the files available in a DSU object, before the resulting changes to the DSU are anchored altogether. Batch processing requires a call to <b>beginBatch()</b> or <b>beginOrAttachBatch</b>**()**. After all operations have been performed, a call to <b>commitBatch()</b> anchors the changes made within the batch. Alternatively, batch operations may be wrapped by a <b>batchFn</b> lazily submitted to <b>batch(batchFn)</b>. Note that no more than one batch process can be performed on the same DSU object at a time, and batch processing scheduled by <b>beginBatch()</b> has to be completed by <b>commitBatch()</b> or terminated by <b>cancelBatch()</b> before a new batch may be scheduled.</p>
+<p style='text-align: justify;'>A batch is a sequence of operations to be executed on the files available in a DSU object, before the resulting changes to the DSU are anchored altogether. Batch processing requires a call to <b>beginBatch()</b> or <b>beginOrAttachBatch()</b>. After all operations have been performed, a call to <b>commitBatch()</b> anchors the changes made within the batch. Alternatively, batch operations may be wrapped by a <b>batchFn</b> lazily submitted to <b>batch(batchFn)</b>. Note that no more than one batch process can be performed on the same DSU object at a time, and batch processing scheduled by <b>beginBatch()</b> has to be completed by <b>commitBatch()</b> or terminated by <b>cancelBatch()</b> before a new batch may be scheduled.</p>
 
 ## Controlling batch processe
 
@@ -834,7 +827,7 @@ Returns an Error **err** if **mountingPoint** points to a non-empty directory or
 
 <p style='text-align: justify;'><b>Description</b>: Removes the external DSU container mounted at mountingPoint. If the external DSU at mountingPoint has been mounted persistently, a new manifest file after removal of the externally mounted DSU container is saved to this DSU instance accordingly.</p>
 
-Returns an Error err if no mounted DSU is found at dsuPath.
+Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 | **Name**      | **Type** | **Value** | **Description**                                                  |
 |:--------------|:---------|:----------|:-----------------------------------------------------------------|
@@ -868,7 +861,6 @@ Returns an Error err if no mounted DSU is found at dsuPath.
 
 
 <p style='text-align: justify;'><b>Description</b>: Copies one single file entry, specified by <b>fsPath</b> in the local file system, to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b>; if <b>ignoreMounts</b> is set to false (the default), it also loads externally mounted DSUs in <b>dsuPath</b>.</p>
-
 <p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), and <b>ignoreMounts</b> (default: false).</p>
 
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
@@ -891,7 +883,6 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 ### Function addFiles(fsPaths, dsuPath, options, callback)
 
 <p style='text-align: justify;'><b>Description</b>: Copies one or more files specified by the Array <b>fsPaths</b> from their paths in the local file system to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in fsPath and loads externally mounted DSUs in dsuPath for default ignoreMounts: false.</p>
-
 <p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), <b>ignoreMounts</b> (default: false), and embedded (default: false). Note that setting embedded to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.</p>
 
 Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be accessed.
@@ -915,7 +906,6 @@ Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be a
 ### Function addFolder(fsPath, dsuPath, options, callback)
 
 <p style='text-align: justify;'><b>Description</b>: Iterates the contents of a folder <b>fsPath</b> in the local file system and copies each entry to a folder <b>dsuPath</b> in the DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath</b> if <b>ignoreMounts</b> is set to false (which is the default).</p>
-
 <p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags encrypt (default: true), <b>ignoreMounts</b> (default: false), and embedded (default: false).</p>
 
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
@@ -939,7 +929,6 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 ### Function extractFile(fsPath, dsuPath, options, callback)
 
 <p style='text-align: justify;'><b>Description</b>: Restores data stored in Brick objects under <b>dsuPath</b> to a file in the local file system as specified by <b>fsPath</b>. Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
-
 <p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                               |
@@ -961,8 +950,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 ### Function extractFolder(fsPath, dsuPath, options, callback)
 
-<p style='text-align: justify;'><b>Description</b>: Restores for all files under **<b>dsuPath</b>** the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).</p>
-
+<p style='text-align: justify;'><b>Description</b>: Restores for all files under <b>dsuPath</b> the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration options may encapsulate the flag ignoreMounts (default: false).</p>
 <p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
 
 | **Name** | **Type** | **Value** | **Description**                                                                              |
