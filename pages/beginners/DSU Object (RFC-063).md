@@ -14,7 +14,7 @@ nav_order: 3
 } 
 </style>
 
-# **DSU Object (RFC-063)**
+
 {: .no_toc }
 
 
@@ -308,7 +308,7 @@ Returns an Error **err** if **srcPath** or **dsuPath** cannot be accessed or if 
 
 ### Function createFolder(dsuPath, options, callback)
 
-**Description**: Create an empty folder in this DSU instance at the specified **dsuPath**. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).</p>
+**Description**: Create an empty folder in this DSU instance at the specified **dsuPath**. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).
 
 Returns an Error **err** if **dsuPath** cannot be accessed or when an external DSU object in the path prefix is mounted read-only.
 
@@ -632,7 +632,7 @@ The callback is called with an error if batchInProgress() reports that no batch 
 
 ### Function getLastHashLinkSSI(callback)
 
-**Description**: Returns an Error err if the keySSI object or the list of hash links cannot be obtained for this DSU instance. Otherwise, the HashLinkSSI object hlSSI that has been employed most recently to anchor changes in this DSU instance is provided.</p>
+**Description**: Returns an Error err if the keySSI object or the list of hash links cannot be obtained for this DSU instance. Otherwise, the HashLinkSSI object hlSSI that has been employed most recently to anchor changes in this DSU instance is provided.
 
 | **Name** | **Type** | **Value** |
 |:---------|:---------|:----------|
