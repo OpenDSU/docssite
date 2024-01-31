@@ -145,8 +145,7 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 
 <p style='text-align: justify;'>Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (<b>A</b>) The flag <b>recursive</b> allows operations to descend recursively into subfolders of a target. (<b>B</b>) When set, the flag <b>ignoreMounted</b> prevents operations from considering the contents of external DSU objects mounted to this instance. (<b>C</b>) The flag <b>embedded</b> forces data of an operation to be stored in the BrickMap rather than in Bricks. (<b>D</b>) The flag “<b>encrypt</b>” controls the encryption of the data stored in the Bricks.</p>
 
-The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:
-
+<p style='text-align: justify;'>The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:</p>
 
 
 | **Name**     | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                          |
@@ -191,7 +190,7 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 ### Function listFiles(dsuPath, options, callback)
 
-**Description**: If not specified otherwise, **dsuPath** is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under **dsuPath** is composed. Optionally, it can also recursively descend into subfolders of **dsuPath** (if **recursive** is set to “true”). Configuration **options** may encapsulate the flags **ignoreMounts** (default: false) and **recursive** (default: true).
+<p style='text-align: justify;'><b>Description</b>: If not specified otherwise, <b>dsuPath</b> is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under <b>dsuPath</b> is composed. Optionally, it can also recursively descend into subfolders of <b>dsuPath</b> (if <b>recursive</b> is set to “true”). Configuration <b>options</b> may encapsulate the flags <b>ignoreMounts</b> (default: false) and recursive (default: true).</p>
 
 Returns an Error **err** if the manifest of this DSU instance is corrupt or if an externally mounted DSU instance under dsuPath cannot be loaded.
 
@@ -216,7 +215,7 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 
 ### Function listFolders(dsuPath, options, callback)
 
-**Description**: An Array of String objects with the paths to all folders under **dsuPath** is composed. Optionally, it can also recursively descend into subfolders of **dsuPath** (if recursive: true). Configuration options may encapsulate the flags ignoreMounts (default: false) and recursive (default: true).
+<p style='text-align: justify;'><b>Description</b>: An Array of String objects with the paths to all folders under <b>dsuPath</b> is composed. Optionally, it can also recursively descend into subfolders of <b>dsuPath</b> (if recursive: true). Configuration options may encapsulate the flags ignoreMounts (default: false) and recursive (default: true).</p>
 
 Returns an Error **err** if the manifest of this DSU instance is corrupt or if the external DSU instance mounted in dsuPath cannot be loaded.
 
@@ -241,8 +240,7 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 
 ### Function listMountedDossiers(dsuPath, callback)
 
-**Description**: Lists only the directories that were mounted from externalDSU for the provided DSU path, listing all mounted DSUs inside the selected directory of the DSU that you are querying. Mounted dossiers represent DSUs mounted inside another DSU using the right KeySSI (SeedSSI for read and write access or SReadSSI for read-only access).
-
+<p style='text-align: justify;'><b>Description</b>: Lists only the directories that were mounted from externalDSU for the provided DSU path, listing all mounted DSUs inside the selected directory of the DSU that you are querying. Mounted dossiers represent DSUs mounted inside another DSU using the right KeySSI (SeedSSI for read and write access or SReadSSI for read-only access).</p>
 
 | **Name** | **Type** | **Value** | **Description**                                                                        |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------|
@@ -262,8 +260,7 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 
 ### Function readDir(dsuPath, options, callback)
 
-**Description**: Retrieves all the files and folders contained in this DSU instance's folder specified by **dsuPath** by calling listFiles() and listFolders() with the options **ignoreMounts**: true and **recursive**: false and, additionally, it collects external DSU containers mounted directly under **dsuPath**. By default (withFileTypes: false), all files, folders, and dossiers mounted under **dsuPath** are concatenated in **entries.files**, an Array of String objects. If **withFileTypes** is set to “true”, the different entry types are collected in separate Array instances of String objects, as provided by **entries.files**, **entries.folders**, and **entries.mounts**, respectively. Configuration **options** may encapsulate the flag **withFileTypes** (default: false).
-
+<p style='text-align: justify;'><b>Description</b>: Retrieves all the files and folders contained in this DSU instance's folder specified by <b>dsuPath</b> by calling listFiles() and listFolders() with the options <b>ignoreMounts</b>: true and <b>recursive</b>: false and, additionally, it collects external DSU containers mounted directly under <b>dsuPath</b>. By default (withFileTypes: false), all files, folders, and dossiers mounted under <b>dsuPath</b> are concatenated in <b>entries.files</b>, an Array of String objects. If <b>withFileTypes</b> is set to “true”, the different entry types are collected in separate Array instances of String objects, as provided by <b>entries.files</b>, <b>entries.folders</b>, and <b>entries.mounts</b>, respectively. Configuration <b>options</b> may encapsulate the flag <b>withFileTypes</b> (default: false).</p>
 Returns an Error **err** if the manifest of this DSU instance is corrupt or in case an external DSU instance mounted under **dsuPath** cannot be loaded.
 
 | **Name** | **Type** | **Value** | **Description**                                                                           |
