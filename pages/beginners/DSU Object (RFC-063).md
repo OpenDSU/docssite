@@ -284,8 +284,7 @@ Returns an Error **err** if the manifest of this DSU instance is corrupt or in c
 
 ### Function cloneFolder(srcPath, destPath, options, callback)
 
-**Description**: Create a new folder in this DSU instance at the specified **destPath**. The new folder will contain all the data existing in the folder being cloned from the specified **srcPath**. Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
-
+<p style='text-align: justify;'><b>Description</b>: Create a new folder in this DSU instance at the specified <b>destPath</b>. The new folder will contain all the data existing in the folder being cloned from the specified <b>srcPath</b>. Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
 Returns an Error **err** if **srcPath** or **dsuPath** cannot be accessed or if the dossier context is read-only.
 
 | **Name** | **Type** | **Value** | **Description**                                                                             |
@@ -307,7 +306,7 @@ Returns an Error **err** if **srcPath** or **dsuPath** cannot be accessed or if 
 
 ### Function createFolder(dsuPath, options, callback)
 
-**Description**: Create an empty folder in this DSU instance at the specified **dsuPath**. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).
+<p style='text-align: justify;'><b>Description</b>: Create an empty folder in this DSU instance at the specified <b>dsuPath</b>. Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true) and <b>ignoreMounts</b> (default: false).</p>
 
 Returns an Error **err** if **dsuPath** cannot be accessed or when an external DSU object in the path prefix is mounted read-only.
 
@@ -351,9 +350,9 @@ Returns an Error **err** if **dsuPath** cannot be accessed or when an external D
 
 ### Function rename(srcPath, destPath, options, callback)
 
-**Description**: Renames and moves a file accessible at **srcPath** in the DSU instance to the destination specified by **destPath**. If **ignoreMounts** is set to “false”, both **srcPath** and **destPath** may involve external DSU objects mounted to this DSU instance.
+<p style='text-align: justify;'><b>Description</b>: Renames and moves a file accessible at <b>srcPath</b> in the DSU instance to the destination specified by <b>destPath</b>. If <b>ignoreMounts</b> is set to “false”, both <b>srcPath</b> and <b>destPath</b> may involve external DSU objects mounted to this DSU instance.</p>
 
-Returns an Error **err** if the manifest of the DSU instance is corrupt or if the external DSU instance mounted under srcPath or **destPath** cannot be loaded, or if the DSU object at **destPath** is mounted read-only.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if the manifest of the DSU instance is corrupt or if the external DSU instance mounted under srcPath or <b>destPath</b> cannot be loaded, or if the DSU object at <b>destPath</b> is mounted read-only.</p>
 
 | **Name** | **Type** | **Value** | **Description**                                                                              |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------|
@@ -376,7 +375,8 @@ Returns an Error **err** if the manifest of the DSU instance is corrupt or if th
 
 ### Function appendToFile(dsuPath, data, options, callback)
 
-**Description**: Append **data** provided by a String literal, a Buffer, or by a ReadableStream to the file accessible at **dsuPath** in this DSU instance. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).
+<p style='text-align: justify;'><b>Description</b>: Append <b>data</b> provided by a String literal, a Buffer, or by a ReadableStream to the file accessible at <b>dsuPath</b> in this DSU instance. Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true) and <b>ignoreMounts</b> (default: false).
+</p>
 
 Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only.
 
@@ -399,9 +399,10 @@ Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** c
 
 ### Function createReadStream(dsuPath, options, callback)
 
-**Description**: Opens a readable stream of bytes as provided by the file described by **dsuPath** in this DSU object. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).
+<p style='text-align: justify;'><b>Description</b>: Opens a readable stream of bytes as provided by the file described by <b>dsuPath</b> in this DSU object. Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true) and <b>ignoreMounts</b> (default: false).</p>
 
-Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only, or the file is a big one (the bricks list contains as the first element a SizeSSI). Otherwise, the ReadableStream stream is provided.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if an external DSU mounted to a prefix of dsuPath cannot be loaded or is mounted read-only, or the file is a big one (the bricks list contains as the first element a SizeSSI). Otherwise, the ReadableStream stream is provided.</p>
+
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                      |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------|
@@ -426,7 +427,9 @@ Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** c
 
 **Description**: Reads a file in the DSU. Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
 
-Returns an error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only, or the file is a big one (the bricks list contains as the first element a **SizeSSI**). Otherwise, the Buffer **buffer** with the content of the specified file from the DSU file system is provided.
+
+<p style='text-align: justify;'>Returns an error err if an external DSU mounted to a prefix of dsuPath cannot be loaded or is mounted read-only, or the file is a big one (the bricks list contains as the first element a <b>SizeSSI</b>). Otherwise, the Buffer <b>buffer</b> with the content of the specified file from the DSU file system is provided.</p>
+
 
 | **Name** | **Type** | **Value** | **Description**                                                                        |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------|
@@ -447,8 +450,7 @@ Returns an error **err** if an external DSU mounted to a prefix of **dsuPath** c
 
 ### Function createBigFileReadStreamWithRange(dsuPath, range, options, callback)
 
-**Description**: Returns a buffer with the content of the specified big file from the DSU file system given the range of bytes to read. The parameter range represents an object with **start** (default: 0) and end properties, specifying the start and end bytes. Configuration **options** may encapsulate the flag **ignoreMounts** (default: false). Returns an error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only or the file exists but is not a big file (the bricks list contains as the first element a **SizeSSI**). Otherwise, the Buffer **buffer** is provided.
-
+<p style='text-align: justify;'><b>Description</b>: Returns a buffer with the content of the specified big file from the DSU file system given the range of bytes to read. The parameter range represents an object with <b>start</b> (default: 0) and end properties, specifying the start and end bytes. Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false). Returns an error <b>err</b> if an external DSU mounted to a prefix of <b>dsuPath</b> cannot be loaded or is mounted read-only or the file exists but is not a big file (the bricks list contains as the first element a <b>SizeSSI</b>). Otherwise, the Buffer <b>buffer</b> is provided.</p>
 
 | **Name** | **Type** | **Value** | **Description** |
 |:---------|:---------|:----------|:----------------|
@@ -470,7 +472,7 @@ Returns an error **err** if an external DSU mounted to a prefix of **dsuPath** c
 
 ### Function writeFile(dsuPath, data, options, callback)
 
-**Description**: Creates a file entry at **dsuPath** in this DSU instance and subsequently writes **data** to it. Configuration **options** may encapsulate the flags **encrypt** (default: true) and **ignoreMounts** (default: false).
+<p style='text-align: justify;'><b>Description</b>: Creates a file entry at <b>dsuPath</b> in this DSU instance and subsequently writes <b>data</b> to it. Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true) and <b>ignoreMounts</b> (default: false).</p>
 
 Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only.
 
