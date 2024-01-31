@@ -40,22 +40,23 @@ This RFC summarizes the different API spaces available for Javascript client-sid
 In order to use the API, it is need to call the function opendsu.loadApi(apiSpaceName), where opendsu is the folder containing the code for the API and “apiSpaceName” is one of the mandatory APIs space names in the list below.
 ### API Spaces Summary
 
-API Space    Purpose
+| **API Space**                                                                            | **Purpose**                                      |
+|:-----------------------------------------------------------------------------------------|:-------------------------------------------------|
+| [Anchoring](https://www.opendsu.org/pages/contributors/Anchoring%20(RFC-069).html)       | Anchoring service                                |
+| [BDNS](https://www.opendsu.org/pages/contributors/BDNS%20(RFC-067).html)                 | Handling Blockchain Domain Name Service          |
+| [Bricking](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html)         | Bricks Storages                                  |
+| [Cache](https://www.opendsu.org/pages/contributors/Cache%20(RFC-077).html)               | Utilities for caching                            |
+| [Config](https://www.opendsu.org/pages/contributors/Config%20(RFC-078).html)             | Utilities for openDSu environment configurations |
+| [Credentials](https://www.opendsu.org/pages/contributors/CredentialsDSU%20(RFC-057).html) |                                                  |
+| [Crypto](https://www.opendsu.org/pages/advanced/Crypto%20(RFC-066).html)                 | Recommended Crypto APIs                          |
+|                                                                                          |                                                  |
+| [DB]Ohttps://www.opendsu.org/pages/contributors/Database%20(RFC-061).html)               |                                                  |
+|                                                                                          |                                                  |
+|                                                                                          |                                                  |
 
-anchoring  Anchoring Services
 
-bdns  Handling Blockchain Domain Name Service
-
-bricking  Bricks Storages
-
-cache  Utilities for caching
-
-config  Utilities for openDSu environment configurations
-
-credentials
 	
 
-crypto   Recommended Crypto APIs
 db  DSU based databases
 dt   DSU Types
 enclave  Private data storage
@@ -104,5 +105,5 @@ Click here to know all operations available on DSU objects
 
 Click here to know all common operations available for every KeySSI
 
-There are also family-specific functions that you can find on the dedicated pages of each family.
+<p style='text-align: justify;'>There are also family-specific functions that <b>you</b> can find on the dedicated pages of each family.</p>
 
