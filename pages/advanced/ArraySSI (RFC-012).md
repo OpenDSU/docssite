@@ -20,8 +20,50 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
-* [ArraySSI (RFC-012)](#arrayssi-rfc-012)
 <!-- TOC -->
+* [Abstract](#abstract)
+* [1. Type-specific and control substrings](#1-type-specific-and-control-substrings)
+* [2. Specific functions for ArraySSI](#2-specific-functions-for-arrayssi)
+  * [Function arraySSI.initialize(dlDomain, arr, vn, hint)](#function-arrayssiinitializedldomain-arr-vn-hint)
+  * [Function arraySSI.derive()](#function-arrayssiderive)
+  * [Function arraySSI.getEncryptionKey()](#function-arrayssigetencryptionkey)
+  * [Function arraySSI.getTypeName()](#function-arrayssigettypename)
+  * [Function arraySSI.createAnchorValue(brickMapHash, previousAnchorValue, callback)](#function-arrayssicreateanchorvaluebrickmaphash-previousanchorvalue-callback)
+* [3. Common KeySSI functions from KeySSIMixin](#3-common-keyssi-functions-from-keyssimixin)
+  * [Function autoload(identifier)](#function-autoloadidentifier)
+  * [Function validateKeySSICharLength()](#function-validatekeyssicharlength)
+  * [Function load(subtype, dlDomain, subtypeSpecificString, control, vn, hint)](#function-loadsubtype-dldomain-subtypespecificstring-control-vn-hint)
+  * [Function getDerivedType(ssiType, callback)](#function-getderivedtypessitype-callback)
+  * [Function getRelatedType(ssiType, callback)](#function-getrelatedtypessitype-callback)
+  * [Function getRootKeySSITypeName()](#function-getrootkeyssitypename)
+  * [Function getAnchorId(plain)](#function-getanchoridplain)
+  * [Function getSpecificString()](#function-getspecificstring)
+  * [Function getDLDomain()](#function-getdldomain)
+  * [Function getControlString()](#function-getcontrolstring)
+  * [Function getHint()](#function-gethint)
+  * [Function getVn()](#function-getvn)
+  * [Function getDSURepresentationName()](#function-getdsurepresentationname)
+  * [Function getNoHintIdentifier(plain)](#function-getnohintidentifierplain)
+  * [Function getIdentifier(plain)](#function-getidentifierplain)
+  * [Function getBricksDomain()](#function-getbricksdomain)
+  * [Function clone()](#function-clone)
+  * [Function cast(newType)](#function-castnewtype)
+  * [Function canSign()](#function-cansign)
+  * [Function setCanSign(canSign)](#function-setcansigncansign)
+  * [Function canBeVerified()](#function-canbeverified)
+  * [Function sign(dataToSign, callback)](#function-signdatatosign-callback)
+  * [Function verify(data, signature)](#function-verifydata-signature)
+  * [Function hash(data)](#function-hashdata)
+  * [Function toJSON()](#function-tojson)
+  * [Function canAppend()](#function-canappend)
+  * [Function isTransfer()](#function-istransfer)
+  * [Function isAlias()](#function-isalias)
+  * [Function isTemplate()](#function-istemplate)
+  * [Function createAnchorValue(brickMapHash, previousAnchorValue, callback)](#function-createanchorvaluebrickmaphash-previousanchorvalue-callback)
+* [4. Cryptographic algorithms used by ArraySSIs (advanced)](#4-cryptographic-algorithms-used-by-arrayssis-advanced)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
+
 
 # Abstract
 
@@ -53,7 +95,7 @@ As stated before, the specific string of the ArraySSI corresponds to the array o
 
 ## Function arraySSI.initialize(dlDomain, arr, vn, hint)
 
-Description: Initialize ArraySSI with owned parameters.
+**Description**: Initialize ArraySSI with owned parameters.
 
 | **Name**        | **Type**  | **Value**   | **Description**                                                                                                |
 |:----------------|:----------|:------------|:---------------------------------------------------------------------------------------------------------------|
@@ -64,9 +106,9 @@ Description: Initialize ArraySSI with owned parameters.
 
 ## Function arraySSI.derive()
 
-Description: Derive your arraySSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the arraySSI using the array of inputs. It is then possible to create and load a DSU using the ConstSSI.
+**Description**: Derive your arraySSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the arraySSI using the array of inputs. It is then possible to create and load a DSU using the ConstSSI.
 
-Returns
+**Returns**
 
 | **Name**                                                                             | **Description**                 |
 |:-------------------------------------------------------------------------------------|:--------------------------------|
@@ -74,9 +116,9 @@ Returns
 
 ## Function arraySSI.getEncryptionKey()
 
-Description: Get the encryption key associated with the ArraySSI.
+**Description**: Get the encryption key associated with the ArraySSI.
 
-Returns
+**Returns**
 
 | **Name** | **Description**     |
 |:---------|:--------------------|
@@ -84,9 +126,9 @@ Returns
 
 ## Function arraySSI.getTypeName()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 
 | **Name**           | **Description**                            |
@@ -96,7 +138,7 @@ Returns
 
 ## Function arraySSI.createAnchorValue(brickMapHash, previousAnchorValue, callback)
 
-Description:
+**Description**:
 
 | **Name**             | **Type** | **Value** | **Description** |
 |:---------------------|:---------|:----------|:----------------|
@@ -104,7 +146,7 @@ Description:
 | previousAnchorValue  |          |           |                 |
 | callback             | function |           |                 |
 
-Callback parameters
+**Callback parameters**
 
 | **Name**    | **Type**     | **Response example** |
 |:------------|:-------------|:---------------------|
@@ -116,7 +158,7 @@ Callback parameters
 
 ## Function autoload(identifier)
 
-Description:
+**Description**:
 
 | **Name**   | **Type** | **Value**  | **Description** |
 |:-----------|:---------|:-----------|:----------------|
@@ -125,11 +167,11 @@ Description:
 
 ## Function validateKeySSICharLength()
 
-Description: Throws an error if the length of the identifier exceeds the maximum char length.
+**Description**: Throws an error if the length of the identifier exceeds the maximum char length.
 
 ## Function load(subtype, dlDomain, subtypeSpecificString, control, vn, hint)
 
-Description: Initialize ArraySSI with your own parameters.
+**Description**: Initialize ArraySSI with your own parameters.
 
 | **Name**               | **Type** | **Value**  | **Description**                                                          |
 |:-----------------------|:---------|:-----------|:-------------------------------------------------------------------------|
@@ -143,7 +185,7 @@ Description: Initialize ArraySSI with your own parameters.
 
 ## Function getDerivedType(ssiType, callback)
 
-**Description**: 
+Description: 
 
 | **Name** | **Type** | **Value** | **Description** |
 |:---------|:---------|:----------|:----------------|
@@ -161,7 +203,7 @@ Description: Initialize ArraySSI with your own parameters.
 
 ## Function getRelatedType(ssiType, callback)
 
-Description: 
+**Description**: 
 
 
 | **Name** | **Type** | **Value** | **Description**  |
@@ -175,13 +217,13 @@ Description:
 |:----------|:-------------|:---------------------|
 | err       | Error object |                      |
 
-Description: 
+**Description**: 
 
 ## Function getRootKeySSITypeName()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 | **Name** | **Description** |
 |:---------|:----------------|
@@ -205,8 +247,8 @@ Returns
 
 ## Function getSpecificString()
 
-Description: 
-Returns
+**Description**: 
+**Returns**
 
 | **Name** | **Description**                                    |
 |:---------|:---------------------------------------------------|
@@ -214,8 +256,8 @@ Returns
 
 ## Function getDLDomain()
 
-Description: 
-Returns
+**Description**: 
+**Returns**
 
 | **Name**   | **Description**                                                          |
 |:-----------|:-------------------------------------------------------------------------|
@@ -223,8 +265,8 @@ Returns
 
 ## Function getControlString()
 
-Description: 
-Returns
+**Description**: 
+**Returns**
 
 | **Name**       | **Description**                                                           |
 |:---------------|:--------------------------------------------------------------------------|
@@ -232,8 +274,8 @@ Returns
 
 ## Function getHint()
 
-Description: 
-Returns
+**Description**: 
+**Returns**
 
 
 | **Name** | **Description**                                                           |
@@ -242,8 +284,8 @@ Returns
 
 ## Function getVn()
 
-Description: 
-Returns
+**Description**: 
+**Returns**
 
 
 | **Name** | **Description**                                                           |
@@ -252,8 +294,8 @@ Returns
 
 ## Function getDSURepresentationName()
 
-Description: 
-Returns
+**Description**: 
+**Returns**
 
 
 | **Name**                          | **Description**                                                           |
@@ -263,13 +305,13 @@ Returns
 
 ## Function getNoHintIdentifier(plain)
 
-Description: 
+**Description**: 
 
 | **Name** | **Type** | **Value** | **Description**                                                                     |
 |:---------|:---------|:----------|:------------------------------------------------------------------------------------|
 | plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58. |
 
-Returns
+**Returns**
 
 
 | **Name**                           | **Description**                                                            |
@@ -279,13 +321,13 @@ Returns
 
 ## Function getIdentifier(plain)
 
-Description: 
+**Description**: 
 
 | **Name** | **Type** | **Value** | **Description**                                                                     |
 |:---------|:---------|:----------|:------------------------------------------------------------------------------------|
 | plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58. |
 
-Returns
+**Returns**
 
 
 | **Name**                            | **Description**                                                                                                                                                    |
@@ -295,9 +337,9 @@ Returns
 
 ## Function getBricksDomain()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 
 | **Name**                             | **Description**                                                                                                                                                     |
@@ -306,9 +348,9 @@ Returns
 
 ## Function clone()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 
 | **Name** | **Description**                                                             |
@@ -317,7 +359,7 @@ Returns
 
 ## Function cast(newType)
 
-Description: 
+**Description**: 
 
 | **Name** | **Type** | **Value** | **Description**                                                                     |
 |:---------|:---------|:----------|:------------------------------------------------------------------------------------|
@@ -325,9 +367,9 @@ Description:
 
 ## Function canSign()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 
 | **Name**  | **Description**                                                              |
@@ -336,7 +378,7 @@ Returns
 
 ## Function setCanSign(canSign)
 
-Description: 
+**Description**: 
 
 
 | **Name**  | **Type**  | **Value**  | **Description**                                                                      |
@@ -346,9 +388,9 @@ Description:
 
 ## Function canBeVerified()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 
 | **Name**  | **Description**                                                              |
@@ -358,7 +400,7 @@ Returns
 
 ## Function sign(dataToSign, callback)
 
-Description: 
+**Description**: 
 
 
 | **Name**   | **Type**  | **Value**  | **Description**                                                                 |
@@ -366,7 +408,7 @@ Description:
 | dataToSign |           |            |                                                                                 |
 | callback   | function  |            |                                                                                 |
 
-Callback parameters
+**Callback parameters**
 
 
 | **Name**    | **Type**   | **Response example**  |
@@ -374,11 +416,11 @@ Callback parameters
 | err         |            | Error object          |
 | signature   |            |                       |
 
-Description: Contains a message and the error. 
+**Description**: Contains a message and the error. 
 
 ## Function verify(data, signature)
 
-Description: 
+**Description**: 
 
 
 | **Name**  | **Type**   | **Value**  | **Description**                                                                 |
@@ -386,7 +428,7 @@ Description:
 | data      |            |            |                                                                                 |
 | signature |            |            |                                                                                 |
 
-Returns
+**Returns**
 
 | **Name**   | **Description**                                                              |
 |:-----------|:-----------------------------------------------------------------------------|
@@ -394,14 +436,14 @@ Returns
 
 ## Function hash(data)
 
-Description: 
+**Description**: 
 
 
 | **Name**  | **Type**   | **Value**  | **Description**                                                                 |
 |:----------|:-----------|:-----------|:--------------------------------------------------------------------------------|
 | data      |            |            |                                                                                 |
 
-Returns
+**Returns**
 
 | **Name**   | **Description**                                                              |
 |:-----------|:-----------------------------------------------------------------------------|
@@ -409,9 +451,9 @@ Returns
 
 ## Function toJSON()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 
 | **Name**   | **Description**                                                              |
@@ -420,9 +462,9 @@ Returns
 
 ## Function canAppend()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 | **Name**    | **Description**                                                              |
 |:------------|:-----------------------------------------------------------------------------|
@@ -431,9 +473,9 @@ Returns
 
 ## Function isTransfer()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 | **Name** | **Description**                                                              |
 |:---------|:-----------------------------------------------------------------------------|
@@ -442,9 +484,9 @@ Returns
 
 ## Function isAlias()
 
-Description: 
+**Description**: 
 
-Returns
+**Returns**
 
 | **Name** | **Description**                                                              |
 |:---------|:-----------------------------------------------------------------------------|
@@ -453,9 +495,9 @@ Returns
 
 ## Function isTemplate()
 
-Description: Check if the target is a template or an actual instance.
+**Description**: Check if the target is a template or an actual instance.
 
-Returns
+**Returns**
 
 | **Name**      | **Description**                                                |
 |:--------------|:---------------------------------------------------------------|
@@ -463,7 +505,7 @@ Returns
 
 ## Function createAnchorValue(brickMapHash, previousAnchorValue, callback)
 
-Description:
+**Description**:
 
 
 | **Name**            | **Type**    | **Value**   | **Description**                                                                  |
@@ -472,7 +514,7 @@ Description:
 | previousAnchorValue |             |             |                                                                                  |
 | callback            | function    |             |                                                                                  |
 
-Callback parameters
+**Callback parameters**
 
 
 | **Name**    | **Type**      | **Response example**  |
@@ -480,7 +522,7 @@ Callback parameters
 | err         | Error object  |                       |
 | anchorValue |               |                       |
 
-Description: Contains a message and the error. / The anchor value that was just created.
+**Description**: Contains a message and the error. / The anchor value that was just created.
 
 # 4. Cryptographic algorithms used by ArraySSIs (advanced)
 
