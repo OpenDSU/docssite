@@ -22,8 +22,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # 1. Specifications
 
-With the creation of VersionLessDSUs, we desired to create an optimised mechanism for storing edge wallets (e.g. mobile applications). In some cases, keeping all those versions and even having to do calls towards anchoring and bricking can be cumbersome or requires having an APIHub server embedded in the client application. The alternative is to have just a simple persistence to read or store the state of the DSU.
-
+<p style='text-align: justify;'>With the creation of <b>VersionLessDSUs</b>, we desired to create an optimised mechanism for storing edge wallets (e.g. mobile applications). In some cases, keeping all those versions and even having to do calls towards anchoring and bricking can be cumbersome or requires having an APIHub server embedded in the client application. The alternative is to have just a simple persistence to read or store the state of the DSU.
+</p>
 <img alt="" align="center" src="" class="imgMain"/>
 
 <p style="text-align:center"> <b>Figure 1: GET and PUT on /versionlessdsu/:anchorId: </b></p>
@@ -38,6 +38,12 @@ Will blindly return the content associated with the specified file path.
 
 | **GET** | **/versionlessdsu/{filePath}** |
 |:--------|:-------------------------------|
+
+
+| **GET** | **/versionlessdsu/{filePath}** |
+|:--------|:-------------------------------|
+|         |                                |
+
 
 **Path Parameters**
 
@@ -68,6 +74,48 @@ Will blindly overwrite the content associated with the specified file path.
 | filePath        | string   | *required   | The file path at which the VersionLessDSU content will be overwritten. |
 
 **Body Parameters**
+
+| **Name** | **Description**                                    |
+|:---------|:---------------------------------------------------|
+| body     | Buffer representing the new VersionLessDSU content |
+
+
+**Responses**
+
+
+| **Status Code**  | **Description**                                     |
+|:-----------------|:----------------------------------------------------|
+| 200              | Successfully overwritten the VersionLessDSU content |
+| 400              | File path not provided or content not present       |
+| 500              | Fallback generic error response.                    |
+
+### 1.1.3 Security
+
+Security of the versionless DSUs is ensured by the cryptographic properties of the VersionLessSSI (if it is marked as encrypted). However, this endpoint can fill the disk content and should be disabled by default. This is not an issue on mobile apps or demo installations. This simple behavior is intended to make it easier to implement innovative code on mobile devices.
+
+## 1.2. Resolver and VersionLessWalletEnclave
+
+### 1.2.1 Resolver
+
+The OpenDSU “resolver” API space provides methods for interacting with VersionLessDSUs.
+
+### Function createVersionlessDSU(filePath, encryptionKey, domain, callback)
+
+**Description**: This function allows the developer to create a new VersionLessDSU object using minimum configuration. The DSU instance is returned in the callback.
+
+
+| **Name**         | **Type**  | **Value**  | **Description**                                                |
+|:-----------------|:----------|:-----------|:---------------------------------------------------------------|
+| filePath         | string    | *required  |                                                                |
+| encryptionKey    | string    |            |                                                                |
+| domain           | string    |            |                                                                |
+| callback         | function  | *required  |                                                                |
+
+
+**Callback parameters**
+
+
+
 
 
 
