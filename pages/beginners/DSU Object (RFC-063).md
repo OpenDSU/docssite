@@ -14,7 +14,7 @@ nav_order: 3
 } 
 </style>
 
-
+# DSU Object (RFC-063)
 {: .no_toc }
 
 
@@ -139,15 +139,13 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 
 ## Global overview and options
 
-<p align="justify">Each method for file handling requires at least one target file system to operate on, specified by a string representation of its path. The path can be located in the local file system (<b></b>fsPath<b/>) or inside the DSU container (<b>dsuPath</b>). Generally, access to <b>fsPath</b>. is handled through the node.js "fs" API. Strings representing a <b>dsuPath</b> are usually "normalized" by replacing backslash characters (‘\’) or multiple slash characters ('/') with a single path separator slash character ('/').</p>
-
+<p style='text-align: justify;'>Each method for file handling requires at least one target file system to operate on, specified by a string representation of its path. The path can be located in the local file system (<b>fsPath</b>) or inside the DSU container (<b>dsuPath</b>). Generally, access to <b>fsPath</b>. is handled through the node.js "fs" API. Strings representing a <b>dsuPath</b> are usually "normalized" by replacing backslash characters (‘\’) or multiple slash characters ('/') with a single path separator slash character ('/').</p>
 <p style="text-align:center"><b>Figure 1: The impact of global configuration options</b></p>
 
 
-Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (**A**) The flag **recursive** allows operations to descend recursively into subfolders of a target. (**B**) When set, the flag **ignoreMounted** prevents operations from considering the contents of external DSU objects mounted to this instance. (**C**) The flag **embedded** forces data of an operation to be stored in the BrickMap rather than in Bricks. (D) The flag “**encrypt**”controls the encryption of the data stored in the Bricks.
+<p style='text-align: justify;'>Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (<b>A</b>) The flag <b>recursive</b> allows operations to descend recursively into subfolders of a target. (<b>B</b>) When set, the flag <b>ignoreMounted</b> prevents operations from considering the contents of external DSU objects mounted to this instance. (<b>C</b>) The flag <b>embedded</b> forces data of an operation to be stored in the BrickMap rather than in Bricks. (<b>D</b>) The flag “<b>encrypt</b>” controls the encryption of the data stored in the Bricks.</p>
 
-The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:
-
+<p style='text-align: justify;'>The schema in Figure 2 shows the DSU container in context with external dependencies of a DSU object: the underlying BrickStorage to which changes in the DSU file content are stored or from which DSU objects are assembled, and also other DSU instances that are mounted to this DSU object. Depending on the operation, each file handling method may provide none, one, or multiple configuration options:</p>
 
 
 | **Name**     | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                          |
@@ -158,18 +156,19 @@ The schema in Figure 2 shows the DSU container in context with external dependen
 | recursive    | boolean  | true      | Triggers the corresponding operation to be applied recursively to subfolders of the target(s).                                                                                                                                                                                                           |
 
 
-The remainder of this chapter will introduce methods of a DSU object that control file I/O operations, subdivided according to their purpose.</
+The remainder of this chapter will introduce methods of a DSU object that control file I/O operations, subdivided according to their purpose.
 
 <p style="text-align:center"><b>Figure 2: Logical overview of file operation methods of DSU objects</b></p>
 
-Methods are invoked on the central DSU instance, which can mount other DSU objects at given mounting points. According to the kind of operation, file handling methods can be segregated into units: (<b>A</b>) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (<b>B</b>) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (<b>C</b>) methods that move data within the DSU instance: rename(), cloneFolder(); (<b>D</b>) methods that add/remove file structures within the DSU: createFolder(), delete(); (<b>E</b>) methods that report on the file structure of the DSU container: getArchiveForPath(), listFiles(), listFolders(), listMountedDossiers(), readDir(). In Figure 2, control flows are depicted by regular arrows, and data flows by bold arrows.
+
+<p style='text-align: justify;'>Methods are invoked on the central DSU instance, which can mount other DSU objects at given mounting points. According to the kind of operation, file handling methods can be segregated into units: (<b>A</b>) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (<b>B</b>) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (<b>C</b>) methods that move data within the DSU instance: rename(), cloneFolder(); (<b>D</b>) methods that add/remove file structures within the DSU: createFolder(), delete(); (<b>E</b>) methods that report on the file structure of the DSU container: getArchiveForPath(), listFiles(), listFolders(), listMountedDossiers(), readDir(). In Figure 2, control flows are depicted by regular arrows, and data flows by bold arrows.</p>
 
 ## Methods querying files & folders of a DSU object
 
 ### Function getArchiveForPath(dsuPath, callback)
 
-**Description**: Obtains the DSU instance that stores the file system entry provided by dsuPath. Persistently mounted DSU containers are resolved by the manifest file of this DSU instance, while transiently mounted DSU containers are resolved by temporary variables accordingly.
-
+<p style='text-align: justify;'><b>Description</b>: Obtains the DSU instance that stores the file system entry provided by dsuPath. Persistently mounted DSU containers are resolved by the manifest file of this DSU instance, while transiently mounted DSU containers are resolved by temporary variables accordingly.
+</p>
 Returns an Error err if the manifest of this DSU instance is corrupt or in case the externally mounted DSU instance for dsuPath cannot be loaded.
 
 
@@ -191,7 +190,7 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 ### Function listFiles(dsuPath, options, callback)
 
-**Description**: If not specified otherwise, **dsuPath** is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under **dsuPath** is composed. Optionally, it can also recursively descend into subfolders of **dsuPath** (if **recursive** is set to “true”). Configuration **options** may encapsulate the flags **ignoreMounts** (default: false) and **recursive** (default: true).
+<p style='text-align: justify;'><b>Description</b>: If not specified otherwise, <b>dsuPath</b> is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under <b>dsuPath</b> is composed. Optionally, it can also recursively descend into subfolders of <b>dsuPath</b> (if <b>recursive</b> is set to “true”). Configuration <b>options</b> may encapsulate the flags <b>ignoreMounts</b> (default: false) and recursive (default: true).</p>
 
 Returns an Error **err** if the manifest of this DSU instance is corrupt or if an externally mounted DSU instance under dsuPath cannot be loaded.
 
@@ -216,7 +215,7 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 
 ### Function listFolders(dsuPath, options, callback)
 
-**Description**: An Array of String objects with the paths to all folders under **dsuPath** is composed. Optionally, it can also recursively descend into subfolders of **dsuPath** (if recursive: true). Configuration options may encapsulate the flags ignoreMounts (default: false) and recursive (default: true).
+<p style='text-align: justify;'><b>Description</b>: An Array of String objects with the paths to all folders under <b>dsuPath</b> is composed. Optionally, it can also recursively descend into subfolders of <b>dsuPath</b> (if recursive: true). Configuration options may encapsulate the flags ignoreMounts (default: false) and recursive (default: true).</p>
 
 Returns an Error **err** if the manifest of this DSU instance is corrupt or if the external DSU instance mounted in dsuPath cannot be loaded.
 
@@ -241,8 +240,7 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 
 ### Function listMountedDossiers(dsuPath, callback)
 
-**Description**: Lists only the directories that were mounted from externalDSU for the provided DSU path, listing all mounted DSUs inside the selected directory of the DSU that you are querying. Mounted dossiers represent DSUs mounted inside another DSU using the right KeySSI (SeedSSI for read and write access or SReadSSI for read-only access).
-
+<p style='text-align: justify;'><b>Description</b>: Lists only the directories that were mounted from externalDSU for the provided DSU path, listing all mounted DSUs inside the selected directory of the DSU that you are querying. Mounted dossiers represent DSUs mounted inside another DSU using the right KeySSI (SeedSSI for read and write access or SReadSSI for read-only access).</p>
 
 | **Name** | **Type** | **Value** | **Description**                                                                        |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------|
@@ -262,8 +260,7 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 
 ### Function readDir(dsuPath, options, callback)
 
-**Description**: Retrieves all the files and folders contained in this DSU instance's folder specified by **dsuPath** by calling listFiles() and listFolders() with the options **ignoreMounts**: true and **recursive**: false and, additionally, it collects external DSU containers mounted directly under **dsuPath**. By default (withFileTypes: false), all files, folders, and dossiers mounted under **dsuPath** are concatenated in **entries.files**, an Array of String objects. If **withFileTypes** is set to “true”, the different entry types are collected in separate Array instances of String objects, as provided by **entries.files**, **entries.folders**, and **entries.mounts**, respectively. Configuration **options** may encapsulate the flag **withFileTypes** (default: false).
-
+<p style='text-align: justify;'><b>Description</b>: Retrieves all the files and folders contained in this DSU instance's folder specified by <b>dsuPath</b> by calling listFiles() and listFolders() with the options <b>ignoreMounts</b>: true and <b>recursive</b>: false and, additionally, it collects external DSU containers mounted directly under <b>dsuPath</b>. By default (withFileTypes: false), all files, folders, and dossiers mounted under <b>dsuPath</b> are concatenated in <b>entries.files</b>, an Array of String objects. If <b>withFileTypes</b> is set to “true”, the different entry types are collected in separate Array instances of String objects, as provided by <b>entries.files</b>, <b>entries.folders</b>, and <b>entries.mounts</b>, respectively. Configuration <b>options</b> may encapsulate the flag <b>withFileTypes</b> (default: false).</p>
 Returns an Error **err** if the manifest of this DSU instance is corrupt or in case an external DSU instance mounted under **dsuPath** cannot be loaded.
 
 | **Name** | **Type** | **Value** | **Description**                                                                           |
