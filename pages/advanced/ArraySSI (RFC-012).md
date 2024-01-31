@@ -269,4 +269,249 @@ Description:
 |:---------|:---------|:----------|:------------------------------------------------------------------------------------|
 | plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58. |
 
+Returns
 
+
+| **Name**                           | **Description**                                                            |
+|:-----------------------------------|:---------------------------------------------------------------------------|
+| identifier                         | The identifier, either in plain text or encoded in base 58.                |
+
+
+## Function getIdentifier(plain)
+
+Description: 
+
+| **Name** | **Type** | **Value** | **Description**                                                                     |
+|:---------|:---------|:----------|:------------------------------------------------------------------------------------|
+| plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58. |
+
+Returns
+
+
+| **Name**                            | **Description**                                                                                                                                                    |
+|:------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| identifier:hint                     | If there is a defined hint, the identifier will be followed by the ‘:’ symbol and the hint. The identifier (and hint), either in plain text or encoded in base 58. |
+
+
+## Function getBricksDomain()
+
+Description: 
+
+Returns
+
+
+| **Name**                             | **Description**                                                                                                                                                     |
+|:-------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| _hintObject[BRICKS_DOMAIN_KEY]       | If _hintObject[BRICKS_DOMAIN_KEY] is undefined, the _dlDomain will be returned instead.                                                                             |
+
+## Function clone()
+
+Description: 
+
+Returns
+
+
+| **Name** | **Description**                                                             |
+|:---------|:----------------------------------------------------------------------------|
+| clone    |                                                                             |
+
+## Function cast(newType)
+
+Description: 
+
+| **Name** | **Type** | **Value** | **Description**                                                                     |
+|:---------|:---------|:----------|:------------------------------------------------------------------------------------|
+| plain    | bool     |           | True if you want the ID in plain text, false if you want the ID encoded in base 58. |
+
+## Function canSign()
+
+Description: 
+
+Returns
+
+
+| **Name**  | **Description**                                                              |
+|:----------|:-----------------------------------------------------------------------------|
+| _canSign  |                                                                              |
+
+## Function setCanSign(canSign)
+
+Description: 
+
+
+| **Name**  | **Type**  | **Value**  | **Description**                                                                      |
+|:----------|:----------|:-----------|:-------------------------------------------------------------------------------------|
+| canSign   | bool      |            |                                                                                      |
+
+
+## Function canBeVerified()
+
+Description: 
+
+Returns
+
+
+| **Name**  | **Description**                                                              |
+|:----------|:-----------------------------------------------------------------------------|
+| false     |                                                                              |
+
+
+## Function sign(dataToSign, callback)
+
+Description: 
+
+
+| **Name**   | **Type**  | **Value**  | **Description**                                                                 |
+|:-----------|:----------|:-----------|:--------------------------------------------------------------------------------|
+| dataToSign |           |            |                                                                                 |
+| callback   | function  |            |                                                                                 |
+
+Callback parameters
+
+
+| **Name**    | **Type**   | **Response example**  |
+|:------------|:-----------|:----------------------|
+| err         |            | Error object          |
+| signature   |            |                       |
+
+Description: Contains a message and the error. 
+
+## Function verify(data, signature)
+
+Description: 
+
+
+| **Name**  | **Type**   | **Value**  | **Description**                                                                 |
+|:----------|:-----------|:-----------|:--------------------------------------------------------------------------------|
+| data      |            |            |                                                                                 |
+| signature |            |            |                                                                                 |
+
+Returns
+
+| **Name**   | **Description**                                                              |
+|:-----------|:-----------------------------------------------------------------------------|
+|            |                                                                              |
+
+## Function hash(data)
+
+Description: 
+
+
+| **Name**  | **Type**   | **Value**  | **Description**                                                                 |
+|:----------|:-----------|:-----------|:--------------------------------------------------------------------------------|
+| data      |            |            |                                                                                 |
+
+Returns
+
+| **Name**   | **Description**                                                              |
+|:-----------|:-----------------------------------------------------------------------------|
+|            |                                                                              |
+
+## Function toJSON()
+
+Description: 
+
+Returns
+
+
+| **Name**   | **Description**                                                              |
+|:-----------|:-----------------------------------------------------------------------------|
+| identifier |                                                                              |
+
+## Function canAppend()
+
+Description: 
+
+Returns
+
+| **Name**    | **Description**                                                              |
+|:------------|:-----------------------------------------------------------------------------|
+| true        |                                                                              |
+
+
+## Function isTransfer()
+
+Description: 
+
+Returns
+
+| **Name** | **Description**                                                              |
+|:---------|:-----------------------------------------------------------------------------|
+| false    |                                                                              |
+
+
+## Function isAlias()
+
+Description: 
+
+Returns
+
+| **Name** | **Description**                                                              |
+|:---------|:-----------------------------------------------------------------------------|
+| false    |                                                                              |
+
+
+## Function isTemplate()
+
+Description: Check if the target is a template or an actual instance.
+
+Returns
+
+| **Name**      | **Description**                                                |
+|:--------------|:---------------------------------------------------------------|
+| true or false | Bool value showing if the target is a template or an instance. |
+
+## Function createAnchorValue(brickMapHash, previousAnchorValue, callback)
+
+Description:
+
+
+| **Name**            | **Type**    | **Value**   | **Description**                                                                  |
+|:--------------------|:------------|:------------|:---------------------------------------------------------------------------------|
+| brickMapHash        |             |             |                                                                                  |
+| previousAnchorValue |             |             |                                                                                  |
+| callback            | function    |             |                                                                                  |
+
+Callback parameters
+
+
+| **Name**    | **Type**      | **Response example**  |
+|:------------|:--------------|:----------------------|
+| err         | Error object  |                       |
+| anchorValue |               |                       |
+
+Description: Contains a message and the error. / The anchor value that was just created.
+
+# 4. Cryptographic algorithms used by ArraySSIs (advanced)
+
+In this paragraph, we present the algorithms that ArraySSIs use. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the [nodejs crypto](https://www.google.com/url?q=https://nodejs.org/docs/latest-v12.x/api/crypto.html%23crypto_crypto&sa=D&source=editors&ust=1706689753751749&usg=AOvVaw1oBuR4o3EAv5yT5kJpa3TH) library.
+
+# Annex 1. Contributors
+
+|**Current Editors**                  | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+|Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+|Cosmin Ursache                       | cosmin@axiologic.net                     |
+|Teodor Lupu                          | teodor@axiologic.net                     |
+|Andi-Gabriel Țan                     | andi@axiologic.net                       |
+|**Contributors Axiologic Research**  | **Email**                                |
+|Adrian Ganga                         | adrian@axiologic.net                     |
+|Andi-Gabriel Țan                     | andi@axiologic.net                       |
+|Cosmin Ursache                       | cosmin@axiologic.net                     |
+|Daniel Sava                          | daniel@axiologic.net                     |
+|Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+|Valentin Gérard                      | valentin@axiologic.net                   |
+|**PrivateSky Contributors**          | **Email**                                |
+|Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+|Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+|Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+|Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+|Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+|Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+|Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+|Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+|**PharmaLedger Contributors**        | **Email**                                |
+|Ana Balan                            | bam@rms.ro (RMS)                         |
+|Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+|Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+|Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
