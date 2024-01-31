@@ -91,8 +91,8 @@ Will blindly overwrite the content associated with the specified file path.
 
 ### 1.1.3 Security
 
-Security of the versionless DSUs is ensured by the cryptographic properties of the VersionLessSSI (if it is marked as encrypted). However, this endpoint can fill the disk content and should be disabled by default. This is not an issue on mobile apps or demo installations. This simple behavior is intended to make it easier to implement innovative code on mobile devices.
-
+<p style='text-align: justify;'>Security of the versionless DSUs is ensured by the cryptographic properties of the VersionLessSSI (if it is marked as encrypted). However, this endpoint can fill the disk content and should be disabled by default. This is not an issue on mobile apps or demo installations. This simple behavior is intended to make it easier to implement innovative code on mobile devices.
+</p>
 ## 1.2. Resolver and VersionLessWalletEnclave
 
 ### 1.2.1 Resolver
@@ -113,6 +113,11 @@ The OpenDSU “resolver” API space provides methods for interacting with Versi
 
 
 **Callback parameters**
+
+| **Status Code**  | **Description**                                                                                   |     |
+|:-----------------|:--------------------------------------------------------------------------------------------------|:----|
+| err              | ErrorWrapper object                                                                               |     |
+| dsu              | [VersionLessDSU instance](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html)  |     |
 
 
 
