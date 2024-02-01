@@ -109,6 +109,11 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 </div>
 
 
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sFiVXNSi7gw0tgAC4C9DJRg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=14&drawingRevisionAccessToken=AjX9xqAaNVds1g&h=304&w=269&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 2: DSU usage pattern</b></p>
+</div>
+
 
 
 <p align="justify">Supplementary sophistications are required only in cases where we have to implement access revocation to the shared data or implement an expiration date for access to data as requested by a third party.</p>
