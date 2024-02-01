@@ -172,10 +172,6 @@ These three use cases will be developed in the following subsections.
 <ol>
 <li><b> DSU-Based Self Sovereign Applications (SSApps)</b></li>
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sD3RniCRYQaNZDZaBiIEOOg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=u6kir2jtScVgLw&h=193&w=513&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
-    <p><b>Figure 7: SSApps as DSUs containing UI Code</b></p>
-</div>
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/sD3RniCRYQaNZDZaBiIEOOg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=u6kir2jtScVgLw&h=193&w=513&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
@@ -195,20 +191,11 @@ These three use cases will be developed in the following subsections.
 
 <li><b>DSU-Based Web APIs</b></li>
 
+
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 8: Web APIs</b></p>
 </div>
-
-
-
-
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
-    <p><b>Figure 8: Web APIss</b></p>
-</div>
-
-
 
 
 <p align="justify">The OpenDSU layer one specifications do not enforce any special limitation on these Web APIs. We still want to draw attention to possible incompatibilities (described as differences in security and privacy properties) between DSU and Web APIs. The decentralised nature of DSU APIs requires the possession of an adequate KeySSI.
