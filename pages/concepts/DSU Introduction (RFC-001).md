@@ -61,17 +61,6 @@ Following our research in PrivateSky, but also according to those existing in Op
     <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
 </div>
 
-ss
-
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sgqHMdkcmeSZl8XLRGz5lVA/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=ZRBIjDNAMXZRCA&h=332&w=465&ac=1" class="imgMain" style="max-width: 69%; margin-left: 15px;"/>
-    <p><b>Figure 2: test)</b></p>
-</div>
-
-ss22
-
-
-
 
 
 <p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
@@ -89,9 +78,11 @@ Now, owners of the same key or a special derivation of this key can find the ref
 <p align="justify">From the perspective of OpenDSU, a DSU is an entity that exists temporarily in an execution environment (usually in a sandboxed container). Logically, a DSU can be understood as a micro-file system containing data and code booted in a sandboxed environment. It can also be understood as a key/value micro-database (each key being the path to a file and each value the contents of that file).</p>
 
 
-<img src="https://docs.google.com/drawings/d/sgqHMdkcmeSZl8XLRGz5lVA/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=ZRBIjDNAMXZRCA&h=332&w=465&ac=1" class="imgMain">
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sgqHMdkcmeSZl8XLRGz5lVA/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=ZRBIjDNAMXZRCA&h=332&w=465&ac=1" class="imgMain" style="max-width: 69%; margin-left: 15px;"/>
+    <p><b>Figure 2: DSU usage pattern</b></p>
+</div>
 
-<p style="text-align:center"> <b>Figure 2: DSU usage pattern </b></p>
 
 <p>The Execution Environment interacts with a DSU in 3 major ways:</p>
 <ol>
