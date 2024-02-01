@@ -193,6 +193,11 @@ These three use cases will be developed in the following subsections.
     <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 8: Web APIs</b></p>
 </div>
+<div style="text-align:center; margin-left: 20px; margin-right: 20px;">
+    <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 100%;"/>
+    <p><b>Figure 8: Data Sharing Units (DSU)</b></p>
+</div>
+
 
 
 <p align="justify">The OpenDSU layer one specifications do not enforce any special limitation on these Web APIs. We still want to draw attention to possible incompatibilities (described as differences in security and privacy properties) between DSU and Web APIs. The decentralised nature of DSU APIs requires the possession of an adequate KeySSI.
