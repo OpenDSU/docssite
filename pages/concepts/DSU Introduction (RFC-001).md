@@ -58,6 +58,9 @@ Following our research in PrivateSky, but also according to those existing in Op
     <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
 </div>
 
+
+![](C:\Users\Andi\Downloads\New folder (4)\RFC001_DSU_Introduction11.png "test1")
+
 <p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
 
 
