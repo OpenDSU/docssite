@@ -67,6 +67,7 @@ Following our research in PrivateSky, but also according to those existing in Op
 
 
 
+
 <p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
 
 
@@ -97,9 +98,10 @@ Now, owners of the same key or a special derivation of this key can find the ref
 
 We will need the following concepts introduced in this RFC to make these interactions possible.
 
-<img alt="" align="center" src="https://docs.google.com/drawings/d/sQ6R13i9lx6kCdSn1_DLjvA/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=tBOc_oHloZXnCA&h=55&w=601&ac=1" class="imgMain">
-
-<p style="text-align:center"><b> Figure 3: Concepts </b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 69%; margin-left: 15px;"/>
+    <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
+</div>
 
 ## Brick Storage
 
