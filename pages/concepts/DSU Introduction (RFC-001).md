@@ -31,15 +31,15 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-
+* [**DSU Introduction**](#dsu-introduction)
   * [Abstract](#abstract)
   * [Overview](#overview)
-  * [Brick Storage](#brick-storage)
-  * [DSU Mounting](#dsu-mounting)
-  * [DSU Reconstruction](#dsu-reconstruction)
-  * [KeySSI](#keyssi)
-  * [DSU Use Cases](#dsu-use-cases)
-  * [OpenDSU and IPFS](#opendsu-and-ipfs)
+  * [1. Brick Storage](#1-brick-storage)
+  * [2. DSU Mounting](#2-dsu-mounting)
+  * [3. DSU Reconstruction](#3-dsu-reconstruction)
+  * [4. KeySSI](#4-keyssi)
+  * [5. DSU Use Cases](#5-dsu-use-cases)
+  * [6. OpenDSU and IPFS](#6-opendsu-and-ipfs)
   * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 {:toc}
