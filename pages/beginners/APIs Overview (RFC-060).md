@@ -4,10 +4,18 @@ layout: home
 parent: OpenDSU for Beginners
 nav_order: 1
 ---
+<style>
+.imgMain{
+    display.block;
+    margin-left:70px;
+    margin-right:auto;
+} 
+</style>
 
 
 # **APIs Overview (RFC-060)**
 {: .no_toc }
+
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
@@ -29,7 +37,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [API Spaces Summary](#api-spaces-summary)
 * [Operations on DSUs](#operations-on-dsus)
 * [Operations on KeySSIs](#operations-on-keyssis)
-* [Click here to know all common operations available for every KeySSI](#click-here-to-know-all-common-operations-available-for-every-keyssi)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
 
@@ -107,7 +115,6 @@ Click here to know all operations available on DSU objects
 
 
 
-# Click here to know all common operations available for every KeySSI
 
 [Click here to know all common operations available for every KeySSI](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)
 
