@@ -194,7 +194,7 @@ These three use cases will be developed in the following subsections.
     <p><b>Figure 8: Web APIs</b></p>
 </div>
 <div style="text-align:center; margin-left: 0px; margin-right: 0px;">
-    <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 100%;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%;"/>
     <p><b>Figure 8: Data Sharing Units (DSU)</b></p>
 </div>
 
