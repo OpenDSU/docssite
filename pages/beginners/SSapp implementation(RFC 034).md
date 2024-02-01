@@ -52,7 +52,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # Get Started
 
-The best way to understand SSApps is to start with the tutorial, where you will learn how to create your first and very simple SSApp.
+The best way to understand SSApps is to start with the [tutorial](https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html), where you will learn how to create your first and very simple SSApp.
 
 # Go further with the ePi-workspace demonstration
 
