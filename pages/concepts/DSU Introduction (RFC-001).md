@@ -191,7 +191,7 @@ These three use cases will be developed in the following subsections.
  
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS3HJmCC2RdZjhu8B7eqjhfFy-MY2nN_kao-oGqolzif0FATHB6I3tnr4cU6q9oDDzVgULKjS0Kfl-O/pub?w=416&h=167" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS5ONxCu4XObPwLCM17j2ZxjaHzgcLGb7q-4lMXjbFI-Uorb4cvI35z9wHpoZvx-Umo6rmYc5zbYHPv/pub?w=419&h=173" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 7: SSApps as DSUs containing UI Code</b></p>
 </div>
 
