@@ -177,6 +177,12 @@ These three use cases will be developed in the following subsections.
     <p><b>Figure 7: SSApps as DSUs containing UI Code</b></p>
 </div>
 
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sD3RniCRYQaNZDZaBiIEOOg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=u6kir2jtScVgLw&h=193&w=513&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 7: SSApps as DSUs containing UI Code</b></p>
+</div>
+
+
 
 <p align="justify">A DSU can contain any code (e.g., HTML, CSS, JS) required to launch and run an application in a browser. Also, it can be like any other web application. OpenDSU proposes standardization of the usage of APIs, and it can load web applications from DSUs. These particular kinds of web applications will be called Self Sovereign Applications (or SSApps). Besides anchoring and brick storage, SSApps have no dependency on any server, as their code and data will be loaded from the corresponding DSU on the client side. Saying Client Side here is a misnomer, as the DSU can reside on a company server farm or the cloud.</p>
 <p><b>The main benefits of the SSApp approach:</b></p>
@@ -193,10 +199,15 @@ These three use cases will be developed in the following subsections.
     <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 8: Web APIs</b></p>
 </div>
-<div style="text-align:center; margin-left: 0px; margin-right: 0px;">
-    <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%;"/>
-    <p><b>Figure 8: Data Sharing Units (DSU)</b></p>
+
+
+
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 8: Web APIss</b></p>
 </div>
+
 
 
 
@@ -218,14 +229,6 @@ An Open DSU implementation will be able to read the keys required to decrypt, en
     <img alt="" src="https://docs.google.com/drawings/d/sMflGLBPs0mdgGRYkE3F0ww/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=27&drawingRevisionAccessToken=iW_EBtAZ2kguMw&h=160&w=540&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 9: Security Context Exemplification</b></p>
 </div>
-
-
-
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sMflGLBPs0mdgGRYkE3F0ww/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=27&drawingRevisionAccessToken=iW_EBtAZ2kguMw&h=160&w=540&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
-    <p><b>Figure 9: TsestData Sharing Units (DSU)</b></p>
-</div>
-
 
 
 
