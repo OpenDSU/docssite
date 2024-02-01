@@ -12,8 +12,6 @@ nav_order: 3
 } 
 </style>
 
-
-# DSU Object (RFC-063)
 {: .no_toc }
 
 
