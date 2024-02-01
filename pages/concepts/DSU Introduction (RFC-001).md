@@ -135,6 +135,7 @@ DSUs are micro-ledgers and should provide security properties similar to smart c
 <p> More details are available in DSU Mounting (RFC-006).</p>
 <p> More details are available in DSU Types (RFC-007).</p>
 
+
 ##  DSU Reconstruction
 
 <p align="justify">DSUs are encrypted at rest and in transit using a key derived from an identifier we call KeySSI. A DSU can be imagined as a multi-directory file system with granular access and security properties for each “directory”. Instead of being stored as a whole, the files are stored as encrypted bricks. That is why we need DSU reconstruction to reassemble our files, and we reassemble them only for a limited time in an “execution environment”. These OpenDSU mechanisms implement the usage of “client-side encryption” as a means to enable data self-sovereignty.</p>
