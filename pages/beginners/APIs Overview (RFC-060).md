@@ -13,7 +13,7 @@ nav_order: 1
 </style>
 
 
-# **APIs Overview (RFC-060)**
+
 {: .no_toc }
 
 
@@ -31,7 +31,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**APIs Overview (RFC-060)**](#apis-overview-rfc-060)
 * [Abstract](#abstract)
 * [Get started](#get-started)
   * [API Spaces Summary](#api-spaces-summary)
@@ -107,13 +106,10 @@ const http = opendsu.loadApi("http");
 
 # Operations on DSUs
 
-Click here to know all operations available on DSU objects
-
-# Operations on KeySSIs
 
 [Click here to know all operations available on DSU objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html)
 
-
+# Operations on KeySSIs
 
 
 [Click here to know all common operations available for every KeySSI](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)
