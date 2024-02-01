@@ -61,6 +61,11 @@ Following our research in PrivateSky, but also according to those existing in Op
     <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
 </div>
 
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSKsWCSVx-lkm6K8WzRen1eY6OF1D-x6yhoTA98Lep0hGqe-0eCkFweTXJm9kwMkZKbwZuZJyQsrdtt/pub?w=779&h=409" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
+</div>
+
 
 <p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
 
@@ -112,7 +117,7 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 <p align="justify">Supplementary sophistications are required only in cases where we have to implement access revocation to the shared data or implement an expiration date for access to data as requested by a third party.</p>
 
 
-More details are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages</a>.
+More details are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.
 
 <h2> Anchoring </h2>
 
@@ -156,7 +161,7 @@ More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/page
 
 Sandboxes will perform a “DSU reconstruction” operation that can be compared to the booting of a computer and is designed to recognize different “DSU Types” that will control how validation of subsequent versions of DSUs will be handled.</p>
 
-More details are available in DSU Reconstruction [(RFC-008)](https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html).
+More details are available in [DSU Reconstruction (RFC-008)](https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html).
 
 ## KeySSI
 
