@@ -22,7 +22,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* 
 * [Abstract](#abstract)
 * [Introduction](#introduction)
 * [Syntax of KeySSI identifiers](#syntax-of-keyssi-identifiers)
@@ -43,8 +42,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [Function keySSI.getSpecificString()](#function-keyssigetspecificstring)
   * [Function keySSI.getVn()](#function-keyssigetvn)
   * [Function keySSI.load(subType, dlDomain, subtypeSpecificString, control, vn, hint)](#function-keyssiloadsubtype-dldomain-subtypespecificstring-control-vn-hint)
-  * [Contributors](#contributors-)
-  * [Annex 1. Contributors](#annex-1-contributors)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
 
