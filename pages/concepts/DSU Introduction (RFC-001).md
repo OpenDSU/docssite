@@ -56,13 +56,19 @@ Following our research in PrivateSky, but also according to those existing in Op
 
 
 
-
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 50%;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 69%; margin-left: 15px;"/>
     <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
 </div>
 
+ss
 
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sgqHMdkcmeSZl8XLRGz5lVA/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=ZRBIjDNAMXZRCA&h=332&w=465&ac=1" class="imgMain" style="max-width: 69%; margin-left: 15px;"/>
+    <p><b>Figure 2: test)</b></p>
+</div>
+
+ss22
 
 
 
@@ -97,13 +103,6 @@ Now, owners of the same key or a special derivation of this key can find the ref
 </ol>
 
 We will need the following concepts introduced in this RFC to make these interactions possible.
-
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 69%; margin-left: 15px;"/>
-    <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
-</div>
-
-ss
 
 ## Brick Storage
 
