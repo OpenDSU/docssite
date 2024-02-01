@@ -104,7 +104,7 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/sFiVXNSi7gw0tgAC4C9DJRg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=14&drawingRevisionAccessToken=AjX9xqAaNVds1g&h=304&w=269&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
-    <p><b>Figure 2: DSU usage pattern</b></p>
+    <p><b>Figure 3: Brick Storage</b></p>
 </div>
 
 
@@ -171,8 +171,13 @@ Currently, DSUs can be used in three ways:
 These three use cases will be developed in the following subsections.
 <ol>
 <li><b> DSU-Based Self Sovereign Applications (SSApps)</b></li>
-<img alt="" align="center" src="https://docs.google.com/drawings/d/sD3RniCRYQaNZDZaBiIEOOg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=u6kir2jtScVgLw&h=193&w=513&ac=1" class="imgMain">
-<p style="text-align:center"><b>Figure 7: SSApps as DSUs containing UI Code</b></p>
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sD3RniCRYQaNZDZaBiIEOOg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=u6kir2jtScVgLw&h=193&w=513&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 7: SSApps as DSUs containing UI Code</b></p>
+</div>
+
+
 <p align="justify">A DSU can contain any code (e.g., HTML, CSS, JS) required to launch and run an application in a browser. Also, it can be like any other web application. OpenDSU proposes standardization of the usage of APIs, and it can load web applications from DSUs. These particular kinds of web applications will be called Self Sovereign Applications (or SSApps). Besides anchoring and brick storage, SSApps have no dependency on any server, as their code and data will be loaded from the corresponding DSU on the client side. Saying Client Side here is a misnomer, as the DSU can reside on a company server farm or the cloud.</p>
 <p><b>The main benefits of the SSApp approach:</b></p>
 <ol>
@@ -184,9 +189,12 @@ These three use cases will be developed in the following subsections.
 
 <li><b>DSU-Based Web APIs</b></li>
 
-<p align="justify">DSU APIs become available after DSU reconstruction is complete (recall from earlier: DSU reconstruction is similar to booting) in all the OpenDSU execution environments implemented for a particular use case. This thing allows for the DSU to be available not only on edge devices but also on servers and the cloud if desired. In a server-side environment, in many cases, it will be required to communicate with systems that are listening for requests on Web Services, such as Web APIs, Restful APIs, Web RPC, SOAP, etc. In these cases, the DSU APIs could be wrapped, and specific APIs could be implemented.</p>
-<img alt="" align="center" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain"/>
-<p style="text-align:center"><b>Figure 8: Web APIs</b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 8: Web APIs</b></p>
+</div>
+
+
 <p align="justify">The OpenDSU layer one specifications do not enforce any special limitation on these Web APIs. We still want to draw attention to possible incompatibilities (described as differences in security and privacy properties) between DSU and Web APIs. The decentralised nature of DSU APIs requires the possession of an adequate KeySSI.
 The Web APIs are secured mainly by a delegation of trust because all the calls are sent to a specific endpoint, which is well-known and secured by SSL (Secure Sockets Layer).
 Of course, from a security point of view, those two models have an excellent complementarity and a synergistic effect, thus increasing overall security. However, the availability of specific KeySSI to the servers implementing the Web APIs could create some inconveniences.
@@ -200,9 +208,10 @@ In many cases, the location where the data contained in the DSU will be read and
 
 An Open DSU implementation will be able to read the keys required to decrypt, encrypt and sign credentials related to DSUs using a concept named “Security Context”.
 
-<img alt="" align="center" src="https://docs.google.com/drawings/d/sMflGLBPs0mdgGRYkE3F0ww/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=27&drawingRevisionAccessToken=iW_EBtAZ2kguMw&h=160&w=540&ac=1" class="imgMain"/>
-
-<p style="text-align:center"><b>Figure 9: Security Context Exemplification</b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sMflGLBPs0mdgGRYkE3F0ww/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=27&drawingRevisionAccessToken=iW_EBtAZ2kguMw&h=160&w=540&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 9: Security Context Exemplification</b></p>
+</div>
 
 
 <p align="justify">A “security context” is similar to an “execution environment” where DSU reconstruction occurs. The main difference is that the emphasis is on the required level of security. For example, we may have “security contexts” with access to DSU signing and anchoring keys and “security contexts” with read-only access to data.
