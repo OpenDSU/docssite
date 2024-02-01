@@ -97,7 +97,7 @@ We will need the following concepts introduced in this RFC to make these interac
 
 <p align="justify">Brick Storage represents a core element of the OpenDSU ecosystem. Bricks Storages are simple web services that store and retrieve bricks for clients that know the brick’s hash (or id). The basic implementation of Brick Storages is straightforward and offers a tool that works well in an open and permissionless network.
 
-DSUs are stored as “bricks” in a “brick storage” and are encrypted using symmetric encryption. The bricks can be stored locally, remotely in the cloud, or any other storage media. The essential key for decrypting bricks is a secret key called [KeySSI](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html). Each Brick is encrypted with a different key. Special bricks called BrickMaps store the encryption keys for the Bricks they are referencing. These BrickMaps, unlike other bricks, are encrypted with KeySSIs.
+DSUs are stored as “bricks” in a “brick storage” and are encrypted using symmetric encryption. The bricks can be stored locally, remotely in the cloud, or any other storage media. The essential key for decrypting bricks is a secret key called <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a>.. Each Brick is encrypted with a different key. Special bricks called BrickMaps store the encryption keys for the Bricks they are referencing. These BrickMaps, unlike other bricks, are encrypted with KeySSIs.
 
 DSUs are flexible and can be updated (and even deleted). These get implemented by having multiple BrickMaps referenced within the same anchor, allowing us to have a history of each DSU.</p>
 
@@ -136,7 +136,7 @@ DSUs are micro-ledgers and should provide security properties similar to smart c
 </div>
 
 
-<p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
+<p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called <a href="https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html">DSU Reconstruction</a>.</p>
 
 More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/pages/concepts/DSU%20Mounting%20(RFC-006).html).
 More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html).
@@ -152,7 +152,7 @@ More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/page
 </div>
 
 
-<p align="justify">An execution environment is typically a sandbox that obtains the correct key (a KeySSI) to gain access rights to decrypt the DSU. This “execution environment” can exist externally on the client/edge device or elsewhere, such as in the cloud or a server. OpenDSU implementation standards propose the usage of JavaScript VMs (Virtual Machines) and web assembly to deploy these sandboxes.
+<p align="justify">An execution environment is typically a sandbox that obtains the correct key (a <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a>.) to gain access rights to decrypt the DSU. This “execution environment” can exist externally on the client/edge device or elsewhere, such as in the cloud or a server. OpenDSU implementation standards propose the usage of JavaScript VMs (Virtual Machines) and web assembly to deploy these sandboxes.
 
 Sandboxes will perform a “DSU reconstruction” operation that can be compared to the booting of a computer and is designed to recognize different “DSU Types” that will control how validation of subsequent versions of DSUs will be handled.</p>
 
@@ -193,8 +193,11 @@ These three use cases will be developed in the following subsections.
 <li><p align="justify">The code for UI (and business logic) is signed, secured by a DTE (Distributed Ledger), and verifiable by the edge client environment.</p></li>
 <li><p align="justify">Data Self-Sovereignty requires Self-Sovereignty at the application level in disintermediation. The blockchain, anchoring, and brick storage are zero-access services consumed from the cloud. A server is simulated (using service workers) by the DSU instance, but this “server” runs on the edge device. Therefore, the data leakages are drastically limited compared with a classical web application.</p></li>
 </ol>
-<p>SSApp Architecture is described in SSApp Architecture (RFC-028).</p>
-<p>SSApp Implementation is described in SSApp implementation (RFC-034).</p>
+
+
+SSApp Architecture is described in <a href="https://www.opendsu.org/pages/concepts/SSApps%20Architecture%20(RFC-028).html">SSApp Architecture (RFC-028)</a>..
+SSApp Implementation is described in <a href="https://www.opendsu.org/pages/beginners/SSapp%20implementation(RFC%20034).html">SSApp implementation (RFC-034)</a>..
+
 
 <li><b>DSU-Based Web APIs</b></li>
 
