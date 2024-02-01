@@ -103,6 +103,8 @@ We will need the following concepts introduced in this RFC to make these interac
     <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
 </div>
 
+ss
+
 ## Brick Storage
 
 <p align="justify">Brick Storage represents a core element of the OpenDSU ecosystem. Bricks Storages are simple web services that store and retrieve bricks for clients that know the brick’s hash (or id). The basic implementation of Brick Storages is straightforward and offers a tool that works well in an open and permissionless network.
