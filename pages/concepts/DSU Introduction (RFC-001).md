@@ -139,7 +139,7 @@ More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/page
 DSUs are micro-ledgers and should provide security properties similar to smart contracts. Therefore,  the initial version of the DSU Type contains the code needed to validate new versions of the DSU Type. After updating the DSU Type itself, the code from the DSU Type will check that the current DSU versions follow the rules defined by the DSU Type constitution.</p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ7UCvYtwvs9LnOVOgGlGvJAQRJlPnaIDwofDpA_2RA3h1fy8wqlbwFMbBwLkakp5yh2PvfYrEG39o_/pub?w=462&h=133" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSSdFjMT3QJDCy-8DwD2nbAUwofoH6_q3Mi8qkLhMViUvkN_grcndvupAUEvIu94sLobFWub1k7Rp5O/pub?w=927&h=274" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: DSU Instances and DSU Types</b></p>
 </div>
 
@@ -213,7 +213,7 @@ SSApp Implementation is described in <a href="https://www.opendsu.org/pages/begi
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQu_OeJEkdDBPiOBVgzNjmCkJBa9CM0s8zbJ_f5P6E0LC2fSCS_EEGhZLUJ8Nu8eXuxXI5d5e_VoRpm/pub?w=414&h=135" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRqOPNBzCaQqZEqWfx5w6Qu7ZmyTbr_lyZFBn-KL7df8xqzzJoZCqhsRmnGpzRJY-gOY9SOnXmsm4fy/pub?w=1254&h=418" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 8: Web APIs</b></p>
 </div>
 
