@@ -61,6 +61,11 @@ Following our research in PrivateSky, but also according to those existing in Op
     <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
 </div>
 
+<div style="text-align:center; margin-left: 10px; margin-right: 70px;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 69%;"/>
+    <p><b>Figure 1: Data Sharing Units (DSU) test</b></p>
+</div>
+
 
 
 <p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
@@ -84,7 +89,7 @@ Now, owners of the same key or a special derivation of this key can find the ref
 </div>
 
 <div style="text-align:center; margin-left: 20px; margin-right: 20px;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 100%;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 69%;"/>
     <p><b>Figure 1: Data Sharing Units (DSU) test</b></p>
 </div>
 
