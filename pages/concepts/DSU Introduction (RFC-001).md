@@ -62,7 +62,7 @@ Following our research in PrivateSky, but also according to those existing in Op
 </div>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSKsWCSVx-lkm6K8WzRen1eY6OF1D-x6yhoTA98Lep0hGqe-0eCkFweTXJm9kwMkZKbwZuZJyQsrdtt/pub?w=779&h=409" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSKsWCSVx-lkm6K8WzRen1eY6OF1D-x6yhoTA98Lep0hGqe-0eCkFweTXJm9kwMkZKbwZuZJyQsrdtt/pub?w=779&h=418" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
 </div>
 
