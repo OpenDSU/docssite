@@ -31,7 +31,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**DSU Introduction (RFC-001)**](#dsu-introduction-rfc-001)
   * [Abstract](#abstract)
   * [Overview](#overview)
   * [Brick Storage](#brick-storage)
@@ -98,7 +97,7 @@ Now, owners of the same key or a special derivation of this key can find the ref
 We will need the following concepts introduced in this RFC to make these interactions possible.
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSdTdwPsi2CTIxAvvvoZnZpsiI8K0ozvfkkhsFzjB-5JozvbJ73N8vxfZFqW_wVdewNSzoPE3DriFAt/pub?w=821&h=131" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTiEAVJ1saLfnNokV3evu9neqBLxoEAm-19KhBil3Z3zB1aTJJN8pgP1oMQYWkU_h1_Fp4aC-z92yg5/pub?w=827&h=135" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Concepts</b></p>
 </div>
 
