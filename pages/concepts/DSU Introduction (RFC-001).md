@@ -81,7 +81,7 @@ Now, owners of the same key or a special derivation of this key can find the ref
     <img alt="" src="https://docs.google.com/drawings/d/sgqHMdkcmeSZl8XLRGz5lVA/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=ZRBIjDNAMXZRCA&h=332&w=465&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: DSU usage pattern</b></p>
 </div>
-
+ 
 <p>The Execution Environment interacts with a DSU in 3 major ways:</p>
 <ol>
 
