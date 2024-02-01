@@ -54,7 +54,7 @@ Following our research in PrivateSky, but also according to those existing in Op
 
 
 
-<img alt="" align="center" src="https://docs.google.com/drawings/d/sz8cyVsXZqyqpKqSxS7vqsg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=7o1Qr4tz1E8Xgg&h=372&w=596&ac=1" class="imgMain"/>
+<img alt="" align="center" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&amp;h=512" class="imgMain"/>
 
 <p style="text-align:center"> <b>Figure 1: Data Sharing Units (DSU) </b></p>
 
