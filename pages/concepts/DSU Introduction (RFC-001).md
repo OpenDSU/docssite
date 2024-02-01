@@ -59,6 +59,14 @@ Following our research in PrivateSky, but also according to those existing in Op
 <p style="text-align:center"> <b>Figure 1: Data Sharing Units (DSU) </b></p>
 
 
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512"  class="imgMain">
+
+<p style="text-align:center"><b> Figure 1.0test: DSU Instances and DSU Types </b></p>
+
+<p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
+
+
+
 <p align="justify">Starting from the user, we first have the User environment where DSUs exist and KeySSIs are managed. These environments are also called agents. An agent is software that can be located either in the cloud or locally (on a computer or a mobile). This software is in charge of managing special identifiers named KeySSIs, and it is also responsible for the creation and reconstruction of DSUs. When a keySSI is used to create a DSU, the agent will use anchoring and brick storage from the domain associated with the key (here by default) to ensure the DSU will be accessible for other users to access the DSU if they own the corresponding keys.
 
 By using the anchor identifier of the DSU, the agent will be able to anchor in the ledger a reference to one BrickMap in the Brick storage.  Because the DSU is divided into many individual bricks before being stored, the map is necessary to keep track of all the bricks that form the DSU.
