@@ -97,7 +97,7 @@ We will need the following concepts introduced in this RFC to make these interac
 
 <p align="justify">Brick Storage represents a core element of the OpenDSU ecosystem. Bricks Storages are simple web services that store and retrieve bricks for clients that know the brick’s hash (or id). The basic implementation of Brick Storages is straightforward and offers a tool that works well in an open and permissionless network.
 
-DSUs are stored as “bricks” in a “brick storage” and are encrypted using symmetric encryption. The bricks can be stored locally, remotely in the cloud, or any other storage media. The essential key for decrypting bricks is a secret key called KeySSI. Each Brick is encrypted with a different key. Special bricks called BrickMaps store the encryption keys for the Bricks they are referencing. These BrickMaps, unlike other bricks, are encrypted with KeySSIs.
+DSUs are stored as “bricks” in a “brick storage” and are encrypted using symmetric encryption. The bricks can be stored locally, remotely in the cloud, or any other storage media. The essential key for decrypting bricks is a secret key called [KeySSI](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html). Each Brick is encrypted with a different key. Special bricks called BrickMaps store the encryption keys for the Bricks they are referencing. These BrickMaps, unlike other bricks, are encrypted with KeySSIs.
 
 DSUs are flexible and can be updated (and even deleted). These get implemented by having multiple BrickMaps referenced within the same anchor, allowing us to have a history of each DSU.</p>
 
@@ -110,17 +110,22 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 
 
 <p align="justify">Supplementary sophistications are required only in cases where we have to implement access revocation to the shared data or implement an expiration date for access to data as requested by a third party.</p>
-<p>More details are available in Brick Storages (RFC-003).</p>
+
+More details are available in [Brick Storages] (https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html).
 
 <h2> Anchoring </h2>
 
 <p align="justify">DSUs are anchored in the blockchain, and the anchoring feature brings the capability of digitally signing data and code in the initial version and any subsequent versions. In some situations, use cases can exist in which a centralized system provides DSU anchoring. For example, a use case that only needed anchoring could support better internal auditability. This example is excellent, as it could be later decentralized if needed or required.</p>
 
-<p>More details are available in Anchoring (RFC-005).</p>
+More details are available in [Anchoring](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html).
 
 ## DSU Mounting
 
-<p align="justify">The code in a DSU instance is not copied to each instantiation. Starting from the perspective that a DSU can be seen as a file system, this file system allows the mounting of a DSU in another DSU. The DSU mounted in all instances and containing the code is called DSU Types. This DSU Type behaves similarly to a class compared to its instances. The DSU Type is a DSU in itself and, as such, is anchored and must have credentials (digital signatures) that mark it safe for use. It should also be noted that a DSU Type can be updated, leading to the automatic update of all instances. We also name the code from DSU Type as DSU constitution.
+<p align="justify">The code in a DSU instance is not copied to each instantiation. Starting from the perspective that a DSU can be seen as a file system, this file system allows the mounting of a DSU in another DSU. The DSU mounted in all instances and containing the code is called <a href="https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html">DSU Types</a>. This DSU Type behaves similarly to a class compared to its instances. The DSU Type is a DSU in itself and, as such, is anchored and must have credentials (digital signatures) that mark it safe for use. It should also be noted that a DSU Type can be updated, leading to the automatic update of all instances. We also name the code from DSU Type as DSU constitution.
+
+test -> 
+
+<p style="text-align: justify;"> More details are available in <a href="https://www.opendsu.org/pages/concepts/DSU%20Mounting%20(RFC-006).html">DSU Mounting (RFC-006)</a>.</p>
 
 DSUs are micro-ledgers and should provide security properties similar to smart contracts. Therefore,  the initial version of the DSU Type contains the code needed to validate new versions of the DSU Type. After updating the DSU Type itself, the code from the DSU Type will check that the current DSU versions follow the rules defined by the DSU Type constitution.</p>
 
@@ -132,8 +137,8 @@ DSUs are micro-ledgers and should provide security properties similar to smart c
 
 <p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
 
-<p> More details are available in DSU Mounting (RFC-006).</p>
-<p> More details are available in DSU Types (RFC-007).</p>
+<p align="justify"> More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/pages/concepts/DSU%20Mounting%20(RFC-006).html).</p>
+More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html).
 
 
 ##  DSU Reconstruction
@@ -150,13 +155,13 @@ DSUs are micro-ledgers and should provide security properties similar to smart c
 
 Sandboxes will perform a “DSU reconstruction” operation that can be compared to the booting of a computer and is designed to recognize different “DSU Types” that will control how validation of subsequent versions of DSUs will be handled.</p>
 
-More details are available in DSU Reconstruction (RFC-008).
+More details are available in DSU Reconstruction [(RFC-008)](https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html).
 
 ## KeySSI
 
 <p align="justify">The KeySSI concept's purpose is to provide blockchain-anchored identities for things and processes, and companies and individuals. They are used as secret symmetrical encryption/decryption keys for DSUs (or parts of the DSUs).</p>
 
-<p>More details are available in KeySSI (RFC-002).</p>
+More details are available in [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).
 
 ##  DSU Use Cases
 
