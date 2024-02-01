@@ -13,7 +13,7 @@ nav_order: 5
 </style>
 
 
-# **Security Context (RFC-075)**
+# Security Context (RFC-075)
 {: .no_toc }
 
 

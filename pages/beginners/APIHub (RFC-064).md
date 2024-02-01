@@ -53,11 +53,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-#  Abstract #
+#  Abstract 
 
 This API space allows the user to set up custom error reporting.
 
-# 1. System functions #
+# 1. System functions 
 
 
 | **Functions**            | **Description**                                            |
@@ -69,7 +69,7 @@ This API space allows the user to set up custom error reporting.
 
 
 
-# 2. Error #
+# 2. Error 
 
 
 ## Function createOpenDSUErrorWrapper(message, err, otherErrors)

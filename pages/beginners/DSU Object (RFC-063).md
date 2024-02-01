@@ -4,8 +4,6 @@ layout: home
 parent: OpenDSU for Beginners
 nav_order: 3
 ---
-
-
 <style>
 .imgMain{
     display.block;
@@ -13,6 +11,7 @@ nav_order: 3
     margin-right:auto;
 } 
 </style>
+
 
 # DSU Object (RFC-063)
 {: .no_toc }
@@ -156,7 +155,7 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 | recursive    | boolean  | true      | Triggers the corresponding operation to be applied recursively to subfolders of the target(s).                                                                                                                                                                                                           |
 
 
-The remainder of this chapter will introduce methods of a DSU object that control file I/O operations, subdivided according to their purpose.
+<p style='text-align: justify;'>The remainder of this chapter will introduce methods of a DSU object that control file I/O operations, subdivided according to their purpose.</p>
 
 <p style="text-align:center"><b>Figure 2: Logical overview of file operation methods of DSU objects</b></p>
 
@@ -167,8 +166,8 @@ The remainder of this chapter will introduce methods of a DSU object that contro
 
 ### Function getArchiveForPath(dsuPath, callback)
 
-<p style='text-align: justify;'><b>Description</b>: Obtains the DSU instance that stores the file system entry provided by dsuPath. Persistently mounted DSU containers are resolved by the manifest file of this DSU instance, while transiently mounted DSU containers are resolved by temporary variables accordingly.
-</p>
+<p style='text-align: justify;'><b>Description</b>: Obtains the DSU instance that stores the file system entry provided by dsuPath. Persistently mounted DSU containers are resolved by the manifest file of this DSU instance, while transiently mounted DSU containers are resolved by temporary variables accordingly.</p>
+
 Returns an Error err if the manifest of this DSU instance is corrupt or in case the externally mounted DSU instance for dsuPath cannot be loaded.
 
 
@@ -192,10 +191,9 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 <p style='text-align: justify;'><b>Description</b>: If not specified otherwise, <b>dsuPath</b> is set to the root folder "/" of the DSU instance. An Array of String objects with paths to all the files under <b>dsuPath</b> is composed. Optionally, it can also recursively descend into subfolders of <b>dsuPath</b> (if <b>recursive</b> is set to “true”). Configuration <b>options</b> may encapsulate the flags <b>ignoreMounts</b> (default: false) and recursive (default: true).</p>
 
-Returns an Error **err** if the manifest of this DSU instance is corrupt or if an externally mounted DSU instance under dsuPath cannot be loaded.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if the manifest of this DSU instance is corrupt or if an externally mounted DSU instance under dsuPath cannot be loaded.</p>
 
-If **ignoreMounts** is set to “false”, it also lists externally mounted DSU instances.
-
+<p style='text-align: justify;'>If <b>ignoreMounts</b> is set to “false”, it also lists externally mounted DSU instances.</p>
 
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                      |
@@ -217,9 +215,9 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 
 <p style='text-align: justify;'><b>Description</b>: An Array of String objects with the paths to all folders under <b>dsuPath</b> is composed. Optionally, it can also recursively descend into subfolders of <b>dsuPath</b> (if recursive: true). Configuration options may encapsulate the flags ignoreMounts (default: false) and recursive (default: true).</p>
 
-Returns an Error **err** if the manifest of this DSU instance is corrupt or if the external DSU instance mounted in dsuPath cannot be loaded.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if the manifest of this DSU instance is corrupt or if the external DSU instance mounted in dsuPath cannot be loaded.</p>
 
-If **ignoreMounts** is set to “false”, it also lists externally mounted DSU instances.
+<p style='text-align: justify;'>If <b>ignoreMounts</b> is set to “false”, it also lists externally mounted DSU instances.</p>
 
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                         |
@@ -261,7 +259,9 @@ If **ignoreMounts** is set to “false”, it also lists externally mounted DSU 
 ### Function readDir(dsuPath, options, callback)
 
 <p style='text-align: justify;'><b>Description</b>: Retrieves all the files and folders contained in this DSU instance's folder specified by <b>dsuPath</b> by calling listFiles() and listFolders() with the options <b>ignoreMounts</b>: true and <b>recursive</b>: false and, additionally, it collects external DSU containers mounted directly under <b>dsuPath</b>. By default (withFileTypes: false), all files, folders, and dossiers mounted under <b>dsuPath</b> are concatenated in <b>entries.files</b>, an Array of String objects. If <b>withFileTypes</b> is set to “true”, the different entry types are collected in separate Array instances of String objects, as provided by <b>entries.files</b>, <b>entries.folders</b>, and <b>entries.mounts</b>, respectively. Configuration <b>options</b> may encapsulate the flag <b>withFileTypes</b> (default: false).</p>
-Returns an Error **err** if the manifest of this DSU instance is corrupt or in case an external DSU instance mounted under **dsuPath** cannot be loaded.
+
+<p style='text-align: justify;'>Returns an Error <b>err</b> if the manifest of this DSU instance is corrupt or in case an external DSU instance mounted under <b>dsuPath</b> cannot be loaded.</p>
+
 
 | **Name** | **Type** | **Value** | **Description**                                                                           |
 |:---------|:---------|:----------|:------------------------------------------------------------------------------------------|
@@ -285,7 +285,9 @@ Returns an Error **err** if the manifest of this DSU instance is corrupt or in c
 ### Function cloneFolder(srcPath, destPath, options, callback)
 
 <p style='text-align: justify;'><b>Description</b>: Create a new folder in this DSU instance at the specified <b>destPath</b>. The new folder will contain all the data existing in the folder being cloned from the specified <b>srcPath</b>. Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
-Returns an Error **err** if **srcPath** or **dsuPath** cannot be accessed or if the dossier context is read-only.
+
+<p style='text-align: justify;'>Returns an Error <b>err</b> if <b>srcPath</b> or <b>dsuPath</b> cannot be accessed or if the dossier context is read-only.</p>
+
 
 | **Name** | **Type** | **Value** | **Description**                                                                             |
 |:---------|:---------|:----------|:--------------------------------------------------------------------------------------------|
@@ -308,7 +310,8 @@ Returns an Error **err** if **srcPath** or **dsuPath** cannot be accessed or if 
 
 <p style='text-align: justify;'><b>Description</b>: Create an empty folder in this DSU instance at the specified <b>dsuPath</b>. Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true) and <b>ignoreMounts</b> (default: false).</p>
 
-Returns an Error **err** if **dsuPath** cannot be accessed or when an external DSU object in the path prefix is mounted read-only.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if <b>dsuPath</b> cannot be accessed or when an external DSU object in the path prefix is mounted read-only.</p>
+
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                      |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------|
@@ -328,9 +331,10 @@ Returns an Error **err** if **dsuPath** cannot be accessed or when an external D
 
 ### Function delete(dsuPath, options, callback)
 
-**Description**: Delete a file or folder specified by **dsuPath** from this DSU instance. Configuration options may encapsulate the flag **ignoreMounts** (default: false).
+<p style='text-align: justify;'><b>Description</b>: Delete a file or folder specified by <b>dsuPath</b> from this DSU instance. Configuration options may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
 
-Returns an Error **err** if **dsuPath** cannot be accessed or when an external DSU object in the path prefix is mounted read-only.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if <b>dsuPath</b> cannot be accessed or when an external DSU object in the path prefix is mounted read-only.</p>
+
 
 | **Name** | **Type** | **Value** | **Description**                                             |
 |:---------|:---------|:----------|:------------------------------------------------------------|
@@ -378,7 +382,9 @@ Returns an Error **err** if **dsuPath** cannot be accessed or when an external D
 <p style='text-align: justify;'><b>Description</b>: Append <b>data</b> provided by a String literal, a Buffer, or by a ReadableStream to the file accessible at <b>dsuPath</b> in this DSU instance. Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true) and <b>ignoreMounts</b> (default: false).
 </p>
 
-Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if an external DSU mounted to a prefix of <b>dsuPath</b> cannot be loaded or is mounted read-only.
+</p>
+
 
 | **Name** | **Type**                      | **Value** | **Description**                                                                                                   |
 |:---------|:------------------------------|:----------|:------------------------------------------------------------------------------------------------------------------|
@@ -418,15 +424,13 @@ Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** c
 | error    | Error          |                      |
 | stream   | ReadableStream |                      |
 
-**Description**: Contains a message and the error / The read stream instance that was just created.
-
+<p style='text-align: justify;'><b>Description</b>: Contains a message and the error / The read stream instance that was just created.</p>
 
 
 
 ### Function readFile(dsuPath, options, callback)
 
-**Description**: Reads a file in the DSU. Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
-
+<p style='text-align: justify;'><b>Description</b>: Reads a file in the DSU. Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
 
 <p style='text-align: justify;'>Returns an error err if an external DSU mounted to a prefix of dsuPath cannot be loaded or is mounted read-only, or the file is a big one (the bricks list contains as the first element a <b>SizeSSI</b>). Otherwise, the Buffer <b>buffer</b> with the content of the specified file from the DSU file system is provided.</p>
 
@@ -474,7 +478,8 @@ Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** c
 
 <p style='text-align: justify;'><b>Description</b>: Creates a file entry at <b>dsuPath</b> in this DSU instance and subsequently writes <b>data</b> to it. Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true) and <b>ignoreMounts</b> (default: false).</p>
 
-Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** cannot be loaded or is mounted read-only.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if an external DSU mounted to a prefix of <b>dsuPath</b> cannot be loaded or is mounted read-only.</p>
+
 
 | **Name** | **Type**                    | **Value** | **Description**                                                                                                                                                                  |
 |:---------|:----------------------------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -494,11 +499,13 @@ Returns an Error **err** if an external DSU mounted to a prefix of **dsuPath** c
 
 
 ## Other functions
+
 ### Function refresh(callback)
 
-**Description**: Reloads an existing BrickMap using the BrickMapStrategy.
+<p style='text-align: justify;'><b>Description</b>: Reloads an existing BrickMap using the BrickMapStrategy.</p>
 
-Returns an Error **err** if it fails to get the latest anchored hash link.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if it fails to get the latest anchored hash link.</p>
+
 
 | **Name** | **Type** | **Value** |
 |:---------|:---------|:----------|
@@ -517,7 +524,8 @@ Returns an Error **err** if it fails to get the latest anchored hash link.
 
 ### Function stat(dsuPath, callback)
 
-**Description**: Returns "undefined" stats if an Error occurs when calling BrickMapConstroller.stat(). Otherwise, stats are provided asynchronously to callback().
+<p style='text-align: justify;'><b>Description</b>: Returns "undefined" stats if an Error occurs when calling BrickMapConstroller.stat(). Otherwise, stats are provided asynchronously to callback().</p>
+
 
 | **Name** | **Type** | **Value** |
 |:---------|:---------|:----------|
@@ -570,20 +578,19 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 
 # Batch operations on DSUs
 
-A batch is a sequence of operations to be executed on the files available in a DSU object, before the resulting changes to the DSU are anchored altogether. Batch processing requires a call to **beginBatch()** or **beginOrAttachBatch()**. After all operations have been performed, a call to **commitBatch()** anchors the changes made within the batch. Alternatively, batch operations may be wrapped by a **batchFn** lazily submitted to **batch(batchFn)**. Note that no more than one batch process can be performed on the same DSU object at a time, and batch processing scheduled by **beginBatch()** has to be completed by *commitBatch()* or terminated by **cancelBatch()** before a new batch may be scheduled.
+<p style='text-align: justify;'>A batch is a sequence of operations to be executed on the files available in a DSU object, before the resulting changes to the DSU are anchored altogether. Batch processing requires a call to <b>beginBatch()</b> or <b>beginOrAttachBatch()</b>. After all operations have been performed, a call to <b>commitBatch()</b> anchors the changes made within the batch. Alternatively, batch operations may be wrapped by a <b>batchFn</b> lazily submitted to <b>batch(batchFn)</b>. Note that no more than one batch process can be performed on the same DSU object at a time, and batch processing scheduled by <b>beginBatch()</b> has to be completed by <b>commitBatch()</b> or terminated by <b>cancelBatch()</b> before a new batch may be scheduled.</p>
 
 ## Controlling batch processe
 
 ### Function batchInProgress()
 
-**Description**: Checks if a batch is currently in progress and synchronously returns true if a batch has been scheduled or is being executed. Otherwise, it returns false.
-
+<p style='text-align: justify;'><b>Description</b>: Checks if a batch is currently in progress and synchronously returns true if a batch has been scheduled or is being executed. Otherwise, it returns false.</p>
 
 
 ### Function beginBatch()
 
-**Description**: Schedules a new batch and disables automatic anchoring after each operation performed on this DSU instance. The callback function prevents anchoring after each DSU operation. From OpenDSU 2.0.0, the “batch mode” is mandatory anyway.
-<p align="justify">It throws an Error if batch processing is already in progress, as reported by batchInProgress().</p>
+<p style='text-align: justify;'><b>Description</b>: Schedules a new batch and disables automatic anchoring after each operation performed on this DSU instance. The callback function prevents anchoring after each DSU operation. From OpenDSU 2.0.0, the “batch mode” is mandatory anyway.</p><p align="justify">It throws an Error if batch processing is already in progress, as reported by batchInProgress().</p>
+
 <p align="justify">This function returns an “batchID” as an identifier for a “batch”. The batch can be imagined as a “transaction” in the databases, but because we have a more file system approach, the metaphor is called “operation batching” or DSu “batch mode”</p>
 
 
@@ -592,8 +599,7 @@ A batch is a sequence of operations to be executed on the files available in a D
 
 ### Function startOrAttachBatch(callback)
 
-**Description**: If a DSU is already in batch mode, invoking startOrAttachBatch() generates a new "virtual batch." This virtual batch has no side effects other than to specify that commitBatch() will execute successfully only if all current batches are closed.
-The callback also returns a batchId that can be used with cancelBatch pr commitBatch.
+<p style='text-align: justify;'><b>Description</b>: If a DSU is already in batch mode, invoking startOrAttachBatch() generates a new "virtual batch." This virtual batch has no side effects other than to specify that commitBatch() will execute successfully only if all current batches are closed.</p>The callback also returns a batchId that can be used with cancelBatch pr commitBatch.
 
 
 
@@ -601,14 +607,15 @@ The callback also returns a batchId that can be used with cancelBatch pr commitB
 
 ### Function cancelBatch(bacthID)
 
-**Description**: Cancel a  batch (remove the batch mode from the DSU) and remove any changes made. If multiple batches are open, it does nothing, and changes made in the current virtual batch could still be anchored. No perfect behaviour is possible; if this aspect is important, then only one “batch” should be allowed to be opened on an instance.
-
+<p style='text-align: justify;'><b>Description</b>: Cancel a  batch (remove the batch mode from the DSU) and remove any changes made. If multiple batches are open, it does nothing, and changes made in the current virtual batch could still be anchored. No perfect behaviour is possible; if this aspect is important, then only one “batch” should be allowed to be opened on an instance.</p>
 
 
 ### Function commitBatch(bacthID, callback)
 
-**Description**: Completes batch processing by anchoring all changes in this DSU instance caused during batch processing.
-The callback is called with an error if batchInProgress() reports that no batch has yet been scheduled by beginBatch().
+<p style='text-align: justify;'><b>Description</b>: Completes batch processing by anchoring all changes in this DSU instance caused during batch processing.</p>
+
+<p style='text-align: justify;'>The callback is called with an error if batchInProgress() reports that no batch has yet been scheduled by beginBatch().</p>
+
 
 | **Name** | **Type** | **Value** | **Description**       |
 |:---------|:---------|:----------|:----------------------|
@@ -633,7 +640,7 @@ The callback is called with an error if batchInProgress() reports that no batch 
 
 ### Function getLastHashLinkSSI(callback)
 
-**Description**: Returns an Error err if the keySSI object or the list of hash links cannot be obtained for this DSU instance. Otherwise, the HashLinkSSI object hlSSI that has been employed most recently to anchor changes in this DSU instance is provided.
+<p style='text-align: justify;'><b>Description</b>: Returns an Error err if the keySSI object or the list of hash links cannot be obtained for this DSU instance. Otherwise, the HashLinkSSI object hlSSI that has been employed most recently to anchor changes in this DSU instance is provided.</p>
 
 | **Name** | **Type** | **Value** |
 |:---------|:---------|:----------|
@@ -653,15 +660,15 @@ The callback is called with an error if batchInProgress() reports that no batch 
 
 ### Function hasUnanchoredChanges()
 
-**Description**: Synchronously returns the number of unanchored changes if this DSU instance has pending changes to be anchored; otherwise, it returns false.
-
+<p style='text-align: justify;'><b>Description</b>: Synchronously returns the number of unanchored changes if this DSU instance has pending changes to be anchored; otherwise, it returns false.</p>
 
 
 
 
 ### Function onCommitBatch(notify, once)
 
-**Description**: Synchronously sets function **notify()** as the anchoring event listener.
+<p style='text-align: justify;'><b>Description</b>: Synchronously sets function <b>notify</b>**()** as the anchoring event listener.</p>
+
 
 | **Name** | **Type** | **Value** | **Description**                                                 |
 |:---------|:---------|:----------|:----------------------------------------------------------------|
@@ -672,7 +679,7 @@ The callback is called with an error if batchInProgress() reports that no batch 
 
 ### Function getCreationSSI(plain)
 
-**Description**: Determines the String identifier of the KeySSI object employed for instantiating this DSU object. The identifier is returned directly as a plain string of ASCII characters (if the “plain” attribute is set to “true”), or the string is additionally transformed into base-58 encoded symbols (if plain: false). Note that calls to getCreationSSI() are handled synchronously. Therefore, the method will block until the result is computed.
+<p style='text-align: justify;'><b>Description</b>: Determines the String identifier of the KeySSI object employed for instantiating this DSU object. The identifier is returned directly as a plain string of ASCII characters (if the “plain” attribute is set to “true”), or the string is additionally transformed into base-58 encoded symbols (if plain: false). Note that calls to getCreationSSI() are handled synchronously. Therefore, the method will block until the result is computed.</p>
 
 Returns the KeySSI instance.
 
@@ -686,9 +693,9 @@ Returns the KeySSI instance.
 
 ### Function getKeySSIAsObject(KeySSIType, callback)
 
-**Description**: Get an instance of the KeySSI corresponding to the DSU providing the keySSIType. If **KeySSIType** is "undefined" or not provided, the keySSI object for this DSU instance is lazily returned. Otherwise, the KeySSI object of this DSU instance is transformed into an object of type **KeySSIType**.
+<p style='text-align: justify;'><b>Description</b>: Get an instance of the KeySSI corresponding to the DSU providing the keySSIType. If <b>KeySSIType</b> is "undefined" or not provided, the keySSI object for this DSU instance is lazily returned. Otherwise, the KeySSI object of this DSU instance is transformed into an object of type <b>KeySSIType</b>.</p>
 
-Returns an Error **err** if **KeySSIType** is not any of the registered KeySSI types or if this DSU instance's KeySSI object cannot be transformed to an object of type **KeySSIType**.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if <b>KeySSIType</b> is not any of the registered KeySSI types or if this DSU instance's KeySSI object cannot be transformed to an object of type <b>KeySSIType</b>.</p>
 
 | **Name**   | **Type** | **Value** | **Desription**                                                                                                                  |
 |:-----------|:---------|:----------|:--------------------------------------------------------------------------------------------------------------------------------|
@@ -709,7 +716,8 @@ Returns an Error **err** if **KeySSIType** is not any of the registered KeySSI t
 
 **Description**: Lazy wrapper for [getKeySSIAsObject](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html) for providing the identifier String of the computed **KeySSI** object to the callback function.
 
-Returns an Error **err** if KeySSIType is not any of the registered **KeySSI** types or if this DSU instance's **KeySSI** object cannot be transformed to an object of type KeySSIType.
+<p style='text-align: justify;'>Returns an Error err if KeySSIType is not any of the registered KeySSI types or if this DSU instance's KeySSI object cannot be transformed to an object of type KeySSIType.</p>
+
 
 | **Name**   | **Type** | **Value** |
 |:-----------|:---------|:----------|
@@ -724,11 +732,12 @@ Returns an Error **err** if KeySSIType is not any of the registered **KeySSI** t
 | keySSI    | string       |                       |
 
 # Mounting DSUs into each other
-The **mount()** method makes the contents of an external DSU container, as identified by **archiveSSI** available under the path **mountingPoint** of this DSU instance. If the flag **persistent** (default: true) is set, externally mounted DSU instances are stored persistently in the manifest file of this DSU instance. Otherwise, mounted DSUs are stored in a temporary variable of this DSU instance. Mounted dossiers represent DSUs mounted inside another DSU using the right keySSI (i.e. SeedSSI for read and write access or SReadSSI for read-only access).
+
+<p style='text-align: justify;'>The <b>mount()</b> method makes the contents of an external DSU container, as identified by <b>archiveSSI</b> available under the path <b>mountingPoint</b> of this DSU instance. If the flag <b>persistent</b> (default: true) is set, externally mounted DSU instances are stored persistently in the manifest file of this DSU instance. Otherwise, mounted DSUs are stored in a temporary variable of this DSU instance. Mounted dossiers represent DSUs mounted inside another DSU using the right keySSI (i.e. SeedSSI for read and write access or SReadSSI for read-only access).</p>
 
 ## Function getManifest(callback)
 
-**Description**: Each DSU uses a manifest file containing the DSU metadata to keep references of the mount points to other DSUs.
+<p style='text-align: justify;'><b>Description</b>: Each DSU uses a manifest file containing the DSU metadata to keep references of the mount points to other DSUs.</p>
 
 Returns a manifest instance of the DSU.
 
@@ -752,9 +761,10 @@ Returns a manifest instance of the DSU.
 
 ## Function getSSIForMount(mountPoint, callback) 
 
-**Description**: Retrieves the KeySSI used to mount the specified mountPoint by obtaining the **archiveSSI** identifier for the DSU instance mounted at the path **mountPoint** in this DSU object.
+<p style='text-align: justify;'><b>Description</b>: Retrieves the KeySSI used to mount the specified mountPoint by obtaining the <b>archiveSSI</b> identifier for the DSU instance mounted at the path <b>mountPoint</b> in this DSU object.</p>
 
-Returns an Error **err** if no DSU instance is mounted at the path **mountPoint** of this DSU object.
+<p style='text-align: justify;'>Returns an Error <b>err</b> if no DSU instance is mounted at the path <b>mountPoint</b> of this DSU object.</p>
+
 
 | **Name**   | **Type** | **Value** | **Description**                                                                 |
 |:-----------|:---------|:----------|:--------------------------------------------------------------------------------|
@@ -798,9 +808,10 @@ Returns an Array with all these mounted DSUs.
 
 ## Function mount(mountPoint, archieveSSI, options, callback)
 
-**Description**: Mounts the external DSU container identified by **archiveSSI** at the path **mountingPoint** of the DSU instance. The **options** parameter may encapsulate the flag **persist** (default: true) to save the updated manifest file after successfully mounting the external DSU object at mountingPoint to the manifest file of this DSU instance. Otherwise, the mounting point is stored only in a temporary variable of this DSU instance.
+<p style='text-align: justify;'><b>Description</b>: Mounts the external DSU container identified by <b>archiveSSI</b> at the path <b>mountingPoint</b> of the DSU instance. The <b>options</b> parameter may encapsulate the flag <b>persist</b> (default: true) to save the updated manifest file after successfully mounting the external DSU object at mountingPoint to the manifest file of this DSU instance. Otherwise, the mounting point is stored only in a temporary variable of this DSU instance.</p>
 
 Returns an Error **err** if **mountingPoint** points to a non-empty directory or if another DSU instance is already mounted at **mountingPoint**.
+
 
 | **Name**      | **Type** | **Value** | **Description**                                                                           |
 |:--------------|:---------|:----------|:------------------------------------------------------------------------------------------|
@@ -820,9 +831,9 @@ Returns an Error **err** if **mountingPoint** points to a non-empty directory or
 
 ## Function unmount(mountingPoint, callback)
 
-**Description**: Removes the external DSU container mounted at mountingPoint. If the external DSU at mountingPoint has been mounted persistently, a new manifest file after removal of the externally mounted DSU container is saved to this DSU instance accordingly.
+<p style='text-align: justify;'><b>Description</b>: Removes the external DSU container mounted at mountingPoint. If the external DSU at mountingPoint has been mounted persistently, a new manifest file after removal of the externally mounted DSU container is saved to this DSU instance accordingly.</p>
 
-Returns an Error err if no mounted DSU is found at dsuPath.
+Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 | **Name**      | **Type** | **Value** | **Description**                                                  |
 |:--------------|:---------|:----------|:-----------------------------------------------------------------|
@@ -840,17 +851,23 @@ Returns an Error err if no mounted DSU is found at dsuPath.
 
 ## Methods of transferring files & folders between a DSU object and the local file system
 
-This section outlines how to employ methods of DSU objects to add, remove, copy, relocate or query information on entire files or folders without changing their content. For transparency, we further subdivided the file handling methods of a DSU object into two subgroups: methods that trigger a data flow by copying data underlying files from one location to another (Figure 2, elements A, B, and C) and those methods that query or change the logical file structure inside a DSU but without moving big chunks of the underlying data around (Figure 2, elements D and E). Former data flow methods usually require two string arguments identifying the source and target of the operation. In contrast, the latter methods used to change the file control structure typically require only one such path string argument of the target entry to be modified or queried.
-<p style="text-align:center"><b>Figure 3: Logical overview of file operation methods of DSU objects</b></p>
+<p style='text-align: justify;'>This section outlines how to employ methods of DSU objects to add, remove, copy, relocate or query information on entire files or folders without changing their content. For transparency, we further subdivided the file handling methods of a DSU object into two subgroups: methods that trigger a data flow by copying data underlying files from one location to another (Figure 2, elements A, B, and C) and those methods that query or change the logical file structure inside a DSU but without moving big chunks of the underlying data around (Figure 2, elements D and E). Former data flow methods usually require two string arguments identifying the source and target of the operation. In contrast, the latter methods used to change the file control structure typically require only one such path string argument of the target entry to be modified or queried.
 
-Methods are invoked on the central DSU instance (this) (see Figure 3 above), which can mount other DSU objects at given mounting points (gray folder icon). According to the kind of operation, file handling methods can be segregated into units: (**A**) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (**B**) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (**C**) methods that move data within the DSU instance: rename(), cloneFolder(); (**D**) methods that report on the file structure of the DSU container: readDir(), listFiles(), listFolders(), listMountedDossiers(), getArchiveForPath(); (**E**) methods that add/remove file structures: createFolder(), delete(). In the Figure, control flows are depicted by regular “arrows” and data flows by bold “arrows”.</p>
+</p><p style="text-align:center"><b>Figure 3: Logical overview of file operation methods of DSU objects</b></p>
 
-The methods a DSU object provides for file handling are listed below, where all path arguments **fsPath** or **dsuPath** and the optional configuration flags in **options**.
+<p style='text-align: justify;'>Methods are invoked on the central DSU instance (this) (see Figure 3 above), which can mount other DSU objects at given mounting points (gray folder icon). According to the kind of operation, file handling methods can be segregated into units: (<b>A</b>) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (<b>B</b>) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (<b>C</b>) methods that move data within the DSU instance: rename(), cloneFolder(); (<b>D</b>) methods that report on the file structure of the DSU container: readDir(), listFiles(), listFolders(), listMountedDossiers(), getArchiveForPath(); (<b>E</b>) methods that add/remove file structures: createFolder(), delete(). In the Figure, control flows are depicted by regular “arrows” and data flows by bold “arrows”.</p>
+
+<p style='text-align: justify;'>The methods a DSU object provides for file handling are listed below, where all path arguments <b>fsPath</b> or <b>dsuPath</b> and the optional configuration flags in <b>options</b>.</p>
+
+
+
 
 ### Function addFile(fsPath, dsuPath, options, callback)
 
-**Description**: Copies one single file entry, specified by **fsPath** in the local file system, to the folder **dsuPath** of this DSU instance. Follows symbolic links in **fsPath**; if **ignoreMounts** is set to false (the default), it also loads externally mounted DSUs in **dsuPath**.
-Configuration **options** may encapsulate the flags **encrypt** (default: true), and **ignoreMounts** (default: false).
+
+
+<p style='text-align: justify;'><b>Description</b>: Copies one single file entry, specified by <b>fsPath</b> in the local file system, to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b>; if <b>ignoreMounts</b> is set to false (the default), it also loads externally mounted DSUs in <b>dsuPath</b>.</p>
+<p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), and <b>ignoreMounts</b> (default: false).</p>
 
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
 
@@ -871,8 +888,8 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 ### Function addFiles(fsPaths, dsuPath, options, callback)
 
-**Description**: Copies one or more files specified by the Array **fsPaths** from their paths in the local file system to the folder **dsuPath** of this DSU instance. Follows symbolic links in fsPath and loads externally mounted DSUs in dsuPath for default ignoreMounts: false.
-Configuration **options** may encapsulate the flags **encrypt** (default: true), **ignoreMounts** (default: false), and embedded (default: false). Note that setting embedded to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.
+<p style='text-align: justify;'><b>Description</b>: Copies one or more files specified by the Array <b>fsPaths</b> from their paths in the local file system to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in fsPath and loads externally mounted DSUs in dsuPath for default ignoreMounts: false.</p>
+<p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), <b>ignoreMounts</b> (default: false), and embedded (default: false). Note that setting embedded to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.</p>
 
 Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be accessed.
 
@@ -894,8 +911,8 @@ Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be a
 
 ### Function addFolder(fsPath, dsuPath, options, callback)
 
-**Description**: Iterates the contents of a folder **fsPath** in the local file system and copies each entry to a folder **dsuPath** in the DSU instance. Follows symbolic links in **fsPath** and loads externally mounted DSUs in **dsuPath** if **ignoreMounts** is set to false (which is the default).
-Configuration **options** may encapsulate the flags encrypt (default: true), **ignoreMounts** (default: false), and embedded (default: false).
+<p style='text-align: justify;'><b>Description</b>: Iterates the contents of a folder <b>fsPath</b> in the local file system and copies each entry to a folder <b>dsuPath</b> in the DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath</b> if <b>ignoreMounts</b> is set to false (which is the default).</p>
+<p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags encrypt (default: true), <b>ignoreMounts</b> (default: false), and embedded (default: false).</p>
 
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
 
@@ -917,9 +934,8 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 ### Function extractFile(fsPath, dsuPath, options, callback)
 
-**Description**: Restores data stored in Brick objects under **dsuPath** to a file in the local file system as specified by **fsPath**. Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
-
-Returns an Error **err** if an externally mounted DSU object in **dsuPath** cannot be loaded or if one of the Bricks objects for **dsuPath** cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by **fsPath**.
+<p style='text-align: justify;'><b>Description</b>: Restores data stored in Brick objects under <b>dsuPath</b> to a file in the local file system as specified by <b>fsPath</b>. Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
+<p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                               |
 |:---------|:---------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -940,9 +956,8 @@ Returns an Error **err** if an externally mounted DSU object in **dsuPath** cann
 
 ### Function extractFolder(fsPath, dsuPath, options, callback)
 
-**Description**: Restores for all files under **dsuPath** the data stored in Brick objects to a local file system folder qualified by **fsPath** by lazy calls to extractFile(). Configuration **options** may encapsulate the flag **ignoreMounts** (default: false).
-
-Returns an Error **err** if an externally mounted DSU object in **dsuPath** cannot be loaded or if one of the Bricks objects for **dsuPath** cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by **fsPath**.
+<p style='text-align: justify;'><b>Description</b>: Restores for all files under <b>dsuPath</b> the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration options may encapsulate the flag ignoreMounts (default: false).</p>
+<p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
 
 | **Name** | **Type** | **Value** | **Description**                                                                              |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------|
