@@ -220,6 +220,15 @@ An Open DSU implementation will be able to read the keys required to decrypt, en
 </div>
 
 
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sMflGLBPs0mdgGRYkE3F0ww/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=27&drawingRevisionAccessToken=iW_EBtAZ2kguMw&h=160&w=540&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 9: TsestData Sharing Units (DSU)</b></p>
+</div>
+
+
+
+
 <p align="justify">A “security context” is similar to an “execution environment” where DSU reconstruction occurs. The main difference is that the emphasis is on the required level of security. For example, we may have “security contexts” with access to DSU signing and anchoring keys and “security contexts” with read-only access to data.
 
 Even within the same wallet, we can have hardware sandboxing or darkening mechanisms (for example, Trusted Execution Environments - TEEs), and thus, we have “differently powered” security contexts. When used in enterprise environments, these security contexts can be on different hardware systems, separate from the network. Even for average users, it is quite possible to use a web application that uses DSUs on a personal computer, with the sensitive keys stored safely on the mobile. In such a case, the execution environments from regular servers or web applications will have read access. However, they cannot sign anything in the user's name without their approval. OpenDSU promotes an elegant programming model called “executable choreographies'' that makes it easier to handle this unavoidable complexity.</p>
