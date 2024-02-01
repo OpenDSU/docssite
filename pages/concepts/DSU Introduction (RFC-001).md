@@ -102,13 +102,6 @@ DSUs are stored as “bricks” in a “brick storage” and are encrypted using
 DSUs are flexible and can be updated (and even deleted). These get implemented by having multiple BrickMaps referenced within the same anchor, allowing us to have a history of each DSU.</p>
 
 
-
-<div style="text-align:center; margin-left: 0px; margin-right: 0px;">
-    <img alt="" src="https://docs.google.com/drawings/d/sFiVXNSi7gw0tgAC4C9DJRg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=14&drawingRevisionAccessToken=AjX9xqAaNVds1g&h=304&w=269&ac=1" class="imgMain" style="max-width: 69%;"/>
-    <p><b>Figure 4: Brick Storage & Brick Map</b></p>
-</div>
-
-
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/sFiVXNSi7gw0tgAC4C9DJRg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=14&drawingRevisionAccessToken=AjX9xqAaNVds1g&h=304&w=269&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: DSU usage pattern</b></p>
@@ -131,9 +124,11 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 
 DSUs are micro-ledgers and should provide security properties similar to smart contracts. Therefore,  the initial version of the DSU Type contains the code needed to validate new versions of the DSU Type. After updating the DSU Type itself, the code from the DSU Type will check that the current DSU versions follow the rules defined by the DSU Type constitution.</p>
 
-<img src="https://docs.google.com/drawings/d/sbI8keGJl9H-pj3-EY9e1Ow/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=29&drawingRevisionAccessToken=x_2_fKPl5QCRmQ&h=135&w=529&ac=1"  class="imgMain">
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sbI8keGJl9H-pj3-EY9e1Ow/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=29&drawingRevisionAccessToken=x_2_fKPl5QCRmQ&h=135&w=529&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 5: DSU Instances and DSU Types</b></p>
+</div>
 
-<p style="text-align:center"><b> Figure 5: DSU Instances and DSU Types </b></p>
 
 <p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
 
@@ -144,9 +139,11 @@ DSUs are micro-ledgers and should provide security properties similar to smart c
 
 <p align="justify">DSUs are encrypted at rest and in transit using a key derived from an identifier we call KeySSI. A DSU can be imagined as a multi-directory file system with granular access and security properties for each “directory”. Instead of being stored as a whole, the files are stored as encrypted bricks. That is why we need DSU reconstruction to reassemble our files, and we reassemble them only for a limited time in an “execution environment”. These OpenDSU mechanisms implement the usage of “client-side encryption” as a means to enable data self-sovereignty.</p>
 
-<img alt="" align="center" src="https://docs.google.com/drawings/d/sxxX07ouZIs_uz-pM7CehWg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=241&drawingRevisionAccessToken=ZaZWcUQzP29xJA&h=342&w=493&ac=1" class="imgMain">
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/sxxX07ouZIs_uz-pM7CehWg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=241&drawingRevisionAccessToken=ZaZWcUQzP29xJA&h=342&w=493&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 6: DSU reconstruction</b></p>
+</div>
 
-<p style="text-align:center"><b> Figure 6: DSU reconstruction </b></p>
 
 <p align="justify">An execution environment is typically a sandbox that obtains the correct key (a KeySSI) to gain access rights to decrypt the DSU. This “execution environment” can exist externally on the client/edge device or elsewhere, such as in the cloud or a server. OpenDSU implementation standards propose the usage of JavaScript VMs (Virtual Machines) and web assembly to deploy these sandboxes.
 
