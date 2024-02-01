@@ -244,7 +244,7 @@ OpenDSU is intended to be used in enterprise blockchain solutions, so the aim is
 
 OpenDSU is an iteration of the IPFS intuition, providing new tools for programmers and architects. </p>
 
-
+ 
 Contributors   
 
 1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
