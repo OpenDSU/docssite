@@ -208,6 +208,7 @@ In many cases, the location where the data contained in the DSU will be read and
 
 An Open DSU implementation will be able to read the keys required to decrypt, encrypt and sign credentials related to DSUs using a concept named “Security Context”.
 
+
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/sMflGLBPs0mdgGRYkE3F0ww/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=27&drawingRevisionAccessToken=iW_EBtAZ2kguMw&h=160&w=540&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 9: Security Context Exemplification</b></p>
