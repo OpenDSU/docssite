@@ -5,7 +5,7 @@ parent: OpenDSU Concepts
 nav_order: 2
 ---
 
-# KeySSI (RFC-002)
+# **KeySSI (RFC-002)**
 {: .no_toc }
 
 {: .accepted }
@@ -146,7 +146,7 @@ How to use KeySSI functions:
 variable = keySSI.function();
 dlDomain = keySSI.getDLDomain();
 seedKeyIdentifier = seedSSI.getIdentifier();
-}
+
 ```
 
 
@@ -155,9 +155,9 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 
 **Description:**  Load parameters for KeySSI from a keySSI Identifier.
 
-| **Name**   | **Type**  | **Value** | **Description**                                                                             |
-|:-----------|:----------|:----------|:--------------------------------------------------------------------------------------------|
-| identifier | String    | *required | A string that uses the keySSI identifier syntax. *Ex: ssi:za:domain:specificStr:control:vn* |
+| **Name**   | **Type** | **Value** | **Description**                                                                                  |
+|:-----------|:---------|:----------|:-------------------------------------------------------------------------------------------------|
+| identifier | String   | *required | A string that uses the keySSI identifier syntax. <br/>*Ex: ssi:za:domain:specificStr:control:vn* |
 
 
 **Returns:** This function does not return anything; it just changes the type of the existing key.
@@ -169,9 +169,9 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 
 <p style='text-align: justify;'><b>Description</b>: Is used to create a new type of KeySSI from a similar KeySSI. You should first create a well-known keySSI, then use the cast function to change the type.</p>
 
-| **Name** | **Type** | **Value** | **Description**                                  |
-|----------|----------|-----------|--------------------------------------------------|
-| newType  | String   | *required | A string that uses the KeySSI identifier syntax. |
+| **Name**  | **Type**  | **Value**  | **Description**                                   |
+|:----------|:----------|:-----------|:--------------------------------------------------|
+| newType   | String    | *required  | A string that uses the KeySSI identifier syntax.  |
 
 **Returns:** This function does not return anything.
 
@@ -204,9 +204,9 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 
 **Description:** Retrieve the keySSI control string.
 
-| **Name** | **Description**                                                                         |
-|:---------|:----------------------------------------------------------------------------------------|
-| String   | Your KeySSI control string. It is used for Anchoring operations for validation purposes |
+| **Name** | **Description**                                                                                                                                              |
+|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| String   | Your KeySSI control string. It is used for [Anchoring](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html) operations for validation purposes |
 
 
 
@@ -248,20 +248,15 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 ## Function keySSI.getIdentifier(plain)
 
 
-| **Name** | **Type** | **Value** | **Description**                                                                                  |
-|:---------|:---------|:----------|:-------------------------------------------------------------------------------------------------|
-| plain    | string   | *required | Enter true if you want the identifier in the ssi format *(ssi:za:domain:specificStr:control:vn)* |
-|          |          |           |                                                                                                  |
-
-
-Else the identifier will be encoded in Base58.|
-	
+| **Name** | **Type** | **Value** | **Description**                                                                                                                                         |
+|:---------|:---------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| plain    | string   | *required | Enter **true** if you want the identifier in the ssi format *(ssi:za:domain:specificStr:control:vn)*.<br/>Else the identifier will be encoded in Base58.|
 
 **Returns**
 
-| **Name** | **Type** |
-|:---------|:---------|
-| plain    | boolean  |
+| **Name** | **Type** | Response example  |
+|:---------|:---------|:------------------|
+| plain    | boolean  |                   |
 
 
 
@@ -276,12 +271,12 @@ Else the identifier will be encoded in Base58.|
 
 ## Function keySSI.getRelatedType(ssiType, callback)
 
-**Description**: Get the KeySSI that is related to your KeySSI and that is derived from the selected “ssiType”. A keySSI is returned if the ssiType can be derived from your KeySSI. It works only for lower subtypes for security reasons.
+<p style='text-align: justify;'><b>Description</b>: Get the KeySSI that is related to your KeySSI and that is derived from the selected “ssiType”. A keySSI is returned if the ssiType can be derived from your KeySSI. It works only for lower subtypes for security reasons.</p>
 
 
 | **Name** | **Type** | **Value** | **Description**                                                                                                      |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------|
-| plain    | string   | *required | The ssi type you want to derive from your key.Need to be from the same family and at a lower level than your keySSI. |
+| ssiType  | string   | *required | The ssi type you want to derive from your key.Need to be from the same family and at a lower level than your keySSI. |
 | callback | function | *required |                                                                                                                      |
 
 
@@ -293,13 +288,12 @@ Else the identifier will be encoded in Base58.|
 | relatedKeySSI | KeySSi object |
 
 
-**Description**: Error message and the error. / The KeySSI of the selected type if it can be derived from your key. If it is the same subtype, it will return the same key.
-
+<p style='text-align: justify;'><b>Description</b>: Error message and the error. / The KeySSI of the selected type if it can be derived from your key. If it is the same subtype, it will return the same key.</p>
 
 
 ## Function keySSI.getSpecificString()
 
-Description: Retrieve the keySSI specific string.
+**Description**: Retrieve the keySSI specific string.
 
 **Returns**
 
@@ -309,6 +303,10 @@ Description: Retrieve the keySSI specific string.
 
 
 ## Function keySSI.getVn()
+
+**Description**: Retrieve the keySSI version number.
+
+**Returns**
 
 | **Name** | **Description**                                                                                                       |
 |:---------|:----------------------------------------------------------------------------------------------------------------------|
@@ -321,27 +319,27 @@ Description: Retrieve the keySSI specific string.
 **Description**: Change the parameters of a KeySSI to replace the existing one.
 
 
-| **Name**        | **Type** | **Value** | **Description**                                                                                          |
-|:----------------|:---------|:----------|:---------------------------------------------------------------------------------------------------------|
-| subType         | string   | *required | TSubtype name of the keySSI.                                                                             |
-| dlDomain        | string   | *required | Blockchain/ledger domain name of the keySSI.                                                             |
-| subtypeSpecific | string   | *required | The subtype specific string of the keySSI.                                                               |
-| control         | string   | *required | The control substring.                                                                                   |
-| vn              | string   | *required | The version number of the keySSI type.                                                                   |
-| hint            | string   | *required | Additional information for the keySSI.                                                                   |
+| **Name**              | **Type** | **Value** | **Description**                                                                                          |
+|:----------------------|:---------|:----------|:---------------------------------------------------------------------------------------------------------|
+| subType               | string   | *required | TSubtype name of the keySSI.                                                                             |
+| dlDomain              | string   | *required | Blockchain/ledger domain name of the keySSI.                                                             |
+| subtypeSpecificString | string   | *required | The subtype specific string of the keySSI.                                                               |
+| control               | string   | *required | The control substring.                                                                                   |
+| vn                    | string   | *required | The version number of the keySSI type.                                                                   |
+| hint                  | string   | *required | Additional information for the keySSI.                                                                   |
 
 
 **Returns**: This function does not return anything.
 
 
 
-## Contributors   
+**Contributors**   
 
 1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
 2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
 
-## Annex 1. Contributors
+# Annex 1. Contributors
 
 | **Current Editors**                  | **Email**                                 |
 |:-------------------------------------|:------------------------------------------|
