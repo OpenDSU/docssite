@@ -137,7 +137,7 @@ DSUs are micro-ledgers and should provide security properties similar to smart c
 
 <p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called DSU Reconstruction.</p>
 
-<p align="justify"> More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/pages/concepts/DSU%20Mounting%20(RFC-006).html).</p>
+More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/pages/concepts/DSU%20Mounting%20(RFC-006).html).
 More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html).
 
 
