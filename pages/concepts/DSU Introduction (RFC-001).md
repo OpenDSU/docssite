@@ -82,11 +82,6 @@ Now, owners of the same key or a special derivation of this key can find the ref
     <p><b>Figure 2: DSU usage pattern</b></p>
 </div>
 
-<div style="text-align:center; margin-left: 20px; margin-right: 20px;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 69%;"/>
-    <p><b>Figure 1: Data Sharing Units (DSU) test</b></p>
-</div>
-
 <p>The Execution Environment interacts with a DSU in 3 major ways:</p>
 <ol>
 
@@ -106,9 +101,15 @@ DSUs are stored as “bricks” in a “brick storage” and are encrypted using
 
 DSUs are flexible and can be updated (and even deleted). These get implemented by having multiple BrickMaps referenced within the same anchor, allowing us to have a history of each DSU.</p>
 
-<img alt="" align="center" src="https://docs.google.com/drawings/d/sFiVXNSi7gw0tgAC4C9DJRg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=14&drawingRevisionAccessToken=AjX9xqAaNVds1g&h=304&w=269&ac=1" class="imgMain">
 
-<p style="text-align:center"><b> Figure 4: Brick Storage & Brick Map </b></p>
+
+<div style="text-align:center; margin-left: 20px; margin-right: 20px;">
+    <img alt="" src="https://docs.google.com/drawings/d/sFiVXNSi7gw0tgAC4C9DJRg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=14&drawingRevisionAccessToken=AjX9xqAaNVds1g&h=304&w=269&ac=1" class="imgMain" style="max-width: 69%;"/>
+    <p><b>Figure 4: Brick Storage & Brick Map</b></p>
+</div>
+
+
+
 
 <p align="justify">Supplementary sophistications are required only in cases where we have to implement access revocation to the shared data or implement an expiration date for access to data as requested by a third party.</p>
 <p>More details are available in Brick Storages (RFC-003).</p>
