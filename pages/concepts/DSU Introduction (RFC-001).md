@@ -83,6 +83,10 @@ Now, owners of the same key or a special derivation of this key can find the ref
     <p><b>Figure 2: DSU usage pattern</b></p>
 </div>
 
+<div style="text-align:center; margin-left: 20px; margin-right: 20px;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRdcOW8Q_3BzsUPuoGEfQhihH2c5VhCSuxWbxZFoTVL7N0kS7hCrZsxUB2sPEjyaMVRGPN8SDbWHBp9/pub?w=953&h=512" class="imgMain" style="max-width: 100%;"/>
+    <p><b>Figure 1: Data Sharing Units (DSU) test</b></p>
+</div>
 
 <p>The Execution Environment interacts with a DSU in 3 major ways:</p>
 <ol>
