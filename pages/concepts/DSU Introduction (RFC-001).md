@@ -123,7 +123,7 @@ More details are available in Brick Storages [RFC-003](https://www.opendsu.org/p
 
 <p align="justify">DSUs are anchored in the blockchain, and the anchoring feature brings the capability of digitally signing data and code in the initial version and any subsequent versions. In some situations, use cases can exist in which a centralized system provides DSU anchoring. For example, a use case that only needed anchoring could support better internal auditability. This example is excellent, as it could be later decentralized if needed or required.</p>
 
-<More details are available in Anchoring  [RFC-005](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html).
+More details are available in Anchoring  [RFC-005](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html).
 
 # DSU Mounting
 
@@ -155,6 +155,7 @@ Sandboxes will perform a “DSU reconstruction” operation that can be compared
 More details are available in DSU Reconstruction [RFC-008](https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html).
 
 # KeySSI
+
 
 <p align="justify">The KeySSI concept's purpose is to provide blockchain-anchored identities for things and processes, and companies and individuals. They are used as secret symmetrical encryption/decryption keys for DSUs (or parts of the DSUs).</p>
 
