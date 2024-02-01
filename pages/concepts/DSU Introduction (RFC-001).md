@@ -61,7 +61,7 @@ Following our research in PrivateSky, but also according to those existing in Op
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSKsWCSVx-lkm6K8WzRen1eY6OF1D-x6yhoTA98Lep0hGqe-0eCkFweTXJm9kwMkZKbwZuZJyQsrdtt/pub?w=779&h=418" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSKsWCSVx-lkm6K8WzRen1eY6OF1D-x6yhoTA98Lep0hGqe-0eCkFweTXJm9kwMkZKbwZuZJyQsrdtt/pub?w=784&h=421" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: Data Sharing Units (DSU)</b></p>
 </div>
 
@@ -82,7 +82,7 @@ Now, owners of the same key or a special derivation of this key can find the ref
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSKsWCSVx-lkm6K8WzRen1eY6OF1D-x6yhoTA98Lep0hGqe-0eCkFweTXJm9kwMkZKbwZuZJyQsrdtt/pub?w=384&h=735" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRFOMEDBeW-rmvm1BCCsGuPToMCgWCSgehyyxxI5h7dp-0l1UK74ob7X6YDBKqRHLVbLcIVGqR_-_PF/pub?w=194&h=370" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: DSU usage pattern</b></p>
 </div>
  
@@ -97,6 +97,11 @@ Now, owners of the same key or a special derivation of this key can find the ref
 
 We will need the following concepts introduced in this RFC to make these interactions possible.
 
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSdTdwPsi2CTIxAvvvoZnZpsiI8K0ozvfkkhsFzjB-5JozvbJ73N8vxfZFqW_wVdewNSzoPE3DriFAt/pub?w=821&h=131" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 3: Concepts</b></p>
+</div>
+
 ## Brick Storage
 
 <p align="justify">Brick Storage represents a core element of the OpenDSU ecosystem. Bricks Storages are simple web services that store and retrieve bricks for clients that know the brick’s hash (or id). The basic implementation of Brick Storages is straightforward and offers a tool that works well in an open and permissionless network.
@@ -107,8 +112,8 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sFiVXNSi7gw0tgAC4C9DJRg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=14&drawingRevisionAccessToken=AjX9xqAaNVds1g&h=304&w=269&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
-    <p><b>Figure 3: Brick Storage</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQKo_BYJkX6_V6MKNe39e1FQRRdNXMNs9287jzbr8v7bOl3kDZe8rcayz7Jw_dk59zp-eq8SgKhhX9s/pub?w=918&h=264" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 4: Brick Storage & Brick Map</b></p>
 </div>
 
 
@@ -134,7 +139,7 @@ More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/page
 DSUs are micro-ledgers and should provide security properties similar to smart contracts. Therefore,  the initial version of the DSU Type contains the code needed to validate new versions of the DSU Type. After updating the DSU Type itself, the code from the DSU Type will check that the current DSU versions follow the rules defined by the DSU Type constitution.</p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sbI8keGJl9H-pj3-EY9e1Ow/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=29&drawingRevisionAccessToken=x_2_fKPl5QCRmQ&h=135&w=529&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQKo_BYJkX6_V6MKNe39e1FQRRdNXMNs9287jzbr8v7bOl3kDZe8rcayz7Jw_dk59zp-eq8SgKhhX9s/pub?w=918&h=264" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: DSU Instances and DSU Types</b></p>
 </div>
 
@@ -182,15 +187,15 @@ Currently, DSUs can be used in three ways:
 These three use cases will be developed in the following subsections.
 <ol>
 <li><b> DSU-Based Self Sovereign Applications (SSApps)</b></li>
-
+ 
+ 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sD3RniCRYQaNZDZaBiIEOOg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=u6kir2jtScVgLw&h=193&w=513&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS3HJmCC2RdZjhu8B7eqjhfFy-MY2nN_kao-oGqolzif0FATHB6I3tnr4cU6q9oDDzVgULKjS0Kfl-O/pub?w=416&h=167" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 7: SSApps as DSUs containing UI Code</b></p>
 </div>
 
 
- 
 <p align="justify">A DSU can contain any code (e.g., HTML, CSS, JS) required to launch and run an application in a browser. Also, it can be like any other web application. OpenDSU proposes standardization of the usage of APIs, and it can load web applications from DSUs. These particular kinds of web applications will be called Self Sovereign Applications (or SSApps). Besides anchoring and brick storage, SSApps have no dependency on any server, as their code and data will be loaded from the corresponding DSU on the client side. Saying Client Side here is a misnomer, as the DSU can reside on a company server farm or the cloud.</p>
 <p><b>The main benefits of the SSApp approach:</b></p>
 <ol>
@@ -208,7 +213,7 @@ SSApp Implementation is described in <a href="https://www.opendsu.org/pages/begi
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sosViIB2U1S36RK7KxiBxUw/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=1&drawingRevisionAccessToken=XXyVGQgGjJ2xMQ&h=212&w=437&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQu_OeJEkdDBPiOBVgzNjmCkJBa9CM0s8zbJ_f5P6E0LC2fSCS_EEGhZLUJ8Nu8eXuxXI5d5e_VoRpm/pub?w=414&h=135" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 8: Web APIs</b></p>
 </div>
 
@@ -230,7 +235,7 @@ APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sMflGLBPs0mdgGRYkE3F0ww/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=27&drawingRevisionAccessToken=iW_EBtAZ2kguMw&h=160&w=540&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTzaw86nlFTOD32HIJu-7P2GE098_Gyalqva91OoSLBzXLDlCRzkaewnAaUi8PAD8n08GKzbVWGWQw-/pub?w=572&h=171" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 9: Security Context Exemplification</b></p>
 </div>
 
