@@ -112,7 +112,7 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQKo_BYJkX6_V6MKNe39e1FQRRdNXMNs9287jzbr8v7bOl3kDZe8rcayz7Jw_dk59zp-eq8SgKhhX9s/pub?w=918&h=264" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLywlGNSsOE7PFBpcDpgQmOCvzRDCOhGssLrBp47Rz7j9w4psp2xmfFQfF9HARmj6la04u_s47q2tq/pub?w=267&h=241" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 4: Brick Storage & Brick Map</b></p>
 </div>
 
@@ -139,7 +139,7 @@ More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/page
 DSUs are micro-ledgers and should provide security properties similar to smart contracts. Therefore,  the initial version of the DSU Type contains the code needed to validate new versions of the DSU Type. After updating the DSU Type itself, the code from the DSU Type will check that the current DSU versions follow the rules defined by the DSU Type constitution.</p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQKo_BYJkX6_V6MKNe39e1FQRRdNXMNs9287jzbr8v7bOl3kDZe8rcayz7Jw_dk59zp-eq8SgKhhX9s/pub?w=918&h=264" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ7UCvYtwvs9LnOVOgGlGvJAQRJlPnaIDwofDpA_2RA3h1fy8wqlbwFMbBwLkakp5yh2PvfYrEG39o_/pub?w=462&h=133" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: DSU Instances and DSU Types</b></p>
 </div>
 
@@ -235,7 +235,7 @@ APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTzaw86nlFTOD32HIJu-7P2GE098_Gyalqva91OoSLBzXLDlCRzkaewnAaUi8PAD8n08GKzbVWGWQw-/pub?w=572&h=171" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ7UCvYtwvs9LnOVOgGlGvJAQRJlPnaIDwofDpA_2RA3h1fy8wqlbwFMbBwLkakp5yh2PvfYrEG39o_/pub?w=1151&h=347" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 9: Security Context Exemplification</b></p>
 </div>
 
