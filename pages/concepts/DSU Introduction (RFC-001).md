@@ -111,6 +111,7 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 
 <p align="justify">Supplementary sophistications are required only in cases where we have to implement access revocation to the shared data or implement an expiration date for access to data as requested by a third party.</p>
 
+
 More details are available in [Brick Storages] (https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html).
 
 <h2> Anchoring </h2>
