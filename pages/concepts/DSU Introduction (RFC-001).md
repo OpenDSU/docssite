@@ -103,7 +103,7 @@ DSUs are flexible and can be updated (and even deleted). These get implemented b
 
 
 
-<div style="text-align:center; margin-left: 20px; margin-right: 20px;">
+<div style="text-align:center; margin-left: 0px; margin-right: 20px;">
     <img alt="" src="https://docs.google.com/drawings/d/sFiVXNSi7gw0tgAC4C9DJRg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=14&drawingRevisionAccessToken=AjX9xqAaNVds1g&h=304&w=269&ac=1" class="imgMain" style="max-width: 69%;"/>
     <p><b>Figure 4: Brick Storage & Brick Map</b></p>
 </div>
