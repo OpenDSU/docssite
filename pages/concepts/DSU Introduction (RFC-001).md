@@ -21,22 +21,27 @@ nav_order: 1
 The proposal has been accepted and has an implementation.
 
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
 
- **Copyright**
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
 
-Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
+<!-- TOC -->
+* [**DSU Introduction (RFC-001)**](#dsu-introduction-rfc-001)
+  * [Abstract](#abstract)
+  * [Overview](#overview)
+  * [Brick Storage](#brick-storage)
+  * [DSU Mounting](#dsu-mounting)
+  * [DSU Reconstruction](#dsu-reconstruction)
+  * [KeySSI](#keyssi)
+  * [DSU Use Cases](#dsu-use-cases)
+  * [OpenDSU and IPFS](#opendsu-and-ipfs)
+  * [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 {:toc}
 
 
