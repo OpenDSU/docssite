@@ -226,6 +226,7 @@ Even within the same wallet, we can have hardware sandboxing or darkening mechan
 
 </ol>
 
+
 ## OpenDSU and IPFS
 
 <p>DSU storage is a content-addressable service similar to IPFS (InterPlanetary File System). The main differences are:</p>
