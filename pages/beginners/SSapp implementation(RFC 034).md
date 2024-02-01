@@ -4,45 +4,57 @@ layout: home
 parent: OpenDSU for Beginners
 nav_order: 1
 ---
-# **SSapp implementation (RFC 034)**
+<style>
+.imgMain{
+    display.block;
+    margin-left:70px;
+    margin-right:auto;
+} 
+</style>
+
+# SSapp implementation (RFC 034)
 {: .no_toc }
 
 {: .draft }
 A period when the community can review the RFC (comment Docs).
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
 
  **Copyright**
-Copyright © 2018-2022 Axiologic Research and Contributors.
+Copyright © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-
+<!-- TOC -->
+* [Abstract](#abstract)
+* [Get Started](#get-started)
+* [Go further with the ePi-workspace demonstration](#go-further-with-the-epi-workspace-demonstration)
+* [Contributors](#contributors-)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
-## Abstract
+# Abstract
 
-This RFC is designed to help developers create their first SSApp using HTML, Javascript and CSS. As a reminder, SSApps are DSUs that contain data and code including the user interface (UI) code that will be loaded by an agent if the corresponding keySSI is provided (see SSApp Architecture). All the applications used by OpenDSU in one form or another have a Wallet.
+<p style='text-align: justify;'>This RFC is designed to help developers create their first SSApp using HTML, Javascript and CSS. As a reminder, SSApps are DSUs that contain data and code including the user interface (UI) code that will be loaded by an agent if the corresponding keySSI is provided (see SSApp Architecture). All the applications used by OpenDSU in one form or another have a Wallet.</p>
 
-Figure 1: SSApp - UI in wallets
 
-For example, if we have HTML, JavaScript or CSS code that allows us to render a visual interface, then we can put this code inside a DSU and we have several methods (using Service worker or middleware) that we can put in that APIHub. So, you can undo this information from DSUs and render it on the screen so that we interact and get normal applications from a user’s point of view. These applications will be connected to and interact with Wallets and DSUs. They can also interact to save keys, data and read data in a way that allows better protection because they run in their own client, desktop or mobile application. OpenDSU technology allows us to create these Wallets in different forms, from web applications using Service workers to mobile apps for iOS or Android.
+<p style="text-align:center"><b>Figure 1: SSApp - UI in wallets</b></p>
 
-Figure 2: SSApps as DSUs containing data and code
-## Get Started
+
+<p style='text-align: justify;'>For example, if we have HTML, JavaScript or CSS code that allows us to render a visual interface, then we can put this code inside a DSU and we have several methods (using Service worker or middleware) that we can put in that APIHub. So, you can undo this information from DSUs and render it on the screen so that we interact and get normal applications from a user’s point of view. These applications will be connected to and interact with Wallets and DSUs. They can also interact to save keys, data and read data in a way that allows better protection because they run in their own client, desktop or mobile application. OpenDSU technology allows us to create these Wallets in different forms, from web applications using Service workers to mobile apps for iOS or Android.</p>
+
+<p style="text-align:center"><b>Figure 2: SSApps as DSUs containing data and code</b></p>
+
+
+# Get Started
 
 The best way to understand SSApps is to start with the tutorial, where you will learn how to create your first and very simple SSApp.
-## Go further with the ePi-workspace demonstration
+
+# Go further with the ePi-workspace demonstration
 
 This demonstration shows us 3 different SSApp:
 
@@ -51,13 +63,13 @@ This demonstration shows us 3 different SSApp:
 3. The third one is a DSU explorer and allows anyone with a keySSI to see the content of the corresponding DSU.
 
 
-## Contributors   
+# Contributors   
 
 1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
 2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
 
-## Annex 1. Contributors
+# Annex 1. Contributors
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
