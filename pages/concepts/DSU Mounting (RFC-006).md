@@ -75,7 +75,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSfgwNIDvIgIvlk_6pehH9dRrHlRwhsVLKm9wmjTkYy69sCCNNLsvCEEpRJyWPTcYOaH0h8sCKZm4YC/pub?w=2507&h=1030" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQYn0ZDVJwzrwydo6yEKsZUDlK4NdNbKWY-ie5QtoJB4wEqLH8Af5vxK5O0EkdO9hc0GKrOaxluZ7lE/pub?w=1596&h=620" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: DSU structure - similar to a filesystem (Key/Value database)</b></p>
 </div>
 
