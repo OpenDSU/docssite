@@ -28,11 +28,9 @@ The proposal has been accepted and has an implementation.
   * [Zero Knowledge Anchors](#zero-knowledge-anchors)
 * [Explicit Anchors](#explicit-anchors)
   * [Anchors with Attached ZKP Values](#anchors-with-attached-zkp-values)
-  * [Special SSIs for Anchor Values](#special-ssis-for-anchor-values)
-    * [SignedHashLinkSSI](#signedhashlinkssi)
-    * [TransferSSI](#transferssi)
-  * [Contributors](#contributors-)
-  * [Annex 1. Contributors](#annex-1-contributors)
+* [Special SSIs for Anchor Values](#special-ssis-for-anchor-values)
+  * [TransferSSI](#transferssi)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 {:toc}
 
