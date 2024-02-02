@@ -140,7 +140,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 
 
-# ** 5. KeySSIs common functions**
+# **5. KeySSIs common functions**
 
 <p style='text-align: justify;'>KeySSIs share a set of common functions. They serve to initialize KeySSIs with desired parameters or to get their parameters when they are needed.</p>
 
@@ -335,12 +335,15 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 **Returns**: This function does not return anything.
 
 
+**Contributors**
 
-**Contributors**   
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
 
 # Annex 1. Contributors
 
