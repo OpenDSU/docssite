@@ -24,14 +24,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <!-- TOC -->
 * [**DSU Types (RFC-007)**](#dsu-types-rfc-007)
-  * [Abstract](#abstract)
-  * [Public Methods from dt API](#public-methods-from-dt-api)
-    * [Function getDossierBuilder(sourceDSU, varStore)](#function-getdossierbuildersourcedsu-varstore)
-    * [Function initialiseBuildWallet(callback)](#function-initialisebuildwalletcallback)
-    * [Commands](#commands)
-    * [AppBuilderService](#appbuilderservice)
-  * [Contributors](#contributors-)
-  * [Annex 1. Contributors](#annex-1-contributors)
+* [Abstract](#abstract)
+* [Public Methods from dt API](#public-methods-from-dt-api)
+  * [Function getDossierBuilder(sourceDSU, varStore)](#function-getdossierbuildersourcedsu-varstore)
+  * [Function initialiseBuildWallet(callback)](#function-initialisebuildwalletcallback)
+  * [Commands](#commands)
+  * [AppBuilderService](#appbuilderservice)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 {:toc}
 
@@ -84,16 +83,16 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Different types of DSUs were implemented for different use cases. Each type is associated with different types of KeySSIs (see <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">RFC 002)</a>..
 </p>
 
-| **SU Representation** | **KeySSIs, anchoring strategies, versioning strategies etc**                   |
-|:----------------------|:-------------------------------------------------------------------------------|
-| SecretDSU             | **KeySSIs**: SecretSSI family **Anchoring**: zaSSI **Versioning**: microledger **Other**: None |
-| SeedDSU               |                                                                                |
-| ImmutableDSU          |                                                                                |
-| RedirectDSU           |                                                                                |
-| BrickDSU              |                                                                                |
-| ConsentDSU            |                                                                                |
-| CredentialsDSU        |                                                                                |
-| BDSU                  |                                                                                |
+| **SU Representation** | **KeySSIs, anchoring strategies, versioning strategies etc**                                              |
+|:----------------------|:----------------------------------------------------------------------------------------------------------|
+| SecretDSU             | **KeySSIs**: SecretSSI family <br> **Anchoring**: zaSSI </br> **Versioning**: microledger **Other**: None |
+| SeedDSU               |                                                                                                           |
+| ImmutableDSU          |                                                                                                           |
+| RedirectDSU           |                                                                                                           |
+| BrickDSU              |                                                                                                           |
+| ConsentDSU            |                                                                                                           |
+| CredentialsDSU        |                                                                                                           |
+| BDSU                  |                                                                                                           |
 
 |SU Representation    |KeySSIs, anchoring strategies, versioning strategies etc|
 
