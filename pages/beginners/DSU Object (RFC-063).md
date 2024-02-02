@@ -29,7 +29,6 @@ Copyright © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [**DSU Object (RFC-063)**](#dsu-object-rfc-063)
 * [Abstract](#abstract)
 * [Overview](#overview)
 * [Creating and Configuring a DSU Instance](#creating-and-configuring-a-dsu-instance)
@@ -97,7 +96,7 @@ A DSU object is an entity that exists temporarily in the Execution Environment (
 
 <p align="justify">When a programmer is working on an application, it must use the OpenDSU SDK, a library containing a set of APIs grouped in API spaces. Some of them are exposed if the programmer wants to do advanced things. However, there are also very high-level APIs that consist of operations like loading a DSU. The process works like that: if we have a KeySSI, it provides an instance with which we can read, write, mount, or do other operations with that DSU. We can also access the anchoring operation that normally does not run on the client but runs through an intermediary - a server installed somewhere in the Cloud (APIHub) and which, in turn, has similar components but not necessarily the same ones.</p>
 
-# Creating and Configuring a DSU Instance
+# 1. Creating and Configuring a DSU Instance
 
 Creating a DSU container requires a KeySSI object. A DSU object is instantiated through the Resolver API see [RFC065](https://www.opendsu.org/pages/advanced/Resolver%20(RFC-065).html), by calling resolver.createSeedDSU() as sketched in the code example below (Example 1).
 
@@ -120,11 +119,11 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 }
 ```
 
-<p style="text-align:center"><b>Example 1: Code to instantiate a DSU object</b></p>
+
 
 <p align="justify">Note that in the demo example above, the instantiated DSU object is returned to the calling process for demonstrative purposes in subsequent examples. However, as most of the OpenDSU code is executed asynchronously, the recommended programming style is to apply operations on myDSU inside the callback(err, myDSU) function.</p>
 
-# Concurrency and Synchronization
+# 2. Concurrency and Synchronization
 
 <p align="justify">In OpenDSU release 2.0.x, batch mode operation is enforced for all DSUs. Any attempt to execute DSU operations outside batch mode will result in runtime exceptions. The recommended function to enter batch mode is beginOrAttachBatch, which operates asynchronously and returns a batchID. This batchID is crucial for invoking the cancelBatch and commitBatch functions.</p>
 
@@ -132,12 +131,17 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 
 <p align="justify">This architecture leads to more streamlined and error-resistant workflows, and it aligns with robust software engineering principles.</p>
 
-# File I/O Operations with DSU Objects
+# 3. File I/O Operations with DSU Objects
 
-## Global overview and options
+## 3.1 Global overview and options
 
 <p style='text-align: justify;'>Each method for file handling requires at least one target file system to operate on, specified by a string representation of its path. The path can be located in the local file system (<b>fsPath</b>) or inside the DSU container (<b>dsuPath</b>). Generally, access to <b>fsPath</b>. is handled through the node.js "fs" API. Strings representing a <b>dsuPath</b> are usually "normalized" by replacing backslash characters (‘\’) or multiple slash characters ('/') with a single path separator slash character ('/').</p>
-<p style="text-align:center"><b>Figure 1: The impact of global configuration options</b></p>
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRGalUnNRQIxmXTt8XYmYLWnf8keZ24On9W43vIuYDJHS4IeWE6NMVaPgpK94JpvDunmO8SWHUn437K/pub?w=1124&h=398" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 1: The impact of global configuration options</b></p>
+</div>
+
 
 
 <p style='text-align: justify;'>Each DSU object is connected to a BrickStorage, where data in the DSU can be stored. Vice versa, DSU file objects can be assembled from the BrickStorage. A BrickStorage essentially consists of control data stored in a BrickMap object and multiple Brick containers, where data can be stored in encrypted or plain form. (<b>A</b>) The flag <b>recursive</b> allows operations to descend recursively into subfolders of a target. (<b>B</b>) When set, the flag <b>ignoreMounted</b> prevents operations from considering the contents of external DSU objects mounted to this instance. (<b>C</b>) The flag <b>embedded</b> forces data of an operation to be stored in the BrickMap rather than in Bricks. (<b>D</b>) The flag “<b>encrypt</b>” controls the encryption of the data stored in the Bricks.</p>
@@ -155,12 +159,18 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 
 <p style='text-align: justify;'>The remainder of this chapter will introduce methods of a DSU object that control file I/O operations, subdivided according to their purpose.</p>
 
-<p style="text-align:center"><b>Figure 2: Logical overview of file operation methods of DSU objects</b></p>
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRU8R3WTmR_0ptRROxpCrOuYuAI1QnCd7t-Hz6Z58VO7uVzzfh2TqqInwUCEwna9wz8ec2FGMzNno3S/pub?w=1147&h=511" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 2: Logical overview of file operation methods of DSU objects</b></p>
+</div>
+
+
 
 
 <p style='text-align: justify;'>Methods are invoked on the central DSU instance, which can mount other DSU objects at given mounting points. According to the kind of operation, file handling methods can be segregated into units: (<b>A</b>) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (<b>B</b>) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (<b>C</b>) methods that move data within the DSU instance: rename(), cloneFolder(); (<b>D</b>) methods that add/remove file structures within the DSU: createFolder(), delete(); (<b>E</b>) methods that report on the file structure of the DSU container: getArchiveForPath(), listFiles(), listFolders(), listMountedDossiers(), readDir(). In Figure 2, control flows are depicted by regular arrows, and data flows by bold arrows.</p>
 
-## Methods querying files & folders of a DSU object
+## 3.2 Methods querying files & folders of a DSU object
 
 ### Function getArchiveForPath(dsuPath, callback)
 
@@ -278,7 +288,7 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 
 
-## Methods for reorganising files & folders inside a DSU object
+## 3.3 Methods for reorganising files & folders inside a DSU object
 
 ### Function cloneFolder(srcPath, destPath, options, callback)
 
@@ -373,7 +383,7 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 
 
-## Methods of reading or writing data in files of a DSU object
+## 3.4 Methods of reading or writing data in files of a DSU object
 
 ### Function appendToFile(dsuPath, data, options, callback)
 
@@ -496,7 +506,7 @@ Returns an Error err if the manifest of this DSU instance is corrupt or in case 
 
 
 
-## Other functions
+## 3.5 Other functions
 
 ### Function refresh(callback)
 
@@ -574,11 +584,11 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 <p style="text-align:center"><b>Example 2: Writing / Reading a data string to a DSU object</b></p>
 
 
-# Batch operations on DSUs
+# 4. Batch operations on DSUs
 
 <p style='text-align: justify;'>A batch is a sequence of operations to be executed on the files available in a DSU object, before the resulting changes to the DSU are anchored altogether. Batch processing requires a call to <b>beginBatch()</b> or <b>beginOrAttachBatch()</b>. After all operations have been performed, a call to <b>commitBatch()</b> anchors the changes made within the batch. Alternatively, batch operations may be wrapped by a <b>batchFn</b> lazily submitted to <b>batch(batchFn)</b>. Note that no more than one batch process can be performed on the same DSU object at a time, and batch processing scheduled by <b>beginBatch()</b> has to be completed by <b>commitBatch()</b> or terminated by <b>cancelBatch()</b> before a new batch may be scheduled.</p>
 
-## Controlling batch processe
+## 4.1 Controlling batch processe
 
 ### Function batchInProgress()
 
@@ -630,7 +640,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 
 
 
-## Other Anchoring-related operations
+## 4.2 Other Anchoring-related operations
 
 <p align="justify">A DSU object further employs the KeySSI object to initialise handlers for anchoring changes in the DSU file system to the underlying blockchain (e.g. BrickMapController and BrickMapStorageService).</p>
 
@@ -729,7 +739,7 @@ Returns the KeySSI instance.
 | error     | Error object |                       |
 | keySSI    | string       |                       |
 
-# Mounting DSUs into each other
+# 5. Mounting DSUs into each other
 
 <p style='text-align: justify;'>The <b>mount()</b> method makes the contents of an external DSU container, as identified by <b>archiveSSI</b> available under the path <b>mountingPoint</b> of this DSU instance. If the flag <b>persistent</b> (default: true) is set, externally mounted DSU instances are stored persistently in the manifest file of this DSU instance. Otherwise, mounted DSUs are stored in a temporary variable of this DSU instance. Mounted dossiers represent DSUs mounted inside another DSU using the right keySSI (i.e. SeedSSI for read and write access or SReadSSI for read-only access).</p>
 
@@ -847,7 +857,7 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 
 
-## Methods of transferring files & folders between a DSU object and the local file system
+## 5.1 Methods of transferring files & folders between a DSU object and the local file system
 
 <p style='text-align: justify;'>This section outlines how to employ methods of DSU objects to add, remove, copy, relocate or query information on entire files or folders without changing their content. For transparency, we further subdivided the file handling methods of a DSU object into two subgroups: methods that trigger a data flow by copying data underlying files from one location to another (Figure 2, elements A, B, and C) and those methods that query or change the logical file structure inside a DSU but without moving big chunks of the underlying data around (Figure 2, elements D and E). Former data flow methods usually require two string arguments identifying the source and target of the operation. In contrast, the latter methods used to change the file control structure typically require only one such path string argument of the target entry to be modified or queried.
 
@@ -972,11 +982,15 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 | error    | Error object | NA                   |
 
 
-**Contributors**   
+**Contributors**
 
-1. [Axiologic Research](www.axiologic.net):New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/) 
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
 
 
 # Annex 1. Contributors
