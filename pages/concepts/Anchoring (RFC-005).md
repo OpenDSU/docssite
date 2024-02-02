@@ -21,13 +21,13 @@ The proposal has been accepted and has an implementation.
 
 <!-- TOC -->
 * [Anchoring](#anchoring)
-  * [Abstract](#abstract)
-  * [Overview](#overview)
-  * [Implicit Anchors](#implicit-anchors)
-    * [Transactions as Implicit Anchors](#transactions-as-implicit-anchors)
-    * [Zero Knowledge Anchors](#zero-knowledge-anchors)
-  * [Explicit Anchors](#explicit-anchors)
-    * [Anchors with Attached ZKP Values](#anchors-with-attached-zkp-values)
+* [Abstract](#abstract)
+* [Overview](#overview)
+* [Implicit Anchors](#implicit-anchors)
+  * [Transactions as Implicit Anchors](#transactions-as-implicit-anchors)
+  * [Zero Knowledge Anchors](#zero-knowledge-anchors)
+* [Explicit Anchors](#explicit-anchors)
+  * [Anchors with Attached ZKP Values](#anchors-with-attached-zkp-values)
   * [Special SSIs for Anchor Values](#special-ssis-for-anchor-values)
     * [SignedHashLinkSSI](#signedhashlinkssi)
     * [TransferSSI](#transferssi)
@@ -111,25 +111,33 @@ Another method of anchoring is based on Zero-Knowledge Proofs (ZKP). OpenDSU sup
 </div>
 
 
-Cryptographic ownership could be implemented with Zero-Knowledge Proofs, or simpler chaining of digital signatures could suffice. The anchoring is simply an association of an AnchorId with a set of SignedHashLinkSSIs.
+<p style='text-align: justify;'>Cryptographic ownership could be implemented with Zero-Knowledge Proofs, or simpler chaining of digital signatures could suffice. The anchoring is simply an association of an AnchorId with a set of SignedHashLinkSSIs.
+</p>
 
-For each blockchain technology, a separate adapter will be deployed. The APIHub will be configured for each blockchain domain to forward anchoring-related requests to the specific adapter.
+<p style='text-align: justify;'>For each blockchain technology, a separate adapter will be deployed. The APIHub will be configured for each blockchain domain to forward anchoring-related requests to the specific adapter.
+</p>
 
-Diagram 4: Chain of components needed for anchoring
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQug2xP7V2x4MZba-bwneWxchckZBnXma-VnyhaoTzFG7TO2_e0R5XqADmnn0nQTIf9CXmXtzIkrl37/pub?w=1146&h=150" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Diagram 4: Chain of components needed for anchoring</b></p>
+</div>
 
-## Special SSIs for Anchor Values
 
-For the values in the Anchor, it is possible to use a SignedHashLinkSSI or a TransferSSI.
+# Special SSIs for Anchor Values
 
-### SignedHashLinkSSI
+<p style='text-align: justify;'>For the values in the Anchor, it is possible to use a SignedHashLinkSSI or a TransferSSI.
+</p>
+## SignedHashLinkSSI
 
-Signature of the current owner can be described by the following “formula”:
+<p style='text-align: justify;'>Signature of the current owner can be described by the following “formula”:
+</p>
 
 |sign(hash(anchorID | lastEntryInAnchor |  timestamp | brickMapHash), currentOwnerPrivateKy)|
 
-The hash and the signature algorithm come from the KeySSI-specific algorithms (vn).
+<p style='text-align: justify;'>The hash and the signature algorithm come from the KeySSI-specific algorithms (vn).
+</p>
 
-### TransferSSI
+## TransferSSI
 
 This KeySSI is useful to transfer the control of the anchor to another SSI.
 
@@ -137,13 +145,18 @@ Signature of the current owner means
 
 |sign(hash(anchorID | lastEntryInAnchor | timestamp | new Public Key), currentPrivateKey)|
 
-## Contributors   
+**Contributors**
 
-1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
 
-## Annex 1. Contributors
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
+# Annex 1. Contributors
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
