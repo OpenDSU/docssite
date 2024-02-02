@@ -28,7 +28,7 @@ The proposal has been accepted and has an implementation.
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-
+ 
 
 <!-- TOC -->
 * [**Abstract**](#abstract-)
