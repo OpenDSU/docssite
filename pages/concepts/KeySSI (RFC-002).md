@@ -46,7 +46,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 This RFC introduces one of the main components of OpenDSU: the concept of KeySSIs (Self-Sovereign Identifiers). We will go through:
 
@@ -57,7 +57,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 **Note**: For creating different types of keySSIs, the code can be checked at <a href="ttps://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">KeySSI (RFC-068)</a>.
 
-#  Introduction
+#  **1.Introduction**
 
 <p style='text-align: justify;'>The purpose of the KeySSI concept is to provide blockchain-anchored identities for things and processes but potentially also for companies and individuals. The concept of KeySSI is more general than the concept proposed by the W3C DID web standard. DIDs and KeySSIs are two different methods of creating SSIs (Self-Sovereign Identifiers).</p>
 
@@ -74,7 +74,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 
 
-# Syntax of KeySSI identifiers
+# **2.Syntax of KeySSI identifiers**
 
 <p style='text-align: justify;'>The syntax of KeySSI is inspired by the W3C DID and is similar to it, but has several key differences, such as - it starts with the “ssi” string. It allows users to define additional attributes, such as types, ledger domains etc. Equivalent to the DID method string, SSI also consists of types (or subtypes). The purpose of types is not to introduce incompatible methods to W3C DIDs, but rather to add different types of KeySSIs. The different KeySSI types are designed to be compatible, which allows for a standard KeySSI resolver to implement all the standard types. Another unique aspect of the SSI syntax compared to the W3C DIDs is that the 3rd group in the identifier represents a ledger/blockchain domain. OpenDSU is based on the objective that a KeySSI supports multiple hierarchical ledgers/blockchains. The current definition of the blockchain domain and the proposed implementation on resolving these domains are part of the OpenDSU specification and may be found in the BDNS chapters.</p>
 
@@ -86,15 +86,14 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 **Examples:**            
 
-*ssi:seed:ePI.pharma:RANDOMSEEDKEY:HASHRANDOMKEY:vn*
 
+*ssi:seed:ePI.pharma:RANDOMSEEDKEY:HASHRANDOMKEY:vn*<br/>
 *ssi:za:ePI.pharma:HASHSERIALISATION:HASHPUBLICKEY:vn*
 
-
-
-
-
-<p style="text-align:center"><b>Figure 2: Syntax of KeySSI Identifiers</b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTs-IY2kQcZn4VcjkHR7OOdI9IbcFpTF9rZHqkpcjzZviutZ2PWGZUf8bPkJPR44f-hQ0XISPejgNwq/pub?w=1151&h=390" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 2: Syntax of KeySSI Identifiers</b></p>
+</div>
 
 
 <p style='text-align: justify;'>The “<b>Type Specific Substrings</b>” contain strings that typically should contain enough random bits for good security.</p>
@@ -109,12 +108,15 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 
 
-# Trustless KeySSI Resolvers
+# **3.Trustless KeySSI Resolvers**
 
 <p style='text-align: justify;'>The primary purpose of standard KeySSI resolvers is to be able to use an SSI identifier to create or load a specific DSU instance. Information embedded in the keySSI will give the resolver everything it needs to ensure the DSUs are stored securely through encryption. Key derivation is also used to give different access rights, and the resolver will ensure these rights are applied when reconstructing a DSU.</p>
 
 
-<p style="text-align:center"><b>Figure 3:  KeySSI Resolvers role</b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vR8lcW0OSys173fC2-av2t0IdUpb0JhFdZtLI0diyTF7wZG7pm02U2znSdqV1qbP2mpvtq-zodNg8oP/pub?w=874&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 3:  KeySSI Resolvers role</b></p>
+</div>
 
 
 <p style='text-align: justify;'>KeySSI Resolvers are libraries loaded in the DSU reconstruction environments. OpenDSU implements client-side encryption, therefore avoiding the need for any delegation of trust to any intermediaries or certificate authorities. The KeySSI resolver can call an adapter to a ledger or blockchain and call the Brick Storage, but its usage of any other intermediary Web API is not recommended. The node doing the resolving (the DSU reconstruction environments) should provide the result as an instance of a DSU. The reconstruction environment of DSUs should handle the decryption and the other operations required for resolving a KeySSI to a DSU.</p>
@@ -124,7 +126,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 
 
-# KeySSIs families
+# **4. KeySSIs families**
 
 <p style='text-align: justify;'>Depending on the use case, different types of KeySSIs can be used. This table summarizes the different families of KeySSIs and references the links for more detailed information.</p>
 
@@ -138,7 +140,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 
 
-# KeySSIs common functions
+# ** 5. KeySSIs common functions**
 
 <p style='text-align: justify;'>KeySSIs share a set of common functions. They serve to initialize KeySSIs with desired parameters or to get their parameters when they are needed.</p>
 
