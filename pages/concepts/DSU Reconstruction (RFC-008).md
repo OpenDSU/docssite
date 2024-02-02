@@ -40,14 +40,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-| **Number** | **Name**             | **Link**                                                                                                 |
-|:-----------|:---------------------|:---------------------------------------------------------------------------------------------------------|
-| RFC 001    | DSU Introduction     | [DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html) |
-| RFC 002    | KeySSIs Introduction | [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)                       |
-| RFC 003    | Brick storages       | [Brick Storages](https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html)               |
-| RFC 005    | Anchoring            | [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)                 |
-| RFC 070    | Bricking             | [Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html)               |
-| RFC 075    | Security Context     | [Security Context](https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html)          |
+| **Number** | **Name**             | **Link**                                                                                                  |
+|:-----------|:---------------------|:----------------------------------------------------------------------------------------------------------|
+| RFC 001    | DSU Introduction     | [DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html)  |
+| RFC 002    | KeySSIs Introduction | [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)                        |
+| RFC 003    | Brick storages       | [Brick Storages](https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html)                |
+| RFC 005    | Anchoring            | [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)                  |
+| RFC 070    | Bricking             | [Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html)                |
+| RFC 075    | Security Context     | [Security Context (RFC-075)](https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html) |
 
 
 
