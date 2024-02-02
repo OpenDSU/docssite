@@ -78,13 +78,16 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 <p style='text-align: justify;'>The syntax of KeySSI is inspired by the W3C DID and is similar to it, but has several key differences, such as - it starts with the “ssi” string. It allows users to define additional attributes, such as types, ledger domains etc. Equivalent to the DID method string, SSI also consists of types (or subtypes). The purpose of types is not to introduce incompatible methods to W3C DIDs, but rather to add different types of KeySSIs. The different KeySSI types are designed to be compatible, which allows for a standard KeySSI resolver to implement all the standard types. Another unique aspect of the SSI syntax compared to the W3C DIDs is that the 3rd group in the identifier represents a ledger/blockchain domain. OpenDSU is based on the objective that a KeySSI supports multiple hierarchical ledgers/blockchains. The current definition of the blockchain domain and the proposed implementation on resolving these domains are part of the OpenDSU specification and may be found in the BDNS chapters.</p>
 
-
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSqiP8BHLsLk1yMOsKsGqC9Vdrxj1YdX19vkzQSxT63n0kyeDMlvul16hYArNUtcJYUKtm-EgHZx_gj/pub?w=1155&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
 <p style="text-align:center"><b>Figure 1: Syntax of KeySSI Identifiers</b></p>
 
+</div>
 
 **Examples:**            
 
 *ssi:seed:ePI.pharma:RANDOMSEEDKEY:HASHRANDOMKEY:vn*
+
 *ssi:za:ePI.pharma:HASHSERIALISATION:HASHPUBLICKEY:vn*
 
 
