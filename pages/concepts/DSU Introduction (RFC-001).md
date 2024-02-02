@@ -31,8 +31,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
  
 
 <!-- TOC -->
-* [Abstract](#abstract-)
-* [Overview](#overview)
+* [**DSU Introduction**](#dsu-introduction)
+* [**Abstract**](#abstract-)
 * [**1. Data Sharing Unit (DSU)**](#1-data-sharing-unit-dsu)
 * [**2. Brick Storage**](#2-brick-storage)
 * [**3. Anchoring**](#3-anchoring)
@@ -40,7 +40,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [**5. DSU Reconstruction**](#5-dsu-reconstruction)
 * [**6. KeySSI**](#6-keyssi)
 * [**7. DSU Use Cases**](#7-dsu-use-cases)
-  * [**7.1 DSU-Based Self Sovereign Applications (SSApps**)](#71-dsu-based-self-sovereign-applications-ssapps)
+  * [**7.1 DSU-Based Self Sovereign Applications (SSApps)**](#71-dsu-based-self-sovereign-applications-ssapps)
   * [**7.2 DSU-Based Web APIs**](#72-dsu-based-web-apis)
   * [**7.3 DSU Instances in Multiple Security Contexts**](#73-dsu-instances-in-multiple-security-contexts-)
 * [**8. OpenDSU and IPFS**](#8-opendsu-and-ipfs)
