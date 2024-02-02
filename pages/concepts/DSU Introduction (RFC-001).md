@@ -55,7 +55,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **Abstract** 
 <p align="justify">This RFC introduces the critical components of the OpenDSU project, such as DSU, as well as domain anchoring and brick storage services. Then, it introduces some essential mechanisms known as DSU mounting and DSU reconstruction. It also explains RFC’s role of keySSIs in the management of the DSU. Finally, it presents some primary use cases of DSUs.</p>
-123
+
 # **Overview**
 <p align="justify">The main concept, the central thread on which OpenDSU is created, is based on Digital Sovereignty. Individuals, citizens, enterprises, organizations, or states should have as much control over data as possible and not give control to intermediaries.
 
@@ -192,11 +192,9 @@ Currently, DSUs can be used in three ways:
 </ol>
 
 These three use cases will be developed in the following subsections.
-<ol>
 
 
-## 7.1 DSU-Based Self Sovereign Applications (SSApps)
- 
+## 7.1 DSU-Based Self Sovereign Applications (SSApps) 
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS5ONxCu4XObPwLCM17j2ZxjaHzgcLGb7q-4lMXjbFI-Uorb4cvI35z9wHpoZvx-Umo6rmYc5zbYHPv/pub?w=419&h=173" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
@@ -205,6 +203,7 @@ These three use cases will be developed in the following subsections.
 
 
 <p align="justify">A DSU can contain any code (e.g., HTML, CSS, JS) required to launch and run an application in a browser. Also, it can be like any other web application. OpenDSU proposes standardization of the usage of APIs, and it can load web applications from DSUs. These particular kinds of web applications will be called Self Sovereign Applications (or SSApps). Besides anchoring and brick storage, SSApps have no dependency on any server, as their code and data will be loaded from the corresponding DSU on the client side. Saying Client Side here is a misnomer, as the DSU can reside on a company server farm or the cloud.</p>
+<ol>
 <p><b>The main benefits of the SSApp approach:</b></p>
 <ol>
 <li><p align="justify">The code for UI (and business logic) is signed, secured by a DTE (Distributed Ledger), and verifiable by the edge client environment.</p></li>
