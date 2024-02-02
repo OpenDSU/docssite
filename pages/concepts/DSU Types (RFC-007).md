@@ -81,6 +81,20 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Different types of DSUs were implemented for different use cases. Each type is associated with different types of KeySSIs (see RFC 002).
 </p>
 
+<p style='text-align: justify;'>Different types of DSUs were implemented for different use cases. Each type is associated with different types of KeySSIs (see <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">RFC 002)</a>..
+</p>
+
+| **SU Representation** | **KeySSIs, anchoring strategies, versioning strategies etc**                   |
+|:----------------------|:-------------------------------------------------------------------------------|
+| SecretDSU             | **KeySSIs**: SecretSSI family **Anchoring**: zaSSI **Versioning**: microledger **Other**: None |
+| SeedDSU               |                                                                                |
+| ImmutableDSU          |                                                                                |
+| RedirectDSU           |                                                                                |
+| BrickDSU              |                                                                                |
+| ConsentDSU            |                                                                                |
+| CredentialsDSU        |                                                                                |
+| BDSU                  |                                                                                |
+
 |SU Representation    |KeySSIs, anchoring strategies, versioning strategies etc|
 
 |SecretDSU|
@@ -169,9 +183,9 @@ Anchoring: None
 Versioning: None
 
 Other: contains a JSON with information about a Blockchain Domain
-## Public Methods from dt API
+# Public Methods from dt API
 
-### Function getDossierBuilder(sourceDSU, varStore)
+## Function getDossierBuilder(sourceDSU, varStore)
 
 Description: Creates a new MappingEngine Object.
 
@@ -182,7 +196,7 @@ Description: Creates a new MappingEngine Object.
 
 	
 
-### Function initialiseBuildWallet(callback)
+## Function initialiseBuildWallet(callback)
 
 Description: Initialise a new wallet.
 
@@ -191,7 +205,7 @@ Description: Initialise a new wallet.
 
 
 
-### Commands
+## Commands
 
 Description: Exposes more classes that are able to handle different commands, such as:
 
@@ -211,7 +225,7 @@ Description: Exposes more classes that are able to handle different commands, su
 + WithCommand
 + _getByName
 
-### AppBuilderService
+## AppBuilderService
 
 **Description:**
 
@@ -222,13 +236,19 @@ Description: Exposes more classes that are able to handle different commands, su
 	
 
 
-## Contributors   
 
-1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
+**Contributors**
 
-## Annex 1. Contributors
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
+# Annex 1. Contributors
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
