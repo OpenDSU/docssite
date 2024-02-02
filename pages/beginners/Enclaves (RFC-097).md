@@ -5,9 +5,28 @@ parent: OpenDSU for Beginners
 nav_order: 6
 ---
 
-Enclaves (RFC-097)
+# SSApp Architecture (RFC-028)
+{: .no_toc }
 
-Abstract
+{: .feedback }
+A period when the community can review the RFC (comment Docs).
+
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+ 
+<!-- TOC -->
+* [SSApp Architecture (RFC-028)](#ssapp-architecture-rfc-028)
+<!-- TOC -->
+
+
+
+# Abstract
 
 This API space allows the user to set up custom error reporting.
 1. System functions
