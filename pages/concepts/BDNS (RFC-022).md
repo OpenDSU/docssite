@@ -92,7 +92,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQOr6ERZbpiJuHcHBZvdub4VargeDTRafnUqY-RErBK7ZC4fdq1BGVWAHZXUGK78ceYgykEYaVqAhAQ/pub?w=795&h=527" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: DSUs anchored and identified by Ledgers</b></p>
 </div>
 
@@ -166,7 +166,7 @@ The below table describes the existing record types for BDNS domains.
 | anchoringServices | List of URLs that offer anchoring services for the domain.     |
 | notifications     | List of URLs that offer notification services for the domain.  |
 
-<p style="text-align:center"> <b>**Table: SeedSSI’s family subtypes**</b></p>
+<p style="text-align:center"> <b>Table: SeedSSI’s family subtypes</b></p>
 
 
 **Contributors**
