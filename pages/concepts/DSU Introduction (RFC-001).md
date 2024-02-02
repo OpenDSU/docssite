@@ -194,7 +194,7 @@ Currently, DSUs can be used in three ways:
 These three use cases will be developed in the following subsections.
 
 
-## **7.1 DSU-Based Self Sovereign Applications (SSApps)** 
+## 7.1 DSU-Based Self Sovereign Applications (SSApps)
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS5ONxCu4XObPwLCM17j2ZxjaHzgcLGb7q-4lMXjbFI-Uorb4cvI35z9wHpoZvx-Umo6rmYc5zbYHPv/pub?w=419&h=173" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
@@ -252,8 +252,6 @@ APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 </p>
 
 <p style='text-align: justify;'>Even within the same wallet, we can have hardware sandboxing or darkening mechanisms (for example, Trusted Execution Environments - TEEs), and thus, we have “differently powered” security contexts. When used in enterprise environments, these security contexts can be on different hardware systems, separate from the network. Even for average users, it is quite possible to use a web application that uses DSUs on a personal computer, with the sensitive keys stored safely on the mobile. In such a case, the execution environments from regular servers or web applications will have read access. However, they cannot sign anything in the user's name without their approval. OpenDSU promotes an elegant programming model called “executable choreographies'' that makes it easier to handle this unavoidable complexity.</p>
-
-</ol>
 
 
 # **8. OpenDSU and IPFS**
