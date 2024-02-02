@@ -24,12 +24,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <!-- TOC -->
 * [Cloud and Edge Wallets  (RFC-032)](#cloud-and-edge-wallets-rfc-032)
-  * [Abstract](#abstract)
-  * [Introduction](#introduction)
-  * [Cloud Agents](#cloud-agents)
-  * [Edge Agents](#edge-agents)
-  * [DSU: No size fits all](#dsu-no-size-fits-all)
-  * [Cloud Agents vs Edge Agents](#cloud-agents-vs-edge-agents)
+* [Abstract](#abstract)
+* [1. Introduction](#1-introduction)
+* [2. Cloud Agents](#2-cloud-agents)
+* [3. Edge Agents](#3-edge-agents)
+* [4. DSU: No size fits all](#4-dsu-no-size-fits-all)
+* [5. Cloud Agents vs Edge Agents](#5-cloud-agents-vs-edge-agents)
+* [Conclusions](#conclusions)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 1. TOC
