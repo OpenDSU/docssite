@@ -23,9 +23,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**DSU Types (RFC-007)**](#dsu-types-rfc-007)
 * [Abstract](#abstract)
-* [Public Methods from dt API](#public-methods-from-dt-api)
+* [1. Public Methods from dt API](#1-public-methods-from-dt-api)
   * [Function getDossierBuilder(sourceDSU, varStore)](#function-getdossierbuildersourcedsu-varstore)
   * [Function initialiseBuildWallet(callback)](#function-initialisebuildwalletcallback)
   * [Commands](#commands)
@@ -77,10 +76,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>The file system can also be used as a key-value database. It obtains interrogable databases that can do queries and map the logical level of record structures and/or tables in value keys (in other ways). These are already successive layers built on the same basic metaphor, the file system from DSUs. Given the file system, similar to Unix, in the world of OpenDSU, DSUs can be mounted inside each other and, in this way, we can get the reusable code between DSU-Types and DSUs. If there are DSUs that belong to no particular DSU-Type, then we mount them in a folder/code of another DSU that contains that code and it becomes part of the world of that DSU-Type. These DSUs, data and code generally need to be interpreted/uploaded in an environment to be used as needed in our applications.
 </p>
 
-<p style='text-align: justify;'>Different types of DSUs were implemented for different use cases. Each type is associated with different types of KeySSIs (see RFC 002).
-</p>
-
-<p style='text-align: justify;'>Different types of DSUs were implemented for different use cases. Each type is associated with different types of KeySSIs (see <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">RFC 002)</a>..
+<p style='text-align: justify;'>Different types of DSUs were implemented for different use cases. Each type is associated with different types of KeySSIs (see <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">RFC 002)</a>.
 </p>
 
 | **SU Representation** | **KeySSIs, anchoring strategies, versioning strategies etc**                                                                           |
