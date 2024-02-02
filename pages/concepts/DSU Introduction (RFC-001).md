@@ -39,9 +39,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [**5. DSU Reconstruction**](#5-dsu-reconstruction)
 * [**6. KeySSI**](#6-keyssi)
 * [**7. DSU Use Cases**](#7-dsu-use-cases)
-  * [<b>7.1 DSU-Based Self Sovereign Applications (SSApps)</b>](#71-dsu-based-self-sovereign-applications-ssapps)
-  * [**7.2 DSU-Based Web APIs**](#72-dsu-based-web-apis)
-  * [**7.3 DSU Instances in Multiple Security Contexts**](#73-dsu-instances-in-multiple-security-contexts-)
+  * [7.1 DSU-Based Self Sovereign Applications (SSApps)](#71-dsu-based-self-sovereign-applications-ssapps)
+  * [7.2 DSU-Based Web APIs](#72-dsu-based-web-apis)
+  * [7.3 DSU Instances in Multiple Security Contexts](#73-dsu-instances-in-multiple-security-contexts-)
 * [**8. OpenDSU and IPFS**](#8-opendsu-and-ipfs)
 * [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
@@ -216,7 +216,7 @@ SSApp Implementation is described in <a href="https://www.opendsu.org/pages/begi
 
 
 
-## **7.2 DSU-Based Web APIs**
+## 7.2 DSU-Based Web APIs
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRqOPNBzCaQqZEqWfx5w6Qu7ZmyTbr_lyZFBn-KL7df8xqzzJoZCqhsRmnGpzRJY-gOY9SOnXmsm4fy/pub?w=1254&h=418" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
@@ -232,7 +232,7 @@ OpenDSU does not try to fix any specific rules about these Web APIs, and they sh
 APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 
 
-## **7.3 DSU Instances in Multiple Security Contexts** 
+## 7.3 DSU Instances in Multiple Security Contexts
 
 <p style='text-align: justify;'>In many cases, the location where the data contained in the DSU will be read and processed does not coincide with the location where the encryption keys are stored.
 </p>
