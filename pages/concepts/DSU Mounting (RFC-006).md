@@ -25,7 +25,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [DSU Mounting](#dsu-mounting)
 * [Abstract](#abstract)
 * [Introduction](#introduction)
 * [1. Description of the Mounting Process](#1-description-of-the-mounting-process)
@@ -82,7 +81,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSAsEvIk7t7hujG9innl9pPMdJlmn2jN9X3rJ0r_y21FGo-WNLdOLxnJF2DkzfqwsO88rlQDblxbWF8/pub?w=384&h=406" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS-TCmPiAcDAWvh9pYp06yGoyOqDvxBT3Gx2VVTqNy6k3kLe_g4ow9bWbBEuNe6RumQCNGdCXH9ahOZ/pub?w=190&h=204" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Execution Environments</b></p>
 </div>
 
