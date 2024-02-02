@@ -30,9 +30,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <!-- TOC -->
 * [Abstract](#abstract)
-* [Get Started](#get-started)
-* [Go further with the ePi-workspace demonstration](#go-further-with-the-epi-workspace-demonstration)
-* [Contributors](#contributors-)
+* [1. Get Started](#1-get-started)
+* [2. Go further with the ePi-workspace demonstration](#2-go-further-with-the-epi-workspace-demonstration)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
@@ -42,19 +41,29 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>This RFC is designed to help developers create their first SSApp using HTML, Javascript and CSS. As a reminder, SSApps are DSUs that contain data and code including the user interface (UI) code that will be loaded by an agent if the corresponding keySSI is provided (see SSApp Architecture). All the applications used by OpenDSU in one form or another have a Wallet.</p>
 
 
-<p style="text-align:center"><b>Figure 1: SSApp - UI in wallets</b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSyfKEml7L2uhhazSF8nrff6OrT6ReFsRno4dB6xHWWL89nOofyAh8WEHv7CCu27QnGC_D4o6MVW_ng/pub?w=730&h=473" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 1: SSApp - UI in wallets</b></p>
+</div>
 
 
 <p style='text-align: justify;'>For example, if we have HTML, JavaScript or CSS code that allows us to render a visual interface, then we can put this code inside a DSU and we have several methods (using Service worker or middleware) that we can put in that APIHub. So, you can undo this information from DSUs and render it on the screen so that we interact and get normal applications from a user’s point of view. These applications will be connected to and interact with Wallets and DSUs. They can also interact to save keys, data and read data in a way that allows better protection because they run in their own client, desktop or mobile application. OpenDSU technology allows us to create these Wallets in different forms, from web applications using Service workers to mobile apps for iOS or Android.</p>
 
-<p style="text-align:center"><b>Figure 2: SSApps as DSUs containing data and code</b></p>
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRE9SpB41u9rB6AJlHBttjmtNTBAx5kQcxm8CUA4-cfHpAZ9CwP5T3fKMAT96VkOne8OahRMBvUyqlQ/pub?w=837&h=346" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 2: SSApps as DSUs containing data and code</b></p>
+</div>
 
 
-# Get Started
+
+
+
+# 1. Get Started
 
 The best way to understand SSApps is to start with the [tutorial](https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html), where you will learn how to create your first and very simple SSApp.
 
-# Go further with the ePi-workspace demonstration
+# 2. Go further with the ePi-workspace demonstration
 
 This demonstration shows us 3 different SSApp:
 
@@ -63,15 +72,22 @@ This demonstration shows us 3 different SSApp:
 3. The third one is a DSU explorer and allows anyone with a keySSI to see the content of the corresponding DSU.
 
 
-# Contributors   
 
-1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
+**Contributors**
+
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
+
 
 # Annex 1. Contributors
 
-|**Current Editors**                  |**Email**                                 |
+|**Current Editors**                  | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
 |Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
 |Cosmin Ursache                       | cosmin@axiologic.net                     |
@@ -84,7 +100,7 @@ This demonstration shows us 3 different SSApp:
 |Daniel Sava                          | daniel@axiologic.net                     |
 |Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
 |Valentin Gérard                      | valentin@axiologic.net                   |
-|**PrivateSky Contributors**          |**Email**                                 |
+|**PrivateSky Contributors**          | **Email**                                |
 |Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
 |Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
 |Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
