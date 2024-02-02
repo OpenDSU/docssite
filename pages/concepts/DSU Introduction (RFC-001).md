@@ -190,8 +190,8 @@ Currently, DSUs can be used in three ways:
 
 These three use cases will be developed in the following subsections.
 <ol>
-<li><b> DSU-Based Self Sovereign Applications (SSApps)</b></li>
- 
+
+## 7.1 DSU-Based Self Sovereign Applications (SSApps)
  
 
 <div style="text-align:center;">
@@ -214,7 +214,7 @@ SSApp Architecture is described in <a href="https://www.opendsu.org/pages/concep
 SSApp Implementation is described in <a href="https://www.opendsu.org/pages/beginners/SSapp%20implementation(RFC%20034).html">SSApp implementation (RFC-034)</a>.
 
 
-<li><b>DSU-Based Web APIs</b></li>
+## 7.2 DSU-Based Web APIs
 
 
 <div style="text-align:center;">
@@ -230,7 +230,7 @@ The simplest case is when the required KeySSI is a parameter in the Web API and,
 OpenDSU does not try to fix any specific rules about these Web APIs, and they should be DTE and use case-specific. However, a set of best practices regarding the security of retrieving the proper  KeySSI will be documented in the following chapters.
 APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 
-<li><b>DSU-Based Web </b></li>
+## 7.3 DSU Instances in Multiple Security Contexts 
 
 <p style='text-align: justify;'>In many cases, the location where the data contained in the DSU will be read and processed does not coincide with the location where the encryption keys are stored.
 </p>
