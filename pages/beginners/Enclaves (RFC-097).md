@@ -35,6 +35,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
+
 # Abstract
 
 <p style='text-align: justify;'>OpenDSU Enclaves is a concept that allows storing sensitive data and controlling access to it in the most granular way possible. The concept represents or presents similarities with a database, a communication system based on Message Queues, or a Key Management System. The OpenDSU Enclaves concept has been and is being implemented and used for the first time, along with another OpenDSU concept named “Security Context”.
