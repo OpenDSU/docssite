@@ -35,7 +35,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [**Overview**](#overview)
 * [**1. Data Sharing Unit (DSU)**](#1-data-sharing-unit-dsu)
 * [**2. Brick Storage**](#2-brick-storage)
-* [3. **Anchoring**](#3-anchoring)
+* [**3. Anchoring**](#3-anchoring)
 * [**4. DSU Mounting**](#4-dsu-mounting)
 * [**5. DSU Reconstruction**](#5-dsu-reconstruction)
 * [**6. KeySSI**](#6-keyssi)
@@ -126,7 +126,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 More details are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.
 
-# 3. **Anchoring**
+# **3. Anchoring**
 
 <p align="justify">DSUs are anchored in the blockchain, and the anchoring feature brings the capability of digitally signing data and code in the initial version and any subsequent versions. In some situations, use cases can exist in which a centralized system provides DSU anchoring. For example, a use case that only needed anchoring could support better internal auditability. This example is excellent, as it could be later decentralized if needed or required.</p>
 
