@@ -134,7 +134,7 @@ Another method of anchoring is based on Zero-Knowledge Proofs (ZKP). OpenDSU sup
 
 <p style='text-align: justify;'>The hash and the signature algorithm come from the KeySSI-specific algorithms (vn).
 </p>
-
+ 
 ## TransferSSI
 
 This KeySSI is useful to transfer the control of the anchor to another SSI.
