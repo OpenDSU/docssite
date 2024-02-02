@@ -210,6 +210,7 @@ These three use cases will be developed in the following subsections.
 
 SSApp Architecture is described in <a href="https://www.opendsu.org/pages/concepts/SSApps%20Architecture%20(RFC-028).html">SSApp Architecture (RFC-028)</a>.
 
+
 SSApp Implementation is described in <a href="https://www.opendsu.org/pages/beginners/SSapp%20implementation(RFC%20034).html">SSApp implementation (RFC-034)</a>.
 
 
