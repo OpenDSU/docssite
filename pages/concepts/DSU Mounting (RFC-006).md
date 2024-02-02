@@ -28,8 +28,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [DSU Mounting](#dsu-mounting)
 * [Abstract](#abstract)
 * [Introduction](#introduction)
-* [Description of the Mounting Process](#description-of-the-mounting-process)
-* [Example](#example)
+* [1. Description of the Mounting Process](#1-description-of-the-mounting-process)
+* [2. Example](#2-example)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 {:toc}
