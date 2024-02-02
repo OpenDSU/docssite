@@ -25,7 +25,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [DSU Mounting](#dsu-mounting)
 * [Abstract](#abstract)
 * [Introduction](#introduction)
 * [1. Description of the Mounting Process](#1-description-of-the-mounting-process)
@@ -76,13 +75,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ5ipNYJxtabzBwPq3qMoCXTrgHHsLu4bVym_f9OFCATTSSC1aaYx1_uAfuRwImcn7cffltWk53-e5b/pub?w=1060&h=408" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQYn0ZDVJwzrwydo6yEKsZUDlK4NdNbKWY-ie5QtoJB4wEqLH8Af5vxK5O0EkdO9hc0GKrOaxluZ7lE/pub?w=1596&h=620" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: DSU structure - similar to a filesystem (Key/Value database)</b></p>
 </div>
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSAsEvIk7t7hujG9innl9pPMdJlmn2jN9X3rJ0r_y21FGo-WNLdOLxnJF2DkzfqwsO88rlQDblxbWF8/pub?w=384&h=406" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRxUFnWYcBnUcpXbxVsmyg8B8Rhx0SnC369XHoDvA8E9AX1sJcY9erpXBpklh1RXeqIwC5wztq4H8xW/pub?w=382&h=409" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Execution Environments</b></p>
 </div>
 
