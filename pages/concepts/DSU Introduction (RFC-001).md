@@ -31,17 +31,16 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**DSU Introduction**](#dsu-introduction)
-  * [Abstract](#abstract)
-  * [Overview](#overview)
-* [1. Data Sharing Unit (DSU)](#1-data-sharing-unit-dsu)
-* [2. Brick Storage](#2-brick-storage)
-* [3. DSU Mounting](#3-dsu-mounting)
-* [4. DSU Reconstruction](#4-dsu-reconstruction)
-* [5. KeySSI](#5-keyssi)
-* [6. DSU Use Cases](#6-dsu-use-cases)
-* [7. OpenDSU and IPFS](#7-opendsu-and-ipfs)
-  * [Annex 1. Contributors](#annex-1-contributors)
+* [**Abstract**](#abstract-)
+* [**Overview**](#overview)
+* [**1. Data Sharing Unit (DSU)**](#1-data-sharing-unit-dsu)
+* [**2. Brick Storage**](#2-brick-storage)
+* [**3. DSU Mounting**](#3-dsu-mounting)
+* [**4. DSU Reconstruction**](#4-dsu-reconstruction)
+* [**5. KeySSI**](#5-keyssi)
+* [**6. DSU Use Cases**](#6-dsu-use-cases)
+* [**7. OpenDSU and IPFS**](#7-opendsu-and-ipfs)
+* [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
 {:toc}
 
@@ -288,7 +287,7 @@ chain content in the form of anchors stored in multiple ledgers/blockchains.
 3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 
-## **Annex 1. Contributors**
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
