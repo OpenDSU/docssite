@@ -41,7 +41,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>DSUs are data, verifiable code. Through the use of cryptographic techniques, they are encrypted and identifiable in a certain way. DSUs can be assimilated into the programming model because there are DSU instances and classes.
 </p>
 
-div style="text-align:center;">
+<div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ55wLRgEAgAuk-CFNplYox6f0cAkQRmlJff5Vhpv1iv6GUVYZZVEHUUu67orVT5Ts8S6-24DHNGtrE/pub?w=871&h=237" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: DSU-Types</b></p>
 </div>
@@ -57,7 +57,7 @@ div style="text-align:center;">
 <p style='text-align: justify;'>These DSU-types group DSUs, especially conceptually, but sometimes in code form. Therefore, we have DSUs that are instances of these classes. For example, when John makes an order, we have a code that defines how this microledger should behave; that is the DSU type. Later, we have instances with John, who clicked on the Christmas section to buy a gift and made an order, so there is a private instance for this DSU. The relevant part is that DSU-types are also DSUs, because DSU-type essentially means code. The code is represented by files that have some conventions.
 </p>
 
-div style="text-align:center;">
+<div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQjpfAq41h5HmTqm6ReU9Ab0KBPZdQKH2PHgQbAngvPvSq7fGuzSDhc4XehLpa0ecEZEQgvnR4faDTV/pub?w=473&h=223" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: DSU-Types</b></p>
 </div>
@@ -67,7 +67,7 @@ div style="text-align:center;">
 <p style='text-align: justify;'>As mentioned above, the DSU-Type is a code. The /constitution directory has dependencies that are loaded into the execution environment. This is a DSU that is loaded into the code and retrieves everything the code needs, when it is needed. It also has other files and folders for this instance’s data.
 </p>
 
-div style="text-align:center;">
+<div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSmidUcWfDoYhMtNIWqzbhZnx3Lu0cYlKAlNArSW6nMKTxBaC-OD1wkfAqTH0t6K3k-hB4q5l3qHF-L/pub?w=1594&h=619" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: DSU structure - Similar to a filesystem (Key/Value database)</b></p>
 </div>
