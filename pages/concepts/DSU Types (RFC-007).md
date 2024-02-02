@@ -8,8 +8,8 @@ nav_order: 6
 # **DSU Types (RFC-007)**
 {: .no_toc }
 
-{: .accepted }
-The proposal has been accepted and has an implementation.
+{: .feedback }
+A period when the community can review the RFC (comment Docs).
 
 
 **Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**

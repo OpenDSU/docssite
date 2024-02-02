@@ -12,14 +12,15 @@ nav_order: 8
 A period when the community can review the RFC (comment Docs).
 
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
 
- **Copyright**
-Copyright © 2018-2022 Axiologic Research and Contributors.
-This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
 
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+ 
 
 
 <details open markdown="block">
