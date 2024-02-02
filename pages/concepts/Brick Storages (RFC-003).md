@@ -51,20 +51,20 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 1.2 General Operations
 
-Each brick within the brick storage (except the BrickMap) is encrypted using a different symmetric key called SymmetricalEncryptionSSI. This key makes it very hard for attackers to obtain the full content of a DSU. Even if the attacker would find the symmetric key for a brick (which is unlikely), it could only decrypt this single brick. Fortunately, we don’t have to remember all these encryption keys. The BrickMap will keep track of them for us, along with the associated HashLinkSSIs referencing the bricks.
+<p style='text-align: justify;'>Each brick within the brick storage (except the BrickMap) is encrypted using a different symmetric key called SymmetricalEncryptionSSI. This key makes it very hard for attackers to obtain the full content of a DSU. Even if the attacker would find the symmetric key for a brick (which is unlikely), it could only decrypt this single brick. Fortunately, we don’t have to remember all these encryption keys. The BrickMap will keep track of them for us, along with the associated HashLinkSSIs referencing the bricks.</p>
 
-Unlike data bricks, BrickMaps are encrypted using the KeySSI encryption key. This thing allows the KeySSI owner to access the BrickMap while preventing access to other users.
+<p style='text-align: justify;'>Unlike data bricks, BrickMaps are encrypted using the KeySSI encryption key. This thing allows the KeySSI owner to access the BrickMap while preventing access to other users.</p>
 
 ## 1.3. Notes
 
 
-While BrickMaps associated with DSUs stay constant and immutable once they are anchored, DSUs are flexible and, most times, do not remain constant and can even be deleted. That is why we have multiple BrickMaps that exist in the history of each DSU.  While the latest BrickMap can be used to reconstruct the latest version of the DSU, it is also possible to reconstruct previous versions of the DSU using previous HashLinkSSIs. This is possible because data bricks not used anymore in the latest DSU version are not deleted from the off-chain storage, in order to keep it auditable.
+<p style='text-align: justify;'>While BrickMaps associated with DSUs stay constant and immutable once they are anchored, DSUs are flexible and, most times, do not remain constant and can even be deleted. That is why we have multiple BrickMaps that exist in the history of each DSU.  While the latest BrickMap can be used to reconstruct the latest version of the DSU, it is also possible to reconstruct previous versions of the DSU using previous HashLinkSSIs. This is possible because data bricks not used anymore in the latest DSU version are not deleted from the off-chain storage, in order to keep it auditable.</p>
 
 # 2. BrickMaps
 
 ## 2.1 Data structure
 
-The BrickMap is a special brick stored along with the other bricks in the brick storage. It is used to reconstruct the DSU in your execution environment by retrieving bricks from the brick storage.
+<p style='text-align: justify;'>The BrickMap is a special brick stored along with the other bricks in the brick storage. It is used to reconstruct the DSU in your execution environment by retrieving bricks from the brick storage.</p>
 
 
 <div style="text-align:center;">
@@ -73,24 +73,23 @@ The BrickMap is a special brick stored along with the other bricks in the brick 
 </div>
 
 
+<p style='text-align: justify;'>To achieve that reconstruction, the BrickMap is structured in a JSON format that contains a header with metadata, such as the date of creation, and a list of items representing files and folders of the DSU with their metadata and an array of bricks containing their location and the symmetric encryption key that is necessary to read them.</p>
 
-
-To achieve that reconstruction, the BrickMap is structured in a JSON format that contains a header with metadata, such as the date of creation, and a list of items representing files and folders of the DSU with their metadata and an array of bricks containing their location and the symmetric encryption key that is necessary to read them.
 ## 2.2 Strategies for Versioning
 
 ###  2.2.1 A diff for each version
 
-This strategy can be used assuming that the initial version of the DSU sets the validation rules by containing all the relevant DSU Type-Specific code (the DSU constitution). All the other versions will contain only the diffs (differences added by each version), and therefore all the versions should be loaded and verified one by one. This strategy could perform badly if the number of versions is high, but it can be used with untrusted parties. The diffs for each version can be encrypted with the same key as the first version of the DSU or encrypted using the public key of the KeySSI.
+<p style='text-align: justify;'>This strategy can be used assuming that the initial version of the DSU sets the validation rules by containing all the relevant DSU Type-Specific code (the DSU constitution). All the other versions will contain only the diffs (differences added by each version), and therefore all the versions should be loaded and verified one by one. This strategy could perform badly if the number of versions is high, but it can be used with untrusted parties. The diffs for each version can be encrypted with the same key as the first version of the DSU or encrypted using the public key of the KeySSI.</p>
 
-The second option allows you to propose changes without having read rights to the DSU. This option works only with QueueSSI (because the privateKey is public) and could be used to implement a message queue using DSUs.
+<p style='text-align: justify;'>The second option allows you to propose changes without having read rights to the DSU. This option works only with QueueSSI (because the privateKey is public) and could be used to implement a message queue using DSUs.</p>
 
 ### 2.2.2 First BrickMap and Latest Diff
 
-This strategy can be used assuming that the initial version of the DSU sets the validation rules by containing all the relevant code (the DSU constitution), but the intermediate versions can be ignored because each new version will contain the full diff compared to the first BrickMap. This strategy will check if a trusted party signed the latest diff. This strategy tries to minimize the size of the bricks saved as BrickMap for each version. While it performs well, this strategy cannot be used with untrusted parties.
+<p style='text-align: justify;'>This strategy can be used assuming that the initial version of the DSU sets the validation rules by containing all the relevant code (the DSU constitution), but the intermediate versions can be ignored because each new version will contain the full diff compared to the first BrickMap. This strategy will check if a trusted party signed the latest diff. This strategy tries to minimize the size of the bricks saved as BrickMap for each version. While it performs well, this strategy cannot be used with untrusted parties.</p>
 
 ###  2.2.3 First BrickMap and Latest Version
 
-This strategy will only check that a trusted party signed the latest version; therefore, nothing else is verified. While it performs well, this strategy cannot be used with untrusted parties.
+<p style='text-align: justify;'>This strategy will only check that a trusted party signed the latest version; therefore, nothing else is verified. While it performs well, this strategy cannot be used with untrusted parties.</p>
 
 # 3. Annexes
 
