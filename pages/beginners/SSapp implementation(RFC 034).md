@@ -30,9 +30,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <!-- TOC -->
 * [Abstract](#abstract)
-* [Get Started](#get-started)
-* [Go further with the ePi-workspace demonstration](#go-further-with-the-epi-workspace-demonstration)
-* [Contributors](#contributors-)
+* [1. Get Started](#1-get-started)
+* [2. Go further with the ePi-workspace demonstration](#2-go-further-with-the-epi-workspace-demonstration)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
