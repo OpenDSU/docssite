@@ -24,13 +24,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
+* [BDNS (RFC-022)](#bdns-rfc-022)
   * [Abstract](#abstract)
-  * [Hierarchical Blockchains and Naming Schema](#hierarchical-blockchains-and-naming-schema)
-* [Blockchain Domain Name System (BDNS) Concepts Summary](#blockchain-domain-name-system-bdns-concepts-summary)
-* [BDNS.hosts file (BDNS Root Info)](#bdnshosts-file-bdns-root-info)
-    * [BDNS Domains example: a root and subdomain](#bdns-domains-example-a-root-and-subdomain)
-  * [Contributors](#contributors-)
-  * [Annex 1. Contributors](#annex-1-contributors)
+* [1. Hierarchical Blockchains and Naming Schema](#1-hierarchical-blockchains-and-naming-schema)
+* [2. Blockchain Domain Name System (BDNS) Concepts Summary](#2-blockchain-domain-name-system-bdns-concepts-summary)
+* [3. BDNS.hosts file (BDNS Root Info)](#3-bdnshosts-file-bdns-root-info)
+  * [3.1 BDNS Domains example: a root and subdomain](#31-bdns-domains-example-a-root-and-subdomain)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 {:toc}
 
@@ -116,7 +116,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 |BDNS Root Domain |A BDNS domain without any “.” (a single identifier).                                              |
 |BDNS SubDomain   |A domain that contains additional prefixes to a BDNS Root Domain.                                 |
 
-<p style="text-align:center"> <b>**Table: SeedSSI’s family subtypes** </b></p>
+<p style="text-align:center"> <b>Table: SeedSSI’s family subtypes</b></p>
 
 
 
@@ -130,7 +130,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 3.1 BDNS Domains example: a root and subdomain
 
-'''
+````
 {
 "demoroot": {
    "brickStorages": [
@@ -153,32 +153,34 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
    ]
  }
 }
-'''
+````
 
 
 This is the config for one root domain, “demoroot”, and a subdomain. Depending on their record type (“brickStorage” or “anchorService”), the endpoints are the addresses for either the node on which the Brick Storage service is running or the node running the Anchoring Service.
 
 The below table describes the existing record types for BDNS domains.
 
-|Selection        |Description                                                       |
+| **Selection**     | **Description**                                                |
+|:------------------|:---------------------------------------------------------------|
+| brickStorages     | List of URLs that offer brick storage services for the domain. |
+| anchoringServices | List of URLs that offer anchoring services for the domain.     |
+| notifications     | List of URLs that offer notification services for the domain.  |
 
-|brickStorages       |List of URLs that offer brick storage services for the domain. |
-
-|anchoringServices   |List of URLs that offer anchoring services for the domain.     |
-
-|notifications       |List of URLs that offer notification services for the domain.  |
+<p style="text-align:center"> <b>**Table: SeedSSI’s family subtypes**</b></p>
 
 
+**Contributors**
 
-Table 2: BDNS Domains record types
 
-## Contributors   
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-1. [Axiologic Research](www.axiologic.net): New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/)  
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-## Annex 1. Contributors
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
+# Annex 1. Contributors
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
