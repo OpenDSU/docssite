@@ -217,6 +217,7 @@ SSApp Architecture is described in <a href="https://www.opendsu.org/pages/concep
 SSApp Implementation is described in <a href="https://www.opendsu.org/pages/beginners/SSapp%20implementation(RFC%20034).html">SSApp implementation (RFC-034)</a>.
 
 
+
 ## 7.2 DSU-Based Web APIs
 
 <div style="text-align:center;">
