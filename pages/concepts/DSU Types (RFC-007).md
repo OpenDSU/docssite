@@ -83,16 +83,16 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Different types of DSUs were implemented for different use cases. Each type is associated with different types of KeySSIs (see <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">RFC 002)</a>..
 </p>
 
-| **SU Representation** | **KeySSIs, anchoring strategies, versioning strategies etc**                                              |
-|:----------------------|:----------------------------------------------------------------------------------------------------------|
-| SecretDSU             | **KeySSIs**: SecretSSI family <br> **Anchoring**: zaSSI </br> **Versioning**: microledger **Other**: None |
-| SeedDSU               |                                                                                                           |
-| ImmutableDSU          |                                                                                                           |
-| RedirectDSU           |                                                                                                           |
-| BrickDSU              |                                                                                                           |
-| ConsentDSU            |                                                                                                           |
-| CredentialsDSU        |                                                                                                           |
-| BDSU                  |                                                                                                           |
+| **SU Representation** | **KeySSIs, anchoring strategies, versioning strategies etc**                                                  |
+|:----------------------|:--------------------------------------------------------------------------------------------------------------|
+| SecretDSU             | **KeySSIs**: SecretSSI family <br> **Anchoring**: zaSSI <br> **Versioning**: microledger <br> **Other**: None |
+| SeedDSU               |                                                                                                               |
+| ImmutableDSU          |                                                                                                               |
+| RedirectDSU           |                                                                                                               |
+| BrickDSU              |                                                                                                               |
+| ConsentDSU            |                                                                                                               |
+| CredentialsDSU        |                                                                                                               |
+| BDSU                  |                                                                                                               |
 
 |SU Representation    |KeySSIs, anchoring strategies, versioning strategies etc|
 
