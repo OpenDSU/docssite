@@ -94,101 +94,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | CredentialsDSU        | **KeySSIs**: HashLinkSSI <br> **Anchoring**: None <br> **Versioning**: None <br> **Other**: contains a JSON with all credentials                       |
 | BDSU                  | **KeySSIs**: HashLinkSSI <br> **Anchoring**: None <br> **Versioning**: None <br> **Other**: contains a JSON with information about a Blockchain Domain |
 
-|SU Representation    |KeySSIs, anchoring strategies, versioning strategies etc|
 
-|SecretDSU|
-|KeySSIs: SecretSSI family
-
-Anchoring: zaSSI
-
-Versioning: microledger
-
-Other: None|
-
-
-SeedDSU
-	
-
-KeySSIs: SeedSSI family
-
-Anchoring: szaSSI
-
-Versioning: latest version wins
-
-Other:None
-
-ImmutableDSU
-	
-
-KeySSIs: ConstSSI families
-
-Anchoring: czaSSI
-
-Versioning: None
-
-Other: None
-
-RedirectDSU
-	
-
-KeySSIs: ConstSSI
-
-Anchoring: czaSSI
-
-Versioning: None
-
-Other: Contains a JSON with a KeySSI
-
-BrickDSU
-	
-
-KeySSIs: HashLinkSSI
-
-Anchoring: None
-
-Versioning: None
-
-Other: contains a JSON
-
-ConsentDSU
-	
-
-KeySSIs: HashLinkSSI
-
-Anchoring: None
-
-Versioning: None
-
-Other: contains a JSON with all the consent info
-
-CredentialsDSU
-	
-
-KeySSIs: HashLinkSSI
-
-Anchoring: None
-
-Versioning: None
-
-Other: contains a JSON with all credentials
-
-BDSU
-	
-
-KeySSIs: HashLinkSSI
-
-Anchoring: None
-
-Versioning: None
-
-Other: contains a JSON with information about a Blockchain Domain
-# Public Methods from dt API
+# 1. Public Methods from dt API
 
 ## Function getDossierBuilder(sourceDSU, varStore)
 
-Description: Creates a new MappingEngine Object.
+**Description**: Creates a new MappingEngine Object.
 
-|Name       | Type   | Value  | Description                                                                    |
+|**Name**       | **Type**   | **Value**  | **Description**                                                                    |
 |sourceDSU  | object |        | This will perform all OPERATIONS from the sourceDSU as a source and not the fs.|
 |varStore   | object |        |                                                                                |
 	
@@ -197,16 +110,16 @@ Description: Creates a new MappingEngine Object.
 
 ## Function initialiseBuildWallet(callback)
 
-Description: Initialise a new wallet.
+**Description**: Initialise a new wallet.
 
-|Name       | Type    | Value      | Description   |
+|**Name**       | **Type**    | **Value**      | **Description**   |
 |callback  | function | *required  |               |
 
 
 
 ## Commands
 
-Description: Exposes more classes that are able to handle different commands, such as:
+**Description**: Exposes more classes that are able to handle different commands, such as:
 
 + AddFileCommand
 + AddFolderCommand
@@ -229,7 +142,7 @@ Description: Exposes more classes that are able to handle different commands, su
 **Description:**
 
 
-|Name         | Type   | Value  | Description                                                                            |
+|**Name**         | **Type**   | **Value**  | **Description**                                                                            |
 |environment  | object |        | Typically comes from an environment.js file which is the SSApps. Overrides some options|
 |opts         | object |        | Options object mimicking                                                               |
 	
