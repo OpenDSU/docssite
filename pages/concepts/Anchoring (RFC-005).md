@@ -5,39 +5,45 @@ parent: OpenDSU Concepts
 nav_order: 4
 ---
 
-# Anchoring (RFC-005)
+# Anchoring
 {: .no_toc }
+
 
 {: .accepted }
 The proposal has been accepted and has an implementation.
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
 
- **Copyright**
-Copyright © 2018-2022 Axiologic Research and Contributors.
-This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
 
-
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
+<!-- TOC -->
+* [Anchoring](#anchoring)
+  * [Abstract](#abstract)
+  * [Overview](#overview)
+  * [Implicit Anchors](#implicit-anchors)
+    * [Transactions as Implicit Anchors](#transactions-as-implicit-anchors)
+    * [Zero Knowledge Anchors](#zero-knowledge-anchors)
+  * [Explicit Anchors](#explicit-anchors)
+    * [Anchors with Attached ZKP Values](#anchors-with-attached-zkp-values)
+  * [Special SSIs for Anchor Values](#special-ssis-for-anchor-values)
+    * [SignedHashLinkSSI](#signedhashlinkssi)
+    * [TransferSSI](#transferssi)
+  * [Contributors](#contributors-)
+  * [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 {:toc}
 
 
 
 
+# **Abstract**
 
-## Abstract
+<p style='text-align: justify;'>This RFC introduces the anchoring concept from the OpenDSU project.</p>
 
-This RFC introduces the anchoring concept from the OpenDSU project.
-
-## Overview
+# **Overview**
 
 OpenDSU aims to facilitate the creation of blockchain platforms that support multiple blockchains, and even more, it should support heterogeneous blockchains (blockchains with different capabilities and different security models). For OpenDSU, the main purpose of those blockchains is to work as notarization mechanisms for DSUs.
 

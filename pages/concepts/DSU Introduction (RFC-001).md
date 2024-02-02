@@ -35,11 +35,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [**Overview**](#overview)
 * [**1. Data Sharing Unit (DSU)**](#1-data-sharing-unit-dsu)
 * [**2. Brick Storage**](#2-brick-storage)
-* [**3. DSU Mounting**](#3-dsu-mounting)
-* [**4. DSU Reconstruction**](#4-dsu-reconstruction)
-* [**5. KeySSI**](#5-keyssi)
-* [**6. DSU Use Cases**](#6-dsu-use-cases)
-* [**7. OpenDSU and IPFS**](#7-opendsu-and-ipfs)
+* [3. **Anchoring**](#3-anchoring)
+* [**4. DSU Mounting**](#4-dsu-mounting)
+* [**5. DSU Reconstruction**](#5-dsu-reconstruction)
+* [**6. KeySSI**](#6-keyssi)
+* [**7. DSU Use Cases**](#7-dsu-use-cases)
+* [**8. OpenDSU and IPFS**](#8-opendsu-and-ipfs)
 * [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
 {:toc}
@@ -125,13 +126,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 More details are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.
 
-<h2> Anchoring </h2>
+# 3. **Anchoring**
 
 <p align="justify">DSUs are anchored in the blockchain, and the anchoring feature brings the capability of digitally signing data and code in the initial version and any subsequent versions. In some situations, use cases can exist in which a centralized system provides DSU anchoring. For example, a use case that only needed anchoring could support better internal auditability. This example is excellent, as it could be later decentralized if needed or required.</p>
 
 More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html).
 
-# **3. DSU Mounting**
+# **4. DSU Mounting**
 
 <p align="justify">The code in a DSU instance is not copied to each instantiation. Starting from the perspective that a DSU can be seen as a file system, this file system allows the mounting of a DSU in another DSU. The DSU mounted in all instances and containing the code is called <a href="https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html">DSU Types</a>. This DSU Type behaves similarly to a class compared to its instances. The DSU Type is a DSU in itself and, as such, is anchored and must have credentials (digital signatures) that mark it safe for use. It should also be noted that a DSU Type can be updated, leading to the automatic update of all instances. We also name the code from DSU Type as DSU constitution.
 
@@ -153,7 +154,7 @@ More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/p
 More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html).
 
 
-#  **4. DSU Reconstruction**
+#  **5. DSU Reconstruction**
 
 <p align="justify">DSUs are encrypted at rest and in transit using a key derived from an identifier we call KeySSI. A DSU can be imagined as a multi-directory file system with granular access and security properties for each “directory”. Instead of being stored as a whole, the files are stored as encrypted bricks. That is why we need DSU reconstruction to reassemble our files, and we reassemble them only for a limited time in an “execution environment”. These OpenDSU mechanisms implement the usage of “client-side encryption” as a means to enable data self-sovereignty.</p>
 
@@ -170,13 +171,13 @@ More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/page
 
 More details are available in [DSU Reconstruction (RFC-008)](https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html).
 
-# **5. KeySSI**
+# **6. KeySSI**
 
 <p align="justify">The KeySSI concept's purpose is to provide blockchain-anchored identities for things and processes, and companies and individuals. They are used as secret symmetrical encryption/decryption keys for DSUs (or parts of the DSUs).</p>
 
 More details are available in [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).
 
-# **6. DSU Use Cases**
+# **7. DSU Use Cases**
 
 Currently, DSUs can be used in three ways:
 <ol>
@@ -252,7 +253,7 @@ APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 </ol>
 
 
-# **7. OpenDSU and IPFS**
+# **8. OpenDSU and IPFS**
 
 <p style='text-align: justify;'>DSU storage is a content-addressable service similar to IPFS (InterPlanetary File System). The main differences are:</p>
 <ol>
