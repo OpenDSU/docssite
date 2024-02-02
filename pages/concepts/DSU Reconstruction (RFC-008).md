@@ -20,6 +20,16 @@ Copyright © 2018-2022 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
+<!-- TOC -->
+* [Abstract](#abstract)
+* [Overview](#overview)
+* [1. DSU Versions](#1-dsu-versions)
+* [2. Bricks Storage](#2-bricks-storage)
+* [3. DSU Reconstruction from Bricks](#3-dsu-reconstruction-from-bricks)
+* [4. Security Context (SC) and DSU Reconstruction](#4-security-context-sc-and-dsu-reconstruction)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
+
 
 
 
@@ -88,7 +98,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 More details are available at the following links:
 
-[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html) 
+[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html)</br>
 [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)  
 [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)  
 [Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html) 
@@ -171,7 +181,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLWO2qz1amcRsHnYSuXXwt4GkQ435JaLzzEbI86UZdN-fEN1RO8HPY-cmwvJdD9GDV019oE1wLz8xL/pub?w=507&h=504" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLWO2qz1amcRsHnYSuXXwt4GkQ435JaLzzEbI86UZdN-fEN1RO8HPY-cmwvJdD9GDV019oE1wLz8xL/pub?w=254&h=252" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: Wallet</b></p>
 </div>
 
