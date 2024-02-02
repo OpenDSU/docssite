@@ -54,7 +54,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <p style='text-align: justify;'>More details about DSUs are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.</p>
 
-# Description of the Mounting Process
+# 1. Description of the Mounting Process
 
 <p style='text-align: justify;'>A DSU can be seen as a file system. Like every other file system in the UNIX world (UNIX is a family of operating systems designed for flexibility and adaptability), it allows the mounting of other file systems, mainly other DSUs. So, we can create a file system composed hierarchically and recursively of multiple file systems from multiple DSUs.
 </p>
@@ -95,7 +95,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>In figure 2, we present a more complex case. In the SSApp concept, we have mounted inside DSUs for wallets and SSApps, a DSU that holds the PoD (Point of Delivery) needed for the SSApp execution. In this way, the users can write some of their own data in their wallets or SSApps, but the user has no write rights over the code. The code can be signed, or a third party can maintain it. The term “constitution” in the figure represents the code of DSU-Type (concept explained above).
 </p>
 
-<p style='text-align: justify;'>More details are available in <a href="https://www.opendsu.org/pages/concepts/SSApps%20Architecture%20(RFC-028).html">SSapps Architecture (RFC-028)</a>..
+<p style='text-align: justify;'>More details are available in <a href="https://www.opendsu.org/pages/concepts/SSApps%20Architecture%20(RFC-028).html">SSapps Architecture (RFC-028)</a>.
 </p>
 
 <p style='text-align: justify;'>The mounting operation can be done both for writing, using KeySSIs that allow writing, and in read-only mode. Generally, the mounting is available for the operating system in the same way as for a file system: for reading, writing, or both.
@@ -107,7 +107,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Security Context is an important concept introduced by OpenDSU, to try and give the OpenDSU programmers the insight that working with secrets, cryptographic materials, private keys, public keys, and confidential/private records is always associated with a security context. We treat each wallet as a Security Context (SC). The wallet incorporates broader things, such as the interface, code and different types of sensitive data storage. It can also mount DSUs and it can have external databases.
 </p>
 
-More details are available in <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">Security Context (RFC-075)</a>..
+More details are available in <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">Security Context (RFC-075)</a>.
 
 <p style='text-align: justify;'>Contextual mounting allows sharing DSUs with varied access for different actors in the system. An actor is a computing entity that participates in the process, such as a person, a robot, an application, an organization, or a system. An actor can simultaneously send (in response to a message it receives) a finite number of messages to other actors. In our case, actors will be able to see that there is some content, but they will not be able to open it unless they have access to another communication channel at the corresponding key. Once they have access to the key, they must upload it in their security context to receive access rights. The actors will receive read or write rights, depending on the key they receive through the external communication channel.
 </p>
@@ -118,17 +118,19 @@ More details are available in <a href="https://www.opendsu.org/pages/beginners/S
 <p style='text-align: justify;'>A DID is the same as a URI that is resolved in a DID document. A DID document is a collection of public keys and other metadata. This data allows classification, organization, and storage of other data, in digital format.
 </p>
 
-More details are available in <a href="https://www.opendsu.org/pages/advanced/W3C%20DIDs%20(RFC-082).html">W3C DIDs (RFC-082)</a>..
+More details are available in <a href="https://www.opendsu.org/pages/advanced/W3C%20DIDs%20(RFC-082).html">W3C DIDs (RFC-082)</a>.
 
-More details are available in <a href="https://www.opendsu.org/pages/contributors/Message%20Queues%20(RFC-073).html">Message Queues (RFC-073)</a>..
+More details are available in <a href="https://www.opendsu.org/pages/contributors/Message%20Queues%20(RFC-073).html">Message Queues (RFC-073)</a>.
 
-# Example
+# 2. Example
 
 <p style='text-align: justify;'>In a mounted DSU, any reading or writing is done with the information available in the Security Context (SC). Mounting a DSU can also be done with zero access SSIs, not only with SReadSSIs or SeedSSIs. Zero access SSIs only show us that there exists a DSU and that a certain public key controls it, and it has SReadSSIs or Seed SSIs that we can read and write. In other words, users with few rights will only be able to see another DSU mounted there, but they will not be able to access any of the information in that DSU.
 </p>
 
 <p style='text-align: justify;'>If the Security Context (SC) controlled or used by users has at least one key with reading rights, they will be able to read that information. Users can also note/write in the respective DSU, but only if the Security Context has a key with write rights.
 </p>
+
+
 
 ```
 require("../../../psknode/bundles/testsRuntime");
