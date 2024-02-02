@@ -23,12 +23,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
  
 <!-- TOC -->
 * [SSApp Architecture (RFC-028)](#ssapp-architecture-rfc-028)
-  * [Overview](#overview)
-  * [Abstract](#abstract)
-  * [Enable Interoperability and portability](#enable-interoperability-and-portability)
-  * [Architecture](#architecture)
-  * [Contributors](#contributors-)
-  * [Annex 1. Contributors](#annex-1-contributors)
+* [Overview](#overview)
+* [Abstract](#abstract)
+* [1. Enable Interoperability and portability](#1-enable-interoperability-and-portability)
+* [2. Architecture](#2-architecture)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 {:toc}
 
