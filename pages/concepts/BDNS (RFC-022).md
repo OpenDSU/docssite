@@ -47,7 +47,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRnG3pUVefvRsWYviM9iYwN0AWKEI61In8zHKzG3eoZKnKfH9atWFg2NUsapXEeRtqZp2cW-3Zw7Mda/pub?w=1181&h=388" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: Technology Stack for OpenDSU BDNS</b></p>
 </div>
 
@@ -76,7 +76,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vR7zDeIp_aHSMeeII4jn0SB56hj9l_7v6RNjKjdqOljwn8ZCLO7RNkLrV5WTNvXqtOFztijQbTEDTur/pub?w=1152&h=788" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Hierarchical Blockchains (Ledgers)</b></p>
 </div>
 
