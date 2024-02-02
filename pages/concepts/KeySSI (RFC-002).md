@@ -57,7 +57,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 **Note**: For creating different types of keySSIs, the code can be checked at <a href="ttps://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">KeySSI (RFC-068)</a>.
 
-#  **1.Introduction**
+#  **1. Introduction**
 
 <p style='text-align: justify;'>The purpose of the KeySSI concept is to provide blockchain-anchored identities for things and processes but potentially also for companies and individuals. The concept of KeySSI is more general than the concept proposed by the W3C DID web standard. DIDs and KeySSIs are two different methods of creating SSIs (Self-Sovereign Identifiers).</p>
 
@@ -74,7 +74,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 
 
-# **2.Syntax of KeySSI identifiers**
+# **2. Syntax of KeySSI identifiers**
 
 <p style='text-align: justify;'>The syntax of KeySSI is inspired by the W3C DID and is similar to it, but has several key differences, such as - it starts with the “ssi” string. It allows users to define additional attributes, such as types, ledger domains etc. Equivalent to the DID method string, SSI also consists of types (or subtypes). The purpose of types is not to introduce incompatible methods to W3C DIDs, but rather to add different types of KeySSIs. The different KeySSI types are designed to be compatible, which allows for a standard KeySSI resolver to implement all the standard types. Another unique aspect of the SSI syntax compared to the W3C DIDs is that the 3rd group in the identifier represents a ledger/blockchain domain. OpenDSU is based on the objective that a KeySSI supports multiple hierarchical ledgers/blockchains. The current definition of the blockchain domain and the proposed implementation on resolving these domains are part of the OpenDSU specification and may be found in the BDNS chapters.</p>
 
@@ -108,7 +108,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 
 
-# **3.Trustless KeySSI Resolvers**
+# **3. Trustless KeySSI Resolvers**
 
 <p style='text-align: justify;'>The primary purpose of standard KeySSI resolvers is to be able to use an SSI identifier to create or load a specific DSU instance. Information embedded in the keySSI will give the resolver everything it needs to ensure the DSUs are stored securely through encryption. Key derivation is also used to give different access rights, and the resolver will ensure these rights are applied when reconstructing a DSU.</p>
 
