@@ -81,7 +81,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRxUFnWYcBnUcpXbxVsmyg8B8Rhx0SnC369XHoDvA8E9AX1sJcY9erpXBpklh1RXeqIwC5wztq4H8xW/pub?w=572&h=614" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRxUFnWYcBnUcpXbxVsmyg8B8Rhx0SnC369XHoDvA8E9AX1sJcY9erpXBpklh1RXeqIwC5wztq4H8xW/pub?w=382&h=409" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Execution Environments</b></p>
 </div>
 
