@@ -40,6 +40,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [**5. DSU Reconstruction**](#5-dsu-reconstruction)
 * [**6. KeySSI**](#6-keyssi)
 * [**7. DSU Use Cases**](#7-dsu-use-cases)
+  * [7.1 DSU-Based Self Sovereign Applications (SSApps)](#71-dsu-based-self-sovereign-applications-ssapps)
+  * [7.2 DSU-Based Web APIs](#72-dsu-based-web-apis)
+  * [7.3 DSU Instances in Multiple Security Contexts](#73-dsu-instances-in-multiple-security-contexts-)
 * [**8. OpenDSU and IPFS**](#8-opendsu-and-ipfs)
 * [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
@@ -191,6 +194,7 @@ Currently, DSUs can be used in three ways:
 These three use cases will be developed in the following subsections.
 <ol>
 
+
 ## 7.1 DSU-Based Self Sovereign Applications (SSApps)
  
 
@@ -230,6 +234,7 @@ The simplest case is when the required KeySSI is a parameter in the Web API and,
 OpenDSU does not try to fix any specific rules about these Web APIs, and they should be DTE and use case-specific. However, a set of best practices regarding the security of retrieving the proper  KeySSI will be documented in the following chapters.
 APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 
+
 ## 7.3 DSU Instances in Multiple Security Contexts 
 
 <p style='text-align: justify;'>In many cases, the location where the data contained in the DSU will be read and processed does not coincide with the location where the encryption keys are stored.
@@ -249,7 +254,6 @@ APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 </p>
 
 <p style='text-align: justify;'>Even within the same wallet, we can have hardware sandboxing or darkening mechanisms (for example, Trusted Execution Environments - TEEs), and thus, we have “differently powered” security contexts. When used in enterprise environments, these security contexts can be on different hardware systems, separate from the network. Even for average users, it is quite possible to use a web application that uses DSUs on a personal computer, with the sensitive keys stored safely on the mobile. In such a case, the execution environments from regular servers or web applications will have read access. However, they cannot sign anything in the user's name without their approval. OpenDSU promotes an elegant programming model called “executable choreographies'' that makes it easier to handle this unavoidable complexity.</p>
-</p>
 
 </ol>
 
@@ -281,10 +285,9 @@ chain content in the form of anchors stored in multiple ledgers/blockchains.
 
 
 1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
-</p>
 
 2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-</p>
+
 
 3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
