@@ -218,7 +218,7 @@ SSApp Implementation is described in <a href="https://www.opendsu.org/pages/begi
 
 
 
-## 7.2 DSU-Based Web APIs
+## **7.2 DSU-Based Self Sovereign Applications (SSApps)** 
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRqOPNBzCaQqZEqWfx5w6Qu7ZmyTbr_lyZFBn-KL7df8xqzzJoZCqhsRmnGpzRJY-gOY9SOnXmsm4fy/pub?w=1254&h=418" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
@@ -234,7 +234,8 @@ OpenDSU does not try to fix any specific rules about these Web APIs, and they sh
 APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 
 
-## 7.3 DSU Instances in Multiple Security Contexts 
+
+## **7.3 DSU-Based Self Sovereign Applications (SSApps)** 
 
 <p style='text-align: justify;'>In many cases, the location where the data contained in the DSU will be read and processed does not coincide with the location where the encryption keys are stored.
 </p>
