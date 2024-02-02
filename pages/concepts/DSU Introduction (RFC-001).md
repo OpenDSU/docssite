@@ -32,8 +32,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <!-- TOC -->
 * [**DSU Introduction**](#dsu-introduction)
-* [<h1> Abstract </h1>](#h1-abstract-h1)
-* [Overview](#overview)
+* [<h1>Abstract</h1>](#h1abstracth1)
 * [**1. Data Sharing Unit (DSU)**](#1-data-sharing-unit-dsu)
 * [**2. Brick Storage**](#2-brick-storage)
 * [**3. Anchoring**](#3-anchoring)
