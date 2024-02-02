@@ -194,7 +194,7 @@ Currently, DSUs can be used in three ways:
 These three use cases will be developed in the following subsections.
 
 
-## **7.1 DSU-Based Self Sovereign Applications (SSApps)**
+## 7.1 DSU-Based Self Sovereign Applications (SSApps)
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS5ONxCu4XObPwLCM17j2ZxjaHzgcLGb7q-4lMXjbFI-Uorb4cvI35z9wHpoZvx-Umo6rmYc5zbYHPv/pub?w=419&h=173" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
