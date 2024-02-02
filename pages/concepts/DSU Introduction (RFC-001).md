@@ -203,7 +203,6 @@ These three use cases will be developed in the following subsections.
 
 
 <p align="justify">A DSU can contain any code (e.g., HTML, CSS, JS) required to launch and run an application in a browser. Also, it can be like any other web application. OpenDSU proposes standardization of the usage of APIs, and it can load web applications from DSUs. These particular kinds of web applications will be called Self Sovereign Applications (or SSApps). Besides anchoring and brick storage, SSApps have no dependency on any server, as their code and data will be loaded from the corresponding DSU on the client side. Saying Client Side here is a misnomer, as the DSU can reside on a company server farm or the cloud.</p>
-<ol>
 <p><b>The main benefits of the SSApp approach:</b></p>
 <ol>
 <li><p align="justify">The code for UI (and business logic) is signed, secured by a DTE (Distributed Ledger), and verifiable by the edge client environment.</p></li>
@@ -218,7 +217,7 @@ SSApp Implementation is described in <a href="https://www.opendsu.org/pages/begi
 
 
 
-## **7.2 DSU-Based Self Sovereign Applications (SSApps)** 
+## 7.2 DSU-Based Web APIs
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRqOPNBzCaQqZEqWfx5w6Qu7ZmyTbr_lyZFBn-KL7df8xqzzJoZCqhsRmnGpzRJY-gOY9SOnXmsm4fy/pub?w=1254&h=418" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
@@ -234,8 +233,7 @@ OpenDSU does not try to fix any specific rules about these Web APIs, and they sh
 APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 
 
-
-## **7.3 DSU-Based Self Sovereign Applications (SSApps)** 
+## 7.3 DSU Instances in Multiple Security Contexts 
 
 <p style='text-align: justify;'>In many cases, the location where the data contained in the DSU will be read and processed does not coincide with the location where the encryption keys are stored.
 </p>
