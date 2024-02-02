@@ -277,7 +277,7 @@ chain content in the form of anchors stored in multiple ledgers/blockchains.
 <p style='text-align: justify;'>OpenDSU is an iteration of the IPFS intuition, providing new tools for programmers and architects.</p>
 
  
-<h3>**Contributors**</h3>
+**Contributors**
 
 
 1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
