@@ -5,15 +5,58 @@ parent: OpenDSU Contributors
 nav_order: 12
 ---
 
-BDNS (RFC-067)
 
-Abstract
+<style>
+.imgMain{
+    display.block;
+    margin-left:70px;
+    margin-right:auto;
+} 
+</style>
 
-The “BDNS” API space offers a set of portable functions used to request information about the blockchain domain used by your DSU. These operations should be handled automatically by the agents to get the anchoring service associated with the domain, the location of the brick storage as well as other information.
-1. BDNS functions
+{: .no_toc }
 
-Load (use is described later for each function):  
 
+{: .feedback}
+A period when the community can review the RFC (comment Docs).
+
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright**
+
+Copyright © 2018-2024 Axiologic Research and Contributors.
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. BDNS functions](#1-bdns-functions)
+  * [Function getRawInfo(dlDomain, callback)](#function-getrawinfodldomain-callback)
+  * [Function getBrickStorages(dlDomain, callback)](#function-getbrickstoragesdldomain-callback)
+  * [Function getAnchoringServices(dlDomain, callback)](#function-getanchoringservicesdldomain-callback)
+  * [Function getContractServices(dlDomain, callback)](#function-getcontractservicesdldomain-callback)
+  * [Function getReplicas(dlDomain, callback)](#function-getreplicasdldomain-callback)
+  * [Function getNotificationEndpoints(dlDomain, callback)](#function-getnotificationendpointsdldomain-callback)
+  * [Function getMQEndpoints(dlDomain, callback)](#function-getmqendpointsdldomain-callback)
+  * [Function setBDNSHosts(bdnsHosts)](#function-setbdnshostsbdnshosts)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
+
+
+
+# Abstract
+
+<p style='text-align: justify;'>The “BDNS” API space offers a set of portable functions used to request information about the blockchain domain used by your DSU. These operations should be handled automatically by the agents to get the anchoring service associated with the domain, the location of the brick storage as well as other information.</p>
+
+# 1. BDNS functions
+
+<b>Load (use is described later for each function):</b>  
+
+
+```js
 //Load openDSU environment
 
 require("../privatesky/psknode/bundles/openDSU");
@@ -34,432 +77,236 @@ const bdns = opendsu.loadApi("bdns");
 
 const seedSSI = keyssispace.createSeedSSI('default');
 
+
 //BDNS functions
-Function getRawInfo(dlDomain, callback)
 
-Description: Gets the raw information about a blockchain domain.
+```
 
-Name
-	
 
-Type
-	
+## Function getRawInfo(dlDomain, callback)
 
-Value
-	
+**Description:** Gets the raw information about a blockchain domain.
 
-Description
 
-dlDomain
-	
+| Name     | Type     | Value     | Description                                       |
+|:---------|:---------|:----------|:--------------------------------------------------|
+| dlDomain | string   | *required | THe blockchain domain you want information about. |
+| callback | function | *required |                                                   |
 
-string
-	
 
-*required
-	
 
-The blockchain domain you want information about.
+**Callback parameters**
 
-callback
-	
+| **Name** | **Type**            | **Response example** |
+|:---------|:--------------------|:---------------------|
+| err      | ErrorWrapper object |                      |
+| rawInfo  | JSON object         |                      |
 
-function
-	
+**Description:** Contains an error or an object with all the information about the domain (i.e., brick address, anchor address, replicas).
 
-*required
-	
 
-Callback parameters
 
-Name
-	
+## Function getBrickStorages(dlDomain, callback)
 
-Type
-	
+**Description:** Gets addresses of brick storages associated with the provided dlDomain.
 
-Response example
 
-err
-	
+| **Name** | **Type** | **Value** | **Description**                                        |
+|:---------|:---------|:----------|:-------------------------------------------------------|
+| dlDomain | string   | *required | The blockchain domain that you want information about. |
+| callback | function | *required |                                                        |
 
-ErrorWrapper object
-	
 
-rawInfo
-	
 
-JSON object
-	
+**Callback parameters**
 
-Description: Contains an error or an object with all the information about the domain (i.e., brick address, anchor address, replicas).
-Function getBrickStorages(dlDomain, callback)
 
-Description: Gets addresses of brick storages associated with the provided dlDomain.
+| **Name**          | **Type**             | **Response example** |
+|:------------------|:---------------------|:---------------------|
+| err               | ErrorWrapper object  |                      |
+| brickStorageArray | object               |                      |
 
-Name
-	
+**Description:** Contains an error or an object with an array of brick storages.
 
-Type
-	
 
-Value
-	
 
-Description
 
-dlDomain
-	
+## Function getAnchoringServices(dlDomain, callback)
 
-string
-	
+**Description:** Gets addresses of anchoring services for the provided dlDomain.
 
-*required
-	
 
-The blockchain domain that you want information about.
+| **Name** | **Type** | **Value** | **Description**                                        |
+|:---------|:---------|:----------|:-------------------------------------------------------|
+| dlDomain | string   | *required | The blockchain domain that you want information about. |
+| callback | function | *required |                                                        |
 
-callback
-	
 
-function
-	
 
-*required
-	
 
-Callback parameters
+**Callback parameters**
 
-Name
-	
 
-Type
-	
+| **Name**               | **Type**             | **Response example** |
+|:-----------------------|:---------------------|:---------------------|
+| err                    | ErrorWrapper object  |                      |
+| anchoringServicesArray | object               |                      |
 
-Response example
 
-err
-	
+**Description:** Contains an error or an object with an array of anchoring services.
 
-ErrorWrapper object
-	
 
-brickStorageArray
-	
 
-object
-	
+## Function getContractServices(dlDomain, callback)
 
-Description: Contains an error or an object with an array of brick storages.
-Function getAnchoringServices(dlDomain, callback)
+<p style='text-align: justify;'><b>Description</b>: Gets addresses of contract services for the provided dlDomain. If no callback function is given, the function is not asynchronous anymore, and it will return a promise.</p>
 
-Description: Gets addresses of anchoring services for the provided dlDomain.
 
-Name
-	
 
-Type
-	
+| **Name** | **Type** | **Value** | **Description**         |
+|:---------|:---------|:----------|:------------------------|
+| dlDomain | string   | *required | The blockchain domain . |
+| callback | function | *required |                         |
 
-Value
-	
 
-Description
+**Callback parameters**
 
-dlDomain
-	
 
-string
-	
+| **Name**              | **Type**             | **Response example** |
+|:----------------------|:---------------------|:---------------------|
+| err                   | ErrorWrapper object  |                      |
+| contractServicesArray | object               |                      |
 
-*required
-	
 
-The blockchain domain that you want information about.
+**Description:** Contains an error or an object with an array of contract services.
 
-callback
-	
 
-function
-	
 
-*required
-	
+## Function getReplicas(dlDomain, callback)
 
-Callback parameters
+**Description:** Gets addresses of replicas for the provided dlDomain.
 
-Name
-	
 
-Type
-	
+| **Name** | **Type** | **Value** | **Description**         |
+|:---------|:---------|:----------|:------------------------|
+| dlDomain | string   | *required | The blockchain domain . |
+| callback | function | *required |                         |
 
-Response example
 
-err
-	
 
-ErrorWrapper object
-	
+**Callback parameters**
 
-anchoringServicesArray
-	
 
-object
-	
+| **Name** | **Type**            | **Response example** |
+|:---------|:--------------------|:---------------------|
+| err      | ErrorWrapper object |                      |
+| replicas | Array               |                      |
 
-Description: Contains an error or an object with an array of anchoring services.
-Function getContractServices(dlDomain, callback)
 
-Description: Gets addresses of contract services for the provided dlDomain. If no callback function is given, the function is not asynchronous anymore, and it will return a promise.
+<p style='text-align: justify;'><b>Description</b>: Contains an error or an object with an array of URL addresses of replicas associated with the provided dlDomain.</p>
 
-Name
-	
 
-Type
-	
+## Function getNotificationEndpoints(dlDomain, callback)
 
-Value
-	
+**Description:** Gets the notification endpoints of the given dlDomain.
 
-Description
 
-dlDomain
-	
+| **Name** | **Type** | **Value** | **Description**         |
+|:---------|:---------|:----------|:------------------------|
+| dlDomain | string   | *required | The blockchain domain . |
+| callback | function | *required |                         |
 
-string
-	
 
-*required
-	
 
-The blockchain domain.
+**Callback parameters**
 
-callback
-	
 
-function
-	
+| **Name**  | **Type**            | **Response example** |
+|:----------|:--------------------|:---------------------|
+| err       | ErrorWrapper object |                      |
+| endpoints | array               |                      |
 
-	
 
-Callback parameters
+**Description:** Contains an error or an object with an array of notification endpoints.
 
-Name
-	
 
-Type
-	
 
-Response example
+## Function getMQEndpoints(dlDomain, callback)
 
-err
-	
+**Description:** Gets the message queue endpoints of the given dlDomain.
 
-ErrorWrapper object
-	
 
-contractServicesArray
-	
+| **Name** | **Type** | **Value** | **Description**         |
+|:---------|:---------|:----------|:------------------------|
+| dlDomain | string   | *required | The blockchain domain . |
+| callback | function | *required |                         |
 
-object
-	
 
-Description: Contains an error or an object with an array of contract services.
-Function getReplicas(dlDomain, callback)
 
-Description: Gets addresses of replicas for the provided dlDomain.
+**Callback parameters**
 
-Name
-	
 
-Type
-	
+| **Name**    | **Type**            | **Response example** |
+|:------------|:--------------------|:---------------------|
+| err         | ErrorWrapper object |                      |
+| mqEndpoints | array               |                      |
 
-Value
-	
 
-Description
+**Description:** Contains an error or an object with an array of message queue endpoints.
 
-dlDomain
-	
 
-string
-	
 
-*required
-	
+## Function setBDNSHosts(bdnsHosts)
 
-The blockchain domain.
+**Description:** Sets up the list of hosts.
 
-callback
-	
+| Name      | Type        | Value     | Description                              |
+|:----------|:------------|:----------|:-----------------------------------------|
+| bdnsHosts | JSON object | *required | Contains the hostes and associated data. |
 
-function
-	
 
-	
 
-Callback parameters
 
-Name
-	
 
-Type
-	
+**Contributors**
 
-Response example
 
-err
-	
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-ErrorWrapper object
-	
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-replicas
-	
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-Array
-	
 
-Description: Contains an error or an object with an array of URL addresses of replicas associated with the provided dlDomain.
-Function getNotificationEndpoints(dlDomain, callback)
+# Annex 1. Contributors
 
-Description: Gets the notification endpoints of the given dlDomain.
+| **Current Editors**                 | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                      | cosmin@axiologic.net                     |
+| Teodor Lupu                         | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| **Contributors Axiologic Research** | **Email**                                |
+| Adrian Ganga                        | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| Cosmin Ursache                      | cosmin@axiologic.net                     |
+| Daniel Sava                         | daniel@axiologic.net                     |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
+| Valentin Gérard                     | valentin@axiologic.net                   |
+| Veronica Robu                       | veronica@axiologic.net                   |
+| **PrivateSky Contributors**         | **Email**                                |
+| Alex Sofronie                       | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                      | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                         | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                       | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                      | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                    | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                      | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                         | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**       | **Email**                                |
+| Ana Balan                           | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                     | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                      | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                         |
 
-Name
-	
 
-Type
-	
-
-Value
-	
-
-Description
-
-dlDomain
-	
-
-string
-	
-
-*required
-	
-
-The blockchain domain.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-endpoints
-	
-
-array
-	
-
-Description: Contains an error or an object with an array of notification endpoints.
-Function getMQEndpoints(dlDomain, callback)
-
-Description: Gets the message queue endpoints of the given dlDomain.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-dlDomain
-	
-
-string
-	
-
-*required
-	
-
-The blockchain domain.
-
-callback
-	
-
-function
-	
-
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-mqEndpoints
-	
-
-array
-	
-
-Description: Contains an error or an object with an array of message queue endpoints.
-Function setBDNSHosts(bdnsHosts)
-
-Description: Sets up the list of hosts.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-bdnsHosts
-	
-
-JSON object
-	
-
-*required
-	
-
-Contains the hosts and associated data.
