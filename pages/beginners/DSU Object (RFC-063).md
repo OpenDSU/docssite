@@ -743,6 +743,7 @@ Returns the KeySSI instance.
 
 <p style='text-align: justify;'>The <b>mount()</b> method makes the contents of an external DSU container, as identified by <b>archiveSSI</b> available under the path <b>mountingPoint</b> of this DSU instance. If the flag <b>persistent</b> (default: true) is set, externally mounted DSU instances are stored persistently in the manifest file of this DSU instance. Otherwise, mounted DSUs are stored in a temporary variable of this DSU instance. Mounted dossiers represent DSUs mounted inside another DSU using the right keySSI (i.e. SeedSSI for read and write access or SReadSSI for read-only access).</p>
 
+
 ## Function getManifest(callback)
 
 <p style='text-align: justify;'><b>Description</b>: Each DSU uses a manifest file containing the DSU metadata to keep references of the mount points to other DSUs.</p>
@@ -862,7 +863,7 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 <p style='text-align: justify;'>This section outlines how to employ methods of DSU objects to add, remove, copy, relocate or query information on entire files or folders without changing their content. For transparency, we further subdivided the file handling methods of a DSU object into two subgroups: methods that trigger a data flow by copying data underlying files from one location to another (Figure 2, elements A, B, and C) and those methods that query or change the logical file structure inside a DSU but without moving big chunks of the underlying data around (Figure 2, elements D and E). Former data flow methods usually require two string arguments identifying the source and target of the operation. In contrast, the latter methods used to change the file control structure typically require only one such path string argument of the target entry to be modified or queried.
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSR-uXYwXMAD9gK2PDTZVAwsX1taLWAxxd0214qmS7d0b8IKz-fUD4mpBQy2t5m52i_DO3WMwOQhN_N/pub?w=1181&h=518" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSR-uXYwXMAD9gK2PDTZVAwsX1taLWAxxd0214qmS7d0b8IKz-fUD4mpBQy2t5m52i_DO3WMwOQhN_N/pub?w=590&h=259" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Logical overview of file operation methods of DSU objects</b></p>
 </div>
 
@@ -982,6 +983,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 <p style='text-align: justify;'><b>Description</b>: Restores for all files under <b>dsuPath</b> the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration options may encapsulate the flag ignoreMounts (default: false).</p>
 <p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
 
+
 | **Name** | **Type** | **Value** | **Description**                                                                              |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------|
 | fsPath   | string   | *required | The path inside your current environment toward the folder you want to extract.              |
@@ -997,7 +999,10 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 | error    | Error object | NA                   |
 
 
+
+
 **Contributors**
+
 
 1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
@@ -1006,37 +1011,33 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 
-
-
-
 # Annex 1. Contributors
 
-| **Current Editors**                  | **Email**                           |
-|:-------------------------------------|:------------------------------------|
-| Sînică Alboaie                       | sinica.alboaie@axiologic.net        |
-| Cosmin Ursache                       | cosmin@axiologic.net                |
-| Teodor Lupu                          | teodor@axiologic.net                |
-| Andi-Gabriel Tan                     | andi@axiologic.net                  |
-| **Contributors Axiologic Research**  | **Email**                           |
-| Adrian Ganga                         | adrian@axiologic.net                |
-| Andi-Gabriel Țan                     | andi@axiologic.net                  |
-| Cosmin Ursache                       | cosmin@axiologic.net                |
-| Daniel Sava                          | daniel@axiologic.net                |
-| Nicoleta Mihalache                   | nicoleta@axiologic.net              |
-| Teodor Lupu                          | teodor@axiologic.net                |
-| Valentin Gérard                      | valentin@axiologic.net              |
-| **PrivatSky Contributors**           | **Email**                           | 
-| Alex Sofronie                        | alsofronie@gmail.com(DPO)           |
-| Cosmin Ursache                       | cosmin@axiologic.net(UAIC)          |
-| Daniel Sava                          | daniel@axiologic.net(HVS, AQS)      |
-| Daniel Visoiu                        | visoiu.daniel.g@gmail.com(SGiant)   |
-| Lenuta Alboaie                       | lalboaie@gmail.com(UAIC)            |
-| Rafael Mastaleru                     | raf@rms.ro (RMS)                    |
-| Sînică Alboaie                       | sinica.alboaie@axiologic.net(UAIC)  |   
-| Vlad Balmos                          | vlad.balmos@gmail.com(Code932)      |
-| **PharmaLedger Contributors**        | **Email**                           |
-| Ana Balan                            | bam@rms.ro (RMS)                    |
-| Bogdan Mastahac                      | mab@rms.ro (RMS)                    |
-| Cosmin Ursache                       | cos@rms.ro (RMS)                    |
-| Michael Sammeth                      |                                     |
-| Rafael Mastaleru                     | raf@rms.ro (RMS)                    |
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+
