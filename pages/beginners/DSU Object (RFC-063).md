@@ -875,8 +875,7 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 <p style='text-align: justify;'>The methods a DSU object provides for file handling are listed below, where all path arguments <b>fsPath</b> or <b>dsuPath</b> and the optional configuration flags in <b>options</b>.</p>
 
 
-
-### Function addFile(fsPath, dsuPath, options, callback)
+##### Function addFile(fsPath, dsuPath, options, callback)
 
 
 <p style='text-align: justify;'><b>Description</b>: Copies one single file entry, specified by <b>fsPath</b> in the local file system, to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b>; if <b>ignoreMounts</b> is set to false (the default), it also loads externally mounted DSUs in dsuPath.</p>
@@ -899,7 +898,7 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 
 
-### Function addFiles(fsPaths, dsuPath, options, callback)
+##### Function addFiles(fsPaths, dsuPath, options, callback)
 
 
 <p style='text-align: justify;'><b>Description</b>: Copies one or more files specified by the Array <b>fsPaths</b> from their paths in the local file system to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath </b>for default <b>ignoreMounts</b>: false. Configuration options may encapsulate the flags encrypt (default: true), <b>ignoreMounts</b> (default: false), and <b>embedded </b>(default: false). Note that setting <b>embedded</b> to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.
@@ -921,7 +920,7 @@ Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be a
 | error    | Error    | NA                   |
 
 
-### Function addFolder(FsPath, dsuPath, options, callback)
+##### Function addFolder(FsPath, dsuPath, options, callback)
 
 <p style='text-align: justify;'><b>Description:</b> Iterates the contents of a folder <b>fsPath</b> in the local file system and copies each entry to a folder <b>dsuPath</b> in the DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath</b> if <b>ignoreMounts</b> is set to false (which is the default).
 </p>
@@ -939,7 +938,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 
 
-### Function extractFile(FsPath, dsuPath, options, callback)
+##### Function extractFile(FsPath, dsuPath, options, callback)
 
 
 <p style='text-align: justify;'><b>Description</b>: Restores data stored in Brick objects under <b>dsuPath</b> to a file in the local file system as specified by <b>fsPath</b>. Configuration <b>options</b> may encapsulate the <b>flag ignoreMounts</b> (default: false).
@@ -965,7 +964,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 
 
-### Function extractFolder (FsPath, dsuPath, options, callback)
+##### Function extractFolder (FsPath, dsuPath, options, callback)
 
 <p style='text-align: justify;'><b>Description</b>: Restores for all files under <b>dsuPath</b> the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).
 </p>
@@ -991,7 +990,8 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 
 
-*Contributors**
+
+**Contributors**
 
 1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
@@ -1000,32 +1000,34 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 
-# Annex 1. Contributors
 
-| **Current Editors**                  | **Email**                                |
-|:-------------------------------------|:-----------------------------------------|
-| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
-| Cosmin Ursache                       | cosmin@axiologic.net                     |
-| Teodor Lupu                          | teodor@axiologic.net                     |
-| Andi-Gabriel Țan                     | andi@axiologic.net                       |
-| **Contributors Axiologic Research**  | **Email**                                |
-| Adrian Ganga                         | adrian@axiologic.net                     |
-| Andi-Gabriel Țan                     | andi@axiologic.net                       |
-| Cosmin Ursache                       | cosmin@axiologic.net                     |
-| Daniel Sava                          | daniel@axiologic.net                     |
-| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
-| Valentin Gérard                      | valentin@axiologic.net                   |
-| **PrivateSky Contributors**          | **Email**                                |
-| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
-| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
-| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
-| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
-| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
-| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
-| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
-| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
-| **PharmaLedger Contributors**        | **Email**                                |
-| Ana Balan                            | bam@rms.ro (RMS)                         |
-| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
-| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
-| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+
+## Annex 1. Contributors
+
+| **Current Editors**                 | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                      | cosmin@axiologic.net                     |
+| Teodor Lupu                         | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| **Contributors Axiologic Research** | **Email**                                |
+| Adrian Ganga                        | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| Cosmin Ursache                      | cosmin@axiologic.net                     |
+| Daniel Sava                         | daniel@axiologic.net                     |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
+| Valentin Gérard                     | valentin@axiologic.net                   |
+| **PrivateSky Contributors**         | **Email**                                |
+| Alex Sofronie                       | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                      | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                         | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                       | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                      | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                    | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                      | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                         | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**       | **Email**                                |
+| Ana Balan                           | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                     | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                      | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                         |
