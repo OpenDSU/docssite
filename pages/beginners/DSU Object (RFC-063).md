@@ -863,11 +863,9 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 <p style='text-align: justify;'>This section outlines how to employ methods of DSU objects to add, remove, copy, relocate or query information on entire files or folders without changing their content. For transparency, we further subdivided the file handling methods of a DSU object into two subgroups: methods that trigger a data flow by copying data underlying files from one location to another (Figure 2, elements A, B, and C) and those methods that query or change the logical file structure inside a DSU but without moving big chunks of the underlying data around (Figure 2, elements D and E). Former data flow methods usually require two string arguments identifying the source and target of the operation. In contrast, the latter methods used to change the file control structure typically require only one such path string argument of the target entry to be modified or queried.
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSR-uXYwXMAD9gK2PDTZVAwsX1taLWAxxd0214qmS7d0b8IKz-fUD4mpBQy2t5m52i_DO3WMwOQhN_N/pub?w=590&h=259" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSR-uXYwXMAD9gK2PDTZVAwsX1taLWAxxd0214qmS7d0b8IKz-fUD4mpBQy2t5m52i_DO3WMwOQhN_N/pub?w=1181&h=518" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Logical overview of file operation methods of DSU objects</b></p>
 </div>
-
-
 
 
 
@@ -876,167 +874,16 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 <p style='text-align: justify;'>The methods a DSU object provides for file handling are listed below, where all path arguments <b>fsPath</b> or <b>dsuPath</b> and the optional configuration flags in <b>options</b>.</p>
 
 
-
-
 ## Function addFile(fsPath, dsuPath, options, callback)
 
-<p style='text-align: justify;'><b>Description</b>: Copies one single file entry, specified by <b>fsPath</b> in the local file system, to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b>; if <b>ignoreMounts</b> is set to false (the default), it also loads externally mounted DSUs in <b>dsuPath</b>.</p>
-<p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), and <b>ignoreMounts</b> (default: false).</p>
 
+<p style='text-align: justify;'><b>Description</b>: Copies one single file entry, specified by <b>fsPath</b> in the local file system, to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b>; if <b>ignoreMounts</b> is set to false (the default), it also loads externally mounted DSUs in dsuPath.</p>
+<p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags<b> encrypt</b> (default: true), and <b>ignoreMounts</b> (default: false).</p>
 <p style='text-align: justify;'>Returns an Error <b>err</b> if source <b>fsPath</b> or target <b>dsuPath</b> cannot be accessed.</p>
 
 
 | **Name** | **Type** | **Value** | **Description**                                                                                   |
 |:---------|:---------|:----------|:--------------------------------------------------------------------------------------------------|
-| fsPath   | string   | *required | The path (From the current environment file system) towards the file you want to add to your DSU. |
-| dsuPath  | string   | *required | The path inside yhe DSU environment where you want to add the file.                               |
-| options  | object   | *required |                                                                                                   |
-| callback | function | *required |                                                                                                   |
-
-
-**Callback parameters**
-
-| **Name** | **Type** | **Response example** |
-|:---------|:---------|:---------------------|
-| error    | Error    | NA                   |
-
-
-
-### Function addFiles(fsPaths, dsuPath, options, callback)
-
-
-<p style='text-align: justify;'><b>Description</b>: Copies one or more files specified by the Array <b>fsPaths</b> from their paths in the local file system to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in fsPath and loads externally mounted DSUs in dsuPath for default ignoreMounts: false.</p>
-<p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), <b>ignoreMounts</b> (default: false), and embedded (default: false). Note that setting embedded to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.</p>
-
-
-<p style='text-align: justify;'>Returns an Error <b>err</b> if source <b>fsPaths</b> or target <b>dsuPath</b> cannot be accessed.</p>
-
-
-| **Name** | **Type**                | **Value** | **Description**                                                                                                                             |
-|:---------|:------------------------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| fsPaths  | Array of string objects | *required | Array of the paths towards your files in the current environment file system.                                                               |
-| dsuPath  | string                  | *required | The path inside the DSU environment where you want to add files.                                                                            |
-| options  | object                  |           | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false <br/> **batch**: false  <br/>} |
-| callback | function                | *required |                                                                                                                                             |
-
-
-<b>Callback parameters</b>
-
-
-| **Name**  | **Error**  | **Response example**  |
-|:----------|:-----------|:----------------------|
-| error     | Error      | NA                    |
-
-
-
-### Function addFolder(fsPath, dsuPath, options, callback)
-
-<p style='text-align: justify;'><b>Description</b>: Iterates the contents of a folder <b>fsPath</b> in the local file system and copies each entry to a folder <b>dsuPath</b> in the DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath</b> if <b>ignoreMounts</b> is set to false (which is the default).</p>
-<p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags encrypt (default: true), <b>ignoreMounts</b> (default: false), and embedded (default: false).</p>
-
-<p style='text-align: justify;'>Returns an Error <b>err</b> if source <b>sPath</b> or target <b>dsuPath</b> cannot be accessed.</p>
-
-
-| **Name** | **Type** | **Value** | **Description**                                                                                                                             |
-|:---------|:---------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| fsPath   | string   | *required | The path towards your files in the current environment.                                                                                     |
-| dsuPath  | string   | *required | The path inside the DSU environment where you want to add files.                                                                            |
-| options  | object   |           | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false <br/> **batch**: false  <br/>} |
-| callback | function | *required |                                                                                                                                             |
-
-
-<b>Callback parameters</b>
-
-| **Name** | **Type** | **Response example** |
-|:---------|:---------|:---------------------|
-| error    | Error    | NA                   |
-
-
-### Function extractFile(fsPath, dsuPath, options, callback)
-
-<p style='text-align: justify;'><b>Description</b>: Restores data stored in Brick objects under <b>dsuPath</b> to a file in the local file system as specified by <b>fsPath</b>. Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
-<p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
-
-
-| **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                              |
-|:---------|:---------|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| fsPath   | string   | *required | The path inside your current environment toward the file you want to extract.                                                                                                                                                |
-| dsuPath  | string   | *required | The “path” where you want to “extract” your DAU  file.                                                                                                                                                                       |
-| options  | object   |           | <br/>The default options are the following: <br/> {   <br/>  **ignoreMounts**: false  <br/>}                                                                                                                                 |
-| callback | function | *required |                                                                                                                                                                                                                              |
-
-
-<b>Callback parameters</b>
-
-
-| **Name** | **Type**     | **Response example** |
-|:---------|:-------------|:---------------------|
-| error    | Error object | NA                   |
-
-
-### Function extractFolder(fsPath, dsuPath, options, callback)
-
-
-<p style='text-align: justify;'><b>Description</b>: Restores for all files under <b>dsuPath</b> the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration options may encapsulate the flag ignoreMounts (default: false).</p>
-<p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
-
-
-| **Name** | **Type** | **Value** | **Description**                                                                              |
-|:---------|:---------|:----------|:---------------------------------------------------------------------------------------------|
-| fsPath   | string   | *required | The path inside your current environment toward the folder you want to extract.              |
-| dsuPath  | string   | *required | The “path” you want to “extract”.                                                            |
-| options  | object   |           | <br/>The default options are the following: <br/> {   <br/>  **ignoreMounts**: false  <br/>} |
-| callback | function | *required |                                                                                              |
-
-
-<b>Callback parameters</b>
-
-
-| **Name** | **Type**     | **Response example** |
-|:---------|:-------------|:---------------------|
-| error    | Error object | NA                   |
-
-
-
-**Contributors**
-
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
-
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
-
-
-
-
-
-# Annex 1. Contributors
-
-| **Current Editors**                  | **Email**                                |
-|:-------------------------------------|:-----------------------------------------|
-| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
-| Cosmin Ursache                       | cosmin@axiologic.net                     |
-| Teodor Lupu                          | teodor@axiologic.net                     |
-| Andi-Gabriel Țan                     | andi@axiologic.net                       |
-| **Contributors Axiologic Research**  | **Email**                                |
-| Adrian Ganga                         | adrian@axiologic.net                     |
-| Andi-Gabriel Țan                     | andi@axiologic.net                       |
-| Cosmin Ursache                       | cosmin@axiologic.net                     |
-| Daniel Sava                          | daniel@axiologic.net                     |
-| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
-| Valentin Gérard                      | valentin@axiologic.net                   |
-| **PrivateSky Contributors**          | **Email**                                |
-| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
-| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
-| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
-| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
-| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
-| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
-| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
-| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
-| **PharmaLedger Contributors**        | **Email**                                |
-| Ana Balan                            | bam@rms.ro (RMS)                         |
-| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
-| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
-| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
-
+| fsPath   | string   | *required | The path (from the current environment file system) towards the file you want to add to your DSU. |
+| dsuPath  | string   | *required | The path inside the DSU environment where you want to add the file.                               |
+| options  | object   | *required | The default options are the following:                                                            |
