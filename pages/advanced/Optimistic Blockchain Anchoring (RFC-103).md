@@ -18,7 +18,11 @@ The proposal has been accepted and has an implementation.
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
  
-
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. Optimistic Blockchain Anchoring (OBA)](#1-optimistic-blockchain-anchoring-oba)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 # Abstract
@@ -26,7 +30,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>This RFC presents the concept of Optimistic Blockchain Anchoring. It is an introduction providing explanations about the way OBA works, its components, its flow and steps.
 </p>
 
-# Optimistic Blockchain Anchoring (OBA)
+# 1. Optimistic Blockchain Anchoring (OBA)
 
 <p style='text-align: justify;'>OBA (Optimistic Blockchain Anchoring) is an optimized anchoring strategy that is, at the moment, created specially for Quorum, but could be used for other blockchain networks on other blockchain technologies. OBA’s purpose is to offer quick feedback (lower the response time of the blockchain anchoring process, which translates into higher rates of anchoring) when dealing with slow blockchain networks.
 </p>
