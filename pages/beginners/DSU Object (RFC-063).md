@@ -877,6 +877,7 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 
 
+
 ### Function addFile(fsPath, dsuPath, options, callback)
 
 
@@ -886,12 +887,14 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
 
+
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                        |
 |:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | fsPath   | string   | *required | The path (from the current environment file system) towards the file you want to add to your DSU.                                                                                                                                                                                      |
 | dsuPath  | string   | *required | The path inside the DSU environment where you want to add the file.                                                                                                                                                                                                                    |
 | options  | object   | *required | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false  <br/>}                                                                                                                                                                   |
 | callback | function | *required |                                                                                                                                                                                                                                                                                        |
+
 
 
 **Callback parameters**
@@ -906,7 +909,9 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 <p style='text-align: justify;'><b>Description</b>: Copies one or more files specified by the Array <b>fsPaths</b> from their paths in the local file system to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in fsPath and loads externally mounted DSUs in dsuPath for default ignoreMounts: false.</p>
 <p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), <b>ignoreMounts</b> (default: false), and embedded (default: false). Note that setting embedded to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.</p>
 
+
 Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be accessed.
+
 
 | **Name** | **Type**                | **Value** | **Description**                                                                                                                             |
 |:---------|:------------------------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -917,6 +922,7 @@ Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be a
 
 
 **Callback parameters**
+
 
 | **Name**  | **Error**  | **Response example**  |
 |:----------|:-----------|:----------------------|
@@ -952,6 +958,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 <p style='text-align: justify;'><b>Description</b>: Restores data stored in Brick objects under <b>dsuPath</b> to a file in the local file system as specified by <b>fsPath</b>. Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
 <p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
 
+
 | **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                               |
 |:---------|:---------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | fsPath   | string   | *required | The path inside your current environment toward the file you want to extract.                                                                                                                                                 |
@@ -970,6 +977,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 
 ### Function extractFolder(fsPath, dsuPath, options, callback)
+
 
 <p style='text-align: justify;'><b>Description</b>: Restores for all files under <b>dsuPath</b> the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration options may encapsulate the flag ignoreMounts (default: false).</p>
 <p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
@@ -1000,34 +1008,35 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 
 
+
 # Annex 1. Contributors
 
-| **Current Editors**                 | **Email**                          |
-|:------------------------------------|:-----------------------------------|
-| Sînică Alboaie                      | sinica.alboaie@axiologic.net       |
-| Cosmin Ursache                      | cosmin@axiologic.net               |
-| Teodor Lupu                         | teodor@axiologic.net               |
-| Andi-Gabriel Tan                    | andi@axiologic.net                 |
-| **Contributors Axiologic Research** | **Email**                          |
-| Adrian Ganga                        | adrian@axiologic.net               |
-| Andi-Gabriel Țan                    | andi@axiologic.net                 |
-| Cosmin Ursache                      | cosmin@axiologic.net               |
-| Daniel Sava                         | daniel@axiologic.net               |
-| Nicoleta Mihalache                  | nicoleta@axiologic.net             |
-| Teodor Lupu                         | teodor@axiologic.net               |
-| Valentin Gérard                     | valentin@axiologic.net             |
-| **PrivatSky Contributors**          | **Email**                          | 
-| Alex Sofronie                       | alsofronie@gmail.com(DPO)          |
-| Cosmin Ursache                      | cosmin@axiologic.net(UAIC)         |
-| Daniel Sava                         | daniel@axiologic.net(HVS, AQS)     |
-| Daniel Visoiu                       | visoiu.daniel.g@gmail.com(SGiant)  |
-| Lenuta Alboaie                      | lalboaie@gmail.com(UAIC)           |
-| Rafael Mastaleru                    | raf@rms.ro (RMS)                   |
-| Sînică Alboaie                      | sinica.alboaie@axiologic.net(UAIC) |   
-| Vlad Balmos                         | vlad.balmos@gmail.com(Code932)     |
-| **PharmaLedger Contributors**       | **Email**                          |
-| Ana Balan                           | bam@rms.ro (RMS)                   |
-| Bogdan Mastahac                     | mab@rms.ro (RMS)                   |
-| Cosmin Ursache                      | cos@rms.ro (RMS)                   |
-| Michael Sammeth                     |                                    |
-| Rafael Mastaleru                    | raf@rms.ro (RMS)                   |
+| **Current Editors**                  | **Email**                           |
+|:-------------------------------------|:------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net        |
+| Cosmin Ursache                       | cosmin@axiologic.net                |
+| Teodor Lupu                          | teodor@axiologic.net                |
+| Andi-Gabriel Tan                     | andi@axiologic.net                  |
+| **Contributors Axiologic Research**  | **Email**                           |
+| Adrian Ganga                         | adrian@axiologic.net                |
+| Andi-Gabriel Țan                     | andi@axiologic.net                  |
+| Cosmin Ursache                       | cosmin@axiologic.net                |
+| Daniel Sava                          | daniel@axiologic.net                |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net              |
+| Teodor Lupu                          | teodor@axiologic.net                |
+| Valentin Gérard                      | valentin@axiologic.net              |
+| **PrivatSky Contributors**           | **Email**                           | 
+| Alex Sofronie                        | alsofronie@gmail.com(DPO)           |
+| Cosmin Ursache                       | cosmin@axiologic.net(UAIC)          |
+| Daniel Sava                          | daniel@axiologic.net(HVS, AQS)      |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com(SGiant)   |
+| Lenuta Alboaie                       | lalboaie@gmail.com(UAIC)            |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                    |
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net(UAIC)  |   
+| Vlad Balmos                          | vlad.balmos@gmail.com(Code932)      |
+| **PharmaLedger Contributors**        | **Email**                           |
+| Ana Balan                            | bam@rms.ro (RMS)                    |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                    |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                    |
+| Michael Sammeth                      |                                     |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                    |
