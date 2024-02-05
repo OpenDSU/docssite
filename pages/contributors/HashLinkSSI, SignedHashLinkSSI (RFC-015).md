@@ -1,260 +1,127 @@
----
 title: HashLinkSSI, SignedHashLinkSSI 
 layout: home
 parent: OpenDSU Contributors
 nav_order: 4
 ---
 
-HashLinkSSI, SignedHashLinkSSI (RFC-015)
 
-Overview
+# **HashLinkSSI, SignedHashLinkSSI**
 
-The vision we are working on is getting bigger and, as time goes on, we improve it and promote it. This involves a change in the Internet and the idea of a web browser, or rather a change in a concept that arises, where instead of browsing the sites and interacting with different servers, there is a synergy between a browser and a wallet so that the user can use different functionalities or applications in a Self-Sovereign way. There is a way in which, from a browser, we can explore various self-sovereign applications, but make sure they do not start extracting data and sending it to servers or start spying or profiling users and so on.
+{: .feedback }
+A period when the community can review the RFC (comment Docs).
 
-Currently, we have the technology to build SSApps and create this browser expansion. We mention browsers because we use certain technologies when we embed these SSApps into Wallets. The code can be generalized with other technologies, and so can the implementation. The important thing is that the new browser, capable of running these SSApps, must behave like a wallet, it must take care of personal keys and it must be able to mediate the user’s interaction with cryptography. It must also ensure a high level of key management quality.
-Abstract
 
-Wallets can be used to store different kinds of KeySSIs and personal user data. WalletSSIs use the same principles as ArraySSIs, but are used to identify and manage wallets. It is expected to have the credentials necessary to access the wallet in the array (like a username and password), but we could theoretically add more credentials, such as an answer to a question.
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
-Figure 1: ConstSSI
+**Copyright: MIT license**
 
-Similar to ArraySSI and PasswordSSI, WalletSSI can be used to derive a ConstSSI, which provides access to a DSU.
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
 
-SubType
-	
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-Description
 
-wallet
-	
 
-A WalletSSI is basically an ArraySSI that is used for wallet identification.
+# Abstract
+<p style='text-align: justify;'>Bricks’ content is encrypted using the encryption key of an external secret KeySSI, such as the SReadSSI. The hash that is returned is used to create a HashLinkSSI. The owners of the DSU (i.e. owning a SeedSSI) or other users that got access to a derived SReadSSI can find and decrypt the bricks.
+</p>
 
-Example:
+<div style="text-align:center;">
+    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 1: SSIs that do not need anchoring and resolve to immutable DSUs</b></p>
+</div>
 
- ssi:array:domain:encodedArray::v0
-1. Type-specific and control substring
 
-The identifier contains the subtype and the domain. That is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
+# 1. HashLinkSSI description with examples
 
-Type
-	
+| **Type** | **Purpose and description**                                                                                                        |
+|:---------|:-----------------------------------------------------------------------------------------------------------------------------------|
+| hl       | Owning a HashLinkSSI provides no access unless accompanied by an “external secret”. <br/>  Example: <br/> ssi:hl:domain:hash::v0.  |
 
-Type Specific substring
-	
 
-Control substring
+# 2. Specific parameters for HashLinkSSI subtypes
 
-wallet
-	
+| **Type** | **Type Specific Identifier**  | **Hash function** | **Control Key** | **Encryption**           | **Hint description**                 |
+|:---------|:------------------------------|:------------------|:----------------|:-------------------------|:-------------------------------------|
+| hl       | Brick hash                    | sha256            | empty           | with AES: external key.  | IP of your favorite  brick storage.  |
 
-encoded(KDF(arrayOfCredentials))
-	
+<p style="text-align:center"> <b>Table 1: HashLinkSSIs algorithms</b></p>
 
-none
-2. Specific functions for WalletSSIs
 
-(Common functions for all KeySSIs are available here)
-Function walletSSI.initialize(dlDomain, array, vn, hint)
+# 3. HashLinkSSI family-specific functions
 
-Description: Initialize a WalletSSI with your own parameters.
+## Function HashLinkSSI.initialize(dlDomain, array, vn, hint)
+**Description**: Initialize a WalletSSI with your own parameters.
 
-Name
-	
 
-Type
-	
+| **Name**         | **Type**  | **Value**  | **Description**                                                                                     |
+|:-----------------|:----------|:-----------|:----------------------------------------------------------------------------------------------------|
+| dlDomain         | string    | *required  | The blockchain domain wanted to be used.                                                            |
+| array            | string    | *required  | The array will be used in the initialization to get the final specific string of your HashLinkSSI.  |
+| vn (optional)    | string    |            | The version number of the SeedSSI you want to use.  <br/> Default value: “v0”.                      |
+| hint (optional)  | string    |            | Optional information for the keySSI resolver. <br/> Default value: undefined.                       |
 
-Value
-	
 
-Description
+## Function HashLinkSSI.derive()
 
-dlDomain
-	
+<p style='text-align: justify;'><b>Description</b>: Exists in mixings but does not have a valid semantic for Hash Link SSIs.
+</p>
 
-string
-	
+## Function HashLinkSSI.getTypeName()
 
-*required
-	
+**Description**: Returns the type of the SSI.
 
-The blockchain domain wanted to be used.
+**Returns**
 
-array
-	
+| **Name**               | **Description**                            |
+|:-----------------------|:-------------------------------------------|
+| SSITypes.HASH_LINK_SSI | A string representing the type of the SSI. |
 
-string
-	
 
-*required
-	
+## Function HashLinkSSI.getHash()
 
-The array will be used in the initialization to get the final specific string of your WalletSSI.
+**Description**: Returns the actual hash of the brick.
 
-vn
 
-(optional)
-	
 
-string
-	
+**Contributors**
 
-	
 
-The version number of the SeedSSI you want to use.
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-Default value: “v0”.
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-hint
 
-(optional)
-	
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-string
-	
 
-	
+# Annex 1. Contributors
 
-Optional information for the keySSI resolver.
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
 
-Default value: undefined.
-Function walletSSI.derive()
-
-Description: Derive your WalletSSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the WalletSSI using the array of inputs. It is then possible to create and load a DSU using the ConstSSI.
-
-Returns
-
-Name
-	
-
-Description
-
-constSSI object
-	
-
-A constSSI object is returned.
-Function walletSSI.getEncryptionKey()
-
-Description: Get the encryption key associated with the WalletSSI.
-
-Returns
-
-Name
-	
-
-Description
-
-String
-	
-
-The encryption key.
-Function walletSSI.getTypeName()
-
-Description: 
-
-Returns
-
-Name
-	
-
-Description
-
-SSITypes.WALLET_SSI
-	
-
-A string representing the type of the SSI.
-Function walletSSI.createAnchorValue(brickMapHash, previousAnchorValue, callback)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-brickMapHash
-	
-
-	
-
-	
-
-previousAnchorValue
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-anchorValue
-	
-
-	
-
-Description: Contains a message and the error. / The anchor value that was just created.
-3. Cryptographic algorithms used by WalletSSIs (advanced)
-
-In this paragraph, we present the algorithms that WalletSSI used. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the NodeJS crypto library.
-
-Type
-	
-
-Operations
-	
-
-Algorithms
-
-Default
-	
-
-keyDerivation
-	
-
-crypto.deriveKey('aes-256-gcm', password, iterations).
-
-encryptionKeyGeneration
-	
-
-Generate a random encryption key compatible with the aes-256-gcm algorithm.
-
-encoding
-	
-
-Base58 encoding.
-
-decoding
-	
-
-Base58 decoding.
 
