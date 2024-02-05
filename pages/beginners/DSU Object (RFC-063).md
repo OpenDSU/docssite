@@ -855,6 +855,10 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 |:----------|:----------|:----------------------|
 | error     | Error     |                       |
 
+|   | 123    | 123 |
+|---|--------|-----|
+|   | 123123 |     |
+|   |        |     |
 
 
 ## 5.1 Methods of transferring files & folders between a DSU object and the local file system
