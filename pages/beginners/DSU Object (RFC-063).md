@@ -875,9 +875,8 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 <p style='text-align: justify;'>The methods a DSU object provides for file handling are listed below, where all path arguments <b>fsPath</b> or <b>dsuPath</b> and the optional configuration flags in <b>options</b>.</p>
 
 
-
-
 ### Function addFile(fsPath, dsuPath, options, callback)
+
 
 
 
