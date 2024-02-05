@@ -886,12 +886,12 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
 
-| **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                        |
-|:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| fsPath   | string   | *required | The path (from the current environment file system) towards the file you want to add to your DSU.                                                                                                                                                                                      |
-| dsuPath  | string   | *required | The path inside the DSU environment where you want to add the file.                                                                                                                                                                                                                    |
-| options  | object   | *required | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false  <br/>}                                                                                                                                                                   |
-| callback | function | *required |                                                                                                                                                                                                                                                                                        |
+| **Name**  | **Type**  | **Value**  | **Description**                                                                                                                                                                                                                                                                         |
+|:----------|:----------|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| fsPath    | string    | *required  | The path (from the current environment file system) towards the file you want to add to your DSU.                                                                                                                                                                                       |
+| dsuPath   | string    | *required  | The path inside the DSU environment where you want to add the file.                                                                                                                                                                                                                     |
+| options   | object    | *required  | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false  <br/>}                                                                                                                                                                    |
+| callback  | function  | *required  |                                                                                                                                                                                                                                                                                         |
 
 
 **Callback parameters**
@@ -1031,3 +1031,9 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 | Cosmin Ursache                      | cos@rms.ro (RMS)                   |
 | Michael Sammeth                     |                                    |
 | Rafael Mastaleru                    | raf@rms.ro (RMS)                   |
+
+
+| asd | asd | asd |
+|-----|-----|-----|
+| asd | asd  | asd |
+
