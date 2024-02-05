@@ -20,7 +20,17 @@ A period when the community can review the RFC (comment Docs).
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. HashLinkSSI description with examples](#1-hashlinkssi-description-with-examples)
+* [2. Specific parameters for HashLinkSSI subtypes](#2-specific-parameters-for-hashlinkssi-subtypes)
+* [3. HashLinkSSI family-specific functions](#3-hashlinkssi-family-specific-functions)
+  * [Function HashLinkSSI.initialize(dlDomain, array, vn, hint)](#function-hashlinkssiinitializedldomain-array-vn-hint)
+  * [Function HashLinkSSI.derive()](#function-hashlinkssiderive)
+  * [Function HashLinkSSI.getTypeName()](#function-hashlinkssigettypename)
+  * [Function HashLinkSSI.getHash()](#function-hashlinkssigethash)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 # Abstract
 <p style='text-align: justify;'>Bricks’ content is encrypted using the encryption key of an external secret KeySSI, such as the SReadSSI. The hash that is returned is used to create a HashLinkSSI. The owners of the DSU (i.e. owning a SeedSSI) or other users that got access to a derived SReadSSI can find and decrypt the bricks.
