@@ -5,7 +5,7 @@ parent: Open DSU Advanced
 nav_order: 15
 ---
 
-# **APIHub Fixed URLs **
+# **APIHub Fixed URLs**
 
 {: .accepted }
 The proposal has been accepted and has an implementation.
@@ -58,11 +58,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 Endpoints:
 
-PUT /deactivateRelatedFxedURLs/                  Body: **RelatedURLExpression**
-
-PUT /activateRelatedFxedURLs/                    Body: **RelatedURLExpression**
-
-PUT  /registerFixedURLs/                         Body: a list relativeURLBase64
+| PUT /deactivateRelatedFxedURLs/ | Body: **RelatedURLExpression** |
+|---------------------------------|--------------------------------|
+| PUT /activateRelatedFxedURLs/   | Body: **RelatedURLExpression** |
+| PUT  /registerFixedURLs/        | Body: a list relativeURLBase64 |
 
 The three endpoints are:
 
