@@ -58,8 +58,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 Endpoints:
 
+|                                 |                                |
+|:--------------------------------|:-------------------------------|
 | PUT /deactivateRelatedFxedURLs/ | Body: **RelatedURLExpression** |
-|---------------------------------|--------------------------------|
 | PUT /activateRelatedFxedURLs/   | Body: **RelatedURLExpression** |
 | PUT  /registerFixedURLs/        | Body: a list relativeURLBase64 |
 
