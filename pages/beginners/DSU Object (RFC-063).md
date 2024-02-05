@@ -138,7 +138,7 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 <p style='text-align: justify;'>Each method for file handling requires at least one target file system to operate on, specified by a string representation of its path. The path can be located in the local file system (<b>fsPath</b>) or inside the DSU container (<b>dsuPath</b>). Generally, access to <b>fsPath</b>. is handled through the node.js "fs" API. Strings representing a <b>dsuPath</b> are usually "normalized" by replacing backslash characters (‘\’) or multiple slash characters ('/') with a single path separator slash character ('/').</p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRGalUnNRQIxmXTt8XYmYLWnf8keZ24On9W43vIuYDJHS4IeWE6NMVaPgpK94JpvDunmO8SWHUn437K/pub?w=1124&h=398" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTdirIsdOOFZbQI-jw1elFlJFFYKnebNe3rs9Sp0ImEshvAIOEOiUM33yjcFk7ac3BjdTt651TWJdW1/pub?w=1145&h=566" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: The impact of global configuration options</b></p>
 </div>
 
@@ -161,7 +161,7 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRU8R3WTmR_0ptRROxpCrOuYuAI1QnCd7t-Hz6Z58VO7uVzzfh2TqqInwUCEwna9wz8ec2FGMzNno3S/pub?w=1147&h=511" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQUxQ5yD_E3mOblFOjchN0j8iTROvjFT740YH9avSEP1NmeMl83dSzRPZyXSYs4728q076h2nGD0RpS/pub?w=1193&h=505" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Logical overview of file operation methods of DSU objects</b></p>
 </div>
 
@@ -861,7 +861,14 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 <p style='text-align: justify;'>This section outlines how to employ methods of DSU objects to add, remove, copy, relocate or query information on entire files or folders without changing their content. For transparency, we further subdivided the file handling methods of a DSU object into two subgroups: methods that trigger a data flow by copying data underlying files from one location to another (Figure 2, elements A, B, and C) and those methods that query or change the logical file structure inside a DSU but without moving big chunks of the underlying data around (Figure 2, elements D and E). Former data flow methods usually require two string arguments identifying the source and target of the operation. In contrast, the latter methods used to change the file control structure typically require only one such path string argument of the target entry to be modified or queried.
 
-</p><p style="text-align:center"><b>Figure 3: Logical overview of file operation methods of DSU objects</b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSR-uXYwXMAD9gK2PDTZVAwsX1taLWAxxd0214qmS7d0b8IKz-fUD4mpBQy2t5m52i_DO3WMwOQhN_N/pub?w=1181&h=518" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 3: Logical overview of file operation methods of DSU objects</b></p>
+</div>
+
+
+
+
 
 <p style='text-align: justify;'>Methods are invoked on the central DSU instance (this) (see Figure 3 above), which can mount other DSU objects at given mounting points (gray folder icon). According to the kind of operation, file handling methods can be segregated into units: (<b>A</b>) methods that transfer data from the local file system to the DSU instance: addFile(), addFolder(), addFiles(); (<b>B</b>) methods that transfer data from the DSU instance to the local files system: extractFile(), extractFolder(); (<b>C</b>) methods that move data within the DSU instance: rename(), cloneFolder(); (<b>D</b>) methods that report on the file structure of the DSU container: readDir(), listFiles(), listFolders(), listMountedDossiers(), getArchiveForPath(); (<b>E</b>) methods that add/remove file structures: createFolder(), delete(). In the Figure, control flows are depicted by regular “arrows” and data flows by bold “arrows”.</p>
 
