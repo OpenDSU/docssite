@@ -875,7 +875,7 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 <p style='text-align: justify;'>The methods a DSU object provides for file handling are listed below, where all path arguments <b>fsPath</b> or <b>dsuPath</b> and the optional configuration flags in <b>options</b>.</p>
 
 
-##### Function addFile(fsPath, dsuPath, options, callback)
+## Function addFile(fsPath, dsuPath, options, callback)
 
 
 <p style='text-align: justify;'><b>Description</b>: Copies one single file entry, specified by <b>fsPath</b> in the local file system, to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b>; if <b>ignoreMounts</b> is set to false (the default), it also loads externally mounted DSUs in dsuPath.</p>
@@ -883,11 +883,11 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 <p style='text-align: justify;'>Returns an Error <b>err</b> if source <b>fsPath</b> or target <b>dsuPath</b> cannot be accessed.</p>
 
 
-| **Name** | **Type** | **Value** | **Description**                                                                                                      |
-|:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------|
-| fsPath   | string   | *required | The path (from the current environment file system) towards the file you want to add to your DSU.                    |
-| dsuPath  | string   | *required | The path inside the DSU environment where you want to add the file.                                                  |
-| options  | object   |           | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false  <br/>} |
+| **Name** | **Type** | **Value** | **Description**                                                                                                       |
+|:---------|:---------|:----------|:----------------------------------------------------------------------------------------------------------------------|
+| fsPath   | string   | *required | The path (from the current environment file system) towards the file you want to add to your DSU.                     |
+| dsuPath  | string   | *required | The path inside the DSU environment where you want to add the file.                                                   |
+| options  | object   |           | <br/>The default options are the following: <br/> {  <br/> **encrypt**: true, <br/>  **ignoreMounts**: false  <br/>}  |
 
 
 **Callback parameters**
@@ -898,21 +898,20 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 
 
-##### Function addFiles(fsPaths, dsuPath, options, callback)
+## Function addFiles(fsPaths, dsuPath, options, callback)
 
 
-<p style='text-align: justify;'><b>Description</b>: Copies one or more files specified by the Array <b>fsPaths</b> from their paths in the local file system to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath </b>for default <b>ignoreMounts</b>: false. Configuration options may encapsulate the flags encrypt (default: true), <b>ignoreMounts</b> (default: false), and <b>embedded </b>(default: false). Note that setting <b>embedded</b> to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.
-</p>
+<p style='text-align: justify;'><b>Description</b>: Copies one or more files specified by the Array <b>fsPaths</b> from their paths in the local file system to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath </b>for default <b>ignoreMounts</b>: false. Configuration options may encapsulate the flags encrypt (default: true), <b>ignoreMounts</b> (default: false), and <b>embedded </b>(default: false). Note that setting <b>embedded</b> to true means that files will be stored in the BrickMap rather than in Brick objects. This will improve access performance for small files.</p>
 
 Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be accessed.
 
 
-| **Name** | **Type**                | **Value** | **Description**                                                                                                                                   |
-|:---------|:------------------------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
-| fsPath   | Array of string objects | *required | Array of the paths towards your files in the current environment file system.                                                                     |
-| dsuPath  | string                  | *required | The path inside the DSU environment where you want to add files.                                                                                  |
-| options  | object                  |           | </br>The default options are the following: </br> { </br> <b>encrypt</b>: true  </br> <b>ignoreMounts</b>:false </br> <b>batch</b>: false </br> } |
-| callback | function                | *required |                                                                                                                                                   |
+| **Name** | **Type**               | **Value** | **Description**                                                                                                                                  |
+|:---------|:-----------------------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
+| fsPath   | Array of string objects| *required | Array of the paths towards your files in the current environment file system.                                                                    |
+| dsuPath  | string                 | *required | The path inside the DSU environment where you want to add files.                                                                                 |
+| options  | object                 |           | The default options are the following: </br> { </br> <b>encrypt</b>: true  </br> <b>ignoreMounts</b>:false </br> <b>batch</b>: false </br> }     |
+| callback | function               | *required |                                                                                                                                                  |
 
 
 | **Name** | **Type** | **Response example** |
@@ -920,11 +919,11 @@ Returns an Error **err** if source **fsPaths** or target **dsuPath** cannot be a
 | error    | Error    | NA                   |
 
 
-##### Function addFolder(FsPath, dsuPath, options, callback)
+## Function addFolder(FsPath, dsuPath, options, callback)
 
-<p style='text-align: justify;'><b>Description:</b> Iterates the contents of a folder <b>fsPath</b> in the local file system and copies each entry to a folder <b>dsuPath</b> in the DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath</b> if <b>ignoreMounts</b> is set to false (which is the default).
-</p>
-Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), <b>ignoreMounts</b> (default: false), and <b>embedded</b> (default: false).
+<p style='text-align: justify;'><b>Description:</b> Iterates the contents of a folder <b>fsPath</b> in the local file system and copies each entry to a folder <b>dsuPath</b> in the DSU instance. Follows symbolic links in <b>fsPath</b> and loads externally mounted DSUs in <b>dsuPath</b> if <b>ignoreMounts</b> is set to false (which is the default).</p>
+
+<p style='text-align: justify;'>Configuration <b>options</b> may encapsulate the flags <b>encrypt</b> (default: true), <b>ignoreMounts</b> (default: false), and <b>embedded</b> (default: false).</p>
 
 Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be accessed.
 
@@ -938,11 +937,10 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 
 
-##### Function extractFile(FsPath, dsuPath, options, callback)
+##  Function extractFile(FsPath, dsuPath, options, callback)
 
 
-<p style='text-align: justify;'><b>Description</b>: Restores data stored in Brick objects under <b>dsuPath</b> to a file in the local file system as specified by <b>fsPath</b>. Configuration <b>options</b> may encapsulate the <b>flag ignoreMounts</b> (default: false).
-</p>
+<p style='text-align: justify;'><b>Description</b>: Restores data stored in Brick objects under <b>dsuPath</b> to a file in the local file system as specified by <b>fsPath</b>. Configuration <b>options</b> may encapsulate the <b>flag ignoreMounts</b> (default: false).</p>
 
 <p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPat</b>h cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
 
@@ -964,10 +962,9 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 
 
-##### Function extractFolder (FsPath, dsuPath, options, callback)
+## Function extractFolder (FsPath, dsuPath, options, callback)
 
-<p style='text-align: justify;'><b>Description</b>: Restores for all files under <b>dsuPath</b> the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).
-</p>
+<p style='text-align: justify;'><b>Description</b>: Restores for all files under <b>dsuPath</b> the data stored in Brick objects to a local file system folder qualified by <b>fsPath</b> by lazy calls to extractFile(). Configuration <b>options</b> may encapsulate the flag <b>ignoreMounts</b> (default: false).</p>
 
 <p style='text-align: justify;'>Returns an Error <b>err</b> if an externally mounted DSU object in <b>dsuPath</b> cannot be loaded or if one of the Bricks objects for <b>dsuPath</b> cannot be accessed. Otherwise, data from Bricks objects is copied to the local file specified by <b>fsPath</b>.</p>
 
@@ -992,6 +989,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 
 **Contributors**
+
 
 1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
