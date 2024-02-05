@@ -1033,7 +1033,8 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 | Rafael Mastaleru                    | raf@rms.ro (RMS)                   |
 
 ss
-| asd | asd | asd |
-|-----|-----|-----|
-| asd | asd  | asd |
+
+| asd   | asd   | asd   |
+|-------|-------|-------|
+| asd   | asd   | asd   |
 
