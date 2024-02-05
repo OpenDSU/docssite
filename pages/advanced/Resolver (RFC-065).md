@@ -32,6 +32,25 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. Resolver functions](#1-resolver-functions)
+  * [Function createDSU(templateKeySSI, options, callback)](#function-createdsutemplatekeyssi-options-callback)
+  * [Function createDSUForExistingSSI(ssi, options, callback)](#function-createdsuforexistingssissi-options-callback)
+  * [Function getDSUHandler(dsuKeySSI)](#function-getdsuhandlerdsukeyssi)
+  * [Function invalidateDSUCache(dsuKeySSI)](#function-invalidatedsucachedsukeyssi)
+  * [Function loadDSU(keySSI, options, callback)](#function-loaddsukeyssi-options-callback)
+  * [Function registerDSUFactory(type, factory)](#function-registerdsufactorytype-factory)
+  * [Function createDSUx(domain, ssiType, options, callback)](#function-createdsuxdomain-ssitype-options-callback)
+  * [Function createSeedDSU(domain, options, callback)](#function-createseeddsudomain-options-callback)
+  * [Function createConstDSU(domain, constString, options, callback)](#function-createconstdsudomain-conststring-options-callback)
+  * [Function createArrayDSU(domain, ssiType, options, callback)](#function-createarraydsudomain-ssitype-options-callback)
+  * [Function loadDSUVersion(keySSI, versionHashlink, options, callback)](#function-loaddsuversionkeyssi-versionhashlink-options-callback)
+  * [Function createDSUForExistingSSI(ssi, options, callback)](#function-createdsuforexistingssissi-options-callback-1)
+  * [Function createVersionlessDSU(filePath, encryptionKey, domain, callback)](#function-createversionlessdsufilepath-encryptionkey-domain-callback)
+  * [Function dsuExists(keySSI, callback)](#function-dsuexistskeyssi-callback)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 # Abstract
@@ -82,7 +101,11 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 });
 ```
 
-<p><b>How to use</b></p>
+
+<div style="text-align:center;">
+    <p><b>How to use</b></p>
+</div>
+
 
 
 
@@ -215,365 +238,144 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 <p style='text-align: justify;'><b>Description</b>: This function allows the developer to create a new DSU object.
 </p>
 
+| **Name** | **Type**    | **Value** | **Description**                                                                                                      |
+|:---------|:------------|:----------|:---------------------------------------------------------------------------------------------------------------------|
+| domain   | string      |           | The blockchain domain where you want to create the DSU.                                                              |
+| ssiType  |             |           |                                                                                                                      |
+| options  | JSON object |           |                                                                                                                      |
+| callback | function    | *required |                                                                                                                      |
 
 
+**Callback parameters**
 
 
-Name
-	
+| **Name**- | **Type**                                                                                           | **Response example** |
+|:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
+| err       | ErrorWrapper object                                                                                |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
 
-Type
-	
 
-Value
-	
+**Description:** Contains a message and the error. / Reference to the DSU instance that was just created.
 
-Description
 
-domain
-	
 
-string
-	
+## Function createSeedDSU(domain, options, callback)
 
-	
+**Description**: This function allows the developer to create a new SeedDSU object.
 
-The blockchain domain where you want to create the DSU.
+| **Name** | **Type**    | **Value** | **Description**                                                         |
+|:---------|:------------|:----------|:------------------------------------------------------------------------|
+| domain   | string      |           | The blockchain domain where you want to create the seedDSU              |
+| options  | JSON object |           |                                                                         |
+| callback | function    | *required |                                                                         |
 
-ssiType
-	
 
-	
+**Callback parameters**
 
-	
+| **Name**- | **Type**                                                                                           | **Response example** |
+|:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
+| err       | ErrorWrapper object                                                                                |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
 
-options
-	
 
-JSON object
-	
+**Description**: Contains a message and the error. / Reference to the seedDSU that was just loaded.
 
-	
 
-callback
-	
 
-function
-	
 
-	
+## Function createConstDSU(domain, constString, options, callback)
 
-Callback parameters
+**Description:** This function allows the developer to create a new ConstDSU object.
 
-Name
-	
+| **Name**    | **Type**    | **Value** | **Description**                                             |
+|:------------|:------------|:----------|:------------------------------------------------------------|
+| domain      | string      |           | The blockchain domain where you want to create the constDSU |
+| constString | string      |           |                                                             |
+| options     | JSON object |           |                                                             |
+| callback    | function    | *required |                                                             |
 
-Type
-	
 
-Response example
+**Callback parameters**
 
-err
-	
+| **Name**- | **Type**                                                                                           | **Response example** |
+|:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
+| err       | ErrorWrapper object                                                                                |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
 
-ErrorWrapper object
-	
 
-dsu
-	
+**Description**: Contains a message and the error. / Reference to the constDSU that was just created.
 
-DSU instance
-	
 
-Description: Contains a message and the error. / Reference to the DSU instance that was just created.
-Function createSeedDSU(domain, options, callback)
 
-Description: This function allows the developer to create a new SeedDSU object.
+## Function createArrayDSU(domain, ssiType, options, callback)
 
-Name
-	
+**Description:** This function allows the developer to create a new DSU array.
 
-Type
-	
+| **Name** | **Type**     | **Value** | **Description**                                        |
+|:---------|:-------------|:----------|:-------------------------------------------------------|
+| domain   | string       |           | The blockchain domain where you want to create the DSU |
+| ssiType  |              |           |                                                        |
+| options  | JSON object  |           |                                                        |
+| callback | function     | *required |                                                        |
 
-Value
-	
 
-Description
+**Callback parameters**
 
-domain
-	
 
-string
-	
+| **Name**- | **Type**                                                                                           | **Response example** |
+|:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
+| err       | ErrorWrapper object                                                                                |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
 
-	
 
-The blockchain domain where you want to create the seedDSU.
+**Description:** Contains a message and the error. / Reference to the DSU array that was just created.
 
-options
-	
 
-JSON object
-	
 
-	
+## Function loadDSUVersion(keySSI, versionHashlink, options, callback)
 
-callback
-	
+**Description**: Load the DSU version for a given keySSI and version Hashlink.
 
-function
-	
 
-*required
-	
+| **Name**        | **Type**      | **Value** | **Description**                          |
+|:----------------|:--------------|:----------|:-----------------------------------------|
+| KeySSI          | keySSI object |           | The KeySSI for the DSU you want to load. |
+| versionHashlink |               |           |                                          |
+| options         | JSON object   |           |                                          |
+| callback        | function      | *required |                                          |
 
-Callback parameters
 
-Name
-	
+**Callback parameters**
 
-Type
-	
+| **Name**- | **Type**                                                                                           | **Response example** |
+|:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
+| err       | ErrorWrapper object                                                                                |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
 
-Response example
 
-err
-	
+**Description**: Contains a message and the error. / Reference to the DSU instance that was just loaded.
 
-ErrorWrapper object
-	
 
-dsu
-	
 
-DSU instance
-	
 
-Description: Contains a message and the error. / Reference to the seedDSU that was just loaded.
-Function createConstDSU(domain, constString, options, callback)
 
-Description: This function allows the developer to create a new ConstDSU object.
 
-Name
-	
+## Function createDSUForExistingSSI(ssi, options, callback)
 
-Type
-	
+**Description:** Create a DSU for an already existing SSI.
 
-Value
-	
 
-Description
+## Function createVersionlessDSU(filePath, encryptionKey, domain, callback)
 
-domain
-	
+**Description**: Create a versionless DSU.
 
-string
-	
 
-	
 
-The blockchain domain where you want to create the constDSU.
+## Function dsuExists(keySSI, callback)
 
-constString
-	
+**Description:** Check if a DSU exists for the given KeySSI.
 
-string
-	
 
-	
-
-options
-	
-
-JSON object
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-dsu
-	
-
-DSU instance
-	
-
-Description: Contains a message and the error. / Reference to the constDSU that was just created.
-Function createArrayDSU(domain, ssiType, options, callback)
-
-Description: This function allows the developer to create a new DSU array.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-domain
-	
-
-string
-	
-
-	
-
-The blockchain domain where you want to create the DSU.
-
-ssiType
-	
-
-	
-
-	
-
-options
-	
-
-JSON object
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-dsu
-	
-
-DSU instance
-	
-
-Description: Contains a message and the error. / Reference to the DSU array that was just created.
-Function loadDSUVersion(keySSI, versionHashlink, options, callback)
-
-Description: Load the DSU version for a given keySSI and version Hashlink.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-keySSI
-	
-
-keySSI object
-	
-
-	
-
-The KeySSI for the DSU you want to load.
-
-versionHashlink
-	
-
-	
-
-	
-
-options
-	
-
-JSON object
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-dsu
-	
-
-DSU instance
-	
-
-Description: Contains a message and the error. / Reference to the DSU instance that was just loaded.
-Function createDSUForExistingSSI(ssi, options, callback)
-
-Description: Create a DSU for an already existing SSI.
-Function createVersionlessDSU(filePath, encryptionKey, domain, callback)
-
-Description: Create a versionless DSU.
-Function dsuExists(keySSI, callback)
-
-Description: Check if a DSU exists for the given KeySSI.
 
 
 **Contributors**
