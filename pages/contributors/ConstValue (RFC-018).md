@@ -23,7 +23,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [1. Specifications](#1-specifications)
   * [1.1. JSONMap Specification](#11-jsonmap-specification)
   * [1.2. ValueSSI Specification](#12-valuessi-specification)
-* [1.3. ConstValueDSU Behavior](#13-constvaluedsu-behavior)
+  * [1.3. ConstValueDSU Behavior](#13-constvaluedsu-behavior)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
@@ -65,7 +65,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>ValueSSI as SSI with empty control. As the type field (second field in SSIs), we use the “vl” string. The “specific string” contains the encrypted JSON. The ConstSSI is used for encryption of the “specific string” (in the same way in which the BrickMaps of the ConstDSUs are encrypted).
 </p>
 
-# 1.3. ConstValueDSU Behavior
+## 1.3. ConstValueDSU Behavior
 
 <p style='text-align: justify;'>ConstValueDSU offers readFile API for “files” and all normal APIs for paths found in “mounts”. If the “manifest” file is read, readFile will generate an answer based on the “mounts” section of the JSON.
 </p>
