@@ -56,13 +56,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </div>
 
 
-Endpoints:
-
-|                                 |                                |
-|:--------------------------------|:-------------------------------|
-| PUT /deactivateRelatedFxedURLs/ | Body: **RelatedURLExpression** |
-| PUT /activateRelatedFxedURLs/   | Body: **RelatedURLExpression** |
-| PUT  /registerFixedURLs/        | Body: a list relativeURLBase64 |
+| Endpoints:                           | Endpoints:                         |
+|:-------------------------------------|:-----------------------------------|
+| PUT /deactivateRelatedFxedURLs/      | Body: **RelatedURLExpression**     |
+| PUT /activateRelatedFxedURLs/        | Body: **RelatedURLExpression**     |
+| PUT  /registerFixedURLs/             | Body: a list relativeURLBase64     |
 
 The three endpoints are:
 
