@@ -855,29 +855,18 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 |:----------|:----------|:----------------------|
 | error     | Error     |                       |
 
-|   | 123    | 123 |
-|---|--------|-----|
-|   | 123123 |     |
-|   |        |     |
-
 
 ## 5.1 Methods of transferring files & folders between a DSU object and the local file system
 
-<p style='text-align: justify;'>This section outlines how to employ methods of DSU objects to add, remove, copy, relocate or query information on entire files or folders without changing their content. For transparency, we further subdivided the file handling methods of a DSU object into two subgroups: methods that trigger a data flow by copying data underlying files from one location to another (Figure 2, elements A, B, and C) and those methods that query or change the logical file structure inside a DSU but without moving big chunks of the underlying data around (Figure 2, elements D and E). Former data flow methods usually require two string arguments identifying the source and target of the operation. In contrast, the latter methods used to change the file control structure typically require only one such path string argument of the target entry to be modified or queried.
+<p style='text-align: justify;'>This section outlines how to employ methods of DSU objects to add, remove, copy, relocate or query information on entire files or folders without changing their content. For transparency, we further subdivided the file handling methods of a DSU object into two subgroups: methods that trigger a data flow by copying data underlying files from one location to another (Figure 2, elements A, B, and C) and those methods that query or change the logical file structure inside a DSU but without moving big chunks of the underlying data around (Figure 2, elements D and E). Former data flow methods usually require two string arguments identifying the source and target of the operation. In contrast, the latter methods used to change the file control structure typically require only one such path string argument of the target entry to be modified or queried.</p> 
 
-|   | 123 |     |
-|---|-----|-----|
-|   | 123 | 123 |
+
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSR-uXYwXMAD9gK2PDTZVAwsX1taLWAxxd0214qmS7d0b8IKz-fUD4mpBQy2t5m52i_DO3WMwOQhN_N/pub?w=1181&h=518" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Logical overview of file operation methods of DSU objects</b></p>
 </div>
 
-
-|   | 123 |     |
-|---|-----|-----|
-|   | 123 | 123 |
 
 
 
@@ -887,11 +876,6 @@ Returns an Error **err** if no mounted DSU is found at dsuPath.
 
 
 ### Function addFile(fsPath, dsuPath, options, callback)
-
-|   | 123 |     |
-|---|-----|-----|
-|   | 123 | 123 |
-
 
 
 <p style='text-align: justify;'><b>Description</b>: Copies one single file entry, specified by <b>fsPath</b> in the local file system, to the folder <b>dsuPath</b> of this DSU instance. Follows symbolic links in <b>fsPath</b>; if <b>ignoreMounts</b> is set to false (the default), it also loads externally mounted DSUs in <b>dsuPath</b>.</p>
@@ -1044,10 +1028,3 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 | Cosmin Ursache                      | cos@rms.ro (RMS)                   |
 | Michael Sammeth                     |                                    |
 | Rafael Mastaleru                    | raf@rms.ro (RMS)                   |
-
-ss
-
-| asd   | asd   | asd   |
-|-------|-------|-------|
-| asd   | asd   | asd   |
-
