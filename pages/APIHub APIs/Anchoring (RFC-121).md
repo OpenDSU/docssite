@@ -20,8 +20,26 @@ A period when the community can review the RFC (comment Docs)
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
-
-
+<!-- TOC -->
+* [Abstract](#abstract)
+* [Overview](#overview)
+* [1. Create Anchor](#1-create-anchor)
+  * [1.1 Path Parameters](#11-path-parameters)
+  * [1.2 Body Parameters](#12-body-parameters)
+  * [1.3 Responses](#13-responses)
+* [2. Append to Anchor](#2-append-to-anchor)
+  * [2.1 Path Parameters](#21-path-parameters)
+  * [2.2 Body Parameters](#22-body-parameters)
+  * [2.3 Responses](#23-responses)
+* [3. Create or Update Multiple Anchors](#3-create-or-update-multiple-anchors)
+  * [3.1 Path Parameters](#31-path-parameters)
+  * [3.2 Body Parameters](#32-body-parameters)
+  * [3.3 Responses](#33-responses)
+* [4. Get All Versions](#4-get-all-versions)
+  * [4.1 Path Parameters](#41-path-parameters)
+  * [4.2 Responses](#42-responses)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 # Abstract
@@ -173,32 +191,56 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
+## 4.2 Responses
+
+
+| **Status Code** | **Description**                                                                           |
+|:----------------|:------------------------------------------------------------------------------------------|
+| 200             | Returns the list of the versions of a keySSI.                                             |
+| 404             | Invalid AnchorID.                                                                         |
+| 429             | Too many Requests.                                                                        |
 
 
 
+**Contributors**
 
 
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 
-4.2. Responses
+# Annex 1. Contributors
 
-Status Code
-	
+| **Current Editors**                 | **Email**                                                        |
+|:------------------------------------|:-----------------------------------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net                                     |
+| Rafael Mastaleru                    | raf@rms.ro                                                       |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                                           |
+| Teodor Lupu                         | teodor@axiologic.net                                             |
+| **Contributors Axiologic Research** | **Email**                                                        |
+| Adrian Ganga                        | adrian@axiologic.net                                             |
+| Andi-Gabriel Țan                    | andi@axiologic.net                                               |
+| Cosmin Ursache                      | cosmin@axiologic.net                                             |
+| Daniel Sava                         | daniel@axiologic.net                                             |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                                           |
+| Teodor Lupu                         | teodor@axiologic.net                                             |
+| **PrivateSky Contributors**         | **Email**                                                        |
+| Alex Sofronie                       | alsofronie@gmail.com (DPO)                                       |
+| Cosmin Ursache                      | cos.ursache@gmail.com (UAIC)                                     |
+| Daniel Sava                         | sava.dumitru.daniel@gmail.com (HVS, AQS)                         |
+| Daniel Visoiu                       | visoiu.daniel.g@gmail.com (SGiant)                               |
+| Lenuța Alboaie                      | lalboaie@gmail.com (UAIC)                                        |
+| Rafael Mastaleru                    | rafael@rms.ro (RMS)                                              |
+| Sînică Alboaie                      | salboaie@gmail.com (UAIC)                                        |
+| Vlad Balmos                         | vlad.balmos@gmail.com (Code932)                                  |
+| **PharmaLedger Contributors**       | **Email**                                                        |
+| Ana Balan                           | bam@rms.ro (RMS)                                                 |
+| Bogdan Mastahac                     | mab@rms.ro (RMS)                                                 |
+| Cosmin Ursache                      | cos@rms.ro (RMS)                                                 |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                                                 |
 
-Description
 
-200
-	
-
-Returns the list of the versions of a keySSI.
-
-404
-	
-
-Invalid AnchorID.
-
-429
-	
-
-Too many Requests.
 
