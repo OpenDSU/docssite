@@ -37,7 +37,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSB-EOxaMrn-p_4R60Ja3FCM4UUnRc2yOeMZaq4u2ZrkiNvvp5GXmnbgWQIguJ2OOUuai5dIW2I4fA4/pub?w=720&h=230" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: Precomputed</b></p>
 </div>
 
@@ -51,7 +51,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSxjG55hrH4DtY_EZWkzdfejGWbPt2hRQFC6E4rijCtSw2wOKMYNOed_8ALsxkbyNF06z_c5Iep4Crt/pub?w=943&h=445" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Unknown request</b></p>
 </div>
 
@@ -81,7 +81,7 @@ the other two endpoints are:
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSdNuZ-iERmh9VXgNisSRqb5EdYv02hAXdpNXsm2Psf5_EMgxjQBmb4xkv1UMxungRDYezr9BtPCKWP/pub?w=604&h=416" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: FixedURL Component Structure</b></p>
 </div>
 
@@ -96,7 +96,7 @@ the other two endpoints are:
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRCLB6BKjqKPUSYRgmV6LuvtQS8i6Tm7Qnt-Ai4SFMVtkpkHCfck8ZiHQrvlpWr1iE2PR7HBP9b6boz/pub?w=852&h=344" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b> Figure 4: Internal Timer</b></p>
 </div>
 
@@ -114,7 +114,7 @@ the other two endpoints are:
 
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTbUrrhJ4TZT9tW9InOef16PEXFqq5KtqLIIok5ne7V2-T7igurlBqlRVpB2gjKw44q4eHIGp-hnncU/pub?w=859&h=519" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b> Figure 5: Mapping Engine implications </b></p>
 </div>
 
