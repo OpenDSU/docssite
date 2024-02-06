@@ -39,7 +39,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQe1azoQQoYH8f_cqJGyd8Jt3A6bAZvX3ol8ax7gC6HBPB_uSFH15JgCNUmJ04bXoUYh1NCXfp4-xJa/pub?w=1247&h=422" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: Optimistic Blockchain Anchoring</b></p>
 </div>
 
@@ -48,7 +48,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ7vyU-Gzu7-m3Ckbypb7LHc-L9mWibteEZZXd7sd5y016yx-B1fTBQslUGXOrPqNzCvokwqnapjjW1/pub?w=1100&h=703" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: OBA pending queue</b></p>
 </div>
 
