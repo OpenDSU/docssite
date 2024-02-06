@@ -5,7 +5,13 @@ parent: OpenDSU APIHub APIs
 nav_order: 1
 ---
 
-
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. Installation details](#1-installation-details)
+  * [1.1. Responses](#11-responses)
+    * [1.1.1 Schema](#111-schema)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 # **Installation Info (RFC-120**
 {: .no_toc }
