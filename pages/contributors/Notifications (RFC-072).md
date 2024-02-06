@@ -19,7 +19,15 @@ A period when the community can review the RFC (comment Docs)
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. Notifications functions](#1-notifications-functions)
+  * [Function getObservableHandler(keySSI, timeout)](#function-getobservablehandlerkeyssi-timeout)
+  * [Function publish(keySSI, message, timeout, callback)](#function-publishkeyssi-message-timeout-callback)
+  * [Function unsubscribe(observable)](#function-unsubscribeobservable)
+  * [Function isSubscribed(observable)](#function-issubscribedobservable)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 # Abstract
