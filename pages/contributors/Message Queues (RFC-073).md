@@ -64,7 +64,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 **MappingEngine**
 
-put /mappingEngine/domain/  < messages ( array of messages)
+    put /mappingEngine/domain/  < messages ( array of messages)
 
 **Notifications**
 
