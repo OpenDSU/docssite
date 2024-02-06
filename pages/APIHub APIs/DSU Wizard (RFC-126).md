@@ -1,7 +1,7 @@
 ---
 title: DSU Wizard 
 layout: home
-parent: APIHub APIs
+parent: OpenDSU APIHub APIs
 nav_order: 7
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: APIHub Microservices & Scalability 
 layout: home
-parent: Open DSU Advanced
+parent: OpenDSU Advanced
 nav_order: 8
 ---
 
