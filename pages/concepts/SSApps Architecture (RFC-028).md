@@ -48,7 +48,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQJoBb0ekvggp_mIchAGkK8FTnMX-3tUKyBdob94JX21ld0NPVcp2oh5VugE4SV1Aq240z0bLbUsxUA/pub?w=549&h=528" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQMhWNGZzKHUfvA9nC6Xl-O-_w6rS5SXfM-Wts5SPyLiyUTfzi4mj_wZTGCcMbQvlAZTVvG6ndGTTls/pub?w=548&h=526" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Diagram 1: Multiple SSApps inside of the Digital Wallet</b></p>
 </div>
 
@@ -77,7 +77,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRgxF_1JNo0wsZI1HTJJ6dW7Smk4z4p2rZhWVGVrRl8r7rHGeM4LTydRotMbvQciso3Ai4n3efRPNVd/pub?w=668&h=482" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTM2NHGA6Zcggwd1kEHP5NEbDob0JWPd9T7BWbJI-9BhncIlWrAQvdAjm8csZQ7cqi4IOFlqn874Mba/pub?w=659&h=486" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Diagram 3: Agent loading the digital wallet and SSApps (WebView/Web Browser)</b></p>
 </div>
 
