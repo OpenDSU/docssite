@@ -1,17 +1,45 @@
 ---
-title: Anchoring 
+title: Anchoring (RFC-069)
 layout: home
 parent: OpenDSU Contributors
 nav_order: 13
 ---
 
-Anchoring (RFC-069)
+style>
+.imgMain{
+    display.block;
+    margin-left:70px;
+    margin-right:auto;
+} 
+</style>
+
+{: .no_toc }
 
 
-Abstract
+{: .accepted }
+The proposal has been accepted and has an implementation.
 
-This API space offers a set of portable functions for DSU anchoring. The agent should handle these operations, so it will probably not have to use these functions. More information about OpenDSU Anchoring can be found in Anchoring (RFC-005).
-1. Anchoring functions
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+ 
+
+
+
+# Abstract
+
+<p style='text-align: justify;'>This API space offers a set of portable functions for DSU anchoring. The agent should handle these operations, so it will probably not have to use these functions. More information about OpenDSU Anchoring can be found in<a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html"> Anchoring (RFC-005)</a>.
+</p>
+
+
+# 1. Anchoring functions
+
+```js
 
 //Load openDSU environment
 
@@ -46,11 +74,22 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
   });
 
 });
+```
 
-How to use
-Function createAnchor(dsuKeySSI, callback)
+<div style="text-align:center;">
+    <p><b>How to use</p></b>
+</div>
 
-Description: Creates a new anchor with a certain version of the DSU identified by the dsuKeySSI parameter.
+
+
+# Function createAnchor(dsuKeySSI, callback)
+
+
+**Description:** Creates a new anchor with a certain version of the DSU identified by the dsuKeySSI parameter.
+
+
+
+
 
 Name
 	
