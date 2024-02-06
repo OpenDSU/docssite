@@ -91,7 +91,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQyYClbP_DoDiQjTaQvTbeO43BtRImk9FuH7CjFWN-Lfy40MgBFGRNAkI4wpKJOnmM8xjUUZ_MX4uAw/pub?w=997&h=445" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Main SVD Concepts</b></p>
 </div>
 
@@ -100,7 +100,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSkgFTrh7TyokTd1y89XdVwnmsRucangQX2EHwcBKQ367A8Ojczm8ZFoM91joLTk4I-oYMcu_5E-Ixu/pub?w=924&h=395" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: SVD History Representations</b></p>
 </div>
 
@@ -109,7 +109,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTTn7S5GGv1u4kjxoOIBsm2tuSZrfHVe8UXHWxLbrgOVNZX6Rraivli_3S_Ygf9whdfT4DfZSxrpmHM/pub?w=1025&h=608" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 4: An example of history representations as chained commands</b></p>
 </div>
 
@@ -117,7 +117,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRrDZSGZSwWBRBZDCjezmRkRy3BVOguL5UBqcZA1uf9BFrOo-kVFzCuY1cFVx9OD2Gv_TS5BYwpokmd/pub?w=1001&h=531" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: SVD Prototypes</b></p>
 </div>
 
@@ -144,7 +144,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTA2-NHiQJOd0lbTwk4XG6Za89l6i6pZlBSefeaN38wBJCFIzYzRN-m8m7Px-NRHFh7LKEpw5r7I3EH/pub?w=911&h=334" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 6: Simplest SVD implementation</b></p>
 </div>
 
@@ -155,7 +155,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTHr5RJYeEn-MpqqYngVJfnDpEyfDsM-qD1GNcW9_SpicgxWF3RmfJP0tL-XklDJfdN3_VRXXIuGtEy/pub?w=947&h=621" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 7: SVD lifecycle</b></p>
 </div>
 
