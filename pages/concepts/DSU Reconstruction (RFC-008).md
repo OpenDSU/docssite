@@ -87,7 +87,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS2w2Eq69e1BsgXblTjb6sDkKnuz0zvGTfrlSTahJiRHowxX9NOyBcrh7dOwVUeFzzBLGijbNq-7pF3/pub?w=932&h=522" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTRYZb_9IiXfQ-JlAQVS7Rsz4RZiPq2SRfQrMa9OHH63pkOf5CCrNpKj-p-MLo2-E_7xLEs8_eQGhv5/pub?w=991&h=535" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: DSU Versions (BrickMaps and Bricks)</b></p>
 </div>
 
@@ -113,7 +113,7 @@ More details are available at the following links:
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRBZREjLhMA2BozMV731RchsKKSq36DkbPOzmbuEZ0CD78m0KiBq3C101ySJFRN1aNTvpW4iJrSm_L4/pub?w=562&h=507" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTFw4YNyaJ0YcZS9c8-lglIJapRNjaFzCwRjDMgVJQM4ZW24gJfzD2E3nzOCABPBi8oGH4CkeOzXrPV/pub?w=547&h=494" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Brick Map</b></p>
 </div>
 
@@ -127,7 +127,7 @@ More details are available at the following links:
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQgG5bT3XPIIw0UAf9Mcxb2qmqVwxkMb7tVm5oPKr_WpOdFdAkZDVALgTyeaB2QUj4dHCsTYJJSVK9T/pub?w=962&h=650" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTKPXvtdGQrBdXSXvSHDFvgT8AEOWP_p7wSMeOZkO9CLlG-oUoalbYrc1S1RHQfpxy1u5uMyaX9AYUe/pub?w=919&h=635" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Bricks Storage - detailed structure</b></p>
 </div>
 
@@ -154,7 +154,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQre7ER-r10i3mHLQ6Fgb5ZGulAFKalrnjHRHUbp-NLKFJ4INFf5D8fwrG2IEUuMvdePUe-DyL1Y2bf/pub?w=1010&h=556" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTJ5QvtVtrIyh0VvmgHJpmrDAynUobXawoF4yMdbsmaLq8Hb92gtoDaesGHYaYE95qQ1vPQnjT0_SGc/pub?w=1003&h=487" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 4: DSU Reconstruction from Bricks</b></p>
 </div>
 
@@ -181,7 +181,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLWO2qz1amcRsHnYSuXXwt4GkQ435JaLzzEbI86UZdN-fEN1RO8HPY-cmwvJdD9GDV019oE1wLz8xL/pub?w=254&h=252" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRa3vKrFwxSRMJsH82DFhPuGydKAuJv1hszQjJmrQZuasdZTGPoRwhl2lcj-Rzp1LfEbC7-Lw4neFiH/pub?w=240&h=273" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: Wallet</b></p>
 </div>
 
