@@ -76,7 +76,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p align="justify">The Security Context (SC) API space offers a set of portable functions that represent functionalities of the “Security Context” that enables executable choreographies between various types of DSU reconstruction environments.</p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQYyt5qWPhm2b_MiBPR38TAjlJtXhm7kaQMMuK5d1DgFpY1GXMkO6jVMuXp9LwGbi4ptxbaxPwfaFnF/pub?w=475&h=541" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQYyt5qWPhm2b_MiBPR38TAjlJtXhm7kaQMMuK5d1DgFpY1GXMkO6jVMuXp9LwGbi4ptxbaxPwfaFnF/pub?w=237&h=270" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: Security Context</b></p>
 </div>
 
