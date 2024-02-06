@@ -58,25 +58,13 @@ SzaSSI is then derived from the sReadSSI (or two times from the SeedSSI). It pro
 The SeedSSI family is currently the easiest and most used way to generate and interact with [DSU Objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html).
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSfxtVYsCoIfnh0zFE7Ay1A9isXwEqDy_lur2gpboiWvlbuv2J7a-Pns6osmDq6heLk1NnBAXUayms9/pub?w=1021&h=734" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
-    <p><b>Figure 4: Cloud Agents vs Edge Agents</b></p>
-</div>
-
-
-<div style="text-align:center;">
 
 <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSyqVbmy4mTOUB8C_khJH-GgoFuDcu2vMLiNWaVdFUlhMoDl842EYlP-RGRRJlGPM2pXECTS8KAmYv8/pub?w=929&h=483" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
       
-<img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSyqVbmy4mTOUB8C_khJH-GgoFuDcu2vMLiNWaVdFUlhMoDl842EYlP-RGRRJlGPM2pXECTS8KAmYv8/pub?w=929&h=483" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+<img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRLMIQGWOlIXny4N-OMSA85WKf3GfeGgvG0EFeTzYah2lMa9kzVFGHD0gPL1BqWJPqx6VNsFAxJpab8/pub?w=859&h=483" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     
-<p><b>Figure 4: Cloud Agents vs Edge Agents</b></p>
+<p><b>Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2)</b></p>
 </div>
-
-
-<img alt="https://docs.google.com/drawings/d/e/2PACX-1vRLMIQGWOlIXny4N-OMSA85WKf3GfeGgvG0EFeTzYah2lMa9kzVFGHD0gPL1BqWJPqx6VNsFAxJpab8/pub?w=859&h=483" align="center" src="" class="imgMain"/>
-
-<p style="text-align:center"> <b>Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2) </b></p>
-
 
 # 1. SeedSSI’s family subtypes with examples
 
