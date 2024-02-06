@@ -48,7 +48,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRfCWhUE8Of91bZTk5W-wW6q3-gyz7emHD3p5namTGqbFKxblsaEYNZQwy7zOtdy3hYmQb8bkTsvwzi/pub?w=562&h=538" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQJoBb0ekvggp_mIchAGkK8FTnMX-3tUKyBdob94JX21ld0NPVcp2oh5VugE4SV1Aq240z0bLbUsxUA/pub?w=549&h=528" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Diagram 1: Multiple SSApps inside of the Digital Wallet</b></p>
 </div>
 
@@ -62,7 +62,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vR_Nl0Pnd8Vgt3z2rd6RXd1aFEEeBtZSgpNmG6m6lX5GoBDnXQUBowKQjEUHg7iyfKWk33TqCeAY-Zz/pub?w=849&h=353" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTS4xiV-wSSTO6vMiyfn4RXuOcHgTRWpwkG6heoqUtDseWXwWeRKos8WA1dVlTcZLK5CDTQRMluPa17/pub?w=842&h=346" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Diagram 2: SSApps as DSUs containing data and code</b></p>
 </div>
 
