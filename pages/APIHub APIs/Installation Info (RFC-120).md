@@ -13,7 +13,7 @@ nav_order: 1
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# **Installation Info (RFC-120**
+# **Installation Info (RFC-120)**
 {: .no_toc }
 
 {: .feedback }
