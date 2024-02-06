@@ -114,7 +114,7 @@ More details are available at the following links:
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSJYGrkfsJE2mNbbWcegTDhKaQi2RDa6LBLJu_Y9Z6ZwDNvci9y_3Cu0GbSn0SJulncXxMtB_MZv98T/pub?w=269&h=248" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSJYGrkfsJE2mNbbWcegTDhKaQi2RDa6LBLJu_Y9Z6ZwDNvci9y_3Cu0GbSn0SJulncXxMtB_MZv98T/pub?w=539&h=496" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Brick Map</b></p>
 </div>
 
