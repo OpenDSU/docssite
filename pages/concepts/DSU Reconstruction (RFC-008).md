@@ -5,18 +5,18 @@ parent: OpenDSU Concepts
 nav_order: 7
 ---
 
-# DSU Reconstruction (RFC-008)
+# **DSU Reconstruction (RFC-008)**
 {: .no_toc }
 
 {: .accepted }
 The proposal has been accepted and has an implementation.
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
 
  **Copyright**
-Copyright © 2018-2022 Axiologic Research and Contributors.
+Copyright © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
@@ -87,7 +87,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS2w2Eq69e1BsgXblTjb6sDkKnuz0zvGTfrlSTahJiRHowxX9NOyBcrh7dOwVUeFzzBLGijbNq-7pF3/pub?w=932&h=522" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTRYZb_9IiXfQ-JlAQVS7Rsz4RZiPq2SRfQrMa9OHH63pkOf5CCrNpKj-p-MLo2-E_7xLEs8_eQGhv5/pub?w=991&h=535" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: DSU Versions (BrickMaps and Bricks)</b></p>
 </div>
 
@@ -98,7 +98,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 More details are available at the following links:
 
-[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html)</br>
+[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html) 
 [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)  
 [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)  
 [Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html) 
@@ -106,14 +106,14 @@ More details are available at the following links:
 
 # 2. Bricks Storage
 
-<p style='text-align: justify;'>Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI, <a href="[anchor identifier](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)"></a>anchor identifier is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its HashLinkSSI will be created and associated with the anchor identifier to keep track of all different BrickMap versions.
+<p style='text-align: justify;'>Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI, <a href="[anchor identifier](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)"></a>anchor identifier is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> will be created and associated with the <a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html">anchor identifier</a> to keep track of all different BrickMap versions.
 </p>
 
 <p style='text-align: justify;'>The BrickMap is a special brick stored along with the other bricks in the brick storage. It is used to reconstruct the DSU execution environment by retrieving bricks from the brick storage.
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRBZREjLhMA2BozMV731RchsKKSq36DkbPOzmbuEZ0CD78m0KiBq3C101ySJFRN1aNTvpW4iJrSm_L4/pub?w=562&h=507" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTFw4YNyaJ0YcZS9c8-lglIJapRNjaFzCwRjDMgVJQM4ZW24gJfzD2E3nzOCABPBi8oGH4CkeOzXrPV/pub?w=547&h=494" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Brick Map</b></p>
 </div>
 
@@ -127,7 +127,7 @@ More details are available at the following links:
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQgG5bT3XPIIw0UAf9Mcxb2qmqVwxkMb7tVm5oPKr_WpOdFdAkZDVALgTyeaB2QUj4dHCsTYJJSVK9T/pub?w=962&h=650" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTKPXvtdGQrBdXSXvSHDFvgT8AEOWP_p7wSMeOZkO9CLlG-oUoalbYrc1S1RHQfpxy1u5uMyaX9AYUe/pub?w=919&h=635" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Bricks Storage - detailed structure</b></p>
 </div>
 
@@ -154,7 +154,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQre7ER-r10i3mHLQ6Fgb5ZGulAFKalrnjHRHUbp-NLKFJ4INFf5D8fwrG2IEUuMvdePUe-DyL1Y2bf/pub?w=1010&h=556" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTJ5QvtVtrIyh0VvmgHJpmrDAynUobXawoF4yMdbsmaLq8Hb92gtoDaesGHYaYE95qQ1vPQnjT0_SGc/pub?w=1003&h=487" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 4: DSU Reconstruction from Bricks</b></p>
 </div>
 
@@ -181,7 +181,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLWO2qz1amcRsHnYSuXXwt4GkQ435JaLzzEbI86UZdN-fEN1RO8HPY-cmwvJdD9GDV019oE1wLz8xL/pub?w=254&h=252" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRa3vKrFwxSRMJsH82DFhPuGydKAuJv1hszQjJmrQZuasdZTGPoRwhl2lcj-Rzp1LfEbC7-Lw4neFiH/pub?w=240&h=273" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: Wallet</b></p>
 </div>
 
