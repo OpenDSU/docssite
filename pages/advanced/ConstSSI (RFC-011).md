@@ -24,17 +24,20 @@ nav_order: 2
 
 One of OpenDSU’s objectives is to provide a solution to the famous trilemma regarding naming systems known as Zooko’s Triangle. It is challenging to design a naming system with human-meaningful identifiers that are also secure and decentralized. The trilemma tells us you can only choose two. But we think there is a workaround: Human Meaningful Identifiers could be resolved to cryptographically safe identifiers using a key derivation function.[1] Obtained identifiers would be secure and self-certifying, as well as provide the required levels of decentralization and security.
 
-<img alt="" align="center" src="" class="imgMain"/>
 
-<p style="text-align:center"> <b> Figure 1: Zooko’s Triangle </b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTnpgVskryw051S4iIvfwSX9zwKCbSfWZB0f031XLQmIo1vZal1r_yJaAqZXM4HDi8_eufDaxW5ZwAf/pub?w=567&h=444" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 1: Zooko’s Triangle</b></p>
+</div>
 
 The solution that OpenDSU proposes is a special KeySSI called ConstSSI that is resolved to an immutable DSU. Immutable means that the item can not be updated after being assigned its initial value. This immutable DSU can contain links to one or multiple KeySSIs under the owner’s control (such as the seedSSI).
 
 Compared to randomly generated identifiers, the ConstSSI is based on human meaningful strings, which allows people to remember it easily and improve user experience. By redirecting the ConstSSI to properly secured keys, decentralization and security properties can be achieved. Security can still be a risk, but there is a set of best practices and methods that help mitigate most security issues without sacrificing the decentralization (self-sovereignty) or the human meaningfulness of the identifier.
 
-<img alt="" align="center" src="" class="imgMain"/>
-
-<p style="text-align:center"> <b> Figure 2: ConstSSI family </b></p>
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQfFDh0T6ESi9Hb-P6AWtQSFmhGhJyEohmr6aa5Uj8oeLaV5EgmIItmG91MPSpv7a6r_9FhFW-DqgyX/pub?w=764&h=360" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 2: ConstSSI family </b></p>
+</div>
 
 # 1. ConstSSI subtypes derivation with examples
 
