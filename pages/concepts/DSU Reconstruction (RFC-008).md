@@ -5,18 +5,18 @@ parent: OpenDSU Concepts
 nav_order: 7
 ---
 
-# DSU Reconstruction (RFC-008)
+# **DSU Reconstruction (RFC-008)**
 {: .no_toc }
 
 {: .accepted }
 The proposal has been accepted and has an implementation.
 
-**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
 **Copyright: MIT license**
 
  **Copyright**
-Copyright © 2018-2022 Axiologic Research and Contributors.
+Copyright © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
@@ -98,7 +98,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 More details are available at the following links:
 
-[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html)</br>
+[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html) 
 [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)  
 [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)  
 [Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html) 
@@ -106,7 +106,7 @@ More details are available at the following links:
 
 # 2. Bricks Storage
 
-<p style='text-align: justify;'>Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI, <a href="[anchor identifier](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)"></a>anchor identifier is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its HashLinkSSI will be created and associated with the anchor identifier to keep track of all different BrickMap versions.
+<p style='text-align: justify;'>Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI, <a href="[anchor identifier](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)"></a>anchor identifier is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> will be created and associated with the <a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html">anchor identifier</a> to keep track of all different BrickMap versions.
 </p>
 
 <p style='text-align: justify;'>The BrickMap is a special brick stored along with the other bricks in the brick storage. It is used to reconstruct the DSU execution environment by retrieving bricks from the brick storage.
