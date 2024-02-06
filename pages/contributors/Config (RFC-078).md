@@ -18,7 +18,18 @@ A period when the community can review the RFC (comment Docs).
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. Config functions](#1-config-functions)
+  * [Function autoConfigFromEnvironment(environment)](#function-autoconfigfromenvironmentenvironment)
+  * [Function disableLocalVault()](#function-disablelocalvault)
+  * [Function get(key)](#function-getkey)
+  * [Function set(key, value)](#function-setkey-value)
+  * [Function getEnv(key, callback)](#function-getenvkey-callback)
+  * [Function setEnv(key, value, callback)](#function-setenvkey-value-callback)
+  * [Function readEnvFile(callback)](#function-readenvfilecallback)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 # Abstract
@@ -88,105 +99,91 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'><b>Description</b>: Get the value for the provided key from your environment configuration.
 </p>
 
+
+| **Name**       | **Type**        | **Value**  | **Description**                                |
+|:---------------|:----------------|:-----------|:-----------------------------------------------|
+| key            | string          | *required  | The key of the environment you want to access. |
+| callback       | function        | *required  |                                                |
+
 **Returns**
 
 
+| **Name**                                         | **Description**                                                            |
+|:-------------------------------------------------|:---------------------------------------------------------------------------|
+| any                                              | An error and a specific message / The environment associated with the key. |
 
-Name
-	
-
-Description
-
-any
-	
-
-An error and a specific message / The environment associated with the key.
-Function setEnv(key, value, callback)
-
-Description: Set a value for the provided key in your environment configuration.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-key
-	
-
-string
-	
-
-*required
-	
-
-The key of the environment you want to access.
-
-value
-	
 
 	
 
-	
 
-callback
-	
+## Function setEnv(key, value, callback)
 
-function
-	
+<p style='text-align: justify;'><b>Description</b>: Set a value for the provided key in your environment configuration.
+</p>
 
-*required
-	
 
-Returns
+| **Name**        | **Type**         | **Value**   | **Description**                                 |
+|:----------------|:-----------------|:------------|:------------------------------------------------|
+| key             | string           | *required   | The key of the environment you want to access.  |
+| value           |                  |             |                                                 |
+| callback        | function         | *required   |                                                 |
 
-Name
-	
 
-Description
+**Returns**
 
-any
-	
 
-An error and a specific message. / The security context associated with the key.
-Function readEnvFile(callback)
+| **Name**                                         | **Description**                                                            |
+|:-------------------------------------------------|:---------------------------------------------------------------------------|
+| any                                              | An error and a specific message / The environment associated with the key. |
 
-Description: Read your environment configuration.
 
-Name
-	
+## Function readEnvFile(callback)
 
-Type
-	
+<p style='text-align: justify;'><b>Description</b>: Read your environment configuration.
+</p>
 
-Value
-	
 
-Description
+**Contributors**
 
-callback
-	
 
-function
-	
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-*required
-	
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-Returns
 
-Name
-	
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-Description
 
-any
-	
+# Annex 1. Contributors
 
-An error and a specific message. / The environment configuration file.
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+
+
+
 
