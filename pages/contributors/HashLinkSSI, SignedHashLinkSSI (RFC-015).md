@@ -37,7 +37,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSR7EwNkDf2YratTlLGIvEEtCPrfiFiHd5BdD9wIolRfYkQWW_5ufvr8T09sO1sos46qUKHXt-DIxu4/pub?w=974&h=142" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: SSIs that do not need anchoring and resolve to immutable DSUs</b></p>
 </div>
 
