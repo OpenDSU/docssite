@@ -1,7 +1,7 @@
 ---
 title: Anchoring 
 layout: home
-parent: APIHub APIs
+parent: OpenDSU APIHub APIs
 nav_order: 2
 ---
 
