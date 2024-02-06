@@ -1,5 +1,5 @@
 ---
-title: DSU Object (RFC-063)
+title: DSU Object 
 layout: home
 parent: OpenDSU for Beginners
 nav_order: 3
@@ -12,6 +12,7 @@ nav_order: 3
 } 
 </style>
 
+# **DSU Object RFC 063)**
 {: .no_toc }
 
 
@@ -23,59 +24,58 @@ A period when the community can review the RFC (comment Docs).
 
 **Copyright: MIT license**
 
- **Copyright**
+ **Copyright**© 2018-2024 Axiologic Research and Contributors.
 
-Copyright © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
 * [Abstract](#abstract)
 * [Overview](#overview)
-* [Creating and Configuring a DSU Instance](#creating-and-configuring-a-dsu-instance)
-* [Concurrency and Synchronization](#concurrency-and-synchronization)
-* [File I/O Operations with DSU Objects](#file-io-operations-with-dsu-objects)
-  * [Global overview and options](#global-overview-and-options)
-  * [Methods querying files & folders of a DSU object](#methods-querying-files--folders-of-a-dsu-object)
+* [1. Creating and Configuring a DSU Instance](#1-creating-and-configuring-a-dsu-instance)
+* [2. Concurrency and Synchronization](#2-concurrency-and-synchronization)
+* [3. File I/O Operations with DSU Objects](#3-file-io-operations-with-dsu-objects)
+  * [3.1 Global overview and options](#31-global-overview-and-options)
+  * [3.2 Methods querying files & folders of a DSU object](#32-methods-querying-files--folders-of-a-dsu-object)
     * [Function getArchiveForPath(dsuPath, callback)](#function-getarchiveforpathdsupath-callback)
     * [Function listFiles(dsuPath, options, callback)](#function-listfilesdsupath-options-callback)
     * [Function listFolders(dsuPath, options, callback)](#function-listfoldersdsupath-options-callback)
     * [Function listMountedDossiers(dsuPath, callback)](#function-listmounteddossiersdsupath-callback)
     * [Function readDir(dsuPath, options, callback)](#function-readdirdsupath-options-callback)
-  * [Methods for reorganising files & folders inside a DSU object](#methods-for-reorganising-files--folders-inside-a-dsu-object)
+  * [3.3 Methods for reorganising files & folders inside a DSU object](#33-methods-for-reorganising-files--folders-inside-a-dsu-object)
     * [Function cloneFolder(srcPath, destPath, options, callback)](#function-clonefoldersrcpath-destpath-options-callback)
     * [Function createFolder(dsuPath, options, callback)](#function-createfolderdsupath-options-callback)
     * [Function delete(dsuPath, options, callback)](#function-deletedsupath-options-callback)
     * [Function rename(srcPath, destPath, options, callback)](#function-renamesrcpath-destpath-options-callback)
-  * [Methods of reading or writing data in files of a DSU object](#methods-of-reading-or-writing-data-in-files-of-a-dsu-object)
+  * [3.4 Methods of reading or writing data in files of a DSU object](#34-methods-of-reading-or-writing-data-in-files-of-a-dsu-object)
     * [Function appendToFile(dsuPath, data, options, callback)](#function-appendtofiledsupath-data-options-callback)
     * [Function createReadStream(dsuPath, options, callback)](#function-createreadstreamdsupath-options-callback)
     * [Function readFile(dsuPath, options, callback)](#function-readfiledsupath-options-callback)
     * [Function createBigFileReadStreamWithRange(dsuPath, range, options, callback)](#function-createbigfilereadstreamwithrangedsupath-range-options-callback)
     * [Function writeFile(dsuPath, data, options, callback)](#function-writefiledsupath-data-options-callback)
-  * [Other functions](#other-functions)
+  * [3.5 Other functions](#35-other-functions)
     * [Function refresh(callback)](#function-refreshcallback)
     * [Function stat(dsuPath, callback)](#function-statdsupath-callback)
-* [Batch operations on DSUs](#batch-operations-on-dsus)
-  * [Controlling batch processe](#controlling-batch-processe)
+* [4. Batch operations on DSUs](#4-batch-operations-on-dsus)
+  * [4.1 Controlling batch processe](#41-controlling-batch-processe)
     * [Function batchInProgress()](#function-batchinprogress)
     * [Function beginBatch()](#function-beginbatch)
     * [Function startOrAttachBatch(callback)](#function-startorattachbatchcallback)
     * [Function cancelBatch(bacthID)](#function-cancelbatchbacthid)
     * [Function commitBatch(bacthID, callback)](#function-commitbatchbacthid-callback)
-  * [Other Anchoring-related operations](#other-anchoring-related-operations)
+  * [4.2 Other Anchoring-related operations](#42-other-anchoring-related-operations)
     * [Function getLastHashLinkSSI(callback)](#function-getlasthashlinkssicallback)
     * [Function hasUnanchoredChanges()](#function-hasunanchoredchanges)
     * [Function onCommitBatch(notify, once)](#function-oncommitbatchnotify-once)
     * [Function getCreationSSI(plain)](#function-getcreationssiplain)
     * [Function getKeySSIAsObject(KeySSIType, callback)](#function-getkeyssiasobjectkeyssitype-callback)
     * [Function getKeySSIAsString(KeySSIType, callback)](#function-getkeyssiasstringkeyssitype-callback)
-* [Mounting DSUs into each other](#mounting-dsus-into-each-other)
+* [5. Mounting DSUs into each other](#5-mounting-dsus-into-each-other)
   * [Function getManifest(callback)](#function-getmanifestcallback)
   * [Function getSSIForMount(mountPoint, callback)](#function-getssiformountmountpoint-callback-)
   * [Function listMountedDossiers(mountPoint, callback)](#function-listmounteddossiersmountpoint-callback)
   * [Function mount(mountPoint, archieveSSI, options, callback)](#function-mountmountpoint-archievessi-options-callback)
   * [Function unmount(mountingPoint, callback)](#function-unmountmountingpoint-callback)
-  * [Methods of transferring files & folders between a DSU object and the local file system](#methods-of-transferring-files--folders-between-a-dsu-object-and-the-local-file-system)
+  * [5.1 Methods of transferring files & folders between a DSU object and the local file system](#51-methods-of-transferring-files--folders-between-a-dsu-object-and-the-local-file-system)
     * [Function addFile(fsPath, dsuPath, options, callback)](#function-addfilefspath-dsupath-options-callback)
     * [Function addFiles(fsPaths, dsuPath, options, callback)](#function-addfilesfspaths-dsupath-options-callback)
     * [Function addFolder(fsPath, dsuPath, options, callback)](#function-addfolderfspath-dsupath-options-callback)
