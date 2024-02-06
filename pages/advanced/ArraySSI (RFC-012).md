@@ -69,10 +69,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ArraySSIs are created from multiple inputs that are easy to remember for the user. In our example, inputs are represented by company identifiers, serial numbers and product identifiers, but they could also be something else like name and telephone number. They may be different, depending on the use case.
 
-<img alt="" align="center" src="" class="imgMain"/>
 
-<p style="text-align:center"> <b>Figure 1: ConstSSI generated from serialization numbers </b></p>
-
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRRgaOtM48UEJ3onBjtSeM1w3gC6QU-ajrTe_jntzGLFdeE6e9GAWq03jZJpUs6K2ijzPXYzLxkTZSC/pub?w=1010&h=419" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 1: ConstSSI generated from serialization numbers</b></p>
+</div>
 
 There are no restrictions regarding the number of inputs we can use to create the ArraySSI. For example, adding a fourth input like GTIN can make the key more robust. Then, the array of inputs passes through a key derivation function, and the result is encoded to obtain the specific identifier of the ArraySSI. Next, the ArraySSI is derived to get a [ConstSSI] (https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html) that can be used to create and resolve DSUs.
 
