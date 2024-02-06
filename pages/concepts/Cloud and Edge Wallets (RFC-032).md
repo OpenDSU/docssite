@@ -69,7 +69,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ06ZQwMFTAhnE77BFXQlsTwCMZAXi4g3VvZE3cdbro2aOmR_IbzBCqTcdFSKeRLyHrhl5PrE1jYMXb/pub?w=538&h=450" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: Cloud Agents - DSU Wizard</b></p>
 </div>
 
@@ -94,7 +94,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTYEpoEEV-l3iQ4TVKoLOVddxyPS7HUpahgFaNzaqw4EQHOvFcsoEisr2T4RKy-R9OOWaN_j9tpP6Sf/pub?w=539&h=334" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Edge Agent - Wallets (service works)</b></p>
 </div>
 
@@ -113,7 +113,7 @@ More details on SSApps are available in SSapp Implementation (<a href="https://w
 # 4. DSU: No size fits all
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSw6Z9OK-jB2PX9xOy0U_1fVbYKqXGnOKdF34Nyejsur2wNvpAeGu8F1aI_iGkxWzQTcY-ovWjutN9h/pub?w=538&h=545" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: OpenDSU - No size fits all</b></p>
 </div>
 
@@ -127,7 +127,7 @@ More details on SSApps are available in SSapp Implementation (<a href="https://w
 # 5. Cloud Agents vs Edge Agents
 
 <div style="text-align:center;">
-    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSfxtVYsCoIfnh0zFE7Ay1A9isXwEqDy_lur2gpboiWvlbuv2J7a-Pns6osmDq6heLk1NnBAXUayms9/pub?w=1021&h=734" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 4: Cloud Agents vs Edge Agents</b></p>
 </div>
 
