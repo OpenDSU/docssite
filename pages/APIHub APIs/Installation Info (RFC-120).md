@@ -7,7 +7,7 @@ nav_order: 1
 
 Installation Info (RFC-120)
 
-
+1
 Abstract
 
 This RFC provides information about the current APIHub running instance, along with details about the current workspace and OpenDSU-SDK installation.
