@@ -33,7 +33,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSJtaDb9Ml_xTwz11Wun3eRbdNBNtvl5BX5BYAqkHVmjP-2Yq7-2wOxBBlt7gUlo6U6PNQu6UUzdOo1/pub?w=917&h=243" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: The overview of ConstValueSSI & ConstValueDSU</b></p>
 </div>
 
