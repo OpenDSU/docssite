@@ -4,151 +4,93 @@ layout: home
 parent: OpenDSU Contributors
 nav_order: 19
 ---
+# **Config**
 
-Config (RFC-078)
+{: .feedback }
+A period when the community can review the RFC (comment Docs).
 
-Abstract
 
-This API space provides utilities for OpenDSU environment configurations.
-1. Config functions
-Function autoConfigFromEnvironment(environment)
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
-Description: Set the correct config according to your environment.
+**Copyright: MIT license**
 
-Name
-	
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
 
-Type
-	
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-Value
-	
 
-Description
 
-environment
-	
 
-	
+# Abstract
 
-	
+<p style='text-align: justify;'>This API space provides utilities for OpenDSU environment configurations.
+</p>
 
-Your setup environment.
+# 1. Config functions
 
-Returns: This function does not return anything.
-Function disableLocalVault()
+## Function autoConfigFromEnvironment(environment)
 
-Description: Disable the local vault (the cache) by setting the option cache.vault_type value to “no-cache”. It can be used if the DSU is located on the server.
+<p style='text-align: justify;'><b>Description</b>: Set the correct config according to your environment.
+</p>
 
-Returns: This function does not return anything.
-Function get(key)
 
-Description: Retrieve the key of the environment configuration.
+| **Name**    | **Type**     | **Value**  | **Description**                                                                    |
+|:------------|:-------------|:-----------|:-----------------------------------------------------------------------------------|
+| environment |              |            | Your setup environment.                                                            |
 
-Name
-	
 
-Type
-	
 
-Value
-	
+**Returns**: This function does not return anything.
 
-Description
+## Function disableLocalVault()
 
-key
-	
+<p style='text-align: justify;'><b>Description</b>: Disable the local vault (the cache) by setting the option cache.vault_type value to “no-cache”. It can be used if the DSU is located on the server.
+</p>
 
-string
-	
+**Returns**: This function does not return anything.
 
-*required
-	
+## Function get(key)
 
-The key of the environment configuration you want to access.
+<p style='text-align: justify;'><b>Description</b>: Retrieve the key of the environment configuration.
+</p>
 
-Returns
+| **Name**     | **Type**      | **Value**  | **Description**                                                                     |
+|:-------------|:--------------|:-----------|:------------------------------------------------------------------------------------|
+| key          | string        | *required  | The key of the environment configuration you want to access.                        |
 
-Name
-	
 
-Description
 
-any
-	
+**Returns**
 
-Return the value associated with the key.
-Function set(key, value)
 
-Description: Set a value for the provided key in your environment configuration.
+| **Name**                                        | **Description**                                       |
+|:------------------------------------------------|:------------------------------------------------------|
+| any                                             | Return the value associated with the key.             |
 
-Name
-	
 
-Type
-	
 
-Value
-	
 
-Description
+## Function set(key, value)
 
-key
-	
+<p style='text-align: justify;'><b>Description</b>: Set a value for the provided key in your environment configuration.
+</p>
 
-string
-	
 
-*required
-	
+| **Name**      | **Type**       | **Value**   | **Description**                        |
+|:--------------|:---------------|:------------|:---------------------------------------|
+| key           | string         | *required   | The key you want to configure.         |
+| value         | any            |             | The value you want to set for the key. |
 
-The key you want to configure.
 
-value
-	
 
-any
-	
+## Function getEnv(key, callback)
 
-	
+<p style='text-align: justify;'><b>Description</b>: Get the value for the provided key from your environment configuration.
+</p>
 
-The value you want to set for the key.
-Function getEnv(key, callback)
+**Returns**
 
-Description: Get the value for the provided key from your environment configuration.
 
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-key
-	
-
-string
-	
-
-*required
-	
-
-The key of the environment you want to access.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Returns
 
 Name
 	
