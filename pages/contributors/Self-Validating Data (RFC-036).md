@@ -21,9 +21,8 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [**Self-Validating Data**](#self-validating-data)
 * [Overview](#overview)
-* [Introduction](#introduction)
+* [1. Introduction](#1-introduction)
 * [2. Technical presentation of SVD](#2-technical-presentation-of-svd)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
@@ -35,7 +34,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>In this document, we introduce the concept and vision of Self Validating Data (SVD), focusing primarily on the applications that could be developed using this technology. Our research so far consists of elements of cryptography, smart contracts, blockchain and executable choreographies.
 </p>
 
-# Introduction
+# 1. Introduction
 
 <p style='text-align: justify;'>In this RFC, we present usable protocols in decentralized communication and collaboration. Some of the applications developed will be the following: email replacement systems, personal digital assistants, business systems based on executable choreographies, multi-advice book publishing platforms, digital encyclopedias by reinventing the peer-review system, and last but not least, improving the concept of the digital forum.
 </p>
