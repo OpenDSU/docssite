@@ -1,7 +1,7 @@
 ---
 title: ConstSSI 
 layout: home
-parent: Open DSU Advanced
+parent: OpenDSU Advanced
 nav_order: 2
 ---
 

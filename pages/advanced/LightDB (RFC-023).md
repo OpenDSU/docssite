@@ -1,7 +1,7 @@
 ---
 title: LightDB 
 layout: home
-parent: Open DSU Advanced
+parent: OpenDSU Advanced
 nav_order: 5
 ---
 

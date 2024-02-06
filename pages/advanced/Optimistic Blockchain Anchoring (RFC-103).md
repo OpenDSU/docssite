@@ -1,7 +1,7 @@
 ---
 title: Optimistic Blockchain Anchoring 
 layout: home
-parent: Open DSU Advanced
+parent: OpenDSU Advanced
 nav_order: 16
 ---
 # **Optimistic Blockchain Anchoring**

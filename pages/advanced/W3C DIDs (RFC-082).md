@@ -1,7 +1,7 @@
 ---
 title: W3C DIDs 
 layout: home
-parent: Open DSU Advanced
+parent: OpenDSU Advanced
 nav_order: 14
 ---
 
