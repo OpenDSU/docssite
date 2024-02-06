@@ -6,17 +6,6 @@ nav_order: 17
 ---
 
 
-<!-- TOC -->
-* [Abstract](#abstract)
-  * [1. Public functions from the Mapping Engine](#1-public-functions-from-the-mapping-engine)
-    * [Function getMappingEngine(persistenceDSU, options)](#function-getmappingenginepersistencedsu-options)
-    * [Function getMessagesPipe](#function-getmessagespipe)
-    * [Function getErrorsMap](#function-geterrorsmap)
-    * [Function defineMapping(matchFunction, mappingFunction)](#function-definemappingmatchfunction-mappingfunction)
-    * [Function defineApi(name, implementation)](#function-defineapiname-implementation)
-* [Annex 1. Contributors](#annex-1-contributors)
-<!-- TOC -->
-
 {: .no_toc }
 
 {: .feedback }
@@ -30,8 +19,16 @@ A period when the community can review the RFC (comment Docs)
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-
-
+<!-- TOC -->
+* [Abstract](#abstract)
+  * [1. Public functions from the Mapping Engine](#1-public-functions-from-the-mapping-engine)
+    * [Function getMappingEngine(persistenceDSU, options)](#function-getmappingenginepersistencedsu-options)
+    * [Function getMessagesPipe](#function-getmessagespipe)
+    * [Function getErrorsMap](#function-geterrorsmap)
+    * [Function defineMapping(matchFunction, mappingFunction)](#function-definemappingmatchfunction-mappingfunction)
+    * [Function defineApi(name, implementation)](#function-defineapiname-implementation)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 
