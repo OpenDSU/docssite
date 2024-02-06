@@ -215,7 +215,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **References**
 
 
-https://github.com/OpenDSU/svd
-https://docs.google.com/document/d/1Wg31RwWJLyuBo7EgYDPMZVzQvZXBtMP318UJ9F9x7K8/edit#heading=h.o98eyr3s4xy6 
+<a href="https://github.com/OpenDSU/svd">https://github.com/OpenDSU/svd</a>
 
+
+<a href="https://docs.google.com/document/d/1Wg31RwWJLyuBo7EgYDPMZVzQvZXBtMP318UJ9F9x7K8/edit#heading=h.o98eyr3s4xy6 
+">https://docs.google.com/document/d/1Wg31RwWJLyuBo7EgYDPMZVzQvZXBtMP318UJ9F9x7K8/edit#heading=h.o98eyr3s4xy6 
+</a>
 
