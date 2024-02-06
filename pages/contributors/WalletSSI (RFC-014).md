@@ -48,7 +48,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <div style="text-align:center;">
-    <img alt="" src="" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRe94XEMK7pLcjyS3-ZDxYVtETl7ixyG3z5PHGzaEoeQY0zIkWX1TDeoJDdqE9aoE_z-v_c6tQMyIoK/pub?w=998&h=422" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: ConstSSI</b></p>
 </div>
 
