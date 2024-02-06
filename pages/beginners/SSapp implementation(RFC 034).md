@@ -23,8 +23,8 @@ A period when the community can review the RFC (comment Docs).
 
 **Copyright: MIT license**
 
- **Copyright**
-Copyright © 2018-2024 Axiologic Research and Contributors.
+ **Copyright**© 2018-2024 Axiologic Research and Contributors.
+
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
