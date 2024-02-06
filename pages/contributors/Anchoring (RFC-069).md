@@ -29,12 +29,32 @@ The proposal has been accepted and has an implementation.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
  
 
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. Anchoring functions](#1-anchoring-functions)
+  * [Function createAnchor(dsuKeySSI, callback)](#function-createanchordsukeyssi-callback)
+  * [Function createNFT(nftKeySSI, callback)](#function-createnftnftkeyssi-callback)
+  * [Function appendToAnchor(dsuKeySSI, newShlSSI, previousShlSSI, zkpValue, callback)](#function-appendtoanchordsukeyssi-newshlssi-previousshlssi-zkpvalue-callback)
+  * [Function getAllVersions(keySSI, authToken, callback)](#function-getallversionskeyssi-authtoken-callback)
+  * [Function getLastVersion(keySSI, authToken, callback)](#function-getlastversionkeyssi-authtoken-callback)
+  * [Function getAnchoringBehaviour(persistenceStrategy)](#function-getanchoringbehaviourpersistencestrategy)
+* [2. AnchoringX Functions, exposed by RemotePersistence](#2-anchoringx-functions-exposed-by-remotepersistence)
+  * [Function createAnchor(capableOfSigningKeySSI, anchorValue, callback)](#function-createanchorcapableofsigningkeyssi-anchorvalue-callback)
+  * [Function appendAnchor(capableOfSigningKeySSI, anchorValue, callback)](#function-appendanchorcapableofsigningkeyssi-anchorvalue-callback)
+  * [Function getAllVersions(keySSI, callback)](#function-getallversionskeyssi-callback)
+  * [Function getLastVersion(keySSI, callback)](#function-getlastversionkeyssi-callback)
+  * [Function createOrUpdateMultipleAnchors(anchors, callback)](#function-createorupdatemultipleanchorsanchors-callback)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
+
 
 
 # Abstract
 
+
 <p style='text-align: justify;'>This API space offers a set of portable functions for DSU anchoring. The agent should handle these operations, so it will probably not have to use these functions. More information about OpenDSU Anchoring can be found in<a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html"> Anchoring (RFC-005)</a>.
 </p>
+
 
 
 # 1. Anchoring functions
@@ -75,640 +95,298 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 });
 ```
-
 <div style="text-align:center;">
-    <p><b>How to use</p></b>
+  <p><b>How to use</b></p>
 </div>
+   
 
 
-
-# Function createAnchor(dsuKeySSI, callback)
-
+## Function createAnchor(dsuKeySSI, callback)
 
 **Description:** Creates a new anchor with a certain version of the DSU identified by the dsuKeySSI parameter.
 
+| **Name**  | **Type**      | **Value** | **Description**                                                  |
+|:----------|:--------------|:----------|:-----------------------------------------------------------------|
+| dueKeySSI | KeySSI object | *required | An identifier for the DSU for which we want to create an anchor. |
+| callback  | function      | *required |                                                                  |
 
 
 
+**Callback parameters**
 
-Name
-	
+| **Name** | **Type**            | **Response example** |
+|:---------|:--------------------|:---------------------|
+| err      | ErrorWrapper object |                      |
 
-Type
-	
 
-Value
-	
+**Description:** Contains a message and the error.
 
-Description
 
-dsuKeySSI
-	
 
-KeySSI object
-	
+## Function createNFT(nftKeySSI, callback)
 
-*required
-	
+**Description:** Creates a new anchor with a certain NFT identified by the nftKeySSI parameter.
 
-An identifier for the DSU for which we want to create an anchor.
 
-callback
-	
+| **Name**  | **Type**      | **Value** | **Description**                                                  |
+|:----------|:--------------|:----------|:-----------------------------------------------------------------|
+| nftKeySSI | KeySSI object | *required | An identifier for the NFT for which we want to create an anchor. |
+| callback  | function      | *required |                                                                  |
 
-function
-	
 
-*required
-	
 
-Callback parameters
+**Callback parameters**
 
-Name
-	
+| **Name** | **Type** | **Response example** |
+|:---------|:---------|:---------------------|
+|          |          |                      |
 
-Type
-	
+**Description**
 
-Response example
 
-err
-	
 
-ErrorWrapper object
-	
+## Function appendToAnchor(dsuKeySSI, newShlSSI, previousShlSSI, zkpValue, callback)
 
-Description: Contains a message and the error.
-Function createNFT(nftKeySSI, callback)
+**Description:** Appends a new version of the DSU to an existing anchor.
 
-Description: Creates a new anchor with a certain NFT identified by the nftKeySSI parameter.
 
-Name
-	
+| **Name**       | **Type**           | **Value** | **Description**                                                      |
+|:---------------|:-------------------|:----------|:---------------------------------------------------------------------|
+| dsuKeySSI      | KeySSI object      | *required | An identifier for the DSU for which we want to append a new version. |
+| newShlSSI      | hashLinkSSI object | *required |                                                                      |
+| previousShlSSI | hashLinkSSI object | *required |                                                                      |
+| zkpValue       | sting              |           |                                                                      |
+| callback       | function           | *required |                                                                      |
 
-Type
-	
 
-Value
-	
+**Callback parameters**
 
-Description
+| **Name** | **Type**            | **Response example** |
+|:---------|:--------------------|:---------------------|
+| err      | ErrorWrapper object |                      |
 
-nftKeySSI
-	
+**Description:** Contains a message and the error
 
-KeySSI object
-	
 
-*required
-	
 
-An identifier for the NFT in which we want to create an anchor.
 
-callback
-	
 
-function
-	
+## Function getAllVersions(keySSI, authToken, callback)
 
-*required
-	
+<p style='text-align: justify;'><b>Description:</b> Get a list of versions of the DSU identified by the provided KeySSI. Those versions are represented as signed HashLinkSSIs. 
+</p>
 
-Callback parameters
 
-Name
-	
+| **Name**             | **Type**                | **Value** | **Description**                                                                                   |
+|:---------------------|:------------------------|:----------|:--------------------------------------------------------------------------------------------------|
+| KeySSI               | KeySSI object           | *required | The KeySSI associated with the DSU from which you want to get the information about its versions. |
+| authToken (optional) | JWT Token (Json format) |           | A JWT authentication token.                                                                       |
+| callback             | function                | *required |                                                                                                   |
 
-Type
-	
 
-Response example
 
-	
+**Callback parameters**
 
-	
+| **Name** | **Type**              | **Response example** |
+|:---------|:----------------------|:---------------------|
+| err      | ErrorWrapper object   |                      |
+| versions | Array of HashLinkSSIs |                      |
 
-Description:
-Function appendToAnchor(dsuKeySSI, newShlSSI, previousShlSSI, zkpValue, callback)
 
-Description: Appends a new version of the DSU to an existing anchor.
+<p style='text-align: justify;'><b>Description</b>: Contains a message and the error./ List of versions associated with the DSU with the provided KeySSI and represented by HashLinkSSIs.
+</p>
 
-Name
-	
 
-Type
-	
 
-Value
-	
+## Function getLastVersion(keySSI, authToken, callback)
 
-Description
+**Description:**
 
-dsuKeySSI
-	
 
-KeySSI object
-	
+| **Name**              | **Type**      | **Value**  | **Description**                                                                                   |
+|:----------------------|:--------------|:-----------|:--------------------------------------------------------------------------------------------------|
+| KeySSI                | KeySSI object |            |                                                                                                   |
+| authToken             | string        |            |                                                                                                   |
+| callback              | function      | *required  |                                                                                                   |
 
-*required
-	
 
-An identifier for the DSU to which we want to append a new version.
+**Callback parameters**
 
-newShlSSI
-	
+| **Name**                    | **Type**            | **Response example** |
+|:----------------------------|:--------------------|:---------------------|
+| err                         | ErrorWrapper object |                      |
+| versions or latest HashLink | HashLinkSSI         |                      |
 
-hashLinkSSI object
-	
 
-*required
-	
+<p style='text-align: justify;'><b>Description</b>: Contains a message and the error or it contains the last version of the DSU which corresponds to the provided KeySSI.
+</p>
 
-previousShlSSI
-	
 
-hashLinkSSI object
-	
+## Function getAnchoringBehaviour(persistenceStrategy)
 
-*required
-	
+**Description:** Creates a new AnchoringAbstractBehaviour object.
 
-zkpValue
-	
 
-string
-	
+| **Name**            | **Type** | **Value**  | **Description**                                                                                   |
+|:--------------------|:---------|:-----------|:--------------------------------------------------------------------------------------------------|
+| persistenceStrategy | object   |            |                                                                                                   |
 
-	
 
-callback
-	
 
-function
-	
+# 2. AnchoringX Functions, exposed by RemotePersistence
 
-*required
-	
+## Function createAnchor(capableOfSigningKeySSI, anchorValue, callback)
 
-Callback parameters
+**Description:**
 
-Name
-	
 
-Type
-	
+| **Name**               | **Type**      | **Value** | **Description**  |
+|:-----------------------|:--------------|:----------|:-----------------|
+| capableOfSigningKeySSI | keySSI object | *required | the anchor SSI   |
+| anchorValue            | string        | *required | the anchor value |
+| callback               | function      | *required |                  |
 
-Response example
 
-err
-	
+**Callback parameters**
 
-ErrorWrapper object
-	
+| **Name**                     | **Type**            | **Response example** |
+|:-----------------------------|:--------------------|:---------------------|
+| err                          | ErrorWrapper object |                      |
 
-Description: Contains a message and the error.
-Function getAllVersions(keySSI, authToken, callback)
 
-Description: Get a list of versions of the DSU identified by the provided KeySSI. Those versions are represented as signed HashLinkSSIs. 
+**Description:** Contains a message and the error.
 
-Name
-	
 
-Type
-	
+## Function appendAnchor(capableOfSigningKeySSI, anchorValue, callback)
 
-Value
-	
+**Description:**
 
-Description
+| **Name**               | **Type**      | **Value** | **Description**  |
+|:-----------------------|:--------------|:----------|:-----------------|
+| capableOfSigningKeySSI | keySSI object | *required | the anchor SSI   |
+| anchorValue            | string        | *required | the anchor value |
+| callback               | function      | *required |                  |
 
-keySSI
-	
 
-KeySSI object
-	
+**Callback parameters**
 
-	
+| **Name**                     | **Type**            | **Response example** |
+|:-----------------------------|:--------------------|:---------------------|
+| err                          | ErrorWrapper object |                      |
 
-The KeySSI associated with the DSU from which you want to get information about its versions.
 
-authToken
+**Description:** Contains a message and the error.
 
-(optional)
-	
 
-JWT Token (Json format)
-	
 
-	
+## Function getAllVersions(keySSI, callback)
 
-A JWT authentication token.
+<p style='text-align: justify;'><b>Description:</b> Get a list of versions of the DSU identified by the provided KeySSI. Those versions are represented as signed HashLinkSSIs. 
+</p>
 
-callback
-	
 
-function
-	
+**Description:**
 
-*required
-	
+| **Name**                | **Type**      | **Value** | **Description**  |
+|:------------------------|:--------------|:----------|:-----------------|
+| KeySSI                  | keySSI object | *required | the anchor SSI   |
+| callback                | function      | *required |                  |
 
-Callback parameters
 
-Name
-	
+**Callback parameters**
 
-Type
-	
+| **Name** | **Type**              | **Response example** |
+|:---------|:----------------------|:---------------------|
+| err      | ErrorWrapper object   |                      |
+| data     | Array of hashLinkSSIs |                      |
 
-Response example
 
-err
-	
+<p style='text-align: justify;'><b>Description:</b> Contains a message and the error./ List of versions associated with the DSU with the provided keySSI and represented by HashLinkSSIs.
+</p>
 
-ErrorWrapper object
-	
 
-versions
-	
 
-Array of HashLinkSSIs
-	
+## Function getLastVersion(keySSI, callback)
 
-Description: Contains a message and the error./ List of versions associated with the DSU with the provided KeySSI and represented by HashLinkSSIs.
-Function getLastVersion(keySSI, authToken, callback)
+**Description:**
 
-Description:
 
-Name
-	
+| **Name**                | **Type**      | **Value** | **Description**   |
+|:------------------------|:--------------|:----------|:------------------|
+| KeySSI                  | keySSI object | *required |                   |
+| callback                | function      | *required |                   |
 
-Type
-	
 
-Value
-	
+**Callback parameters**
 
-Description
+| **Name**                  | **Type**            | **Response example** |
+|:--------------------------|:--------------------|:---------------------|
+| err                       | ErrorWrapper object |                      |
+| version or latestHashLink | HashLinkSSI         |                      |
 
-keySSI
-	
 
-keySSI object
-	
+<p style='text-align: justify;'><b>Description</b>: Contains a message and the error or it contains the last version of the DSU which corresponds to the provided KeySSI.
+</p>
 
-	
 
-authToken
-	
 
-string
-	
+## Function createOrUpdateMultipleAnchors(anchors, callback)
 
-	
+**Description:**
 
-callback
-	
 
-function
-	
+| **Name** | **Type** | **Value** | **Description** |
+|:---------|:---------|:----------|:----------------|
+| anchors  | array    | *required |                 |
+| callback | function |           |                 |
 
-*required
-	
 
-Callback parameters
+**Callback parameters**
 
-Name
-	
+| **Name**                  | **Type**            | **Response example** |
+|:--------------------------|:--------------------|:---------------------|
+| err                       | ErrorWrapper object |                      |
 
-Type
-	
 
-Response example
+**Contributors**
 
-err
-	
 
-ErrorWrapper object
-	
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-version  or  latestHashLink
-	
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-HashLinkSSI
-	
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-Description: Contains a message and the error or it contains the last version of the DSU which corresponds to the provided KeySSI.
-Function getAnchoringBehaviour(persistenceStrategy)
 
-Description: Creates a new AnchoringAbstractBehaviour object.
+# Annex 1. Contributors
 
-Name
-	
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
 
-Type
-	
 
-Value
-	
 
-Description
-
-persistenceStrategy
-	
-
-object
-	
-
-	
-
-2. AnchoringX Functions, exposed by RemotePersistence
-Function createAnchor(capableOfSigningKeySSI, anchorValue, callback)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-capableOfSigningKeySSI
-	
-
-keySSI object
-	
-
-*required
-	
-
-the anchor SSI
-
-anchorValue
-	
-
-string
-	
-
-*required
-	
-
-the anchor value
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-Description: Contains a message and the error.
-Function appendAnchor(capableOfSigningKeySSI, anchorValue, callback)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-capableOfSigningKeySSI
-	
-
-keySSI object
-	
-
-*required
-	
-
-the anchor SSI
-
-anchorValue
-	
-
-string
-	
-
-*required
-	
-
-the anchor value
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-Description: Contains a message and the error.
-Function getAllVersions(keySSI, callback)
-
-Description: Get a list of versions of the DSU identified by the provided KeySSI. Those versions are represented as signed HashLinkSSIs. 
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-keySSI
-	
-
-keySSI object
-	
-
-*required
-	
-
-the anchor SSI
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-data
-	
-
-Array of HashLinkSSIs
-	
-
-Description: Contains a message and the error./ List of versions associated with the DSU with the provided keySSI and represented by HashLinkSSIs.
-Function getLastVersion(keySSI, callback)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-keySSI
-	
-
-keySSI object
-	
-
-*required
-	
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-version  or  latestHashLink
-	
-
-HashLinkSSI
-	
-
-Description: Contains a message and the error or it contains the last version of the DSU which corresponds to the provided KeySSI.
-Function createOrUpdateMultipleAnchors(anchors, callback)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-anchors
-	
-
-array
-	
-
-*required
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-ErrorWrapper object
-	
-
-Description: Contains a message and the error.
