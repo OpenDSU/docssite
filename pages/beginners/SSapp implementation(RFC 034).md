@@ -12,7 +12,7 @@ nav_order: 1
 } 
 </style>
 
-# SSapp implementation (RFC 034)
+# **SSapp implementation (RFC 034)**
 {: .no_toc }
 
 {: .draft }
