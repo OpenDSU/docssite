@@ -15,8 +15,8 @@ The proposal has been accepted and has an implementation.
 
 **Copyright: MIT license**
 
- **Copyright**
-Copyright © 2018-2024 Axiologic Research and Contributors.
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
@@ -98,7 +98,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 More details are available at the following links:
 
-[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html) 
+[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html)                                                                                                                                                                                                               
 [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)  
 [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)  
 [Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html) 
@@ -106,14 +106,15 @@ More details are available at the following links:
 
 # 2. Bricks Storage
 
-<p style='text-align: justify;'>Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI, <a href="[anchor identifier](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)"></a>anchor identifier is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> will be created and associated with the <a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html">anchor identifier</a> to keep track of all different BrickMap versions.
+<p style='text-align: justify;'>Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI,  an <a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html">anchor identifier</a> is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> will be created and associated with the <a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html">anchor identifier</a> to keep track of all different BrickMap versions.
 </p>
 
 <p style='text-align: justify;'>The BrickMap is a special brick stored along with the other bricks in the brick storage. It is used to reconstruct the DSU execution environment by retrieving bricks from the brick storage.
 </p>
 
+
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTFw4YNyaJ0YcZS9c8-lglIJapRNjaFzCwRjDMgVJQM4ZW24gJfzD2E3nzOCABPBi8oGH4CkeOzXrPV/pub?w=547&h=494" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSJYGrkfsJE2mNbbWcegTDhKaQi2RDa6LBLJu_Y9Z6ZwDNvci9y_3Cu0GbSn0SJulncXxMtB_MZv98T/pub?w=539&h=496" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: Brick Map</b></p>
 </div>
 
@@ -127,7 +128,7 @@ More details are available at the following links:
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTKPXvtdGQrBdXSXvSHDFvgT8AEOWP_p7wSMeOZkO9CLlG-oUoalbYrc1S1RHQfpxy1u5uMyaX9AYUe/pub?w=919&h=635" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRRgr_t75Z0q5PBEEdRrDJNVFgf8VxbW4xp50sPHVX7gbZsV9bECGhcbLPWsy0n_lClcRpe3A0nUOyY/pub?w=917&h=641" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Bricks Storage - detailed structure</b></p>
 </div>
 
@@ -154,7 +155,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTJ5QvtVtrIyh0VvmgHJpmrDAynUobXawoF4yMdbsmaLq8Hb92gtoDaesGHYaYE95qQ1vPQnjT0_SGc/pub?w=1003&h=487" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSzxxQzPkH7uvbGKCgR6cjhtrvpiLxP3za7AghAu_C88iMH_2O8SfN23f9G2-yI-HA7hWFtpitXBiKa/pub?w=1060&h=490" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 4: DSU Reconstruction from Bricks</b></p>
 </div>
 
@@ -181,7 +182,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRa3vKrFwxSRMJsH82DFhPuGydKAuJv1hszQjJmrQZuasdZTGPoRwhl2lcj-Rzp1LfEbC7-Lw4neFiH/pub?w=240&h=273" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRq5z1A9laOZMeDxu7Ci3DtQ7Ikj9r049J9GZoLcIXWV2Jg9v8WUBxetsLjUPyGFsIXh5i1CyZuFLpf/pub?w=239&h=273" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: Wallet</b></p>
 </div>
 
