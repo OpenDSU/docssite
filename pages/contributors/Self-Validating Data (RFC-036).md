@@ -22,6 +22,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <!-- TOC -->
 * [**Self-Validating Data**](#self-validating-data)
+* [Overview](#overview)
+* [Introduction](#introduction)
+* [2. Technical presentation of SVD](#2-technical-presentation-of-svd)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
 
@@ -80,103 +84,132 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # 2. Technical presentation of SVD
 
-Any SVD should be seen as a data structure shared with multiple untrusting actors. These actors will validate the correctness of the data whenever they use or update the data structure. To enable this validation, the data structures should be represented in a way that reveals the whole change history with provenance metadata and associated code that helps verify the business requirements associated with data. This code can be grouped into “primitive operations” and “state operations”. Primitive operations offer methods of verifying signatures (and help programmers work with cryptography) and interact with the current execution environment of the SVD. The state operations offer the SVD user methods to read and manipulate the current state.
-In the second part of the chapter, we will present some concrete examples, but for now, we want to introduce the SVD in a general way. We have to assume that the SVDs could be used in heterogeneous environments from a programming language perspective. Therefore, a “glue language” should be established for the “transform state” operations associated with the SVD. The other primitives could be independently implemented in the various environments, but should offer the same behavior as the transformation state primitives.
+<p style='text-align: justify;'>Any SVD should be seen as a data structure shared with multiple untrusting actors. These actors will validate the correctness of the data whenever they use or update the data structure. To enable this validation, the data structures should be represented in a way that reveals the whole change history with provenance metadata and associated code that helps verify the business requirements associated with data. This code can be grouped into “primitive operations” and “state operations”. Primitive operations offer methods of verifying signatures (and help programmers work with cryptography) and interact with the current execution environment of the SVD. The state operations offer the SVD user methods to read and manipulate the current state.
+</p>
+
+<p style='text-align: justify;'>In the second part of the chapter, we will present some concrete examples, but for now, we want to introduce the SVD in a general way. We have to assume that the SVDs could be used in heterogeneous environments from a programming language perspective. Therefore, a “glue language” should be established for the “transform state” operations associated with the SVD. The other primitives could be independently implemented in the various environments, but should offer the same behavior as the transformation state primitives.
+</p>
+
+<div style="text-align:center;">
+    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 2: Main SVD Concepts</b></p>
+</div>
 
 
-Figure 2: Main SVD Concepts
-From a “History Representation” point of view, we have identified three major approaches: Blockchains, Directed Acyclic Graphs and Conflict-free Replicated Data Types.
+<p style='text-align: justify;'>From a “History Representation” point of view, we have identified three major approaches: Blockchains, Directed Acyclic Graphs and Conflict-free Replicated Data Types.
+</p>
+
+<div style="text-align:center;">
+    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 3: SVD History Representations</b></p>
+</div>
 
 
-Figure 3: SVD History Representations
-In this RFC, all examples and assumptions are made based on the fact that the history representation is a blockchain structure, in the sense that a person has blocks containing one or multiple transactions (commands) that require changes in the state of the SVD. These blocks are assumed to be chained using the hash functions and digital signatures in the classical systems promoted by Blockchain. The only difference compared with a blockchain like Bitcoin is that we are talking about a “micro ledger”, meaning that the chain of blocks focuses on “micro” (refers only to the SVD’s data structure). From all other perspectives, an SVD can be seen as the history of a smart contract.
+<p style='text-align: justify;'>In this RFC, all examples and assumptions are made based on the fact that the history representation is a blockchain structure, in the sense that a person has blocks containing one or multiple transactions (commands) that require changes in the state of the SVD. These blocks are assumed to be chained using the hash functions and digital signatures in the classical systems promoted by Blockchain. The only difference compared with a blockchain like Bitcoin is that we are talking about a “micro ledger”, meaning that the chain of blocks focuses on “micro” (refers only to the SVD’s data structure). From all other perspectives, an SVD can be seen as the history of a smart contract.
+</p>
+
+<div style="text-align:center;">
+    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 4: An example of history representations as chained commands</b></p>
+</div>
+
+<p style='text-align: justify;'>The SVD history can be “anchored” in distributed ledgers or managed and shared independently. By anchoring, we mean direct storage or referencing in a distributed ledger.  By independent, we mean examples stored in local databases or communicated using communication protocols between the interested stakeholders.
+</p>
+
+<div style="text-align:center;">
+    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 5: SVD Prototypes</b></p>
+</div>
 
 
-Figure 4: An example of history representations as chained commands
-The SVD history can be “anchored” in distributed ledgers or managed and shared independently. By anchoring, we mean direct storage or referencing in a distributed ledger.  By independent, we mean examples stored in local databases or communicated using communication protocols between the interested stakeholders.
+<p style='text-align: justify;'>In the current implementation, we call the leaves in the above tree “SVD prototypes”. In each of these contexts, various actual “SVD types” will be created by implementing actual operations.
+</p>
+
+<p style='text-align: justify;'>The difference between an Autonomous SVD and a Blockchain SVD is, by definition, given by how the ledger is implemented. We assume that a Blockchain SVD is a distributed ledger with a consensus mechanism for its whole state. In the case of an Autonomous SVD, the consensus algorithm can be streamlined to happen in parallel and independently for each SVD, therefore obtaining better performance and sacrificing the global consensus between all SVDs. This approach may be the only one available in the case of large volumes of data, but it cannot be used if the consistency between the history of different SVD instances must be ensured.
+</p>
+
+<p style='text-align: justify;'>A Blockchain SVD can be conceptualized as SVD history stored in a normal smart contract that guarantees only the ordering of the proposed changes, but does not do any type of off-chain computational integrity check on the history. The external (off-chain) libraries ensure the computational integrity that should be used before reading and updating the SVD state. This resembles the DAML smart contracts programming language approach to ensure blockchain/ledger technology agnosticism.
+</p>
+
+<p style='text-align: justify;'>A Microledger SVD is defined as a SVD history anchored in a distributed ledger indirectly, but the actual history is stored in an off-chain storage, for example, in Data Sharing Units (DSUs) or in a storage that can be used to reconstruct  DID documents.
+</p>
+
+<p style='text-align: justify;'>On the Independent History serialization, we have identified two primary SVD prototypes: P2P DID Documents and SVD Choreographies.
+</p>
+
+<p style='text-align: justify;'>In the case of the P2P DID documents, we imagine the implementation of a P2P DID Method that stores the interaction history between anonymous peers as SVD. For example, future versions of DID Peer could use a SVD library to ensure its security and interoperability.
+</p>
+
+<p style='text-align: justify;'>By SVD Choreographies, we propose in this RFC an extension to the swam communication and executable choreography methods proposed. The main idea is that, in the case of executable choreographies, a validation process is required to ensure that only specific peers are allowed to start executable choreographies and that the execution phases follow some predefined business rules. Our research shows that SVD can also be implemented as a robust verifying method for the messages transmitted between the participants in a choreography. The only minor disadvantage is that the whole history is required for validation, but in future research, we plan to analyze methods to improve this aspect.
+</p>
+
+<div style="text-align:center;">
+    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 6: Simplest SVD implementation</b></p>
+</div>
+
+<p style='text-align: justify;'>As exemplified in Figure 6, the most straightforward SVD implementation is by creating a command for each change in the data structure and then reconstructing the SVD state in each context where the SVD data is required.
+</p>
+
+<p style='text-align: justify;'>In conclusion, for this formal introduction of the generic SVD concept, we cannot stress the fact that SVD usage should follow the lifecycle represented in the following figure:
+</p>
+
+<div style="text-align:center;">
+    <img alt="" src="LINK" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 7: SVD lifecycle</b></p>
+</div>
 
 
-Figure 5: SVD Prototypes
-In the current implementation, we call the leaves in the above tree “SVD prototypes”. In each of these contexts, various actual “SVD types” will be created by implementing actual operations.
-The difference between an Autonomous SVD and a Blockchain SVD is, by definition, given by how the ledger is implemented. We assume that a Blockchain SVD is a distributed ledger with a consensus mechanism for its whole state. In the case of an Autonomous SVD, the consensus algorithm can be streamlined to happen in parallel and independently for each SVD, therefore obtaining better performance and sacrificing the global consensus between all SVDs. This approach may be the only one available in the case of large volumes of data, but it cannot be used if the consistency between the history of different SVD instances must be ensured.
-A Blockchain SVD can be conceptualized as SVD history stored in a normal smart contract that guarantees only the ordering of the proposed changes, but does not do any type of off-chain computational integrity check on the history. The external (off-chain) libraries ensure the computational integrity that should be used before reading and updating the SVD state. This resembles the DAML smart contracts programming language approach to ensure blockchain/ledger technology agnosticism.
-A Microledger SVD is defined as a SVD history anchored in a distributed ledger indirectly, but the actual history is stored in an off-chain storage, for example, in Data Sharing Units (DSUs) or in a storage that can be used to reconstruct  DID documents.
-On the Independent History serialization, we have identified two primary SVD prototypes: P2P DID Documents and SVD Choreographies.
-In the case of the P2P DID documents, we imagine the implementation of a P2P DID Method that stores the interaction history between anonymous peers as SVD. For example, future versions of DID Peer could use a SVD library to ensure its security and interoperability.
-By SVD Choreographies, we propose in this RFC an extension to the swam communication and executable choreography methods proposed. The main idea is that, in the case of executable choreographies, a validation process is required to ensure that only specific peers are allowed to start executable choreographies and that the execution phases follow some predefined business rules. Our research shows that SVD can also be implemented as a robust verifying method for the messages transmitted between the participants in a choreography. The only minor disadvantage is that the whole history is required for validation, but in future research, we plan to analyze methods to improve this aspect.
+<p style='text-align: justify;'>Initially, the SVD history is loaded in the desired context, then the code for replaying the history should be associated, and, after the correct code execution, a valid state of the SVD is obtained. In this validated state, one can read data or propose new changes.
+</p>
+
+<p style='text-align: justify;'>This lifecycle is nothing new to a blockchain programmer. However, this RFC proposes a method to generalize this approach to arbitrary data structures with the hope of obtaining most of the security benefits offered by the current blockchain system, while being able to create scalable systems. This RFC tries to present to the scientific community new concepts and will not go into further detail regarding the actual implementation. The actual implementation we have developed uses concepts and assumptions from the OpenDSU open-source system regarding keys management, DIDs, DSUs etc. However, we are confident that the SVD concept deserves a place in the conceptual universe beyond actual implementation.
+</p>
+
+<p style='text-align: justify;'>In the near future, we will describe the vision of a new set of internet applications that can become adoption vehicles for the SVD concepts and that are feasible to implement due to the SVD concept.
+</p>
 
 
-Figure 6: Simplest SVD implementation
-As exemplified in Figure 6, the most straightforward SVD implementation is by creating a command for each change in the data structure and then reconstructing the SVD state in each context where the SVD data is required.
-In conclusion, for this formal introduction of the generic SVD concept, we cannot stress the fact that SVD usage should follow the lifecycle represented in the following figure:
+**Contributors**
 
 
-Figure 7: SVD lifecycle
-Initially, the SVD history is loaded in the desired context, then the code for replaying the history should be associated, and, after the correct code execution, a valid state of the SVD is obtained. In this validated state, one can read data or propose new changes.
-This lifecycle is nothing new to a blockchain programmer. However, this RFC proposes a method to generalize this approach to arbitrary data structures with the hope of obtaining most of the security benefits offered by the current blockchain system, while being able to create scalable systems. This RFC tries to present to the scientific community new concepts and will not go into further detail regarding the actual implementation. The actual implementation we have developed uses concepts and assumptions from the OpenDSU open-source system regarding keys management, DIDs, DSUs etc. However, we are confident that the SVD concept deserves a place in the conceptual universe beyond actual implementation.
-In the near future, we will describe the vision of a new set of internet applications that can become adoption vehicles for the SVD concepts and that are feasible to implement due to the SVD concept.
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
 
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 
-Annex 1. Contributors
-Current Editor
+# Annex 1. Contributors
 
-
-Sînică Alboaie
-sinica.alboaie@axiologic.net
-Cosmin Ursache
-cosmin@axiologic.net 
-Andi-Gabriel Țan
-andi@axiologic.net
-Teodor Lupu
-teodor@axiologic.net
-Contributors Axiologic Research
-
-
-Adrian Ganga
-adrian@axiologic.net
-Andi-Gabriel Țan 
-andi@axiologic.net
-Cosmin Ursache
-cosmin@axiologic.net 
-Daniel Sava
-daniel@axiologic.net
-Nicoleta Mihalache
-nicoleta@axiologic.net
-Teodor Lupu
-teodor@axiologic.net
-Valentin Gérard 
-valentin@axiologic.net
-PrivateSky Contributors
-
-
-Alex Sofronie	
-alsofronie@gmail.com(DPO)
-Cosmin Ursache 
-cos.ursache@gmail.com(UAIC)
-Daniel Sava
-sava.dumitru.daniel@gmail.com(HVS, AQS)
-Daniel Visoiu
-visoiu.daniel.g@gmail.com(SGiant)
-Lenuța Alboaie
-lalboaie@gmail.com(UAIC)
-Rafael Mastaleru
-rafael@rms.ro(RMS)
-Sînică Alboaie 
-salboaie@gmail.com(UAIC)
-Vlad Balmos
-vlad.balmos@gmail.com(Code932)
-PharmaLedger 
-Ana Balan	
-bam@rms.ro (RMS)
-Bogdan Mastahac
-mab@rms.ro (RMS)
-Cosmin Ursache
-cos@rms.ro (RMS)
-Rafael Mastaleru
-raf@rms.ro (RMS)
-
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
 
 
 
