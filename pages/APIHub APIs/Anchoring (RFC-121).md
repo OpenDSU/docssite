@@ -115,9 +115,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 ## 2.2 Body Parameters
 
 
-| **Name** | **Description**                                                                                                                                         |
-|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| body     | </br> {   </br> hashLinklds:  { </br>new: string  </br> last: string  </br> </br> } </br> digitalProof: string </br> zkp: string </br>  </br>  }        |
+| **Name** | **Description**                                                                                                                                    |
+|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
+| body     | </br> {  </br> hashLinklds:  { </br> new: string  </br> last: string  </br>  } </br> digitalProof: string </br> zkp: string </br>    }             |
+                                                                                                                                                      |
 
 
 
@@ -153,9 +154,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 ## 3.2 Body Parameters
 
 
-| **Name** | **Description**                                                                                                                                         |
-|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| body     | </br> {   </br> hashLinklds:  { </br>new: string  </br> last: string  </br> </br> } </br> digitalProof: string </br> zkp: string </br>  </br>  }        |
+| **Name** | **Description**                                                                                                                                        |
+|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| body     | {  </br> hashLinklds:  { </br>new: string  </br> last: string  </br> </br> } </br> digitalProof: string </br> zkp: string </br>  </br>  }              |
 
 
 
