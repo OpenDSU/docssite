@@ -268,7 +268,7 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 </p>
 
 
-<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html"> Octopus</a> actions.
+For each dependency, you can specify a list of actions. For all the possible actions, please refer to  Octopus actions.
 
 
 
@@ -290,7 +290,7 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 <p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:</p>
 
 
-
+```js
 
     {
 
@@ -304,26 +304,21 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
     }
 
-
+```
 
 
 <p style='text-align: justify;'>There should also be a file called package.json, that defines the build command. This file should look something like this:
 </p>
 
+```js
 
-    {
-
-     ...
-
-    "scripts": {
-
-    ...
-
-    "build": "node ../node_modules/octopus/scripts/run build devmode"
-
-    }
-
-    }
+{
+ ...
+ "scripts": {
+   ...
+   "build": "node ../node_modules/octopus/scripts/run build devmode"
+ }
+}
 
 
 
@@ -332,48 +327,30 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 
-    {
+```js
 
-     "workDir": ".",
-
-     "dependencies": [],
-
-     "build": [
-
-     {
-
+{
+ "workDir": ".",
+ "dependencies": [],
+ "build": [
+   {
      "name": "Bundles",
-
      "src": "",
-
      "actions": [
-
        {
-
          "type": "execute",
-
          "cmd": "node ../opendsu-sdk/psknode/bin/scripts/pskbuild.js --source=./../ --projectMap=./build/build.json  --prod=true --output=./build/bundles"
-
        },
-
        {
-
          "type": "remove",
-
          "target": "./builds"
-
-         }
-
-        ]
-
        }
+     ]
+   }
+ ]
+}
 
-      ]
-
-     }
-
-
-
+```
 
 
 <p style='text-align: justify;'>To include the bundle in the application, just copy the output JavaScript file in your application and include it as a script in the index.html file.
@@ -396,36 +373,20 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 <p style='text-align: justify;'>Go to apihub-root/external-volumes/config/domains/ and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
 </p>
 
-
-
 ```js
-
 {
-
-"anchoring": {
-
-"type": "FS",
-
-"option": {}
-
-},
-
-"enable": [
-
-"mq",
-
-"enclave"
-
-],
-
-"skipOAuth": [
-
-"/bricking/vault",
-
-"/anchor/vault"
-
-]
-
+ "anchoring": {
+   "type": "FS",
+   "option": {}
+ },
+ "enable": [
+   "mq",
+   "enclave"
+ ],
+ "skipOAuth": [
+   "/bricking/vault",
+   "/anchor/vault"
+ ]
 }
 
 ```
@@ -433,38 +394,24 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 <p style='text-align: justify;'>Then, go to apihub-root/external-volumes/config/bdns.hosts and add a configuration for your domain:</p>
 
-
 ```js
-
 {
-
-"altimanager": {
-
-"replicas": [],
-
-"brickStorages": [
-
-"$ORIGIN"
-
-],
-
-"anchoringServices": [
-
-"$ORIGIN"
-
-],
-
-"notifications": [
-
-"$ORIGIN"
-
-]
-
-}
-
+ "altimanager": {
+   "replicas": [],
+   "brickStorages": [
+     "$ORIGIN"
+   ],
+   "anchoringServices": [
+     "$ORIGIN"
+   ],
+   "notifications": [
+     "$ORIGIN"
+   ]
+ }
 }
 
 ```
+
 
 
 <p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS (RFC-022)</a>.
