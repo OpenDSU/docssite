@@ -105,27 +105,16 @@ test 30
 
 # Zoomable Image
 
-<div style="text-align:center;"> 
-    <p><b>Figure X: TITLU</b></p>
-</div>
+## ![TITLU](https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686){: style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;" onclick="openModal(this.src)"}
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-  />
-</div>
+## Modal
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="img01">
-</div>
+- Click on the image to open the modal
+- Click on the "x" button or outside the modal to close it
 
-<script>
+## Functions
+
+```javascript
 function openModal(imgSrc) {
   var modal = document.getElementById("myModal");
   var modalImg = document.getElementById("img01");
@@ -137,4 +126,6 @@ function closeModal() {
   var modal = document.getElementById("myModal");
   modal.style.display = "none";
 }
-</script>
+
+This Markdown will retain the structure of your HTML code, including the clickable image and the modal functionality.
+
