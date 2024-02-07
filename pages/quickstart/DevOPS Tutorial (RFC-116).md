@@ -173,11 +173,15 @@ test final 15
 
 <div style="display: flex; justify-content: center;">
   <img 
-    alt="Click to Zoom" 
+    alt="" 
     src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
+    title="Click to Zoom"
   />
-  <figcaption>Title of the Picture</figcaption>
+</div>
+
+<div style="text-align:center;"> 
+    <p><b>Figure X: title</b></p>
 </div>
