@@ -199,7 +199,6 @@ test 3X
 
 <!-- HTML content with the image -->
 
-
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
