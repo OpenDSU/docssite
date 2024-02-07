@@ -155,10 +155,6 @@ test final 11
 </head>
 <body>
 
-<div style="text-align:center;"> 
-    <p><b>Figure X: TITLU</b></p>
-</div>
-
 
 
 <!-- The Modal -->
