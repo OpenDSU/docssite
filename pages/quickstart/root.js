@@ -51,7 +51,7 @@ function openModal(imgSrc) {
   var modal = document.getElementById("myModal");
   var modalImg = document.getElementById("img01");
   modal.style.display = "block";
-  modalImg.src = imgSrc;
+  modalImg.src = imgSrc; // Update the source of the modal image
 }
 
 // Function to close the modal
