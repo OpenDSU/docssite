@@ -92,9 +92,7 @@ Populate values to be overwritten in
 
 Comment in helm upgrade/install command and execute ethadapter.sh script again for ethadapter deployment.
 
-<div style="text-align:center;"> 
-    <p><b>Figure X: TITLU</b></p>
-</div>
+
 
 <div style="display: flex; justify-content: center;">
   <img 
@@ -105,6 +103,10 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
     onclick="this.style.maxWidth = this.style.maxWidth === '100%' ? '200%' : '100%';"
     title="Click to Zoom"
   />
+</div>
+
+<div style="text-align:center;"> 
+    <p><b>Figure X: title</b></p>
 </div>
 
 <div style="display: flex; justify-content: center;">
