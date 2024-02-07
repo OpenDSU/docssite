@@ -300,7 +300,7 @@ For each dependency, you can specify a list of actions. For all the possible act
 
        "autoLoad": true
 
-    }
+     }
 
     }
 
@@ -320,6 +320,7 @@ For each dependency, you can specify a list of actions. For all the possible act
  }
 }
 
+```
 
 
 <p style='text-align: justify;'>We also need the <b>octopus.json</b> file. This file contains instructions for our build, necessary dependencies etc. For now, we will create the file and specify the build command, which will run the <b>pskbuild.js</b> script. The specified folder --source is the parent folder of the created module. The bundle will be created at the specified --output location after running the npm build command in the module folder.
@@ -420,7 +421,7 @@ For each dependency, you can specify a list of actions. For all the possible act
 
 
 
-**Contributors**
+**Contributors**                                                                                                                                                        
 
 
 1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
@@ -434,16 +435,16 @@ For each dependency, you can specify a list of actions. For all the possible act
 
 # Annex 1. Contributors
 
-| **Current Editors**                 | **Email**                                                                   |
-|:------------------------------------|:----------------------------------------------------------------------------|
-| Roxana Irimia                       | roxana@axiologic.net                                                        |
-| Cosmin Ursache                      | cosmin@axiologic.net                                                        |
-| Teodor Lupu                         | teodor@axiologic.net                                                        |
-| Andi-Gabriel Țan                    | andi@axiologic.net                                                          |
-| **Contributors Axiologic Research** | **Email**                                                                   |
-| Adrian Ganga                        | adrian@axiologic.net                                                        |
-| Andi-Gabriel Țan                    | andi@axiologic.net                                                          |
-| Cosmin Ursache                      | cosmin@axiologic.net                                                        |
-| Daniel Sava                         | daniel@axiologic.net                                                        |
-| Nicoleta Mihalache                  | nicoleta@axiologic.net                                                      |
-| Teodor Lupu                         | teodor@axiologic.net                                                       |
+| **Current Editors**                 | **Email**                                                                    |
+|:------------------------------------|:-----------------------------------------------------------------------------|
+| Roxana Irimia                       | roxana@axiologic.net                                                         |
+| Cosmin Ursache                      | cosmin@axiologic.net                                                         |
+| Teodor Lupu                         | teodor@axiologic.net                                                         |
+| Andi-Gabriel Țan                    | andi@axiologic.net                                                           |
+| **Contributors Axiologic Research** | **Email**                                                                    |
+| Adrian Ganga                        | adrian@axiologic.net                                                         |
+| Andi-Gabriel Țan                    | andi@axiologic.net                                                           |
+| Cosmin Ursache                      | cosmin@axiologic.net                                                         |
+| Daniel Sava                         | daniel@axiologic.net                                                         |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                                                       |
+| Teodor Lupu                         | teodor@axiologic.net                                                         |
