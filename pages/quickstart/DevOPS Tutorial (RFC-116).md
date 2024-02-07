@@ -22,6 +22,9 @@ A period when the community can review the RFC (comment Docs).
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
+test final 6
+
+
 
 # 1. Join Blockchain Network
 ## 1.1. Prerequisites
@@ -101,40 +104,16 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 30
+
+
+test2
 
 # Zoomable Image
 
-<div style="text-align:center;"> 
-    <p><b>Figure X: TITLU</b></p>
-</div>
-
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-  />
-</div>
+![Figure X: TITLU](https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686){: style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;" onclick="document.getElementById('myModal').style.display='block';document.getElementById('img01').src=this.src;"}
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="img01">
+<div id="myModal" class="modal" onclick="this.style.display='none'">
+  <span class="close">&times;</span>
+  ![Zoomable Image](https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686){: class="modal-content" style="cursor: zoom-out;"}
 </div>
-
-<script>
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-</script>
