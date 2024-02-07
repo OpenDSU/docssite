@@ -140,7 +140,7 @@ To run your application, simply open an incognito window in Google Chrome and ac
 
 ## 3.1 Creating a page
 
-<p style='text-align: justify;'>First of all, if we want to create a new page for our application we have to create its HTML file, the file that will be rendered by the browser. Go to ../code/pages. You should pick an easy-to-understand name that very briefly describes the purpose of the page you want to create. As an example, we will create a page that we can use to add a new category (although this page already exists). Let’s say we name this file add-category.html. As you can see, the name of the file is descriptive of the page that we are creating and also easy to remember. Make sure that the file has the .html extension. Inside the page, we will be using a webcardinal component called page-template. This is a custom component representing a container element which can have different slots (“page-title” and “page-content”). Inside this element, we should add typical html container elements. For the “page-title” slot we can use a <span> element, since it only contains some text, while for the “page-content” slot it is best to use a <div> element, or something similar, which can, in turn, contain other elements. Because we want to take advantage of the webcardinal set of functionalities, we will populate this slot with a <webc-container> element. This element also has a controller attribute, which we will describe in the further steps. The HTML file should now look similar to this:
+First of all, if we want to create a new page for our application we have to create its HTML file, the file that will be rendered by the browser. Go to ../code/pages. You should pick an easy-to-understand name that very briefly describes the purpose of the page you want to create. As an example, we will create a page that we can use to add a new category (although this page already exists). Let’s say we name this file add-category.html. As you can see, the name of the file is descriptive of the page that we are creating and also easy to remember. Make sure that the file has the .html extension. Inside the page, we will be using a webcardinal component called page-template. This is a custom component representing a container element which can have different slots (“page-title” and “page-content”). Inside this element, we should add typical html container elements. For the “page-title” slot we can use a <span> element, since it only contains some text, while for the “page-content” slot it is best to use a <div> element, or something similar, which can, in turn, contain other elements. Because we want to take advantage of the webcardinal set of functionalities, we will populate this slot with a <webc-container> element. This element also has a controller attribute, which we will describe in the further steps. The HTML file should now look similar to this:
 </p>
 
 ```js
@@ -168,8 +168,8 @@ To run your application, simply open an incognito window in Google Chrome and ac
 
 After creating the HTML file, don’t forget to add it to the pages array in the webcardinal.json file, located in the ../code/ directory:
 
-```js
 
+```js
 
 "pages": [
 
@@ -190,8 +190,8 @@ After creating the HTML file, don’t forget to add it to the pages array in the
 
 ## 3.2 Creating the CSS file
 
-<p style='text-align: justify;'>CSS files are typically linked to HTML files and contain instructions about styling different elements from the page. By using CSS, we are able to specify elements’ size, colors, backgrounds, visibility and transparency etc. We can tweak the style of these elements by adding classes or IDs to certain elements in the HTML file. It is a good idea to also use an intuitive name for the CSS file, for example, add-category.css. To use the newly created CSS file, add this link at the beginning of the HTML document, outside of any other elements, like this:
-</p>
+CSS files are typically linked to HTML files and contain instructions about styling different elements from the page. By using CSS, we are able to specify elements’ size, colors, backgrounds, visibility and transparency etc. We can tweak the style of these elements by adding classes or IDs to certain elements in the HTML file. It is a good idea to also use an intuitive name for the CSS file, for example, add-category.css. To use the newly created CSS file, add this link at the beginning of the HTML document, outside of any other elements, like this:
+
 
     <link rel="stylesheet" href="pages/stylesheets/add-category.css">
 
@@ -199,8 +199,8 @@ After creating the HTML file, don’t forget to add it to the pages array in the
 
 ## 3.3 Creating the controller
 
-<p style='text-align: justify;'>Any page controller is actually a class that extends the WebcController class of the WebCardinal framework. This class has a constructor function that is called when the corresponding HTML page is loaded by the browser and it also has other functions. It is recommended that you use an intuitive name for this file so that it will be easier to find later on, when you want to make changes. Let’s call it AddCategoryController.js. You can begin creating your controller from the example below:
-</p>
+Any page controller is actually a class that extends the WebcController class of the WebCardinal framework. This class has a constructor function that is called when the corresponding HTML page is loaded by the browser and it also has other functions. It is recommended that you use an intuitive name for this file so that it will be easier to find later on, when you want to make changes. Let’s call it AddCategoryController.js. You can begin creating your controller from the example below:
+
 
 
 ```js
@@ -227,11 +227,11 @@ class AddCategoryController extends WebcController {
 
 # 4. How to use OpenDSU APIs in SSApps
 
-<p style='text-align: justify;'>The classic Service design pattern can be used with ease to create a data layer between the controllers and OpenDSU APIs. In our tutorial, we propose to take a closer look at a simple Service called CategoryManagerService that uses the <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">OpenDSU Enclave</a> concept as a database.
-</p>
+The classic Service design pattern can be used with ease to create a data layer between the controllers and OpenDSU APIs. In our tutorial, we propose to take a closer look at a simple Service called CategoryManagerService that uses the <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">OpenDSU Enclave</a> concept as a database.
 
-<p style='text-align: justify;'>The <i>CategoryManagerService.js</i> file exposes a method (getCategoryManagerServiceInstance) for retrieving the ready-to-use singleton instance of our service. The purpose of this method is to obtain an OpenDSU Enclave instance and make it available for our service to use.
-</p>
+
+The <i>CategoryManagerService.js</i> file exposes a method (getCategoryManagerServiceInstance) for retrieving the ready-to-use singleton instance of our service. The purpose of this method is to obtain an OpenDSU Enclave instance and make it available for our service to use.
+
 
 
 ```js
@@ -268,12 +268,12 @@ let getCategoryManagerServiceInstance = function (callback) {
 
 ```
 
-<p style='text-align: justify;'>As you can see, in this method, we load the OpenDSU SDK by calling require(“opendsu”). In order to get our Main Enclave instance, we load and call the OpenDSU <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">Security Context</a>. Once we have the enclave instance, we can proceed with the singleton service instance initialization. We use the singleton design pattern because it is easy to provide the controllers with an instance of our service which doesn’t have any state, it just uses the OpenDSU Enclave as a Database to interact with.
-</p>
+As you can see, in this method, we load the OpenDSU SDK by calling require(“opendsu”). In order to get our Main Enclave instance, we load and call the OpenDSU <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">Security Context</a>. Once we have the enclave instance, we can proceed with the singleton service instance initialization. We use the singleton design pattern because it is easy to provide the controllers with an instance of our service which doesn’t have any state, it just uses the OpenDSU Enclave as a Database to interact with.
 
 
-<p style='text-align: justify;'>The service itself has several methods that call different functions from the db API that serve the purpose of accessing and modifying data from the enclave used as a database. Using the service helps us access the enclave that is structured as a database with two different tables: one for categories and another one for passwords.
-</p>
+
+The service itself has several methods that call different functions from the db API that serve the purpose of accessing and modifying data from the enclave used as a database. Using the service helps us access the enclave that is structured as a database with two different tables: one for categories and another one for passwords.
+
 
 
 Here is an example of how we can use the service to save a new category:
