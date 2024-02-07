@@ -110,7 +110,7 @@ A workspace is needed in order to be able to run a SSApp. The easiest way to cre
 </p>
 
 
-## 1.3. Test successful integration into workspace
+## 1.3 Test successful integration into workspace
 
 To run your application, simply open an incognito window in Google Chrome and access <i>localhost:8080/password-manager-wallet/loader</i>. You can also edit the <i>apihub-root/index.html</i> file of your workspace, and then access <i>localhost:8080</i> and be redirected to the password manager with the simple click of a button. In order to do this, replace the <i>href</i> attribute of the button with "/password-manager-wallet/loader". You might also want to change the text on the button from “Nothing here yet” to “My Password Manager”, for example, since now the button actually links to an application. For more information about how to use the workspace, check out <a href="https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html">RFC 114</a> - Developers Tutorial. This is how the end result should look like:
 
@@ -141,7 +141,6 @@ To run your application, simply open an incognito window in Google Chrome and ac
 ## 3.1 Creating a page
 
 First of all, if we want to create a new page for our application we have to create its HTML file, the file that will be rendered by the browser. Go to ../code/pages. You should pick an easy-to-understand name that very briefly describes the purpose of the page you want to create. As an example, we will create a page that we can use to add a new category (although this page already exists). Let’s say we name this file add-category.html. As you can see, the name of the file is descriptive of the page that we are creating and also easy to remember. Make sure that the file has the .html extension. Inside the page, we will be using a webcardinal component called page-template. This is a custom component representing a container element which can have different slots (“page-title” and “page-content”). Inside this element, we should add typical html container elements. For the “page-title” slot we can use a <span> element, since it only contains some text, while for the “page-content” slot it is best to use a <div> element, or something similar, which can, in turn, contain other elements. Because we want to take advantage of the webcardinal set of functionalities, we will populate this slot with a <webc-container> element. This element also has a controller attribute, which we will describe in the further steps. The HTML file should now look similar to this:
-
 
 ```js
 
