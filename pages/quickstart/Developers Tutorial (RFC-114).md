@@ -6,7 +6,6 @@ nav_order: 2
 ---
 
 
-
 # **Developers Tutorial (RFC-114)**
 {: .no_toc }
 
@@ -20,6 +19,8 @@ A period when the community can review the RFC (comment Docs)
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
 
 
 <!-- TOC -->
@@ -91,6 +92,7 @@ In order to be able to follow this guide, first you need to do the following ste
 <li> Now,  you should be able to see the application loader:</li>
 
 </ol>
+
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=343&h=236" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
@@ -202,7 +204,7 @@ There we go!
 
 # 4. Modules and Bundles
 
-<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus (RFC-095)</a>.</p></p>
+<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus (RFC-095)</a>.</p>
 
 ## 4.1  Modules
 
@@ -265,7 +267,7 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 </p>
 
 
-For each dependency, you can specify a list of actions. For all the possible actions, please refer to <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html"> Octopus</a> actions.
+<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html"> Octopus</a> actions.</p>
 
 
 
@@ -284,58 +286,58 @@ For each dependency, you can specify a list of actions. For all the possible act
 </div>
 
 
-<p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:
-</p>
+<p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:</p>
 
-```js
-{
 
- "my_module": {
 
-     "deps": "my_module",
+    {
 
-     "autoLoad": true
+     "my_module": {
 
- }
+       "deps": "my_module",
 
-}
+       "autoLoad": true
 
-```
+    }
+
+    }
+
+
+
 
 <p style='text-align: justify;'>There should also be a file called package.json, that defines the build command. This file should look something like this:
 </p>
 
-```js
 
-{
+    {
 
- ...
+     ...
 
- "scripts": {
+    "scripts": {
 
-   ...
+    ...
 
-   "build": "node ../node_modules/octopus/scripts/run build devmode"
+    "build": "node ../node_modules/octopus/scripts/run build devmode"
 
- }
+    }
 
-}
+    }
 
-```
+
 
 We also need the <b>octopus.json</b> file. This file contains instructions for our build, necessary dependencies etc. For now, we will create the file and specify the build command, which will run the <b>pskbuild.js</b> script. The specified folder --source is the parent folder of the created module. The bundle will be created at the specified --output location after running the npm build command in the module folder.
 
-```js
 
-{
 
- "workDir": ".",
+    {
 
- "dependencies": [],
+     "workDir": ".",
 
- "build": [
+     "dependencies": [],
 
-   {
+     "build": [
+
+     {
 
      "name": "Bundles",
 
@@ -357,17 +359,18 @@ We also need the <b>octopus.json</b> file. This file contains instructions for o
 
          "target": "./builds"
 
+         }
+
+        ]
+
        }
 
-     ]
+      ]
 
-   }
+     }
 
- ]
 
-}
 
-```
 
 
 <p style='text-align: justify;'>To include the bundle in the application, just copy the output JavaScript file in your application and include it as a script in the index.html file.
@@ -378,8 +381,7 @@ We also need the <b>octopus.json</b> file. This file contains instructions for o
 </p>
 
 
-<p style='text-align: justify;'>As a good practice, all the dependencies of your applications should be defined in the octopus.json file of your workspace, using the target property to place them where needed.
-</p>
+<p style='text-align: justify;'>As a good practice, all the dependencies of your applications should be defined in the octopus.json file of your workspace, using the target property to place them where needed.</p>
 
 
 
@@ -389,71 +391,74 @@ We also need the <b>octopus.json</b> file. This file contains instructions for o
 <p style='text-align: justify;'>Go to apihub-root/external-volumes/config/domains/ and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
 </p>
 
-```js
 
-{
 
- "anchoring": {
 
-   "type": "FS",
+    {
 
-   "option": {}
+      "anchoring": {
 
- },
+      "type": "FS",
 
- "enable": [
+      "option": {}
 
-   "mq",
+    },
 
-   "enclave"
+     "enable": [
 
- ],
+     "mq",
 
- "skipOAuth": [
+     "enclave"
 
-   "/bricking/vault",
+      ],
 
-   "/anchor/vault"
+     "skipOAuth": [
 
- ]
+     "/bricking/vault",
 
-}
-```
+     "/anchor/vault"
+
+    ]
+
+    }
+
+
+
 
 <p style='text-align: justify;'>Then, go to apihub-root/external-volumes/config/bdns.hosts and add a configuration for your domain:</p>
 
 
 
-```js
+    {
 
-{
+      "altimanager": {
 
- "altimanager": {
+      "replicas": [],
 
-   "replicas": [],
+      "brickStorages": [
 
-   "brickStorages": [
+      "$ORIGIN"
 
-     "$ORIGIN"
+       ],
 
-   ],
+    "anchoringServices": [
 
-   "anchoringServices": [
+      "$ORIGIN"
 
-     "$ORIGIN"
+    ],
 
-   ],
-
-   "notifications": [
+    "notifications": [
 
      "$ORIGIN"
 
-   ]
+    ]
 
- }
+    }
 
-}
-```
+    }
+
+
+
 
 <p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS (RFC-022)</a>.</p>
 
