@@ -115,6 +115,6 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
     src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
     class="imgMain" 
     style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="this.style.maxWidth = this.style.maxWidth === '100%' ? '200%' : '100%';"
+    onclick="this.style.maxWidth = this.style.maxWidth === '100%' ? '200%' : '69%';"
   />
 </div>
