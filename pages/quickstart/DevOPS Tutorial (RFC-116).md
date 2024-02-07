@@ -116,6 +116,17 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQkEzO0rZgXDl3eX9EAceucTAAERDKeTgZ_uGpduut1mFD4ouNNN5bhgbNPyBMZDXWPEfiY45D0iy7V/pub?w=618&h=309" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
     src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
