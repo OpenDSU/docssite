@@ -1,11 +1,11 @@
 ---
-title: Throttling and Readiness (RFC-137)
+title: Throttling and Readiness 
 layout: home
 parent: APIHub APIs
 nav_order: 18
 ---
 
-# APIHUb Throttling and Readiness
+# **APIHUb Throttling and Readiness (RFC-137)**
 
 {: .no_toc }
 
@@ -18,6 +18,7 @@ A period when the community can review the RFC (comment Docs).
 **Copyright: MIT license**
 
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
  
 <!-- TOC -->
@@ -42,10 +43,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
  
 ## 1.1. Responses Headers
 
-| Name                  | Type     | Value  | Description                                         |
-|:----------------------|:---------|:-------|:----------------------------------------------------|
-| X-RateLimit-Limit     | integer  |        | <p>Request tokens limit.</p> <p>Example: 60000.</p> |
-| X-RateLimit-Remaining | integer  |        | <p>Request tokens.</p> <p>Example: 59900.</p>       |
+| Name                  | Type     | Value  | Description                                   |
+|:----------------------|:---------|:-------|:----------------------------------------------|
+| X-RateLimit-Limit     | integer  |        | Request tokens limit. Example: 60000.         |
+| X-RateLimit-Remaining | integer  |        | Request tokens.</p> <p>Example: 59900.        |
   
  
 ## 1.2 Responses
