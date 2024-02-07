@@ -101,7 +101,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 20
+test 21
 
 <!DOCTYPE html>
 <html lang="en">
@@ -131,20 +131,7 @@ test 20
   <img class="modal-content" id="img01">
 </div>
 
-<script src="root.js"></script>
-<script>
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-</script>
+<script src="root.js"></script> <!-- Include the root.js file -->
 
 </body>
 </html>
