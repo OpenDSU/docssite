@@ -101,7 +101,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 10
+test 11
 
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +110,6 @@ test 10
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zoomable Image</title>
 <link rel="stylesheet" href="css/styles.css"> <!-- Reference to the CSS file -->
-<script src="zoom.js"></script> <!-- Reference to the JavaScript file -->
 </head>
 <body>
 
@@ -134,6 +133,7 @@ test 10
   <img class="modal-content" id="modalImg">
 </div>
 
+<script src="zoom.js"></script> <!-- Reference to the JavaScript file -->
 
 </body>
 </html>
