@@ -43,10 +43,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
  
 ## 1.1. Responses Headers
 
-| Name                  | Type     | Value  | Description                                   |
-|:----------------------|:---------|:-------|:----------------------------------------------|
-| X-RateLimit-Limit     | integer  |        | Request tokens limit. Example: 60000.         |
-| X-RateLimit-Remaining | integer  |        | Request tokens.</p> <p>Example: 59900.        |
+| Name                  | Type     | Value  | Description                            |
+|:----------------------|:---------|:-------|:---------------------------------------|
+| X-RateLimit-Limit     | integer  |        | Request tokens limit. Example: 60000.  |
+| X-RateLimit-Remaining | integer  |        | Request tokens. Example: 59900.        |
   
  
 ## 1.2 Responses
