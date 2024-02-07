@@ -4,7 +4,14 @@ layout: home
 parent: OpenDSU Quick Start
 nav_order: 4
 ---
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoomable Image</title>
+<script src="zoom.js"></script> <!-- Reference to the JavaScript file -->
+</head>
 
 # DevOPS Tutorial
 {: .no_toc }
@@ -27,7 +34,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 ## 1.1. Prerequisites
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=3197&h=951" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=3197&h=951" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
     <p><b></b></p>
 </div>
 
@@ -43,22 +50,29 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 ## 1.2. Shared Configuration Repo Fork
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
     <p><b></b></p>
 </div>
 
-    Fork PharmaLedger-IMI/epi-shared-configuration repository with your account   (https://github.com/PharmaLedger-IMI/epi-shared-configuration).
-    Create a directory under the appropriate network/environment and perform an initial commit.
 
-1.3. GitHub & Quorum Configuration
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTkMe3YMQ6rziFepuCpvRWBQXiRRnkKUHyO5sF08wBR04VuxCStRf_p0t7G-eqfVcDPxIcD_F8qkdoC/pub?w=1565&h=779" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+    <p><b></b></p>
+</div>
 
-    Configure ../bin/<company>/<network>/private/github.info.yaml for forked repo access.
-    Populate ../bin/<company>/<network>/private/qn-0.info.yaml with desired quorum node helm chart values to be overwritten (values omitted will be defaulted).
 
-1.4. Generate enode information
+- <p style='text-align: justify;'>Fork PharmaLedger-IMI/epi-shared-configuration repository with your account   (<a href="https://github.com/PharmaLedger-IMI/epi-shared-configuration">https://github.com/PharmaLedger-IMI/epi-shared-configuration</a>).</p>
+- <p style='text-align: justify;'>Create a directory under the appropriate network/environment and perform an initial commit.</p>
 
-At this point, join-network.sh can be used in order for the necessary enode information to be generated:
+## 1.3. GitHub & Quorum Configuration
 
+- <p style='text-align: justify;'>Configure ../bin/<company>/<network>/private/github.info.yaml for forked repo access.</p>
+- <p style='text-align: justify;'>Populate ../bin/<company>/<network>/private/qn-0.info.yaml with desired quorum node helm chart values to be overwritten (values omitted will be defaulted).</p>
+
+## 1.4. Generate enode information
+
+<p style='text-align: justify;'>At this point, join-network.sh can be used in order for the necessary enode information to be generated:
+</p>
     Comment out all lines after helm pl-plugin command execution.
     Execute: $ ./join-network.sh <company-name>
 
@@ -92,6 +106,61 @@ Populate values to be overwritten in
 
 Comment in helm upgrade/install command and execute ethadapter.sh script again for ethadapter deployment.
 
+
+
+TEST for zooming
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoomable Image</title>
+<style>
+  /* Styles for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  /* Modal content */
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
 <div style="text-align:center;"> 
     <p><b>Figure X: TITLU</b></p>
 </div>
@@ -102,7 +171,60 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
     src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
     class="imgMain" 
     style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="this.style.maxWidth = this.style.maxWidth === '100%' ? '200%' : '100%';"
-    title="Click to Zoom"
+    onclick="openModal(this.src)"
   />
 </div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+function openModal(imgSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("modalImg");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+
+
+test 3X
+
+
+<body>
+
+<!-- HTML content with the image -->
+
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
+    class="imgMain" 
+    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+  />
+</div>
+
+<div style="text-align:center;"> 
+    <p><b>Figure X: TITLU</b></p>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+</body>
+</html>
