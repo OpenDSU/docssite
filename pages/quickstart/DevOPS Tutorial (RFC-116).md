@@ -43,22 +43,29 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 ## 1.2. Shared Configuration Repo Fork
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
     <p><b></b></p>
 </div>
 
-    Fork PharmaLedger-IMI/epi-shared-configuration repository with your account   (https://github.com/PharmaLedger-IMI/epi-shared-configuration).
-    Create a directory under the appropriate network/environment and perform an initial commit.
 
-1.3. GitHub & Quorum Configuration
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTkMe3YMQ6rziFepuCpvRWBQXiRRnkKUHyO5sF08wBR04VuxCStRf_p0t7G-eqfVcDPxIcD_F8qkdoC/pub?w=1565&h=779" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+    <p><b></b></p>
+</div>
 
-    Configure ../bin/<company>/<network>/private/github.info.yaml for forked repo access.
-    Populate ../bin/<company>/<network>/private/qn-0.info.yaml with desired quorum node helm chart values to be overwritten (values omitted will be defaulted).
 
-1.4. Generate enode information
+- <p style='text-align: justify;'>Fork PharmaLedger-IMI/epi-shared-configuration repository with your account   (<a href="https://github.com/PharmaLedger-IMI/epi-shared-configuration">https://github.com/PharmaLedger-IMI/epi-shared-configuration</a>).</p>
+- <p style='text-align: justify;'>Create a directory under the appropriate network/environment and perform an initial commit.</p>
 
-At this point, join-network.sh can be used in order for the necessary enode information to be generated:
+## 1.3. GitHub & Quorum Configuration
 
+- <p style='text-align: justify;'>Configure ../bin/<company>/<network>/private/github.info.yaml for forked repo access.</p>
+- <p style='text-align: justify;'>Populate ../bin/<company>/<network>/private/qn-0.info.yaml with desired quorum node helm chart values to be overwritten (values omitted will be defaulted).</p>
+
+## 1.4. Generate enode information
+
+<p style='text-align: justify;'>At this point, join-network.sh can be used in order for the necessary enode information to be generated:
+</p>
     Comment out all lines after helm pl-plugin command execution.
     Execute: $ ./join-network.sh <company-name>
 
