@@ -47,7 +47,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | X-RateLimit-Limit     | integer  |        | <p>Request tokens limit.</p> <p>Example: 60000.</p> |
 | X-RateLimit-Remaining | integer  |        | <p>Request tokens.</p> <p>Example: 59900.</p>       |
 
-
+ 
 ## 1.2 Responses
 
 | Status Code          | Description                                                                                                                                                          |
