@@ -120,7 +120,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 2.2.1. Example: Application/JSON
 
-  ```js {
+  ```js 
+  {
 
      "date": "string",
 
@@ -133,6 +134,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
    }
 
   ]
+  
 ```
 
 
