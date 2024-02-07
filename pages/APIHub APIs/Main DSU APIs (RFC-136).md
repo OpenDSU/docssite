@@ -5,30 +5,66 @@ parent: OpenDSU APIHub APIs
 nav_order: 17
 ---
 
-Main DSU APIs (RFC-136)
 
-Abstract
-1. Get Main DSU        
 
-The GetMainDSU service returns the static DSU that can be set as the main context in various scenarios. In order to set the Main DSU, on the first API call that will occur on this endpoint, a DSU will be created from the provided environment.json file. This file is located in the server root folder.
+# **Main DSU APIs (RFC-136)**
+{: .no_toc }
 
-	
+{: .feedback }
+A period when the community can review the RFC (comment Docs).
 
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright**© 2018-2024 Axiologic Research and Contributors.
+
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+<!-- TOC -->
+* [**Main DSU APIs (RFC-136)**](#main-dsu-apis-rfc-136)
+* [Abstract](#abstract)
+* [1. Get Main DSU](#1-get-main-dsu-)
+  * [1.1. Responses](#11-responses)
+<!-- TOC -->
+
+# Abstract
+
+# 1. Get Main DSU        
+
+<p style='text-align: justify;'>The GetMainDSU service returns the static DSU that can be set as the main context in various scenarios. In order to set the Main DSU, on the first API call that will occur on this endpoint, a DSU will be created from the provided environment.json file. This file is located in the server root folder.</p>
+
+
+''''
 /getSSIForMainDSU
-1.1. Responses
+''''
 
-Status Code
-	
+## 1.1. Responses
 
-Description
+| Status Code  | Description                                                                   |
+|:-------------|:------------------------------------------------------------------------------|
+| 200          | Operation handled with success. The Key SSI for the mainDSU will be returned. |
+| 500          | Failed to set or get the Main DSU.                                            |
 
-200
-	
+**Contributors**
 
-Operation handled with success. The Key SSI for the mainDSU will be returned.
 
-500
-	
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-Failed to set or get the Main DSU.
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
+
+| **Current Editors**                 | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net             |
+| Rafael Mastaleru                    | rafael@rms.ro                            |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
+| **Contributors Axiologic Research** | **Email**                                |
+| Adrian Ganga                        | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| Cosmin Ursache                      | cosmin@axiologic.net                     |
+| Daniel Sava                         | daniel@axiologic.net                     |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
