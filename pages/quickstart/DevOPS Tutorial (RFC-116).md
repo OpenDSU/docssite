@@ -101,7 +101,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 7
+test 21
 
 <!DOCTYPE html>
 <html lang="en">
@@ -109,40 +109,29 @@ test 7
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zoomable Image</title>
-<link rel="stylesheet" href="css/styles.css"> <!-- Reference to the CSS file -->
 </head>
 <body>
 
-<!-- Your HTML content here -->
-
-
-<body>
-
-<!-- HTML content with the image -->
-
+<div style="text-align:center;"> 
+    <p><b>Figure X: TITLU</b></p>
+</div>
 
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vTkMe3YMQ6rziFepuCpvRWBQXiRRnkKUHyO5sF08wBR04VuxCStRf_p0t7G-eqfVcDPxIcD_F8qkdoC/pub?w=1565&h=779" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
     class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
   />
 </div>
 
-<div style="text-align:center;"> 
-    <p><b>text</b></p>
-</div>
-
 <div id="myModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg">
+  <img class="modal-content" id="img01">
 </div>
 
-</body>
-
-<script src="zoom.js"></script> <!-- Reference to the JavaScript file -->
+<script src="root.js"></script> <!-- Include the root.js file -->
 
 </body>
 </html>
