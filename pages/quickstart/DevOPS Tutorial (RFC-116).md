@@ -31,15 +31,21 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     <p><b></b></p>
 </div>
 
-The following components should be pre-installed:
+<p style='text-align: justify;'>The following components should be pre-installed:</p>
 
-    Helm pl-plugin (https://github.com/PharmaLedger-IMI/helm-pl-plugin).
-    Pharmaledger-imi/helm-charts (https://github.com/PharmaLedger-IMI/helm-charts).
+* Helm pl-plugin (<a href="https://github.com/PharmaLedger-IMI/helm-pl-plugin">https://github.com/PharmaLedger-IMI/helm-pl-plugin</a>).
+* Pharmaledger-imi/helm-charts (<a href="https://github.com/PharmaLedger-IMI/helm-charts">https://github.com/PharmaLedger-IMI/helm-charts</a>).
 
-* Other prerequisites also mentioned in helm chart documentation: helm 3, node v16.
 
-** Refer also to: https://github.com/PharmaLedger-IMI/epi-workspace/issues/829.
-1.2. Shared Configuration Repo Fork
+- Other prerequisites also mentioned in helm chart documentation: helm 3, node v16.
+- Refer also to: https://github.com/PharmaLedger-IMI/epi-workspace/issues/829.
+
+## 1.2. Shared Configuration Repo Fork
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b></b></p>
+</div>
 
     Fork PharmaLedger-IMI/epi-shared-configuration repository with your account   (https://github.com/PharmaLedger-IMI/epi-shared-configuration).
     Create a directory under the appropriate network/environment and perform an initial commit.
