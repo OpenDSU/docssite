@@ -123,7 +123,6 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 
 
-
 <p style='text-align: justify;'><b>Note</b>: This command first enters the helloworld-ssapp folder, then removes the .git files and installs the necessary dependencies, and then navigates back to the initial folder (the parent of helloworld-ssapp). Please note that, for the next steps of creating your SSApp, the server should be running in a separate terminal.</p>
    
 <ol>
@@ -140,8 +139,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
      mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-config-files/*  trust-loader-config/helloworld-wallet/loader
 
-<p style='text-align: justify;'><b>Note:</b> This will create the needed folders and will add some default configuration files that can be accessed <a href="https://github.com/webcardinal/tutorial-workspace/tree/master/default-loader-config-files">here</a>. Each SSApp needs its own environment.js file (here, you can set a certain enclave type and other parameters, like different types of domains etc.) and a config-constants.js file (here, you can set global variables like the application name, default messages for the user etc).</p></p>   
-
+<p style='text-align: justify;'><b>Note:</b> This will create the needed folders and will add some default configuration files that can be accessed <a href="https://github.com/webcardinal/tutorial-workspace/tree/master/default-loader-config-files">here</a>. Each SSApp needs its own environment.js file (here, you can set a certain enclave type and other parameters, like different types of domains etc.) and a config-constants.js file (here, you can set global variables like the application name, default messages for the user etc).</p>
 
 <li> Rebuild the workspace:</li>
 
@@ -199,12 +197,15 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 </div>
 
 
-There we go! 
+**There we go!** 
 
 
 # 4. Modules and Bundles
 
-<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus (RFC-095)</a>.</p>
+<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus (RFC-095)</a>.
+</p>
+
+
 
 ## 4.1  Modules
 
@@ -259,7 +260,7 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 <p style='text-align: justify;'>At build, the octopus will first clone the contents of <a href="https://github.com/opendsu/opendsu-sdk">http://github.com/opendsu/opendsu-sdk.git</a> at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace.
-</p>
+
 
 
 
@@ -267,7 +268,7 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 </p>
 
 
-<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html"> Octopus</a> actions.</p>
+<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html"> Octopus</a> actions.
 
 
 
@@ -287,6 +288,7 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 <p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:</p>
+
 
 
 
@@ -325,7 +327,8 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 
-We also need the <b>octopus.json</b> file. This file contains instructions for our build, necessary dependencies etc. For now, we will create the file and specify the build command, which will run the <b>pskbuild.js</b> script. The specified folder --source is the parent folder of the created module. The bundle will be created at the specified --output location after running the npm build command in the module folder.
+<p style='text-align: justify;'>We also need the <b>octopus.json</b> file. This file contains instructions for our build, necessary dependencies etc. For now, we will create the file and specify the build command, which will run the <b>pskbuild.js</b> script. The specified folder --source is the parent folder of the created module. The bundle will be created at the specified --output location after running the npm build command in the module folder.
+</p>
 
 
 
@@ -460,7 +463,7 @@ We also need the <b>octopus.json</b> file. This file contains instructions for o
 
 
 
-<p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS (RFC-022)</a>.</p>
+<p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS (RFC-022)</a>.
 
 
 
