@@ -117,6 +117,7 @@ test 3X
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
+    title="Click to Zoom"
   />
 </div>
 
