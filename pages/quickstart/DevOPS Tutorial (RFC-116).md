@@ -92,6 +92,10 @@ Populate values to be overwritten in
 
 Comment in helm upgrade/install command and execute ethadapter.sh script again for ethadapter deployment.
 
+<div style="text-align:center;"> 
+    <p><b>Figure X: TITLU</b></p>
+</div>
+
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
