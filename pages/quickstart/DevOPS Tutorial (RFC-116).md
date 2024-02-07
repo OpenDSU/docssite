@@ -101,7 +101,8 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 25
+test 26
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -114,8 +115,6 @@ test 25
 <body>
 
 <!-- Your HTML content -->
-
-
 
 <div style="display: flex; justify-content: center;">
   <img 
@@ -136,6 +135,7 @@ test 25
   <img class="modal-content" id="modalImg">
 </div>
 
+<script src="root.js"></script>
 
 </body>
 </html>
