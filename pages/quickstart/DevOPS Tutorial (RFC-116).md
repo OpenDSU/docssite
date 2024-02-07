@@ -104,8 +104,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test final 11
-
+test final 12
 
 <html lang="en">
 <head>
@@ -191,7 +190,7 @@ function closeModal() {
 </script>
 
 </body>
-
+</html>
 
 
 
