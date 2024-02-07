@@ -101,7 +101,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 7
+test 10
 
 <!DOCTYPE html>
 <html lang="en">
@@ -113,14 +113,7 @@ test 7
 </head>
 <body>
 
-<!-- Your HTML content here -->
-
-
-<body>
-
 <!-- HTML content with the image -->
-
-
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
@@ -139,8 +132,6 @@ test 7
   <span class="close" onclick="closeModal()">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
-
-</body>
 
 <script src="zoom.js"></script> <!-- Reference to the JavaScript file -->
 
