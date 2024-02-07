@@ -101,7 +101,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 11
+test 13
 
 <!DOCTYPE html>
 <html lang="en">
@@ -128,7 +128,7 @@ test 11
     <p><b>text</b></p>
 </div>
 
-<div id="myModal" class="modal">
+<div id="myModal" class="modal" style="display: none;"> <!-- Ensure the initial display state is set to 'none' -->
   <span class="close" onclick="closeModal()">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
