@@ -290,7 +290,10 @@ For each dependency, you can specify a list of actions. For all the possible act
 <p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:</p>
 
 
+
+
 ```js
+
 
     {
 
@@ -304,13 +307,19 @@ For each dependency, you can specify a list of actions. For all the possible act
 
     }
 
+
 ```
+
+
 
 
 <p style='text-align: justify;'>There should also be a file called package.json, that defines the build command. This file should look something like this:
 </p>
 
+
+
 ```js
+
 
 {
  ...
@@ -320,7 +329,11 @@ For each dependency, you can specify a list of actions. For all the possible act
  }
 }
 
+
+
 ```
+
+
 
 
 <p style='text-align: justify;'>We also need the <b>octopus.json</b> file. This file contains instructions for our build, necessary dependencies etc. For now, we will create the file and specify the build command, which will run the <b>pskbuild.js</b> script. The specified folder --source is the parent folder of the created module. The bundle will be created at the specified --output location after running the npm build command in the module folder.
@@ -329,6 +342,7 @@ For each dependency, you can specify a list of actions. For all the possible act
 
 
 ```js
+
 
 {
  "workDir": ".",
@@ -351,7 +365,10 @@ For each dependency, you can specify a list of actions. For all the possible act
  ]
 }
 
+
 ```
+
+
 
 
 <p style='text-align: justify;'>To include the bundle in the application, just copy the output JavaScript file in your application and include it as a script in the index.html file.
@@ -360,6 +377,7 @@ For each dependency, you can specify a list of actions. For all the possible act
 
 <p style='text-align: justify;'><b>Note:</b> For example, after installing the opendsu-sdk module, the opendsu-sdk/psknode/bundels/iframeBoot.js file should be included in the index.html file of your application in order to use the OpenDSU API.
 </p>
+
 
 
 <p style='text-align: justify;'>As a good practice, all the dependencies of your applications should be defined in the octopus.json file of your workspace, using the target property to place them where needed.</p>
@@ -374,7 +392,11 @@ For each dependency, you can specify a list of actions. For all the possible act
 <p style='text-align: justify;'>Go to apihub-root/external-volumes/config/domains/ and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
 </p>
 
+
+
 ```js
+
+
 {
  "anchoring": {
    "type": "FS",
@@ -390,12 +412,17 @@ For each dependency, you can specify a list of actions. For all the possible act
  ]
 }
 
+
+
 ```
 
 
 <p style='text-align: justify;'>Then, go to apihub-root/external-volumes/config/bdns.hosts and add a configuration for your domain:</p>
 
+
+
 ```js
+
 {
  "altimanager": {
    "replicas": [],
@@ -411,7 +438,9 @@ For each dependency, you can specify a list of actions. For all the possible act
  }
 }
 
+
 ```
+
 
 
 
@@ -421,7 +450,7 @@ For each dependency, you can specify a list of actions. For all the possible act
 
 
 
-**Contributors**                                                                                                                                                        
+**Contributors**
 
 
 1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
@@ -429,6 +458,7 @@ For each dependency, you can specify a list of actions. For all the possible act
 2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
 3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
 
 
 
