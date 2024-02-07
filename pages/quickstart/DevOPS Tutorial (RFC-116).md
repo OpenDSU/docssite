@@ -210,7 +210,7 @@ test 3X
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
+    src="LINK" 
     class="imgMain" 
     style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
@@ -218,7 +218,7 @@ test 3X
 </div>
 
 <div style="text-align:center;"> 
-    <p><b>Figure X: TITLU</b></p>
+    <p><b></b></p>
 </div>
 
 <div id="myModal" class="modal">
@@ -227,4 +227,31 @@ test 3X
 </div>
 
 </body>
-</html>
+
+
+
+<body>
+
+<!-- HTML content with the image -->
+
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=3197&h=951" 
+    class="imgMain" 
+    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+  />
+</div>
+
+<div style="text-align:center;"> 
+    <p><b>Title 1</b></p>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+</body>
