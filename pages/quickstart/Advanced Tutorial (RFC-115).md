@@ -27,7 +27,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [1. Create your Password Manager](#1-create-your-password-manager)
   * [1.1 Create a workspace](#11-create-a-workspace)
   * [1.2 Add the Password Manager SSApp to your workspace](#12-add-the-password-manager-ssapp-to-your-workspace)
-  * [1.3. Test successful integration into workspace](#13-test-successful-integration-into-workspace)
+  * [1.3 Test successful integration into workspace](#13-test-successful-integration-into-workspace)
 * [2. Password Manager SSApp description](#2-password-manager-ssapp-description)
 * [3.How to create a page in a SSApp](#3how-to-create-a-page-in-a-ssapp)
   * [3.1 Creating a page](#31-creating-a-page)
