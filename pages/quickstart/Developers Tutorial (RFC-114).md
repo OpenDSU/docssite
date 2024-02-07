@@ -259,9 +259,9 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 
-At build, the octopus will first clone the contents of <a href="https://github.com/opendsu/opendsu-sdk">http://github.com/opendsu/opendsu-sdk.git</a> at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace. 
 
-
+<p style='text-align: justify;'>At build, the octopus will first clone the contents of <a href="https://github.com/opendsu/opendsu-sdk">http://github.com/opendsu/opendsu-sdk.git</a> at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace. 
+</p>
 
 
 <p style='text-align: justify;'>Each dependency has a name. In this case, the name is also the directory name of that module. The “src” property specifies the URL of the repo that contains the module. This command will clone only the master branch, so make sure to have it.
