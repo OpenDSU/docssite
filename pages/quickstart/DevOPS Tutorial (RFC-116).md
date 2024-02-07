@@ -106,7 +106,6 @@ test final 6
 
 
 <head>
-<title>Zoomable Image</title>
 <style>
   .modal {
     display: none;
@@ -138,14 +137,12 @@ test final 6
 </head>
 <body>
 
-<div style="text-align:center;"> 
-    <p><b>Figure X: TITLU</b></p>
-</div>
+
 
 <div style="display: flex; justify-content: center;">
   <img 
     src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="document.getElementById('myModal').style.display='block';document.getElementById('img01').src=this.src;"
     alt="Zoomable Image"
   />
@@ -155,6 +152,10 @@ test final 6
 <div id="myModal" class="modal" onclick="this.style.display='none'">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01" style="cursor: zoom-out;">
+</div>
+
+<div style="text-align:center;"> 
+    <p><b>Figure X: TITLU</b></p>
 </div>
 
 </body>
