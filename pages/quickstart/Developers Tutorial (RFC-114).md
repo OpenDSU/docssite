@@ -212,7 +212,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 The opendsu-sdk module is added as a dependency in the octopus.json file in your workspace:
 
-```js
+````
 
 {
 
@@ -254,12 +254,12 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 }
 
-```
+````
 
 
 
 
-<p style='text-align: justify;'>At build, the octopus will first clone the contents of <a href="https://github.com/opendsu/opendsu-sdk">http://github.com/opendsu/opendsu-sdk.git</a> at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace.
+<p style='text-align: justify;'>At build, the octopus will first clone the contents of <a href="https://github.com/opendsu/opendsu-sdk">http://github.com/opendsu/opendsu-sdk.git</a> at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace. </p>
 
 
 
