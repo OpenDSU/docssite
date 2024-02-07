@@ -104,31 +104,11 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 test 26
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zoomable Image</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+![Image](https://docs.google.com/drawings/d/e/2PACX-1vTkMe3YMQ6rziFepuCpvRWBQXiRRnkKUHyO5sF08wBR04VuxCStRf_p0t7G-eqfVcDPxIcD_F8qkdoC/pub?w=1210&h=615){:class="imgMain" onclick="openModal(this.src)"}
 
-<!-- Your HTML content -->
+## Caption
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vTkMe3YMQ6rziFepuCpvRWBQXiRRnkKUHyO5sF08wBR04VuxCStRf_p0t7G-eqfVcDPxIcD_F8qkdoC/pub?w=1210&h=615" 
-    class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-  />
-</div>
-
-<div style="text-align:center;"> 
-    <p><b>asd</b></p>
-</div>
+Some text here.
 
 <div id="myModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
@@ -136,6 +116,3 @@ test 26
 </div>
 
 <script src="root.js"></script>
-
-</body>
-</html>
