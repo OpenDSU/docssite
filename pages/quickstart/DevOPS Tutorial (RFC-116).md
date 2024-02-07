@@ -150,13 +150,12 @@ test final 7
   }
 </style>
 </head>
+
 <body>
-
-
 
 <div style="display: flex; justify-content: center;">
   <img 
-    src="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vTkMe3YMQ6rziFepuCpvRWBQXiRRnkKUHyO5sF08wBR04VuxCStRf_p0t7G-eqfVcDPxIcD_F8qkdoC/pub?w=1210&h=615" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="document.getElementById('myModal').style.display='block';document.getElementById('img01').src=this.src;"
     alt="Zoomable Image"
@@ -172,6 +171,5 @@ test final 7
 <div style="text-align:center;"> 
     <p><b></b></p>
 </div>
-
 
 </body>
