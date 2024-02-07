@@ -55,7 +55,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | 200                  | Returns information about current throttling numbers or the string “Server ready” if the APIHub instance is not using the rate limit mechanism. (see 1.2.1 example). |
 | 429                  | Rate limit exceeded.                                                                                                                                                 |
 | 500                  | Integral throttling middleware error.                                                                                                                                |
-
+ 
 
 ### 1.2.1 Example: Application/JSON
 ```
