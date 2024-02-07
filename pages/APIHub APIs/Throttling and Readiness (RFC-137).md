@@ -39,7 +39,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
     GET /ready-probe
-
+ 
 ## 1.1. Responses Headers
 
 | Name                  | Type     | Value  | Description                                         |
