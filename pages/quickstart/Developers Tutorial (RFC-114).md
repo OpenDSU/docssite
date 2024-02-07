@@ -107,6 +107,7 @@ In order to be able to follow this guide, first you need to do the following ste
 
 
 
+
 # 2.Create your SSAPP
 
 We will start with a simple <a href="">SSapp template</a>. First, open a terminal in the root folder of your workspace.
