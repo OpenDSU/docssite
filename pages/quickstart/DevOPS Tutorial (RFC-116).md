@@ -104,14 +104,9 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test final 11
+test final 12
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zoomable Image</title>
+
 <style>
   /* Styles for the modal */
   .modal {
