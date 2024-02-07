@@ -27,7 +27,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 ## 1.1. Prerequisites
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=1439&h=440" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=3197&h=951" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b></b></p>
 </div>
 
