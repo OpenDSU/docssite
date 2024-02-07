@@ -189,3 +189,42 @@ function closeModal() {
 
 </body>
 </html>
+
+
+
+test 3
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoomable Image</title>
+</head>
+<body>
+
+<!-- HTML content with the image -->
+<div style="text-align:center;"> 
+    <p><b>Figure X: TITLU</b></p>
+</div>
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
+    class="imgMain" 
+    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+  />
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<!-- Reference to the zoom.js file -->
+<script src="zoom.js"></script>
+
+</body>
+</html>
