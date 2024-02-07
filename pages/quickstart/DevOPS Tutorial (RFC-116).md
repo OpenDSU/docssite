@@ -4,7 +4,14 @@ layout: home
 parent: OpenDSU Quick Start
 nav_order: 4
 ---
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoomable Image</title>
+<script src="zoom.js"></script> <!-- Reference to the JavaScript file -->
+</head>
 
 # DevOPS Tutorial
 {: .no_toc }
@@ -194,20 +201,11 @@ function closeModal() {
 
 test 3X
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zoomable Image</title>
-<script src="zoom.js"></script> <!-- Reference to the JavaScript file -->
-</head>
+
 <body>
 
 <!-- HTML content with the image -->
-<div style="text-align:center;"> 
-    <p><b>Figure X: TITLU</b></p>
-</div>
+
 
 <div style="display: flex; justify-content: center;">
   <img 
@@ -217,6 +215,10 @@ test 3X
     style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
   />
+</div>
+
+<div style="text-align:center;"> 
+    <p><b>Figure X: TITLU</b></p>
 </div>
 
 <div id="myModal" class="modal">
