@@ -5,11 +5,31 @@ parent: OpenDSU Quick Start
 nav_order: 4
 ---
 
-DevOPS Tutorial (RFC-116)
+
+# DevOPS Tutorial
+{: .no_toc }
+
+{: .feedback }
+A period when the community can review the RFC (comment Docs).
 
 
-1. Join Blockchain Network
-1.1. Prerequisites
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
+# 1. Join Blockchain Network
+## 1.1. Prerequisites
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=1439&h=440" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b></b></p>
+</div>
 
 The following components should be pre-installed:
 
