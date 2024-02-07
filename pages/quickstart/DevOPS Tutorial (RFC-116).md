@@ -67,6 +67,9 @@ function closeModal() {
 
 </body>
 
+
+
+
 # DevOPS Tutorial
 {: .no_toc }
 
@@ -87,10 +90,17 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 # 1. Join Blockchain Network
 ## 1.1. Prerequisites
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=3197&h=951" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-    <p><b></b></p>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=3197&h=951" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
 
 <p style='text-align: justify;'>The following components should be pre-installed:</p>
 
@@ -103,17 +113,27 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 1.2. Shared Configuration Repo Fork
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-    <p><b></b></p>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
 
-
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTkMe3YMQ6rziFepuCpvRWBQXiRRnkKUHyO5sF08wBR04VuxCStRf_p0t7G-eqfVcDPxIcD_F8qkdoC/pub?w=1565&h=779" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-    <p><b></b></p>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vTkMe3YMQ6rziFepuCpvRWBQXiRRnkKUHyO5sF08wBR04VuxCStRf_p0t7G-eqfVcDPxIcD_F8qkdoC/pub?w=1565&h=779" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
-
 
 - <p style='text-align: justify;'>Fork PharmaLedger-IMI/epi-shared-configuration repository with your account   (<a href="https://github.com/PharmaLedger-IMI/epi-shared-configuration">https://github.com/PharmaLedger-IMI/epi-shared-configuration</a>).</p>
 - <p style='text-align: justify;'>Create a directory under the appropriate network/environment and perform an initial commit.</p>
@@ -161,27 +181,3 @@ Populate values to be overwritten in
 Comment in helm upgrade/install command and execute ethadapter.sh script again for ethadapter deployment.
 
 
-
-
-
-
-test final 15
-
-
-
-
-
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
-
-<div style="text-align:center;"> 
-    <p><b>Figure X: title</b></p>
-</div>
