@@ -104,7 +104,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test final 12
+test final 13
 
 
 <style>
@@ -150,9 +150,6 @@ test final 12
 </head>
 <body>
 
-
-
-<!-- The Modal -->
 <div id="myModal" class="modal" onclick="closeModal()">
   <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
   <img class="modal-content" id="img01" onclick="event.stopPropagation()">
@@ -186,23 +183,5 @@ function closeModal() {
   />
 </div>
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-  />
-</div>
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-  />
-</div>
 </html>
