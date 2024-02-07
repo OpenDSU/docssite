@@ -5,108 +5,213 @@ parent: OpenDSU Quick Start
 nav_order: 2
 ---
 
-Developers Tutorial (RFC-114)
+
+# **Developers Tutorial (RFC-114)**
+{: .no_toc }
+
+{: .feedback }
+A period when the community can review the RFC (comment Docs)
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
-Prerequisites
+
+
+<!-- TOC -->
+* [Prerequisites](#prerequisites)
+* [1. Create your workspace](#1-create-your-workspace)
+* [2.Create your SSAPP](#2create-your-ssapp)
+* [3. Customize your SSAPP](#3-customize-your-ssapp)
+* [4. Modules and Bundles](#4-modules-and-bundles)
+  * [4.1  Modules](#41--modules)
+  * [4.2  Bundles](#42--bundles)
+* [5. Configure Domain](#5-configure-domain)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
+
+
+
+
+
+# Prerequisites
 
 In order to be able to follow this guide, first you need to do the following steps:
 
-    Install or update Node (including NPM) to version 14.15 or newer;
-    Install or update Git.
+<ol>
+    <li> Install or update Node (including NPM) to version 14.15 or newer;</li>
+    <li>Install or update Git. </li>
+</ol>
 
-    Create your workspace
 
-In order to create and run a SSApp, first we need to create a workspace. We will start from a tutorial workspace that bundles all the necessary dependencies for building and running SSApps. You can read more about how this is done here. Here are all the steps you need to follow for creating a workspace:
 
-    Clone tutorial-workspace from GitHub:
+# 1. Create your workspace
 
-git clone https://github.com/webcardinal/tutorial-workspace
+<p style='text-align: justify;'>In order to create and run a SSApp, first we need to create a workspace. We will start from a <a href="https://github.com/webcardinal/tutorial-workspace">tutorial workspace</a> that bundles all the necessary dependencies for building and running SSApps. You can read more about how this is done <a href="https://github.com/webcardinal/tutorial-workspace#readme">here</a>. Here are all the steps you need to follow for creating a workspace:
+</p>
 
-    Go inside the [tutorial-workspace] directory: 
+<ol>
+    <li>Clone tutorial-workspace from GitHub:</li>
 
-cd tutorial-workspace
+     git clone https://github.com/webcardinal/tutorial-workspace
 
-    Install all the necessary dependencies for a working development setup:
+   <li>Go inside the [tutorial-workspace] directory:</li> 
 
-npm run dev-install
+    cd tutorial-workspace
 
-Note: All the dependencies from the workspace can be found in the octopus.json file.
+ <li>Install all the necessary dependencies for a working development setup:</li>
 
-    Launch the server:
+    npm run dev-install
+</ol>
 
-npm run server
 
-     Scan all the apps and wallets in the configuration and run the build script:
 
-npm run build-all
+**Note:** All the dependencies from the workspace can be found in the octopus.json file.
 
-Note: Run this in a different terminal without closing the terminal that keeps the server running!
+<ol>
+ <li>Launch the server:</li>
 
-    Now,  you should be able to see the application loader:
+    npm run server
 
-This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace, available in this document: WebCardinal Beginners Tutorial (RFC-113).
+ <li>Scan all the apps and wallets in the configuration and run the build script:</li>
 
-    Create your SSAPP
+    npm run build-all
+</ol>
 
-We will start with a simple SSapp template. First, open a terminal in the root folder of your workspace.
 
-    Clone the template repo:
 
-git clone https://github.com/OpenDSU/ssapp-template helloworld-ssapp
+**Note:** Run this in a different terminal without closing the terminal that keeps the server running!
 
-    Remove .git files and install dependencies:
+<ol>
 
-cd helloworld-ssapp && rm -rf .git && npm install && cd ..
+<li> Now,  you should be able to see the application loader:</li>
 
-Note: This command first enters the helloworld-ssapp folder, then removes the .git files and installs the necessary dependencies, and then navigates back to the initial folder (the parent of helloworld-ssapp). Please note that, for the next steps of creating your SSApp, the server should be running in a separate terminal.
+</ol>
 
-    Bind the newly created helloworld-ssapp to a new wallet:
 
-npm run bind-wallet helloworld-wallet helloworld-ssapp
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=343&h=236" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
 
-    Prepare a loader for our newly created wallet:
 
-npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenDSU/trust-loader
 
-    Configure the loader:
+<p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace.
+</p>
 
-mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-config-files/*  trust-loader-config/helloworld-wallet/loader
 
-Note: This will create the needed folders and will add some default configuration files that can be accessed here. Each SSApp needs its own environment.js file (here, you can set a certain enclave type and other parameters, like different types of domains etc.) and a config-constants.js file (here, you can set global variables like the application name, default messages for the user etc).
 
-    Rebuild the workspace:
 
-npm run build-all
+# 2.Create your SSAPP
 
-We’re almost done! Our application can now be accessed at this link: http://localhost:8080/helloworld-wallet/loader. The last thing we need to do is to be able to access our new application through the application loader.
+We will start with a simple <a href="">SSapp template</a>. First, open a terminal in the root folder of your workspace.
 
-We can do this by modifying the apihub-root/index.html file. Then, we need to replace the address with the one of our application and also change the text of our button. These changes can be seen below:
+<ol>
+<li> Clone the template repo:</li>
 
-The code of the SSApp is located in helloworld-ssapp/code. Let’s make some changes to this app.
+    git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com/OpenDSU/ssapp-template</a> helloworld-ssapp
 
-    Customize your SSAPP
+<li> Remove .git files and install dependencies:</li>
 
-First, let’s change the title of our application. For this, we need to modify the loader configuration constants file.
+    cd helloworld-ssapp && rm -rf .git && npm install && cd ..
 
-Currently, the application has a homepage that is dynamically loaded by the Webcardinal router. We can see the HTML in helloworld-ssapp/code/pages/home.html. Let’s change the page content.
+</ol>
 
-In order to apply these changes we can rebuild everything inside the workspace:
 
-npm run build-all
 
-Restart the server to clean cached pages.
+
+<p style='text-align: justify;'><b>Note</b>: This command first enters the helloworld-ssapp folder, then removes the .git files and installs the necessary dependencies, and then navigates back to the initial folder (the parent of helloworld-ssapp). Please note that, for the next steps of creating your SSApp, the server should be running in a separate terminal.</p>
+   
+<ol>
+    <li> Bind the newly created helloworld-ssapp to a new wallet:</li>
+
+    npm run bind-wallet helloworld-wallet helloworld-ssapp
+
+   <li>Prepare a loader for our newly created wallet:</li>
+
+     npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenDSU/trust-loader
+ <ol>
+
+<li>Configure the loader:</li>
+
+     mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-config-files/*  trust-loader-config/helloworld-wallet/loader
+
+<p style='text-align: justify;'><b>Note:</b> This will create the needed folders and will add some default configuration files that can be accessed <a href="https://github.com/webcardinal/tutorial-workspace/tree/master/default-loader-config-files">here</a>. Each SSApp needs its own environment.js file (here, you can set a certain enclave type and other parameters, like different types of domains etc.) and a config-constants.js file (here, you can set global variables like the application name, default messages for the user etc).</p></p>   
+
+
+<li> Rebuild the workspace:</li>
+
+       npm run build-all
+ </ol>
+</ol>
+
+
+<p style='text-align: justify;'>We’re almost done! Our application can now be accessed at this link: <a href="http://localhost:8080/helloworld-wallet/loader/">http://localhost:8080/helloworld-wallet/loader</a>. The last thing we need to do is to be able to access our new application through the application loader.
+</p>
+
+
+<p style='text-align: justify;'>We can do this by modifying the <b>apihub-root/index.html file.</b> Then, we need to replace the address with the one of our application and also change the text of our button. These changes can be seen below:
+</p>
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRbtXm01_Fk_j0wfk9ODmhb1OOp5YHBID_jLMPFx5X8zTfqkEGrWw4frFdFHVhIaWuHqsKwFfm8tqDk/pub?w=644&h=237" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
+
+
+<p style='text-align: justify;'>The code of the SSApp is located in <b>helloworld-ssapp/code</b>. Let’s make some changes to this app.
+</p>
+
+
+# 3. Customize your SSAPP
+
+
+<p style='text-align: justify;'>First, let’s change the title of our application. For this, we need to modify the loader configuration constants file.
+</p>
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTB15Be6rNpCfIRpTR_8uYZ9A7DARokhoRolcN8sSwg1biEOWAL3Z2_xZF-RULi7VrraS9sHoJd2RJK/pub?w=644&h=125" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
+
+
+<p style='text-align: justify;'>Currently, the application has a homepage that is dynamically loaded by the Webcardinal router. We can see the HTML in helloworld-ssapp/code/pages/home.html. Let’s change the page content.
+</p>
+
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQsYSF1n1X5zR767owyAye2LUkuzZQ38ueYxm2dCPyixPRsQlp4ppseeA2rycfQOv13QHMgRSs8rlHA/pub?w=644&h=152" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
+
+
+<p style='text-align: justify;'>In order to apply these changes we can rebuild everything inside the workspace:</p>
+
+
+            npm run build-all
+
+<p style='text-align: justify;'>Restart the server to clean cached pages.</p>
+
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vStuloGVFmCLUTwD9t9mODEbnttrFSlFb3g2y-CswpVsjsre-jfqchhpDXEXKrrzIAkNXiEMmGBjUiP/pub?w=647&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
+
 
 There we go! 
 
-For a really cool app, the next step is checking out the WebCardinal Beginners Tutorial (RFC-113), where you can learn about WebCardinal controllers, events, or how to add new pages and components.
 
-    Modules and Bundles
+# 4. Modules and Bundles
 
-Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using Octopus (RFC-095).
-4.1. Modules
+<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus (RFC-095)</a>.</p>
+
+## 4.1  Modules
+
 
 The opendsu-sdk module is added as a dependency in the octopus.json file in your workspace:
+
+```js
 
 {
 
@@ -148,58 +253,91 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 }
 
-At build, the octopus will first clone the contents of http://github.com/opendsu/opendsu-sdk.git at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace.
+```
 
-Each dependency has a name. In this case, the name is also the directory name of that module. The “src” property specifies the URL of the repo that contains the module. This command will clone only the master branch, so make sure to have it.
 
-For each dependency, you can specify a list of actions. For all the possible actions, please refer to Octopus actions.
-4.2. Bundles
 
-Whether you want to reduce the number of server requests for JavaScript files or you want to do a node.js module to run in the browser, you can generate a bundle that can accomplish both of these things.
 
-Let’s say that, in your workspace, you have a module with certain functionalities. This module should have a file called index.js that exports the functionalities you want to expose.
+<p style='text-align: justify;'>At build, the octopus will first clone the contents of <a href="https://github.com/opendsu/opendsu-sdk">http://github.com/opendsu/opendsu-sdk.git</a> at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace.
+</p>
 
-In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:
 
-{
 
- "my_module": {
+<p style='text-align: justify;'>Each dependency has a name. In this case, the name is also the directory name of that module. The “src” property specifies the URL of the repo that contains the module. This command will clone only the master branch, so make sure to have it.
+</p>
 
-     "deps": "my_module",
 
-     "autoLoad": true
+<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html"> Octopus</a> actions.</p>
 
- }
 
-}
 
-        There should also be a file called package.json, that defines the build command. This file should look something like this:
+## 4.2  Bundles
 
-{
+<p style='text-align: justify;'>Whether you want to reduce the number of server requests for JavaScript files or you want to do a node.js module to run in the browser, you can generate a bundle that can accomplish both of these things.
+</p>
 
- ...
 
- "scripts": {
 
-   ...
+<p style='text-align: justify;'>Let’s say that, in your workspace, you have a module with certain functionalities. This module should have a file called index.js that exports the functionalities you want to expose.
+</p>
 
-   "build": "node ../node_modules/octopus/scripts/run build devmode"
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vToKhNgDstq2FUJG6fdp3j0mfK_wAdz1Xc10Janl1vrN8QEItHC-VHRpYM8f_gXWuAl8oKeuUa5w7FL/pub?w=248&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
 
- }
 
-}
+<p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:</p>
 
-        We also need the octopus.json file. This file contains instructions for our build, necessary dependencies etc. For now, we will create the file and specify the build command, which will run the pskbuild.js script. The specified folder --source is the parent folder of the created module. The bundle will be created at the specified --output location after running the npm build command in the module folder.
 
-{
 
- "workDir": ".",
+    {
 
- "dependencies": [],
+     "my_module": {
 
- "build": [
+       "deps": "my_module",
 
-   {
+       "autoLoad": true
+
+    }
+
+    }
+
+
+
+
+<p style='text-align: justify;'>There should also be a file called package.json, that defines the build command. This file should look something like this:
+</p>
+
+
+    {
+
+     ...
+
+    "scripts": {
+
+    ...
+
+    "build": "node ../node_modules/octopus/scripts/run build devmode"
+
+    }
+
+    }
+
+
+
+We also need the <b>octopus.json</b> file. This file contains instructions for our build, necessary dependencies etc. For now, we will create the file and specify the build command, which will run the <b>pskbuild.js</b> script. The specified folder --source is the parent folder of the created module. The bundle will be created at the specified --output location after running the npm build command in the module folder.
+
+
+
+    {
+
+     "workDir": ".",
+
+     "dependencies": [],
+
+     "build": [
+
+     {
 
      "name": "Bundles",
 
@@ -221,83 +359,137 @@ In your module, you should create a build folder containing a file named build.j
 
          "target": "./builds"
 
+         }
+
+        ]
+
        }
 
-     ]
+      ]
 
-   }
+     }
 
- ]
 
-}
 
-To include the bundle in the application, just copy the output JavaScript file in your application and include it as a script in the index.html file.
 
-Note: For example, after installing the opendsu-sdk module, the opendsu-sdk/psknode/bundels/iframeBoot.js file should be included in the index.html file of your application in order to use the OpenDSU API.
 
-As a good practice, all the dependencies of your applications should be defined in the octopus.json file of your workspace, using the target property to place them where needed.
+<p style='text-align: justify;'>To include the bundle in the application, just copy the output JavaScript file in your application and include it as a script in the index.html file.
+</p>
 
-    Configure Domain
 
-Go to apihub-root/external-volumes/config/domains/ and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
+<p style='text-align: justify;'><b>Note:</b> For example, after installing the opendsu-sdk module, the opendsu-sdk/psknode/bundels/iframeBoot.js file should be included in the index.html file of your application in order to use the OpenDSU API.
+</p>
 
-{
 
- "anchoring": {
+<p style='text-align: justify;'>As a good practice, all the dependencies of your applications should be defined in the octopus.json file of your workspace, using the target property to place them where needed.</p>
 
-   "type": "FS",
 
-   "option": {}
 
- },
 
- "enable": [
+# 5. Configure Domain
 
-   "mq",
+<p style='text-align: justify;'>Go to apihub-root/external-volumes/config/domains/ and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
+</p>
 
-   "enclave"
 
- ],
 
- "skipOAuth": [
 
-   "/bricking/vault",
+    {
 
-   "/anchor/vault"
+      "anchoring": {
 
- ]
+      "type": "FS",
 
-}
+      "option": {}
 
-        Then, go to apihub-root/external-volumes/config/bdns.hosts and add a configuration for your domain:
+    },
 
-{
+     "enable": [
 
- "altimanager": {
+     "mq",
 
-   "replicas": [],
+     "enclave"
 
-   "brickStorages": [
+      ],
+
+     "skipOAuth": [
+
+     "/bricking/vault",
+
+     "/anchor/vault"
+
+    ]
+
+    }
+
+
+
+
+<p style='text-align: justify;'>Then, go to apihub-root/external-volumes/config/bdns.hosts and add a configuration for your domain:</p>
+
+
+
+    {
+
+      "altimanager": {
+
+      "replicas": [],
+
+      "brickStorages": [
+
+      "$ORIGIN"
+
+       ],
+
+    "anchoringServices": [
+
+      "$ORIGIN"
+
+    ],
+
+    "notifications": [
 
      "$ORIGIN"
 
-   ],
+    ]
 
-   "anchoringServices": [
+    }
 
-     "$ORIGIN"
+    }
 
-   ],
 
-   "notifications": [
 
-     "$ORIGIN"
 
-   ]
+<p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS (RFC-022)</a>.</p>
 
- }
 
-}
 
-If you want to learn more about domains, check out BDNS (RFC-022).
 
+
+**Contributors**
+
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
+
+
+# Annex 1. Contributors
+
+| **Current Editors**                 | **Email**                                                                   |
+|:------------------------------------|:----------------------------------------------------------------------------|
+| Roxana Irimia                       | roxana@axiologic.net                                                        |
+| Cosmin Ursache                      | cosmin@axiologic.net                                                        |
+| Teodor Lupu                         | teodor@axiologic.net                                                        |
+| Andi-Gabriel Țan                    | andi@axiologic.net                                                          |
+| **Contributors Axiologic Research** | **Email**                                                                   |
+| Adrian Ganga                        | adrian@axiologic.net                                                        |
+| Andi-Gabriel Țan                    | andi@axiologic.net                                                          |
+| Cosmin Ursache                      | cosmin@axiologic.net                                                        |
+| Daniel Sava                         | daniel@axiologic.net                                                        |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                                                      |
+| Teodor Lupu                         | teodor@axiologic.net                                                       |
