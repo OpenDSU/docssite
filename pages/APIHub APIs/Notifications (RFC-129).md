@@ -19,12 +19,12 @@ A period when the community can review the RFC (comment Docs).
 
 **Copyright**
 
-**Copyright** ©  <2018-2022> Axiologic Research and Contributors.
+**Copyright** ©  2018-2022 Axiologic Research and Contributors.
 
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [**Notifications (RFC-129)**](#notifications-rfc-129)
+* [Notifications (RFC-129)](#notifications-rfc-129)
 * [Abstract](#abstract)
 * [1. Create a Subscription](#1-create-a-subscription)
   * [1.1. Path Parameters](#11-path-parameters)
@@ -112,11 +112,11 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 3.2.1.Example: Application/JSON
 
-``
+```
 {
    "message": "Content of message sent to subscribers"
   }
-``
+```
 
 ## 3.3. Responses
 
@@ -130,11 +130,21 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 3.3.1. Example: Application/JSON
 
-``
+```
 {
    "message": "Message delivered to 2 subscribers."
   }
-``
+```
+
+**Contributors**
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
 
 # Annex 1. Contributors
 
