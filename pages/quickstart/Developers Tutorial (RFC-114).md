@@ -85,6 +85,7 @@ In order to be able to follow this guide, first you need to do the following ste
 
 
 
+
 **Note:** Run this in a different terminal without closing the terminal that keeps the server running!
 
 <ol>
@@ -95,13 +96,14 @@ In order to be able to follow this guide, first you need to do the following ste
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=343&h=236" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=313&h=221" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
 </div>
 
 
 
 <p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace.
 </p>
+
 
 
 
@@ -156,7 +158,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRbtXm01_Fk_j0wfk9ODmhb1OOp5YHBID_jLMPFx5X8zTfqkEGrWw4frFdFHVhIaWuHqsKwFfm8tqDk/pub?w=644&h=237" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT18eCvQ_vtpGL1RcFu4Bnr4cpM98IOUwcXyoUbS5tqRpzh6wWOLHo9-sJ0lZBrAhl14mEzW_duSN55/pub?w=1226&h=445" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
 </div>
 
 
@@ -171,7 +173,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTB15Be6rNpCfIRpTR_8uYZ9A7DARokhoRolcN8sSwg1biEOWAL3Z2_xZF-RULi7VrraS9sHoJd2RJK/pub?w=644&h=125" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQNrlWqMR_SwuWp6RUkRiaYdTqj0Mof7lY0b02eopQ040qxPmsnYO8RgOWDHoOkHWNBL2DUe0yD2irH/pub?w=1707&h=314" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
 </div>
 
 
@@ -180,7 +182,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQsYSF1n1X5zR767owyAye2LUkuzZQ38ueYxm2dCPyixPRsQlp4ppseeA2rycfQOv13QHMgRSs8rlHA/pub?w=644&h=152" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTo-PIwKvpOHj-5oVq19gk8Ulw1yCsLczG-pS3DpgXv3rvFFzXzW42jshIVUjiqNHEqLxxtr6x3tM-5/pub?w=1467&h=340" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
 </div>
 
 
@@ -193,7 +195,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vStuloGVFmCLUTwD9t9mODEbnttrFSlFb3g2y-CswpVsjsre-jfqchhpDXEXKrrzIAkNXiEMmGBjUiP/pub?w=647&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTj2fVbJTv_rJWYnC_n6N8fOCEcLM43x4BpIrtOadA_g1AahWQSmr_ZYfO5O4CDgQaqLhwYhMB0K30H/pub?w=942&h=139" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
 </div>
 
 
@@ -259,7 +261,8 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 
-<p style='text-align: justify;'>At build, the octopus will first clone the contents of <a href="https://github.com/opendsu/opendsu-sdk">http://github.com/opendsu/opendsu-sdk.git</a> at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace. </p>
+
+At build, the octopus will first clone the contents of <a href="https://github.com/opendsu/opendsu-sdk">http://github.com/opendsu/opendsu-sdk.git</a> at the location <<target>>/<<name>> and then execute the commands specified by cmd. The workDir property specifies the current working directory, and “dependencies” is a list of dependencies for the workspace. 
 
 
 
@@ -269,7 +272,6 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 <p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to  Octopus actions.</p>
-
 
 
 ## 4.2 Bundles
