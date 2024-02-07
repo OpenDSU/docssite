@@ -20,40 +20,12 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [BDNS](#bdns)
+* [Abstract](#abstract)
+* [1. Get BDNS configuration](#1-get-bdns-configuration)
+  * [1.1. Responses](#11-responses)
+    * [1.1.1. Schema: application/json](#111-schema-applicationjson)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
- 
-BDNS (RFC-122)
-
-Feedback
-A period when the community can review the RFC (comment Docs).
-
-
-Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.
-Copyright: MIT license
-
-Copyright
-Copyright (c) <2018-2022> Axiologic Research and Contributors.
-This document is licensed under MIT license:
-(https://en.wikipedia.org/wiki/MIT_License)
-
-Contributors
-Description
-Axiologic Research
-www.axiologic.net 
-New content, cleaned the original texts under PharmaLedger Association and Novartis funding. 
-MIT licensed content accordingly with the contracts.
-Publish and maintain www.opendsu.com site.
-PharmaLedger Project Members
-www.pharmaledger.eu 
-Review, feedback, observations, new content and corrections MIT licensed accordingly with the consortium agreements.
-PrivateSky Research Project
-Initial content (www.privatesky.xyz). 
-MIT licensed content accordingly with the contracts.
-https://profs.info.uaic.ro/~ads/PrivateSky/ 
-
-
-
 
 # Abstract
 <p style='text-align: justify;'>The "BDNS" API space offers a set of portable functions used to request information about the blockchain domain used by your DSU. The agents should handle these operations automatically to get the anchoring service associated with the domain, the brick storage location and more information.
