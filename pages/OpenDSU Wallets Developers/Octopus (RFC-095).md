@@ -1,7 +1,7 @@
 ---
 title: Octopus 
 layout: home
-parent: OpenDSU DSU Wallets Developers
+parent: OpenDSU Wallets Developers
 nav_order: 8
 ---
 
