@@ -5,7 +5,7 @@ function openModal(imgSrc) {
     modal.style.display = "block";
     modalImg.src = imgSrc;
   }
-  
+
   function closeModal() {
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
