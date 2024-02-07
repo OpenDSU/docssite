@@ -271,16 +271,13 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 For each dependency, you can specify a list of actions. For all the possible actions, please refer to  Octopus actions.
 
 
+## 4.2 Bundles
 
-## 4.2  Bundles
-
-<p style='text-align: justify;'>Whether you want to reduce the number of server requests for JavaScript files or you want to do a node.js module to run in the browser, you can generate a bundle that can accomplish both of these things.
-</p>
+<p style='text-align: justify;'>Whether you want to reduce the number of server requests for JavaScript files or you want to do a node.js module to run in the browser, you can generate a bundle that can accomplish both of these things.</p>
 
 
 
-<p style='text-align: justify;'>Let’s say that, in your workspace, you have a module with certain functionalities. This module should have a file called index.js that exports the functionalities you want to expose.
-</p>
+<p style='text-align: justify;'>Let’s say that, in your workspace, you have a module with certain functionalities. This module should have a file called index.js that exports the functionalities you want to expose.</p>
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vToKhNgDstq2FUJG6fdp3j0mfK_wAdz1Xc10Janl1vrN8QEItHC-VHRpYM8f_gXWuAl8oKeuUa5w7FL/pub?w=248&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
