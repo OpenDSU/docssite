@@ -19,7 +19,7 @@ A period when the community can review the RFC (comment Docs).
 
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-
+ 
 <!-- TOC -->
 * [Abstract](#abstract)
 * [1. Ready Probe](#1-ready-probe)
