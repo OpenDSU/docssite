@@ -101,7 +101,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 21
+test 20
 
 <!DOCTYPE html>
 <html lang="en">
