@@ -172,7 +172,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQNrlWqMR_SwuWp6RUkRiaYdTqj0Mof7lY0b02eopQ040qxPmsnYO8RgOWDHoOkHWNBL2DUe0yD2irH/pub?w=1138&h=209" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQNrlWqMR_SwuWp6RUkRiaYdTqj0Mof7lY0b02eopQ040qxPmsnYO8RgOWDHoOkHWNBL2DUe0yD2irH/pub?w=1707&h=314" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
 </div>
 
 
@@ -181,7 +181,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTo-PIwKvpOHj-5oVq19gk8Ulw1yCsLczG-pS3DpgXv3rvFFzXzW42jshIVUjiqNHEqLxxtr6x3tM-5/pub?w=978&h=227" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTo-PIwKvpOHj-5oVq19gk8Ulw1yCsLczG-pS3DpgXv3rvFFzXzW42jshIVUjiqNHEqLxxtr6x3tM-5/pub?w=1467&h=340" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
 </div>
 
 
