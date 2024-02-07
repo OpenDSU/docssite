@@ -104,8 +104,9 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test final 12
+test final 11
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -122,7 +123,6 @@ test final 12
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.9);
   }
 
@@ -159,20 +159,12 @@ test final 12
     <p><b>Figure X: TITLU</b></p>
 </div>
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-  />
-</div>
+
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="img01">
+<div id="myModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
+  <img class="modal-content" id="img01" onclick="event.stopPropagation()">
 </div>
 
 <script>
@@ -190,11 +182,36 @@ function closeModal() {
 </script>
 
 </body>
-</html>
 
 
 
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
+    class="imgMain" 
+    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+  />
+</div>
 
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
+    class="imgMain" 
+    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+  />
+</div>
 
-
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
+    class="imgMain" 
+    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+  />
+</div>
 </html>
