@@ -140,18 +140,54 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 1.3. GitHub & Quorum Configuration
 
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQJNVfxIMLX9p_lww0Mv5OU6AzivXT9EQVhEhr5AIZJFF8CiSQe6Kt1PwWjc5_PQ83v3MaL3fBV5Otw/pub?w=1320&h=498" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
+
 - <p style='text-align: justify;'>Configure ../bin/<company>/<network>/private/github.info.yaml for forked repo access.</p>
 - <p style='text-align: justify;'>Populate ../bin/<company>/<network>/private/qn-0.info.yaml with desired quorum node helm chart values to be overwritten (values omitted will be defaulted).</p>
 
 ## 1.4. Generate enode information
 
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vS8ZZudcJsoUoN4iIcIl92GbvLPx0QkRztIHxijVBNLDhw5ZPNlkswvrrKKhsJNliDD7ehj_WVmrrhS/pub?w=1600&h=797" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vR90OH5n1HKkw272eFTWOH0Y3OrRSeuZHb4UW7vhAwwNGt6ZN8opYCMTqXxOglCoICGsMRoqxinMw7F/pub?w=1540&h=774" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
+
+
 <p style='text-align: justify;'>At this point, join-network.sh can be used in order for the necessary enode information to be generated:
 </p>
-    Comment out all lines after helm pl-plugin command execution.
-    Execute: $ ./join-network.sh <company-name>
+
+1. Comment out all lines after helm pl-plugin command execution. 
+2. Execute: $ ./join-network.sh <company-name>
 
 This  will create join-network.plugin.json & join-network.plugin.secrets.json
-1.5. Standalone Generation of enode Crypto
+
+## 1.5. Standalone Generation of enode Crypto
 
 In order to download common configuration values from forked shared configuration, comment out helm upgrade/install and execute:
 
