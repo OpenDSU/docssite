@@ -82,7 +82,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * npm run install-mobile (if you don't have cartridges library installed -> brew install cartridges for iOS and Linux OS)
 
 * **For iOS:**
-<p style='text-align: justify;'>- change the distribution version from the mobile/config/scan-app/ios/PSKNodeServer/PSKNodeServer/Resources/BuildConfig.xconfig file
+- <p style='text-align: justify;'>change the distribution version from the mobile/config/scan-app/ios/PSKNodeServer/PSKNodeServer/Resources/BuildConfig.xconfig file
 </p>
 
 * **For Android:**
@@ -93,13 +93,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * npm run server
 * npm run build-mobile
 
-    For Android: 
+* **For Android:** 
+- npm run build-android-apk
 
-    npm run build-android-apk
-
-    For IOS:
-
-    open mobile/scan-app/ios/PSSmartWalletNativeLayer.xcworkspace file with XCode
-    before build select the type (phone or any iOS)
-    build, archive and distribute (ensure that the certificate used contains all device ids)
+* **For IOS:**
+ - open mobile/scan-app/ios/PSSmartWalletNativeLayer.xcworkspace file with XCode
+ - before build select the type (phone or any iOS)
+ - build, archive and distribute (ensure that the certificate used contains all device ids)
 
