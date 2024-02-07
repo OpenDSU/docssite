@@ -1,17 +1,4 @@
-// zoom.js
-function openModal(imgSrc) {
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("modalImg");
-    modal.style.display = "block";
-    modalImg.src = imgSrc;
-  }
-
-  function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-  }
-
-  /* styles.css */
+var modalStyles = `
 .modal {
   display: none;
   position: fixed;
@@ -40,7 +27,6 @@ function openModal(imgSrc) {
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .close:hover,
@@ -49,3 +35,8 @@ function openModal(imgSrc) {
   text-decoration: none;
   cursor: pointer;
 }
+`;
+
+var styleElement = document.createElement('style');
+styleElement.textContent = modalStyles;
+document.head.appendChild(styleElement);
