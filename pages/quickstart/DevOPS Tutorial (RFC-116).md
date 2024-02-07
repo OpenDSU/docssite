@@ -176,7 +176,7 @@ test final 15
     alt="" 
     src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
     class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
   />
 </div>
