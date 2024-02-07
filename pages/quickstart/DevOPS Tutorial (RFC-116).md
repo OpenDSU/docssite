@@ -101,15 +101,15 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test final
+test final 2
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zoomable Image</title>
 <style>
-  /* Styles for the modal */
   .modal {
     display: none;
     position: fixed;
@@ -119,33 +119,21 @@ test final
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.9);
   }
-
-  /* Modal content */
   .modal-content {
     margin: auto;
     display: block;
     max-width: 90%;
     max-height: 90%;
   }
-
-  /* Close button */
   .close {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
+    color: #fff;
+    font-size: 24px;
     font-weight: bold;
-    transition: 0.3s;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
     cursor: pointer;
   }
 </style>
@@ -158,33 +146,18 @@ test final
 
 <div style="display: flex; justify-content: center;">
   <img 
-    alt="" 
     src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    class="imgMain" 
     style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
+    onclick="document.getElementById('myModal').style.display='block';document.getElementById('img01').src=this.src;"
+    alt="Zoomable Image"
   />
 </div>
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="img01">
+<div id="myModal" class="modal" onclick="this.style.display='none'">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01" style="cursor: zoom-out;">
 </div>
-
-<script>
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-</script>
 
 </body>
 </html>
