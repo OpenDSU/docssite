@@ -104,7 +104,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test final 13
+test final 15
 
 
 <style>
@@ -147,7 +147,6 @@ test final 13
     cursor: pointer;
   }
 </style>
-</head>
 <body>
 
 <div id="myModal" class="modal" onclick="closeModal()">
@@ -172,7 +171,6 @@ function closeModal() {
 </body>
 
 
-
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
@@ -182,6 +180,3 @@ function closeModal() {
     onclick="openModal(this.src)"
   />
 </div>
-
-
-</html>
