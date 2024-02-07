@@ -21,7 +21,7 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [**MQ Hub (RFC-130)**](#mq-hub-rfc-130)
+* [MQ Hub (RFC-130)](#mq-hub-rfc-130)
 * [Abstract](#abstract)
 * [1. Create a JWT Token](#1-create-a-jwt-token)
   * [1.1. Path Parameters](#11-path-parameters)
