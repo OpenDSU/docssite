@@ -389,6 +389,8 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 
+
+
 # 5. Configure Domain
 
 <p style='text-align: justify;'>Go to apihub-root/external-volumes/config/domains/ and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
@@ -396,75 +398,77 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 
 
+```js
 
-    {
+{
 
-      "anchoring": {
+"anchoring": {
 
-      "type": "FS",
+"type": "FS",
 
-      "option": {}
+"option": {}
 
-    },
+},
 
-     "enable": [
+"enable": [
 
-     "mq",
+"mq",
 
-     "enclave"
+"enclave"
 
-      ],
+],
 
-     "skipOAuth": [
+"skipOAuth": [
 
-     "/bricking/vault",
+"/bricking/vault",
 
-     "/anchor/vault"
+"/anchor/vault"
 
-    ]
+]
 
-    }
+}
 
-
+```
 
 
 <p style='text-align: justify;'>Then, go to apihub-root/external-volumes/config/bdns.hosts and add a configuration for your domain:</p>
 
 
+```js
 
-    {
+{
 
-      "altimanager": {
+"altimanager": {
 
-      "replicas": [],
+"replicas": [],
 
-      "brickStorages": [
+"brickStorages": [
 
-      "$ORIGIN"
+"$ORIGIN"
 
-       ],
+],
 
-    "anchoringServices": [
+"anchoringServices": [
 
-      "$ORIGIN"
+"$ORIGIN"
 
-    ],
+],
 
-    "notifications": [
+"notifications": [
 
-     "$ORIGIN"
+"$ORIGIN"
 
-    ]
+]
 
-    }
+}
 
-    }
+}
 
-
+```
 
 
 <p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS (RFC-022)</a>.
-
+</p>
 
 
 
