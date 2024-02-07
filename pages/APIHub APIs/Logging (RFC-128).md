@@ -5,20 +5,6 @@ parent: OpenDSU APIHub APIs
 nav_order: 9
 ---
 
-<!-- TOC -->
-
-* [Abstract](#abstract)
-* [1.Add Log](#1add-log)
-  * [1.1 Path Parameters](#11-path-parameters)
-  * [1.2 Body Parameters](#12-body-parameters)
-    * [1.2.1 Example: Application/JSON](#121-example-applicationjson)
-  * [1.3 Responses](#13-responses)
-* [2. Read Log](#2-read-log)
-  * [2.1 Path Parameters](#21-path-parameters)
-  * [2.2 Responses](#22-responses)
-* [Annex 1. Contributors](#annex-1-contributors)
-<!-- TOC -->
-
 
 
 # **Logging (RFC-128)**
@@ -35,6 +21,20 @@ A period when the community can review the RFC (comment Docs)
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
+
+<!-- TOC -->
+
+* [Abstract](#abstract)
+* [1.Add Log](#1add-log)
+  * [1.1 Path Parameters](#11-path-parameters)
+  * [1.2 Body Parameters](#12-body-parameters)
+    * [1.2.1 Example: Application/JSON](#121-example-applicationjson)
+  * [1.3 Responses](#13-responses)
+* [2. Read Log](#2-read-log)
+  * [2.1 Path Parameters](#21-path-parameters)
+  * [2.2 Responses](#22-responses)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 
