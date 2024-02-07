@@ -20,7 +20,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [BDNS](#bdns)
 * [Abstract](#abstract)
 * [1. Get BDNS configuration](#1-get-bdns-configuration)
   * [1.1. Responses](#11-responses)
