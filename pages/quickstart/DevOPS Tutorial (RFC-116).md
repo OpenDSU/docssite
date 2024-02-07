@@ -102,108 +102,18 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 TEST for zooming
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zoomable Image</title>
-<style>
-  /* Styles for the modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
-  }
-
-  /* Modal content */
-  .modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  /* Close button */
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-</style>
-</head>
-<body>
-
-<div style="text-align:center;"> 
-    <p><b>Figure X: TITLU</b></p>
-</div>
-
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRZQSJCXgkodxmMj5AE_xvp9uVFIGfGFAtS9na-i3hwNMAjyY0LXQs43hYhp4HcEUHl-iNIlm2KnuxS/pub?w=1352&h=686" 
-    class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-  />
-</div>
-
-<div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg">
-</div>
-
-<script>
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("modalImg");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-</script>
-
-</body>
-</html>
-
-
-
 test 3X
+
 
 
 <body>
 
 <!-- HTML content with the image -->
 
-
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="LINK" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=3197&h=951" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
@@ -211,35 +121,7 @@ test 3X
 </div>
 
 <div style="text-align:center;"> 
-    <p><b></b></p>
-</div>
-
-<div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg">
-</div>
-
-</body>
-
-
-
-<body>
-
-<!-- HTML content with the image -->
-
-
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vQXzEuurQpzSmpHvjVQ55qP09jC4-53iSwucI6tL2my7qSW60k0L_wNSNVM7KfaGNmUFNzZIUhyUEJJ/pub?w=3197&h=951" 
-    class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-  />
-</div>
-
-<div style="text-align:center;"> 
-    <p><b>Title 1</b></p>
+    <p><b>Title Test</b></p>
 </div>
 
 <div id="myModal" class="modal">
