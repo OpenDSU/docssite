@@ -205,7 +205,7 @@ test 3X
     alt="" 
     src="LINK" 
     class="imgMain" 
-    style="max-width: 69%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
   />
 </div>
