@@ -101,7 +101,7 @@ Comment in helm upgrade/install command and execute ethadapter.sh script again f
 
 
 
-test 22
+test 20
 
 <!DOCTYPE html>
 <html lang="en">
@@ -109,7 +109,6 @@ test 22
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zoomable Image</title>
-<script src="root.js"></script> <!-- Include the root.js script -->
 </head>
 <body>
 
@@ -131,6 +130,21 @@ test 22
   <span class="close" onclick="closeModal()">&times;</span>
   <img class="modal-content" id="img01">
 </div>
+
+<script src="root.js"></script>
+<script>
+function openModal(imgSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+</script>
 
 </body>
 </html>

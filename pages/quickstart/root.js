@@ -1,4 +1,3 @@
-// Define the CSS styles as a JavaScript string
 var modalStyles = `
 .modal {
   display: none;
@@ -9,6 +8,7 @@ var modalStyles = `
   width: 100%;
   height: 100%;
   overflow: auto;
+  background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.9);
 }
 
@@ -37,25 +37,6 @@ var modalStyles = `
 }
 `;
 
-// Create a style element
 var styleElement = document.createElement('style');
-
-// Set the CSS styles as the content of the style element
 styleElement.textContent = modalStyles;
-
-// Append the style element to the document head
 document.head.appendChild(styleElement);
-
-// Function to open the modal
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
-  modal.style.display = "block";
-  modalImg.src = imgSrc; // Update the source of the modal image
-}
-
-// Function to close the modal
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
