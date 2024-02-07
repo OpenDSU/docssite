@@ -192,7 +192,7 @@ function closeModal() {
 
 
 
-test 3
+test 3X
 
 <!DOCTYPE html>
 <html lang="en">
@@ -200,6 +200,7 @@ test 3
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zoomable Image</title>
+<script src="zoom.js"></script> <!-- Reference to the JavaScript file -->
 </head>
 <body>
 
@@ -222,9 +223,6 @@ test 3
   <span class="close" onclick="closeModal()">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
-
-<!-- Reference to the zoom.js file -->
-<script src="zoom.js"></script>
 
 </body>
 </html>
