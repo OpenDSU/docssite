@@ -21,7 +21,39 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [Ethereum Adapter APIs (RFC-131)](#ethereum-adapter-apis-rfc-131)
+* [**Ethereum Adapter APIs (RFC-131)**](#ethereum-adapter-apis-rfc-131)
+* [Abstract](#abstract)
+* [1. Add Anchor](#1-add-anchor)
+  * [1.1. Path Parameters](#11-path-parameters)
+  * [1.2. Body Parameters](#12-body-parameters)
+    * [1.2.1.Example: Application/JSON](#121example-applicationjson)
+  * [1.3. Responses](#13-responses)
+* [2. Get Anchor Versions](#2-get-anchor-versions)
+  * [2.1. Path Parameters](#21-path-parameters)
+  * [2.2. Responses](#22-responses)
+    * [2.2.1. Example: Application/JSON](#221-example-applicationjson)
+* [3. Health Check](#3-health-check)
+  * [3.1. Responses](#31-responses)
+* [4. Ethereum smart contract AnchorContract](#4-ethereum-smart-contract-anchorcontract)
+  * [4.1. Ethereum](#41-ethereum)
+  * [4.2.Data Types](#42data-types)
+  * [4.3. Status Codes](#43-status-codes)
+  * [4.4. Public Methods](#44-public-methods)
+    * [4.4.1. addAnchor](#441-addanchor)
+    * [4.4.2.  getAnchorVersions](#442-getanchorversions)
+    * [4.4.3. Signature Validation Algorithm](#443-signature-validation-algorithm)
+    * [4.4.4. Obtaining the Ethereum Account from a publicKey](#444-obtaining-the-ethereum-account-from-a-publickey)
+    * [4.4.5. Obtaining the Ethereum Account from Signature and Hash](#445-obtaining-the-ethereum-account-from-signature-and-hash)
+* [5. Technical details - Blockchain Adaptor](#5-technical-details---blockchain-adaptor)
+  * [5.1. Web API configuration](#51-web-api-configuration)
+  * [5.2. API Entry points](#52-api-entry-points)
+    * [5.2.1.AddAnchor entry point](#521addanchor-entry-point)
+    * [5.2.2. GetVersions entry point](#522-getversions-entry-point)
+* [6. Deployment and conventions](#6-deployment-and-conventions)
+  * [6.1. Deployment containers](#61-deployment-containers)
+    * [6.1.1. Deployment execution steps](#611-deployment-execution-steps)
+  * [6.2.Possible solutions for the Smart Contract Deployment](#62possible-solutions-for-the-smart-contract-deployment)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
 
@@ -458,77 +490,49 @@ Upon deploying the container, it will execute the following operations: </br>
 
 ### 6.1.1. Deployment execution steps
 
-|   |   |   |
-|---|---|---|
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| Component                                        | Type       | Details                                                                                                                                                                                                                                                          |
+|:-------------------------------------------------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Requirement: blockchain network deployed         |            |                                                                                                                                                                                                                                                                  |
+| Anchoring Smart Contract                         | Container  | After deployment it should provide the details for the API Adaptor in order to interact with anchoring smart contracts. </br> **Convention** : </br> Provide information into the config.json file located in ANCHOR_SMARTCONTRACT_CONFIG_FOLDER mounted volume. |
+| API Adaptor                                      | Container  | **Convention** : </br> It will require a config.json file in ANCHOR_SMARTCONTRACT_CONFIG_FOLDER                                                                                                                                                                  |
 
 
-Component
-Type
-Details
-Requirement: blockchain network deployed
-Anchoring Smart Contract
-Container
+## 6.2.Possible solutions for the Smart Contract Deployment
+
+| Solution type                                                                                                                   |
+|:--------------------------------------------------------------------------------------------------------------------------------|
+| Required output: populate config.json file </br> Required input: access point and credentials to access the blockchain network. |
+| Truffle                                                                                                                         |
+| Deployment implemented in Node.js using solc and ganache.                                                                       |
+
+**Contributors**
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+# Annex 1. Contributors
 
 
-After deployment it should provide the details for the API Adaptor in order to interact with anchoring smart contracts.
-Convention :
-Provide information into the config.json file located in ANCHOR_SMARTCONTRACT_CONFIG_FOLDER mounted volume.
-API Adaptor
-Container
-Convention :
-It will require a config.json file in ANCHOR_SMARTCONTRACT_CONFIG_FOLDER
-
-6.2.Possible solutions for the Smart Contract Deployment
-Solution type
-Required output: populate config.json file
-Required input: access point and credentials to access the blockchain network.
-Truffle
-Deployment implemented in Node.js using solc and ganache.
-
-
-
-
-
-Annex 1. Contributors
-Current Editors
-
-
-Sînică Alboaie
-sinica.alboaie@axiologic.net
-Rafael Mastaleru
-rafael@rms.ro
-Nicoleta Mihalache
-nicoleta@axiologic.net
-Teodor Lupu
-teodor@axiologic.net
-Contributors Axiologic Research
-
-
-Adrian Ganga
-adrian@axiologic.net
-Andi-Gabriel Țan 
-andi@axiologic.net
-Cosmin Ursache
-cosmin@axiologic.net 
-Daniel Sava
-daniel@axiologic.net
-Nicoleta Mihalache
-nicoleta@axiologic.net
-Teodor Lupu
-teodor@axiologic.net
-PharmaLedger
-Ana Balan	
-bam@rms.ro (RMS)
-Bogdan Mastahac
-mab@rms.ro (RMS)
-Cosmin Ursache
-cos@rms.ro (RMS)
-Rafael Mastaleru
-raf@rms.ro (RMS)
-
-
+| **Current Editors**                 | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net             |
+| Rafael Mastaleru                    | rafael@rms.ro                            |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
+| Teodor Lupu                         | teodor@axiologic.net                     |
+| **Contributors Axiologic Research** | **Email**                                |
+| Adrian Ganga                        | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| Cosmin Ursache                      | cosmin@axiologic.net                     |
+| Daniel Sava                         | daniel@axiologic.net                     |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
+| Teodor Lupu                         | teodor@axiologic.net                     |
+| **PharmaLedger**                    | **Email**                                |
+| Ana Balan                           | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                     | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                      | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                         |
 
 
