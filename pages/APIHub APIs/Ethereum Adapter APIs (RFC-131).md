@@ -172,7 +172,7 @@ BSidW1oziQQbB3vTNVc1ST7TbTdBefPiMv6p7Lwni9DsYAM1sjVDPdrhGDsTsKkcjp4Lecio4f81
 | getChainedVersions      | String anchorID                                                                                                                                                                                 | Returns an array of tuples                                                                                                                                                                                                                    |
 
 
-Reference: https://github.com/PharmaLedger-IMI/ethereum-anchoring.
+Reference: <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring.</a>
 
 ## 4.2.Data Types
 
@@ -251,9 +251,7 @@ Functions used in the implementation:
 
 Validation process implemented in the addAnchor function: 
 
-Before an anchor is added to the blockchain, the following validation flow is executed : 
-
-<p style='text-align: justify;'>
+Before an anchor is added to the blockchain, the following validation flow is executed :
 
 1. Check if the anchor is not already marked as read-only. In case it is read-only, raise the status statusCannotUpdateReadOnlyAnchor and stop the smart contract execution. 
 2. Validate that hash links provided for the anchor are not out of sync: 
@@ -268,7 +266,7 @@ Before an anchor is added to the blockchain, the following validation flow is ex
    * Current status is that hash links are valid, controlString is valid.
    * Validate the signature and if it fails raise statusSignatureCheckFailed and stop the smart contract execution (it will be detailed in a separate chapter).
    * Current status is that hash links are valid, controlString is valid and signature is valid.
-   * Validation process is completed and storing the information on the blockchain can begin.</p>
+   * Validation process is completed and storing the information on the blockchain can begin.
 
 ### 4.4.3. Signature Validation Algorithm
 
@@ -286,11 +284,10 @@ Before an anchor is added to the blockchain, the following validation flow is ex
 |                 | bool          | Out |
 
 
-<p style='text-align: justify;'>
 The function will compare the result of the calculateAddress function with the result of the getAddressFromHashAndSig function; if they match it will return true, otherwise false. 
-
+<br>
 In order to validate a signature in Solidity, we have to obtain the account by recovering it, using the signature and the hash that was signed. The obtained account is a derivation of the publicKey that was obtained from the privateKey that was used to sign the hash. Because of this, it was required to implement the derivation of the received publicKey in order to get the account. Once both accounts are obtained, it is possible to compare them and validate if the signature provided was made with the privateKey corresponding to the publicKey we received.
-</p>
+</br>
 
 ### 4.4.4. Obtaining the Ethereum Account from a publicKey
 
