@@ -32,7 +32,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [Function getMainEnclaveDB(callback) and getMainEnclave(callback)](#function-getmainenclavedbcallback-and-getmainenclavecallback)
   * [Function genInMemoryDB()](#function-geninmemorydb)
   * [Function getSharedEnclaveDB(callback) and getSharedEnclave(callback)](#function-getsharedenclavedbcallback-and-getsharedenclavecallback)
-* [** Loading the DataBase API**](#-loading-the-database-api)
+  * [Loading the DataBase API](#loading-the-database-api)
 * [2. Database instances](#2-database-instances)
   * [2.1. Reading entries from the database](#21-reading-entries-from-the-database)
     * [Function getHistory(tableName, key, callback)](#function-gethistorytablename-key-callback)
@@ -189,7 +189,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# **Loading the DataBase API**
+## Loading the DataBase API
+
 
 Use is described later for each function:
 
