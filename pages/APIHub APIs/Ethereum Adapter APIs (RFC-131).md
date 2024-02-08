@@ -21,7 +21,7 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [**Ethereum Adapter APIs (RFC-131)**](#ethereum-adapter-apis-rfc-131)
+* [Ethereum Adapter APIs (RFC-131)](#ethereum-adapter-apis-rfc-131)
 * [Abstract](#abstract)
 * [1. Add Anchor](#1-add-anchor)
   * [1.1. Path Parameters](#11-path-parameters)
@@ -249,23 +249,25 @@ Functions used in the implementation:
 | buildAnchorValue  | Builds a copy for a specific AnchorHash.               |
 
 
-Validation process implemented in the addAnchor function: </br>
-Before an anchor is added to the blockchain, the following validation flow is executed : </br>
+Validation process implemented in the addAnchor function: 
+
+Before an anchor is added to the blockchain, the following validation flow is executed : 
+
 <p style='text-align: justify;'>
 
-1. Check if the anchor is not already marked as read-only. In case it is read-only, raise the status statusCannotUpdateReadOnlyAnchor and stop the smart contract execution.</br>
-2. Validate that hash links provided for the anchor are not out of sync: </br>
-   * If the anchor is new, we accept the hash links provided without validation and return -1 in order to signal that we have a new anchor. </br>
-   * If the anchor is not new, we get the latest stored hashLink for the anchor and compare it with the received lastHashLinkSSI. Because string comparison is problematic, an alternative approach was made to compare the hashes of the links in order to determine if they are equal or not. If the hash links are the same, compare the received newHashLinkSSI and lastHashLinkSSI in order to avoid replay calls/attacks; if they are the same then return 0 to signal out-of-sync error, else return 1 to signal that validation succeeded. </br>
-   * The default return of the function is return 0, which will signal the out-of-sync error. </br>
-   * If the above validation fails, raise the status statusHashLinkOutOfSync and stop the smart contract execution. </br>
-   * Current status is that hash links are valid. </br>
-   * If the anchor is new, check if the controlString is empty; in case it is, add the new anchor in read-only mode, raise status statusAddedConstSSIOK and stop the smart contract execution; else, store the controlString and continue with smart contract execution. </br>
-   * Current status is that hash links are valid and controlString is partially validated. </br>
-   * Validate that the hash of the publicKey is equal to the controlString. If the result is that they are not equal, raise statusHashOfPublicKeyDoesntMatchControlString and stop the smart contract execution. </br>
-   * Current status is that hash links are valid, controlString is valid. </br>
-   * Validate the signature and if it fails raise statusSignatureCheckFailed and stop the smart contract execution (it will be detailed in a separate chapter). </br>
-   * Current status is that hash links are valid, controlString is valid and signature is valid. </br>
+1. Check if the anchor is not already marked as read-only. In case it is read-only, raise the status statusCannotUpdateReadOnlyAnchor and stop the smart contract execution. 
+2. Validate that hash links provided for the anchor are not out of sync: 
+   * If the anchor is new, we accept the hash links provided without validation and return -1 in order to signal that we have a new anchor.
+   * If the anchor is not new, we get the latest stored hashLink for the anchor and compare it with the received lastHashLinkSSI. Because string comparison is problematic, an alternative approach was made to compare the hashes of the links in order to determine if they are equal or not. If the hash links are the same, compare the received newHashLinkSSI and lastHashLinkSSI in order to avoid replay calls/attacks; if they are the same then return 0 to signal out-of-sync error, else return 1 to signal that validation succeeded.
+   * The default return of the function is return 0, which will signal the out-of-sync error. 
+   * If the above validation fails, raise the status statusHashLinkOutOfSync and stop the smart contract execution.
+   * Current status is that hash links are valid.
+   * If the anchor is new, check if the controlString is empty; in case it is, add the new anchor in read-only mode, raise status statusAddedConstSSIOK and stop the smart contract execution; else, store the controlString and continue with smart contract execution.
+   * Current status is that hash links are valid and controlString is partially validated. 
+   * Validate that the hash of the publicKey is equal to the controlString. If the result is that they are not equal, raise statusHashOfPublicKeyDoesntMatchControlString and stop the smart contract execution.
+   * Current status is that hash links are valid, controlString is valid.
+   * Validate the signature and if it fails raise statusSignatureCheckFailed and stop the smart contract execution (it will be detailed in a separate chapter).
+   * Current status is that hash links are valid, controlString is valid and signature is valid.
    * Validation process is completed and storing the information on the blockchain can begin.</p>
 
 ### 4.4.3. Signature Validation Algorithm
@@ -285,7 +287,8 @@ Before an anchor is added to the blockchain, the following validation flow is ex
 
 
 <p style='text-align: justify;'>
-The function will compare the result of the calculateAddress function with the result of the getAddressFromHashAndSig function; if they match it will return true, otherwise false. </br>
+The function will compare the result of the calculateAddress function with the result of the getAddressFromHashAndSig function; if they match it will return true, otherwise false. 
+
 In order to validate a signature in Solidity, we have to obtain the account by recovering it, using the signature and the hash that was signed. The obtained account is a derivation of the publicKey that was obtained from the privateKey that was used to sign the hash. Because of this, it was required to implement the derivation of the received publicKey in order to get the account. Once both accounts are obtained, it is possible to compare them and validate if the signature provided was made with the privateKey corresponding to the publicKey we received.
 </p>
 
@@ -294,14 +297,14 @@ In order to validate a signature in Solidity, we have to obtain the account by r
 <p style='text-align: justify;'>In order to obtain the related Ethereum account to a publicKey, it is required that the public key received is in an uncompressed format, 65 bytes long.
 </p>
 
-Algorithm to obtain the Ethereum account: <br/>
+Algorithm to obtain the Ethereum account:
 1. The public key has the structure 0x04<64 bytes>.
 1. Read the 64 bytes and discard 0x04.
 1. Hash the 64 bytes using sha256.
 1. Get the last 20 bytes from the obtained hash.
 1. Return the value as an address. 
 
-Functions used in implementation: </br>
+Functions used in implementation: 
 
 | Function Name    | Description                                                                      |
 |:-----------------|:---------------------------------------------------------------------------------|
@@ -317,7 +320,7 @@ Functions used in implementation: </br>
 Function Signature:
 <p style='text-align: justify;'>“ **ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):** recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html.
 </p>	
-However, the signature received must be received in ASN.1 format </br>
+However, the signature received must be received in ASN.1 format
 
 ````
 {
@@ -337,12 +340,12 @@ In the smart contract, the recover function was implemented with this signature:
 | signature  | bytes memory  |
 
 
-The function will process the input parameters as: </br>
+The function will process the input parameters as:
 1. Check if the signature is 65 bytes long. If not, it will return a 0 address which will inadvertently generate a signature validation failure.
 1. Read r,s and v from the signature [r: bytes32][s: bytes32][v: uint8].
 1. v represents the version of the signature and can be 0,1,27 or 28. If it is 0 or 1 it will be converted to 27 or 28 because these are the values required by the ecrecover Solidity function.
 1. If v cannot be determined to be 27 or 28, return 0 address which will inadvertently generate a signature validation failure.
-1. return the result provided by the ecRecover function. </br>
+1. return the result provided by the ecRecover function.
 
 Functions used in the implementation: 
 
@@ -353,13 +356,14 @@ Functions used in the implementation:
 | getHashToBeChecked       | Return the hash that was used in the singing operation.                   |
 
 
-**Source code, Compilation and deployment** </br>
+**Source code, Compilation and deployment**
 <p style='text-align: justify;'>The source code can be found at https://github.com/PharmaLedger-IMI/ethereum-anchoring
- in the SmartContract folder.</br>
-	To compile and deploy the smart contract on a local environment, update the values in the .env file and run npm run truffle-migrate. It will use the internal network.
+ in the SmartContract folder.
+
+To compile and deploy the smart contract on a local environment, update the values in the .env file and run npm run truffle-migrate. It will use the internal network.
 </p>
 
-**Kubernetes deployment** </br>
+**Kubernetes deployment**
 <p style='text-align: justify;'>To archive compilation, deployment and integration with the API Adaptor, the following steps are required:
 </p>
 
@@ -368,7 +372,7 @@ Functions used in the implementation:
   * The image location
   * The ACCOUNT that will be used to deploy the smart contract. The account must valid for the blockchain network
   * The RPC_HOST which will contain the IP of the node (can be obtained by running kubectl get services )
-  * The PORT under which the Web API will listen, default 5000 </br>
+  * The PORT under which the Web API will listen, default 5000 
   
 Upon deploying the container, it will execute the following operations:
 * Execute truffle migrate in order to compile and deploy the smart contract on the blockchain
@@ -404,7 +408,7 @@ Configuration can be made using environment variables as follows:
 
 ### 5.2.1.AddAnchor entry point
 
-The information about the anchor to be stored is required as follows: </br>
+The information about the anchor to be stored is required as follows:
 
 * Parameter: keySSI encoded base58 from which is extracted
   * Index 1: keySSIType 
@@ -436,7 +440,8 @@ The algorithm has the following steps:
 * Concat the obtained signature with the 2 possible values of v: 1c or 1b. 
 * Use the ‘ethers’ and ‘ethereum-public-key-to-address’ in order to validate the signatures. 
 * Use the valid obtained v and concat with the converted signature in order to be sent to the smart contract. 
-* In case no v could be determined, raise an exception. </br>
+* In case no v could be determined, raise an exception. 
+
 Status codes returned:
 
 | Status code | Description                                                                                                                |
@@ -447,9 +452,9 @@ Status codes returned:
 
 ### 5.2.2. GetVersions entry point
 
-The information about the versions to be obtained is required as follows: </br>
+The information about the versions to be obtained is required as follows: 
 
-* Parameter: keySSI encoded base58 </br>
+* Parameter: keySSI encoded base58 
 
 <p style='text-align: justify;'>Upon invocation of the smart contract the result is stored on the body of the response. The result is a JSON representation of the array where the elements are the anchor versions ( hash links ).	Status codes returned:
 </p>
@@ -463,16 +468,17 @@ The information about the versions to be obtained is required as follows: </br>
 <p style='text-align: justify;'>The source code can be found at https://github.com/PharmaLedger-IMI/ethereum-anchoring, in the ApiAdaptor folder. In order to use it in a local environment, update the values in the .env file and run npm run start-dev.
 </p>
 
-**Kubernetes deployment** </br>
-In order to archive integration with the Smart Contract deployment, the following steps are required: </br>
+**Kubernetes deployment** 
+
+In order to archive integration with the Smart Contract deployment, the following steps are required:
 * Build the docker image using the dockerFile found in the root folder and publish it 
 * Update the configuration of the ./K8/ApiAdapter.yaml file:
   * The image location.
   * The ACCOUNT that will be used to interact with the smart contract. The account must be valid for the blockchain network.
   * The RPC_ADDRESS which will contain the IP of the node (can be obtained by running kubectl get services ).
-  * The SMARTCONTRACT_ENDPOINT  which is the Smart Contract WEB API endpoint. </br>
+  * The SMARTCONTRACT_ENDPOINT  which is the Smart Contract WEB API endpoint.
   
-Upon deploying the container, it will execute the following operations: </br>
+Upon deploying the container, it will execute the following operations:
 
   * Execute node index.js which:
     * Read the smart contract information from SMARTCONTRACT_ENDPOINT 
