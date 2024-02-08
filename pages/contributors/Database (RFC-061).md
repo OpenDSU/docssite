@@ -235,6 +235,7 @@ let myDB = db.getBasicDB()
 
 ## 2.1. Reading entries from the database
 
+
 <p style='text-align: justify;'>This subsection provides an overview of methods that obtain entries for a given key in this database. These methods trigger bulk operations to access the data associated with a key either by readKey() in the default context or by getObject() in a correspondingly specified context tableName. Since, within a context, consistent versioning of data changes to an entry  is provided, additional metadata may be provided through the methods getHistory() and getRecordVersions().
 </p>
 
