@@ -32,7 +32,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [Function getMainEnclaveDB(callback) and getMainEnclave(callback)](#function-getmainenclavedbcallback-and-getmainenclavecallback)
   * [Function genInMemoryDB()](#function-geninmemorydb)
   * [Function getSharedEnclaveDB(callback) and getSharedEnclave(callback)](#function-getsharedenclavedbcallback-and-getsharedenclavecallback)
-* [** Loading the DataBase API**](#-loading-the-database-api)
+  * [Loading the DataBase API](#loading-the-database-api)
 * [2. Database instances](#2-database-instances)
   * [2.1. Reading entries from the database](#21-reading-entries-from-the-database)
     * [Function getHistory(tableName, key, callback)](#function-gethistorytablename-key-callback)
@@ -189,7 +189,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# **Loading the DataBase API**
+## Loading the DataBase API
+
 
 Use is described later for each function:
 
@@ -229,11 +230,12 @@ let myDB = db.getBasicDB()
 
 # 2. Database instances
 
-<p style='text-align: justify;'>Database objects instantiated as described in Section 1 (<a href="# 1.Creating a database object">Creating a database object</a>) provide methods to query, insert, update or remove data in the form of <b>record</b> entries associated with a unique <b>key</b>: see readKey() and writeKey() methods. Optionally, keys may be grouped by context <b>tableName</b>: see getRecord(), updateRecord(), insertRecord() and deleteRecord(). The same <b>key</b> may occur in multiple context entries with different names, but keys without context or within the same context <b>tableName</b> are required to be unique (see Diagram 2.1). The <b>key</b> or <b>record</b> pairs within a context <b>tableName</b> maintain a versioned history of their modification or deletion events, whereas keys stored without context do not. Restrictions to the possible data type(s) of key and record may apply, according to the storage strategy employed by this database instance (see <a href="">Storage strategies</a>).
+<p style='text-align: justify;'>Database objects instantiated as described in Section 1 <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html#1creating-a-database-object">(Creating a database object)</a> provide methods to query, insert, update or remove data in the form of <b>record</b> entries associated with a unique <b>key</b>: see readKey() and writeKey() methods. Optionally, keys may be grouped by context <b>tableName</b>: see getRecord(), updateRecord(), insertRecord() and deleteRecord(). The same <b>key</b> may occur in multiple context entries with different names, but keys without context or within the same context <b>tableName</b> are required to be unique (see Diagram 2.1). The <b>key</b> or <b>record</b> pairs within a context <b>tableName</b> maintain a versioned history of their modification or deletion events, whereas keys stored without context do not. Restrictions to the possible data type(s) of key and record may apply, according to the storage strategy employed by this database instance (see <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html#4-storage-strategies">Storage strategies</a>).
 </p>
 
 
 ## 2.1. Reading entries from the database
+
 
 <p style='text-align: justify;'>This subsection provides an overview of methods that obtain entries for a given key in this database. These methods trigger bulk operations to access the data associated with a key either by readKey() in the default context or by getObject() in a correspondingly specified context tableName. Since, within a context, consistent versioning of data changes to an entry  is provided, additional metadata may be provided through the methods getHistory() and getRecordVersions().
 </p>
@@ -402,7 +404,7 @@ let myDB = db.getBasicDB()
 | callback      | function               | *required |                                         |
 
 
-*Callback parameters**
+**Callback parameters**
 
 | **Name** | **Type**     | **Response example** |
 |:---------|:-------------|:---------------------|
@@ -540,7 +542,6 @@ let myDB = db.getBasicDB()
 
 
 ## Operators:
-
 
 
 
