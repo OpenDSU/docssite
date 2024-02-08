@@ -79,7 +79,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 1.2.1. Example: Application/JSON
 
-```
+````
 {  
 "token":"2iVr8jPNNyNojJQ2EKzTz66u5rg4.oakF1h2zHGqJ8Ub5cuwH8GPXzwE3EVPnP7QZRGH
 YtGkohWahc8sMXTnWUngejdRQGwgkgvoqaBYLAfgFw83ML9PvgDRJvyqQtR99mCjTjBHhYCtTi
@@ -96,7 +96,7 @@ DAE1CFyR7eFC7U3t8Bf7SGvQ5Txp7iUYVvQULeNop6NYKN.CkRvatu6DizRiw8M7C2xg41UzcSk
 VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 "expires": 1667925722000
 }
-```
+````
 
 # 2. Put a Message in the MQ
 
@@ -126,11 +126,11 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ### 2.3.1.Example: Application/JSON
 
-```
+````
 {
    "message":"Content of message sent to the receiver DID"
 }
-```
+````
 
 ## 2.4. Responses
 
@@ -181,12 +181,12 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ### 3.3.1. Example: Application/JSON
 
-```
+````
 {
    "message":"Welcome to application",
    "sender":"did:ssi:name:csc.senderIdentity"
 }
-```
+````
 
 # 4. Delete a MQ Message
 
@@ -254,12 +254,12 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ### 5.3.1. Example: Application/JSON
 
-```
+````
 {
    "message":"Welcome to application",
    "sender":"did:ssi:name:csc.senderIdentity"
 }
-```
+````
 
 **Contributors**
 
