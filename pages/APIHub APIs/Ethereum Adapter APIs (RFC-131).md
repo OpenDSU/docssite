@@ -288,6 +288,7 @@ The function will compare the result of the calculateAddress function with the r
 <br>
 In order to validate a signature in Solidity, we have to obtain the account by recovering it, using the signature and the hash that was signed. The obtained account is a derivation of the publicKey that was obtained from the privateKey that was used to sign the hash. Because of this, it was required to implement the derivation of the received publicKey in order to get the account. Once both accounts are obtained, it is possible to compare them and validate if the signature provided was made with the privateKey corresponding to the publicKey we received.
 
+
 ### 4.4.4. Obtaining the Ethereum Account from a publicKey
 
 <p style='text-align: justify;'>In order to obtain the related Ethereum account to a publicKey, it is required that the public key received is in an uncompressed format, 65 bytes long.
@@ -314,8 +315,9 @@ Functions used in implementation:
 </p>
 
 Function Signature:
-<p style='text-align: justify;'>“ **ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):** recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html.
-</p>	
+
+“**ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):** recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - <a href="">https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html.</a>
+
 However, the signature received must be received in ASN.1 format
 
 ````
@@ -326,9 +328,13 @@ However, the signature received must be received in ASN.1 format
 }
 ````
 
-<p style='text-align: justify;'>More information about ASN.1 can be found at https://www.secg.org/sec1-v2.pdf, page 114. Usually, the v is not returned by the signing libraries, but it is required by Solidity in order to optimize the result.
+<p style='text-align: justify;'>
+
+More information about ASN.1 can be found at <a href="">https://www.secg.org/sec1-v2.pdf</a>, page 114. Usually, the v is not returned by the signing libraries, but it is required by Solidity in order to optimize the result.
+
 </p>
-In the smart contract, the recover function was implemented with this signature:
+
+In the smart contract, the **recover** function was implemented with this signature:
 
 | Name       | Type          |
 |:-----------|:--------------|
