@@ -112,7 +112,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 - Refer also to: https://github.com/PharmaLedger-IMI/epi-workspace/issues/829.
 
 ## 1.2. Shared Configuration Repo Fork
-
+2
 
 <div style="display: flex; justify-content: center;">
   <img 
