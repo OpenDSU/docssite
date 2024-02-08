@@ -189,7 +189,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# ** Loading the DataBase API**
+# **Loading the DataBase API**
 
 Use is described later for each function:
 
@@ -605,7 +605,7 @@ let myDB = db.getBasicDB()
 | StorageStrategy                                          | Memory                                                                                                                                                                                                                                                                           | SingleDSU                                                                                                                                                          | MultiUser  |
 |:---------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
 |                                                          | tableName:String Unique name of the context for which the operation is applied. Each instance of MemoryStorageStrategy keeps an object with one property per context (of same name) in volatile memory.                                                                          |                                                                                                                                                                    |            |
-| insertRecord()</br> updateRecord() <br/> deleteRecord()  | key:{string/ Array of string}If key is a (single) string, the value record is stored as a property of the corresponding tableName object. Otherwise, if key is an Array of string, for each entry in key an homonymous property of tableName is assigned the same value record.  |                                                                                                                                                                    |            |
+| insertRecord() </br> updateRecord() <br/> deleteRecord() | key:{string/ Array of string}If key is a (single) string, the value record is stored as a property of the corresponding tableName object. Otherwise, if key is an Array of string, for each entry in key an homonymous property of tableName is assigned the same value record.  |                                                                                                                                                                    |            |
 
 
 
