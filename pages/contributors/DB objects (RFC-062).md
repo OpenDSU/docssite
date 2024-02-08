@@ -5,420 +5,210 @@ parent: OpenDSU Contributors
 nav_order: 11
 ---
 
-DB objects (RFC-062)
 
-Abstract
+# **DB objects (RFC-062)**
+{: .no_toc }
 
-Operations available on the different types of databases provided by the Database API are all available in this RFC. The BasicDB is created using a storage strategy. Several storage strategies are available, but if a person wants to create a custom strategy, all the following functions must be present in his storage strategy.
+{: .feedback }
+A period when the community can review the RFC (comment Docs)
 
-Warning: the OpenDSU DBs are NOT key/value databases, but databases containing records organized as tables! These records have a primary key, but they can also be indexed on any of their fields. Additionally, we should note that no schema definition is required, and heterogeneous objects could be freely inserted (but some standard fields would make it more valuable).
-1. DB Types summary
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
-Type
-	
+**Copyright: MIT license**
 
-Description
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
 
-BasicDB
-	
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
-Initialize a basic noSQL database .
-1.1. BasicDB
-Function addIndex(tableName, fieldname, forceReindex, callback)
 
-Description: Add an index to all the values from a specific field in your table. It can be used to locate the data in your database faster.
 
-Name
-	
 
-Type
-	
 
-Value
-	
 
-Description
 
-tableName
-	
 
-string
-	
+# Abstract
 
-*required
-	
+<p style='text-align: justify;'>Operations available on the different types of databases provided by the <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html">Database</a> API are all available in this RFC. The BasicDB is created using a storage strategy. Several storage strategies are available, but if a person wants to create a custom strategy, all the following functions must be present in his storage strategy.
+</p>
 
-Name of the table inside your database.
+<p style='text-align: justify;'><b>Warning:</b> the OpenDSU DBs are NOT key/value databases, but databases containing records organized as tables! These records have a primary key, but they can also be indexed on any of their fields. Additionally, we should note that no schema definition is required, and heterogeneous objects could be freely inserted (but some standard fields would make it more valuable).
+</p>
 
-fieldname
-	
 
-string
-	
 
-*required
-	
+# 1. DB Types summary
 
-Name of the field in your table that you want to index.
+| **Type** | **Description**                     |
+|:---------|:------------------------------------|
+| BasicDB  | Initialize a basic noSQL database . |
 
-forceReindex
 
-(optional)
-	
 
-	
+## 1.1 BasicDB
 
-	
+# Function addIndex(tableName, fieldname, forceReindex, callback)
 
-Controls whether to create a new index for an already indexed field. If true, a new index for the specified fieldName will be created, regardless of whether an index for the fieldName already exists. If false, the field fieldName will be indexed only if there are no indexes for the specified field. By default, forceReindex is set to false.
+<p style='text-align: justify;'><b>Description:</b> Add an index to all the values from a specific field in your table. It can be used to locate the data in your database faster.
+</p>
 
-callback
-	
 
-function
-	
 
-*required
-	
+| **Name**                | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                       |
+|:------------------------|:---------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName               | string   | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                               |
+| fieldname               | string   | *required | Name of the field in your table that you want to index.                                                                                                                                                                                                                                                                                               |          |           |                                                         |
+| forceReindex (optional) |          |           | Controls whether to create a new index for an already indexed field. If true, a new index for the specified fieldName will be created, regardless of whether an index for the fieldName already exists. If false, the field fieldName will be indexed only if there are no indexes for the specified field. By default, forceReindex is set to false. |
+| callback                | function | *required |                                                                                                                                                                                                                                                                                                                                                       |
 
-Callback parameters
 
-Name
-	
 
-Type
-	
+**Callback parameters**
 
-Response example
+| **Name**                    | **Type**     | **Response example** |
+|:----------------------------|:-------------|:---------------------|
+| err                         | Error object |                      |
 
-err
-	
+**Description**: An error object containing a message.
 
-Error object
-	
 
-Description: An error object containing a message.
-Function getIndexedFields(tableName, callback)
+# Function getIndexedFields(tableName, callback)
 
-Description: Returns the list of the indexed fields in the specified table.
+**Description:** Returns the list of the indexed fields in the specified table.
 
-Name
-	
 
-Type
-	
+| **Name**                | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                       |
+|:------------------------|:---------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName               | string   | *required | Name of the table inside your database field name, forceReindex.                                                                                                                                                                                                                                                                                      |
+| callback                | function | *required |                                                                                                                                                                                                                                                                                                                                                       |
 
-Value
-	
 
-Description
+**Callback parameters**
 
-tableName
-	
+| **Name**      | **Type**         | **Response example** |
+|:--------------|:-----------------|:---------------------|
+| err           | Error object     |                      |
+| indexedFields | Array of strings |                      |
 
-string
-	
 
-*required
-	
+**Description:** An error object containing a message. / The list of indexed fields in the specified table.
 
-Name of the table inside your database field name, forceReindex.
 
-callback
-	
 
-function
-	
+## Function beginBatch()
 
-*required
-	
+**Description:** Start a batch of operations on your DSU without anchoring changes.
 
-Callback parameters
+**Returns**
 
-Name
-	
 
-Type
-	
+| Name              | Description                              |
+|:------------------|:-----------------------------------------|
+| callback function | Prevent anchoring after each operation.  |
 
-Response example
 
-err
-	
+## Function cancelBatch(callback)
 
-Error object
-	
+**Description:** Cancel the batch of operations in progress.
 
-indexedFields
-	
 
-Array of strings
-	
+| **Name**                | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                       |
+|:------------------------|:---------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| callback                | function | *required |                                                                                                                                                                                                                                                                                                                                                       |
 
-Description: An error object containing a message. / The list of indexed fields in the specified table.
-Function beginBatch()
 
-Description: Start a batch of operations on your DSU without anchoring changes.
 
-Returns
+**Callback parameters**
 
-Name
-	
+| **Name**      | **Type**         | **Response example** |
+|:--------------|:-----------------|:---------------------|
+| err           | Error object     |                      |
 
-Description
+**Description:** An error object containing a message.
 
-Callback function
-	
 
-Prevent anchoring after each operation.
-Function cancelBatch(callback)
+## Function commitBatch(callback)
 
-Description: Cancel the batch of operations in progress.
+**Description:** Anchor the changes from the batch of operations on your DSU.
 
-Name
-	
 
-Type
-	
+| **Name**                | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                       |
+|:------------------------|:---------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| callback                | function | *required |                                                                                                                                                                                                                                                                                                                                                       |
 
-Value
-	
 
-Description
 
-callback
-	
+**Callback parameters**
 
-function
-	
+| **Name**      | **Type**         | **Response example** |
+|:--------------|:-----------------|:---------------------|
+| err           | Error object     |                      |
 
-*required
-	
 
-Callback parameters
+**Description:** An error object containing a message.
 
-Name
-	
 
-Type
-	
 
-Response example
+## Function deleteRecord(tableName, key, callback)
 
-err
-	
+<p style='text-align: justify;'><b>Description: </b>Delete a record by incrementing the record’s version number and setting the new record “delete property” to true. The old version of the record is saved.
+</p>
 
-Error object
-	
 
-Description: An error object containing a message.
-Function commitBatch(callback)
 
-Description: Anchor the changes from the batch of operations on your DSU.
+| **Name**  | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                                                               |
+|:----------|:---------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName | string   | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                                                                       |
+| key       | string   | *required | Delete the existing record for this key.                                                                                                                                                                                                                                                                                                                                                      |
+| callback  | function | *required |                                                                                                                                                                                                                                                                                                                                                                                               |
 
-Name
-	
 
-Type
-	
 
-Value
-	
 
-Description
+**Callback parameters**
 
-callback
-	
+| **Name** | **Type**     | **Response example** |
+|:---------|:-------------|:---------------------|
+| err      | Error object |                      |
+| record   | Object       |                      |
 
-function
-	
 
-*required
-	
+**Description:** An error object containing a message./The updated record.
 
-Callback parameters
 
-Name
-	
 
-Type
-	
 
-Response example
 
-err
-	
+## Function filter(tableName, query, sort, limit, callback)
 
-Error object
-	
+**Description:** Returns the list of records satisfying the conditions in the specified query.
 
-Description: An error object containing a message.
-Function deleteRecord(tableName, key, callback)
 
-Description: Delete a record by incrementing the record’s version number and setting the new record “delete property” to true. The old version of the record is saved.
 
-Name
-	
+| **Name**         | **Type**                   | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|:-----------------|:---------------------------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName        | string                     | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| query (optional) | string or array of strings |           | The conditions applied on the table tableName.A query can contain a condition (as a string) or an array of conditions. A condition has the format “field operator value”, where field is the field on which the condition is applied, the operator is one of <,<=,>,>=,==, like, and the value is the value to which the field values are compared. In the case of the like operator, the value is a string representing a regular expression. If the query is not provided, the function will return all the records in table tableName.                                                                                                                                                     |
+| sort (optional)  | string                     |           | Indicates if the returned array of records is sorted ascending or descending. The sort argument can have one of the values “asc” or “dsc”. By default, it has the value “asc”.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| limit (optional) | number                     |           | The maximum number of records returned by the filter function. By default limit is Infinity, so all the records that satisfy the query are returned.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| callback         | function                   | *required |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
-Type
-	
 
-Value
-	
 
-Description
+**Callback parameters**
 
-tableName
-	
+| **Name** | **Type**        | **Response example** |
+|:---------|:----------------|:---------------------|
+| err      | Error object    |                      |
+| record   | Array of Object |                      |
 
-string
-	
 
-*required
-	
 
-Name of the table inside your database.
+<p style='text-align: justify;'><b>Description:</b> An error object containing a message./ An array containing all the records satisfying the filter function’s condition.
+</p>
 
-key
-	
 
-string
-	
-
-*required
-	
-
-Delete the existing record for this key.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-record
-	
-
-Object
-	
-
-Description: An error object containing a message./The updated record.
-Function filter(tableName, query, sort, limit, callback)
-
-Description: Returns the list of records satisfying the conditions in the specified query.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-tableName
-	
-
-string
-	
-
-*required
-	
-
-Name of the table inside your database.
-
-query
-
-(optional)
-	
-
-String or array of strings
-	
-
-	
-
-The conditions applied on the table tableName.
-
-A query can contain a condition (as a string) or an array of conditions. A condition has the format “field operator value”, where field is the field on which the condition is applied, the operator is one of <,<=,>,>=,==, like, and the value is the value to which the field values are compared. In the case of the like operator, the value is a string representing a regular expression. If the query is not provided, the function will return all the records in table tableName.
-
-sort
-
-(optional)
-	
-
-string
-	
-
-	
-
-Indicates if the returned array of records is sorted ascending or descending. The sort argument can have one of the values “asc” or “dsc”. By default, it has the value “asc”.
-
-limit
-
-(optional
-	
-
-number
-	
-
-	
-
-The maximum number of records returned by the filter function. By default limit is Infinity, so all the records that satisfy the query are returned.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-record
-	
-
-Array of objects
-	
-
-Description: An error object containing a message./ An array containing all the records satisfying the filter function’s condition.
-Function getHistory(tableName, key, callback)
+## Function getHistory(tableName, key, callback)
 
 Description: Get the history of a record, including the deleted versions in a callback.
 
