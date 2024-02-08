@@ -287,7 +287,6 @@ Before an anchor is added to the blockchain, the following validation flow is ex
 The function will compare the result of the calculateAddress function with the result of the getAddressFromHashAndSig function; if they match it will return true, otherwise false. 
 <br>
 In order to validate a signature in Solidity, we have to obtain the account by recovering it, using the signature and the hash that was signed. The obtained account is a derivation of the publicKey that was obtained from the privateKey that was used to sign the hash. Because of this, it was required to implement the derivation of the received publicKey in order to get the account. Once both accounts are obtained, it is possible to compare them and validate if the signature provided was made with the privateKey corresponding to the publicKey we received.
-</br>
 
 ### 4.4.4. Obtaining the Ethereum Account from a publicKey
 
