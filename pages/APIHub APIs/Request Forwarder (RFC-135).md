@@ -38,9 +38,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>ForwardRequest service creates a new request from APIHub with the provided options and body. It facilitates access to different resources where access is restricted.
 </p>
 	
-''''
+````
 /forwardRequestForAuthenticatedClient
-''''
+````
 
 ## 1.1. Body Parameters
 
@@ -50,22 +50,18 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 ### 1.1.1. Example: Application/JSON
-'' 
+
+```
 {
-
  "options": {
-
    "method": "POST"
-
  },
-
  "body": {},
-
  "url": "https://inner.network:8090"
-
 }
-1.2. Request Headers
-''
+```
+
+## 1.2. Request Headers
 
 | Name          | Type   | Value     | Description                   |
 |:--------------|:-------|:----------|:------------------------------|

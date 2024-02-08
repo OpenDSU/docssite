@@ -35,9 +35,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>The GetMainDSU service returns the static DSU that can be set as the main context in various scenarios. In order to set the Main DSU, on the first API call that will occur on this endpoint, a DSU will be created from the provided environment.json file. This file is located in the server root folder.</p>
 
 
-''''
+````
 /getSSIForMainDSU
-''''
+````
 
 ## 1.1. Responses
 
