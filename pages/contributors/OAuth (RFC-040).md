@@ -43,10 +43,18 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 ## 1.1  Authorization code flow with PKCE
 
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vR4pcCkaTT8o3KkUQAxAAcR_VXnBm_LiWxkMbU4Aw_cj0iLWdOZzPLOrU2wyZc6Ay8Huf_FcpiPZY7x/pub?w=1154&h=740" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-    <p><b></b></p>
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vR4pcCkaTT8o3KkUQAxAAcR_VXnBm_LiWxkMbU4Aw_cj0iLWdOZzPLOrU2wyZc6Ay8Huf_FcpiPZY7x/pub?w=1154&h=740" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
 
 <p style='text-align: center;'><b>Figure 1: Authorization Code Flow + PKCE</b></p>
 
@@ -59,8 +67,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Figure 1 shows the flow mentioned above for accessing an APIHub resource, but by logging in first, through the SSO server.
 </p>
 
-<b>In the <b>first step</b> (the arrow that returns to the Client), it just generates the PKCE code verifier and code challenge, which are some random strings. They are sent to the SSO server to verify that they are indeed the one who generated the PKCE code.
-</b>
+<p style='text-align: justify;'>In the <b>first step</b> (the arrow that returns to the Client), it just generates the PKCE code verifier and code challenge, which are some random strings. They are sent to the SSO server to verify that they are indeed the one who generated the PKCE code.
+</p>
 
 
 In the<b> second step</b>, a request is made to an endpoint in the SSO server. This endpoint is called authorization endpoint. For most providers, the termination is `/authorize`. The authorization request must include the code request and the code challenge from step 1. After the SSO server receives this request, it will automatically redirect (<b>step 3</b>) to a login page (<b>step 4)</b>, where the user must enter their credentials (username and password).
@@ -76,10 +84,18 @@ In the<b> second step</b>, a request is made to an endpoint in the SSO server. T
 # 2. The OAuthMiddleware component 
 
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ4C_g3tW75GB3hVMIdUaPD5PnHqpn6s5r-0sTQ7aAM92f4puTAlMBacvktfo8JEQ403BTxrNAi7zUQ/pub?w=711&h=497" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-    <p><b></b></p>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQ4C_g3tW75GB3hVMIdUaPD5PnHqpn6s5r-0sTQ7aAM92f4puTAlMBacvktfo8JEQ403BTxrNAi7zUQ/pub?w=711&h=497" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+
 
 <p style='text-align: center;'><b>Figure 2: The flow of EPI requests when SSO is enabled</b></p>
 
@@ -124,6 +140,9 @@ In the<b> second step</b>, a request is made to an endpoint in the SSO server. T
 "serverAuthentication": true
 
 ```
+
+
+
 
 
 | **Field**                                                     | **Description**                                                                                                                           |
