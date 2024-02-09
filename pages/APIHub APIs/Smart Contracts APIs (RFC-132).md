@@ -21,7 +21,7 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [**Smart Contracts APIs (RFC-132)**](#smart-contracts-apis-rfc-132)
+* [Smart Contracts APIs (RFC-132)](#smart-contracts-apis-rfc-132)
 * [Abstract](#abstract)
 * [1. BDNS Entries](#1-bdns-entries)
   * [1.1. Path Parameters](#11-path-parameters)
