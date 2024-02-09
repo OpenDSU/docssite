@@ -55,7 +55,7 @@ test11
     padding: 15px; /* Increase padding for larger size */
     border: none;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2; /* Ensure buttons are above videos */
     font-size: 50px; /* Increase font size */
     }
     
