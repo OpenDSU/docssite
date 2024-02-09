@@ -3,7 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-absadasd 3232
+ab
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +46,8 @@ absadasd 3232
         color: #333;
     }
     
-    .prev, .next {
+    .prev,
+    .next {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -60,14 +61,15 @@ absadasd 3232
     }
     
     .prev {
-        left: 0; /* Adjusted to move near the videos */
+        left: 10px; /* Adjusted to move near the videos with some spacing */
     }
     
     .next {
-        right: 0; /* Adjusted to move near the videos */
+        right: 10px; /* Adjusted to move near the videos with some spacing */
     }
 
-    .prev:hover, .next:hover {
+    .prev:hover,
+    .next:hover {
         background-color: rgba(128, 0, 128, 0.5);
     }
 </style>
