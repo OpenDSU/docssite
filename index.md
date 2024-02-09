@@ -59,7 +59,10 @@ nav_order: 1
     .next {
         right: 0;
     }
-
+    iframe {
+    width: 140px; /* Decrease width to make videos smaller */
+    height: 35px; /* Decrease height proportionally */
+    }
 </style>
 </head>
 <body>
