@@ -3,8 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-31x
-
+31xyz
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,10 +46,10 @@ nav_order: 1
     }
     
     .arrow-container {
-        position: fixed;
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 9999; /* Ensure arrows are above other content */
+        z-index: 999; /* Ensure arrows are above other content */
     }
 
     .prev, .next {
@@ -77,10 +76,10 @@ nav_order: 1
 </head>
 <body>
 <div class="video-container">
-    <div class="arrow-container" style="left: 0;">
-        <button class="prev" onclick="scrollVideos(-1)">❮</button>
-    </div>
     <div class="video-row">
+        <div class="arrow-container prev" style="left: 0;">
+            <button onclick="scrollVideos(-1)">❮</button>
+        </div>
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
             <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
@@ -111,9 +110,9 @@ nav_order: 1
             <div class="video-name">Name of Video 2</div>
         </div>
         <!-- Repeat the same pattern for other videos -->
-    </div>
-    <div class="arrow-container" style="right: 0;">
-        <button class="next" onclick="scrollVideos(1)">❯</button>
+        <div class="arrow-container next" style="right: 0;">
+            <button onclick="scrollVideos(1)">❯</button>
+        </div>
     </div>
 </div>
 
@@ -134,4 +133,3 @@ nav_order: 1
 
 </body>
 </html>
-
