@@ -3,6 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
+absadasd 1
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +14,7 @@ nav_order: 1
 <title>YouTube Video Slideshow</title>
 <style>
     body {
-        position: relative; /* Ensure positioning relative to the body */
+        position: relative;
     }
     
     .video-container {
@@ -45,7 +47,7 @@ nav_order: 1
     }
     
     .prev, .next {
-        position: absolute;
+        position: fixed;
         top: 50%;
         transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
@@ -59,12 +61,12 @@ nav_order: 1
     
     .prev {
         left: 0;
-        margin-left: -40px; /* Move arrow outside container */
+        margin-left: 10px; /* Adjusted to move inside body */
     }
     
     .next {
         right: 0;
-        margin-right: -40px; /* Move arrow outside container */
+        margin-right: 10px; /* Adjusted to move inside body */
     }
 
     .prev:hover, .next:hover {
@@ -106,10 +108,10 @@ nav_order: 1
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
-
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
-    <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
+
+<button class="prev" onclick="scrollVideos(-1)">❮</button>
+<button class="next" onclick="scrollVideos(1)">❯</button>
 
 <script>
     let currentIndex = 0;
