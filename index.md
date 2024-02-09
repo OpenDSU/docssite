@@ -4,9 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-html
-Copy code
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +26,7 @@ Copy code
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
     display: flex;
     justify-content: center;
     align-items: center;
