@@ -26,7 +26,7 @@ test 1
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     opacity: 0;
     transition: opacity 1s ease;
@@ -37,9 +37,16 @@ test 1
   }
 
   video {
-    max-width: 300px;
     border-radius: 50%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  video.main {
+    max-width: 400px; /* Adjust the size of the main video */
+  }
+
+  video.small {
+    max-width: 200px; /* Adjust the size of the small videos */
   }
 
   .prev, .next {
@@ -68,9 +75,9 @@ test 1
 <body>
 <div class="slideshow-container">
   <div class="slide active">
-    <video src="video1.mp4" controls autoplay loop muted></video>
-    <video src="video2.mp4" controls autoplay loop muted></video>
-    <video src="video3.mp4" controls autoplay loop muted></video>
+    <video src="video1.mp4" controls autoplay loop muted class="main"></video>
+    <video src="video2.mp4" controls autoplay loop muted class="small"></video>
+    <video src="video3.mp4" controls autoplay loop muted class="small"></video>
   </div>
   <button class="prev" onclick="plusSlides(-1)">❮</button>
   <button class="next" onclick="plusSlides(1)">❯</button>
