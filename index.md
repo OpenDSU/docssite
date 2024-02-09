@@ -3,8 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-
-
+User
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,6 @@ nav_order: 1
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
-        border: 2px solid #ccc; /* Border for videos */
     }
     
     .video-item {
@@ -46,26 +44,26 @@ nav_order: 1
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(128, 0, 128, 0.5); /* Purple with transparency */
+        background-color: rgba(0, 0, 0, 0.5);
         color: white;
-        padding: 15px;
+        padding: 10px;
         border: none;
         cursor: pointer;
         z-index: 1;
-        font-size: 24px; /* Larger size */
     }
     
     .prev {
-        left: -50px;
+        left: 0;
     }
     
     .next {
-        right: -50px;
+        right: 0;
     }
 </style>
 </head>
 <body>
 <div class="video-container">
+    <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
@@ -98,15 +96,15 @@ nav_order: 1
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
-</div>
 
-<button class="prev" onclick="scrollVideos(-1)">❮</button>
-<button class="next" onclick="scrollVideos(1)">❯</button>
+    <button class="next" onclick="scrollVideos(1)">❯</button>
+</div>
 
 <script>
     let currentIndex = 0;
 
     function scrollVideos(direction) {
+        const videoContainer = document.querySelector('.video-container');
         const videoRow = document.querySelector('.video-row');
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
