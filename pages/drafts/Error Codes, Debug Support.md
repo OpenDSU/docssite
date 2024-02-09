@@ -89,10 +89,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # 3. Control of output in automated tests
 
-    $$.debug.verbosityLevel()
+**$$.debug.verbosityLevel()**
+
 Used by the logger to decide if it outputs a log or not
 
-    $$.debug.verbosity(level)
+**$$.debug.verbosity(level**
+
 // level  is trace, debug, info, log, warn, error
 - default level is trace in OpenDSU (new projects, if not set)
 - info in production
