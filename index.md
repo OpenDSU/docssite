@@ -3,7 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
-abc
+123
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,119 +12,81 @@ abc
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YouTube Video Slideshow</title>
 <style>
-    body {
-        position: relative;
-    }
-    
-    .video-container {
-        position: relative;
-        margin-bottom: 20px;
-        overflow: hidden;
-    }
-    
-    .video-row {
-        display: flex;
-        flex-wrap: nowrap;
-        transition: transform 0.3s ease;
-        position: relative; /* Ensure the arrows can be positioned relative to this */
-    }
-    
-    .video-item {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        text-align: center;
-    }
-    
-    iframe {
-        width: 320px;
-        height: 180px;
-    }
-    
-    .video-name {
-        margin-top: 5px;
-        font-size: 14px;
-        color: #333;
-    }
-    
-    .prev,
-    .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        z-index: 3; /* Ensure the arrows are above the videos */
-        transition: color 0.3s, background-color 0.3s;
-    }
-    
-    .prev {
-        left: -50px; /* Adjusted to move outside the videos */
-    }
-    
-    .next {
-        right: -50px; /* Adjusted to move outside the videos */
-    }
+  .slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+  }
 
-    .prev:hover,
-    .next:hover {
-        background-color: rgba(128, 0, 128, 0.5);
-    }
+  .video-container {
+    display: none;
+  }
+
+  .arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
 </style>
 </head>
 <body>
-<div class="video-container">
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
-    <div class="video-row">
-        <!-- Replace the following iframe src with the embed link of the playlist -->
-        <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=01UZn10gs3FZFJo8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 2</div>
-        </div>
-        <!-- Repeat the same pattern for other videos -->
-    </div>
-    <button class="next" onclick="scrollVideos(1)">❯</button>
+
+<div class="slideshow-container">
+  <div class="video-container">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <a class="arrow prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="arrow next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
 <script>
-    let currentIndex = 0;
+  var slideIndex = 1;
+  showSlides(slideIndex);
 
-    function scrollVideos(direction) {
-        const videoRow = document.querySelector('.video-row');
-        const videoItems = document.querySelectorAll('.video-item');
-        const numVideos = videoItems.length;
-        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
 
-        currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = -currentIndex * videoWidth;
-        videoRow.style.transform = `translateX(${newPosition}px)`;
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("video-container");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
     }
+    slides[slideIndex-1].style.display = "block";  
+  }
 </script>
 
 </body>
