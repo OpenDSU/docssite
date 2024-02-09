@@ -90,7 +90,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   />
 </div>
 
-<p style='text-align: center;'><b>Figure nr. 1: DIDs in OpenDSU</b></p>
+
+
+
+
 
 
 
