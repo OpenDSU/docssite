@@ -3,22 +3,32 @@ title: Home
 layout: home
 nav_order: 1
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded YouTube Playlist</title>
+<style>
+  /* Style for the iframe container */
+  .playlist-container {
+    border: 4px solid #ff0000; /* Add a thicker red border around the playlist */
+    padding: 20px; /* Add padding to the playlist */
+    margin-bottom: 20px; /* Add space at the bottom */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 80%; /* Set width to 80% of the viewport width */
+    max-width: 800px; /* Set maximum width */
+    margin: 0 auto; /* Center horizontally */
+  }
+</style>
+</head>
+<body>
 
-# **OpenDSU RFC Documentation**
-## The homepage of the OpenDSU standardisation project
-Blockchain Anchored Data, Decentralised Access Control, Self Sovereignity, Digital Trust Ecosystems 
-
-<div style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-content:space-around;gap: 10px 10px;">
-
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=R8GYpQFhycDL3xJ6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/M25uLSmVRl0?si=4bl_aokGPNqFBFcR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=GpXncvdI4sPvc8pc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/BB7XcK8Ptss?si=FsW2Bw6ua5jfhVHb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/0A3bGUAajrM?si=3wLGPS6KBAfaJLVF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="playlist-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" frameborder="0" allowfullscreen></iframe>
 </div>
+
+</body>
+</html>
