@@ -3,15 +3,9 @@ title: Home
 layout: home
 nav_order: 1
 ---
+test11
 
 
-test
-
----
-title: Home
-layout: home
-nav_order: 1
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +23,12 @@ nav_order: 1
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
+        padding-left: 15%; /* Adjust space before videos */
+        padding-right: 15%; /* Adjust space after videos */
+        width: 70%; /* Adjust width of the video slider */
+        margin: 0 auto; /* Center the video slider */
     }
-	
+    
     .video-item {
         flex: 0 0 auto;
         margin-right: 10px;
@@ -38,8 +36,8 @@ nav_order: 1
     }
     
     iframe {
-        width: 320px;
-        height: 180px;
+        width: 240px; /* Adjust width of each video */
+        height: 135px; /* Adjust height of each video */
     }
     
     .video-name {
@@ -67,10 +65,6 @@ nav_order: 1
     
     .next {
         right: 0;
-    }
-    iframe {
-    width: 240px; /* Decrease width to make videos smaller */
-    height: 135px; /* Decrease height proportionally */
     }
 </style>
 </head>
