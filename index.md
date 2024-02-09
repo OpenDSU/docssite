@@ -25,11 +25,18 @@ nav_order: 1
     .video-item {
         flex: 0 0 auto;
         margin-right: 10px;
+        text-align: center;
     }
     
     iframe {
         width: 320px;
         height: 180px;
+    }
+    
+    .video-name {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #333;
     }
     
     .prev, .next {
@@ -58,14 +65,15 @@ nav_order: 1
     <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
-        <div class="video-item"><iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe></div>
-        <div class="video-item"><iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe></div>
-        <div class="video-item"><iframe src="URL_OF_VIDEO_3" frameborder="0" allowfullscreen></iframe></div>
-        <div class="video-item"><iframe src="URL_OF_VIDEO_4" frameborder="0" allowfullscreen></iframe></div>
-        <div class="video-item"><iframe src="URL_OF_VIDEO_5" frameborder="0" allowfullscreen></iframe></div>
-        <div class="video-item"><iframe src="URL_OF_VIDEO_6" frameborder="0" allowfullscreen></iframe></div>
-        <div class="video-item"><iframe src="URL_OF_VIDEO_7" frameborder="0" allowfullscreen></iframe></div>
-        <div class="video-item"><iframe src="URL_OF_VIDEO_8" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 2</div>
+        </div>
+        <!-- Repeat the same pattern for other videos -->
     </div>
     <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
