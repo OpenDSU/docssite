@@ -3,7 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-3
+4
 
 
 <!DOCTYPE html>
@@ -70,6 +70,9 @@ nav_order: 1
 </style>
 </head>
 <body>
+<div class="arrow-container">
+    <button class="prev" onclick="scrollVideos(-1)">❮</button>
+</div>
 <div class="video-container">
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
@@ -103,10 +106,9 @@ nav_order: 1
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
-    <div class="arrow-container">
-        <button class="prev" onclick="scrollVideos(-1)">❮</button>
-        <button class="next" onclick="scrollVideos(1)">❯</button>
-    </div>
+</div>
+<div class="arrow-container">
+    <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
 
 <script>
@@ -126,3 +128,4 @@ nav_order: 1
 
 </body>
 </html>
+
