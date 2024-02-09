@@ -3,7 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
-User
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,7 @@ User
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
+        border: 2px solid #ccc; /* Border for videos */
     }
     
     .video-item {
@@ -44,7 +46,7 @@ User
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(128, 0, 128, 0.5); /* Purple with transparency */
         color: white;
         padding: 10px;
         border: none;
