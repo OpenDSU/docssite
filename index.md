@@ -3,129 +3,73 @@ title: Home
 layout: home
 nav_order: 1
 ---
-test
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Video Slideshow</title>
+<title>Curved Slideshow</title>
 <style>
-    body {
-        position: relative;
-    }
-    
-    .video-container {
-        position: relative;
-        margin-bottom: 20px;
-        overflow: hidden;
-    }
-    
-    .video-row {
-        display: flex;
-        flex-wrap: nowrap;
-        transition: transform 0.3s ease;
-        position: relative;
-    }
-    
-    .video-item {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        text-align: center;
-    }
-    
-    iframe {
-        width: 320px;
-        height: 180px;
-    }
-    
-    .video-name {
-        margin-top: 5px;
-        font-size: 14px;
-        color: #333;
-    }
-    
-    .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        z-index: 2;
-        transition: color 0.3s, background-color 0.3s;
-    }
-    
-    .prev {
-        left: -50px; /* Adjusted to move inside body */
-    }
-    
-    .next {
-        right: -50px; /* Adjusted to move inside body */
-    }
+  .slideshow-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+  }
 
-    .prev:hover, .next:hover {
-        background-color: rgba(128, 0, 128, 0.5);
-    }
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  img {
+    max-width: 30%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
 </style>
 </head>
 <body>
-<div class="video-container">
-    <div class="video-row">
-        <!-- Replace the following iframe src with the embed link of the playlist -->
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 2</div>
-        </div>
-        <!-- Repeat the same pattern for other videos -->
-    </div>
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
-    <button class="next" onclick="scrollVideos(1)">❯</button>
+<div class="slideshow-container">
+  <div class="slide active">
+    <img src="image1.jpg" alt="Image 1">
+  </div>
+  <div class="slide">
+    <img src="image2.jpg" alt="Image 2">
+    <img src="image3.jpg" alt="Image 3">
+  </div>
 </div>
 
 <script>
-    let currentIndex = 0;
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
 
-    function scrollVideos(direction) {
-        const videoRow = document.querySelector('.video-row');
-        const videoItems = document.querySelectorAll('.video-item');
-        const numVideos = videoItems.length;
-        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
+  function showSlides() {
+    slides.forEach((slide) => {
+      slide.classList.remove('active');
+    });
+    slides[slideIndex].classList.add('active');
+    slideIndex = (slideIndex + 1) % slides.length;
+    setTimeout(showSlides, 3000); // Change slide every 3 seconds
+  }
 
-        currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = -currentIndex * videoWidth;
-        videoRow.style.transform = `translateX(${newPosition}px)`;
-    }
+  showSlides();
 </script>
-
 </body>
 </html>
+
 
 
