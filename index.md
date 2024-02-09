@@ -78,7 +78,7 @@ absadasd 3232
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=01UZn10gs3FZFJo8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="video-name">Name of Video 1</div>
         </div>
         <div class="video-item">
