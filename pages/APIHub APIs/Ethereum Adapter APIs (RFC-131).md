@@ -259,61 +259,29 @@ Before an anchor is added to the blockchain, the following validation flow is ex
 
 </p>
 
-2. Validate that hash links provided for the anchor are not out of sync: 
-<p style='text-align: justify;'>
+2. Validate that hash links provided for the anchor are not out of sync:
 
 * If the anchor is new, we accept the hash links provided without validation and return -1 in order to signal that we have a new anchor.
-</p>   
-
-<p style='text-align: justify;'>
 
 * If the anchor is not new, we get the latest stored hashLink for the anchor and compare it with the received lastHashLinkSSI. Because string comparison is problematic, an alternative approach was made to compare the hashes of the links in order to determine if they are equal or not. If the hash links are the same, compare the received newHashLinkSSI and lastHashLinkSSI in order to avoid replay calls/attacks; if they are the same then return 0 to signal out-of-sync error, else return 1 to signal that validation succeeded.
-</p> 
 
-<p style='text-align: justify;'>
-
-* The default return of the function is return 0, which will signal the out-of-sync error. 
-</p>   
-
-<p style='text-align: justify;'>
+* The default return of the function is return 0, which will signal the out-of-sync error.
 
 * If the above validation fails, raise the status statusHashLinkOutOfSync and stop the smart contract execution.
-</p>   
-
-<p style='text-align: justify;'>
 
 * Current status is that hash links are valid.
-</p>  
-
-<p style='text-align: justify;'>
 
 * If the anchor is new, check if the controlString is empty; in case it is, add the new anchor in read-only mode, raise status statusAddedConstSSIOK and stop the smart contract execution; else, store the controlString and continue with smart contract execution.
-</p>   
 
-<p style='text-align: justify;'>
-
-* Current status is that hash links are valid and controlString is partially validated. 
-</p>   
-
-<p style='text-align: justify;'>
+* Current status is that hash links are valid and controlString is partially validated.
 
 * Validate that the hash of the publicKey is equal to the controlString. If the result is that they are not equal, raise statusHashOfPublicKeyDoesntMatchControlString and stop the smart contract execution.
-</p>   
-
-<p style='text-align: justify;'>
 
 * Current status is that hash links are valid, controlString is valid.
-</p>   
-
-<p style='text-align: justify;'>
 
 * Validate the signature and if it fails raise statusSignatureCheckFailed and stop the smart contract execution (it will be detailed in a separate chapter).
-</p>   
-
-<p style='text-align: justify;'>
 
 * Current status is that hash links are valid, controlString is valid and signature is valid.
-</p>   
 
 * Validation process is completed and storing the information on the blockchain can begin.
 
