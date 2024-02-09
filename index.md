@@ -3,6 +3,9 @@ title: Home
 layout: home
 nav_order: 1
 ---
+
+test
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +17,9 @@ nav_order: 1
         position: relative;
         margin-bottom: 20px;
         overflow: hidden;
+        width: 70%; /* Adjust to 70% width */
+        margin: auto; /* Center the container */
+        position: relative;
     }
     
     .video-row {
@@ -29,7 +35,7 @@ nav_order: 1
     }
     
     iframe {
-        width: 320px;
+        width: 100%; /* Adjust to cover container width */
         height: 180px;
     }
     
@@ -40,28 +46,23 @@ nav_order: 1
     }
     
     .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent; /* Remove black background */
-    color: purple; /* Change arrow color to purple */
-    padding: 15px; /* Increase padding for larger size */
-    border: none;
-    cursor: pointer;
-    z-index: 1;
-    font-size: 50px; /* Increase font size */
+        position: absolute;
+        top: 50%;
+        background-color: transparent;
+        color: purple;
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        font-size: 50px;
     }
     
     .prev {
-        left: 0;
+        left: -50px; /* Adjust to place outside left border */
     }
     
     .next {
-        right: 0;
-    }
-    iframe {
-    width: 140px; /* Decrease width to make videos smaller */
-    height: 35px; /* Decrease height proportionally */
+        right: -50px; /* Adjust to place outside right border */
     }
 </style>
 </head>
@@ -69,34 +70,12 @@ nav_order: 1
 <div class="video-container">
     <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
-        <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <iframe src="URL_OF_VIDEO_1" frameborder="0" allowfullscreen></iframe>
             <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 2</div>
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
-
     <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
 
@@ -104,7 +83,6 @@ nav_order: 1
     let currentIndex = 0;
 
     function scrollVideos(direction) {
-        const videoContainer = document.querySelector('.video-container');
         const videoRow = document.querySelector('.video-row');
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
@@ -115,6 +93,5 @@ nav_order: 1
         videoRow.style.transform = `translateX(${newPosition}px)`;
     }
 </script>
-
 </body>
 </html>
