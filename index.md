@@ -5,6 +5,10 @@ nav_order: 1
 ---
 
 
+test
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,12 +43,10 @@ nav_order: 1
   
   .prev {
     left: 0;
-    margin-left: -50px; /* Adjust this value as needed */
   }
   
   .next {
     right: 0;
-    margin-right: -50px; /* Adjust this value as needed */
   }
 </style>
 </head>
@@ -62,11 +64,11 @@ nav_order: 1
   <div class="slide">
     <img src="slide3.jpg" style="width:100%">
   </div>
-</div>
 
-<!-- Navigation arrows -->
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <!-- Navigation arrows -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
 
 <script>
   var slideIndex = 1;
