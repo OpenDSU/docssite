@@ -165,11 +165,11 @@ BSidW1oziQQbB3vTNVc1ST7TbTdBefPiMv6p7Lwni9DsYAM1sjVDPdrhGDsTsKkcjp4Lecio4f81
 
 ## 4.1. Ethereum
 
-| Smart Contract Function | Parameters                                                                                                                                                                                      | Details                                                                                                                                                                                                                                       |
-|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| addAnchor               | string anchorID<br/>string keySSIType<br/>string controlString<br/>string vn<br/>string newHashLinkSSI<br/>string ZKPValue<br/>string lastHashLinkSSI<br/>string signature<br/>string publicKey | Creates a new anchor with an entry for the specified anchorID does not exist or appends the new newHashLinkSSI to an existing anchor if the validation passes. <br/><br/><br/> **Returns**: None <br/> Throws error on verification failures. |
-| getAnchorVersions       | String anchorID                                                                                                                                                                                 | Returns an array of HashLInkSSIs.                                                                                                                                                                                                             |
-| getChainedVersions      | String anchorID                                                                                                                                                                                 | Returns an array of tuples                                                                                                                                                                                                                    |
+| Smart Contract Function | Parameters                                                                                                                                                                                      | Details                                                                                                                                                                                                                                                                      |
+|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| addAnchor               | string anchorID<br/>string keySSIType<br/>string controlString<br/>string vn<br/>string newHashLinkSSI<br/>string ZKPValue<br/>string lastHashLinkSSI<br/>string signature<br/>string publicKey | <p style='text-align: justify;'>Creates a new anchor with an entry for the specified anchorID does not exist or appends the new newHashLinkSSI to an existing anchor if the validation passes.</p> <br/> <b>Returns</b>: None <br/> Throws error on verification failures.   |
+| getAnchorVersions       | String anchorID                                                                                                                                                                                 | Returns an array of HashLInkSSIs.                                                                                                                                                                                                                                            |
+| getChainedVersions      | String anchorID                                                                                                                                                                                 | Returns an array of tuples                                                                                                                                                                                                                                                   |
 
 
 Reference: <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring.</a>
@@ -253,20 +253,69 @@ Validation process implemented in the addAnchor function:
 
 Before an anchor is added to the blockchain, the following validation flow is executed :
 
+<p style='text-align: justify;'>
+
 1. Check if the anchor is not already marked as read-only. In case it is read-only, raise the status statusCannotUpdateReadOnlyAnchor and stop the smart contract execution. 
+
+</p>
+
 2. Validate that hash links provided for the anchor are not out of sync: 
-   * If the anchor is new, we accept the hash links provided without validation and return -1 in order to signal that we have a new anchor.
-   * If the anchor is not new, we get the latest stored hashLink for the anchor and compare it with the received lastHashLinkSSI. Because string comparison is problematic, an alternative approach was made to compare the hashes of the links in order to determine if they are equal or not. If the hash links are the same, compare the received newHashLinkSSI and lastHashLinkSSI in order to avoid replay calls/attacks; if they are the same then return 0 to signal out-of-sync error, else return 1 to signal that validation succeeded.
-   * The default return of the function is return 0, which will signal the out-of-sync error. 
-   * If the above validation fails, raise the status statusHashLinkOutOfSync and stop the smart contract execution.
-   * Current status is that hash links are valid.
-   * If the anchor is new, check if the controlString is empty; in case it is, add the new anchor in read-only mode, raise status statusAddedConstSSIOK and stop the smart contract execution; else, store the controlString and continue with smart contract execution.
-   * Current status is that hash links are valid and controlString is partially validated. 
-   * Validate that the hash of the publicKey is equal to the controlString. If the result is that they are not equal, raise statusHashOfPublicKeyDoesntMatchControlString and stop the smart contract execution.
-   * Current status is that hash links are valid, controlString is valid.
-   * Validate the signature and if it fails raise statusSignatureCheckFailed and stop the smart contract execution (it will be detailed in a separate chapter).
-   * Current status is that hash links are valid, controlString is valid and signature is valid.
-   * Validation process is completed and storing the information on the blockchain can begin.
+<p style='text-align: justify;'>
+
+* If the anchor is new, we accept the hash links provided without validation and return -1 in order to signal that we have a new anchor.
+</p>   
+
+<p style='text-align: justify;'>
+
+* If the anchor is not new, we get the latest stored hashLink for the anchor and compare it with the received lastHashLinkSSI. Because string comparison is problematic, an alternative approach was made to compare the hashes of the links in order to determine if they are equal or not. If the hash links are the same, compare the received newHashLinkSSI and lastHashLinkSSI in order to avoid replay calls/attacks; if they are the same then return 0 to signal out-of-sync error, else return 1 to signal that validation succeeded.
+</p> 
+
+<p style='text-align: justify;'>
+
+* The default return of the function is return 0, which will signal the out-of-sync error. 
+</p>   
+
+<p style='text-align: justify;'>
+
+* If the above validation fails, raise the status statusHashLinkOutOfSync and stop the smart contract execution.
+</p>   
+
+<p style='text-align: justify;'>
+
+* Current status is that hash links are valid.
+</p>  
+
+<p style='text-align: justify;'>
+
+* If the anchor is new, check if the controlString is empty; in case it is, add the new anchor in read-only mode, raise status statusAddedConstSSIOK and stop the smart contract execution; else, store the controlString and continue with smart contract execution.
+</p>   
+
+<p style='text-align: justify;'>
+
+* Current status is that hash links are valid and controlString is partially validated. 
+</p>   
+
+<p style='text-align: justify;'>
+
+* Validate that the hash of the publicKey is equal to the controlString. If the result is that they are not equal, raise statusHashOfPublicKeyDoesntMatchControlString and stop the smart contract execution.
+</p>   
+
+<p style='text-align: justify;'>
+
+* Current status is that hash links are valid, controlString is valid.
+</p>   
+
+<p style='text-align: justify;'>
+
+* Validate the signature and if it fails raise statusSignatureCheckFailed and stop the smart contract execution (it will be detailed in a separate chapter).
+</p>   
+
+<p style='text-align: justify;'>
+
+* Current status is that hash links are valid, controlString is valid and signature is valid.
+</p>   
+
+* Validation process is completed and storing the information on the blockchain can begin.
 
 ### 4.4.3. Signature Validation Algorithm
 
@@ -284,10 +333,11 @@ Before an anchor is added to the blockchain, the following validation flow is ex
 |                 | bool          | Out |
 
 
-The function will compare the result of the calculateAddress function with the result of the getAddressFromHashAndSig function; if they match it will return true, otherwise false. 
-<br>
-In order to validate a signature in Solidity, we have to obtain the account by recovering it, using the signature and the hash that was signed. The obtained account is a derivation of the publicKey that was obtained from the privateKey that was used to sign the hash. Because of this, it was required to implement the derivation of the received publicKey in order to get the account. Once both accounts are obtained, it is possible to compare them and validate if the signature provided was made with the privateKey corresponding to the publicKey we received.
+<p style='text-align: justify;'>The function will compare the result of the calculateAddress function with the result of the getAddressFromHashAndSig function; if they match it will return true, otherwise false.<br>
+</p>
 
+<p style='text-align: justify;'>In order to validate a signature in Solidity, we have to obtain the account by recovering it, using the signature and the hash that was signed. The obtained account is a derivation of the publicKey that was obtained from the privateKey that was used to sign the hash. Because of this, it was required to implement the derivation of the received publicKey in order to get the account. Once both accounts are obtained, it is possible to compare them and validate if the signature provided was made with the privateKey corresponding to the publicKey we received.
+</p>
 
 ### 4.4.4. Obtaining the Ethereum Account from a publicKey
 
@@ -334,7 +384,7 @@ More information about ASN.1 can be found at <a href="">https://www.secg.org/sec
 
 </p>
 
-In the smart contract, the **recover** function was implemented with this signature:
+In the smart contract, the <b>recover</b> function was implemented with this signature:
 
 | Name       | Type          |
 |:-----------|:--------------|
@@ -359,10 +409,13 @@ Functions used in the implementation:
 
 
 **Source code, Compilation and deployment**
-<p style='text-align: justify;'>The source code can be found at https://github.com/PharmaLedger-IMI/ethereum-anchoring
- in the SmartContract folder.
 
-To compile and deploy the smart contract on a local environment, update the values in the .env file and run npm run truffle-migrate. It will use the internal network.
+<p style='text-align: justify;'>
+
+The source code can be found at <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a> in the SmartContract folder.
+</p>
+
+<p style='text-align: justify;'>To compile and deploy the smart contract on a local environment, update the values in the .env file and run npm run truffle-migrate. It will use the internal network.
 </p>
 
 **Kubernetes deployment**
