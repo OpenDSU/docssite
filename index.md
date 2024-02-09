@@ -4,19 +4,19 @@ layout: home
 nav_order: 1
 ---
 
-test
+test 1
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curved Slideshow with Video</title>
+<title>Curved Video Slideshow</title>
 <style>
   .slideshow-container {
     position: relative;
-    width: 560px; /* Adjust based on video width */
-    height: 315px; /* Adjust based on video height */
+    width: 800px;
+    height: 450px;
     margin: auto;
     overflow: hidden;
   }
@@ -36,21 +36,44 @@ test
     opacity: 1;
   }
 
-  iframe {
-    max-width: 30%; /* Adjust based on your preference */
+  video {
+    max-width: 300px;
     border-radius: 50%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
   }
 </style>
 </head>
 <body>
 <div class="slideshow-container">
   <div class="slide active">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=01UZn10gs3FZFJo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <video src="video1.mp4" controls autoplay loop muted></video>
+    <video src="video2.mp4" controls autoplay loop muted></video>
+    <video src="video3.mp4" controls autoplay loop muted></video>
   </div>
-  <div class="slide">
-    <!-- Placeholder slide -->
-  </div>
+  <button class="prev" onclick="plusSlides(-1)">❮</button>
+  <button class="next" onclick="plusSlides(1)">❯</button>
 </div>
 
 <script>
@@ -62,8 +85,11 @@ test
       slide.classList.remove('active');
     });
     slides[slideIndex].classList.add('active');
-    slideIndex = (slideIndex + 1) % slides.length;
-    setTimeout(showSlides, 3000); // Change slide every 3 seconds
+  }
+
+  function plusSlides(n) {
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    showSlides();
   }
 
   showSlides();
