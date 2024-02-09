@@ -4,21 +4,50 @@ layout: home
 nav_order: 1
 ---
 
-# **OpenDSU RFC Documentation**
-## The homepage of the OpenDSU standardisation project
-Blockchain Anchored Data, Decentralised Access Control, Self Sovereignity, Digital Trust Ecosystems 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Playlist</title>
+</head>
+<body>
 
-<div style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-content:space-around;gap: 10px 10px;">
+<div id="playlist"></div>
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=R8GYpQFhycDL3xJ6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<script>
+// Replace 'YOUR_PLAYLIST_ID' with the actual ID of your YouTube playlist
+const playlistId = 'PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2';
+const apiKey = 'YOUR_YOUTUBE_API_KEY';
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/M25uLSmVRl0?si=4bl_aokGPNqFBFcR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+// Fetch the playlist data from the YouTube Data API
+fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${playlistId}&key=${apiKey}`)
+  .then(response => response.json())
+  .then(data => {
+    // Loop through the playlist items and create HTML elements to display them
+    const playlistDiv = document.getElementById('playlist');
+    data.items.forEach(item => {
+      const videoId = item.snippet.resourceId.videoId;
+      const title = item.snippet.title;
+      const thumbnailUrl = item.snippet.thumbnails.default.url;
+      const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=GpXncvdI4sPvc8pc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      // Create HTML elements for each video
+      const videoElement = document.createElement('div');
+      videoElement.innerHTML = `
+        <div>
+          <a href="${videoUrl}" target="_blank">
+            <img src="${thumbnailUrl}" alt="${title}">
+            <h2>${title}</h2>
+          </a>
+        </div>
+      `;
+      playlistDiv.appendChild(videoElement);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching playlist:', error);
+  });
+</script>
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/BB7XcK8Ptss?si=FsW2Bw6ua5jfhVHb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/0A3bGUAajrM?si=3wLGPS6KBAfaJLVF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+</body>
