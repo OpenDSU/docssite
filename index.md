@@ -8,104 +8,40 @@ nav_order: 1
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Embedded YouTube Playlist</title>
+<title>YouTube Video Slideshow</title>
 <style>
-    .playlist-container {
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
+    .video-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
         margin-bottom: 20px;
     }
-
-    .playlist-wrapper {
-        display: flex;
-    }
-
-    .playlist-slide {
+    
+    .video-item {
         flex: 0 0 auto;
-        width: 100%;
-        transition: transform 0.5s ease;
-    }
-
-    .playlist-video {
-        width: 300px;
-        height: 169px;
+        scroll-snap-align: start;
         margin-right: 10px;
     }
-
-    .scroll-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 1;
-    }
-
-    .scroll-arrow-left {
-        left: 0;
-    }
-
-    .scroll-arrow-right {
-        right: 0;
+    
+    iframe {
+        width: 320px;
+        height: 180px;
     }
 </style>
 </head>
 <body>
-
-<div class="playlist-container">
-    <div class="playlist-wrapper">
-        <div class="playlist-slide">
-            <!-- Add videos from the playlist here -->
-            <iframe class="playlist-video" width="300" height="169" src="https://www.youtube.com/embed/RYxe61jE_J8"></iframe>
-            <!-- Add more iframes for each video in the playlist -->
-        </div>
-        <!-- Add more .playlist-slide divs for additional videos -->
-    </div>
+<div class="video-container">
+    <div class="video-item"><iframe src="URL_OF_VIDEO_1" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-item"><iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-item"><iframe src="URL_OF_VIDEO_3" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-item"><iframe src="URL_OF_VIDEO_4" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-item"><iframe src="URL_OF_VIDEO_5" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-item"><iframe src="URL_OF_VIDEO_6" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-item"><iframe src="URL_OF_VIDEO_7" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-item"><iframe src="URL_OF_VIDEO_8" frameborder="0" allowfullscreen></iframe></div>
 </div>
-
-<div class="scroll-arrow scroll-arrow-left">&lt;</div>
-<div class="scroll-arrow scroll-arrow-right">&gt;</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const slides = document.querySelectorAll(".playlist-slide");
-        const scrollLeft = document.querySelector(".scroll-arrow-left");
-        const scrollRight = document.querySelector(".scroll-arrow-right");
-
-        let currentIndex = 0;
-
-        function updateArrows() {
-            scrollLeft.style.display = currentIndex > 0 ? "block" : "none";
-            scrollRight.style.display = currentIndex < slides.length - 1 ? "block" : "none";
-        }
-
-        function scrollToIndex(index) {
-            const containerWidth = slides[0].offsetWidth;
-            slides.forEach((slide, i) => {
-                slide.style.transform = `translateX(${(i - index) * containerWidth}px)`;
-            });
-            currentIndex = index;
-            updateArrows();
-        }
-
-        scrollLeft.addEventListener("click", function() {
-            if (currentIndex > 0) {
-                scrollToIndex(currentIndex - 1);
-            }
-        });
-
-        scrollRight.addEventListener("click", function() {
-            if (currentIndex < slides.length - 1) {
-                scrollToIndex(currentIndex + 1);
-            }
-        });
-
-        updateArrows();
-    });
-</script>
-
 </body>
 </html>
