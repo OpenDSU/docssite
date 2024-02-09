@@ -3,6 +3,15 @@ title: Home
 layout: home
 nav_order: 1
 ---
+
+
+test
+
+---
+title: Home
+layout: home
+nav_order: 1
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,17 +29,6 @@ nav_order: 1
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
-    }
-     
-    .video-row {
-        display: none;
-		padding-left: 15%; /* Adjust space before pictures */
-		padding-right: 15%; /* Adjust space after pictures */
-    }
-	
-	 .video-row {
-		width: 70%; /* Adjust image width */
-		margin: 0 auto; /* Center the image */
     }
 	
     .video-item {
