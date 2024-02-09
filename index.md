@@ -4,8 +4,8 @@ layout: home
 nav_order: 1
 ---
 
-
-test
+ 
+test 1
 
 
 
@@ -25,6 +25,13 @@ test
   
   .slide {
     display: none;
+    padding-left: 15%; /* Adjust space before pictures */
+    padding-right: 15%; /* Adjust space after pictures */
+  }
+  
+  .slide img {
+    width: 70%; /* Adjust image width */
+    margin: 0 auto; /* Center the image */
   }
   
   .prev, .next {
@@ -54,15 +61,15 @@ test
 
 <div class="slideshow-container">
   <div class="slide">
-    <img src="slide1.jpg" style="width:100%">
+    <img src="slide1.jpg" alt="Slide 1">
   </div>
 
   <div class="slide">
-    <img src="slide2.jpg" style="width:100%">
+    <img src="slide2.jpg" alt="Slide 2">
   </div>
 
   <div class="slide">
-    <img src="slide3.jpg" style="width:100%">
+    <img src="slide3.jpg" alt="Slide 3">
   </div>
 
   <!-- Navigation arrows -->
