@@ -3,8 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
-1
-test1
+2
+test2
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,10 +47,16 @@ test1
         color: #333;
     }
     
-    .prev, .next {
+    .arrow-container {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .prev, .next {
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         padding: 10px;
@@ -59,13 +65,13 @@ test1
         z-index: 2;
         transition: color 0.3s, background-color 0.3s;
     }
-    
+
     .prev {
-        left: -50px; /* Adjusted to move inside body */
+        margin-right: 10px;
     }
     
     .next {
-        right: -50px; /* Adjusted to move inside body */
+        margin-left: 10px;
     }
 
     .prev:hover, .next:hover {
@@ -107,10 +113,11 @@ test1
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
+    <div class="arrow-container">
+        <button class="prev" onclick="scrollVideos(-1)">❮</button>
+        <button class="next" onclick="scrollVideos(1)">❯</button>
+    </div>
 </div>
-
-<button class="prev" onclick="scrollVideos(-1)">❮</button>
-<button class="next" onclick="scrollVideos(1)">❯</button>
 
 <script>
     let currentIndex = 0;
