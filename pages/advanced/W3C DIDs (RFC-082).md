@@ -82,7 +82,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRn_363dgq4shlBPDJuSMpDMCNMd1rRwqqzUQdfVLHOO19mHF4qcmmjihKInmubAieYP7sKKBAa2uxp/pub?w=960&h=720" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vS4FZ4xBgkYN1eB0AJYQQUobx0UfqLkGhct9ewQa3r6-Znb7XbK4L5PDKTlW_9Fp5_auJsZtEeElsIw/pub?w=931&h=734" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
@@ -144,7 +144,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * <b>Did:ssi:group </b>contains a list of other DIDs belonging to the group. Used to send messages to groups;
 
 * <b>did:ssi:key </b>it is just the public key (without an external DID document) associated with a blockchain domain.
-* 
+
 
 <b>The Blockchain Domain is used to discover the endpoints for message queues</b>.
 
