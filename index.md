@@ -3,8 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,35 +12,22 @@ nav_order: 1
 <style>
   /* Style for the iframe container */
   .playlist-container {
-    position: relative;
-    width: 560px; /* Adjust width as needed */
-    height: 315px; /* Adjust height as needed */
-    margin: 0 auto; /* Center the container horizontally */
-    overflow: hidden; /* Hide any overflow from the iframe */
-  }
-  /* Style for the overlay */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    border: 4px solid #ff0000; /* Add a thicker red border around the playlist */
+    padding: 20px; /* Add padding to the playlist */
+    margin-bottom: 20px; /* Add space at the bottom */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 24px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 80%; /* Set width to 80% of the viewport width */
+    max-width: 800px; /* Set maximum width */
+    margin: 0 auto; /* Center horizontally */
   }
 </style>
 </head>
 <body>
 
 <div class="playlist-container">
-  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" frameborder="0" allowfullscreen></iframe>
-  <div class="overlay">
-    <p>Please, watch our videos</p>
-  </div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" frameborder="0" allowfullscreen></iframe>
 </div>
 
 </body>
