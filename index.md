@@ -3,9 +3,6 @@ title: Home
 layout: home
 nav_order: 1
 ---
-4
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +10,6 @@ nav_order: 1
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YouTube Video Slideshow</title>
 <style>
-    body {
-        position: relative;
-    }
-    
     .video-container {
         position: relative;
         margin-bottom: 20px;
@@ -27,7 +20,6 @@ nav_order: 1
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
-        position: relative;
     }
     
     .video-item {
@@ -47,43 +39,32 @@ nav_order: 1
         color: #333;
     }
     
-    .arrow-container {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        margin-top: 10px;
-    }
-
     .prev, .next {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: purple;
+        padding: 15px;
         border: none;
         cursor: pointer;
-        z-index: 2;
-        transition: color 0.3s, background-color 0.3s;
+        z-index: 1;
+        font-size: 24px;
+        background-color: rgba(128, 0, 128, 0.5); /* Purple with transparency */
     }
-
-    .prev:hover, .next:hover {
-        background-color: rgba(128, 0, 128, 0.5);
+    
+    .prev {
+        left: -50px;
+    }
+    
+    .next {
+        right: -50px;
     }
 </style>
 </head>
 <body>
-<div class="arrow-container">
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
-</div>
 <div class="video-container">
+    <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
-        <!-- Replace the following iframe src with the embed link of the playlist -->
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
         <div class="video-item">
             <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
             <div class="video-name">Name of Video 1</div>
@@ -107,14 +88,14 @@ nav_order: 1
         <!-- Repeat the same pattern for other videos -->
     </div>
 </div>
-<div class="arrow-container">
-    <button class="next" onclick="scrollVideos(1)">❯</button>
-</div>
+
+<button class="next" onclick="scrollVideos(1)">❯</button>
 
 <script>
     let currentIndex = 0;
 
     function scrollVideos(direction) {
+        const videoContainer = document.querySelector('.video-container');
         const videoRow = document.querySelector('.video-row');
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
@@ -128,4 +109,3 @@ nav_order: 1
 
 </body>
 </html>
-
