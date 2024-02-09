@@ -3,8 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-absadasd 1
-2323
+test
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +26,7 @@ absadasd 1
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
+        position: relative;
     }
     
     .video-item {
@@ -47,7 +47,7 @@ absadasd 1
     }
     
     .prev, .next {
-        position: fixed;
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
@@ -60,13 +60,11 @@ absadasd 1
     }
     
     .prev {
-        left: 0;
-        margin-left: 10px; /* Adjusted to move inside body */
+        left: -50px; /* Adjusted to move inside body */
     }
     
     .next {
-        right: 0;
-        margin-right: 10px; /* Adjusted to move inside body */
+        right: -50px; /* Adjusted to move inside body */
     }
 
     .prev:hover, .next:hover {
@@ -108,10 +106,9 @@ absadasd 1
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
+    <button class="prev" onclick="scrollVideos(-1)">❮</button>
+    <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
-
-<button class="prev" onclick="scrollVideos(-1)">❮</button>
-<button class="next" onclick="scrollVideos(1)">❯</button>
 
 <script>
     let currentIndex = 0;
@@ -130,4 +127,5 @@ absadasd 1
 
 </body>
 </html>
+
 
