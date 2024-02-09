@@ -3,9 +3,6 @@ title: Home
 layout: home
 nav_order: 1
 ---
-
-test
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,16 +40,16 @@ test
     }
     
     .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: transparent; /* Remove black background */
-        color: purple; /* Change arrow color to purple */
-        padding: 15px; /* Increase padding for larger size */
-        border: none;
-        cursor: pointer;
-        z-index: 1;
-        font-size: 50px; /* Increase font size */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* Remove black background */
+    color: purple; /* Change arrow color to purple */
+    padding: 15px; /* Increase padding for larger size */
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 50px; /* Increase font size */
     }
     
     .prev {
@@ -62,18 +59,41 @@ test
     .next {
         right: 0;
     }
+
 </style>
 </head>
 <body>
 <div class="video-container">
     <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
+        <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
             <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
             <div class="video-name">Name of Video 1</div>
         </div>
-        <!-- Add other video items here -->
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 2</div>
+        </div>
+        <!-- Repeat the same pattern for other videos -->
     </div>
+
     <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
 
