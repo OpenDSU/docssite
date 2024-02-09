@@ -41,19 +41,15 @@ User
     }
     
     .prev, .next {
-    position: absolute;
-    top: 50%;
-    background-color: transparent; /* Changed to transparent */
-    color: purple; /* Changed to purple */
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    z-index: 1;
-    transition: color 0.3s, background-color 0.3s; /* Added transition effect */
-    }
-    
-    .prev:hover, .next:hover {
-        background-color: rgba(128, 0, 128, 0.5); /* Added hover effect */
+        position: absolute;
+        top: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: purple; /* Changed to purple */
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        z-index: 2; /* Increased z-index to ensure arrows are above videos */
+        transition: color 0.3s, background-color 0.3s; /* Added transition effect */
     }
     
     .prev {
@@ -63,7 +59,10 @@ User
     .next {
         right: 10px; /* Adjusted to provide spacing */
     }
-
+    
+    .prev:hover, .next:hover {
+        background-color: rgba(128, 0, 128, 0.5); /* Added hover effect */
+    }
 </style>
 </head>
 <body>
