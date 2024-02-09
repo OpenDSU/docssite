@@ -19,6 +19,18 @@ A period when the community can review the RFC (comment Docs).
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
+<!-- TOC -->
+* [1. Ethereum Adapter](#1-ethereum-adapter)
+* [2. Smart Contract methods](#2-smart-contract-methods)
+  * [Function createAnchor(anchorId, newAnchorValue)](#function-createanchoranchorid-newanchorvalue)
+  * [Function appendAnchor(anchorId, newAnchorValue)](#function-appendanchoranchorid-newanchorvalue)
+  * [Function getAllVersions(anchorId)](#function-getallversionsanchorid)
+  * [Function getLastVersions(anchorId)](#function-getlastversionsanchorid)
+  * [Function createOrUpdateMultipleAnchors(anchors)](#function-createorupdatemultipleanchorsanchors)
+  * [Function dumpAnchors(from, limit, maxSize)](#function-dumpanchorsfrom-limit-maxsize)
+  * [Function totalNumberOfAnchors()](#function-totalnumberofanchors)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 # 1. Ethereum Adapter
 
@@ -44,15 +56,121 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-| **Status code**                               | **Type** | **Value** |**Description**   |
-|:----------------------------------------------|:---------|:----------|---|
-| statusOK                                      | Success  | 200       |   |
-| statusAddedConstSSIOK                         | Success  | 201       |   |
-| statusHashLinkOutOfSync                       | Error    | 100       |   |
-| statusCannotUpdateReadOnlyAnchor              |   Error       | 101       |   |
-| statusHashOfPublicKeyDoesntMatchControlString |  Error        | 102       |   |
-| statusSignatureCheckFailed                    |  Error        | 103       |   |
-| statusTimestampOrSignatureCheckFailed         |   Error       | 104       |   |
-| statusCannotCreateExistingAnchor              |   Error       | 105       |   |
-| statusCannotAppendToNonExistentAnchor         |   Error       |   106        |   |
-| statusCannotAppendConstAnchor                 |   Error       |  107         |   |
+| **Status code**                               | **Type**  | **Value**  | **Description**                                                                                   |
+|:----------------------------------------------|:----------|:-----------|---------------------------------------------------------------------------------------------------|
+| statusOK                                      | Success   | 200        | createAnchor was called without errors, and information is stored on the blockchain.              |
+| statusAddedConstSSIOK                         | Success   | 201        | createAnchor was called for ConstSSI without errors, and information is stored on the blockchain. |
+| statusHashLinkOutOfSync                       | Error     | 100        | Validation process for the continuity of the hash link failed.                                    |
+| statusCannotUpdateReadOnlyAnchor              | Error     | 101        | Validation process for createAnchor when called with an update for an already stored ConstSSI.    |
+| statusHashOfPublicKeyDoesntMatchControlString | Error     | 102        | Validation of the controlString and publicKey failed.                                             |
+| statusSignatureCheckFailed                    | Error     | 103        | Validation of the signature failed.                                                               |
+| statusTimestampOrSignatureCheckFailed         | Error     | 104        |                                                                                                   |
+| statusCannotCreateExistingAnchor              | Error     | 105        |                                                                                                   |
+| statusCannotAppendToNonExistentAnchor         | Error     | 106        |                                                                                                   |
+| statusCannotAppendConstAnchor                 | Error     | 107        |                                                                                                   |
+
+
+# 2. Smart Contract methods
+
+## Function createAnchor(anchorId, newAnchorValue)
+
+**Description**: Create a new anchor.
+
+| **Name**        | **Type**  | **Value**  | **Description**  |
+|:----------------|:----------|:-----------|:-----------------|
+| anchorId        | string    | *required  |                  |
+| newAnchorValue  | string    | *required  |                  |
+
+## Function appendAnchor(anchorId, newAnchorValue)
+
+<p style='text-align: justify;'><b>Description</b>: Append an already existing anchor value to the current anchorId.
+</p>
+
+
+| **Name**        | **Type**  | **Value**  | **Description**  |
+|:----------------|:----------|:-----------|:-----------------|
+| anchorId        | string    | *required  |                  |
+| newAnchorValue  | string    | *required  |                  |
+
+
+## Function getAllVersions(anchorId)
+
+**Description**: Get all versions of a certain anchorId.
+
+
+
+| **Name**        | **Type**  | **Value**  | **Description**  |
+|:----------------|:----------|:-----------|:-----------------|
+| anchorId        | string    | *required  |                  |
+
+## Function getLastVersions(anchorId)
+
+**Description**: Get the last version of a certain anchorId.
+
+
+| **Name**        | **Type**  | **Value**  | **Description**  |
+|:----------------|:----------|:-----------|:-----------------|
+| anchorId        | string    | *required  |                  |
+
+## Function createOrUpdateMultipleAnchors(anchors)
+
+**Description**: Modify anchors in an array.
+
+
+| **Name**        | **Type**          | **Value**   | **Description**   |
+|:----------------|:------------------|:------------|:------------------|
+| anchorId        | Array of objects  | *required   |                   |
+
+## Function dumpAnchors(from, limit, maxSize)
+
+**Description**: Get rid of anchors.
+
+
+| **Name**         | **Type**  | **Value**    | **Description**    |
+|:-----------------|:----------|:-------------|:-------------------|
+| from             | uint      | *required    |                    |
+| limit            | uint      | *required    |                    |
+| maxSize          | uint      | *required    |                    |
+
+## Function totalNumberOfAnchors()
+
+**Description**: Get the total number of anchors.
+
+
+| **Name**         | **Type**           | **Value**   | **Description**    |
+|:-----------------|:-------------------|:------------|:-------------------|
+|                  |                    |             |                    |
+
+
+| **Operation**  | **Entry point**                       | **Description**  |
+|:---------------|:--------------------------------------|:-----------------|
+| **PUT**        | /createAnchor/:anchorId/:anchorValue  |                  |
+| **PUT**        | /appendAnchor/:anchorId/:anchorValue  |                  |
+| **PUT**        | /createOrAppendMultipleAnchors        |                  |
+| **GET**        | /getAllVersions/:anchorId             |                  |
+| **GET**        | /getLastVersion/:anchorId             |                  |
+| **GET**        | /totalNumberOfAnchors                 |                  |
+| **GET**        | /dumpAnchors                          |                  |
+| **GET**        | /health                               |                  |
+
+
+**Contributors**
+
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+# Annex 1. Contributors
+
+| **Current Editors**                 | **Email**                                                        |
+|:------------------------------------|:-----------------------------------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net                                     |
+| Andi-Gabriel Țan                   | andi@axiologic.net                                                |
+| Teodor Lupu                         | teodor@axiologic.net                                             |
+| **Contributors Axiologic Research** | **Email**                                                        |
+| Adrian Ganga                        | adrian@axiologic.net                                             |
+| Andi-Gabriel Țan                    | andi@axiologic.net                                               |
+| Cosmin Ursache                      | cosmin@axiologic.net                                             |
+| Daniel Sava                         | daniel@axiologic.net                                             |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                                           |
+| Teodor Lupu                         | teodor@axiologic.net                                             |
+
