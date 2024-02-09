@@ -174,3 +174,4 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | Nicoleta Mihalache                  | nicoleta@axiologic.net                                           |
 | Teodor Lupu                         | teodor@axiologic.net                                             |
 
+ 
