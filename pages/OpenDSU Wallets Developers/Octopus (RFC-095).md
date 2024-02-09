@@ -6,6 +6,23 @@ nav_order: 1
 ---
 
 
+
+# **Octopus(RFC-095)**
+{: .no_toc }
+
+{: .feedback }
+A period when the community can review the RFC (comment Docs)
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
+
 <!-- TOC -->
 * [Abstract](#abstract)
 * [1. Introduction](#1-introduction)
@@ -23,23 +40,6 @@ nav_order: 1
     * [Example](#example-1)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-
-
-# **Octopus(RFC-095)**
-{: .no_toc }
-
-{: .feedback }
-A period when the community can review the RFC (comment Docs)
-
-**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
-
-**Copyright: MIT license**
-
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
-
-This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-
-
 
 
 # Abstract
@@ -87,7 +87,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 ```js
-
 {
    "name": "My Octopus Project",
    "version": "1.0.0",
@@ -101,7 +100,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
    },
    "license": "MIT"
 }
-
 
 ```
 
@@ -135,8 +133,8 @@ npm run octopus
 <p style='text-align: justify;'>Depending on the order of the described steps, Octopus starts to execute. Execution will stop depending on actions, errors or other situations that might be encountered. Octopus also has the option to continue execution if one or more errors occur. Each of these cases is exemplified or must be mentioned in the configuration file. For example, if we want to delete a folder and this folder does not exist, we can stop Octopus execution, or we can continue it by using the <b>ignore errors</b> flag, which is set to true or false, depending on what we need. The default behavior is that if the folder you want to delete does not exist, no specific error is thrown. Generally, the program throws errors to the user when it needs to learn how to proceed. Various errors may occur. They may be coding errors made by the programmer, errors caused by wrong input and other unpredictable errors.
 </p>
 
-<b>Other Octopus tasks in the same file or separate files can be accessed. This feature represents Octopus' adaptability to be able to execute as many tasks as needed to either create a development environment, a test environment or a production environment, but also to perform certain automated tasks for programmers or testers within these environments. There is no limit to the number of tasks that can be detailed in the Octopus configuration file or the actions that Octopus must execute. Octopus executes in a sequence all of the tasks found in the JSON configuration file called Octopus.json.
-</b>
+<p style='text-align: justify;'>Other Octopus tasks in the same file or separate files can be accessed. This feature represents Octopus' adaptability to be able to execute as many tasks as needed to either create a development environment, a test environment or a production environment, but also to perform certain automated tasks for programmers or testers within these environments. There is no limit to the number of tasks that can be detailed in the Octopus configuration file or the actions that Octopus must execute. Octopus executes in a sequence all of the tasks found in the JSON configuration file called Octopus.json.
+</p>
 
 <p style='text-align: justify;'>The structure of the Octopus.json<b></b> file is represented by a dictionary of tasks organized by purpose:
 </p>
@@ -144,26 +142,22 @@ npm run octopus
 
 
 ```js
-
 {
   "workDir":"relative_or_global_path_to_be_used_as_current_working_dir",
   "purpose_1": [task1, task2 ...],
   "purpose_2": [task1, task2 ...],
   ...
 }
-
 ```
 
 Each task is an object with the following structure:
 
 ```js
-
 {
   "name": "task_name_or_dependency_name",
   "src": "",
   "actions":[action1, action2 ...]
 }
-
 ```
 
 Each action is an object with the following structure:
@@ -171,12 +165,11 @@ Each action is an object with the following structure:
 
 
 ```js
-
+}
 "type": "action_type_name",
   "options": {
       "option_1": "option_value"
   }
-
 ```
 
 ## 2.3 Examples
@@ -184,7 +177,6 @@ Each action is an object with the following structure:
 If we need to use Octopus as a dependency manager, we can have the following configuration:
 
 ```js
-
 {
   "workDir": ".",
   "dependencies": [
@@ -194,7 +186,6 @@ If we need to use Octopus as a dependency manager, we can have the following con
       }
   ]
 }
-
 ```
 
 
@@ -220,12 +211,10 @@ If we need to use Octopus as a dependency manager, we can have the following con
       }
   ]
 }
-
 ```
 
 
 ```js
-
 {
   "name": "privatesky",
   "src": "http://github.com/privatesky/privatesky.git",
@@ -244,7 +233,6 @@ node ./node_modules/octopus/scripts/run
 # or (if you added the run script in the "scripts" section of your package.json as in the
 Installation chapter)
 npm run octopus
-
 ```
 
 <p style='text-align: justify;'>Examples of an <b>Octopus.json</b> file can be found at <a href="https://raw.githubusercontent.com/PrivateSky/privatesky/master/octopus.json">this link</a>
@@ -306,7 +294,6 @@ npm run octopus
 Basic config with one target and one task that executes an echo command with "Hello World!".
 
 ```js
-
 const config = {
   "workDir": ".",
   "install": [
@@ -328,7 +315,6 @@ octopus.run(config, "install", function(err, result){
   }
   console.log("Execution finished!");
 });
-
 ```
 
 ## 4.2  Action register class
@@ -353,7 +339,6 @@ Register a new action called echo to display a custom string to the console.
 
 
 ```js
-
 const octopus = require("octopus");
 const actionRegistry = octopus.actionRegistry;
 actionRegistry.registerActionHandler("echo", function(task, action, callback){
@@ -388,7 +373,6 @@ octopus.run(config, "demo", function(err, result){
   }
   console.log("Example done!");
 });
-
 ```
 
 
