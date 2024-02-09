@@ -3,7 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-absadasd 322323 11
+absadasd 3232
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,11 +60,11 @@ absadasd 322323 11
     }
     
     .prev {
-        left: -30px; /* Adjusted to move near the videos with a little space */
+        left: 0; /* Adjusted to move near the videos */
     }
     
     .next {
-        right: -30px; /* Adjusted to move near the videos with a little space */
+        right: 0; /* Adjusted to move near the videos */
     }
 
     .prev:hover, .next:hover {
