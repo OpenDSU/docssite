@@ -5,7 +5,6 @@ nav_order: 1
 ---
 3
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,10 +47,12 @@ nav_order: 1
     }
     
     .arrow-container {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        margin-top: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        text-align: center;
     }
 
     .prev, .next {
@@ -64,15 +65,20 @@ nav_order: 1
         transition: color 0.3s, background-color 0.3s;
     }
 
+    .prev {
+        margin-right: 10px;
+    }
+    
+    .next {
+        margin-left: 10px;
+    }
+
     .prev:hover, .next:hover {
         background-color: rgba(128, 0, 128, 0.5);
     }
 </style>
 </head>
 <body>
-<div class="arrow-container">
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
-</div>
 <div class="video-container">
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
@@ -106,9 +112,10 @@ nav_order: 1
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
-</div>
-<div class="arrow-container">
-    <button class="next" onclick="scrollVideos(1)">❯</button>
+    <div class="arrow-container">
+        <button class="prev" onclick="scrollVideos(-1)">❮</button>
+        <button class="next" onclick="scrollVideos(1)">❯</button>
+    </div>
 </div>
 
 <script>
@@ -128,4 +135,3 @@ nav_order: 1
 
 </body>
 </html>
-
