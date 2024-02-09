@@ -21,6 +21,26 @@ A period when the community can review the RFC (comment Docs)
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
+<!-- TOC -->
+* [Abstract](#abstract)
+* [Overview](#overview)
+* [1. W3C DID Methods supported by OpenDSU](#1-w3c-did-methods-supported-by-opendsu)
+* [2. DID Documents instances using the W3C DIDs APIs](#2-did-documents-instances-using-the-w3c-dids-apis)
+  * [Function createIdentity(didMethod, ...args)](#function-createidentitydidmethod-args)
+  * [Function we_createIdentity(enclave, didMethod, ...args)](#function-we_createidentityenclave-didmethod-args)
+  * [Function resolveDID(identifier, callback)](#function-resolvedididentifier-callback)
+  * [Function we_resolveDID(enclave, identifier, callback)](#function-we_resolvedidenclave-identifier-callback)
+  * [Function registerDIDMethod(method, implementation)](#function-registerdidmethodmethod-implementation)
+  * [Function resolveNameDID(domain, publicName, secret, callback)](#function-resolvenamediddomain-publicname-secret-callback)
+  * [Function registerNameDIDSecret(domain, publicName, secret, callback)](#function-registernamedidsecretdomain-publicname-secret-callback)
+  * [Function initSystemDID()](#function-initsystemdid)
+  * [Function getKeyDIDFromSecret(secret, callback)](#function-getkeydidfromsecretsecret-callback)
+* [3. DID Documents instances using the Security Context APIs](#3-did-documents-instances-using-the-security-context-apis)
+* [4. APIs that you could expect in a DID document instance](#4-apis-that-you-could-expect-in-a-did-document-instance)
+* [5. Message communication between DIDs](#5-message-communication-between-dids)
+* [6. CommunicationHub concept](#6-communicationhub-concept)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 
@@ -62,7 +82,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vSDIBd5WDBhUl9WP0BENeG6jlnBzQDrzyohnhMrCCtruJMBV-GRGb2ZXXEHVuNF_0AKZsktDcY3qhX5/pub?w=460&h=395" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRn_363dgq4shlBPDJuSMpDMCNMd1rRwqqzUQdfVLHOO19mHF4qcmmjihKInmubAieYP7sKKBAa2uxp/pub?w=960&h=720" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
@@ -103,7 +123,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRKBxsti0yTFka4dFKuMhY2pPXeLmnxNTymzjMLuEkyTXBg9jyJOCpuanfz4i51qoeS9SYo2pkATmZQ/pub?w=162&h=356" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRKBxsti0yTFka4dFKuMhY2pPXeLmnxNTymzjMLuEkyTXBg9jyJOCpuanfz4i51qoeS9SYo2pkATmZQ/pub?w=324&h=712" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
@@ -228,229 +248,148 @@ There are currently four DID Methods implemented, briefly described in the table
 
 **Description:** This function allows the user to register new DID methods. 
 
+| **Name**       | **Type** | **Value** | **Description**                                   |
+|:---------------|:---------|:----------|:--------------------------------------------------|
+| method         | string   | *required |                                                   |
+| implementation | function | *required |                                                   |
 
-| **Name**   | **Type** | **Value** | **Description**                                    |
-|:-----------|:---------|:----------|:---------------------------------------------------|
-| method     | string   | *required | The enclave for which you want to resolve the DID. |
-| identifier | string   | *required | An openDSU keySSI that is w3c compatible.          |
-| callback   | function | *required |                                                    |
 
 
 
+## Function resolveNameDID(domain, publicName, secret, callback)
 
+**Description:**
 
 
+| **Name**   | **Type** | **Value**  | **Description**       |
+|:-----------|:---------|:-----------|:----------------------|
+| domain     |          |            | The domain of the DID |
+| publicName |          |            |                       |
+| secret     |          |            |                       |
+| callback   | function | *required  |                       |
 
 
 
-Name
-	
+## Function registerNameDIDSecret(domain, publicName, secret, callback)
 
-Type
-	
+**Description:**
 
-Value
-	
 
-Description
+| **Name**   | **Type** | **Value**  | **Description**       |
+|:-----------|:---------|:-----------|:----------------------|
+| domain     |          |            | The domain of the DID |
+| publicName |          |            |                       |
+| secret     |          |            |                       |
+| callback   | function | *required  |                       |
 
-method
-	
 
-string
-	
+## Function initSystemDID()
 
-*required
-	
+**Description:** Generate a system DID.
 
-implementation
-	
 
-function
-	
+## Function getKeyDIDFromSecret(secret, callback)
 
-*required
-	
+**Description:**
 
-Function resolveNameDID(domain, publicName, secret, callback)
 
-Description:
+| **Name**   | **Type** | **Value**  | **Description**       |
+|:-----------|:---------|:-----------|:----------------------|
+| secret     |          |            |                       |
+| callback   | function | *required  |                       |
 
-Name
-	
 
-Type
-	
 
-Value
-	
+# 3. DID Documents instances using the Security Context APIs
 
-Description
+# 4. APIs that you could expect in a DID document instance
 
-domain
-	
+<p style='text-align: justify;'>When resolving a DID identifier you obtain a DID document. Here is a summary of all operations available for DID documents.
+</p>
 
-	
+| **Functions**                    | **Description** |
+|:---------------------------------|:----------------|
+| decrypt                          |                 |
+| encrypt                          |                 |
+| findPrivateKeysInSecurityContext |                 |
+| getControllerKey                 |                 |
+| getPublicKeys                    |                 |
+| getMQHandlers                    |                 |
+| revokeDID                        |                 |
+| revokeKey                        |                 |
+| sendMessage                      |                 |
+| sign                             |                 |
+| verify                           |                 |
 
-	
 
-The domain of the DID.
 
-publicName
-	
+# 5. Message communication between DIDs
 
-	
 
-	
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRAM-vSVDXhZVjiXtvHs-eq0yE8JYsj5Km_OThF5lSSSvbVMGsxd7rNdi468XPhhSjwR64iEiFdDiCC/pub?w=1036&h=822" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
 
-secret
-	
 
-	
+<p style='text-align: center;'><b>Figure 3: Message communication between DIDs</b></p>
 
-	
 
-callback
-	
+# 6. CommunicationHub concept
 
-function
-	
+* getCommunicationHub() -> CommHub
 
-*required
-	
+   * subscribe(did, messageType, checkSecurityMethod, callback)
+   * unsubscribe(did, messageType, checkSecurityMethod, callback)
 
-Function registerNameDIDSecret(domain, publicName, secret, callback)
 
-Description:
 
-Name
-	
 
-Type
-	
 
-Value
-	
+**Contributors**
 
-Description
 
-domain
-	
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-	
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-	
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-The domain of the DID.
 
-publicName
-	
+# Annex 1. Contributors
 
-	
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
 
-	
-
-secret
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Function initSystemDID()
-
-Description: Generate a system DID.
-Function getKeyDIDFromSecret(secret, callback)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-secret
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-3. DID Documents instances using the Security Context APIs
-
-4. APIs that you could expect in a DID document instance
-
-When resolving a DID identifier you obtain a DID document. Here is a summary of all operations available for DID documents.
-
-Functions
-	
-
-Description
-
-decrypt
-	
-
-encrypt
-	
-
-findPrivateKeysInSecurityContext
-	
-
-getControllerKey
-	
-
-getPublicKeys
-	
-
-getMQHandlers
-	
-
-revokeDID
-	
-
-revokeKey
-	
-
-sendMessage
-	
-
-sign
-	
-
-verify
-	
-
-5. Message communication between DIDs
-
-Figure 3: Message communication between DIDs
-6. CommunicationHub concept
-
-    getCommunicationHub() -> CommHub
-
-    subscribe(did, messageType, checkSecurityMethod, callback)
-    unsubscribe(did, messageType, checkSecurityMethod, callback)
 
