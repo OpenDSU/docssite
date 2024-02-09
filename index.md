@@ -15,21 +15,8 @@ absadasd
 <style>
     body {
         position: relative;
-        padding-top: 50px; /* Adjusted to leave space for the menu */
     }
-
-    .menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
-        z-index: 3; /* Ensure menu is above other content */
-    }
-
+    
     .video-container {
         position: relative;
         margin-bottom: 20px;
@@ -61,7 +48,8 @@ absadasd
     
     .prev, .next {
         position: fixed;
-        top: calc(50% - 20px); /* Adjusted to center vertically */
+        top: 50%;
+        transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         padding: 10px;
@@ -72,11 +60,13 @@ absadasd
     }
     
     .prev {
-        left: 10px;
+        left: 0;
+        margin-left: 10px; /* Adjusted to move inside body */
     }
     
     .next {
-        right: 10px;
+        right: 0;
+        margin-right: 10px; /* Adjusted to move inside body */
     }
 
     .prev:hover, .next:hover {
@@ -85,15 +75,36 @@ absadasd
 </style>
 </head>
 <body>
-<div class="menu">
-    Menu Content
-</div>
 <div class="video-container">
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
             <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
             <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 2</div>
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
