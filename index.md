@@ -40,15 +40,16 @@ nav_order: 1
     }
     
     .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* Remove black background */
+    color: purple; /* Change arrow color to purple */
+    padding: 15px; /* Increase padding for larger size */
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 20px; /* Increase font size */
     }
     
     .prev {
@@ -58,6 +59,7 @@ nav_order: 1
     .next {
         right: 0;
     }
+
 </style>
 </head>
 <body>
