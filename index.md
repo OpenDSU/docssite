@@ -4,18 +4,19 @@ layout: home
 nav_order: 1
 ---
 
+test
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curved Slideshow</title>
+<title>Curved Slideshow with Video</title>
 <style>
   .slideshow-container {
     position: relative;
-    width: 600px;
-    height: 400px;
+    width: 560px; /* Adjust based on video width */
+    height: 315px; /* Adjust based on video height */
     margin: auto;
     overflow: hidden;
   }
@@ -35,8 +36,8 @@ nav_order: 1
     opacity: 1;
   }
 
-  img {
-    max-width: 30%;
+  iframe {
+    max-width: 30%; /* Adjust based on your preference */
     border-radius: 50%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
@@ -45,11 +46,10 @@ nav_order: 1
 <body>
 <div class="slideshow-container">
   <div class="slide active">
-    <img src="image1.jpg" alt="Image 1">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=01UZn10gs3FZFJo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
   <div class="slide">
-    <img src="image2.jpg" alt="Image 2">
-    <img src="image3.jpg" alt="Image 3">
+    <!-- Placeholder slide -->
   </div>
 </div>
 
@@ -70,6 +70,3 @@ nav_order: 1
 </script>
 </body>
 </html>
-
-
-
