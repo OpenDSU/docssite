@@ -48,24 +48,24 @@ nav_order: 1
         transform: translateY(-50%);
         background-color: rgba(128, 0, 128, 0.5); /* Purple with transparency */
         color: white;
-        padding: 10px;
+        padding: 15px;
         border: none;
         cursor: pointer;
         z-index: 1;
+        font-size: 24px; /* Larger size */
     }
     
     .prev {
-        left: 0;
+        left: -50px;
     }
     
     .next {
-        right: 0;
+        right: -50px;
     }
 </style>
 </head>
 <body>
 <div class="video-container">
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
@@ -98,15 +98,15 @@ nav_order: 1
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
-
-    <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
+
+<button class="prev" onclick="scrollVideos(-1)">❮</button>
+<button class="next" onclick="scrollVideos(1)">❯</button>
 
 <script>
     let currentIndex = 0;
 
     function scrollVideos(direction) {
-        const videoContainer = document.querySelector('.video-container');
         const videoRow = document.querySelector('.video-row');
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
