@@ -4,7 +4,68 @@ layout: home
 parent: OpenDSU for Beginners
 nav_order: 7
 ---
+<style>
+  /* Styles for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
 
+  /* Modal content */
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+<body>
+
+<div id="myModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
+  <img class="modal-content" id="img01" onclick="event.stopPropagation()">
+</div>
+
+<script>
+function openModal(imgSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+</script>
+
+</body>
 
 
 # **APIHub configuration (RFC-100)**
@@ -234,15 +295,15 @@ Most of the components are associated with "blockchain domains", and the endpoin
 
 <p style='text-align: justify;'>This APIHub component offers a MQ implementation that uses DID to identify the resources. Exposes a list of endpoints for sending and receiving messages towards message queues.</p>
 
-| Message Queues                            | Description                                                                                                                                                                                                                                                   |
-|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| mq_strategyName                           | Options:<br/> MQ_FS_Strategy = stores the messages to a path specified using mq_fsStrategyStorageFolder                                                                                                                                                       |
-| mq_fsStrategyStorageFolder                | If MQ_FS_Strategy is used, this config needs to be set in order to define where all the messages are persisted.<br/><b> Default valu</b>e <br/> <b> {$apihubConfig.storageFolder}/mqs/{$domainName</b>}                                                       |
-| mq_fsMessageMaxSize                       | Max size of a message. <b>Default value 10 * 1024</b>                                                                                                                                                                                                         |
-| mq_fsQueueLength                          | Length of a message queue. **Default value 100.**                                                                                                                                                                                                             |
-| mq_client_timeout                         | The timeout value for the client requests that will wait for the queue to have a message for them. <br/><b>Default value 60 sec</b>. Keep in mind that other gateways may be configured with a 30-second timeout and will close the request with a Gateway timeout error. |
-| mq_throttling                             | Throttling limit for each queue. <b>Default value 2. Not used for the moment.</b>                                                                                                                                                                                                                                                                       |
-| mq_allow_unregistered_did                 |  Boolean variable that enables unregistered DIDs to use the queues.  <br/><b>Default value false</b>                                                                                                                                                                                                                                                                                                                                                     |
+| Message Queues                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| mq_strategyName                           | Options:<br/> MQ_FS_Strategy = stores the messages to a path specified using mq_fsStrategyStorageFolder                                                                                                                                                                                                                                                                                                                                                 |
+| mq_fsStrategyStorageFolder                | If MQ_FS_Strategy is used, this config needs to be set in order to define where all the messages are persisted.<br/><b> Default valu</b>e <br/> <b> {$apihubConfig.storageFolder}/mqs/{$domainName</b>}                                                                                                                                                                                                                                                 |
+| mq_fsMessageMaxSize                       | Max size of a message. <b>Default value 10 * 1024</b>                                                                                                                                                                                                                                                                                                                                                                                                   |
+| mq_fsQueueLength                          | Length of a message queue. **Default value 100.**                                                                                                                                                                                                                                                                                                                                                                                                       |
+| mq_client_timeout                         | The timeout value for the client requests that will wait for the queue to have a message for them. <br/><b>Default value 60 sec</b>. Keep in mind that other gateways may be configured with a 30-second timeout and will close the request with a Gateway timeout error.                                                                                                                                                                               |
+| mq_throttling                             | Throttling limit for each queue. <b>Default value 2. Not used for the moment.</b>                                                                                                                                                                                                                                                                                                                                                                       |
+| mq_allow_unregistered_did                 | Boolean variable that enables unregistered DIDs to use the queues.  <br/><b>Default value false</b>                                                                                                                                                                                                                                                                                                                                                     |
 
 
 
