@@ -3,7 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
-aaa
+absadasd 1
+2323
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,82 +13,121 @@ aaa
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YouTube Video Slideshow</title>
 <style>
-  .slideshow-container {
-    position: relative;
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
-  }
+    body {
+        position: relative;
+    }
+    
+    .video-container {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .video-row {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.3s ease;
+    }
+    
+    .video-item {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        text-align: center;
+    }
+    
+    iframe {
+        width: 320px;
+        height: 180px;
+    }
+    
+    .video-name {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+    
+    .prev, .next {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        z-index: 2;
+        transition: color 0.3s, background-color 0.3s;
+    }
+    
+    .prev {
+        left: 0;
+        margin-left: 10px; /* Adjusted to move inside body */
+    }
+    
+    .next {
+        right: 0;
+        margin-right: 10px; /* Adjusted to move inside body */
+    }
 
-  .video-container {
-    display: none;
-  }
-
-  .arrow {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    font-size: 24px;
-  }
-
-  .prev {
-    left: -50px; /* Adjust the position */
-  }
-
-  .next {
-    right: -50px; /* Adjust the position */
-  }
+    .prev:hover, .next:hover {
+        background-color: rgba(128, 0, 128, 0.5);
+    }
 </style>
 </head>
 <body>
-
-<div class="slideshow-container">
-  <div class="video-container">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="video-container">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="video-container">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="video-container">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="video-container">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <a class="arrow prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="arrow next" onclick="plusSlides(1)">&#10095;</a>
+<div class="video-container">
+    <div class="video-row">
+        <!-- Replace the following iframe src with the embed link of the playlist -->
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 2</div>
+        </div>
+        <!-- Repeat the same pattern for other videos -->
+    </div>
 </div>
 
+<button class="prev" onclick="scrollVideos(-1)">❮</button>
+<button class="next" onclick="scrollVideos(1)">❯</button>
+
 <script>
-  var slideIndex = 1;
-  showSlides(slideIndex);
+    let currentIndex = 0;
 
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
+    function scrollVideos(direction) {
+        const videoRow = document.querySelector('.video-row');
+        const videoItems = document.querySelectorAll('.video-item');
+        const numVideos = videoItems.length;
+        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
 
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("video-container");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        currentIndex = (currentIndex + direction + numVideos) % numVideos;
+        const newPosition = -currentIndex * videoWidth;
+        videoRow.style.transform = `translateX(${newPosition}px)`;
     }
-    slides[slideIndex-1].style.display = "block";  
-  }
 </script>
 
 </body>
 </html>
+
