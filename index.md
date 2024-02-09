@@ -49,7 +49,7 @@ nav_order: 1
     border: none;
     cursor: pointer;
     z-index: 1;
-    font-size: 20px; /* Increase font size */
+    font-size: 50px; /* Increase font size */
     }
     
     .prev {
