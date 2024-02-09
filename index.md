@@ -11,21 +11,101 @@ nav_order: 1
 <title>Embedded YouTube Playlist</title>
 <style>
     .playlist-container {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .playlist-wrapper {
+        display: flex;
+    }
+
+    .playlist-slide {
+        flex: 0 0 auto;
         width: 100%;
-        max-width: 600px; /* Adjust the maximum width as needed */
-        margin: 0 auto;
+        transition: transform 0.5s ease;
     }
 
     .playlist-video {
-        margin-bottom: 10px;
+        width: 300px;
+        height: 169px;
+        margin-right: 10px;
+    }
+
+    .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .scroll-arrow-left {
+        left: 0;
+    }
+
+    .scroll-arrow-right {
+        right: 0;
     }
 </style>
 </head>
 <body>
 
 <div class="playlist-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" frameborder="0" allowfullscreen></iframe>
+    <div class="playlist-wrapper">
+        <div class="playlist-slide">
+            <!-- Add videos from the playlist here -->
+            <iframe class="playlist-video" width="300" height="169" src="https://www.youtube.com/embed/RYxe61jE_J8"></iframe>
+            <!-- Add more iframes for each video in the playlist -->
+        </div>
+        <!-- Add more .playlist-slide divs for additional videos -->
+    </div>
 </div>
+
+<div class="scroll-arrow scroll-arrow-left">&lt;</div>
+<div class="scroll-arrow scroll-arrow-right">&gt;</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll(".playlist-slide");
+        const scrollLeft = document.querySelector(".scroll-arrow-left");
+        const scrollRight = document.querySelector(".scroll-arrow-right");
+
+        let currentIndex = 0;
+
+        function updateArrows() {
+            scrollLeft.style.display = currentIndex > 0 ? "block" : "none";
+            scrollRight.style.display = currentIndex < slides.length - 1 ? "block" : "none";
+        }
+
+        function scrollToIndex(index) {
+            const containerWidth = slides[0].offsetWidth;
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${(i - index) * containerWidth}px)`;
+            });
+            currentIndex = index;
+            updateArrows();
+        }
+
+        scrollLeft.addEventListener("click", function() {
+            if (currentIndex > 0) {
+                scrollToIndex(currentIndex - 1);
+            }
+        });
+
+        scrollRight.addEventListener("click", function() {
+            if (currentIndex < slides.length - 1) {
+                scrollToIndex(currentIndex + 1);
+            }
+        });
+
+        updateArrows();
+    });
+</script>
 
 </body>
 </html>
