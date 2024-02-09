@@ -190,6 +190,18 @@ This  will create join-network.plugin.json & join-network.plugin.secrets.json
 
 ## 1.5. Standalone Generation of enode Crypto
 
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vSqlyU7KjtVbKGmqD2heD_viLLKQXplIcXGlPGX5pHdLFJuvTlOvHgZK92RE8GpwxqxhIZh-c86TBKI/pub?w=1530&h=690" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
+
+
 In order to download common configuration values from forked shared configuration, comment out helm upgrade/install and execute:
 
 $ ./ethadapter.sh <company>
