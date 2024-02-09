@@ -5,6 +5,68 @@ parent: OpenDSU Advanced
 nav_order: 14
 ---
 
+<style>
+  /* Styles for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  /* Modal content */
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+<body>
+
+<div id="myModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
+  <img class="modal-content" id="img01" onclick="event.stopPropagation()">
+</div>
+
+<script>
+function openModal(imgSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+</script>
+
+</body>
 
 
 # **W3C DIDs(RFC-082)**
@@ -79,11 +141,19 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>We are using the concept of DID and the standards related to DID that are already implemented, but we will also implement other DID methods, and we will have our philosophy and our way of using these DIDs.
 </p>
 
-
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSDIBd5WDBhUl9WP0BENeG6jlnBzQDrzyohnhMrCCtruJMBV-GRGb2ZXXEHVuNF_0AKZsktDcY3qhX5/pub?w=920&h=789" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-    <p><b>Figure nr. 1: DIDs in OpenDSU</b></p>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vSDIBd5WDBhUl9WP0BENeG6jlnBzQDrzyohnhMrCCtruJMBV-GRGb2ZXXEHVuNF_0AKZsktDcY3qhX5/pub?w=920&h=789" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+<p style='text-align: center;'><b>Figure nr. 1: DIDs in OpenDSU</b></p>
+
+
 
 
 
@@ -115,10 +185,18 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRKBxsti0yTFka4dFKuMhY2pPXeLmnxNTymzjMLuEkyTXBg9jyJOCpuanfz4i51qoeS9SYo2pkATmZQ/pub?w=324&h=712" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-    <p><b>Figure 2: DIDs methods in OpenDSU (W3CDID concrete instantiations)</b></p>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRKBxsti0yTFka4dFKuMhY2pPXeLmnxNTymzjMLuEkyTXBg9jyJOCpuanfz4i51qoeS9SYo2pkATmZQ/pub?w=324&h=712" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+<p style='text-align: center;'><b>Figure 2: DIDs methods in OpenDSU (W3CDID concrete instantiations)</b></p>
 
 
 
@@ -313,10 +391,19 @@ There are currently four DID Methods implemented, briefly described in the table
 # 5. Message communication between DIDs
 
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRAM-vSVDXhZVjiXtvHs-eq0yE8JYsj5Km_OThF5lSSSvbVMGsxd7rNdi468XPhhSjwR64iEiFdDiCC/pub?w=1036&h=822" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-    <p><b>Figure 3: Message communication between DIDs</b></p>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vRAM-vSVDXhZVjiXtvHs-eq0yE8JYsj5Km_OThF5lSSSvbVMGsxd7rNdi468XPhhSjwR64iEiFdDiCC/pub?w=1036&h=822" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+<p style='text-align: center;'><b>Figure 3: Message communication between DIDs</b></p>
+
 
 
 # 6. CommunicationHub concept
