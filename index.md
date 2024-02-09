@@ -11,20 +11,24 @@ nav_order: 1
 <title>Embedded YouTube Playlist</title>
 <style>
     .playlist-container {
-        width: 100%;
-        max-width: 600px; /* Adjust the maximum width as needed */
-        margin: 0 auto;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px 0;
     }
 
     .playlist-video {
-        margin-bottom: 10px;
+        display: inline-block;
+        margin-right: 10px;
     }
 </style>
 </head>
 <body>
 
 <div class="playlist-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" frameborder="0" allowfullscreen></iframe>
+    <!-- Add each video from the playlist here -->
+    <iframe class="playlist-video" width="300" height="169" src="https://www.youtube.com/embed/RYxe61jE_J8"></iframe>
+    <iframe class="playlist-video" width="300" height="169" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+    <!-- Add more iframes for each video in the playlist -->
 </div>
 
 </body>
