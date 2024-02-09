@@ -253,13 +253,9 @@ Validation process implemented in the addAnchor function:
 
 Before an anchor is added to the blockchain, the following validation flow is executed :
 
-<p style='text-align: justify;'>
+1. Check if the anchor is not already marked as read-only. In case it is read-only, raise the status statusCannotUpdateReadOnlyAnchor and stop the smart contract execution.
 
-1. Check if the anchor is not already marked as read-only. In case it is read-only, raise the status statusCannotUpdateReadOnlyAnchor and stop the smart contract execution. 
-
-</p>
-
-2. Validate that hash links provided for the anchor are not out of sync:
+1. Validate that hash links provided for the anchor are not out of sync:
 
 * If the anchor is new, we accept the hash links provided without validation and return -1 in order to signal that we have a new anchor.
 
