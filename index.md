@@ -11,14 +11,23 @@ nav_order: 1
 <title>Embedded YouTube Playlist</title>
 <style>
     .playlist-container {
-        overflow-x: hidden;
+        overflow: hidden;
         white-space: nowrap;
         position: relative;
         margin-bottom: 20px;
     }
 
+    .playlist-wrapper {
+        display: flex;
+    }
+
+    .playlist-slide {
+        flex: 0 0 auto;
+        width: 100%;
+        transition: transform 0.5s ease;
+    }
+
     .playlist-video {
-        display: inline-block;
         width: 300px;
         height: 169px;
         margin-right: 10px;
@@ -32,6 +41,7 @@ nav_order: 1
         color: #fff;
         padding: 10px;
         cursor: pointer;
+        z-index: 1;
     }
 
     .scroll-arrow-left {
@@ -46,9 +56,14 @@ nav_order: 1
 <body>
 
 <div class="playlist-container">
-    <!-- Add each video from the playlist here -->
-    <iframe class="playlist-video" width="300" height="169" src="https://www.youtube.com/embed/RYxe61jE_J8"></iframe>
-    <!-- Add more iframes for each video in the playlist -->
+    <div class="playlist-wrapper">
+        <div class="playlist-slide">
+            <!-- Add videos from the playlist here -->
+            <iframe class="playlist-video" width="300" height="169" src="https://www.youtube.com/embed/RYxe61jE_J8"></iframe>
+            <!-- Add more iframes for each video in the playlist -->
+        </div>
+        <!-- Add more .playlist-slide divs for additional videos -->
+    </div>
 </div>
 
 <div class="scroll-arrow scroll-arrow-left">&lt;</div>
@@ -56,8 +71,7 @@ nav_order: 1
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const container = document.querySelector(".playlist-container");
-        const videos = document.querySelectorAll(".playlist-video");
+        const slides = document.querySelectorAll(".playlist-slide");
         const scrollLeft = document.querySelector(".scroll-arrow-left");
         const scrollRight = document.querySelector(".scroll-arrow-right");
 
@@ -65,12 +79,14 @@ nav_order: 1
 
         function updateArrows() {
             scrollLeft.style.display = currentIndex > 0 ? "block" : "none";
-            scrollRight.style.display = currentIndex < videos.length - 1 ? "block" : "none";
+            scrollRight.style.display = currentIndex < slides.length - 1 ? "block" : "none";
         }
 
         function scrollToIndex(index) {
-            const videoWidth = videos[0].offsetWidth;
-            container.scrollLeft = index * (videoWidth + 10); // Considering margin-right
+            const containerWidth = slides[0].offsetWidth;
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${(i - index) * containerWidth}px)`;
+            });
             currentIndex = index;
             updateArrows();
         }
@@ -82,7 +98,7 @@ nav_order: 1
         });
 
         scrollRight.addEventListener("click", function() {
-            if (currentIndex < videos.length - 1) {
+            if (currentIndex < slides.length - 1) {
                 scrollToIndex(currentIndex + 1);
             }
         });
