@@ -3,8 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-ab
-
+abc
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,11 +60,11 @@ ab
     }
     
     .prev {
-        left: 10px; /* Adjusted to move near the videos with some spacing */
+        left: -50px; /* Adjusted to move outside the videos */
     }
     
     .next {
-        right: 10px; /* Adjusted to move near the videos with some spacing */
+        right: -50px; /* Adjusted to move outside the videos */
     }
 
     .prev:hover,
