@@ -316,9 +316,8 @@ Functions used in implementation:
 
 Function Signature:
 
-<p style='text-align: justify;'>“**ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):** recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - <a href="">https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html.</a>
+<p style='text-align: justify;'><b>“ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):</b> recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - <a href="">https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html.</a>
 </p>
-
 However, the signature received must be received in ASN.1 format
 
 ````
