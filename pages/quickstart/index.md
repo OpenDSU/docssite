@@ -5,11 +5,6 @@ nav_order: 9
 has_children: true
 ---
 
----
-title: Home
-layout: home
-nav_order: 1
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
