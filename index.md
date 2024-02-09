@@ -3,7 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-User
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +11,10 @@ User
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YouTube Video Slideshow</title>
 <style>
+    body {
+        position: relative; /* Ensure positioning relative to the body */
+    }
+    
     .video-container {
         position: relative;
         margin-bottom: 20px;
@@ -43,31 +47,33 @@ User
     .prev, .next {
         position: absolute;
         top: 50%;
+        transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
-        color: purple; /* Changed to purple */
+        color: white;
         padding: 10px;
         border: none;
         cursor: pointer;
-        z-index: 2; /* Increased z-index to ensure arrows are above videos */
-        transition: color 0.3s, background-color 0.3s; /* Added transition effect */
+        z-index: 2;
+        transition: color 0.3s, background-color 0.3s;
     }
     
     .prev {
-        left: 10px; /* Adjusted to provide spacing */
+        left: 0;
+        margin-left: -40px; /* Move arrow outside container */
     }
     
     .next {
-        right: 10px; /* Adjusted to provide spacing */
+        right: 0;
+        margin-right: -40px; /* Move arrow outside container */
     }
-    
+
     .prev:hover, .next:hover {
-        background-color: rgba(128, 0, 128, 0.5); /* Added hover effect */
+        background-color: rgba(128, 0, 128, 0.5);
     }
 </style>
 </head>
 <body>
 <div class="video-container">
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
@@ -101,6 +107,7 @@ User
         <!-- Repeat the same pattern for other videos -->
     </div>
 
+    <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
 
@@ -108,7 +115,6 @@ User
     let currentIndex = 0;
 
     function scrollVideos(direction) {
-        const videoContainer = document.querySelector('.video-container');
         const videoRow = document.querySelector('.video-row');
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
@@ -122,3 +128,4 @@ User
 
 </body>
 </html>
+
