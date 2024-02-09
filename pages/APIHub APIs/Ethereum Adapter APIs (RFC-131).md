@@ -520,7 +520,9 @@ The information about the versions to be obtained is required as follows:
 | 500            | Error occurred. The body contains the error.                  |
 
 
-<p style='text-align: justify;'>The source code can be found at https://github.com/PharmaLedger-IMI/ethereum-anchoring, in the ApiAdaptor folder. In order to use it in a local environment, update the values in the .env file and run npm run start-dev.
+<p style='text-align: justify;'>
+
+The source code can be found at <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a>, in the ApiAdaptor folder. In order to use it in a local environment, update the values in the .env file and run npm run start-dev.
 </p>
 
 **Kubernetes deployment** 
@@ -551,20 +553,20 @@ Upon deploying the container, it will execute the following operations:
 
 ### 6.1.1. Deployment execution steps
 
-| Component                                        | Type       | Details                                                                                                                                                                                                                                                          |
-|:-------------------------------------------------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Requirement: blockchain network deployed         |            |                                                                                                                                                                                                                                                                  |
-| Anchoring Smart Contract                         | Container  | After deployment it should provide the details for the API Adaptor in order to interact with anchoring smart contracts. </br> **Convention** : </br> Provide information into the config.json file located in ANCHOR_SMARTCONTRACT_CONFIG_FOLDER mounted volume. |
-| API Adaptor                                      | Container  | **Convention** : </br> It will require a config.json file in ANCHOR_SMARTCONTRACT_CONFIG_FOLDER                                                                                                                                                                  |
+| Component                                        | Type       | Details                                                                                                                                                                                                                                                                  |
+|:-------------------------------------------------|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Requirement: blockchain network deployed         |            |                                                                                                                                                                                                                                                                          |
+| Anchoring Smart Contract                         | Container  | After deployment it should provide the details for the API Adaptor in order to interact with anchoring smart contracts. <br> <b>Convention</b> : </br> Provide information into the config.json file located in ANCHOR_SMARTCONTRACT_CONFIG_FOLDER mounted volume.       |
+| API Adaptor                                      | Container  | <b>Convention</b> : <br> It will require a config.json file in ANCHOR_SMARTCONTRACT_CONFIG_FOLDER                                                                                                                                                                        |
 
 
 ## 6.2.Possible solutions for the Smart Contract Deployment
 
-| Solution type                                                                                                                   |
-|:--------------------------------------------------------------------------------------------------------------------------------|
-| Required output: populate config.json file </br> Required input: access point and credentials to access the blockchain network. |
-| Truffle                                                                                                                         |
-| Deployment implemented in Node.js using solc and ganache.                                                                       |
+| Solution type                                                                                                                  |
+|:-------------------------------------------------------------------------------------------------------------------------------|
+| Required output: populate config.json file <br> Required input: access point and credentials to access the blockchain network. |
+| Truffle                                                                                                                        |
+| Deployment implemented in Node.js using solc and ganache.                                                                      |
 
 **Contributors**
 
