@@ -6,6 +6,23 @@ nav_order: 1
 ---
 
 
+
+# **Octopus(RFC-095)**
+{: .no_toc }
+
+{: .feedback }
+A period when the community can review the RFC (comment Docs)
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
+
 <!-- TOC -->
 * [Abstract](#abstract)
 * [1. Introduction](#1-introduction)
@@ -23,23 +40,6 @@ nav_order: 1
     * [Example](#example-1)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-
-
-# **Octopus(RFC-095)**
-{: .no_toc }
-
-{: .feedback }
-A period when the community can review the RFC (comment Docs)
-
-**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
-
-**Copyright: MIT license**
-
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
-
-This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-
-
 
 
 # Abstract
