@@ -4,61 +4,85 @@ layout: home
 nav_order: 1
 ---
 
- 
-test 1
-
-
-
+---
+title: Home
+layout: home
+nav_order: 1
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slideshow with Arrows</title>
+<title>YouTube Video Slideshow</title>
 <style>
-  ..video-container {
-    position: relative;
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
-  }
-  
-  .slide {
-    display: none;
-    padding-left: 15%; /* Adjust space before pictures */
-    padding-right: 15%; /* Adjust space after pictures */
-  }
-  
-  .slide img {
-    width: 70%; /* Adjust image width */
-    margin: 0 auto; /* Center the image */
-  }
-  
-  .prev, .next {
-    cursor: pointer;
+    .video-container {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .video-row {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.3s ease;
+    }
+     
+    .video-row {
+        display: none;
+		padding-left: 15%; /* Adjust space before pictures */
+		padding-right: 15%; /* Adjust space after pictures */
+    }
+	
+	 .video-row {
+		width: 70%; /* Adjust image width */
+		margin: 0 auto; /* Center the image */
+    }
+	
+    .video-item {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        text-align: center;
+    }
+    
+    iframe {
+        width: 320px;
+        height: 180px;
+    }
+    
+    .video-name {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+    
+    .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    z-index: 1000;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
+    background-color: transparent; /* Remove black background */
+    color: purple; /* Change arrow color to purple */
+    padding: 15px; /* Increase padding for larger size */
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 50px; /* Increase font size */
+    }
+    
+    .prev {
+        left: 0;
+    }
+    
+    .next {
+        right: 0;
+    }
+    iframe {
+    width: 240px; /* Decrease width to make videos smaller */
+    height: 135px; /* Decrease height proportionally */
+    }
 </style>
 </head>
 <body>
-
 <div class="video-container">
     <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
@@ -94,27 +118,19 @@ test 1
 </div>
 
 <script>
-  var slideIndex = 1;
-  showSlides(slideIndex);
+    let currentIndex = 0;
 
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
+    function scrollVideos(direction) {
+        const videoContainer = document.querySelector('.video-container');
+        const videoRow = document.querySelector('.video-row');
+        const videoItems = document.querySelectorAll('.video-item');
+        const numVideos = videoItems.length;
+        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
 
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("slide");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+        currentIndex = (currentIndex + direction + numVideos) % numVideos;
+        const newPosition = -currentIndex * videoWidth;
+        videoRow.style.transform = `translateX(${newPosition}px)`;
     }
-    slides[slideIndex-1].style.display = "block";
-  }
 </script>
 
 </body>
