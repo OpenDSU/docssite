@@ -3,60 +3,109 @@ title: Home
 layout: home
 nav_order: 1
 ---
-
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Slider in HTML CSS and JavaScript | CodingNepal</title>
-    <!-- Google Fonts Link For Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-    <meta
-      name="description"
-      content="In this blog post, I will guide you through the process of creating a responsive image slider using HTML, CSS, and JavaScript."
-    />
-    <meta
-      name="keywords"
-      content="image slider, card slider, html, css, javascript, javascript projects, image slider html css, html image slider, javascript image slider, card slider html css, html card slider
-    "
-    />
-    <script src="../custom-scripts.js" defer></script>
-
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="slider-wrapper">
-        <button id="prev-slide" class="slide-button material-symbols-rounded">
-          chevron_left
-        </button>
-        <ul class="image-list">
-          <img class="image-item" src="images/img-1.jpg" alt="img-1" />
-          <img class="image-item" src="images/img-2.jpg" alt="img-2" />
-          <img class="image-item" src="images/img-3.jpg" alt="img-3" />
-          <img class="image-item" src="images/img-4.jpg" alt="img-4" />
-          <img class="image-item" src="images/img-5.jpg" alt="img-5" />
-          <img class="image-item" src="images/img-6.jpg" alt="img-6" />
-          <img class="image-item" src="images/img-7.jpg" alt="img-7" />
-          <img class="image-item" src="images/img-8.jpg" alt="img-8" />
-          <img class="image-item" src="images/img-9.jpg" alt="img-9" />
-          <img class="image-item" src="images/img-10.jpg" alt="img-10" />
-        </ul>
-        <button id="next-slide" class="slide-button material-symbols-rounded">
-          chevron_right
-        </button>
-      </div>
-      <div class="slider-scrollbar">
-        <div class="scrollbar-track">
-          <div class="scrollbar-thumb"></div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Video Slideshow</title>
+<style>
+    .video-container {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .video-row {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.3s ease;
+    }
+    
+    .video-item {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        text-align: center;
+    }
+    
+    iframe {
+        width: 320px;
+        height: 180px;
+    }
+    
+    .video-name {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+    
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: purple;
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        font-size: 24px;
+        background-color: rgba(128, 0, 128, 0.5); /* Purple with transparency */
+    }
+    
+    .prev {
+        left: -50px;
+    }
+    
+    .next {
+        right: -50px;
+    }
+</style>
+</head>
+<body>
+<div class="video-container">
+    <button class="prev" onclick="scrollVideos(-1)">❮</button>
+    <div class="video-row">
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
         </div>
-      </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 2</div>
+        </div>
+        <!-- Repeat the same pattern for other videos -->
     </div>
-  </body>
+</div>
+
+<button class="next" onclick="scrollVideos(1)">❯</button>
+
+<script>
+    let currentIndex = 0;
+
+    function scrollVideos(direction) {
+        const videoContainer = document.querySelector('.video-container');
+        const videoRow = document.querySelector('.video-row');
+        const videoItems = document.querySelectorAll('.video-item');
+        const numVideos = videoItems.length;
+        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
+
+        currentIndex = (currentIndex + direction + numVideos) % numVideos;
+        const newPosition = -currentIndex * videoWidth;
+        videoRow.style.transform = `translateX(${newPosition}px)`;
+    }
+</script>
+
+</body>
 </html>
