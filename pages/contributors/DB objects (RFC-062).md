@@ -25,19 +25,19 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Abstract](#abstract)
 * [1. DB Types summary](#1-db-types-summary)
   * [1.1 BasicDB](#11-basicdb)
-* [Function addIndex(tableName, fieldname, forceReindex, callback)](#function-addindextablename-fieldname-forcereindex-callback)
-* [Function getIndexedFields(tableName, callback)](#function-getindexedfieldstablename-callback)
-  * [Function beginBatch()](#function-beginbatch)
-  * [Function cancelBatch(callback)](#function-cancelbatchcallback)
-  * [Function commitBatch(callback)](#function-commitbatchcallback)
-  * [Function deleteRecord(tableName, key, callback)](#function-deleterecordtablename-key-callback)
-  * [Function filter(tableName, query, sort, limit, callback)](#function-filtertablename-query-sort-limit-callback)
-  * [Function getHistory(tableName, key, callback)](#function-gethistorytablename-key-callback)
-  * [Function getRecord(tableName, key, callback)](#function-getrecordtablename-key-callback)
-  * [Function insertRecord(tableName, key, record, callback)](#function-insertrecordtablename-key-record-callback)
-  * [Function updateRecord(tableName, key, record, callback)](#function-updaterecordtablename-key-record-callback)
-  * [Function writeKey(tableName, key, value, callback)](#function-writekeytablename-key-value-callback)
-  * [Function readKey(tableName, key, callback)](#function-readkeytablename-key-callback)
+    * [Function addIndex(tableName, fieldname, forceReindex, callback)](#function-addindextablename-fieldname-forcereindex-callback)
+    * [Function getIndexedFields(tableName, callback)](#function-getindexedfieldstablename-callback)
+    * [Function beginBatch()](#function-beginbatch)
+    * [Function cancelBatch(callback)](#function-cancelbatchcallback)
+    * [Function commitBatch(callback)](#function-commitbatchcallback)
+    * [Function deleteRecord(tableName, key, callback)](#function-deleterecordtablename-key-callback)
+    * [Function filter(tableName, query, sort, limit, callback)](#function-filtertablename-query-sort-limit-callback)
+    * [Function getHistory(tableName, key, callback)](#function-gethistorytablename-key-callback)
+    * [Function getRecord(tableName, key, callback)](#function-getrecordtablename-key-callback)
+    * [Function insertRecord(tableName, key, record, callback)](#function-insertrecordtablename-key-record-callback)
+    * [Function updateRecord(tableName, key, record, callback)](#function-updaterecordtablename-key-record-callback)
+    * [Function writeKey(tableName, key, value, callback)](#function-writekeytablename-key-value-callback)
+    * [Function readKey(tableName, key, callback)](#function-readkeytablename-key-callback)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
@@ -65,7 +65,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 1.1 BasicDB
 
-# Function addIndex(tableName, fieldname, forceReindex, callback)
+### Function addIndex(tableName, fieldname, forceReindex, callback)
 
 <p style='text-align: justify;'><b>Description:</b> Add an index to all the values from a specific field in your table. It can be used to locate the data in your database faster.
 </p>
@@ -90,7 +90,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Description**: An error object containing a message.
 
 
-# Function getIndexedFields(tableName, callback)
+### Function getIndexedFields(tableName, callback)
 
 **Description:** Returns the list of the indexed fields in the specified table.
 
@@ -113,7 +113,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function beginBatch()
+### Function beginBatch()
 
 **Description:** Start a batch of operations on your DSU without anchoring changes.
 
@@ -125,7 +125,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | callback function | Prevent anchoring after each operation.  |
 
 
-## Function cancelBatch(callback)
+### Function cancelBatch(callback)
 
 **Description:** Cancel the batch of operations in progress.
 
@@ -145,7 +145,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Description:** An error object containing a message.
 
 
-## Function commitBatch(callback)
+### Function commitBatch(callback)
 
 **Description:** Anchor the changes from the batch of operations on your DSU.
 
@@ -167,7 +167,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function deleteRecord(tableName, key, callback)
+### Function deleteRecord(tableName, key, callback)
 
 <p style='text-align: justify;'><b>Description: </b>Delete a record by incrementing the record’s version number and setting the new record “delete property” to true. The old version of the record is saved.
 </p>
@@ -197,7 +197,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function filter(tableName, query, sort, limit, callback)
+### Function filter(tableName, query, sort, limit, callback)
 
 **Description:** Returns the list of records satisfying the conditions in the specified query.
 
@@ -226,7 +226,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-## Function getHistory(tableName, key, callback)
+### Function getHistory(tableName, key, callback)
 
 **Description:** Get the history of a record, including the deleted versions in a callback.
 
@@ -255,7 +255,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function getRecord(tableName, key, callback)
+### Function getRecord(tableName, key, callback)
 
 **Description:** Get a single row from a table.
 
@@ -283,7 +283,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function insertRecord(tableName, key, record, callback)
+### Function insertRecord(tableName, key, record, callback)
 
 **Description:** Insert a record, and return an error if it already exists.
 
@@ -311,7 +311,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function updateRecord(tableName, key, record, callback)
+### Function updateRecord(tableName, key, record, callback)
 
 **Description:** Update a record, and return an error if it does not exist.
 
@@ -338,7 +338,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function writeKey(tableName, key, value, callback)
+### Function writeKey(tableName, key, value, callback)
 
 **Description:** Allows the insertion of a value of any type associated with the specified key, like in a key/value database.
 
@@ -365,7 +365,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function readKey(tableName, key, callback)
+### Function readKey(tableName, key, callback)
 
 **Description:** Reads the value associated with the provided key.
 
