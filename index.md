@@ -3,7 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-absadasd 1
+4
 
 
 <!DOCTYPE html>
@@ -27,6 +27,7 @@ absadasd 1
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
+        position: relative;
     }
     
     .video-item {
@@ -46,10 +47,14 @@ absadasd 1
         color: #333;
     }
     
+    .arrow-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 10px;
+    }
+
     .prev, .next {
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         padding: 10px;
@@ -58,16 +63,6 @@ absadasd 1
         z-index: 2;
         transition: color 0.3s, background-color 0.3s;
     }
-    
-    .prev {
-        left: 0;
-        margin-left: 10px; /* Adjusted to move inside body */
-    }
-    
-    .next {
-        right: 0;
-        margin-right: 10px; /* Adjusted to move inside body */
-    }
 
     .prev:hover, .next:hover {
         background-color: rgba(128, 0, 128, 0.5);
@@ -75,6 +70,9 @@ absadasd 1
 </style>
 </head>
 <body>
+<div class="arrow-container">
+    <button class="prev" onclick="scrollVideos(-1)">❮</button>
+</div>
 <div class="video-container">
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
@@ -109,9 +107,9 @@ absadasd 1
         <!-- Repeat the same pattern for other videos -->
     </div>
 </div>
-
-<button class="prev" onclick="scrollVideos(-1)">❮</button>
-<button class="next" onclick="scrollVideos(1)">❯</button>
+<div class="arrow-container">
+    <button class="next" onclick="scrollVideos(1)">❯</button>
+</div>
 
 <script>
     let currentIndex = 0;
