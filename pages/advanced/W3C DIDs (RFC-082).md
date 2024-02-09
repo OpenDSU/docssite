@@ -81,7 +81,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSDIBd5WDBhUl9WP0BENeG6jlnBzQDrzyohnhMrCCtruJMBV-GRGb2ZXXEHVuNF_0AKZsktDcY3qhX5/pub?w=460&h=395" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSDIBd5WDBhUl9WP0BENeG6jlnBzQDrzyohnhMrCCtruJMBV-GRGb2ZXXEHVuNF_0AKZsktDcY3qhX5/pub?w=920&h=789" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
     <p><b>Figure nr. 1: DIDs in OpenDSU</b></p>
 </div>
 
@@ -116,7 +116,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRKBxsti0yTFka4dFKuMhY2pPXeLmnxNTymzjMLuEkyTXBg9jyJOCpuanfz4i51qoeS9SYo2pkATmZQ/pub?w=162&h=356" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRKBxsti0yTFka4dFKuMhY2pPXeLmnxNTymzjMLuEkyTXBg9jyJOCpuanfz4i51qoeS9SYo2pkATmZQ/pub?w=324&h=712" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
     <p><b>Figure 2: DIDs methods in OpenDSU (W3CDID concrete instantiations)</b></p>
 </div>
 
@@ -314,7 +314,7 @@ There are currently four DID Methods implemented, briefly described in the table
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRAM-vSVDXhZVjiXtvHs-eq0yE8JYsj5Km_OThF5lSSSvbVMGsxd7rNdi468XPhhSjwR64iEiFdDiCC/pub?w=518&h=411" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRAM-vSVDXhZVjiXtvHs-eq0yE8JYsj5Km_OThF5lSSSvbVMGsxd7rNdi468XPhhSjwR64iEiFdDiCC/pub?w=1036&h=822" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
     <p><b>Figure 3: Message communication between DIDs</b></p>
 </div>
 
