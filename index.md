@@ -3,7 +3,9 @@ title: Home
 layout: home
 nav_order: 1
 ---
-31xyz
+asdasd
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +48,7 @@ nav_order: 1
     }
     
     .arrow-container {
-        position: absolute;
+        position: fixed;
         top: 50%;
         transform: translateY(-50%);
         z-index: 999; /* Ensure arrows are above other content */
@@ -76,10 +78,10 @@ nav_order: 1
 </head>
 <body>
 <div class="video-container">
+    <div class="arrow-container prev" style="left: 0;">
+        <button onclick="scrollVideos(-1)">❮</button>
+    </div>
     <div class="video-row">
-        <div class="arrow-container prev" style="left: 0;">
-            <button onclick="scrollVideos(-1)">❮</button>
-        </div>
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
             <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
@@ -107,29 +109,4 @@ nav_order: 1
         </div>
         <div class="video-item">
             <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 2</div>
-        </div>
-        <!-- Repeat the same pattern for other videos -->
-        <div class="arrow-container next" style="right: 0;">
-            <button onclick="scrollVideos(1)">❯</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    let currentIndex = 0;
-
-    function scrollVideos(direction) {
-        const videoRow = document.querySelector('.video-row');
-        const videoItems = document.querySelectorAll('.video-item');
-        const numVideos = videoItems.length;
-        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
-
-        currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = -currentIndex * videoWidth;
-        videoRow.style.transform = `translateX(${newPosition}px)`;
-    }
-</script>
-
-</body>
-</html>
+ 
