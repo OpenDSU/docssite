@@ -3,7 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-123
+aaa
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,11 +38,11 @@ nav_order: 1
   }
 
   .prev {
-    left: 0;
+    left: -50px; /* Adjust the position */
   }
 
   .next {
-    right: 0;
+    right: -50px; /* Adjust the position */
   }
 </style>
 </head>
