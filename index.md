@@ -43,21 +43,20 @@ nav_order: 1
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        color: purple;
-        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
         border: none;
         cursor: pointer;
         z-index: 1;
-        font-size: 24px;
-        background-color: rgba(128, 0, 128, 0.5); /* Purple with transparency */
     }
     
     .prev {
-        left: -50px;
+        left: 0;
     }
     
     .next {
-        right: -50px;
+        right: 0;
     }
 </style>
 </head>
@@ -65,6 +64,11 @@ nav_order: 1
 <div class="video-container">
     <button class="prev" onclick="scrollVideos(-1)">❮</button>
     <div class="video-row">
+        <!-- Replace the following iframe src with the embed link of the playlist -->
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
         <div class="video-item">
             <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
             <div class="video-name">Name of Video 1</div>
@@ -87,9 +91,9 @@ nav_order: 1
         </div>
         <!-- Repeat the same pattern for other videos -->
     </div>
-</div>
 
-<button class="next" onclick="scrollVideos(1)">❯</button>
+    <button class="next" onclick="scrollVideos(1)">❯</button>
+</div>
 
 <script>
     let currentIndex = 0;
