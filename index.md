@@ -25,7 +25,7 @@ nav_order: 1
         flex: 0 0 auto;
         width: 100%;
         transition: transform 0.5s ease;
-        text-align: center; /* Center align the title */
+        text-align: center;
     }
 
     .playlist-video {
@@ -35,35 +35,37 @@ nav_order: 1
     }
 
     .playlist-title {
-        margin-top: 10px; /* Add space between video and title */
+        margin-top: 10px;
     }
 
-    .scroll-arrow {
+    .scroll-arrow-container {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+    }
+
+    .scroll-arrow {
         background-color: rgba(0, 0, 0, 0.5);
         color: #fff;
         padding: 10px;
         cursor: pointer;
-        z-index: 1;
-    }
-
-    .scroll-arrow-left {
-        left: 0;
-    }
-
-    .scroll-arrow-right {
-        right: 0;
     }
 </style>
 </head>
 <body>
 
 <div class="playlist-container">
+    <div class="scroll-arrow-container">
+        <div class="scroll-arrow scroll-arrow-left">&lt;</div>
+        <div class="scroll-arrow scroll-arrow-right">&gt;</div>
+    </div>
     <div class="playlist-wrapper">
         <div class="playlist-slide">
-            <!-- Add video and title here -->
+            <!-- Add videos from the playlist here -->
             <iframe class="playlist-video" width="300" height="169" src="https://www.youtube.com/embed/RYxe61jE_J8"></iframe>
             <div class="playlist-title">Title of the First Video</div>
             <!-- Add more iframes and titles for each video in the playlist -->
@@ -71,9 +73,6 @@ nav_order: 1
         <!-- Add more .playlist-slide divs for additional videos -->
     </div>
 </div>
-
-<div class="scroll-arrow scroll-arrow-left">&lt;</div>
-<div class="scroll-arrow scroll-arrow-right">&gt;</div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
