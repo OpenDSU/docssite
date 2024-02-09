@@ -21,7 +21,25 @@ A period when the community can review the RFC (comment Docs)
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
-
+<!-- TOC -->
+* [Abstract](#abstract)
+* [1. DB Types summary](#1-db-types-summary)
+  * [1.1 BasicDB](#11-basicdb)
+    * [Function addIndex(tableName, fieldname, forceReindex, callback)](#function-addindextablename-fieldname-forcereindex-callback)
+    * [Function getIndexedFields(tableName, callback)](#function-getindexedfieldstablename-callback)
+    * [Function beginBatch()](#function-beginbatch)
+    * [Function cancelBatch(callback)](#function-cancelbatchcallback)
+    * [Function commitBatch(callback)](#function-commitbatchcallback)
+    * [Function deleteRecord(tableName, key, callback)](#function-deleterecordtablename-key-callback)
+    * [Function filter(tableName, query, sort, limit, callback)](#function-filtertablename-query-sort-limit-callback)
+    * [Function getHistory(tableName, key, callback)](#function-gethistorytablename-key-callback)
+    * [Function getRecord(tableName, key, callback)](#function-getrecordtablename-key-callback)
+    * [Function insertRecord(tableName, key, record, callback)](#function-insertrecordtablename-key-record-callback)
+    * [Function updateRecord(tableName, key, record, callback)](#function-updaterecordtablename-key-record-callback)
+    * [Function writeKey(tableName, key, value, callback)](#function-writekeytablename-key-value-callback)
+    * [Function readKey(tableName, key, callback)](#function-readkeytablename-key-callback)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 
 
@@ -47,19 +65,19 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 1.1 BasicDB
 
-# Function addIndex(tableName, fieldname, forceReindex, callback)
+### Function addIndex(tableName, fieldname, forceReindex, callback)
 
 <p style='text-align: justify;'><b>Description:</b> Add an index to all the values from a specific field in your table. It can be used to locate the data in your database faster.
 </p>
 
 
 
-| **Name**                | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                       |
-|:------------------------|:---------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| tableName               | string   | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                               |
-| fieldname               | string   | *required | Name of the field in your table that you want to index.                                                                                                                                                                                                                                                                                               |          |           |                                                         |
-| forceReindex (optional) |          |           | Controls whether to create a new index for an already indexed field. If true, a new index for the specified fieldName will be created, regardless of whether an index for the fieldName already exists. If false, the field fieldName will be indexed only if there are no indexes for the specified field. By default, forceReindex is set to false. |
-| callback                | function | *required |                                                                                                                                                                                                                                                                                                                                                       |
+| **Name**                | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                        |
+|:------------------------|:---------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName               | string   | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                                |
+| fieldname               | string   | *required | Name of the field in your table that you want to index.                                                                                                                                                                                                                                                                                                | 
+| forceReindex (optional) |          |           | Controls whether to create a new index for an already indexed field. If true, a new index for the specified fieldName will be created, regardless of whether an index for the fieldName already exists. If false, the field fieldName will be indexed only if there are no indexes for the specified field. By default, forceReindex is set to false.  |
+| callback                | function | *required |                                                                                                                                                                                                                                                                                                                                                        |
 
 
 
@@ -72,7 +90,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Description**: An error object containing a message.
 
 
-# Function getIndexedFields(tableName, callback)
+### Function getIndexedFields(tableName, callback)
 
 **Description:** Returns the list of the indexed fields in the specified table.
 
@@ -95,7 +113,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function beginBatch()
+### Function beginBatch()
 
 **Description:** Start a batch of operations on your DSU without anchoring changes.
 
@@ -107,7 +125,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | callback function | Prevent anchoring after each operation.  |
 
 
-## Function cancelBatch(callback)
+### Function cancelBatch(callback)
 
 **Description:** Cancel the batch of operations in progress.
 
@@ -127,7 +145,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Description:** An error object containing a message.
 
 
-## Function commitBatch(callback)
+### Function commitBatch(callback)
 
 **Description:** Anchor the changes from the batch of operations on your DSU.
 
@@ -149,7 +167,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function deleteRecord(tableName, key, callback)
+### Function deleteRecord(tableName, key, callback)
 
 <p style='text-align: justify;'><b>Description: </b>Delete a record by incrementing the record’s version number and setting the new record “delete property” to true. The old version of the record is saved.
 </p>
@@ -179,7 +197,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function filter(tableName, query, sort, limit, callback)
+### Function filter(tableName, query, sort, limit, callback)
 
 **Description:** Returns the list of records satisfying the conditions in the specified query.
 
@@ -208,442 +226,208 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-## Function getHistory(tableName, key, callback)
+### Function getHistory(tableName, key, callback)
 
-Description: Get the history of a record, including the deleted versions in a callback.
+**Description:** Get the history of a record, including the deleted versions in a callback.
 
-Name
-	
 
-Type
-	
 
-Value
-	
+| **Name**         | **Type**                   | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|:-----------------|:---------------------------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName        | string                     | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Key              | string                     | *required | The key you want to get history from.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| callback         | function                   | *required |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
-Description
 
-tableName
-	
+**Callback parameters**
 
-string
-	
 
-*required
-	
+| **Name** | **Type**        | **Response example** |
+|:---------|:----------------|:---------------------|
+| err      | Error object    |                      |
+| record   | Array of Object |                      |
 
-Name of the table inside your database.
 
-key
-	
+**Description:** An error object containing a message./An array of all the different versions.
 
-string
-	
 
-*required
-	
 
-The key you want to get history from.
 
-callback
-	
 
-function
-	
 
-*required
-	
+### Function getRecord(tableName, key, callback)
 
-Callback parameters
+**Description:** Get a single row from a table.
 
-Name
-	
 
-Type
-	
+| **Name**         | **Type**                   | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|:-----------------|:---------------------------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName        | string                     | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Key              | string                     | *required | The key you want to get history from.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| callback         | function                   | *required |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
-Response example
 
-err
-	
 
-Error object
-	
+**Callback parameters**
 
-record
-	
 
-Array
-	
+| **Name** | **Type**        | **Response example** |
+|:---------|:----------------|:---------------------|
+| err      | Error object    |                      |
+| record   | Array of Object |      
 
-Description: An error object containing a message./An array of all the different versions.
-Function getRecord(tableName, key, callback)
 
-Description: Get a single row from a table.
 
-Name
-	
+**Description:** An error object containing a message./The record present for the selected key in the selected table.
 
-Type
-	
 
-Value
-	
 
-Description
 
-tableName
-	
+### Function insertRecord(tableName, key, record, callback)
 
-string
-	
+**Description:** Insert a record, and return an error if it already exists.
 
-*required
-	
 
-Name of the table inside your database.
 
-key
-	
+| **Name**  | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|:----------|:---------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName | string   | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Key       | string   | *required | The value of the primary key for that record. Usually, a record has a field with the name “pk”.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| record    | object   |           | The record content.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| callback  | function | *required |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
-string
-	
 
-*required
-	
+**Callback parameters**
 
-The key you want to get a record from.
 
-callback
-	
+| **Name** | **Type**        | **Response example** |
+|:---------|:----------------|:---------------------|
+| err      | Error object    |                      |
+| record   | Array of Object |      
 
-function
-	
 
-*required
-	
 
-Callback parameters
+**Description:** An error object containing a message./ The new record.
 
-Name
-	
 
-Type
-	
 
-Response example
+### Function updateRecord(tableName, key, record, callback)
 
-err
-	
+**Description:** Update a record, and return an error if it does not exist.
 
-Error object
-	
 
-record
-	
 
-Array
-	
+| **Name**  | **Type** | **Value** | **Description**                         |
+|:----------|:---------|:----------|:----------------------------------------|
+| tableName | string   | *required | Name of the table inside your database. |
+| Key       | string   | *required | The key you want to update.             |
+| record    | object   |           | The record content.                     |
+| callback  | function | *required | 
 
-Description: An error object containing a message./The record present for the selected key in the selected table.
-Function insertRecord(tableName, key, record, callback)
 
-Description: Insert a record, and return an error if it already exists.
+**Callback parameters**
 
-Name
-	
 
-Type
-	
+| **Name** | **Type**        | **Response example** |
+|:---------|:----------------|:---------------------|
+| err      | Error object    |                      |
+| record   | Array of Object |      
 
-Value
-	
 
-Description
+**Description:** An error object containing a message./ The updated record.
 
-tableName
-	
 
-string
-	
 
-*required
-	
+### Function writeKey(tableName, key, value, callback)
 
-Name of the table inside your database.
+**Description:** Allows the insertion of a value of any type associated with the specified key, like in a key/value database.
 
-key
-	
 
-string
-	
+| **Name**  | **Type** | **Value** | **Description**                           |
+|:----------|:---------|:----------|:------------------------------------------|
+| tableName | string   | *required | Name of the table inside your database.   |
+| Key       | string   | *required | An unique identifier for the added value. |
+| value     | any      |           | The record content.                       |
+| callback  | function | *required | 
 
-*required
-	
 
-The value of the primary key for that record. Usually, a record has a field with the name “pk”.
+**Callback parameters**
 
-record
-	
 
-object
-	
+| **Name** | **Type**        | **Response example** |
+|:---------|:----------------|:---------------------|
+| err      | Error object    |                      |      
 
-	
 
-The record content.
 
-callback
-	
+**Description:** An error object containing a message.
 
-function
-	
 
-*required
-	
 
-Callback parameters
 
-Name
-	
+### Function readKey(tableName, key, callback)
 
-Type
-	
+**Description:** Reads the value associated with the provided key.
 
-Response example
 
-err
-	
+| **Name**  | **Type** | **Value** | **Description**                         |
+|:----------|:---------|:----------|:----------------------------------------|
+| tableName | string   | *required | Name of the table inside your database. |
+| Key       | string   | *required | The identifier of the content read.     |
+| callback  | function | *required | 
 
-Error object
-	
 
-record
-	
+**Callback parameters**
 
-object
-	
 
-Description: An error object containing a message./ The new record.
-Function updateRecord(tableName, key, record, callback)
+| **Name** | **Type**     | **Response example** |
+|:---------|:-------------|:---------------------|
+| err      | Error object |                      |      
+| value    | any          |                      |
 
-Description: Update a record, and return an error if it does not exist.
 
-Name
-	
+**Description:** An error object containing a message./The value associated with the provided key.
 
-Type
-	
 
-Value
-	
 
-Description
 
-tableName
-	
 
-string
-	
+**Contributors**
 
-*required
-	
 
-Name of the table inside your database.
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-key
-	
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-string
-	
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-*required
-	
 
-The key you want to update.
+# Annex 1. Contributors
 
-record
-	
-
-object
-	
-
-	
-
-The record content.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-record
-	
-
-object
-	
-
-Description: An error object containing a message./ The updated record.
-Function writeKey(tableName, key, value, callback)
-
-Description: Allows the insertion of a value of any type associated with the specified key, like in a key/value database.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-tableName
-	
-
-string
-	
-
-*required
-	
-
-Name of the table inside your database.
-
-key
-	
-
-string
-	
-
-*required
-	
-
-An unique identifier for the added value.
-
-value
-	
-
-any
-	
-
-	
-
-The content associated with the specified key.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-Description: An error object containing a message.
-Function readKey(tableName, key, callback)
-
-Description: Reads the value associated with the provided key.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-tableName
-	
-
-string
-	
-
-*required
-	
-
-Name of the table inside your database.
-
-key
-	
-
-string
-	
-
-*required
-	
-
-The identifier of the content read.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-value
-	
-
-any
-	
-
-Description: An error object containing a message./The value associated with the provided key.
-
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
