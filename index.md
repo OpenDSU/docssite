@@ -3,7 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
-User
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,12 +44,13 @@ User
     .prev, .next {
         position: absolute;
         top: 50%;
+        transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
-        color: purple; /* Changed to purple */
+        color: white;
         padding: 10px;
         border: none;
         cursor: pointer;
-        z-index: 2; /* Increased z-index to ensure arrows are above videos */
+        z-index: 2; /* Increased z-index */
         transition: color 0.3s, background-color 0.3s; /* Added transition effect */
     }
     
@@ -59,7 +61,7 @@ User
     .next {
         right: 10px; /* Adjusted to provide spacing */
     }
-    
+
     .prev:hover, .next:hover {
         background-color: rgba(128, 0, 128, 0.5); /* Added hover effect */
     }
