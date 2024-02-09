@@ -5,7 +5,7 @@ parent: OpenDSU Contributors
 nav_order: 8
 ---
 <style>
-  /* Styles for the modal /
+  /* Styles for the modal */
   .modal {
     display: none;
     position: fixed;
@@ -18,7 +18,7 @@ nav_order: 8
     background-color: rgba(0,0,0,0.9);
   }
 
-  / Modal content /
+  /* Modal content */
   .modal-content {
     margin: auto;
     display: block;
@@ -26,7 +26,7 @@ nav_order: 8
     max-height: 90%;
   }
 
-  / Close button */
+  /* Close button */
   .close {
     position: absolute;
     top: 15px;
@@ -66,7 +66,6 @@ function closeModal() {
 </script>
 
 </body>
-
 
 # **OAuth (RFC-040)**
 {: .no_toc }
