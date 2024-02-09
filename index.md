@@ -3,8 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
-2
-test2
+3
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,12 +48,10 @@ test2
     }
     
     .arrow-container {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
-        right: 0;
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 10px;
     }
 
     .prev, .next {
@@ -64,14 +62,6 @@ test2
         cursor: pointer;
         z-index: 2;
         transition: color 0.3s, background-color 0.3s;
-    }
-
-    .prev {
-        margin-right: 10px;
-    }
-    
-    .next {
-        margin-left: 10px;
     }
 
     .prev:hover, .next:hover {
