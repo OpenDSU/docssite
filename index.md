@@ -13,11 +13,17 @@ nav_order: 1
     .video-container {
         position: relative;
         margin-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .video-row {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.3s ease;
     }
     
     .video-item {
         flex: 0 0 auto;
-        scroll-snap-align: start;
         margin-right: 10px;
     }
     
@@ -50,14 +56,16 @@ nav_order: 1
 <body>
 <div class="video-container">
     <button class="prev" onclick="scrollVideos(-1)">❮</button>
-    <div class="video-item"><iframe src="URL_OF_VIDEO_1" frameborder="0" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="URL_OF_VIDEO_3" frameborder="0" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="URL_OF_VIDEO_4" frameborder="0" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="URL_OF_VIDEO_5" frameborder="0" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="URL_OF_VIDEO_6" frameborder="0" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="URL_OF_VIDEO_7" frameborder="0" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="URL_OF_VIDEO_8" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-row">
+        <div class="video-item"><iframe src="URL_OF_VIDEO_1" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-item"><iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-item"><iframe src="URL_OF_VIDEO_3" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-item"><iframe src="URL_OF_VIDEO_4" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-item"><iframe src="URL_OF_VIDEO_5" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-item"><iframe src="URL_OF_VIDEO_6" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-item"><iframe src="URL_OF_VIDEO_7" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-item"><iframe src="URL_OF_VIDEO_8" frameborder="0" allowfullscreen></iframe></div>
+    </div>
     <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
 
@@ -66,15 +74,14 @@ nav_order: 1
 
     function scrollVideos(direction) {
         const videoContainer = document.querySelector('.video-container');
+        const videoRow = document.querySelector('.video-row');
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
+        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
 
         currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = videoItems[currentIndex].offsetLeft - videoContainer.offsetLeft;
-        videoContainer.scrollTo({
-            left: newPosition,
-            behavior: 'smooth'
-        });
+        const newPosition = -currentIndex * videoWidth;
+        videoRow.style.transform = `translateX(${newPosition}px)`;
     }
 </script>
 
