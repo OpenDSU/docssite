@@ -62,21 +62,57 @@ SSO (Single Sign-On) is a technology that unites several screens into a single s
 
 For the beginning, the initial page is loaded, where there are SSApps that the user can try to access (step 1 from the figure). After selecting a SSApp, the user is redirected to the IDP (Identity Provider) configured by the organization to perform the SSO (step 2). An identity provider (IDP) is a system component that provides an end-user or an internet-connected device with a unique set of login credentials that ensure the entity is who and what it says it is across multiple platforms, applications, and networks. After this, the authentication flow (step 3) takes place, including a possible MFA (Multi-Factor Authentication). MFA usually requires a combination of something the user knows (PIN code, secret question) and something the user has (e.g. card) or something that is (such as a fingerprint).
 
+</p>
+
+<p style='text-align: justify;'>
+
 MFA is an authentication method and a basic component of data privacy. In order for the user to get access to an online resource, application, or account, MFA requires the user to provide two or more verification factors. This should be used by both individuals and companies/enterprises as often as possible.
+
+</p>
+
+<p style='text-align: justify;'>
 
 Authentication is performed by the IDP following authorization code flow and PKCE (Proof Key for Code Exchange). PKCE is a sample key for exchanging authorization codes. PKCE adds an extra level of security when a mobile device is used for the flow of authorization codes.
 
+</p>
+
+<p style='text-align: justify;'>
+
 MFA offers much stronger security and protection against fraudsters. They might be able to steal proof of identity, such as a PIN, but they would still need to obtain and use other proof of identity in order to be able to access the personal account.
+
+</p>
+
+<p style='text-align: justify;'>
 
 In steps 4 and 5, as shown in Figure 1, the return URL for a request is set to the APIHub's SSO Middleware and not to the application, so the authorization token is sent there. Then, the SSO middleware presents the authorization token to the IDP’s token endpoint to retrieve the access token and refresh token; both signed JWTs (JSON Web Tokens). JWTs can be signed using a secret or public key pair. In addition, the structure of a JWT allows you to make sure that the content has not been altered.
 
+</p>
+
+<p style='text-align: justify;'>
+
 A match is made to the wallet recovery phrase stored in the file system, which is used to access the wallet with an additional PIN check.
+
+</p>
+
+<p style='text-align: justify;'>
 
 In the last stage (step 6), SSO Middleware generates an encrypted cookie containing the access token, refresh token, expiration date, username, and SSO ID. The symmetric key is stored in the APIHub file system, and it is used for all users. The cookie is sent to the user to present to APIHub as proof of authentication. The cookie still needs the appropriate settings in order to prevent leakage (e.g. secure, HTTP only etc.).
 
+</p>
+
+<p style='text-align: justify;'>
+
 The cookie is used to manage the user’s session and its expiration date. It can not be falsified by the user or in transit because the encryption key never leaves the APIHub. Upon receiving the cookie, users send requests with it to the APIHub. Upon receiving a request with a cookie, API Hub decrypts it and checks the expiration date. If the access token has expired, Middleware uses the refresh token to obtain a new access token from the organization's IDP.
 
+</p>
+
+<p style='text-align: justify;'>
+
 Periodically, based on the company's session length policy, the symmetrical keys are rotated. An old encryption key is also stored to allow for the pass-through period. All older encryption keys are destroyed if the user submits a request with the old cookie before receiving a new one.
+
+</p>
+
+<p style='text-align: justify;'>
 
 We started to consider the implications of the compromise. Initially, if a hacker could gain access to the encryption keys, it seems that they would have very little to gain because they would need the cookie to do anything. With the cookie, they can already pretend to be a victim. However, depending on the synchronization element and key rotation, an attacker could extend the cookie's lifetime by changing the timestamp based on the answers to the following questions:
 
@@ -87,7 +123,10 @@ We started to consider the implications of the compromise. Initially, if a hacke
 * Are the encryption keys rotated based on the expiration time received from the SSO server or a refresh request based on the expiration time in the cookie?
 * Does storing an old key just facilitate the transition period when a new access token is requested?
 
+<p style='text-align: justify;'>
+
 In addition, we would like to understand the Recovery Phrase (RP) better. If the RP, stored on disk, is mapped to the SSO ID, then can it only be accessed by the SSO Middleware and provided to the wallet? In this case, is the encrypted version sent and decrypted by the client when the user has entered the PIN?
+</p>
 
 # 3. Authentication flow. Token encryption and verification
 
@@ -96,14 +135,29 @@ In addition, we would like to understand the Recovery Phrase (RP) better. If the
 <p style='text-align: justify;'>
 
 The implementation for the authentication flow (step 3) is the OAuth2.0 + PKCE authorization code flow.
+</p>
+
+<p style='text-align: justify;'>
 
 The authorization code is obtained using an authorization server as an intermediary between the client and the resource owner. Instead of requesting authorization directly from the resource owner, the client directs the resource owner to an authorization server, which, in turn, directs the resource owner back to the client with the authorization code.
+</p>
+
+<p style='text-align: justify;'>
 
 OAuth allows information in an end user's account to be used by third-party services without exposing the user's password. PKCE (Proof Key for Code Exchange) is a sample key for exchanging authorization codes. When the authorization code flow is performed on a mobile device, PKCE adds extra security.
+</p>
+
+<p style='text-align: justify;'>
 
 User identification data in SSO (such as email address and name) takes the form of tokens. An SSO token is a collection of data or information passed from one system to another during the SSO process. The data can simply be a user’s email address and information about the system sending the token.
+</p>
+
+<p style='text-align: justify;'>
 
 OAuth acts as an intermediary on behalf of the end user, providing the service with an access token that authorizes the sharing of specific account information. Applications using the OAuth 2.0 authorization code flow obtain an access token to include in requests to resources protected by the Microsoft Identity Platform (typically APIs). Applications can also request new identification and access tokens for previously identified entities using a refresh mechanism.
+</p>
+
+<p style='text-align: justify;'>
 
 In the case of token authentication, a secondary service verifies a server request. When the verification is complete, the server issues a token and responds to the request. The user may still have a password to remember, but the token provides another form of access that is much harder to steal or bypass.
 </p>
@@ -122,10 +176,19 @@ More details are available at the following links:
 <p style='text-align: justify;'>
 
 When a token expires, the client will perform the OAuth2.0 refresh token flow to obtain a new set of tokens without requiring user authentication. The token will be a JWT, asymmetrically signed (RSA) in both cases. JWTs can be signed using a secret or public key pair using RSA. RSA (Rivest-Shamir-Adleman) is a public key encryption method used to secure data transmission.
+</p>
 
-Signed tokens can verify the integrity of the claims contained within them, while encrypted tokens hide these affirmations from other third parties. When tokens are signed using public or private key pairs, the signature also certifies that only the party holding the private key is the one who signed. Public keys used for JWT verification are publicly available. JWKS is downloaded for the JWKS endpoint (e.g. <a href="">https://login.windows.net/common/discovery/keys</a> ), which can be found at <a href="">https://issuer.example.com/.well-known/openid-configuration</a>  (a well-known URI discovery mechanism for the issuer).
+<p style='text-align: justify;'>
+
+Signed tokens can verify the integrity of the claims contained within them, while encrypted tokens hide these affirmations from other third parties. When tokens are signed using public or private key pairs, the signature also certifies that only the party holding the private key is the one who signed. Public keys used for JWT verification are publicly available. JWKS is downloaded for the JWKS endpoint (e.g. <a href="">https://login.windows.net/common/discovery/keys</a>), which can be found at <a href="">https://issuer.example.com/.well-known/openid-configuration</a>  (a well-known URI discovery mechanism for the issuer).
+</p>
+
+<p style='text-align: justify;'>
 
 The authentication token will be encrypted in an AES 256 GCM cookie. The encryption key is rotated. The cookie must be secure: HTTP only, secure, same site lax, cookie prefixes, not available on subdomains, expiration <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">(docs)</a>.
+</p>
+
+<p style='text-align: justify;'>
 
 The APIHub does not store the refresh token, but it encrypts it and puts it in a cookie for clients. This cookie also contains a timestamp, SSO username and SSO user ID. The encrypted token is encrypted with one of the two "SSO encryption keys" currently available.
 </p>
@@ -176,12 +239,13 @@ In the figure above, we can see how Demiurge deletes/deactivates a secret. Start
 * Patient Wallet configuration to skip SSO:
   * Apihub-root/external-volume/config/apihub.json: In ‘skipOAuth’ section add below five values
   
+````
    "/leaflet-wallet/", 
   "/external-volume/wallets/leaflet-wallet/",
   "/cloud-wallet/",
    "/directory-summary/",
    "/iframe/"
-
+````
 
 * In your SSO provider application like Azure:
   * Create a client secret key and update the same in flag ‘clientSecret’ in apihub.json.
@@ -198,36 +262,36 @@ Note: The settings for /apihub-root/external-volume/config/domains/<domain>epi.j
 </p>
 
 In /apihub-root/external-volume/config/domains/<domain>epi.json add below section: <br>
-```js 
+````
 "skipOAuth": [ <br>
  "/bricking/<domain>epi/get-brick", <br>
  "/anchor/<domain>epi/get-last-version", <br>
  "/gtinOwner/<domain>epi", <br>
  "/leaflets/<domain>epi" <br>
 ]
-```
+````
 
 In /apihub-root/external-volume/config/domains/<subdomain>epi.json add below section: <br>
 
-```js
+````
 "skipOAuth": [ <br>
  "/bricking/<subdomain>epi/get-brick", <br> 
  "/anchor/<subdomain>epi/get-last-version", <br>
  "/gtinOwner/<subdomain>epi", <br>
  "/leaflets/<subdomain>epi" <br>
 ]
-```
+````
 
 * skipOAuth configuration in /apihub-root/external-volume/config/domains/vault.json file
 
 Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <br> <a href="">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a>    
 
-```js
+````
 "skipOAuth": [
   	  "/bricking/vault",
    	 "/anchor/vault"
   ]
-```
+````
 
 <span style="color:red">Note: Below client configuration is not required. Make sure that the ‘oauthEnabled’ flag is set to ‘false’ in oauthConfig.js. </span> 
 
@@ -246,9 +310,9 @@ Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need t
 
 When SSO is enabled, the DID for a user is generated based on one of the claims in the table below, obtained from the access token payload. The DID format is the following:
 
-```js
+````
 did:ssi:name:vault_domain:APP_NAME/SSO_DETECTED_ID
-```
+````
 
 The _SSO_DETECTED_ID_ is the first non-empty claim from the following table (in the presented order) found in the access token payload. 
 
@@ -264,15 +328,15 @@ The _SSO_DETECTED_ID_ is the first non-empty claim from the following table (in 
 
 When SSO is enabled and the access mode for the wallet is set to “sso-direct”, the  SSO_SECRETS_ENCRYPTION_KEY must be set. It is used to encrypt the wallet access credentials in the secrets APIHub component. The SSO_SECRETS_ENCRYPTION_KEY contains one or more base64 encoded 32-byte long buffers separated by commas. The first such buffer in the list is the current encryption key.  The encryption key can be changed by appending a new encryption key at the beginning of the  SSO_SECRETS_ENCRYPTION_KEY, as shown below:
 
-```js
+````
 SSO_SECRETS_ENCRYPTION_KEY = “new_encryption_key,old_encryption_key”  
-```
+````
 
 When a new encryption key is added to SSO_SECRETS_ENCRYPTION_KEY, all the credentials are decrypted by using the old encryption key and encrypted again using the new one. An encryption key can be generated using the following NodeJS snippet:
 
-```js
+````
 require("crypto").randomBytes(32).toString("base64")
-```
+````
 
 The SSO_SECRETS_ENCRYPTION_KEY should be injected in the environment by the Kubernetes Secrets (and not stored in helm-charts configuration). A restart of the container is required to take the new values of the SSO_SECRETS_ENCRYPTION_KEY (for key rotation).
 
