@@ -112,21 +112,21 @@ nav_order: 1
         const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
         const containerWidth = videoContainer.offsetWidth; // Lățimea containerului de videoclipuri
 
-        currentIndex = (currentIndex + direction + numVideos) % numVideos;
+        // Calculăm poziția de derulare a videoclipurilor în funcție de indicele curent și direcția
+        currentIndex = currentIndex + direction;
+        
+        // Limităm poziția curentă între 0 și numVideos - 1
+        currentIndex = Math.max(0, Math.min(currentIndex, numVideos - 1));
 
-        // Calculăm poziția maximă la care videoclipurile pot fi derulate pentru a rămâne în interiorul containerului
-        const maxScroll = containerWidth - videoRow.offsetWidth;
-
-        // Calculăm poziția de derulare a videoclipurilor în funcție de indicele curent
+        // Calculăm poziția de derulare astfel încât videoclipurile să se oprească înainte de marginile containerului
         let newPosition = -currentIndex * videoWidth;
-
-        // Asigurăm că poziția de derulare este în interiorul marginilor containerului
-        newPosition = Math.min(newPosition, 0);
-        newPosition = Math.max(newPosition, maxScroll);
+        newPosition = Math.min(newPosition, 0); // Asigurăm că videoclipurile nu se deplasează dincolo de marginea din stânga a containerului
+        newPosition = Math.max(newPosition, containerWidth - (numVideos * videoWidth)); // Asigurăm că videoclipurile nu se deplasează dincolo de marginea din dreapta a containerului
 
         videoRow.style.transform = `translateX(${newPosition}px)`;
     }
 </script>
+
 
 </body>
 </html>
