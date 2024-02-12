@@ -10,7 +10,7 @@ nav_order: 1
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Pure CSS Image Slider</title>
+    <title>Pure CSS Video Slider</title>
     <style>
         *{
             margin: 0;
@@ -39,10 +39,10 @@ nav_order: 1
             border-radius: 0.5rem;
         }
 
-        .slider img{
+        .slider iframe{
             flex: 1 0 100%;
             scroll-snap-align: start;
-            object-fit: cover;
+            border: none;
         }
         
         .nav{
@@ -64,10 +64,12 @@ nav_order: 1
             box-shadow: 0 1rem 1rem -0.75rem rgba(0,0,0,0.75);
         }
 
-        .nav img{
+        .nav iframe{
             width: 100%;
+            height: 100%;
             object-fit: cover;
         }
+
         .nav a:hover{
             opacity: 1;
         }
@@ -77,23 +79,23 @@ nav_order: 1
     <div class="container">
         <div class="wrapper">
             <div class="slider">
-                <img id="slide-1" src="https://www.youtube.com/watch?v=0A3bGUAajrM&list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" alt="">
-                <img id="slide-2" src="2.jpg" alt="">
-                <img id="slide-3" src="3.jpg" alt="">
-                <img id="slide-4" src="4.jpg" alt="">
+                <iframe id="slide-1" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                <iframe id="slide-2" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                <iframe id="slide-3" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                <iframe id="slide-4" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="nav">
                 <a href="#slide-1">
-                    <img src="https://www.youtube.com/watch?v=0A3bGUAajrM&list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" alt="">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
                 </a>
                 <a href="#slide-2">
-                    <img src="2.jpg" alt="">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
                 </a>
                 <a href="#slide-3">
-                    <img src="3.jpg" alt="">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
                 </a>
                 <a href="#slide-4">
-                    <img src="4.jpg" alt="">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
                 </a>
             </div>
         </div>
