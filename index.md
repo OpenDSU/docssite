@@ -3,75 +3,92 @@ title: Home
 layout: home
 nav_order: 1
 ---
-tee
-<!DOCTYPE html>
+
+---
+title: Home
+layout: home
+nav_order: 1
+---
+
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrollable Cards</title>
-  <style>
-    .scroll-container {
-      width: 100%;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      white-space: nowrap;
-      padding: 20px 0;
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Carousel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
 
-    .card {
-      display: inline-block;
-      width: 300px;
-      height: 200px;
-      background-color: #f0f0f0;
-      margin: 0 10px;
-    }
 
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: purple;
-      color: white;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      z-index: 1;
-    }
+        }
 
-    .arrow-left {
-      left: 0;
-    }
+        .heading{
+            color: white;
+            text-align: center;
+            font-family: system-ui;
+            padding-top: 50px;
+        }
 
-    .arrow-right {
-      right: 0;
-    }
-  </style>
+        .cardContainer{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .card{
+            position: relative;
+            left: 0px;
+            width: 150px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: -7px -1px 11px 8px rgba(00,00,00,0.2);
+        }
+
+        .card:not(:first-child){
+            margin-left: -50px;
+        }
+
+        .card:hover{
+            transform: translateY(-20px);
+        }
+
+        .card:hover ~ .card{
+            left: 50px;
+        }
+    </style>
 </head>
 <body>
-  <div class="scroll-container">
-    <div class="arrow arrow-left">&lt;</div>
-    <div class="card">Video 1: Insert YouTube Video Here</div>
-    <div class="card">Video 2: Insert YouTube Video Here</div>
-    <div class="card">Video 3: Insert YouTube Video Here</div>
-    <div class="arrow arrow-right">&gt;</div>
-  </div>
+    <main>
+        <div class="cardContainer">
+            <div class="card">
+               <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const container = document.querySelector('.scroll-container');
-      const scrollStep = 300; // Adjust scroll step as per your card width
+            </div>
+            <div class="card">
+                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-      document.querySelector('.arrow-left').addEventListener('click', function() {
-        container.scrollBy(-scrollStep, 0);
-      });
+            </div>
+            <div class="card">
+                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-      document.querySelector('.arrow-right').addEventListener('click', function() {
-        container.scrollBy(scrollStep, 0);
-      });
-    });
-  </script>
+            </div>
+            <div class="card">
+                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            </div>
+        </div>
+    </main>
 </body>
 </html>
-
