@@ -101,7 +101,7 @@ nav_order: 1
     <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
 
-<script>
+    <script>
     let currentIndex = 0;
 
     function scrollVideos(direction) {
