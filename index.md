@@ -10,111 +10,80 @@ nav_order: 1
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Pure CSS Video Slider</title>
+    <title>Pure CSS Image Slider</title>
     <style>
         *{
-            margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            margin: 0;
         }
 
-        .container{
-            padding: 2rem;
+        main{
+            background: linear-gradient(-45deg, #fc5c7d, #6a82fb);
+            height: 100vh;
         }
 
-        .wrapper{
+        .heading{
+            color: white;
+            text-align: center;
+            font-family: system-ui;
+            padding-top: 50px;
+        }
+
+        .cardContainer{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .card{
             position: relative;
-            max-width: 48rem;
-            margin: 0 auto;
+            left: 0px;
+            width: 150px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
         }
 
-        .slider{
-            display: flex;
-            aspect-ratio: 16/9;
-            overflow: hidden;
+        .card img {
             width: 100%;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            box-shadow: 0 1.5rem 3rem -0.75rem rgba(0,0,0,0.25);
-            border-radius: 0.5rem;
+            border-radius: 10px;
+            box-shadow: -7px -1px 11px 8px rgba(00,00,00,0.2);
         }
 
-        .slider iframe{
-            flex: 1 0 100%;
-            scroll-snap-align: start;
-            border: none;
-        }
-        
-        .nav{
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;    
+        .card:not(:first-child){
+            margin-left: -50px;
         }
 
-        .nav a{
-            width: 7rem;
-            height: 4rem;
-            border-radius: .5rem;
-            overflow: hidden;
-            opacity: .7;
-            transition: opacity ease 250ms;
-            box-shadow: 0 1rem 1rem -0.75rem rgba(0,0,0,0.75);
+        .card:hover{
+            transform: translateY(-20px);
         }
 
-        .nav iframe{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .nav a:hover{
-            opacity: 1;
+        .card:hover ~ .card{
+            left: 50px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="wrapper">
-            <div class="slider">
-                <iframe width="218.27" height="250" src="https://www.youtube.com/embed/0A3bGUAajrM?si=3wLGPS6KBAfaJLVF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <iframe id="slide-2" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-3" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-4" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-5" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-6" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-7" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-8" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+    <main>
+        <div class="heading">
+            <h1 class="title">Pure CSS Image Slider</h1>
+        </div>
+
+        <div class="cardContainer">
+            <div class="card">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/0A3bGUAajrM?si=4qlA2S9z1w_ypEAK&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <div class="nav">
-                <a href="#slide-1">
-                <iframe width="218.27" height="300" src="https://www.youtube.com/embed/0A3bGUAajrM?si=3wLGPS6KBAfaJLVF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-2">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-3">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-4">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-5">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-6">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-7">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-8">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                </a>
+            <div class="card">
+                <img src="2.jpg" alt="">
+            </div>
+            <div class="card">
+                <img src="3.jpg" alt="">
+            </div>
+            <div class="card">
+                <img src="4.jpg" alt="">
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
