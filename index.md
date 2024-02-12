@@ -8,154 +8,84 @@ nav_order: 1
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Carousel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Owl Carousel with YouTube Videos</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-<link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
+        main{
+            background: linear-gradient(-45deg, #fc5c7d, #6a82fb);
+            height: 100vh;
+        }
 
-<style>
-.video-section .item {
-    opacity: 0.4;
-    transition: 0.4s ease all;
-    margin: 0 20px;
-    transform: scale(0.8);
-}
+        .heading{
+            color: white;
+            text-align: center;
+            font-family: system-ui;
+            padding-top: 50px;
+        }
 
-@media (max-width: 1000px) {
-    .video-section .item {
-        margin: 0;
-        transform: scale(0.9);
-    }
-}
+        .cardContainer{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
 
-.video-section .active .item {
-    opacity: 1;
-    transform: scale(1);
-}
+        .card{
+            position: relative;
+            left: 0px;
+            width: 150px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
 
-body {
-    margin: 80px 0 0 0;
-}
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: -7px -1px 11px 8px rgba(00,00,00,0.2);
+        }
 
-.video-section .owl-item {
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0) scale(1.0, 1.0);
-}
+        .card:not(:first-child){
+            margin-left: -50px;
+        }
 
-.video-section video {
-    max-width: 100%;
-    height: auto;
-}
-</style>
+        .card:hover{
+            transform: translateY(-20px);
+        }
+
+        .card:hover ~ .card{
+            left: 50px;
+        }
+    </style>
 </head>
 <body>
+    <main>
+        <div class="heading">
+            <h1 class="title">Card Carousel</h1>
+        </div>
 
-<div class="owl-carousel video-section">
-    <div class="item">
-        <div class="js-player" data-video-id="VIDEO_ID_HERE"></div>
-    </div>
-    <div class="item">
-        <div class="js-player" data-video-id="VIDEO_ID_HERE"></div>
-    </div>
-    <div class="item">
-        <div class="js-player" data-video-id="VIDEO_ID_HERE"></div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.min.js"></script>
-
-<script>
-$('.owl-carousel').owlCarousel({
-    stagePadding: 200,
-    loop:true,
-    margin:10,
-    items:1,
-    nav:true,
-    responsive:{
-        0:{
-            items:1,
-            stagePadding: 60
-        },
-        600:{
-            items:1,
-            stagePadding: 100
-        },
-        1000:{
-            items:1,
-            stagePadding: 200
-        },
-        1200:{
-            items:1,
-            stagePadding: 250
-        },
-        1400:{
-            items:1,
-            stagePadding: 300
-        },
-        1600:{
-            items:1,
-            stagePadding: 350
-        },
-        1800:{
-            items:1,
-            stagePadding: 400
-        }
-    }
-});
-
-var playerSettings = {
-    controls : ['play-large'],
-    fullscreen : { enabled: false},
-    resetOnEnd : true,
-    hideControls  :true,
-    clickToPlay:true,
-    keyboard : false,
-}
-
-const players = [];
-
-function onYouTubeIframeAPIReady() {
-    $('.js-player').each(function(index, element) {
-        players[index] = new YT.Player(element, {
-            videoId: $(element).data('video-id'),
-            playerVars: {
-                'autoplay': 0,
-                'controls': 0,
-                'modestbranding': 1,
-                'rel': 0,
-                'playsinline': 1
-            },
-            events: {
-                'onStateChange': function(event) {
-                    if (event.data == YT.PlayerState.PLAYING) {
-                        players.forEach(function(instance, idx) {
-                            if (idx !== index) {
-                                instance.pauseVideo();
-                            }
-                        });
-                    }
-                }
-            }
-        });
-    });
-}
-
-$('.video-section').on('translated.owl.carousel', function(event) {
-    players.forEach(function(instance) {
-        instance.pauseVideo();
-    });
-});
-</script>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-
+        <div class="cardContainer">
+            <div class="card">
+                <img src="https://assets.sorare.com/cardsamplepicture/6b0a07eb-3f2d-4b07-8736-00c12bffe945/picture/tinified-3b4ed56aac2b0255afdd503ed6003513.png" alt="">
+            </div>
+            <div class="card">
+                <img src="https://assets.sorare.com/image-resize/cardsamplepicture/4a68833c-c4a5-4bf8-97cf-32fad77016a2/picture/tinified-8a4f1c0618e4282890610c78a37bcd29.png?width=640" alt="">
+            </div>
+            <div class="card">
+                <img src="https://assets.sorare.com/image-resize/cardsamplepicture/a5970520-bc53-4c22-9854-28b238f97a2f/picture/tinified-036757aec2340e0ea198006e14674a7e.png?width=640" alt="">
+            </div>
+            <div class="card">
+                <img src="https://assets.sorare.com/image-resize/cardsamplepicture/ccb9c8cb-cfe6-414d-bc1e-a3960dfd6232/picture/tinified-4a6382b2a37ad2c0c08e056c95b96888.png?width=640" alt="">
+            </div>
+        </div>
+    </main>
 </body>
 </html>
