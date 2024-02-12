@@ -4,91 +4,101 @@ layout: home
 nav_order: 1
 ---
 
----
-title: Home
-layout: home
-nav_order: 1
----
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Carousel</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Pure CSS Video Slider</title>
     <style>
         *{
-            padding: 0;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-
+        .container{
+            padding: 2rem;
         }
 
-        .heading{
-            color: white;
-            text-align: center;
-            font-family: system-ui;
-            padding-top: 50px;
-        }
-
-        .cardContainer{
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            justify-content: center;
-            margin-top: 100px;
-        }
-
-        .card{
+        .wrapper{
             position: relative;
-            left: 0px;
-            width: 150px;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
+            max-width: 48rem;
+            margin: 0 auto;
         }
 
-        .card img {
+        .slider{
+            display: flex;
+            aspect-ratio: 16/9;
+            overflow: hidden;
             width: 100%;
-            border-radius: 10px;
-            box-shadow: -7px -1px 11px 8px rgba(00,00,00,0.2);
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0 1.5rem 3rem -0.75rem rgba(0,0,0,0.25);
+            border-radius: 0.5rem;
         }
 
-        .card:not(:first-child){
-            margin-left: 0px;
+        .slider iframe{
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            border: none;
+        }
+        
+        .nav{
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;    
         }
 
-        .card:hover{
-            transform: translateY(-20px);
+        .nav a{
+            width: 7rem;
+            height: 4rem;
+            border-radius: .5rem;
+            overflow: hidden;
+            opacity: .7;
+            transition: opacity ease 250ms;
+            box-shadow: 0 1rem 1rem -0.75rem rgba(0,0,0,0.75);
         }
 
-        .card:hover ~ .card{
-            left: 50px;
+        .nav iframe{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nav a:hover{
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <main>
-        <div class="cardContainer">
-            <div class="card">
-               <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <div class="container">
+        <div class="wrapper">
+            <div class="slider">
+                <iframe width="218.27" height="300" src="https://www.youtube.com/embed/0A3bGUAajrM?si=3wLGPS6KBAfaJLVF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe id="slide-2" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                <iframe id="slide-3" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                <iframe id="slide-4" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-            </div>
-            <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-            </div>
-            <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+            <div class="nav">
+                <a href="#slide-1">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                </a>
+                <a href="#slide-2">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                </a>
+                <a href="#slide-3">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                </a>
+                <a href="#slide-4">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+                </a>
             </div>
         </div>
-    </main>
+    </div>
 </body>
 </html>
