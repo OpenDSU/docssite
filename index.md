@@ -3,7 +3,6 @@ title: Home
 layout: home
 nav_order: 1
 ---
-s
 
 
 <!DOCTYPE html>
@@ -12,6 +11,7 @@ s
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carousel with Cards and YouTube Videos</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -75,17 +75,17 @@ s
   <button class="arrow prev" onclick="prevSlide()">&#10094;</button> <!-- Moved the arrow button here -->
   <div class="carousel-inner">
     <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Card 1">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <h3>Card 1</h3>
       <p>This is the first card.</p>
     </div>
     <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Card 2">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <h3>Card 2</h3>
       <p>This is the second card.</p>
     </div>
     <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Card 3">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <h3>Card 3</h3>
       <p>This is the third card.</p>
     </div>
@@ -93,91 +93,25 @@ s
   <button class="arrow next" onclick="nextSlide()">&#10095;</button> <!-- Moved the arrow button here -->
 </div>
 
-<div class="owl-carousel video-section">
-    <div class="item">
-      <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="item">
-      <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="item">
-      <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-</div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
   $(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
-      stagePadding: 200,
+    $('.carousel').owlCarousel({
       loop:true,
       margin:10,
-      items:1,
-      nav:true,
+      nav:false,
       responsive:{
         0:{
-          items:1,
-          stagePadding: 60
+          items:1
         },
         600:{
-          items:1,
-          stagePadding: 100
+          items:2
         },
         1000:{
-          items:1,
-          stagePadding: 200
-        },
-        1200:{
-          items:1,
-          stagePadding: 250
-        },
-        1400:{
-          items:1,
-          stagePadding: 300
-        },
-        1600:{
-          items:1,
-          stagePadding: 350
-        },
-        1800:{
-          items:1,
-          stagePadding: 400
+          items:3
         }
       }
-    });
-
-    var playerSettings = {
-      controls : ['play-large'],
-      fullscreen : { enabled: false},
-      resetOnEnd : true,
-      hideControls  :true,
-      clickToPlay:true,
-      keyboard : false,
-    }
-
-    const players = Plyr.setup('.js-player', playerSettings);
-
-    players.forEach(function(instance,index) {
-      instance.on('play',function(){
-        players.forEach(function(instance1,index1){
-          if(instance != instance1){
-            instance1.pause();
-          }
-        });
-      });
-    });
-
-    $('.video-section').on('translated.owl.carousel', function (event) {
-      players.forEach(function(instance,index1){
-        instance.pause();
-      });
     });
   });
 </script>
@@ -209,4 +143,3 @@ s
 
 </body>
 </html>
-
