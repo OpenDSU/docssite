@@ -10,86 +10,112 @@ nav_order: 1
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Video Carousel</title>
+<title>Popup with Lightbox effect</title>
 <style>
-  .carousel-container {
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .carousel-content {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-
-  .video-container {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  .video-container iframe {
+  #fade {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
     width: 100%;
-    height: auto;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
   }
 
-  .prev, .next {
-    cursor: pointer;
+  #light {
+    display: none;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    left: 50%;
+    max-width: 600px;
+    max-height: 360px;
+    margin-left: -300px;
+    margin-top: -180px;
+    border: 2px solid #FFF;
+    background: #FFF;
+    z-index: 1002;
+    overflow: visible;
+  }
+
+  #boxclose {
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #AEAEAE;
+    border-radius: 3px;
+    background: #222222;
+    font-size: 31px;
     font-weight: bold;
-    z-index: 1;
+    display: inline-block;
+    line-height: 0px;
+    padding: 11px 3px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    z-index: 1002;
+    opacity: 0.9;
   }
 
-  .prev {
-    left: 0;
+  .boxclose:before {
+    content: "×";
   }
 
-  .next {
-    right: 0;
+  #fade:hover ~ #boxclose {
+    display:none;
+  }
+
+  .test:hover ~ .test2 {
+    display: none;
   }
 </style>
 </head>
 <body>
-
-<div class="carousel-container">
-  <div class="carousel-content">
-    <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <!-- Add more video containers as needed -->
-  </div>
-  <a class="prev" onclick="moveCarousel(-1)">&#10094;</a>
-  <a class="next" onclick="moveCarousel(1)">&#10095;</a>
+<div id="light">
+  <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+  <video id="VisaChipCardVideo" width="600" controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      <!--Browser does not support <video> tag -->
+    </video>
 </div>
 
-<script>
-  var slideIndex = 1;
-  showVideo(slideIndex);
+<div id="fade" onClick="lightbox_close();"></div>
 
-  function moveCarousel(n) {
-    showVideo(slideIndex += n);
+<div>
+  <a href="#" onclick="lightbox_open();">Watch video</a>
+</div>
+
+<div class="test">test</div>
+<div class="test2">test2</div>
+
+<script>
+  window.document.onkeydown = function(e) {
+    if (!e) {
+      e = event;
+    }
+    if (e.keyCode == 27) {
+      lightbox_close();
+    }
   }
 
-  function showVideo(n) {
-    var i;
-    var videos = document.getElementsByClassName("video-container");
-    if (n > videos.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = videos.length}
-    for (i = 0; i < videos.length; i++) {
-        videos[i].style.display = "none";
-    }
-    videos[slideIndex-1].style.display = "block";
+  function lightbox_open() {
+    var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+    window.scrollTo(0, 0);
+    document.getElementById('light').style.display = 'block';
+    document.getElementById('fade').style.display = 'block';
+    lightBoxVideo.play();
+  }
+
+  function lightbox_close() {
+    var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+    document.getElementById('light').style.display = 'none';
+    document.getElementById('fade').style.display = 'none';
+    lightBoxVideo.pause();
   }
 </script>
-
 </body>
 </html>
+
