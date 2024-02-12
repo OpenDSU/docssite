@@ -3,10 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
-test11
 
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -23,9 +21,9 @@ test11
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
-        padding-left: 15%; /* Adjust space before videos */
-        padding-right: 15%; /* Adjust space after videos */
-        width: 70%; /* Adjust width of the video slider */
+        padding-left: 0%; /* Adjust space before videos */
+        padding-right: 0%; /* Adjust space after videos */
+        width: 98%; /* Adjust width of the video slider */
         margin: 0 auto; /* Center the video slider */
     }
     
