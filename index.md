@@ -23,7 +23,7 @@ nav_order: 1
         transition: transform 0.3s ease;
         padding-left: 0%; /* Adjust space before videos */
         padding-right: 0%; /* Adjust space after videos */
-        width: 98%; /* Adjust width of the video slider */
+        width: 70%; /* Adjust width of the video slider */
         margin: 0 auto; /* Center the video slider */
     }
     
