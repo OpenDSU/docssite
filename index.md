@@ -3,75 +3,210 @@ title: Home
 layout: home
 nav_order: 1
 ---
-tee
+s
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrollable Cards</title>
-  <style>
-    .scroll-container {
-      width: 100%;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      white-space: nowrap;
-      padding: 20px 0;
-      position: relative;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carousel with Cards and YouTube Videos</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
 
-    .card {
-      display: inline-block;
-      width: 300px;
-      height: 200px;
-      background-color: #f0f0f0;
-      margin: 0 10px;
-    }
+  .carousel {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+  }
 
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: purple;
-      color: white;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      z-index: 1;
-    }
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
 
-    .arrow-left {
-      left: 0;
-    }
+  .card {
+    flex: 0 0 33.33%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 0 10px;
+    box-sizing: border-box;
+  }
 
-    .arrow-right {
-      right: 0;
-    }
-  </style>
+  .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: -40px; /* Adjusted from -50px to -40px */
+  }
+
+  .next {
+    right: -40px; /* Adjusted from -50px to -40px */
+  }
+</style>
 </head>
 <body>
-  <div class="scroll-container">
-    <div class="arrow arrow-left">&lt;</div>
-    <div class="card">Video 1: Insert YouTube Video Here</div>
-    <div class="card">Video 2: Insert YouTube Video Here</div>
-    <div class="card">Video 3: Insert YouTube Video Here</div>
-    <div class="arrow arrow-right">&gt;</div>
+
+<div class="carousel">
+  <button class="arrow prev" onclick="prevSlide()">&#10094;</button> <!-- Moved the arrow button here -->
+  <div class="carousel-inner">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 1">
+      <h3>Card 1</h3>
+      <p>This is the first card.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 2">
+      <h3>Card 2</h3>
+      <p>This is the second card.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 3">
+      <h3>Card 3</h3>
+      <p>This is the third card.</p>
+    </div>
   </div>
+  <button class="arrow next" onclick="nextSlide()">&#10095;</button> <!-- Moved the arrow button here -->
+</div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const container = document.querySelector('.scroll-container');
-      const scrollStep = 300; // Adjust scroll step as per your card width
+<div class="owl-carousel video-section">
+    <div class="item">
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item">
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item">
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+</div>
 
-      document.querySelector('.arrow-left').addEventListener('click', function() {
-        container.scrollBy(-scrollStep, 0);
-      });
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      stagePadding: 200,
+      loop:true,
+      margin:10,
+      items:1,
+      nav:true,
+      responsive:{
+        0:{
+          items:1,
+          stagePadding: 60
+        },
+        600:{
+          items:1,
+          stagePadding: 100
+        },
+        1000:{
+          items:1,
+          stagePadding: 200
+        },
+        1200:{
+          items:1,
+          stagePadding: 250
+        },
+        1400:{
+          items:1,
+          stagePadding: 300
+        },
+        1600:{
+          items:1,
+          stagePadding: 350
+        },
+        1800:{
+          items:1,
+          stagePadding: 400
+        }
+      }
+    });
 
-      document.querySelector('.arrow-right').addEventListener('click', function() {
-        container.scrollBy(scrollStep, 0);
+    var playerSettings = {
+      controls : ['play-large'],
+      fullscreen : { enabled: false},
+      resetOnEnd : true,
+      hideControls  :true,
+      clickToPlay:true,
+      keyboard : false,
+    }
+
+    const players = Plyr.setup('.js-player', playerSettings);
+
+    players.forEach(function(instance,index) {
+      instance.on('play',function(){
+        players.forEach(function(instance1,index1){
+          if(instance != instance1){
+            instance1.pause();
+          }
+        });
       });
     });
-  </script>
+
+    $('.video-section').on('translated.owl.carousel', function (event) {
+      players.forEach(function(instance,index1){
+        instance.pause();
+      });
+    });
+  });
+</script>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.card');
+
+  function showSlide(index) {
+    if (index < 0) {
+      currentIndex = slides.length - 1;
+    } else if (index >= slides.length) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+</script>
+
 </body>
 </html>
 
