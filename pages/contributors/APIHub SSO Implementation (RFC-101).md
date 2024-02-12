@@ -264,22 +264,22 @@ Note: The settings for /apihub-root/external-volume/config/domains/<domain>epi.j
 In /apihub-root/external-volume/config/domains/<domain>epi.json add below section:
 
 ````
-"skipOAuth": [ <br>
- "/bricking/<domain>epi/get-brick", <br>
- "/anchor/<domain>epi/get-last-version", <br>
- "/gtinOwner/<domain>epi", <br>
- "/leaflets/<domain>epi" <br>
-]
+  "skipOAuth": [
+ "/bricking/<domain>epi/get-brick",
+ "/anchor/<domain>epi/get-last-version",
+ "/gtinOwner/<domain>epi",
+ "/leaflets/<domain>epi"
+  ]
 ````
 
 In /apihub-root/external-volume/config/domains/<subdomain>epi.json add below section:
 
 ````
-"skipOAuth": [ <br>
- "/bricking/<subdomain>epi/get-brick", <br> 
- "/anchor/<subdomain>epi/get-last-version", <br>
- "/gtinOwner/<subdomain>epi", <br>
- "/leaflets/<subdomain>epi" <br>
+"skipOAuth": [ 
+ "/bricking/<subdomain>epi/get-brick",  
+ "/anchor/<subdomain>epi/get-last-version", 
+ "/gtinOwner/<subdomain>epi", 
+ "/leaflets/<subdomain>epi" 
 ]
 ````
 
