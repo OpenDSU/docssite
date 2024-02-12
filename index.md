@@ -5,84 +5,76 @@ nav_order: 1
 ---
 
 
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Carousel</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Carousel</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+  }
 
+  .carousel-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
 
-        }
+  .carousel {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    animation: rotate 10s linear infinite;
+  }
 
-        .heading{
-            color: white;
-            text-align: center;
-            font-family: system-ui;
-            padding-top: 50px;
-        }
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
-        .cardContainer{
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            justify-content: center;
-            margin-top: 100px;
-        }
+  @keyframes rotate {
+    from {
+      transform: translateX(-50%) translateY(-50%) rotateY(0deg);
+    }
+    to {
+      transform: translateX(-50%) translateY(-50%) rotateY(360deg);
+    }
+  }
 
-        .card{
-            position: relative;
-            left: 0px;
-            width: 150px;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: -7px -1px 11px 8px rgba(00,00,00,0.2);
-        }
-
-        .card:not(:first-child){
-            margin-left: -1px;
-        }
-
-        .card:hover{
-            transform: translateY(-20px);
-        }
-
-        .card:hover ~ .card{
-            left: 50px;
-        }
-    </style>
+</style>
 </head>
 <body>
-    <main>
-        <div class="cardContainer">
-            <div class="card">
-               <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="carousel-container">
+  <div class="carousel">
+    <img src="https://via.placeholder.com/300x200?text=Image+1" alt="Image 1">
+    <img src="https://via.placeholder.com/300x200?text=Image+2" alt="Image 2">
+    <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Image 3">
+    <img src="https://via.placeholder.com/300x200?text=Image+4" alt="Image 4">
+  </div>
+</div>
 
-            </div>
-            <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<script>
+  const carousel = document.querySelector('.carousel');
+  const images = carousel.children;
 
-            </div>
-            <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  const spacing = 360 / images.length;
 
-            </div>
-            <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-            </div>
-        </div>
-    </main>
+  for (let i = 0; i < images.length; i++) {
+    images[i].style.transform = `rotateY(${i * spacing}deg) translateZ(200px)`;
+  }
+</script>
 </body>
 </html>
+
