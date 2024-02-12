@@ -9,96 +9,57 @@ nav_order: 1
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Pure CSS Video Slider</title>
+    <title>Video Slider</title>
+    <!-- Glider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css">
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        .container{
-            padding: 2rem;
-        }
-
-        .wrapper{
-            position: relative;
-            max-width: 48rem;
-            margin: 0 auto;
-        }
-
-        .slider{
-            display: flex;
-            aspect-ratio: 16/9;
+        
+        .glider {
             overflow: hidden;
-            width: 100%;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            box-shadow: 0 1.5rem 3rem -0.75rem rgba(0,0,0,0.25);
-            border-radius: 0.5rem;
-        }
-
-        .slider iframe{
-            flex: 1 0 100%;
-            scroll-snap-align: start;
-            border: none;
+            white-space: nowrap;
         }
         
-        .nav{
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;    
-        }
-
-        .nav a{
-            width: 7rem;
-            height: 4rem;
-            border-radius: .5rem;
-            overflow: hidden;
-            opacity: .7;
-            transition: opacity ease 250ms;
-            box-shadow: 0 1rem 1rem -0.75rem rgba(0,0,0,0.75);
-        }
-
-        .nav iframe{
+        .glider video {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .nav a:hover{
-            opacity: 1;
+            max-width: 300px; /* Adjust as needed */
+            display: inline-block;
+            vertical-align: top;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="wrapper">
-            <div class="slider">
-                <iframe id="slide-1" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-2" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-3" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-                <iframe id="slide-4" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="nav">
-                <a href="#slide-1">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-2">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-3">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-                </a>
-                <a href="#slide-4">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-                </a>
-            </div>
-        </div>
+    <div class="glider">
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Add more <video> elements for each video -->
     </div>
+
+    <!-- Glider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Glider(document.querySelector('.glider'), {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+        });
+    </script>
 </body>
 </html>
