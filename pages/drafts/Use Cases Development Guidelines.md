@@ -19,6 +19,33 @@ early draft
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
+<!-- TOC -->
+* [Use Cases Development Guidelines](#use-cases-development-guidelines)
+* [Abstract](#abstract)
+* [1. Big Picture](#1-big-picture)
+  * [2.1. Development Process from the OpenDSU Perspective](#21-development-process-from-the-opendsu-perspective)
+* [DSU Types](#dsu-types-)
+    * [Access control table (defines communication lines between agents)](#access-control-table-defines-communication-lines-between-agents)
+    * [DSU Mounting Relationships](#dsu-mounting-relationships)
+    * [Shared DSUs with Statuses (micro-ledgers)](#shared-dsus-with-statuses-micro-ledgers)
+    * [Choose a Blockchain Domain for the Use Case](#choose-a-blockchain-domain-for-the-use-case)
+    * [Agents](#agents)
+* [3. Generic components for all use cases](#3-generic-components-for-all-use-cases)
+  * [Agents](#agents-1)
+    * [Edge Agent](#edge-agent)
+    * [Cloud Agents](#cloud-agents)
+  * [DSU Wizard](#dsu-wizard)
+* [4. The standard model of operations](#4-the-standard-model-of-operations)
+* [5. Annexes (examples/diagrams)](#5-annexes-examplesdiagrams)
+  * [5.1. Major components](#51-major-components)
+  * [5.2. Indirect and direct participants](#52-indirect-and-direct-participants)
+  * [5.3. Generic Architecture](#53-generic-architecture)
+  * [5.4. ePI Architecture](#54-epi-architecture)
+  * [5.5. DSU Model design example](#55-dsu-model-design-example)
+  * [5.6. Other use cases](#56-other-use-cases)
+  * [5.7. Control tower](#57-control-tower)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 # Abstract
 The purpose of this document is to summarize a general approach that use-case implementation can be used to develop projects using OpenDSU. Besides providing insights on the development phases, this document opens the black box represented by the blockchain and the DSU Storages by explaining how the integration with the legacy system should work.
 
@@ -137,6 +164,15 @@ AnchorIDs are stored on the ePI Blockchain (Consortium Blockchain). The ePI Bloc
 
 ## 5.7. Control tower
 
+
+
+**Contributors**
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 # Annex 1. Contributors
 
