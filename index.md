@@ -10,112 +10,113 @@ nav_order: 1
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Popup with Lightbox effect</title>
+<title>Carousel with Cards</title>
 <style>
-  #fade {
-    display: none;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 1001;
-    -moz-opacity: 0.8;
-    opacity: .80;
-    filter: alpha(opacity=80);
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
   }
 
-  #light {
-    display: none;
+  .carousel {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .card {
+    flex: 0 0 33.33%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .arrow {
     position: absolute;
     top: 50%;
-    left: 50%;
-    max-width: 600px;
-    max-height: 360px;
-    margin-left: -300px;
-    margin-top: -180px;
-    border: 2px solid #FFF;
-    background: #FFF;
-    z-index: 1002;
-    overflow: visible;
-  }
-
-  #boxclose {
-    float: right;
-    cursor: pointer;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #333;
     color: #fff;
-    border: 1px solid #AEAEAE;
-    border-radius: 3px;
-    background: #222222;
-    font-size: 31px;
-    font-weight: bold;
-    display: inline-block;
-    line-height: 0px;
-    padding: 11px 3px;
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    z-index: 1002;
-    opacity: 0.9;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
   }
 
-  .boxclose:before {
-    content: "×";
+  .prev {
+    left: -50px;
   }
 
-  #fade:hover ~ #boxclose {
-    display:none;
-  }
-
-  .test:hover ~ .test2 {
-    display: none;
+  .next {
+    right: -50px;
   }
 </style>
 </head>
 <body>
-<div id="light">
-  <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
-  <video id="VisaChipCardVideo" width="600" controls>
-      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      <!--Browser does not support <video> tag -->
-    </video>
+
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 1">
+      <h3>Card 1</h3>
+      <p>This is the first card.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 2">
+      <h3>Card 2</h3>
+      <p>This is the second card.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 3">
+      <h3>Card 3</h3>
+      <p>This is the third card.</p>
+    </div>
+  </div>
+  <button class="arrow prev" onclick="prevSlide()">&#10094;</button>
+  <button class="arrow next" onclick="nextSlide()">&#10095;</button>
 </div>
-
-<div id="fade" onClick="lightbox_close();"></div>
-
-<div>
-  <a href="#" onclick="lightbox_open();">Watch video</a>
-</div>
-
-<div class="test">test</div>
-<div class="test2">test2</div>
 
 <script>
-  window.document.onkeydown = function(e) {
-    if (!e) {
-      e = event;
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.card');
+
+  function showSlide(index) {
+    if (index < 0) {
+      currentIndex = slides.length - 1;
+    } else if (index >= slides.length) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
     }
-    if (e.keyCode == 27) {
-      lightbox_close();
-    }
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
   }
 
-  function lightbox_open() {
-    var lightBoxVideo = document.getElementById("VisaChipCardVideo");
-    window.scrollTo(0, 0);
-    document.getElementById('light').style.display = 'block';
-    document.getElementById('fade').style.display = 'block';
-    lightBoxVideo.play();
+  function prevSlide() {
+    showSlide(currentIndex - 1);
   }
 
-  function lightbox_close() {
-    var lightBoxVideo = document.getElementById("VisaChipCardVideo");
-    document.getElementById('light').style.display = 'none';
-    document.getElementById('fade').style.display = 'none';
-    lightBoxVideo.pause();
+  function nextSlide() {
+    showSlide(currentIndex + 1);
   }
 </script>
+
 </body>
 </html>
+
 
