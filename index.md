@@ -8,138 +8,154 @@ nav_order: 1
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Cards and YouTube Videos</title>
+<title>Owl Carousel with YouTube Videos</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
+
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-  }
+.video-section .item {
+    opacity: 0.4;
+    transition: 0.4s ease all;
+    margin: 0 20px;
+    transform: scale(0.8);
+}
 
-  .carousel {
-    width: 80%;
-    margin: 50px auto;
-    position: relative;
-    overflow: hidden;
-  }
+@media (max-width: 1000px) {
+    .video-section .item {
+        margin: 0;
+        transform: scale(0.9);
+    }
+}
 
-  .carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
+.video-section .active .item {
+    opacity: 1;
+    transform: scale(1);
+}
 
-  .card {
-    flex: 0 0 33.33%;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    margin: 0 10px;
-    box-sizing: border-box;
-  }
+body {
+    margin: 80px 0 0 0;
+}
 
-  .card img {
-    width: 100%;
+.video-section .owl-item {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+.video-section video {
+    max-width: 100%;
     height: auto;
-    border-bottom: 1px solid #ccc;
-  }
-
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1;
-  }
-
-  .prev {
-    left: -40px; /* Adjusted from -50px to -40px */
-  }
-
-  .next {
-    right: -40px; /* Adjusted from -50px to -40px */
-  }
+}
 </style>
 </head>
 <body>
 
-<div class="carousel">
-  <button class="arrow prev" onclick="prevSlide()">&#10094;</button> <!-- Moved the arrow button here -->
-  <div class="carousel-inner">
-    <div class="card">
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3>Card 1</h3>
-      <p>This is the first card.</p>
+<div class="owl-carousel video-section">
+    <div class="item">
+        <div class="js-player" data-video-id="VIDEO_ID_HERE"></div>
     </div>
-    <div class="card">
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3>Card 2</h3>
-      <p>This is the second card.</p>
+    <div class="item">
+        <div class="js-player" data-video-id="VIDEO_ID_HERE"></div>
     </div>
-    <div class="card">
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3>Card 3</h3>
-      <p>This is the third card.</p>
+    <div class="item">
+        <div class="js-player" data-video-id="VIDEO_ID_HERE"></div>
     </div>
-  </div>
-  <button class="arrow next" onclick="nextSlide()">&#10095;</button> <!-- Moved the arrow button here -->
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.min.js"></script>
+
 <script>
-  $(document).ready(function(){
-    $('.carousel').owlCarousel({
-      loop:true,
-      margin:10,
-      nav:false,
-      responsive:{
+$('.owl-carousel').owlCarousel({
+    stagePadding: 200,
+    loop:true,
+    margin:10,
+    items:1,
+    nav:true,
+    responsive:{
         0:{
-          items:1
+            items:1,
+            stagePadding: 60
         },
         600:{
-          items:2
+            items:1,
+            stagePadding: 100
         },
         1000:{
-          items:3
+            items:1,
+            stagePadding: 200
+        },
+        1200:{
+            items:1,
+            stagePadding: 250
+        },
+        1400:{
+            items:1,
+            stagePadding: 300
+        },
+        1600:{
+            items:1,
+            stagePadding: 350
+        },
+        1800:{
+            items:1,
+            stagePadding: 400
         }
-      }
-    });
-  });
-</script>
-
-<script>
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('.card');
-
-  function showSlide(index) {
-    if (index < 0) {
-      currentIndex = slides.length - 1;
-    } else if (index >= slides.length) {
-      currentIndex = 0;
-    } else {
-      currentIndex = index;
     }
-    const offset = -currentIndex * 100;
-    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
-  }
+});
 
-  function prevSlide() {
-    showSlide(currentIndex - 1);
-  }
+var playerSettings = {
+    controls : ['play-large'],
+    fullscreen : { enabled: false},
+    resetOnEnd : true,
+    hideControls  :true,
+    clickToPlay:true,
+    keyboard : false,
+}
 
-  function nextSlide() {
-    showSlide(currentIndex + 1);
-  }
+const players = [];
+
+function onYouTubeIframeAPIReady() {
+    $('.js-player').each(function(index, element) {
+        players[index] = new YT.Player(element, {
+            videoId: $(element).data('video-id'),
+            playerVars: {
+                'autoplay': 0,
+                'controls': 0,
+                'modestbranding': 1,
+                'rel': 0,
+                'playsinline': 1
+            },
+            events: {
+                'onStateChange': function(event) {
+                    if (event.data == YT.PlayerState.PLAYING) {
+                        players.forEach(function(instance, idx) {
+                            if (idx !== index) {
+                                instance.pauseVideo();
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    });
+}
+
+$('.video-section').on('translated.owl.carousel', function(event) {
+    players.forEach(function(instance) {
+        instance.pauseVideo();
+    });
+});
 </script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
 
 </body>
 </html>
