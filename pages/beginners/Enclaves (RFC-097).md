@@ -86,13 +86,51 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
+
 * [Abstract](#abstract)
 * [1. OpenDSU SDK: “enclave” API Space](#1-opendsu-sdk-enclave-api-space)
   * [1.1 Enclave methods](#11-enclave-methods)
     * [1.1.1 Elements access control](#111-elements-access-control)
   * [1.2. Access Control Enclave Methods](#12-access-control-enclave-methods)
     * [Function getDID(callback)](#function-getdidcallback)
+    * [Function grantWriteAccess(forDID, callback)](#function-grantwriteaccessfordid-callback)
+    * [Function grantReadAccess(forDID, callback)](#function-grantreadaccessfordid-callback)
+    * [Function RevokeWriteAccess(forDID, callback)](#function-revokewriteaccessfordid-callback)
+    * [Function RevokeReadAccess(forDID, callback)](#function-revokereadaccessfordid-callback)
+  * [1.3. Use enclaves as Databases](#13-use-enclaves-as-databases)
+    * [Function insertRecord(forDID,  table, pk, plainRecord, encRecord, callback)](#function-insertrecordfordid-table-pk-plainrecord-encrecord-callback)
+    * [Function getRecord(forDID, table, pk, callback)](#function-getrecordfordid-table-pk-callback)
+    * [Function filterRecords(forDID, table, filter, sort, max, callback)](#function-filterrecordsfordid-table-filter-sort-max-callback)
+    * [Function deleteRecord(forDID, table, pk, callback)](#function-deleterecordfordid-table-pk-callback)
+    * [Function updateRecords(forDID, table, pk, record, callback)](#function-updaterecordsfordid-table-pk-record-callback)
+  * [1.4. Use enclaves as Message Queues (experimental features)](#14-use-enclaves-as-message-queues-experimental-features)
+    * [Function addlnQueue(forDID, queueName, encryptedObject, callback)](#function-addlnqueuefordid-queuename-encryptedobject-callback)
+    * [Function queueSize(forDID, queueName, callback)](#function-queuesizefordid-queuename-callback)
+    * [Function listQueue(forDID, queueName, sortAfterInsertTime, onlyFirstN, callback)](#function-listqueuefordid-queuename-sortafterinserttime-onlyfirstn-callback)
+    * [Function getObjectFromQueue(forDID, queueName, hash, callback)](#function-getobjectfromqueuefordid-queuename-hash-callback)
+    * [Function deleteObjectFromQueue(forDID, queueName, hash, callback)](#function-deleteobjectfromqueuefordid-queuename-hash-callback)
+  * [1.5. Use enclaves as Key Management Systems](#15-use-enclaves-as-key-management-systems)
+    * [Function storeKeySSI(forDID,  keySSI, callback)](#function-storekeyssifordid-keyssi-callback)
+    * [Function createSeedSSI(forDID, hint, callback)](#function-createseedssifordid-hint-callback)
+    * [Function storeDID(forDID, storedDID, privateKeys)](#function-storedidfordid-storeddid-privatekeys)
+    * [Function generateDID(forDID, didMethod,...args)](#function-generatedidfordid-didmethodargs)
+    * [Function storePrivateKey(forDID, privateKey, type, alias)](#function-storeprivatekeyfordid-privatekey-type-alias)
+    * [Function storeSecretKey(forDID, secretKey, alias)](#function-storesecretkeyfordid-secretkey-alias)
+    * [Function generateSecretKey(forDID, secretKeyAlias)](#function-generatesecretkeyfordid-secretkeyalias)
+  * [1.6. Cryptographic functionality offered by enclaves](#16-cryptographic-functionality-offered-by-enclaves)
+    * [Function signForDID(forDID, didThatIsSigning, hash)](#function-signfordidfordid-didthatissigning-hash)
+    * [Function signForKeySSI(forDID, keySSIThatIsSigning, hash)](#function-signforkeyssifordid-keyssithatissigning-hash)
+    * [Function encryptAES(forDID, secretKeyAlias, message, AESParams)](#function-encryptaesfordid-secretkeyalias-message-aesparams)
+    * [Function decryptAES(forDID, secretKeyAlias, encryptedMessage, AESParams)](#function-decryptaesfordid-secretkeyalias-encryptedmessage-aesparams)
+    * [Function encryptMessage(forDID, didFrom, didTo, message)](#function-encryptmessagefordid-didfrom-didto-message)
+    * [Function decryptMessage(forDID, didTo, encryptedMessage, callback)](#function-decryptmessagefordid-didto-encryptedmessage-callback)
+  * [1.7. KeySSI specific functions](#17-keyssi-specific-functions)
+    * [Function storeReadForAliasSSI(forDID, sReadSSI, aliasSSI, callback)](#function-storereadforaliasssifordid-sreadssi-aliasssi-callback)
+    * [Function getReadForKeySSI(forDID, keySSI, callback)](#function-getreadforkeyssifordid-keyssi-callback)
+  * [1.8. DSU Resolver specific functions](#18-dsu-resolver-specific-functions)
 <!-- TOC -->
+
+
 
 
 
@@ -213,7 +251,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
             <li>elementAlias can be a specific value (the name or alias of a specific element as string) or  the "*" wildcard</li>
             <li>accesType can be “read” or “write” </li>
         </ol>
-<li>revokeAccess(forDID, elementType, elementAlias, accesType, adminSignature, callback)</li>
+ <li>revokeAccess(forDID, elementType, elementAlias, accesType, adminSignature, callback)</li>
 </ol>
 
 
@@ -359,7 +397,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | callback | function | *required | Callback function.                  |
 
 
-*Callback parameters**
+**Callback parameters**
 
 | **Name** | **Type** | **Response example**                                                                                                                    |
 |:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
@@ -396,7 +434,7 @@ When we refer to enclaves used as a communication system through Message Queues,
 * addInQueue(forDID, queueName, encryptedObject, callback) 
 * queueSize(forDID, queueName, callback)
 * listQueue(forDID, queueName, sortAfterInsertTime, onlyFirstN, callback) 
-* * returns a list of hashes for onlyFirstN messages
+   * returns a list of hashes for onlyFirstN messages
 * getObjectFromQueue(forDID, queueName, hash,callback)
 * deleteObjectFromQueue(forDID, queueName, hash,callback)
 
@@ -572,7 +610,7 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 
 
-##3 Function storeDID(forDID, storedDID, privateKeys)
+### Function storeDID(forDID, storedDID, privateKeys)
 
 **Description**:  Function used to store a DID.
 
@@ -653,8 +691,226 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type**                                                                                                                                  | **Response example**                                                                                                            |
-|:---------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      |Error message for errors that occurred during the execution of the call. err is undefined, the stored secret key is returned    |
-| key      | any                                                                                                                                       | The stored private key.                                                                                                         |
+| **Name** | **Type** | **Response example**                                                                                                            |
+|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the stored secret key is returned.|
+| key      | any      | The stored secret key.                                                                                                          |   
 
+
+### Function generateSecretKey(forDID, secretKeyAlias)
+
+
+**Description:** Generate and store a 32 bytes secret encryption key.
+
+
+| **Name**       | **Type** | **Value** | **Description**                                                      |
+|:---------------|:---------|:----------|:---------------------------------------------------------------------|
+| forDID         | string   | *required | DID of the user executing the call.                                  |
+| secretKeyAlias | string   | optional  | Secrete key identifier, will be randomly generated if not specified. |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                                                                                |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the generated secret key is returned. |
+| key      | any      | The generated secret key.                                                                                                           |   
+
+
+
+## 1.6. Cryptographic functionality offered by enclaves
+
+* signForDID(forDID, didThatIsSigning, hash)
+* keySSISign(forDID, keySSIThatIsSigning, hash)
+* encryptAES(forDID, secretKeyAlias, message, AESParams)
+* encryptMessage(forDID, didFrom, didTo, message)
+* decryptMessage(forDID, didTo, encryptedMessage, callback)
+
+
+
+### Function signForDID(forDID, didThatIsSigning, hash)
+
+**Description:** Method that signs a message with the private key of the DID document.
+
+
+| **Name**         | **Type** | **Value** | **Description**      |
+|:-----------------|:---------|:----------|:---------------------|
+| forDID           | string   | optional  | DID to sign for.     |
+| didThatIsSigning | object   | *required | DID that is signing. |
+| hash             | string   | *required | Data to signed.      |
+| callback         | function | *required | Callback function.   |
+
+**Callback parameters**
+
+| **Name**  | **Type** | **Response example**                                                                                                      |
+|:----------|:---------|:--------------------------------------------------------------------------------------------------------------------------|
+| err       | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the signature is retrieved. |
+| signature | any      | The signed hash.                                                                                                          |   
+
+
+### Function signForKeySSI(forDID, keySSIThatIsSigning, hash)
+
+**Description:** Method that signs a message with the keySSI.
+
+
+| **Name**            | **Type** | **Value** | **Description**                     |
+|:--------------------|:---------|:----------|:------------------------------------|
+| forDID              | string   | optional  | DID of the user executing the call. |
+| keySSIThatIsSigning | object   | *required | key SSI to sign the message with    |
+| hash                | string   | *required | Data to  be sign.                   |
+| callback            | function | *required | Callback function.                  |
+
+**Callback parameters**
+
+| **Name**  | **Type**  | **Response example**                                                                                                      |
+|:----------|:----------|:--------------------------------------------------------------------------------------------------------------------------|
+| err       | any       | Error message for errors that occurred during the execution of the call. If err is undefined, the signature is retrieved. |
+| signature | any       | The signed hash.                                                                                                          |                   
+
+
+
+### Function encryptAES(forDID, secretKeyAlias, message, AESParams)
+
+**Description:** Function that encrypts the message with the secret key stored under the specified alias.
+
+
+| **Name**       | **Type** | **Value** | **Description**                                                                    |
+|:---------------|:---------|:----------|:-----------------------------------------------------------------------------------|
+| forDID         | string   | *required | DID of the user executing the call.                                                |
+| secretKeyAlias | string   | *required | The identifier of the stored secret key to be used for encryption.                 |
+| message        | string   | *required | Message to encrypt.                                                                |
+| AESParams      | object   | optional  | Encryption options                                                                 |
+| callback       | function | *required | Callback function.                                                                 |
+
+**Callback parameters**
+
+| **Name** | **Type**  | **Response example**                                                                                                              |
+|:---------|:----------|:----------------------------------------------------------------------------------------------------------------------------------|
+| err      | any       | Error message for errors that occurred during the execution of the call. If err is undefined, the encrypted message was received. |
+| message  | any       | The encrypted message.                                                                                                            |
+
+
+
+### Function decryptAES(forDID, secretKeyAlias, encryptedMessage, AESParams)
+
+**Description:** Function that decrypts the message using the secret key stored under the specified alias.
+
+
+| **Name**         | **Type** | **Value** | **Description**                                                    |
+|:-----------------|:---------|:----------|:-------------------------------------------------------------------|
+| forDID           | string   | *required | DID of the user executing the call.                                |
+| secretKeyAlias   | string   | *required | The identifier of the stored secret key to be used for decryption. |
+| encryptedMessage | string   | *required | Message to encrypt.                                                |
+| AESParams        | object   | optional  | Decryption options                                                 |
+| callback         | function | *required | Callback function.                                                 |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                     |
+|:---------|:---------|:-------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. |
+| message  | any      | The decrypted message.                                                   |
+
+
+### Function encryptMessage(forDID, didFrom, didTo, message)
+
+**Description:** Method that encrypts the message with the public key of the receiving DID.
+
+
+| **Name** | **Type** | **Value** | **Description**                       |
+|:---------|:---------|:----------|:--------------------------------------|
+| forDID   | string   | optional  | DID of the user executing the call.   |
+| didForm  | object   | *required | DID that encrypts the message.        |
+| didTo    | object   | *required | DID to receive the encrypted message. |
+| message  | any      | *required | Data to be encrypted.                 |
+| callback | function | *required | Callback function.                    |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                                                                              |
+|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the encrypted message was received. |
+| message  | any      | The encrypted message.                                                                                                            |
+
+
+### Function decryptMessage(forDID, didTo, encryptedMessage, callback)
+
+**Description:** Method that decrypts the message with the private key of the receiving DID.
+
+
+| **Name** | **Type** | **Value** | **Description**                     |
+|:---------|:---------|:----------|:------------------------------------|
+| forDID   | string   | optional  | DID of the user executing the call. |
+| didTo    | object   | *required | DID that encrypts the message.      |
+| message  | any      | *required | Encrypted data.                     |
+| callback | function | *required | Callback function.                  |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                                                                              |
+|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the decrypted message was received  |
+| message  | any      | TheThe decrypted message.                                                                                                         |                                                                 
+
+
+## 1.7. KeySSI specific functions
+
+* storeKeySSI(forDID, keySSI, callback) - already described here
+* storeReadForAliasSSI(forDID, sReadSSI, aliasSSI, callback)
+* getReadForKeySSI(forDID, keySSI, callback)
+* signForKeySSI(forDID, keySSI, hash, callback) - already described here
+
+Enclaves also expose the whole keySSI API. 
+
+<p style='text-align: justify;'>More information about this api can be found in <a href="https://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">RFC-068</a>
+</p>
+
+
+
+### Function storeReadForAliasSSI(forDID, sReadSSI, aliasSSI, callback)
+
+**Description:** Method that stores a sReadSSI under the specified alias.
+
+
+| **Name** | **Type** | **Value** | **Description**                     |
+|:---------|:---------|:----------|:------------------------------------|
+| forDID   | string   | optional  | DID of the user executing the call. |
+| sReadSSI | string   | *required | sReadSSI to store under aliasSSI.   |
+| aliasSSI | string   | *required | AliasSSI for sReadSSI.              |
+| callback | function | *required | Callback function.                  |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                                                                    |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the sReadSSI was stored.  | 
+
+
+### Function getReadForKeySSI(forDID, keySSI, callback)
+
+**Description:** Method that provides a sReadSSI for a specified keySSI.
+
+
+
+| **Name** | **Type** | **Value** | **Description**                            |
+|:---------|:---------|:----------|:-------------------------------------------|
+| forDID   | string   | optional  | DID of the user executing the call.        |
+| keySSI   | object   | *required | KeySSI for which to generate the sReadSSI. |
+| callback | function | *required | Callback function.                         |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                                                                      |
+|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the sReadSSI was retrieved. |
+| sReadSSI | any      | The read for the keySSI.                                                                                                  |
+
+## 1.8. DSU Resolver specific functions
+
+* createDSU(forDID, keySSI, options, callback)
+* loadDSU(forDID, keySSI, options, callback)
