@@ -261,7 +261,8 @@ In the figure above, we can see how Demiurge deletes/deactivates a secret. Start
 Note: The settings for /apihub-root/external-volume/config/domains/<domain>epi.json and /apihub-root/external-volume/config/domains/<subdomain>epi.json are already set by default by helm-chart version 0.5.11+ 4
 </p>
 
-In /apihub-root/external-volume/config/domains/<domain>epi.json add below section: <br>
+In /apihub-root/external-volume/config/domains/<domain>epi.json add below section:
+
 ````
 "skipOAuth": [ <br>
  "/bricking/<domain>epi/get-brick", <br>
@@ -271,7 +272,7 @@ In /apihub-root/external-volume/config/domains/<domain>epi.json add below sectio
 ]
 ````
 
-In /apihub-root/external-volume/config/domains/<subdomain>epi.json add below section: <br>
+In /apihub-root/external-volume/config/domains/<subdomain>epi.json add below section:
 
 ````
 "skipOAuth": [ <br>
@@ -293,6 +294,7 @@ Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need t
   ]
 ````
 
+<br>
 <span style="color:red">Note: Below client configuration is not required. Make sure that the ‘oauthEnabled’ flag is set to ‘false’ in oauthConfig.js. </span> 
 
 * apihub-root/external-volume/config/oauthConfig.js : 
