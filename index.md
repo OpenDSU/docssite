@@ -3,7 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-testabc
+testabcx
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +69,7 @@ testabc
 <body>
 <div class="video-container">
     <button class="prev" onclick="scrollVideos(-1)">❮</button>
-    <div class="video-row">
+    <div class="video-row" id="videoRow">
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
             <iframe src="URL_OF_VIDEO_1" frameborder="0" allowfullscreen></iframe>
@@ -90,26 +90,13 @@ testabc
 
 <script>
     function scrollVideos(direction) {
-        const videoContainer = document.querySelector('.video-container');
-        const videoRow = document.querySelector('.video-row');
-        const videoItems = document.querySelectorAll('.video-item');
-        const numVideos = videoItems.length;
-        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
-        const containerWidth = numVideos * videoWidth;
+        const videoRow = document.getElementById('videoRow');
+        const videoWidth = videoRow.offsetWidth;
+        const scrollAmount = direction * videoWidth;
 
-        let newPosition = -parseInt(window.getComputedStyle(videoRow).transform.split(',')[4]);
-        newPosition += direction * videoWidth;
-
-        if (newPosition < 0) {
-            newPosition = 0;
-        } else if (newPosition > containerWidth - videoContainer.offsetWidth) {
-            newPosition = containerWidth - videoContainer.offsetWidth;
-        }
-
-        videoRow.style.transform = `translateX(-${newPosition}px)`;
+        videoRow.scrollLeft += scrollAmount;
     }
 </script>
 
 </body>
 </html>
-
