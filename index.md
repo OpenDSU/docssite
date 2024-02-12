@@ -5,106 +5,82 @@ nav_order: 1
 ---
 
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Video Slideshow</title>
-<style>
-    .video-container {
-        position: relative;
-        margin-bottom: 20px;
-        overflow: hidden;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video Slideshow</title>
+  <style>
+    .slideshow-container {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
     }
-    
-    .video-row {
-        display: flex;
-        flex-wrap: nowrap;
-        transition: transform 0.3s ease;
-        padding-left: 0%; /* Adjust space before videos */
-        padding-right: 0%; /* Adjust space after videos */
-        width: 90%; /* Adjust width of the video slider */
-        margin: 0 auto; /* Center the video slider */
+    .video-slide {
+      display: none;
     }
-    
-    .video-item {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        text-align: center;
-    }
-    
-    iframe {
-        width: 240px; /* Adjust width of each video */
-        height: 135px; /* Adjust height of each video */
-    }
-    
-    .video-name {
-        margin-top: 5px;
-        font-size: 14px;
-        color: #333;
-    }
-    
     .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent; /* Remove black background */
-    color: purple; /* Change arrow color to purple */
-    padding: 15px; /* Increase padding for larger size */
-    border: none;
-    cursor: pointer;
-    z-index: 2; /* Ensure buttons are above videos */
-    font-size: 50px; /* Increase font size */
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      background-color: rgba(0, 0, 0, 0.5);
     }
-    
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
     .prev {
-        left: 0;
+      left: 0;
     }
-    
     .next {
-        right: 0;
+      right: 0;
+      border-radius: 3px 0 0 3px;
     }
-</style>
+  </style>
 </head>
 <body>
-<div class="video-container">
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
-    <div class="video-row">
-        <!-- Replace the following iframe src with the embed link of the playlist -->
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-       <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-       <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <!-- Repeat the same pattern for other videos -->
-    </div>
 
-    <button class="next" onclick="scrollVideos(1)">❯</button>
+<div class="slideshow-container">
+  <div class="video-slide">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="video-slide">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <!-- Add more video slides as needed -->
+
+  <a class="prev" onclick="changeVideo(-1)">&#10094;</a>
+  <a class="next" onclick="changeVideo(1)">&#10095;</a>
 </div>
 
-    <script>
-    let currentIndex = 0;
+<script>
+  var slideIndex = 1;
+  showVideo(slideIndex);
 
-    function scrollVideos(direction) {
-        const videoContainer = document.querySelector('.video-container');
-        const videoRow = document.querySelector('.video-row');
-        const videoItems = document.querySelectorAll('.video-item');
-        const numVideos = videoItems.length;
-        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
+  function changeVideo(n) {
+    showVideo(slideIndex += n);
+  }
 
-        currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = -currentIndex * videoWidth;
-        videoRow.style.transform = `translateX(${newPosition}px)`;
+  function showVideo(n) {
+    var i;
+    var videos = document.getElementsByClassName("video-slide");
+    if (n > videos.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = videos.length}
+    for (i = 0; i < videos.length; i++) {
+        videos[i].style.display = "none";
     }
-    </script>
-
+    videos[slideIndex-1].style.display = "block";
+  }
+</script>
 
 </body>
 </html>
