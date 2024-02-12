@@ -4,6 +4,7 @@ layout: home
 nav_order: 1
 ---
 
+test
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +57,7 @@ nav_order: 1
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 1;
   }
 
   .prev {
@@ -118,5 +120,6 @@ nav_order: 1
 
 </body>
 </html>
+
 
 
