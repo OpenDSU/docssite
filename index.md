@@ -51,7 +51,7 @@ nav_order: 1
         }
 
         .card:not(:first-child){
-            margin-left: -50px;
+            margin-left: -1px;
         }
 
         .card:hover{
