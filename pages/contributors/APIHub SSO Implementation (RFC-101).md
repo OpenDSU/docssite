@@ -285,7 +285,7 @@ In /apihub-root/external-volume/config/domains/<subdomain>epi.json add below sec
 
 * skipOAuth configuration in /apihub-root/external-volume/config/domains/vault.json file
 
-Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <br> <a href="">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a>    
+Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <br> <a href="">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a> <br>   
 
 ````
 "skipOAuth": [
