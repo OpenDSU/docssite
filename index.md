@@ -3,15 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
+testabc
 
-
-test
-
----
-title: Home
-layout: home
-nav_order: 1
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +22,11 @@ nav_order: 1
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
+        padding-left: 0; /* Remove padding before videos */
+        padding-right: 0; /* Remove padding after videos */
+        margin: 0 auto; /* Center the video slider */
     }
-	
+    
     .video-item {
         flex: 0 0 auto;
         margin-right: 10px;
@@ -38,8 +34,8 @@ nav_order: 1
     }
     
     iframe {
-        width: 320px;
-        height: 180px;
+        width: 240px; /* Adjust width of each video */
+        height: 135px; /* Adjust height of each video */
     }
     
     .video-name {
@@ -57,7 +53,7 @@ nav_order: 1
     padding: 15px; /* Increase padding for larger size */
     border: none;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2; /* Ensure buttons are above videos */
     font-size: 50px; /* Increase font size */
     }
     
@@ -68,10 +64,6 @@ nav_order: 1
     .next {
         right: 0;
     }
-    iframe {
-    width: 240px; /* Decrease width to make videos smaller */
-    height: 135px; /* Decrease height proportionally */
-    }
 </style>
 </head>
 <body>
@@ -80,50 +72,44 @@ nav_order: 1
     <div class="video-row">
         <!-- Replace the following iframe src with the embed link of the playlist -->
         <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <iframe src="URL_OF_VIDEO_1" frameborder="0" allowfullscreen></iframe>
             <div class="video-name">Name of Video 1</div>
         </div>
         <div class="video-item">
             <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
             <div class="video-name">Name of Video 2</div>
         </div>
-        <!-- Repeat the same pattern for other videos -->
+        <div class="video-item">
+            <iframe src="URL_OF_VIDEO_3" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 3</div>
+        </div>
     </div>
 
     <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
 
 <script>
-    let currentIndex = 0;
-
     function scrollVideos(direction) {
         const videoContainer = document.querySelector('.video-container');
         const videoRow = document.querySelector('.video-row');
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
         const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
+        const containerWidth = numVideos * videoWidth;
 
-        currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = -currentIndex * videoWidth;
-        videoRow.style.transform = `translateX(${newPosition}px)`;
+        let newPosition = -parseInt(window.getComputedStyle(videoRow).transform.split(',')[4]);
+        newPosition += direction * videoWidth;
+
+        if (newPosition < 0) {
+            newPosition = 0;
+        } else if (newPosition > containerWidth - videoContainer.offsetWidth) {
+            newPosition = containerWidth - videoContainer.offsetWidth;
+        }
+
+        videoRow.style.transform = `translateX(-${newPosition}px)`;
     }
 </script>
 
 </body>
 </html>
+
