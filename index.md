@@ -13,77 +13,90 @@ nav_order: 1
     <title>Pure CSS Image Slider</title>
     <style>
         *{
-            padding: 0;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        main{
-            background: linear-gradient(-45deg, #fc5c7d, #6a82fb);
-            height: 100vh;
+        .container{
+            padding: 2rem;
         }
 
-        .heading{
-            color: white;
-            text-align: center;
-            font-family: system-ui;
-            padding-top: 50px;
-        }
-
-        .cardContainer{
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            justify-content: center;
-            margin-top: 100px;
-        }
-
-        .card{
+        .wrapper{
             position: relative;
-            left: 0px;
-            width: 150px;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
+            max-width: 48rem;
+            margin: 0 auto;
         }
 
-        .card img {
+        .slider{
+            display: flex;
+            aspect-ratio: 16/9;
+            overflow: hidden;
             width: 100%;
-            border-radius: 10px;
-            box-shadow: -7px -1px 11px 8px rgba(00,00,00,0.2);
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0 1.5rem 3rem -0.75rem rgba(0,0,0,0.25);
+            border-radius: 0.5rem;
         }
 
-        .card:not(:first-child){
-            margin-left: -50px;
+        .slider img{
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            object-fit: cover;
+        }
+        
+        .nav{
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;    
         }
 
-        .card:hover{
-            transform: translateY(-20px);
+        .nav a{
+            width: 7rem;
+            height: 4rem;
+            border-radius: .5rem;
+            overflow: hidden;
+            opacity: .7;
+            transition: opacity ease 250ms;
+            box-shadow: 0 1rem 1rem -0.75rem rgba(0,0,0,0.75);
         }
 
-        .card:hover ~ .card{
-            left: 50px;
+        .nav img{
+            width: 100%;
+            object-fit: cover;
+        }
+        .nav a:hover{
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <main>
-        <div class="heading">
-            <h1 class="title">Pure CSS Image Slider</h1>
+    <div class="container">
+        <div class="wrapper">
+            <div class="slider">
+                <img id="slide-1" src="1.jpg" alt="">
+                <img id="slide-2" src="2.jpg" alt="">
+                <img id="slide-3" src="3.jpg" alt="">
+                <img id="slide-4" src="4.jpg" alt="">
+            </div>
+            <div class="nav">
+                <a href="#slide-1">
+                    <img src="1.jpg" alt="">
+                </a>
+                <a href="#slide-2">
+                    <img src="2.jpg" alt="">
+                </a>
+                <a href="#slide-3">
+                    <img src="3.jpg" alt="">
+                </a>
+                <a href="#slide-4">
+                    <img src="4.jpg" alt="">
+                </a>
+            </div>
         </div>
-
-        <div class="cardContainer">
-            <div class="card">
-                <img src="1.jpg" alt="">
-            </div>
-            <div class="card">
-                <img src="2.jpg" alt="">
-            </div>
-            <div class="card">
-                <img src="3.jpg" alt="">
-            </div>
-            <div class="card">
-                <img src="4.jpg" alt="">
-            </div>
-        </div>
-    </main>
+    </div>
 </body>
 </html>
