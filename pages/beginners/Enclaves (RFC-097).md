@@ -861,7 +861,7 @@ When we refer to enclaves used as a communication system through Message Queues,
 * storeKeySSI(forDID, keySSI, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html#function-storesecretkeyfordid-secretkey-alias">here</a>
 * storeReadForAliasSSI(forDID, sReadSSI, aliasSSI, callback)
 * getReadForKeySSI(forDID, keySSI, callback)
-* signForKeySSI(forDID, keySSI, hash, callback) - already described here
+* signForKeySSI(forDID, keySSI, hash, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html#function-signforkeyssifordid-keyssithatissigning-hash">here</a>
 
 Enclaves also expose the whole keySSI API. 
 
