@@ -110,9 +110,17 @@ nav_order: 1
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
         const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
+        const containerWidth = videoContainer.offsetWidth; // Width of the video container
 
         currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = -currentIndex * videoWidth;
+        let newPosition = -currentIndex * videoWidth;
+
+        // Calculate the maximum position to stop before the next arrow
+        const maxPosition = containerWidth - (videoWidth * numVideos);
+
+        // Ensure newPosition doesn't exceed maxPosition
+        newPosition = Math.max(newPosition, maxPosition);
+
         videoRow.style.transform = `translateX(${newPosition}px)`;
     }
 </script>
