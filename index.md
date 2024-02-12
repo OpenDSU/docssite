@@ -5,76 +5,67 @@ nav_order: 1
 ---
 
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3D Carousel</title>
+<title>Gallery</title>
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    perspective: 1000px;
-    perspective-origin: 50% 50%;
-  }
+.gallery {
+  --s: 150px; /* the image size */
+  
+  display: grid;
+  transform-style: preserve-3d;
+  animation: r 15s linear infinite;
+  position: relative;
+}
+@keyframes r {
+  0% {transform: perspective(450px) rotateX(-100deg) rotate(0deg)}
+  to {transform: perspective(450px) rotateX(-100deg) rotate(-360deg)}
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transform: rotate(var(--_a)) translateY(120%) rotateX(90deg);
+}
+.gallery > img:nth-child(1) {--_a: 0deg}
+.gallery > img:nth-child(2) {--_a: 60deg}
+.gallery > img:nth-child(3) {--_a: 120deg}
+.gallery > img:nth-child(4) {--_a: 180deg}
+.gallery > img:nth-child(5) {--_a: 240deg}
+.gallery > img:nth-child(6) {--_a: 300deg}
 
-  .carousel-container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-  }
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  clip-path: polygon(50% 0,calc(50% + .866*50%) 25%,calc(50% + .866*50%) 75%,50% 100%,calc(50% - .866*50%) 75%,calc(50% - .866*50%) 25%);
+  background: #99B2B7;
+  transform: translateZ(calc(var(--s)/2)) rotate(90deg);
+}
 
-  .carousel {
-    width: 300px;
-    height: 200px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-style: preserve-3d;
-    animation: rotate 10s linear infinite;
-  }
-
-  .carousel img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  @keyframes rotate {
-    from {
-      transform: translateX(-50%) translateY(-50%) rotateY(0deg);
-    }
-    to {
-      transform: translateX(-50%) translateY(-50%) rotateY(360deg);
-    }
-  }
-
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #547980;
+  overflow: hidden;
+}
 </style>
 </head>
 <body>
-<div class="carousel-container">
-  <div class="carousel">
-    <img src="https://via.placeholder.com/300x200?text=Image+1" alt="Image 1">
-    <img src="https://via.placeholder.com/300x200?text=Image+2" alt="Image 2">
-    <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Image 3">
-    <img src="https://via.placeholder.com/300x200?text=Image+4" alt="Image 4">
-  </div>
+<div class="gallery">
+  <img src="https://picsum.photos/id/1059/300/300" alt="many clothes and pictures">
+  <img src="https://picsum.photos/id/1060/300/300" alt="someone preparing artisanal coffee">
+  <img src="https://picsum.photos/id/225/300/300" alt="some tee">
+  <img src="https://picsum.photos/id/163/300/300" alt="an empty table in a restaurant">
+  <img src="https://picsum.photos/id/180/300/300" alt="a laptop with a notebook">
+  <img src="https://picsum.photos/id/20/300/300" alt="a laptop and many books around it">
 </div>
-
-<script>
-  const carousel = document.querySelector('.carousel');
-  const images = carousel.children;
-
-  const spacing = 360 / images.length;
-
-  for (let i = 0; i < images.length; i++) {
-    images[i].style.transform = `rotateY(${i * spacing}deg) translateZ(200px)`;
-  }
-</script>
 </body>
 </html>
-
