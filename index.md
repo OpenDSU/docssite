@@ -23,7 +23,7 @@ nav_order: 1
         transition: transform 0.3s ease;
         padding-left: 0%; /* Adjust space before videos */
         padding-right: 0%; /* Adjust space after videos */
-        width: 70%; /* Adjust width of the video slider */
+        width: 90%; /* Adjust width of the video slider */
         margin: 0 auto; /* Center the video slider */
     }
     
@@ -110,16 +110,8 @@ nav_order: 1
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
         const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
-        const containerWidth = videoContainer.offsetWidth; // Width of the video container
 
         currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        
-        // Calculate the maximum index to stop before the next arrow
-        const maxIndex = numVideos - Math.floor(containerWidth / videoWidth);
-
-        // Ensure currentIndex doesn't exceed maxIndex
-        currentIndex = Math.min(currentIndex, maxIndex);
-
         const newPosition = -currentIndex * videoWidth;
         videoRow.style.transform = `translateX(${newPosition}px)`;
     }
