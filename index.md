@@ -69,7 +69,7 @@ nav_order: 1
 <body>
     <main>
         <div class="heading">
-            <h1 class="title">Card Carousel</h1>
+            <h1 class="title">Youtube videos</h1>
         </div>
 
         <div class="cardContainer">
