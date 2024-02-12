@@ -294,8 +294,8 @@ Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need t
   ]
 ````
 
-<br>
-<span style="color:red">Note: Below client configuration is not required. Make sure that the ‘oauthEnabled’ flag is set to ‘false’ in oauthConfig.js. </span> 
+
+<span style="color:red">Note: Below client configuration is not required. Make sure that the ‘oauthEnabled’ flag is set to ‘false’ in oauthConfig.js. </span>
 
 * apihub-root/external-volume/config/oauthConfig.js : 
   * Keep ‘oauthEnabled’ to false.
