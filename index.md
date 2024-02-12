@@ -86,7 +86,7 @@ nav_order: 1
             </div>
             <div class="nav">
                 <a href="#slide-1">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                <iframe width="218.27" height="300" src="https://www.youtube.com/embed/0A3bGUAajrM?si=3wLGPS6KBAfaJLVF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </a>
                 <a href="#slide-2">
                     <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
