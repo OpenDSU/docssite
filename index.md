@@ -5,7 +5,6 @@ nav_order: 1
 ---
 
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -66,10 +65,6 @@ nav_order: 1
 </head>
 <body>
     <main>
-        <div class="heading">
-            <h1 class="title">Youtube videos</h1>
-        </div>
-
         <div class="cardContainer">
             <div class="card">
                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
