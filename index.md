@@ -3,128 +3,120 @@ title: Home
 layout: home
 nav_order: 1
 ---
-
+test
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video Carousel</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<title>Carousel with Cards</title>
 <style>
-.video-section .item {
-  opacity: 0.4;
-  transition: 0.4s ease all;
-  margin: 0 20px;
-  transform: scale(0.8);
-}
-
-@media(max-width: 1000px) {
-  .video-section .item {
+  body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    transform: scale(0.9);
+    padding: 0;
+    background-color: #f2f2f2;
   }
-}
 
-.video-section .active .item {
-  opacity: 1;
-  transform: scale(1);
-}
+  .carousel {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+  }
 
-body {
-  margin: 80px 0 0 0;
-}
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
 
-.video-section .owl-item {
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);
-}
+  .card {
+    flex: 0 0 33.33%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 0 10px;
+    box-sizing: border-box;
+  }
 
-.video-section video {
-  max-width: 100%;
-  height: auto;
-}
+  .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: -40px; /* Adjusted from -50px to -40px */
+  }
+
+  .next {
+    right: -40px; /* Adjusted from -50px to -40px */
+  }
 </style>
 </head>
 <body>
 
-<div class="owl-carousel video-section">
-  <div class="item">
-    <div>
-      <video class="js-player" crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
-        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
-      </video>
+<div class="carousel">
+  <button class="arrow prev" onclick="prevSlide()">&#10094;</button> <!-- Moved the arrow button here -->
+  <div class="carousel-inner">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 1">
+      <h3>Card 1</h3>
+      <p>This is the first card.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 2">
+      <h3>Card 2</h3>
+      <p>This is the second card.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Card 3">
+      <h3>Card 3</h3>
+      <p>This is the third card.</p>
     </div>
   </div>
-  <div class="item">
-    <div>
-      <video class="js-player" crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
-        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
-      </video>
-    </div>
-  </div>
-  <div class="item">
-    <div>
-      <video class="js-player" crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
-        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
-      </video>
-    </div>
-  </div>
+  <button class="arrow next" onclick="nextSlide()">&#10095;</button> <!-- Moved the arrow button here -->
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
 <script>
-$(document).ready(function() {
-  var playerSettings = {
-    controls: ['play-large'],
-    fullscreen: { enabled: false },
-    resetOnEnd: true,
-    hideControls: true,
-    clickToPlay: true,
-    keyboard: false
-  };
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.card');
 
-  const players = Plyr.setup('.js-player', playerSettings);
-
-  players.forEach(function(instance, index) {
-    instance.on('play', function() {
-      players.forEach(function(instance1, index1) {
-        if (instance != instance1) {
-          instance1.pause();
-        }
-      });
-    });
-  });
-
-  $('.video-section').on('translated.owl.carousel', function(event) {
-    players.forEach(function(instance, index1) {
-      instance.pause();
-    });
-  });
-
-  $('.owl-carousel').owlCarousel({
-    stagePadding: 200,
-    loop: true,
-    margin: 10,
-    items: 1,
-    nav: true,
-    responsive: {
-      0: { items: 1, stagePadding: 60 },
-      600: { items: 1, stagePadding: 100 },
-      1000: { items: 1, stagePadding: 200 },
-      1200: { items: 1, stagePadding: 250 },
-      1400: { items: 1, stagePadding: 300 },
-      1600: { items: 1, stagePadding: 350 },
-      1800: { items: 1, stagePadding: 400 }
+  function showSlide(index) {
+    if (index < 0) {
+      currentIndex = slides.length - 1;
+    } else if (index >= slides.length) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
     }
-  });
-});
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
 </script>
+
 </body>
 </html>
-
 
 
