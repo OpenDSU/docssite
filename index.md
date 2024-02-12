@@ -21,11 +21,10 @@ nav_order: 1
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
-        padding-left: 50px; /* Adjust space before videos */
-        padding-right: 50px; /* Adjust space after videos */
+        padding-left: 0%; /* Adjust space before videos */
+        padding-right: 0%; /* Adjust space after videos */
+        width: 90%; /* Adjust width of the video slider */
         margin: 0 auto; /* Center the video slider */
-        width: calc(100% - 100px); /* Adjust width of the video slider (100px for paddings) */
-        overflow-x: hidden; /* Hide the overflowing videos */
     }
     
     .video-item {
@@ -46,16 +45,16 @@ nav_order: 1
     }
     
     .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: transparent; /* Remove black background */
-        color: purple; /* Change arrow color to purple */
-        padding: 15px; /* Increase padding for larger size */
-        border: none;
-        cursor: pointer;
-        z-index: 2; /* Ensure buttons are above videos */
-        font-size: 50px; /* Increase font size */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* Remove black background */
+    color: purple; /* Change arrow color to purple */
+    padding: 15px; /* Increase padding for larger size */
+    border: none;
+    cursor: pointer;
+    z-index: 2; /* Ensure buttons are above videos */
+    font-size: 50px; /* Increase font size */
     }
     
     .prev {
@@ -106,33 +105,14 @@ nav_order: 1
     let currentIndex = 0;
 
     function scrollVideos(direction) {
+        const videoContainer = document.querySelector('.video-container');
         const videoRow = document.querySelector('.video-row');
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
         const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
-        const containerWidth = document.querySelector('.video-container').offsetWidth;
-        const visibleVideos = 3; // Number of visible videos
 
-        // Calculate the maximum number of videos that can be shown
-        const maxVideos = Math.min(numVideos, visibleVideos);
-
-        // Calculate the width of the visible area
-        const visibleWidth = videoWidth * maxVideos;
-
-        // Calculate the maximum position to stop before the next arrow
-        const maxPosition = containerWidth - visibleWidth;
-
-        // Update the current index based on the direction
         currentIndex = (currentIndex + direction + numVideos) % numVideos;
-
-        // Calculate the new position for the video row
-        let newPosition = -currentIndex * videoWidth;
-
-        // Ensure the new position doesn't exceed the maximum position
-        newPosition = Math.min(newPosition, 0);
-        newPosition = Math.max(newPosition, maxPosition);
-
-        // Apply the transform to the video row
+        const newPosition = -currentIndex * videoWidth;
         videoRow.style.transform = `translateX(${newPosition}px)`;
     }
     </script>
