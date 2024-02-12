@@ -256,10 +256,8 @@ In the figure above, we can see how Demiurge deletes/deactivates a secret. Start
 (i.e /apihub-root/external-volume/config/domains/epi.json) and <subdomain>.json file.
 
 
-<p style='text-align: justify;'>
-
 Note: The settings for /apihub-root/external-volume/config/domains/<domain>epi.json and /apihub-root/external-volume/config/domains/<subdomain>epi.json are already set by default by helm-chart version 0.5.11+ 4
-</p>
+
 
 In /apihub-root/external-volume/config/domains/<domain>epi.json add below section:
 
@@ -350,8 +348,8 @@ The SSO_SECRETS_ENCRYPTION_KEY should be injected in the environment by the Kube
 
 3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-# Annex 1. Contributors
 
+# Annex 1. Contributors
 
 | **Current Editors**                 | **Email**                    |
 |:------------------------------------|:-----------------------------|
