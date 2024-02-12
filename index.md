@@ -3,165 +3,190 @@ title: Home
 layout: home
 nav_order: 1
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Animated Flex Cards</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expanding Flex Cards</title>
+  <style>
+    /* 
+      @project Expanding Flex Cards
+      @author: Jamshid Elmi
+      @created: 2022-03-25 19:13:18
+      @modified: 2022-03-25 19:13:18
+      @tutorial: https://youtu.be/pvjNbaV0Keo
+    */
+    :root {
+      --cb: cubic-bezier(.05, .61, .41, .95);
+    }
 
-        body {
-            background-color: #eeeeea;
-        }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 100vh;
+      font-family: "Roboto", sans-serif;
+      transition: 0.25s;
+      background: #e1e1e1;
+    }
 
-        .wrapper {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    body.dark {
+      background: #333;
+      color: white;
+    }
 
-        .container {
-            height: 400px;
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: start;
-        }
+    .cards {
+      display: flex;
+      max-width: 800px;
+      width: calc(100% - 100px);
+      height: 400px;
+    }
 
-        .card {
-            width: 80px;
-            border-radius: .75rem;
-            background-size: cover;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: 2rem;
-            margin: 0 10px;
-            display: flex;
-            align-items: flex-end;
-            transition: .6s cubic-bezier(.28,-0.03,0,.99);
-            box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
-        }
+    .cards .card .info .title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
 
-        .card > .row {
-            color: white;
-            display: flex;
-            flex-wrap: nowrap;
-        }
+    .cards .card .label .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 40px;
+      height: 40px;
+      background-color: white;
+      color: var(--color);
+      border-radius: 50%;
+    }
 
-        .card > .row > .icon {
-            background: #223;
-            color: white;
-            border-radius: 50%;
-            width: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 15px;
-        }
+    .cards .card .label .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 10px;
+      white-space: pre;
+      transition: 1s var(--cb);
+    }
 
-        .card > .row > .description {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            overflow: hidden;
-            height: 80px;
-            width: 520px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition-delay: .3s;
-            transition: all .3s ease;
-        }
+    .cards .card {
+      position: relative;
+      min-width: 60px;
+      background: var(--bg);
+      overflow: hidden;
+      margin: 5px;
+      background-size: auto 150%;
+      background-position: center;
+      cursor: pointer;
+      transition: 0.5s var(--cb);
+      border-radius: 30px;
+    }
 
-        .description p {
-            color: #b0b0ba;
-            padding-top: 5px;
-        }
+    .cards .card .label {
+      display: flex;
+      position: absolute;
+      right: 0;
+      height: 40px;
+      transition: 0.5s var(--cb);
+    }
 
-        .description h4 {
-            text-transform: uppercase;
-        }
+    .cards .card.active .label {
+      bottom: 20px;
+      left: 20px;
+    }
 
-        input {
-            display: none;
-        }
+    .cards .card.active {
+      flex-grow: 10000;
+      background-size: auto 100%;
+    }
 
-        input:checked + label {
-            width: 600px;
-        }
+    .cards .card:not(.active) .label {
+      bottom: 10px;
+      left: 10px;
+    }
 
-        input:checked + label .description {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
+    .cards .card .shadow {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(
+        0, #0004, transparent
+      );
+    }
 
-        .card[for="c1"] {
-            background-image: url('./img1.jpeg');
-        }
-        .card[for="c2"] {
-            background-image: url('./img2.jpeg');
-        }
-        .card[for="c3"] {
-            background-image: url('./img3.jpeg');
-        }
-        .card[for="c4"] {
-            background-image: url('./img4.jpeg');
-        }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <div class="container">
-            <input type="radio" name="slide" id="c1" checked>
-            <label for="c1" class="card">
-                <div class="row">
-                    <div class="icon">1</div>
-                    <div class="description">
-                        <h4>Winter</h4>
-                        <p>Winter has so much to offer - creative activities</p>
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c2">
-            <label for="c2" class="card">
-                <div class="row">
-                    <div class="icon">2</div>
-                    <div class="description">
-                        <h4>Digital Technology</h4>
-                        <p>Gets better every day - stay tuned</p>
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c3">
-            <label for="c3" class="card">
-                <div class="row">
-                    <div class="icon">3</div>
-                    <div class="description">
-                        <h4>Globalization</h4>
-                        <p>Help people all over the world</p>
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c4">
-            <label for="c4" class="card">
-                <div class="row">
-                    <div class="icon">4</div>
-                    <div class="description">
-                        <h4>New technologies</h4>
-                        <p>Space engineering becomes more and more advanced</p>
-                    </div>
-                </div>
-            </label>
+    .cards .card.active .info {
+      opacity: 1;
+    }
+
+    .cards .card:not(.active) .info {
+      opacity: 0;
+    }
+  </style>
+</head> 
+<body class="dark">
+
+  <div class="cards">
+
+    <div class="card active" style="--bg: url(images/img-1.jpg)">
+      <div class="shadow"></div> 
+      <div class="label">
+        <div class="icon" style="--color: green">
+          <ion-icon name="sunny"></ion-icon>
         </div>
+        <div class="info">
+          <div class="title">Spring</div>
+          <div>Nature Looks Attractive</div>
+        </div>
+      </div>
     </div>
+
+    <div class="card" style="--bg: url(images/img-2.jpg)">
+      <div class="shadow"></div> 
+      <div class="label">
+        <div class="icon" style="--color: blue">
+          <ion-icon name="sparkles"></ion-icon>
+        </div>
+        <div class="info">
+          <div class="title">Summer</div>
+          <div>Summer is a State of Mind</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="--bg: url(images/img-3.jpg)">
+      <div class="shadow"></div> 
+      <div class="label">
+        <div class="icon" style="--color: orange">
+          <ion-icon name="thunderstorm"></ion-icon>
+        </div>
+        <div class="info">
+          <div class="title">Autumn</div>
+          <div>Life Starts All Over Again</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="--bg: url(images/img-4.jpg)">
+      <div class="shadow"></div> 
+      <div class="label">
+        <div class="icon" style="--color: black">
+          <ion-icon name="snow"></ion-icon>
+        </div>
+        <div class="info">
+          <div class="title">Winter</div>
+          <div>Not a Season, It's Celebration</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+  <script src="script.js"></script>
 </body>
 </html>
