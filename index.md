@@ -110,12 +110,18 @@ nav_order: 1
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
         const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
+        const containerWidth = videoContainer.offsetWidth; // Width of the video container
+        const maxScroll = containerWidth - videoRow.offsetWidth;
 
         currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = -currentIndex * videoWidth;
+        let newPosition = -currentIndex * videoWidth;
+
+        // Ensure newPosition doesn't exceed the maximum scroll position
+        newPosition = Math.min(newPosition, 0);
+        newPosition = Math.max(newPosition, maxScroll);
+
         videoRow.style.transform = `translateX(${newPosition}px)`;
     }
 </script>
-
 </body>
 </html>
