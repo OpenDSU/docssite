@@ -256,8 +256,9 @@ In the figure above, we can see how Demiurge deletes/deactivates a secret. Start
 (i.e /apihub-root/external-volume/config/domains/epi.json) and <subdomain>.json file.
 
 
+<p style='text-align: justify;'>
 Note: The settings for /apihub-root/external-volume/config/domains/<domain>epi.json and /apihub-root/external-volume/config/domains/<subdomain>epi.json are already set by default by helm-chart version 0.5.11+ 4
-
+</p>
 
 In /apihub-root/external-volume/config/domains/<domain>epi.json add below section:
 
@@ -284,9 +285,7 @@ In /apihub-root/external-volume/config/domains/<subdomain>epi.json add below sec
 * skipOAuth configuration in /apihub-root/external-volume/config/domains/vault.json file
 
 
-<p style='text-align: justify;'>
-Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <a href="">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a> <br>   
-</p>
+Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <br> <a href="">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a> <br>   
 
 ````
 "skipOAuth": [
