@@ -77,14 +77,14 @@ nav_order: 1
     <div class="container">
         <div class="wrapper">
             <div class="slider">
-                <img id="slide-1" src="1.jpg" alt="">
+                <img id="slide-1" src="https://www.youtube.com/watch?v=0A3bGUAajrM&list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" alt="">
                 <img id="slide-2" src="2.jpg" alt="">
                 <img id="slide-3" src="3.jpg" alt="">
                 <img id="slide-4" src="4.jpg" alt="">
             </div>
             <div class="nav">
                 <a href="#slide-1">
-                    <img src="1.jpg" alt="">
+                    <img src="https://www.youtube.com/watch?v=0A3bGUAajrM&list=PL4MplU2PrVpaKx_fyz9IFOd5xP_3VnAU2" alt="">
                 </a>
                 <a href="#slide-2">
                     <img src="2.jpg" alt="">
