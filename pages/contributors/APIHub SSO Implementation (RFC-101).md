@@ -256,9 +256,8 @@ In the figure above, we can see how Demiurge deletes/deactivates a secret. Start
 (i.e /apihub-root/external-volume/config/domains/epi.json) and <subdomain>.json file.
 
 
-<p style='text-align: justify;'>
 Note: The settings for /apihub-root/external-volume/config/domains/<domain>epi.json and /apihub-root/external-volume/config/domains/<subdomain>epi.json are already set by default by helm-chart version 0.5.11+ 4
-</p>
+
 
 In /apihub-root/external-volume/config/domains/<domain>epi.json add below section:
 
