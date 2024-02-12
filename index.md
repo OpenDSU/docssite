@@ -125,7 +125,7 @@ nav_order: 1
 
         videoRow.style.transform = `translateX(${newPosition}px)`;
     }
-</script>
+    </script>
 
 
 </body>
