@@ -4,21 +4,22 @@ layout: home
 nav_order: 1
 ---
 
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Carousel</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Pure CSS Image Slider</title>
     <style>
         *{
             padding: 0;
             margin: 0;
         }
 
-
+        main{
+            background: linear-gradient(-45deg, #fc5c7d, #6a82fb);
+            height: 100vh;
         }
 
         .heading{
@@ -65,22 +66,22 @@ nav_order: 1
 </head>
 <body>
     <main>
+        <div class="heading">
+            <h1 class="title">Pure CSS Image Slider</h1>
+        </div>
+
         <div class="cardContainer">
             <div class="card">
-               <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+                <img src="1.jpg" alt="">
             </div>
             <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+                <img src="2.jpg" alt="">
             </div>
             <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+                <img src="3.jpg" alt="">
             </div>
             <div class="card">
-                <iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+                <img src="4.jpg" alt="">
             </div>
         </div>
     </main>
