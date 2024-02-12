@@ -19,9 +19,7 @@ nav_order: 1
             margin: 0;
         }
 
-        main{
-            background: linear-gradient(-45deg, #fc5c7d, #6a82fb);
-            height: 100vh;
+
         }
 
         .heading{
