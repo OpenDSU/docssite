@@ -8,64 +8,155 @@ nav_order: 1
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery</title>
-<style>
-.gallery {
-  --s: 150px; /* the image size */
-  
-  display: grid;
-  transform-style: preserve-3d;
-  animation: r 15s linear infinite;
-  position: relative;
-}
-@keyframes r {
-  0% {transform: perspective(450px) rotateX(-100deg) rotate(0deg)}
-  to {transform: perspective(450px) rotateX(-100deg) rotate(-360deg)}
-}
-.gallery > img {
-  grid-area: 1/1;
-  width: var(--s);
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  transform: rotate(var(--_a)) translateY(120%) rotateX(90deg);
-}
-.gallery > img:nth-child(1) {--_a: 0deg}
-.gallery > img:nth-child(2) {--_a: 60deg}
-.gallery > img:nth-child(3) {--_a: 120deg}
-.gallery > img:nth-child(4) {--_a: 180deg}
-.gallery > img:nth-child(5) {--_a: 240deg}
-.gallery > img:nth-child(6) {--_a: 300deg}
-
-.gallery::before {
-  content: "";
-  position: absolute;
-  inset: -100%;
-  clip-path: polygon(50% 0,calc(50% + .866*50%) 25%,calc(50% + .866*50%) 75%,50% 100%,calc(50% - .866*50%) 75%,calc(50% - .866*50%) 25%);
-  background: #99B2B7;
-  transform: translateZ(calc(var(--s)/2)) rotate(90deg);
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-content: center;
-  background: #547980;
-  overflow: hidden;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Builder Carousel</title>
+  <style>
+    body {
+      background-color: #27496E;
+      font-family: 'Raleway', sans-serif;
+    }
+    .appBuilder-carousel {
+      margin-bottom: 64px;
+      margin-top: 56px;
+    }
+    .carousel {
+      .carousel-indicators {
+        width: 76%;
+        li {
+          border: none;
+          background-color: #98ACB9;
+          height: 18px;
+          margin-right: 28px;
+          width: 18px;
+          &.active {
+            background-color: #50E3C2;
+          }
+        }
+      }
+      .carousel-inner {
+        .item {
+          h3 {
+            font-weight: 700;
+            font-size: 25px;
+            color: #FFFFFF;
+            letter-spacing: 0.89px;
+            line-height: 38.41px;
+            margin-bottom: 50px;
+            margin-top: 30px;
+            position: relative;
+            &::after {
+              background-color: #FFFFFF;
+              bottom: -18px;
+              content: "";
+              height: 6px;
+              left: 0;
+              position: absolute; 
+              width: 158px;
+            }
+          }
+          h4 {
+            font-weight: 700;
+            font-size: 25px;
+            color: #43EEC5;
+            letter-spacing: 1.02px;
+            line-height: 33px;
+          }
+        }
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="gallery">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/0A3bGUAajrM?si=syIK2kZj3rmkgZKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <img src="https://picsum.photos/id/1060/300/300" alt="someone preparing artisanal coffee">
-  <img src="https://picsum.photos/id/225/300/300" alt="some tee">
-  <img src="https://picsum.photos/id/163/300/300" alt="an empty table in a restaurant">
-  <img src="https://picsum.photos/id/180/300/300" alt="a laptop with a notebook">
-  <img src="https://picsum.photos/id/20/300/300" alt="a laptop and many books around it">
-</div>
+  <div class="container appBuilder-carousel">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="row">
+            <div class="col-md-6">
+              <a class="popup-youtube" href="https://www.youtube.com/watch?v=Zrcp4bQZCXE?autoplay=1&rel=0&controls=1&showinfo=0&wmode=transparent">
+                <img  class="img-responsive" src="https://s3.amazonaws.com/cdn.qrvey.com/marketing-img/unbounce/appbuilder1.png" alt="builder app video" />              
+              </a>
+            </div>
+            <div class="col-md-6">
+              <h3>
+                Learn how to quickly <br/> 
+                enhance your website <br/>
+                with these 3 how-to videos.
+              </h3>
+              <h4>
+                Send the Perfect <br/>
+                Follow-up.
+              </h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="row">
+            <div class="col-md-6">
+              <a class="popup-youtube" href="https://www.youtube.com/watch?v=7fJeMfFcpUU?t=145s&autoplay=1&rel=0&controls=1&showinfo=0&wmode=transparent">
+                <img  class="img-responsive" src="https://s3.amazonaws.com/cdn.qrvey.com/marketing-img/unbounce/appbuilder2.png" alt="builder app video" />              
+              </a>
+            </div>
+            <div class="col-md-6">
+              <h3>
+                Learn how to quickly <br/> 
+                enhance your website <br/>
+                with these 3 how-to videos.
+              </h3>
+              <h4>
+                Add Smart Form.
+              </h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="row">
+            <div class="col-md-6">
+              <a class="popup-youtube" href="https://www.youtube.com/watch?v=PcbP1fdXEgA?feature=youtu.be&autoplay=1&rel=0&controls=1&showinfo=0&wmode=transparent">
+                <img  class="img-responsive" src="https://s3.amazonaws.com/cdn.qrvey.com/marketing-img/unbounce/appbuilder3.png" alt="builder app video" />         
+              </a>
+            </div>
+            <div class="col-md-6">
+              <h3>
+                Learn how to quickly <br/> 
+                enhance your website <br/>
+                with these 3 how-to videos.
+              </h3>
+              <h4>
+                Gather Instant Feedback.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.popup-youtube, .popup-text').magnificPopup({
+        disableOn: 320,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: true
+      });
+    });
+  </script>
 </body>
 </html>
