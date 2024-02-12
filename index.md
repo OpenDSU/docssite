@@ -110,18 +110,23 @@ nav_order: 1
         const videoItems = document.querySelectorAll('.video-item');
         const numVideos = videoItems.length;
         const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
-        const containerWidth = videoContainer.offsetWidth; // Width of the video container
-        const maxScroll = containerWidth - videoRow.offsetWidth;
+        const containerWidth = videoContainer.offsetWidth; // Lățimea containerului de videoclipuri
 
         currentIndex = (currentIndex + direction + numVideos) % numVideos;
+
+        // Calculăm poziția maximă la care videoclipurile pot fi derulate pentru a rămâne în interiorul containerului
+        const maxScroll = containerWidth - videoRow.offsetWidth;
+
+        // Calculăm poziția de derulare a videoclipurilor în funcție de indicele curent
         let newPosition = -currentIndex * videoWidth;
 
-        // Ensure newPosition doesn't exceed the maximum scroll position
+        // Asigurăm că poziția de derulare este în interiorul marginilor containerului
         newPosition = Math.min(newPosition, 0);
         newPosition = Math.max(newPosition, maxScroll);
 
         videoRow.style.transform = `translateX(${newPosition}px)`;
     }
 </script>
+
 </body>
 </html>
