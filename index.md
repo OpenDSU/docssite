@@ -74,16 +74,16 @@ nav_order: 1
 
         <div class="cardContainer">
             <div class="card">
-                <img src="https://assets.sorare.com/cardsamplepicture/6b0a07eb-3f2d-4b07-8736-00c12bffe945/picture/tinified-3b4ed56aac2b0255afdd503ed6003513.png" alt="">
+                <img src="" alt="">
             </div>
             <div class="card">
-                <img src="https://assets.sorare.com/image-resize/cardsamplepicture/4a68833c-c4a5-4bf8-97cf-32fad77016a2/picture/tinified-8a4f1c0618e4282890610c78a37bcd29.png?width=640" alt="">
+                <img src="" alt="">
             </div>
             <div class="card">
-                <img src="https://assets.sorare.com/image-resize/cardsamplepicture/a5970520-bc53-4c22-9854-28b238f97a2f/picture/tinified-036757aec2340e0ea198006e14674a7e.png?width=640" alt="">
+                <img src="" alt="">
             </div>
             <div class="card">
-                <img src="https://assets.sorare.com/image-resize/cardsamplepicture/ccb9c8cb-cfe6-414d-bc1e-a3960dfd6232/picture/tinified-4a6382b2a37ad2c0c08e056c95b96888.png?width=640" alt="">
+                <img src="" alt="">
             </div>
         </div>
     </main>
