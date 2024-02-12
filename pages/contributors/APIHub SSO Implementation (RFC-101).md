@@ -326,19 +326,25 @@ The _SSO_DETECTED_ID_ is the first non-empty claim from the following table (in 
 
 # Secrets Encryption Key
 
+<p style='text-align: justify;'>
 When SSO is enabled and the access mode for the wallet is set to “sso-direct”, the  SSO_SECRETS_ENCRYPTION_KEY must be set. It is used to encrypt the wallet access credentials in the secrets APIHub component. The SSO_SECRETS_ENCRYPTION_KEY contains one or more base64 encoded 32-byte long buffers separated by commas. The first such buffer in the list is the current encryption key.  The encryption key can be changed by appending a new encryption key at the beginning of the  SSO_SECRETS_ENCRYPTION_KEY, as shown below:
+</p>
 
 ````
 SSO_SECRETS_ENCRYPTION_KEY = “new_encryption_key,old_encryption_key”  
 ````
 
+<p style='text-align: justify;'>
 When a new encryption key is added to SSO_SECRETS_ENCRYPTION_KEY, all the credentials are decrypted by using the old encryption key and encrypted again using the new one. An encryption key can be generated using the following NodeJS snippet:
+</p>
 
 ````
 require("crypto").randomBytes(32).toString("base64")
 ````
 
+<p style='text-align: justify;'>
 The SSO_SECRETS_ENCRYPTION_KEY should be injected in the environment by the Kubernetes Secrets (and not stored in helm-charts configuration). A restart of the container is required to take the new values of the SSO_SECRETS_ENCRYPTION_KEY (for key rotation).
+</p>
 
 **Contributors**
 
