@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 
-# DSU Mounting
+# DSU Mounting (RFC-006)
 {: .no_toc }
 
 
@@ -31,16 +31,16 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [2. Example](#2-example)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-{:toc}
 
 
 
-# Abstract
+
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC about DSU Mounting is structured in 2 parts. The first part consists of the first two chapters, in which we present the introductory notions and the actual process of mounting a DSU into another DSU. The second part contains the last chapter (chapter 3), where we are presented with valuable examples to deepen our knowledge. The document focuses on Security Context but also presents the possibility of obtaining read and/or write rights in a mounted DSU.
 </p>
 
-# Introduction
+# **Introduction**
 
 <p style='text-align: justify;'>The Data Sharing Units (DSU) concept presents the idea of a data structure anchored in the blockchain (on-chain), stored in an off-chain encryption system called brick storage. The anchoring operation refers to changes in a DSU, which are reflected in the blockchain. There is an anchor that contains the history of a DSU. Anchoring is a logical concept that appears as an instance (could be an element or a document type) inside an execution environment.
 </p>
@@ -53,7 +53,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <p style='text-align: justify;'>More details about DSUs are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.</p>
 
-# 1. Description of the Mounting Process
+# **1. Description of the Mounting Process**
 
 <p style='text-align: justify;'>A DSU can be seen as a file system. Like every other file system in the UNIX world (UNIX is a family of operating systems designed for flexibility and adaptability), it allows the mounting of other file systems, mainly other DSUs. So, we can create a file system composed hierarchically and recursively of multiple file systems from multiple DSUs.
 </p>
@@ -121,7 +121,7 @@ More details are available in <a href="https://www.opendsu.org/pages/advanced/W3
 
 More details are available in <a href="https://www.opendsu.org/pages/contributors/Message%20Queues%20(RFC-073).html">Message Queues (RFC-073)</a>.
 
-# 2. Example
+# **2. Example**
 
 <p style='text-align: justify;'>In a mounted DSU, any reading or writing is done with the information available in the Security Context (SC). Mounting a DSU can also be done with zero access SSIs, not only with SReadSSIs or SeedSSIs. Zero access SSIs only show us that there exists a DSU and that a certain public key controls it, and it has SReadSSIs or Seed SSIs that we can read and write. In other words, users with few rights will only be able to see another DSU mounted there, but they will not be able to access any of the information in that DSU.
 </p>
@@ -131,7 +131,7 @@ More details are available in <a href="https://www.opendsu.org/pages/contributor
 
 
 
-```
+```js
 require("../../../psknode/bundles/testsRuntime");
 
 const tir = require("../../../psknode/tests/util/tir");
@@ -190,16 +190,18 @@ assert.callback("Trying to mount ", (testFinishCallback) => {
 
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+
+# **Annex 1. Contributors**
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
