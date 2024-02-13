@@ -105,16 +105,12 @@ asd<br>
         showSlides();
     }
 
-     function showSlides() {
+    function showSlides() {
         if (slideIndex < 0) {
             slideIndex = 0;
-        } else if (slideIndex >= cards.length - 0) {
-            slideIndex = cards.length - 0;
         }
-        slides.style.transform = `translateX(-${(slideIndex * (100 / 3))}%)`; // Show 3 cards at a time
+        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
-
-    
 </script>
 
 </body>
