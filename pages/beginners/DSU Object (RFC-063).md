@@ -92,11 +92,11 @@ A DSU object is an entity that exists temporarily in the Execution Environment (
 
 <p align="justify">This document presents all available DSU operations that allow developers to perform actions on a DSU instance. Important functions are used to perform file system operations such as read, write, delete etc. Advanced functions can be used for configuring DSUs.</p>
 
-# Overview
+# **Overview**
 
 <p align="justify">When a programmer is working on an application, it must use the OpenDSU SDK, a library containing a set of APIs grouped in API spaces. Some of them are exposed if the programmer wants to do advanced things. However, there are also very high-level APIs that consist of operations like loading a DSU. The process works like that: if we have a KeySSI, it provides an instance with which we can read, write, mount, or do other operations with that DSU. We can also access the anchoring operation that normally does not run on the client but runs through an intermediary - a server installed somewhere in the Cloud (APIHub) and which, in turn, has similar components but not necessarily the same ones.</p>
 
-# 1. Creating and Configuring a DSU Instance
+# **1. Creating and Configuring a DSU Instance**
 
 Creating a DSU container requires a KeySSI object. A DSU object is instantiated through the Resolver API see [RFC065](https://www.opendsu.org/pages/advanced/Resolver%20(RFC-065).html), by calling resolver.createSeedDSU() as sketched in the code example below (Example 1).
 
