@@ -11,10 +11,11 @@ nav_order: 1
 <title>YouTube Video Cards Slideshow</title>
 <style>
     .slideshow-container {
-        width: 90%;
-        margin: 0 auto;
-        overflow: hidden;
-        position: relative;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Increase the z-index */
     }
     .slideshow {
         display: flex;
