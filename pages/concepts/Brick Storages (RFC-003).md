@@ -38,11 +38,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The basic implementation of Brick Storages is very simple and aims to provide a storage solution that works well for open and permissionless networks. They are simple web services capable of storing <a href="https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html">DSUs</a>’ content safely into storages that are shared with multiple users or organizations. Anyone with the <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> associated with a particular DSU can use it to reconstruct the same DSU using the bricks. This mechanism allows users of the network to collaborate safely and efficiently without giving up ownership of their data. In this RFC, we describe the storage mechanism known as “bricks” in the OpenDSU ecosystem.</p>
 
-# 1. Brick Storages mechanism
+# **1. Brick Storages mechanism**
 
 ## 1.1 General Operations
 
@@ -51,16 +51,18 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 1.2 General Operations
 
-<p style='text-align: justify;'>Each brick within the brick storage (except the BrickMap) is encrypted using a different symmetric key called SymmetricalEncryptionSSI. This key makes it very hard for attackers to obtain the full content of a DSU. Even if the attacker would find the symmetric key for a brick (which is unlikely), it could only decrypt this single brick. Fortunately, we don’t have to remember all these encryption keys. The BrickMap will keep track of them for us, along with the associated HashLinkSSIs referencing the bricks.</p>
+<p style='text-align: justify;'>Each brick within the brick storage (except the BrickMap) is encrypted using a different symmetric key called <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI%20(RFC-016).html">SymmetricalEncryptionSSI</a>. This key makes it very hard for attackers to obtain the full content of a DSU. Even if the attacker would find the symmetric key for a brick (which is unlikely), it could only decrypt this single brick. Fortunately, we don’t have to remember all these encryption keys. The BrickMap will keep track of them for us, along with the associated <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSIs</a> referencing the bricks.
+</p>
 
 <p style='text-align: justify;'>Unlike data bricks, BrickMaps are encrypted using the KeySSI encryption key. This thing allows the KeySSI owner to access the BrickMap while preventing access to other users.</p>
 
 ## 1.3. Notes
 
 
-<p style='text-align: justify;'>While BrickMaps associated with DSUs stay constant and immutable once they are anchored, DSUs are flexible and, most times, do not remain constant and can even be deleted. That is why we have multiple BrickMaps that exist in the history of each DSU.  While the latest BrickMap can be used to reconstruct the latest version of the DSU, it is also possible to reconstruct previous versions of the DSU using previous HashLinkSSIs. This is possible because data bricks not used anymore in the latest DSU version are not deleted from the off-chain storage, in order to keep it auditable.</p>
+<p style='text-align: justify;'>While BrickMaps associated with DSUs stay constant and immutable once they are anchored, DSUs are flexible and, most times, do not remain constant and can even be deleted. That is why we have multiple BrickMaps that exist in the history of each DSU.  While the latest BrickMap can be used to reconstruct the latest version of the DSU, it is also possible to reconstruct previous versions of the DSU using previous <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSIs</a>. This is possible because data bricks not used anymore in the latest DSU version are not deleted from the off-chain storage, in order to keep it auditable.
+</p>
 
-# 2. BrickMaps
+# **2. BrickMaps**
 
 ## 2.1 Data structure
 
@@ -163,15 +165,15 @@ keySSI
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+**1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
 2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/**
 
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
