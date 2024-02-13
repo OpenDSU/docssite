@@ -100,13 +100,13 @@ nav_order: 1
         showSlides();
     }
 
-    function showSlides() {
+     function showSlides() {
         if (slideIndex < 0) {
             slideIndex = 0;
-        } else if (slideIndex > cards.length - 0.01) {
-            slideIndex = cards.length - 0.01;
+        } else if (slideIndex > cards.length - 2) {
+            slideIndex = cards.length - 2;
         }
-        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
+        slides.style.transform = `translateX(-${(slideIndex * (100 / (cards.length - 2)))}%)`;
     }
 </script>
 
