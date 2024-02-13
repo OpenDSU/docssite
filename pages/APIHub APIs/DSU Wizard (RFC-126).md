@@ -20,8 +20,8 @@ A period when the community can review the RFC (comment Docs).
 
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
+
 <!-- TOC -->
-* [DSU Wizard (RFC-126)](#dsu-wizard-rfc-126)
 * [Abstract](#abstract)
 * [1.DSU Wizard Domain Begin Transaction](#1dsu-wizard-domain-begin-transaction)
   * [1.1. Path Parameters](#11-path-parameters)
@@ -50,14 +50,15 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+
+# **Abstract**
 
 <p style='text-align: justify;'>
 
 The DSU Wizard offers a series of operations that can allow execution context or atomic commands to be wrapped into a transaction that can be executed at a chosen time. The transaction can be built over time as well as its execution.
 </p>
 
-# 1.DSU Wizard Domain Begin Transaction
+# **1.DSU Wizard Domain Begin Transaction**
 
 <p style='text-align: justify;'>
 
@@ -82,7 +83,7 @@ Instantiate a transaction handled by the transaction manager. We use the returne
 | 500         | Instantiating the transaction encountered an error.                                                                                |
 
 
-# 2. DSU Wizard Domain Finish Transaction
+# **2. DSU Wizard Domain Finish Transaction**
 
 <p style='text-align: justify;'>
 
@@ -108,7 +109,7 @@ Execute the transaction identified by the provided transactionId, by setting the
 | 500         | Error executing the transaction. Returns the encountered error.                                                                                                                                                                         |
 
 
-# 3. DSU Wizard addFile
+# **3. DSU Wizard addFile**
 
 <p style='text-align: justify;'>
 
@@ -148,7 +149,7 @@ Add the addFile command to an already existing transaction identified by the pro
 | 500         | Error adding the command to the transaction.           |
 
 
-# 4. DSU Wizard Copy Folder
+# **4. DSU Wizard Copy Folder**
 
 <p style='text-align: justify;'>
 
@@ -182,7 +183,7 @@ Add the copy command in the context of the transaction identified by the transac
 | 500         | Error adding the command to the transaction.           |
 
 
-# 5. DSU Wizard Mount DSU
+# **5. DSU Wizard Mount DSU**
 
 <p style='text-align: justify;'>
 
@@ -216,7 +217,7 @@ Add the mount command in the context of the transaction identified by the transa
 | 500         | Error adding the command to the transaction.           |
 
 
-# 6. DSU Wizard SetKeySSI
+# **6. DSU Wizard SetKeySSI**
 
 <p style='text-align: justify;'>
 
@@ -255,15 +256,20 @@ Add the setKeySSI command in the context of the transaction identified by the tr
 | 404         | The DSU Wizard component is not enabled.               |
 | 500         | Error adding the command to the transaction.           |
 
+
+
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-# Annex 1. Contributors
+
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                               |
 |:------------------------------------|:----------------------------------------|
