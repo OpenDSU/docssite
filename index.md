@@ -117,7 +117,5 @@ nav_order: 1
 </html>
 
 <br>
-<br>
-<br>
 
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
