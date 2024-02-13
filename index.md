@@ -5,6 +5,12 @@ nav_order: 1
 ---
 
 asd
+asd
+asd
+asd
+asd
+
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -101,8 +107,8 @@ asd
     }
 
     function showSlides() {
-        if (slideIndex < -1) {
-            slideIndex = -1;
+        if (slideIndex < 0.3) {
+            slideIndex = 0.3;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
