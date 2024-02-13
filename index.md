@@ -100,15 +100,15 @@ nav_order: 1
         showSlides();
     }
 
-      function showSlides() {
-        const maxTranslate = (cards.length - 1) * (100 / cards.length);
-        const translate = slideIndex * (100 / cards.length);
-    
-        // Ensure that the translation doesn't exceed the maximum
-        const finalTranslate = translate <= maxTranslate ? translate : maxTranslate;
-    
-        slides.style.transform = `translateX(-${finalTranslate}%)`;
+    // Ensure slideIndex stays within bounds
+    if (slideIndex < 0) {
+        slideIndex = 0;
+    } else if (slideIndex > cards.length - 1) {
+        slideIndex = cards.length - 1;
     }
+
+    showSlides();
+}
 
 </script>
 
