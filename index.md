@@ -12,56 +12,54 @@ nav_order: 1
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Carousel</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        *{
+<style>
+        * {
             padding: 0;
             margin: 0;
         }
-
-
-        }
-
-        .heading{
+    
+        .heading {
             color: white;
             text-align: center;
             font-family: system-ui;
             padding-top: 50px;
         }
-
-        .cardContainer{
+    
+        .cardContainer {
             display: flex;
             gap: 8px;
             align-items: center;
             justify-content: center;
             margin-top: 100px;
         }
-
-        .card{
+    
+        .card {
             position: relative;
             left: 0px;
             width: 150px;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
         }
-
+    
         .card img {
             width: 100%;
             border-radius: 10px;
-            box-shadow: -7px -1px 11px 8px rgba(00,00,00,0.2);
+            box-shadow: -7px -1px 11px 8px rgba(00, 00, 00, 0.2);
         }
-
-        .card:not(:first-child){
+    
+        .card:not(:first-child) {
             margin-left: -50px;
         }
-
-        .card:hover{
+    
+        .card:hover {
             transform: translateY(-20px);
         }
-
-        .card:hover ~ .card{
+    
+        .card:hover + .card {
             left: 50px;
         }
-    </style>
+</style>
+
 </head>
 <body>
     <main>
