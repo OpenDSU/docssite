@@ -5,23 +5,252 @@ nav_order: 1
 ---
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    *,
+    ::before,
+    ::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #222;
+    }
+    
+    #cCarousel {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
+    
+    #cCarousel .arrow {
+      position: absolute;
+      top: 50%;
+      display: flex;
+      width: 45px;
+      height: 45px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      z-index: 1;
+      font-size: 26px;
+      color: white;
+      background: #00000072;
+      cursor: pointer;
+    }
+    
+    #cCarousel #prev {
+      left: 0px;
+    }
+    
+    #cCarousel #next {
+      right: 0px;
+    }
+    
+    #carousel-vp {
+      width: 770px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      margin: auto;
+    }
+    
+    @media (max-width: 770px) {
+      #carousel-vp {
+        width: 510px;
+      }
+    }
+    
+    @media (max-width: 510px) {
+      #carousel-vp {
+        width: 250px;
+      }
+    }
+    
+    #cCarousel #cCarousel-inner {
+      display: flex;
+      position: absolute;
+      transition: 0.3s ease-in-out;
+      gap: 10px;
+      left: 0px;
+    }
+    
+    .cCarousel-item {
+      width: 250px;
+      height: 365px;
+      border: 2px solid white;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .cCarousel-item img {
+      width: 100%;
+      object-fit: cover;
+      min-height: 246px;
+      color: white;
+    }
+    
+    .cCarousel-item .infos {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      background: white;
+      color: black;
+    }
+    
+    .cCarousel-item .infos button {
+      background: #222;
+      padding: 10px 30px;
+      border-radius: 15px;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  
+<section>
+  <div id="cCarousel">
+    <div class="arrow" id="prev"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class="arrow" id="next"><i class="fa-solid fa-chevron-right"></i></div>
 
-# **OpenDSU RFC Documentation**
-## The homepage of the OpenDSU standardisation project
-Blockchain Anchored Data, Decentralised Access Control, Self Sovereignity, Digital Trust Ecosystems 
+    <div id="carousel-vp">
+      <div id="cCarousel-inner">
 
-<div style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-content:space-around;gap: 10px 10px;">
+        <article class="cCarousel-item">
+          <img src="https://images.unsplash.com/photo-1564292284209-60cce69f08ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ0MTA1MTJ8&ixlib=rb-4.0.3&q=80&w=400" alt="Moon">
+          <div class="infos">
+            <h3>Title 1 / 6</h3>
+            <button type="button">See</button>
+          </div>
+        </article>
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=R8GYpQFhycDL3xJ6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <article class="cCarousel-item">
+          <img src="https://images.unsplash.com/photo-1564292284209-60cce69f08ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ0MTA1MTJ8&ixlib=rb-4.0.3&q=80&w=400" alt="Moon">
+          <div class="infos">
+            <h3>Title 2 / 6</h3>
+            <button type="button">See</button>
+          </div>
+        </article>
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/M25uLSmVRl0?si=4bl_aokGPNqFBFcR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <article class="cCarousel-item">
+          <img src="https://images.unsplash.com/photo-1564292284209-60cce69f08ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ0MTA1MTJ8&ixlib=rb-4.0.3&q=80&w=400" alt="Moon">
+          <div class="infos">
+            <h3>Title 3 / 6</h3>
+            <button type="button">See</button>
+          </div>
+        </article>
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=GpXncvdI4sPvc8pc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <article class="cCarousel-item">
+          <img src="https://images.unsplash.com/photo-1564292284209-60cce69f08ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ0MTA1MTJ8&ixlib=rb-4.0.3&q=80&w=400" alt="Moon">
+          <div class="infos">
+            <h3>Title 4 / 6</h3>
+            <button type="button">See</button>
+          </div>
+        </article>
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/BB7XcK8Ptss?si=FsW2Bw6ua5jfhVHb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <article class="cCarousel-item">
+          <img src="https://images.unsplash.com/photo-1564292284209-60cce69f08ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ0MTA1MTJ8&ixlib=rb-4.0.3&q=80&w=400" alt="Moon">
+          <div class="infos">
+            <h3>Title 5 / 6</h3>
+            <button type="button">See</button>
+          </div>
+        </article>
 
-<iframe width="218.27" height="150.6" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <article class="cCarousel-item">
+          <img src="https://images.unsplash.com/photo-1564292284209-60cce69f08ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ0MTA1MTJ8&ixlib=rb-4.0.3&q=80&w=400" alt="Moon">
+          <div class="infos">
+            <h3>Title 6 / 6</h3>
+            <button type="button">See</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n6YiWk8t3W0?modestbranding=1" frameborder="0" allowfullscreen></iframe>
+<script>
+  const prev = document.querySelector("#prev");
+  const next = document.querySelector("#next");
 
-</div>
+  let carouselVp = document.querySelector("#carousel-vp");
+
+  let cCarouselInner = document.querySelector("#cCarousel-inner");
+  let carouselInnerWidth = cCarouselInner.getBoundingClientRect().width;
+
+  let leftValue = 0;
+
+  // Variable used to set the carousel movement value (card's width + gap)
+  const totalMovementSize =
+    parseFloat(
+      document.querySelector(".cCarousel-item").getBoundingClientRect().width,
+      10
+    ) +
+    parseFloat(
+      window.getComputedStyle(cCarouselInner).getPropertyValue("gap"),
+      10
+    );
+
+  prev.addEventListener("click", () => {
+    if (!leftValue == 0) {
+      leftValue -= -totalMovementSize;
+      cCarouselInner.style.left = leftValue + "px";
+    }
+  });
+
+  next.addEventListener("click", () => {
+    const carouselVpWidth = carouselVp.getBoundingClientRect().width;
+    if (carouselInnerWidth - Math.abs(leftValue) > carouselVpWidth) {
+      leftValue -= totalMovementSize;
+      cCarouselInner.style.left = leftValue + "px";
+    }
+  });
+
+  const mediaQuery510 = window.matchMedia("(max-width: 510px)");
+  const mediaQuery770 = window.matchMedia("(max-width: 770px)");
+
+  mediaQuery510.addEventListener("change", mediaManagement);
+  mediaQuery770.addEventListener("change", mediaManagement);
+
+  let oldViewportWidth = window.innerWidth;
+
+  function mediaManagement() {
+    const newViewportWidth = window.innerWidth;
+
+    if (leftValue <= -totalMovementSize && oldViewportWidth < newViewportWidth) {
+      leftValue += totalMovementSize;
+      cCarouselInner.style.left = leftValue + "px";
+      oldViewportWidth = newViewportWidth;
+    } else if (
+      leftValue <= -totalMovementSize &&
+      oldViewportWidth > newViewportWidth
+    ) {
+      leftValue -= totalMovementSize;
+      cCarouselInner.style.left = leftValue + "px";
+      oldViewportWidth = newViewportWidth;
+    }
+  }
+</script>
+</body>
+</html>
+
