@@ -85,6 +85,10 @@ nav_order: 1
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
             <h2>Video 6</h2>
         </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 6</h2>
+        </div>
     </div>
 </div>
 <button class="prev" onclick="scrollSlides(-1)">❮</button>
