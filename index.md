@@ -25,15 +25,3 @@ Blockchain Anchored Data, Decentralised Access Control, Self Sovereignity, Digit
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n6YiWk8t3W0?showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 </div>
-
-
-    .video-row {
-        display: none;
-		padding-left: 15%; /* Adjust space before pictures */
-		padding-right: 15%; /* Adjust space after pictures */
-    }
-	
-	 .video-row {
-		width: 70%; /* Adjust image width */
-		margin: 0 auto; /* Center the image */
-    }
