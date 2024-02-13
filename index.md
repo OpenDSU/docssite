@@ -4,9 +4,6 @@ layout: home
 nav_order: 1
 ---
 
-<br>
-<br>
-
 <p style='text-align: justify;'>The cornerstone principle driving the creation of OpenDSU is Digital Sovereignty—a foundational concept advocating for individuals, citizens, enterprises, organizations, and states to retain maximum control over their data, independent of intermediaries.
 </p>
 
@@ -50,7 +47,7 @@ nav_order: 1
     }
    .prev, .next {
     cursor: pointer;
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
     padding: 5px;
