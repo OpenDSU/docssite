@@ -78,7 +78,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 1.2.1. Example: Application/JSON
 
-```
+```js
 {  
 "token":"2iVr8jPNNyNojJQ2EKzTz66u5rg4.oakF1h2zHGqJ8Ub5cuwH8GPXzwE3EVPnP7QZRGH
 YtGkohWahc8sMXTnWUngejdRQGwgkgvoqaBYLAfgFw83ML9PvgDRJvyqQtR99mCjTjBHhYCtTi
