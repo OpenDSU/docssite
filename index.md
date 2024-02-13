@@ -37,18 +37,19 @@ nav_order: 1
     h2 {
         margin-top: 10px;
     }
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 5px;
-        color: purple; /* Set color to purple */
-        border: none;
-        outline: none;
-        z-index: 1000; /* Increase the z-index */
-        font-size: 20px; /* Increase the font size */
-    }
+   .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    color: purple; /* Set color to purple */
+    background-color: transparent; /* Set background color to transparent */
+    border: none;
+    outline: none;
+    z-index: 1000; /* Increase the z-index */
+    font-size: 40px; /* Increase the font size */
+}
     .prev {
         left: 30px;
     }
