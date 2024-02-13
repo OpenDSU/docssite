@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,6 +24,9 @@ nav_order: 1
             position: relative;
             max-width: 48rem;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .slider{
             display: flex;
@@ -64,6 +67,21 @@ nav_order: 1
         .nav a:hover{
             opacity: 1;
         }
+        .small-cards {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .small-card {
+            width: 150px;
+            height: 100px;
+            background-color: lightgray;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +106,12 @@ nav_order: 1
                 <a href="#slide-4">
                     <img src="4.jpg" alt="">
                 </a>
+            </div>
+            <div class="small-cards">
+                <div class="small-card">Card 1</div>
+                <div class="small-card">Card 2</div>
+                <div class="small-card">Card 3</div>
+                <div class="small-card">Card 4</div>
             </div>
         </div>
     </div>
