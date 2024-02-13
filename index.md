@@ -94,6 +94,7 @@ nav_order: 1
     let slideIndex = 0;
     const slides = document.querySelector('.slideshow');
     const cards = document.querySelectorAll('.card');
+    const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
 
     function scrollSlides(n) {
         slideIndex = (slideIndex + n + cards.length) % cards.length;
@@ -101,11 +102,12 @@ nav_order: 1
     }
 
     function showSlides() {
-        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
+        const slideWidth = containerWidth / cards.length;
+        slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
     }
 </script>
 
 </body>
 </html>
 
-test
+test2
