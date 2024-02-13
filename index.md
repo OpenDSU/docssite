@@ -98,10 +98,11 @@ nav_order: 1
         slideIndex += n;
         showSlides();
     }
-
     function showSlides() {
         if (slideIndex < 0) {
             slideIndex = 0;
+        } else if (slideIndex > cards.length - Math.ceil(slides.offsetWidth / (cards[0].offsetWidth + 20))) {
+            slideIndex = cards.length - Math.ceil(slides.offsetWidth / (cards[0].offsetWidth + 20));
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
