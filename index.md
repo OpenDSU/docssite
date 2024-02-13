@@ -74,7 +74,7 @@ nav_order: 1
     <div class="slideshow">
         <div class="card">
            <iframe width="560" height="315" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=6l1jbqU3aq2Gf_IN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <b>OpenDSU Pitch in 3 minutes <br> <b>(1)</b></b>
+            <b>OpenDSU Pitch in 3 minutes <br> (1)</b>
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
