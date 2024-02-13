@@ -42,10 +42,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 This RFC summarizes the different API spaces available for Javascript client-side applications.
-# 1. Get started
+# **1. Get started**
 
 In order to use the API, it is need to call the function opendsu.loadApi(apiSpaceName), where opendsu is the folder containing the code for the API and “apiSpaceName” is one of the mandatory APIs space names in the list below.
 
@@ -106,12 +106,12 @@ const http = opendsu.loadApi("http");
 
 
 
-# 2. Operations on DSUs
+# **2. Operations on DSUs**
 
 
 [Click here to know all operations available on DSU objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html)
 
-# 3. Operations on KeySSIs
+# **3. Operations on KeySSIs**
 
 
 [Click here to know all common operations available for every KeySSI](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)
@@ -121,9 +121,12 @@ There are also family-specific functions that you can find on the dedicated page
 
 **Contributors**   
 
-1. [Axiologic Research](www.axiologic.net):New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/) 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
+
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
 # Annex 1. Contributors

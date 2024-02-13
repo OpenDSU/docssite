@@ -36,13 +36,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
-<p style='text-align: justify;'>This RFC is designed to help developers create their first SSApp using HTML, Javascript and CSS. As a reminder, SSApps are DSUs that contain data and code including the user interface (UI) code that will be loaded by an agent if the corresponding keySSI is provided (see SSApp Architecture). All the applications used by OpenDSU in one form or another have a Wallet.</p>
-
+<p style='text-align: justify;'>This RFC is designed to help developers create their first SSApp using HTML, Javascript and CSS. As a reminder, SSApps are DSUs that contain data and code including the user interface (UI) code that will be loaded by an agent if the corresponding keySSI is provided (see <a href="https://www.opendsu.org/pages/concepts/SSApps%20Architecture%20(RFC-028).html">SSApp Architecture</a>). All the applications used by OpenDSU in one form or another have a Wallet.
+</p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSyfKEml7L2uhhazSF8nrff6OrT6ReFsRno4dB6xHWWL89nOofyAh8WEHv7CCu27QnGC_D4o6MVW_ng/pub?w=730&h=473" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQVppmu5NT1ub25b5ECWguHmPlKqawcEKHL280lHm5Ol3EeaZW8DvIGVglZtTFiNz4NnoUCmRlxlb5s/pub?w=746&h=474" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: SSApp - UI in wallets</b></p>
 </div>
 
@@ -51,7 +51,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRE9SpB41u9rB6AJlHBttjmtNTBAx5kQcxm8CUA4-cfHpAZ9CwP5T3fKMAT96VkOne8OahRMBvUyqlQ/pub?w=837&h=346" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTi6fyCw6B-lZ9098PMI4AIGrjDoVuUMsaEB68NKUeG6uBR9DNjTfgWfJXdZliIR2UPNZBlhXAo1ksF/pub?w=845&h=345" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 2: SSApps as DSUs containing data and code</b></p>
 </div>
 
@@ -59,11 +59,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 1. Get Started
+# **1. Get Started**
 
 The best way to understand SSApps is to start with the [tutorial](https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html), where you will learn how to create your first and very simple SSApp.
 
-# 2. Go further with the ePi-workspace demonstration
+# **2. Go further with the ePi-workspace demonstration**
 
 This demonstration shows us 3 different SSApp:
 
@@ -76,11 +76,12 @@ This demonstration shows us 3 different SSApp:
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
 
