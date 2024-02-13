@@ -96,7 +96,7 @@ nav_order: 1
     let slideIndex = 0;
     const slides = document.querySelector('.slideshow');
     const cards = document.querySelectorAll('.card');
-    const slideWidth = 100 / cards.length;
+    const slideWidth = 100 / (cards.length - 1); // Adjusted calculation
 
     function scrollSlides(n) {
         slideIndex += n;
@@ -116,3 +116,4 @@ nav_order: 1
 
 </body>
 </html>
+test
