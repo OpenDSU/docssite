@@ -6,11 +6,6 @@ nav_order: 1
 
 
 
-
-asd<br>
-asd<br>
-
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -105,14 +100,11 @@ asd<br>
         showSlides();
     }
 
-    function scrollSlides(n) {
-        slideIndex += n;
+    function showSlides() {
         if (slideIndex < 0) {
-            slideIndex = cards.length - 1; // If at the beginning, go to the last slide
-        } else if (slideIndex >= cards.length) {
-            slideIndex = 0; // If at the end, go to the first slide
+            slideIndex = 0;
         }
-        showSlides();
+        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
 </script>
 
