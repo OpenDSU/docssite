@@ -4,6 +4,7 @@ layout: home
 nav_order: 1
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,11 +12,11 @@ nav_order: 1
 <title>YouTube Video Cards Slideshow</title>
 <style>
     .slideshow-container {
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    z-index: 1; /* Increase the z-index */
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        z-index: 1; /* Increase the z-index */
     }
     .slideshow {
         display: flex;
@@ -36,7 +37,7 @@ nav_order: 1
     h2 {
         margin-top: 10px;
     }
-      .prev, .next {
+    .prev, .next {
         cursor: pointer;
         position: absolute;
         top: 50%;
@@ -59,7 +60,6 @@ nav_order: 1
 <body>
 
 <div class="slideshow-container">
-    <button class="prev" onclick="scrollSlides(-1)">❮</button>
     <div class="slideshow">
         <div class="card">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
@@ -86,6 +86,7 @@ nav_order: 1
             <h2>Video 6</h2>
         </div>
     </div>
+    <button class="prev" onclick="scrollSlides(-1)">❮</button>
     <button class="next" onclick="scrollSlides(1)">❯</button>
 </div>
 
@@ -99,15 +100,12 @@ nav_order: 1
         showSlides();
     }
 
-
-
     function showSlides() {
         if (slideIndex < 0) {
-            slideIndex = 6;
+            slideIndex = 0;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
-
 </script>
 
 </body>
