@@ -26,7 +26,7 @@ nav_order: 1
     .card {
         flex: 0 0 calc(50% - 20px);
         margin: 10px;
-        padding: 3px;
+        padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
