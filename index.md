@@ -19,11 +19,10 @@ asd<br>
 <title>YouTube Video Cards Slideshow</title>
 <style>
     .slideshow-container {
+        position: relative; /* Set the container as the positioning context */
         width: 90%;
         margin: 0 auto;
         overflow: hidden;
-        position: relative;
-        z-index: 1; /* Increase the z-index */
     }
     .slideshow {
         display: flex;
@@ -110,8 +109,8 @@ asd<br>
       function showSlides() {
         if (slideIndex < 0) {
             slideIndex = 0;
-        } else if (slideIndex > cards.length - 5) {
-            slideIndex = cards.length - 5;
+        } else if (slideIndex > cards.length - 0.5) {
+            slideIndex = cards.length - 0.5;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
