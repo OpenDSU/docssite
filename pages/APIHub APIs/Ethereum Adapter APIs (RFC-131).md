@@ -153,23 +153,23 @@ BSidW1oziQQbB3vTNVc1ST7TbTdBefPiMv6p7Lwni9DsYAM1sjVDPdrhGDsTsKkcjp4Lecio4f81
 # **4. Ethereum smart contract AnchorContract**
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQtlRfNSzAmonskTQlL2oh6IAEthiIWjJfvt8M0eWaI_PEO7gN-vXIrq8ELNdmx3TK-l7aZDxZpQb25/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -150px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLG8FZ3AAg5umqRR-En6juEb_ZTxDPfXCDdqb-mZaqcive9WQtOPoNH_Kn8aG4sUaR4HV88wrsLErR/pub?w=800&h=400" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -150px;"/>
     <p><b>Figure 1: High-level overview</b></p>
 </div>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS5SVhpteemcVoMxzKILAaBdjFcSXgAEu-UxB-VGBuyBWD6W91v-uOtsLQ3w_Nwwc3dAC1sOvoC_Fy7/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -180px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRCJ4PNwFeymG5dL1IV-ySuf8WEm1hKd4DLcC84u_HW_3vFgh-wmYK-cxH79dARHVX8i8-z1skznvnu/pub?w=938&h=241" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -180px;"/>
     <p><b>Figure 2: Ethereum Adapter in place of Blockchain Adapter</b></p>
 </div> 
 
 
 ## 4.1. Ethereum
 
-| Smart Contract Function | Parameters                                                                                                                                                                                      | Details                                                                                                                                                                                                                                                                    |
-|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| addAnchor               | string anchorID<br/>string keySSIType<br/>string controlString<br/>string vn<br/>string newHashLinkSSI<br/>string ZKPValue<br/>string lastHashLinkSSI<br/>string signature<br/>string publicKey | Creates a new anchor with an entry for the specified anchorID does not exist or appends the new newHashLinkSSI to an existing anchor if the validation passes. <br> <b>Returns</b>: None <br> Throws error on verification failures.                                       |
-| getAnchorVersions       | String anchorID                                                                                                                                                                                 | Returns an array of HashLInkSSIs.                                                                                                                                                                                                                                          |
-| getChainedVersions      | String anchorID                                                                                                                                                                                 | Returns an array of tuples                                                                                                                                                                                                                                                 |
+| Smart Contract Function | Parameters                                                                                                                                                                                      | Details                                                                                                                                                                                                                                                                |
+|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| addAnchor               | string anchorID<br/>string keySSIType<br/>string controlString<br/>string vn<br/>string newHashLinkSSI<br/>string ZKPValue<br/>string lastHashLinkSSI<br/>string signature<br/>string publicKey | Creates a new anchor with an entry for the specified anchorID does not exist or appends the new newHashLinkSSI to an existing anchor if the validation passes. <br> <b>Returns</b>: None <br> Throws error on verification failures.                                   |
+| getAnchorVersions       | String anchorID                                                                                                                                                                                 | Returns an array of HashLInkSSIs.                                                                                                                                                                                                                                      |
+| getChainedVersions      | String anchorID                                                                                                                                                                                 | Returns an array of tuples                                                                                                                                                                                                                                             |
 
 
 Reference: <a href="https://github.com/PharmaLedger-IMI/ethereum-anchoring.">https://github.com/PharmaLedger-IMI/ethereum-anchoring.</a>
@@ -330,8 +330,9 @@ Functions used in implementation:
 
 Function Signature:
 
-<p style='text-align: justify;'><b>“ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):</b> recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - <a href="">https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html.</a>
+<p style='text-align: justify;'><b>“ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address): </b>recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - <a href="https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html">https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html</a>.
 </p>
+
 However, the signature received must be received in ASN.1 format
 
 ```js
@@ -344,7 +345,7 @@ However, the signature received must be received in ASN.1 format
 
 <p style='text-align: justify;'>
 
-More information about ASN.1 can be found at <a href="">https://www.secg.org/sec1-v2.pdf</a>, page 114. Usually, the v is not returned by the signing libraries, but it is required by Solidity in order to optimize the result.
+More information about ASN.1 can be found at <a href="https://www.secg.org/sec1-v2.pdf ">https://www.secg.org/sec1-v2.pdf</a>, page 114. Usually, the v is not returned by the signing libraries, but it is required by Solidity in order to optimize the result.
 
 </p>
 
@@ -376,7 +377,7 @@ Functions used in the implementation:
 
 <p style='text-align: justify;'>
 
-The source code can be found at <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a> in the SmartContract folder.
+The source code can be found at <a href="https://github.com/PharmaLedger-IMI/ethereum-anchoring-obsolete">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a> in the SmartContract folder.
 </p>
 
 <p style='text-align: justify;'>To compile and deploy the smart contract on a local environment, update the values in the .env file and run npm run truffle-migrate. It will use the internal network.
@@ -446,7 +447,7 @@ The information about the anchor to be stored is required as follows:
    signature: 'signature encoded base58 in DER format',
    publicKey: 'public key in raw format encoded base58'
 },
- zkp: 'zkp value’
+ zkp: 'zkp value
 }
 ```
 
@@ -487,7 +488,7 @@ The information about the versions to be obtained is required as follows:
 
 <p style='text-align: justify;'>
 
-The source code can be found at <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a>, in the ApiAdaptor folder. In order to use it in a local environment, update the values in the .env file and run npm run start-dev.
+The source code can be found at <a href="https://github.com/PharmaLedger-IMI/ethereum-anchoring-obsolete">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a>, in the ApiAdaptor folder. In order to use it in a local environment, update the values in the .env file and run npm run start-dev.
 </p>
 
 **Kubernetes deployment** 
