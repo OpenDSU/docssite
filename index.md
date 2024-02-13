@@ -7,14 +7,11 @@ nav_order: 1
 <p style='text-align: justify;'>The cornerstone principle driving the creation of OpenDSU is Digital Sovereignty — a foundational concept advocating for individuals, citizens, enterprises, organizations, and states to retain maximum control over their data, independent of intermediaries.
 </p>
 
-<p style='text-align: justify;'>Our exploration of OpenDSU revealed the impracticality of consolidating global data into a single expansive blockchain, as envisioned by projects like Ethereum. The idealized vision of a uniformly governed digital landscape proves unattainable.
+
+<p style='text-align: justify;'>The OpenDSU team introduced Hierarchical Blockchains, enabling seamless interoperability across applications. Data Sharing Units (DSUs) define OpenDSU, an evolving standard for off-chain data storage systems anchored in blockchains for security and data provenance.
 </p>
 
-
-<p style='text-align: justify;'>Hence, the OpenDSU team introduced Hierarchical Blockchains, enabling seamless interoperability across applications. Data Sharing Units (DSUs) define OpenDSU, an evolving standard for off-chain data storage systems anchored in blockchains for security and data provenance.
-</p>
-
-<p style='text-align: justify;'>Also, to better understand the OpenDSU Documentation, please, watch the below videos:</p>
+<p style='text-align: justify;'>For more information, please read our RFC Documentation and watch the below videos.</p>
 
 <html lang="en">
 <head>
