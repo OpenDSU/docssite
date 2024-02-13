@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-<p style='text-align: justify;'>The cornerstone principle driving the creation of OpenDSU is Digital Sovereignty—a foundational concept advocating for individuals, citizens, enterprises, organizations, and states to retain maximum control over their data, independent of intermediaries.
+<p style='text-align: justify;'>The cornerstone principle driving the creation of OpenDSU is Digital Sovereignty — a foundational concept advocating for individuals, citizens, enterprises, organizations, and states to retain maximum control over their data, independent of intermediaries.
 </p>
 
 <p style='text-align: justify;'>Our exploration of OpenDSU revealed the impracticality of consolidating global data into a single expansive blockchain, as envisioned by projects like Ethereum. The idealized vision of a uniformly governed digital landscape proves unattainable.
