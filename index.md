@@ -98,7 +98,8 @@ nav_order: 1
         slideIndex += n;
         showSlides();
     }
- }
+
+
 
     function showSlides() {
         if (slideIndex < 0) {
