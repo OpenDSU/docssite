@@ -51,7 +51,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
   * [Function convertPrivateKey(rawPrivateKey, outputFormat)](#function-convertprivatekeyrawprivatekey-outputformat)
   * [Function convertPublicKey(rawPublicKey, outputFormat, curveName)](#function-convertpublickeyrawpublickey-outputformat-curvename)
   * [Function getPublicKeyFromPrivateKey(rawPrivateKey, outputFormat)](#function-getpublickeyfromprivatekeyrawprivatekey-outputformat)
-  * [Function ecies_encrypt_ds(senderKeySSI, receiverKeySSI, data)]](#function-ecies_encrypt_dssenderkeyssi-receiverkeyssi-data)
+  * [Function ecies_encrypt_ds(senderKeySSI, receiverKeySSI, data)](#function-ecies_encrypt_dssenderkeyssi-receiverkeyssi-data)
   * [Function ecies_decrypt_ds(receiverKeySSI, data)](#function-ecies_decrypt_dsreceiverkeyssi-data)
   * [Function createJWTForDID(did, scope, credentials, options, callback)](#function-createjwtfordiddid-scope-credentials-options-callback)
   * [Function verifyDID_JWT(jwt, rootOfTrustVerificationStrategy, callback)](#function-verifydid_jwtjwt-rootoftrustverificationstrategy-callback)
@@ -566,7 +566,7 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 | outputFormat  | string | “raw”  |              |
 
 
-## Function ecies_encrypt_ds(senderKeySSI, receiverKeySSI, data)]
+## Function ecies_encrypt_ds(senderKeySSI, receiverKeySSI, data)
 
 **Description:** 
 
