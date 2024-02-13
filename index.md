@@ -66,28 +66,24 @@ nav_order: 1
             <h3>Insights about Enteprise Blockchain Solutions (Adoption & Properites)</h3>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 2</h2>
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=6l1jbqU3aq2Gf_IN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>OpenDSU Pitch in 3 minutes</h3>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 3</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=s9Ep9lFXx-H33sv6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>Decentralised EPCIS with Digital Twins and OpenDSU</h3>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 4</h2>
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/BB7XcK8Ptss?si=szd06PzJIvXtUx2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>OpenDSU Technical Introduction</h3>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 5</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=3eWIn8wbNRMlybUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>OpenDSU Overview for Enterprise Architects and Business Stakeholders</h3>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 6</h2>
-        </div>
-        <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 6</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0A3bGUAajrM?si=KSaBfEwnUbs8ADiD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>Open DSU for Data Sharing in Enterprise Blockchain Systems and Digital Trust Ecosystems</h3>
         </div>
     </div>
 </div>
