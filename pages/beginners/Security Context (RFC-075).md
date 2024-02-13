@@ -70,7 +70,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p align="justify">The Security Context (SC) API space offers a set of portable functions that represent functionalities of the “Security Context” that enables executable choreographies between various types of DSU reconstruction environments.</p>
 
@@ -114,7 +114,7 @@ The Security Context can have two enclaves:
 
 
 
-# 1. Public functions from the Security Context API Space 
+# **1. Public functions from the Security Context API Space** 
 ##  Function getSecurityContext()
 
 **Description**: Get the security context instance. If the security context does not exist, this function will create it.
@@ -399,7 +399,7 @@ The Security Context can have two enclaves:
 **Description**: Asynchronously retrieve the main DID Key for the environment.
 
 
-# 2. Security context instance API
+# **2. Security context instance API**
 
 Here is the list of operations available on the security context object created through the getSecurityContext:
 
@@ -468,12 +468,12 @@ Here is the list of operations available on the security context object created 
 
 **Description**: Sign data with a keySSI within the security context.
 
-| **Name**  | **Type**                  | **Value**  | **Description**                                                                  | 
-|:----------|:--------------------------|:-----------|:---------------------------------------------------------------------------------|
-| forDID    | string                    | *required  | The identity of the keySSI holder.                                               |
-| keySSI    | keySSI object  or string  | *required  | The keySSI object or the identifier of the keySSI with which you want to sign.   |
-| data      | Buffer or string          | *required  | The data you want to sign.                                                       |
-| callback  | function                  | *required  |                                                                                  |
+| **Name**  | **Type**                                                                                   | **Value**  | **Description**                                                                  | 
+|:----------|:-------------------------------------------------------------------------------------------|:-----------|:---------------------------------------------------------------------------------|
+| forDID    | string                                                                                     | *required  | The identity of the keySSI holder.                                               |
+| keySSI    | [keySSI](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html) object  or string | *required  | The keySSI object or the identifier of the keySSI with which you want to sign.   |
+| data      | Buffer or string                                                                           | *required  | The data you want to sign.                                                       |
+| callback  | function                                                                                   | *required  |                                                                                  |
 
 
 **Callback parameters**
@@ -601,12 +601,17 @@ Here is the list of operations available on the security context object created 
 
 **Contributors**   
 
-1. [Axiologic Research](www.axiologic.net):New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the [www.opendsu.com](www.opendsu.com) site.
-2. [PharmaLedger Project](www.pharmaledger.eu): Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-3. [PrivateSky Research Project](www.privatesky.xyz):  MIT licensed content accordingly with the contracts. [https://profs.info.uaic.ro/~ads/PrivateSky/](https://profs.info.uaic.ro/~ads/PrivateSky/) 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
+
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+# **Annex 1. Contributors**
 
 |**Current Editors**                  | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
