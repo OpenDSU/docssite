@@ -217,7 +217,7 @@ Insert the company domain based on the existing mainDomain. Company domains are 
  example: NOT_IMPLEMENTED
  cloneFromDomain: string
  example: csc
- 
+ }
 ```
 
 ### 4.1.3. Responses
@@ -263,7 +263,6 @@ Disable the company domain. Disabled company domains will hold an "active: false
  signature:string
  example: NOT_IMPLEMENTED
 }
-
 ```
 
 ### 4.2.3. Responses
@@ -305,7 +304,6 @@ Add the DID of the admin in the admins table of the adminEnclave.
  signature: string
  example: NOT_IMPLEMENTED
 }
-
 ```
 
 ### 4.3.3. Responses
@@ -349,7 +347,6 @@ Add the DID of the admin in the admins table of the adminEnclave.
  signature: string
  example: NOT_IMPLEMENTED
 }
-
 ```
 
 ### 4.4.3. Responses
@@ -398,7 +395,6 @@ example: 1668020801397
 signature: string
 example: NOT_IMPLEMENTED
 }
-
 ```
 
 ### 4.5.3. Responses
@@ -445,7 +441,6 @@ example: { "appName": "Demiurge", "vault": "server", "agent": "browser", "system
  signature: string
  example: NOT_IMPLEMENTED
 }
-
 ```
 
 ### 4.6.3. Responses
