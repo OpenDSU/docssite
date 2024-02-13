@@ -21,7 +21,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [SSO Secrets (RFC-134)](#sso-secrets-rfc-134)
 * [Abstract](#abstract)
 * [1. Get SSO Secret](#1-get-sso-secret)
   * [1.1. Path Parameters](#11-path-parameters)
