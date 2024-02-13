@@ -114,10 +114,8 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 ## Function createHashLinkSSI(domain, hash, vn, hint)
 
-<p style='text-align: justify;'>
-
 **Description:** Create a <a href="https://opendsu.com/rfc015">HashLinkSSI</a> object. The HashLinkSSI is used to reference each brick of the DSUs. This should be handled manually by OpenDSU.
-</p>
+
 
 | Name                  | Type    | Value      | Description                                             |
 |:----------------------|:--------|:-----------|:--------------------------------------------------------|
@@ -136,10 +134,8 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 ## Function createSeedSSI(domain, vn, hint, callback)
 
-<p style='text-align: justify;'>
-
 **Description:**  Create and initialise a <a href="https://opendsu.com/rfc010">SeedSSI</a> key. A SeedSSI is used to create and access a DSU. It provides complete control over the DSU. It can be derived to obtain a SReadSSI key that will give read-only access to the DSU that was created with the associated SeedSSI.
-</p>
+
 
 | Name                 | Type     | Value     | Description                                             |
 |:---------------------|:---------|:----------|:--------------------------------------------------------|
@@ -168,10 +164,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 ## Function createSignedHashLinkSSI(domain, hashLink, timestamp, signature, vn, hint)
 
-<p style='text-align: justify;'>
-
 **Description:** Create a SignedHashLinkSSI object. The SignedHashLinkSSI is used to reinforce the security of the brick storage.
-</p>
 
 
 | Name                 | Type             | Value      | Description                                                                                                |
@@ -193,10 +186,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 ## Function createTemplateSeedSSI(domain, specificString, control, vn, hint, callback)
 
-<p style='text-align: justify;'>
-
 **Description:** This function is used to create a template version of <a href="https://opendsu.com/rfc010">SeedSSI</a> key. To create a real SeedSSI, you should use the above function – createSeedSSI.
-</p>
 
 | Name                           | Type             | Value     | Description                                                                                                |
 |:-------------------------------|:-----------------|:----------|:-----------------------------------------------------------------------------------------------------------|
@@ -308,10 +298,8 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 ## Function parse(ssiString, options)
 
-<p style='text-align: justify;'>
-
 **Description:** Parse a string obtained from the serialization of a KeySSI (this format: _ssi:seed:domain:specificString:control:v0_)  to obtain the corresponding KeySSI object.
-</p>
+
 
 | Name                | Type                          | Value      | Description                                           |
 |:--------------------|:------------------------------|:-----------|:------------------------------------------------------|
