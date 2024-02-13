@@ -100,13 +100,17 @@ nav_order: 1
         showSlides();
     }
 
-      function scrollSlides(n) {
+     function scrollSlides(n) {
         slideIndex += n;
+        if (slideIndex < 0) {
+            slideIndex = 0;
+        }
         if (slideIndex > cards.length - 1) {
             slideIndex = cards.length - 1;
         }
         showSlides();
     }
+
 </script>
 
 </body>
