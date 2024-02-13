@@ -8,8 +8,8 @@ nav_order: 5
 # Validation Strategies
 {: .no_toc }
 
-early draft
-
+{: .draft }
+A period when the community can review the RFC (comment Docs).
 
 **Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
@@ -17,6 +17,20 @@ early draft
 
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+<!-- TOC -->
+* [Validation Strategies](#validation-strategies)
+* [Validation strategies functions](#validation-strategies-functions)
+    * [createPresentation(validationStrategyName, ...args)](#createpresentationvalidationstrategyname-args)
+    * [getStrategy(validationStrategyName)](#getstrategyvalidationstrategyname)
+    * [issueCredential(validationStrategyName, ...args)](#issuecredentialvalidationstrategyname-args)
+    * [registerValidationStrategy(validationStrategyName, ...args)](#registervalidationstrategyvalidationstrategyname-args)
+    * [sign(validationStrategyName, ...args)](#signvalidationstrategyname-args)
+    * [validatePresentation(allowedImplementationArray, useCase, environmentData, presentationSerialisation, (err, result) =>{})](#validatepresentationallowedimplementationarray-usecase-environmentdata-presentationserialisation-err-result-)
+  * [verifyCredential(validationStrategyName, ...args)](#verifycredentialvalidationstrategyname-args)
+  * [verifySignature(validationStrategyName, ...args)](#verifysignaturevalidationstrategyname-args)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 # Validation strategies functions
 
@@ -38,9 +52,107 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | verifyCredential           | Verify claims inside a credential with the strategy of your choice                                                                              |
 | verifySignature            | Verify the signature of a credential or a presentation with the strategy of your choice                                                         |
 
-**createPresentation(validationStrategyName, ...args)**
+### createPresentation(validationStrategyName, ...args)
 
-**Description:** This function allows the user to create a verifiable presentation. Presentations can be used to combine and present a set of different verifiable credentials. They are packaged in a way that makes all the claims inside the presentation verifiable by a verifier (the one that will receive the presentation). More information is available on the w3c website.
+<p style='text-align: justify;'>**Description:** This function allows the user to create a verifiable presentation. Presentations can be used to combine and present a set of different verifiable credentials. They are packaged in a way that makes all the claims inside the presentation verifiable by a verifier (the one that will receive the presentation). More information is available on the w3c website.
+</p>
+**Parameters:**
+
+| Parameter               | Type     | Description    |
+|:------------------------|:---------|:---------------|
+| validationStrategyName  |          |                |
+| ...args                 |          |                |
+
+
+### getStrategy(validationStrategyName)
+
+<p style='text-align: justify;'>**Description:** Get the strategy used to issue, sign and verify credentials and presentations.
+</p>
+**Parameters:**
+
+| Parameter               | Type     | Description    |
+|:------------------------|:---------|:---------------|
+| validationStrategyName  | string   |                |
+| ...args                 |          |                |
+
+### issueCredential(validationStrategyName, ...args)
+
+<p style='text-align: justify;'>**Description:** Issue credential with the strategy of your choice.
+</p>
+**Parameters:**
+
+| Parameter               | Type     | Description    |
+|:------------------------|:---------|:---------------|
+| validationStrategyName  |          |                |
+| ...args                 |          |                |
+
+### registerValidationStrategy(validationStrategyName, ...args)
+
+<p style='text-align: justify;'>**Description:** Register a new presentation or update an existing one from the strategy’s registry.
+</p>
+**Parameters:**
+
+| Parameter               | Type     | Description    |
+|:------------------------|:---------|:---------------|
+| validationStrategyName  |          |                |
+| ...args                 |          |                |
+
+### sign(validationStrategyName, ...args)
+
+<p style='text-align: justify;'>**Description:** Sign credential or presentation with the strategy of your choice.
+</p>
+**Parameters:**
+
+| Parameter               | Type     | Description    |
+|:------------------------|:---------|:---------------|
+| validationStrategyName  |          |                |
+| ...args                 |          |                |
+
+### validatePresentation(allowedImplementationArray, useCase, environmentData, presentationSerialisation, (err, result) =>{})
+
+<p style='text-align: justify;'>**Description:** Get a handler to a shared ledger.
+</p>
+**Parameters:**
+
+| Parameter                  | Type     | Description    |
+|:---------------------------|:---------|:---------------|
+| allowedImplementationArray | string   |                |
+| useCase                    |          |                |
+| environmentData            |          |                |
+| presentationSerialisation  |          |                |
+
+**Callback:**
+
+| Parameter                 | Type                | Description                                                                     |
+|:--------------------------|:--------------------|:--------------------------------------------------------------------------------|
+| err                       | ErrorWrapper object | Contains a message and the error                                                |
+| result                    | boolean             | If the presentation could be verified will return true. Else will return false. |
+
+
+## verifyCredential(validationStrategyName, ...args)
+
+<p style='text-align: justify;'>**Description:** Verify claims inside a credential with the strategy of your choice.
+</p>
+**Parameters:**
+
+| Parameter               | Type     | Description    |
+|:------------------------|:---------|:---------------|
+| validationStrategyName  |          |                |
+| ...args                 |          |                |
+
+
+## verifySignature(validationStrategyName, ...args)
+
+<p style='text-align: justify;'>**Description:** Verify the signature of a credential or a presentation with the strategy of your choice.
+</p>
+**Parameters:**
+
+| Parameter               | Type     | Description    |
+|:------------------------|:---------|:---------------|
+| validationStrategyName  |          |                |
+| ...args                 |          |                |
+
+
 
 **Contributors**
 
