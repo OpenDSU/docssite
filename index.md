@@ -7,6 +7,9 @@ nav_order: 1
 
 
 
+asd<br>
+asd<br>
+
 
 <html lang="en">
 <head>
@@ -96,24 +99,22 @@ nav_order: 1
     let slideIndex = 0;
     const slides = document.querySelector('.slideshow');
     const cards = document.querySelectorAll('.card');
-    const slideWidth = 100 / (cards.length - 1); // Adjusted calculation
+
+    function scrollSlides(n) {
+        slideIndex += n;
+        showSlides();
+    }
 
     function scrollSlides(n) {
         slideIndex += n;
         if (slideIndex < 0) {
-            slideIndex = 0;
+            slideIndex = cards.length - 1; // If at the beginning, go to the last slide
         } else if (slideIndex >= cards.length) {
-            slideIndex = cards.length - 1;
+            slideIndex = 0; // If at the end, go to the first slide
         }
         showSlides();
-    }
-
-    function showSlides() {
-        const translateXValue = slideIndex * slideWidth;
-        slides.style.transform = `translateX(-${translateXValue}%)`;
     }
 </script>
 
 </body>
 </html>
-test
