@@ -92,10 +92,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 ## Function createArraySSI(domain, arr, vn, hint)
 
-<p style='text-align: justify;'>
-
 **Description:** Build an <a href="https://opendsu.com/rfc012">ArraySSI</a> object. ArraySSIs are created using an array of strings that a user can remember, such as company and employee names. From this ArraySSI, a constSSI will be derived to get a more secure identifier using a derivation function.
-</p>
 
 | Name                  | Type            | Value      | Description                                                                               |
 |:----------------------|:----------------|:-----------|:------------------------------------------------------------------------------------------|
