@@ -62,8 +62,8 @@ nav_order: 1
 <div class="slideshow-container">
     <div class="slideshow">
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 1</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h2>Insights about Enteprise Blockchain Solutions (Adoption & Properites)</h2>
         </div>
         <div class="card">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
