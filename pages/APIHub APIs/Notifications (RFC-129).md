@@ -22,7 +22,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [Notifications (RFC-129)](#notifications-rfc-129)
 * [Abstract](#abstract)
 * [1. Create a Subscription](#1-create-a-subscription)
   * [1.1. Path Parameters](#11-path-parameters)
@@ -40,11 +39,12 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
+
 <p style='text-align: justify;'>The Notifications API Service offers the capabilities to send and receive messages on communication channels based on anchorIds. It also provides the possibility to remove the created channel in the scope of communication.
 </p>
 
-# 1. Create a Subscription
+# **1. Create a Subscription**
 
 <p style='text-align: justify;'>Request to get notified each time a new message is received for the anchorId. This endpoint enables long polling request sequences.
 </p>
@@ -53,9 +53,9 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ## 1.1. Path Parameters
 
-| Name     | Type     | Value     | Description                                                                                                                                        |
-|:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
-| anchorId | string   | *required | Zero Access keySSI encoded in base58. Example: _29fgyfTQXJmJNni42zuJu3NXHgtUuXk3318NMMTrYKfj1gwAttt16rKq3vPCUjFV 3KZeF9HJnaZnW4FnN7t7zBQFKjdXBwX._ |
+| Name     | Type     | Value     | Description                                                                                                                                               |
+|:---------|:---------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| anchorId | string   | *required | Zero Access keySSI encoded in base58.  <br/>Example:  <br/>_29fgyfTQXJmJNni42zuJu3NXHgtUuXk3318NMMTrYKfj1gwAttt16rKq3vPCUjFV 3KZeF9HJnaZnW4FnN7t7zBQFKjdXBwX._ |
 
 
 ## 1.2. Responses
@@ -68,7 +68,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 | 500           | An internal error occurred when creating the queue.              |
 
 
-# 2. Delete a Subscription
+# **2. Delete a Subscription**
 
 <p style='text-align: justify;'>Delete the communication channel created by either subscription or publish commands for the specified anchorId.
 </p>
@@ -88,7 +88,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 | 503         | Under construction. Currently needs to be implemented.  |
 
 
-# 3. Publish Notification
+# **3. Publish Notification**
 
 <p style='text-align: justify;'>Publish a message to the anchorId subscriber. Create a queue for the anchorId in case it does not exist.
 </p>
@@ -110,11 +110,12 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 3.2.1.Example: Application/JSON
 
-```
+```js
 {
    "message": "Content of message sent to subscribers"
   }
 ```
+
 
 ## 3.3. Responses
 
@@ -128,23 +129,26 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 3.3.1. Example: Application/JSON
 
-```
+```js
 {
    "message": "Message delivered to 2 subscribers."
   }
 ```
 
+
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
+   
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                         | **Email**                                 |
 |:--------------------------------------------|:------------------------------------------|
