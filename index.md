@@ -42,11 +42,12 @@ nav_order: 1
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        padding: 30px;
+        padding: 5px;
         color: purple; /* Set color to purple */
         border: none;
         outline: none;
         z-index: 1000; /* Increase the z-index */
+        font-size: 20px; /* Increase the font size */
     }
     .prev {
         left: 30px;
