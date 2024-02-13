@@ -5,7 +5,7 @@ parent: OpenDSU Concepts
 nav_order: 4
 ---
 
-# Anchoring
+# **Anchoring(RFC-005)**
 {: .no_toc }
 
 
@@ -17,31 +17,30 @@ The proposal has been accepted and has an implementation.
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
+
 
 <!-- TOC -->
-* [Anchoring](#anchoring)
 * [Abstract](#abstract)
 * [Overview](#overview)
-* [Implicit Anchors](#implicit-anchors)
-  * [Transactions as Implicit Anchors](#transactions-as-implicit-anchors)
-  * [Zero Knowledge Anchors](#zero-knowledge-anchors)
-* [Explicit Anchors](#explicit-anchors)
-  * [Anchors with Attached ZKP Values](#anchors-with-attached-zkp-values)
-* [Special SSIs for Anchor Values](#special-ssis-for-anchor-values)
-  * [TransferSSI](#transferssi)
+* [1. Implicit Anchors](#1-implicit-anchors)
+  * [1.1 Transactions as Implicit Anchors](#11-transactions-as-implicit-anchors)
+  * [1.2 Zero Knowledge Anchors](#12-zero-knowledge-anchors)
+* [2. Explicit Anchors](#2-explicit-anchors)
+  * [2.1 Anchors with Attached ZKP Values](#21-anchors-with-attached-zkp-values)
+* [3. Special SSIs for Anchor Values](#3-special-ssis-for-anchor-values)
+  * [3.1 TransferSSI](#31-transferssi)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-{:toc}
 
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC introduces the anchoring concept from the OpenDSU project.</p>
 
-# Overview
+# **Overview**
 
 <p style='text-align: justify;'>OpenDSU aims to facilitate the creation of blockchain platforms that support multiple blockchains, and even more, it should support heterogeneous blockchains (blockchains with different capabilities and different security models). For OpenDSU, the main purpose of those blockchains is to work as notarization mechanisms for DSUs.
 </p>
@@ -62,21 +61,21 @@ The proposal has been accepted and has an implementation.
 <p style='text-align: justify;'>All the changes in DSU states are automatically transmitted to a blockchain (arrows in Diagram 1). They refer to anchoring operations that anchor/preserve the state so that the provenance, history and time marking can be verified, i.e. to know when the operation occurred. OpenDSU offers a technology to obtain these properties, an extension of the blockchain in a way that is as efficient as possible and as easy as possible.
 </p>
 
-# Implicit Anchors
+# **1. Implicit Anchors**
 
 <p style='text-align: justify;'>Implicit Anchors are created as a result of blockchain operations. One of the largest benefits of the blockchain is the “anchoring” or “notarization” of some data (events or information), and due to the immutable nature of blockchains, it is possible to prove that something happened or was known at a specific moment in time, while also maintaining data integrity. OpenDSU avoids the usage of implicit anchoring by proposing the use of explicit anchoring. However, there could be cases where the implicitly anchored DSUs may provide benefits or even be required from a technical or compliance perspective.
 </p>
 
-## Transactions as Implicit Anchors
+## 1.1 Transactions as Implicit Anchors
 
 <p style='text-align: justify;'>With implicit anchoring, the transactions are stored (anchored) in the blockchain, which may contain hashes of the off-chain data. If you want traceability, implicit anchoring is obtained by analysing the history. An object with all the hash history does not exist explicitly in the world state.
 </p>
 
-## Zero Knowledge Anchors
+## 1.2 Zero Knowledge Anchors
 
 Another method of anchoring is based on Zero-Knowledge Proofs (ZKP). OpenDSU supports ZKP in two ways. First, DSUs are micro-ledgers that can have the custom code that implements ZKP protocols in any way. The approach taken by OpenDSU is to not base its privacy properties on new and not fully proven cryptography but on avoiding unnecessary sharing. The anchors provide functionality, as we call: zero access anchoring for DSUs, as it is enough to get the essence of blockchain technologies concerning integrity and traceability.
 
-# Explicit Anchors
+# **2. Explicit Anchors**
 
 <p style='text-align: justify;'>An alternative approach is having explicit anchors in the form of smart contracts, which can explicitly store history and timestamps. The data and its lineage are easily reconstructed and validated by reading the smart anchoring contracts. The explicit anchors can be implemented as smart contracts or services outside the ledger.
 </p>
@@ -98,7 +97,7 @@ Another method of anchoring is based on Zero-Knowledge Proofs (ZKP). OpenDSU sup
 <p style='text-align: justify;'>The light anchoring proposed by OpenDSU assumes that the blockchain will store only a pair of Anchor Identifiers (AnchorIDs) and a list of hashes. The anchoring control is designed especially for the light anchors and is typically based on digital signatures.
 </p>
 
-## Anchors with Attached ZKP Values
+## 2.1 Anchors with Attached ZKP Values
 
 <p style='text-align: justify;'>The HashLinks can be accompanied by cryptographically obtained values that can be used to prove computational integrity properties. We call these values with the generic name: ZKP values. For example, these kinds of anchors could contain enough information to prove the current ownership of the DSU.
 </p>
@@ -121,40 +120,54 @@ Another method of anchoring is based on Zero-Knowledge Proofs (ZKP). OpenDSU sup
 </div>
 
 
-# Special SSIs for Anchor Values
+# **3. Special SSIs for Anchor Values**
 
 <p style='text-align: justify;'>For the values in the Anchor, it is possible to use a SignedHashLinkSSI or a TransferSSI.
 </p>
+
 ## SignedHashLinkSSI
+
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRxmLerLYQoqcXXJF8GUDbM8Y-MsDPNUoOOWqvCXOrIorMeJVXPCba6FAp4_aXNbUXOKLNLV9bjB5gb/pub?w=1221&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
 
 <p style='text-align: justify;'>Signature of the current owner can be described by the following “formula”:
 </p>
 
-|sign(hash(anchorID | lastEntryInAnchor |  timestamp | brickMapHash), currentOwnerPrivateKy)|
+<b>sign(hash(anchorID | lastEntryInAnchor |  timestamp | brickMapHash), currentOwnerPrivateKy)</b>
 
 <p style='text-align: justify;'>The hash and the signature algorithm come from the KeySSI-specific algorithms (vn).
 </p>
  
-## TransferSSI
+## 3.1 TransferSSI
+
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRyemtr-uI8MqPHex6Zk3WNWPVZ8EV58Y4kaE-6vmegaYPhW6hYBdHOsV95atTLGL13a-pnOfIyNUdk/pub?w=1230&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
+
 
 This KeySSI is useful to transfer the control of the anchor to another SSI.
 
 Signature of the current owner means         
 
-|sign(hash(anchorID | lastEntryInAnchor | timestamp | new Public Key), currentPrivateKey)|
+<b>sign(hash(anchorID | lastEntryInAnchor | timestamp | new Public Key), currentPrivateKey)</b>
+
+
+
 
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
