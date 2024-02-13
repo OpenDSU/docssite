@@ -42,7 +42,7 @@ nav_order: 1
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        padding: 10px;
+        padding: 30px;
         color: purple; /* Set color to purple */
         border: none;
         outline: none;
