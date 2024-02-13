@@ -103,7 +103,7 @@ asd<br>
     const cards = document.querySelectorAll('.card');
 
     function scrollSlides(n) {
-        slideIndex += n;
+        slideIndex += 7;
         showSlides();
     }
 
