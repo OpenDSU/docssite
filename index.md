@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -86,9 +86,9 @@ nav_order: 1
             <h2>Video 6</h2>
         </div>
     </div>
-    <button class="prev" onclick="scrollSlides(-1)">❮</button>
-    <button class="next" onclick="scrollSlides(1)">❯</button>
 </div>
+<button class="prev" onclick="scrollSlides(-1)">❮</button>
+<button class="next" onclick="scrollSlides(1)">❯</button>
 
 <script>
     let slideIndex = 0;
