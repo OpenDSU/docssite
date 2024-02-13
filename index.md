@@ -6,7 +6,8 @@ nav_order: 1
 
 
 
-
+asd<br>
+<br>
 asd<br>
 asd<br>
 asd<br>
@@ -102,7 +103,7 @@ asd<br>
     const cards = document.querySelectorAll('.card');
 
     function scrollSlides(n) {
-        slideIndex += 7;
+        slideIndex += n;
         showSlides();
     }
 
@@ -110,7 +111,7 @@ asd<br>
         if (slideIndex < 0) {
             slideIndex = 0;
         } else if (slideIndex >= cards.length) {
-            slideIndex = cards.length - 1;
+            slideIndex = cards.length - 2;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
