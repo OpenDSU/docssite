@@ -71,19 +71,19 @@ nav_order: 1
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=s9Ep9lFXx-H33sv6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <h3>Decentralised EPCIS with Digital Twins and OpenDSU</h3>
+            <b>Decentralised EPCIS with Digital Twins and OpenDSU</b>
         </div>
         <div class="card">
            <iframe width="560" height="315" src="https://www.youtube.com/embed/BB7XcK8Ptss?si=szd06PzJIvXtUx2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <h3>OpenDSU Technical Introduction</h3>
+            <b>OpenDSU Technical Introduction</b>
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=3eWIn8wbNRMlybUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <h3>OpenDSU Overview for Enterprise Architects and Business Stakeholders</h3>
+            <b>OpenDSU Overview for Enterprise Architects and Business Stakeholders</b>
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/0A3bGUAajrM?si=KSaBfEwnUbs8ADiD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <h3>Open DSU for Data Sharing in Enterprise Blockchain Systems and Digital Trust Ecosystems</h3>
+            <b>Open DSU for Data Sharing in Enterprise Blockchain Systems and Digital Trust Ecosystems</b>
         </div>
     </div>
 </div>
