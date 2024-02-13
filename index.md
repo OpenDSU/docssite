@@ -47,8 +47,8 @@ nav_order: 1
     }
    .prev, .next {
     cursor: pointer;
-    position: relative;
-    top: 50%;
+    position: absolut;
+    top: 80%;
     transform: translateY(-50%);
     padding: 5px;
     color: purple; /* Set color to purple */
