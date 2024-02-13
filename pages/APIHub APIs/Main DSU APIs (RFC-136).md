@@ -22,7 +22,7 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [**Main DSU APIs (RFC-136)**](#main-dsu-apis-rfc-136)
+
 * [Abstract](#abstract)
 * [1. Get Main DSU](#1-get-main-dsu-)
   * [1.1. Responses](#11-responses)
