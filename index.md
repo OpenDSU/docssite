@@ -98,11 +98,13 @@ nav_order: 1
 
     function scrollSlides(n) {
         slideIndex = (slideIndex + n + cards.length) % cards.length;
+        console.log("slideIndex: ", slideIndex);
         showSlides();
     }
 
     function showSlides() {
         const slideWidth = containerWidth / cards.length;
+        console.log("slideWidth: ", slideWidth);
         slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
     }
 </script>
