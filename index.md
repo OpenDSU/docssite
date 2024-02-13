@@ -4,17 +4,9 @@ layout: home
 nav_order: 1
 ---
 
-asd<br>
-<br>
-asd<br>
-asd<br>
-asd<br>
-asd<br>
-<br>
-asd<br>
-asd<br>
-asd<br>
-<br>
+
+
+
 asd<br>
 asd<br>
 asd<br>
@@ -110,18 +102,20 @@ asd<br>
     const cards = document.querySelectorAll('.card');
 
     function scrollSlides(n) {
-        slideIndex += n;
+        slideIndex += 7;
         showSlides();
     }
 
-      function showSlides() {
+    function showSlides() {
         if (slideIndex < 0) {
             slideIndex = 0;
-        } else if (slideIndex > cards.length - 0.5) {
-            slideIndex = cards.length - 0.5;
+        } else if (slideIndex >= cards.length) {
+            slideIndex = cards.length - 1;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
+
+    
 </script>
 
 </body>
