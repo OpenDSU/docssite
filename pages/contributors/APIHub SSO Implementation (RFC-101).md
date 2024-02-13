@@ -216,7 +216,7 @@ The first authentication with SSO starts when the SSO Middleware or Client puts 
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSfI5zyYDMxH7T1JBMNoNR46xHoJrcZs-Heq8cl9wLpHh0MaTSYVve6gxH0Au5JkzdOPT1n8_jkRYKU/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT2-YJmJq7cN5oI5H0bilsNRj1fyPjxz_2wmvQ-EGWEbembjR13IDusZB0myIckL9A0QcaANPHdWPwK/pub?w=757&h=310" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 4: Client login to open a wallet</b></p>
 </div>
 
@@ -228,7 +228,7 @@ As shown in Figure 4 above, the client connection requires the secret to open a 
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTK8gPuDBNxxNFo_GIHb7WYwcnRLWAZHrIUyJ6xoqpabHLw7BmWtK2HnC1vQc3W3mEj5Gc_-MxteXjT/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTxntTH3-elB2nc9Mt-RrbPaOEJ5Q6TFSGsgtGcWBVdZfhNeOnE1MdhLb-TMGCoHK_U3dTiX78Da0Bx/pub?w=753&h=311" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: Demiurge deletes/deactivates a secret</b></p>
 </div>
 
