@@ -18,6 +18,7 @@ A period when the community can review the RFC (comment Docs).
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
+
 <!-- TOC -->
 * [Validation Strategies](#validation-strategies)
 * [Validation strategies functions](#validation-strategies-functions)
@@ -34,12 +35,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # Validation strategies functions
 
+
 | Functions                  | Description                                                                                                                               |
 |:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
 | createPresentation         | User can create a verifiable presentation he can present to another user/organization. All claims inside the presentation are verifiable. |
 | getStrategy                | Get the strategy used to issue, sign and verify credentials and presentations                                                             |
 | issueCredential            | Issue credential with the strategy of your choice.                                                                                        |
 | registerValidationStrategy |                                                                                                                                           |
+
 
 | Functions                  | Description                                                                                                                                     |
 |:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,8 +57,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ### createPresentation(validationStrategyName, ...args)
 
-<p style='text-align: justify;'>**Description:** This function allows the user to create a verifiable presentation. Presentations can be used to combine and present a set of different verifiable credentials. They are packaged in a way that makes all the claims inside the presentation verifiable by a verifier (the one that will receive the presentation). More information is available on the w3c website.
+**Description:** 
+<p style='text-align: justify;'> This function allows the user to create a verifiable presentation. Presentations can be used to combine and present a set of different verifiable credentials. They are packaged in a way that makes all the claims inside the presentation verifiable by a verifier (the one that will receive the presentation). More information is available on the w3c website.
 </p>
+
 **Parameters:**
 
 | Parameter               | Type     | Description    |
@@ -66,8 +71,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ### getStrategy(validationStrategyName)
 
-<p style='text-align: justify;'>**Description:** Get the strategy used to issue, sign and verify credentials and presentations.
-</p>
+**Description:** 
+<p style='text-align: justify;'>Get the strategy used to issue, sign and verify credentials and presentations.</p>
+
 **Parameters:**
 
 | Parameter               | Type     | Description    |
@@ -77,8 +83,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ### issueCredential(validationStrategyName, ...args)
 
-<p style='text-align: justify;'>**Description:** Issue credential with the strategy of your choice.
-</p>
+**Description:** 
+<p style='text-align: justify;'>Issue credential with the strategy of your choice.</p>
+
 **Parameters:**
 
 | Parameter               | Type     | Description    |
@@ -88,8 +95,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ### registerValidationStrategy(validationStrategyName, ...args)
 
-<p style='text-align: justify;'>**Description:** Register a new presentation or update an existing one from the strategy’s registry.
-</p>
+**Description:** 
+<p style='text-align: justify;'>Register a new presentation or update an existing one from the strategy’s registry.</p>
+
 **Parameters:**
 
 | Parameter               | Type     | Description    |
@@ -99,8 +107,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ### sign(validationStrategyName, ...args)
 
-<p style='text-align: justify;'>**Description:** Sign credential or presentation with the strategy of your choice.
-</p>
+**Description:** 
+<p style='text-align: justify;'>Sign credential or presentation with the strategy of your choice.</p>
+
 **Parameters:**
 
 | Parameter               | Type     | Description    |
@@ -108,10 +117,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | validationStrategyName  |          |                |
 | ...args                 |          |                |
 
+
 ### validatePresentation(allowedImplementationArray, useCase, environmentData, presentationSerialisation, (err, result) =>{})
 
-<p style='text-align: justify;'>**Description:** Get a handler to a shared ledger.
-</p>
+**Description:** 
+<p style='text-align: justify;'>Get a handler to a shared ledger.</p>
+
 **Parameters:**
 
 | Parameter                  | Type     | Description    |
@@ -131,8 +142,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## verifyCredential(validationStrategyName, ...args)
 
-<p style='text-align: justify;'>**Description:** Verify claims inside a credential with the strategy of your choice.
-</p>
+**Description:** 
+<p style='text-align: justify;'>Verify claims inside a credential with the strategy of your choice.</p>
+
 **Parameters:**
 
 | Parameter               | Type     | Description    |
@@ -143,8 +155,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## verifySignature(validationStrategyName, ...args)
 
-<p style='text-align: justify;'>**Description:** Verify the signature of a credential or a presentation with the strategy of your choice.
-</p>
+**Description:** 
+<p style='text-align: justify;'>Verify the signature of a credential or a presentation with the strategy of your choice.</p>
+
 **Parameters:**
 
 | Parameter               | Type     | Description    |

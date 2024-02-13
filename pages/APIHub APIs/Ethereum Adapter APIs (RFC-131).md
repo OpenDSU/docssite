@@ -21,7 +21,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [Ethereum Adapter APIs (RFC-131)](#ethereum-adapter-apis-rfc-131)
 * [Abstract](#abstract)
 * [1. Add Anchor](#1-add-anchor)
   * [1.1. Path Parameters](#11-path-parameters)
@@ -57,12 +56,12 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The Ethereum Adapter API offers direct access to the execution of smart contracts from the blockchain network. It exposes all smart contract methods as endpoints. We use those in conjunction with the anchoring process or other future smart contracts as voting or governance-related ones.
 </p>
 
-# 1. Add Anchor
+# **1. Add Anchor**
 
 <p style='text-align: justify;'>Adds an anchor into the Ethereum blockchain network. It will require hash links and digital proof to validate the anchoring process at the blockchain level. If the contextual validation and the security validation succeed, then the anchoring process will occur. Otherwise, an error will be returned.
 </p>
@@ -83,7 +82,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 1.2.1.Example: Application/JSON
 
-````
+```js
 {
    "hash": {
      "newHashLinkSSI": "string",
@@ -95,7 +94,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
      "publicKey": "string"
    }
 }
-````
+```
 
 ## 1.3. Responses
 
@@ -105,7 +104,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 | 428         | Smart contract execution failed or error decoding keySSI.  |
 
 
-# 2. Get Anchor Versions
+# **2. Get Anchor Versions**
 
 <p style='text-align: justify;'>Return all the hash links associated with an anchorId at the blockchain level. All the returned hash links resulted from the addAnchor command's execution and had passed the context and security validation checks.
 </p>
@@ -129,14 +128,15 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 2.2.1. Example: Application/JSON
 
-````
+```js
 ["5Cr6Hy1ZDdDkTFyPXCYfEHg8tAHnSWjEpTLnAwxmaJpUxxYQx7n4tUH5hebadEEczRhGN3B 
 45jDexUymfra7XgXKrHRkexV6geKd27GardQcZQSNFgdzDVdzMZxLSSvJ14qEsjkMDPKrHWvX 
 BSidW1oziQQbB3vTNVc1ST7TbTdBefPiMv6p7Lwni9DsYAM1sjVDPdrhGDsTsKkcjp4Lecio4f81 
 4FafTnMeb5KGkz19JzqWiAC1s8SBs",...]
-````
+```
 
-# 3. Health Check
+# **3. Health Check**
+
 <p style='text-align: justify;'>The healthCheck command checks for the invocation of the Anchoring Smart Contract. It will determine and indicate if the smart contract is available, reachable, and configured correctly for invocation. It does not provide any other information regarding the different operations available in the smart contract.
 </p>
 
@@ -150,29 +150,39 @@ BSidW1oziQQbB3vTNVc1ST7TbTdBefPiMv6p7Lwni9DsYAM1sjVDPdrhGDsTsKkcjp4Lecio4f81
 | 500         | Failed to invoke the smart contract.                                |
 
 
-# 4. Ethereum smart contract AnchorContract
+# **4. Ethereum smart contract AnchorContract**
+
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQtlRfNSzAmonskTQlL2oh6IAEthiIWjJfvt8M0eWaI_PEO7gN-vXIrq8ELNdmx3TK-l7aZDxZpQb25/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -150px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLG8FZ3AAg5umqRR-En6juEb_ZTxDPfXCDdqb-mZaqcive9WQtOPoNH_Kn8aG4sUaR4HV88wrsLErR/pub?w=800&h=400" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
     <p><b>Figure 1: High-level overview</b></p>
 </div>
 
+
+
+
+
+
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS5SVhpteemcVoMxzKILAaBdjFcSXgAEu-UxB-VGBuyBWD6W91v-uOtsLQ3w_Nwwc3dAC1sOvoC_Fy7/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -180px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRCJ4PNwFeymG5dL1IV-ySuf8WEm1hKd4DLcC84u_HW_3vFgh-wmYK-cxH79dARHVX8i8-z1skznvnu/pub?w=938&h=241" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
     <p><b>Figure 2: Ethereum Adapter in place of Blockchain Adapter</b></p>
-</div> 
+</div>
+
+
+
+
 
 
 ## 4.1. Ethereum
 
-| Smart Contract Function | Parameters                                                                                                                                                                                      | Details                                                                                                                                                                                                                                                                    |
-|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| addAnchor               | string anchorID<br/>string keySSIType<br/>string controlString<br/>string vn<br/>string newHashLinkSSI<br/>string ZKPValue<br/>string lastHashLinkSSI<br/>string signature<br/>string publicKey | Creates a new anchor with an entry for the specified anchorID does not exist or appends the new newHashLinkSSI to an existing anchor if the validation passes. <br> <b>Returns</b>: None <br> Throws error on verification failures.                                       |
-| getAnchorVersions       | String anchorID                                                                                                                                                                                 | Returns an array of HashLInkSSIs.                                                                                                                                                                                                                                          |
-| getChainedVersions      | String anchorID                                                                                                                                                                                 | Returns an array of tuples                                                                                                                                                                                                                                                 |
+| Smart Contract Function | Parameters                                                                                                                                                                                      | Details                                                                                                                                                                                                                                                                |
+|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| addAnchor               | string anchorID<br/>string keySSIType<br/>string controlString<br/>string vn<br/>string newHashLinkSSI<br/>string ZKPValue<br/>string lastHashLinkSSI<br/>string signature<br/>string publicKey | Creates a new anchor with an entry for the specified anchorID does not exist or appends the new newHashLinkSSI to an existing anchor if the validation passes. <br> <b>Returns</b>: None <br> Throws error on verification failures.                                   |
+| getAnchorVersions       | String anchorID                                                                                                                                                                                 | Returns an array of HashLInkSSIs.                                                                                                                                                                                                                                      |
+| getChainedVersions      | String anchorID                                                                                                                                                                                 | Returns an array of tuples                                                                                                                                                                                                                                             |
 
 
-Reference: <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring.</a>
+Reference: <a href="https://github.com/PharmaLedger-IMI/ethereum-anchoring.">https://github.com/PharmaLedger-IMI/ethereum-anchoring.</a>
 
 ## 4.2.Data Types
 
@@ -255,7 +265,7 @@ Before an anchor is added to the blockchain, the following validation flow is ex
 
 1. Check if the anchor is not already marked as read-only. In case it is read-only, raise the status statusCannotUpdateReadOnlyAnchor and stop the smart contract execution.
 
-1. Validate that hash links provided for the anchor are not out of sync:
+2. Validate that hash links provided for the anchor are not out of sync:
 
    * If the anchor is new, we accept the hash links provided without validation and return -1 in order to signal that we have a new anchor.
 
@@ -310,10 +320,10 @@ Before an anchor is added to the blockchain, the following validation flow is ex
 
 Algorithm to obtain the Ethereum account:
 1. The public key has the structure 0x04<64 bytes>.
-1. Read the 64 bytes and discard 0x04.
-1. Hash the 64 bytes using sha256.
-1. Get the last 20 bytes from the obtained hash.
-1. Return the value as an address. 
+2. Read the 64 bytes and discard 0x04.
+3. Hash the 64 bytes using sha256. 
+4. Get the last 20 bytes from the obtained hash. 
+5. Return the value as an address. 
 
 Functions used in implementation: 
 
@@ -330,21 +340,22 @@ Functions used in implementation:
 
 Function Signature:
 
-<p style='text-align: justify;'><b>“ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):</b> recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - <a href="">https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html.</a>
+<p style='text-align: justify;'><b>“ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address): </b>recover the address associated with the public key from elliptic curve signature or return zero on error ”, documented at - <a href="https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html">https://docs.soliditylang.org/en/v0.4.24/units-and-global-variables.html</a>.
 </p>
+
 However, the signature received must be received in ASN.1 format
 
-````
+```js
 {
 	r: bytes32,
 	s: bytes32,
 	v: uint8
 }
-````
+```
 
 <p style='text-align: justify;'>
 
-More information about ASN.1 can be found at <a href="">https://www.secg.org/sec1-v2.pdf</a>, page 114. Usually, the v is not returned by the signing libraries, but it is required by Solidity in order to optimize the result.
+More information about ASN.1 can be found at <a href="https://www.secg.org/sec1-v2.pdf ">https://www.secg.org/sec1-v2.pdf</a>, page 114. Usually, the v is not returned by the signing libraries, but it is required by Solidity in order to optimize the result.
 
 </p>
 
@@ -357,11 +368,11 @@ In the smart contract, the <b>recover</b> function was implemented with this sig
 
 
 The function will process the input parameters as:
-1. Check if the signature is 65 bytes long. If not, it will return a 0 address which will inadvertently generate a signature validation failure.
-1. Read r,s and v from the signature [r: bytes32][s: bytes32][v: uint8].
-1. v represents the version of the signature and can be 0,1,27 or 28. If it is 0 or 1 it will be converted to 27 or 28 because these are the values required by the ecrecover Solidity function.
-1. If v cannot be determined to be 27 or 28, return 0 address which will inadvertently generate a signature validation failure.
-1. return the result provided by the ecRecover function.
+1. Check if the signature is 65 bytes long. If not, it will return a 0 address which will inadvertently generate a signature validation failure. 
+2. Read r,s and v from the signature [r: bytes32][s: bytes32][v: uint8]. 
+3. v represents the version of the signature and can be 0,1,27 or 28. If it is 0 or 1 it will be converted to 27 or 28 because these are the values required by the ecrecover Solidity function. 
+4. If v cannot be determined to be 27 or 28, return 0 address which will inadvertently generate a signature validation failure. 
+5. Return the result provided by the ecRecover function.
 
 Functions used in the implementation: 
 
@@ -376,7 +387,7 @@ Functions used in the implementation:
 
 <p style='text-align: justify;'>
 
-The source code can be found at <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a> in the SmartContract folder.
+The source code can be found at <a href="https://github.com/PharmaLedger-IMI/ethereum-anchoring-obsolete">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a> in the SmartContract folder.
 </p>
 
 <p style='text-align: justify;'>To compile and deploy the smart contract on a local environment, update the values in the .env file and run npm run truffle-migrate. It will use the internal network.
@@ -400,7 +411,8 @@ Upon deploying the container, it will execute the following operations:
   * GET /abi - return the interface definition required to invoke functions implemented in the smart contract
   * Calls can be made on port 5000 by default
 
-# 5. Technical details - Blockchain Adaptor
+# **5. Technical details - Blockchain Adaptor**
+
 <p style='text-align: justify;'>API Adaptor is a WEB API that exposes functionality to add anchors and retrieve anchor versions from the Ethereum/Quorum blockchain private network.
 </p>
 
@@ -435,7 +447,7 @@ The information about the anchor to be stored is required as follows:
   * Index 5: vn 
 * Body - JSON with the following format:
 
-````
+```js
 {
  hash: {
    newHashLinkSSI: 'new hash link value,
@@ -445,9 +457,9 @@ The information about the anchor to be stored is required as follows:
    signature: 'signature encoded base58 in DER format',
    publicKey: 'public key in raw format encoded base58'
 },
- zkp: 'zkp value’
+ zkp: 'zkp value
 }
-````
+```
 
 <p style='text-align: justify;'>After the information is extracted, because the received signature is assumed to be in DER format and the required signature for the smart contract is in ASN.1 format, a conversion algorithm was implemented to determine the missing value of v.
 </p>
@@ -486,7 +498,7 @@ The information about the versions to be obtained is required as follows:
 
 <p style='text-align: justify;'>
 
-The source code can be found at <a href="">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a>, in the ApiAdaptor folder. In order to use it in a local environment, update the values in the .env file and run npm run start-dev.
+The source code can be found at <a href="https://github.com/PharmaLedger-IMI/ethereum-anchoring-obsolete">https://github.com/PharmaLedger-IMI/ethereum-anchoring</a>, in the ApiAdaptor folder. In order to use it in a local environment, update the values in the .env file and run npm run start-dev.
 </p>
 
 **Kubernetes deployment** 
@@ -505,7 +517,7 @@ Upon deploying the container, it will execute the following operations:
     * Read the smart contract information from SMARTCONTRACT_ENDPOINT 
     * Start the Web API server.
     
-# 6. Deployment and conventions
+# **6. Deployment and conventions**
 
 ## 6.1. Deployment containers
 
@@ -532,15 +544,22 @@ Upon deploying the container, it will execute the following operations:
 | Truffle                                                                                                                        |
 | Deployment implemented in Node.js using solc and ganache.                                                                      |
 
+
+
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-# Annex 1. Contributors
+
+
+
+
+# **Annex 1. Contributors**
 
 
 | **Current Editors**                 | **Email**                                |

@@ -30,12 +30,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>Provides information for the readiness of APIHub to accept requests. The token bucket algorithm is used to implement the management of requests and to avoid any possible flood requests that may come from a DDoS-type attack.
 </p>
 
-# 1. Ready Probe
+# **1. Ready Probe**
 <p style='text-align: justify;'>For the throttled APIHub instances, the service responds with the configured token limit and the remaining tokens. If the limit is exceeded, the 429 HTTP status code is returned.
 </p>
 
@@ -43,10 +43,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
  
 ## 1.1. Responses Headers
 
-| Name                  | Type     | Value  | Description                            |
-|:----------------------|:---------|:-------|:---------------------------------------|
-| X-RateLimit-Limit     | integer  |        | Request tokens limit. Example: 60000.  |
-| X-RateLimit-Remaining | integer  |        | Request tokens. Example: 59900.        |
+| Name                  | Type     | Value  | Description                                |
+|:----------------------|:---------|:-------|:-------------------------------------------|
+| X-RateLimit-Limit     | integer  |        | Request tokens limit. <br/>Example: 60000. |
+| X-RateLimit-Remaining | integer  |        | Request tokens. <br/> Example: 59900.      |
   
  
 ## 1.2 Responses
@@ -65,17 +65,19 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
  "tokenLimit": 60000
 }
 ```
+
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
+   
 
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                         | **Email**                                 |
 |:--------------------------------------------|:------------------------------------------|

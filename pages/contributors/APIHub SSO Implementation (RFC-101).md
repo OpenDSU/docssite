@@ -5,68 +5,6 @@ parent: OpenDSU Contributors
 nav_order: 22
 ---
 
-<style>
-  /* Styles for the modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-  }
-
-  /* Modal content */
-  .modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  /* Close button */
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-</style>
-<body>
-
-<div id="myModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
-  <img class="modal-content" id="img01" onclick="event.stopPropagation()">
-</div>
-
-<script>
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-</script>
-
-</body>
 
 # **APIHub SSO Implementation (RFC-101)**
 
@@ -115,22 +53,10 @@ SSO (Single Sign-On) is a technology that unites several screens into a single s
 # **2. SSO support in APIHub**
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vTzgjQKdK99ZP6uw-WGxGTYOq-5-WWHKEtXvJMNfQkuIftmpm2nrBiSAo-J3p66pqJm9Y9n_svLWerI/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
-
 <div style="text-align:center;">
-<p ><b>Figure 1: SSO support in APIHub</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTzgjQKdK99ZP6uw-WGxGTYOq-5-WWHKEtXvJMNfQkuIftmpm2nrBiSAo-J3p66pqJm9Y9n_svLWerI/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 1: SSO support in APIHub</b></p>
 </div>
-
-
 
 <p style='text-align: justify;'>
 
@@ -237,28 +163,19 @@ In the case of token authentication, a secondary service verifies a server reque
 </p>
 
 More details are available at the following links:
-<br><a href="https://www.google.com/url?q=https%3A%2F%2Fdatatracker.ietf.org%2Fdoc%2Fhtml%2Frfc6749%23section-1.3.1&sa=D&source=docs"></a>  
-<a href="https://www.google.com/url?q=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Factive-directory%2Fdevelop%2Fv2-oauth2-auth-code-flow&sa=D&source=docs"></a>    
+
+<a href="https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1">https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1</a>  
+<a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow">https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow</a>
+
+
 
 ## 3.2. Token encryption and verification
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRriRp6lTPzLrYehbrCtwrdk-7-yeOJ78bmIJubAszvpFelzEMtbLIllQ6kwyk4qgQfurJ3pwaQDIQ5/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
-
 <div style="text-align:center;">
-<p><b>Figure 2: High-level view of the authentication flow</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRriRp6lTPzLrYehbrCtwrdk-7-yeOJ78bmIJubAszvpFelzEMtbLIllQ6kwyk4qgQfurJ3pwaQDIQ5/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 2: High-level view of the authentication flow</b></p>
 </div>
-
-
 
 
 <p style='text-align: justify;'>
@@ -268,12 +185,12 @@ When a token expires, the client will perform the OAuth2.0 refresh token flow to
 
 <p style='text-align: justify;'>
 
-Signed tokens can verify the integrity of the claims contained within them, while encrypted tokens hide these affirmations from other third parties. When tokens are signed using public or private key pairs, the signature also certifies that only the party holding the private key is the one who signed. Public keys used for JWT verification are publicly available. JWKS is downloaded for the JWKS endpoint (e.g. <a href="">https://login.windows.net/common/discovery/keys</a>), which can be found at <a href="">https://issuer.example.com/.well-known/openid-configuration</a>  (a well-known URI discovery mechanism for the issuer).
+Signed tokens can verify the integrity of the claims contained within them, while encrypted tokens hide these affirmations from other third parties. When tokens are signed using public or private key pairs, the signature also certifies that only the party holding the private key is the one who signed. Public keys used for JWT verification are publicly available. JWKS is downloaded for the JWKS endpoint (e.g. <a href="https://login.windows.net/common/discovery/keys">https://login.windows.net/common/discovery/keys</a>), which can be found at <a href="">https://issuer.example.com/.well-known/openid-configuration</a>  (a well-known URI discovery mechanism for the issuer).
 </p>
 
 <p style='text-align: justify;'>
 
-The authentication token will be encrypted in an AES 256 GCM cookie. The encryption key is rotated. The cookie must be secure: HTTP only, secure, same site lax, cookie prefixes, not available on subdomains, expiration <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">(docs)</a>.
+The authentication token will be encrypted in an AES 256 GCM cookie. The encryption key is rotated. The cookie must be secure: HTTP only, secure, same site lax, cookie prefixes, not available on subdomains, expiration <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">(docs)</a>
 </p>
 
 <p style='text-align: justify;'>
@@ -284,18 +201,10 @@ The APIHub does not store the refresh token, but it encrypts it and puts it in a
 # **4. Flow between SSO, Demiurge, and Enclaves**
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRiq19fw39iL8-GoLWNnH4Li6-y16Z7LWYDJ57R62O8rZ9tz85aRL_17uTGtco9kGtSiZzcOqAlO7m4/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
+
 <div style="text-align:center;">
-<p><b>Figure 3: First login with SSO</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQBf8w9kipVc3PN81MM0GVbXbNqHbzesU7ApAdszsZG1eKYbB7KOg9IEijukDpM7raBo1MYMOatSKKz/pub?w=747&h=302" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 3: First login with SSO</b></p>
 </div>
 
 
@@ -305,18 +214,10 @@ The first authentication with SSO starts when the SSO Middleware or Client puts 
 </p>
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vSfI5zyYDMxH7T1JBMNoNR46xHoJrcZs-Heq8cl9wLpHh0MaTSYVve6gxH0Au5JkzdOPT1n8_jkRYKU/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
+
 <div style="text-align:center;">
-<p><b>Figure 4: Client login to open a wallet</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT2-YJmJq7cN5oI5H0bilsNRj1fyPjxz_2wmvQ-EGWEbembjR13IDusZB0myIckL9A0QcaANPHdWPwK/pub?w=757&h=310" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 4: Client login to open a wallet</b></p>
 </div>
 
 
@@ -326,18 +227,9 @@ As shown in Figure 4 above, the client connection requires the secret to open a 
 </p>
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vTK8gPuDBNxxNFo_GIHb7WYwcnRLWAZHrIUyJ6xoqpabHLw7BmWtK2HnC1vQc3W3mEj5Gc_-MxteXjT/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
 <div style="text-align:center;">
-<p><b>Figure 5: Demiurge deletes/deactivates a secret</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTxntTH3-elB2nc9Mt-RrbPaOEJ5Q6TFSGsgtGcWBVdZfhNeOnE1MdhLb-TMGCoHK_U3dTiX78Da0Bx/pub?w=753&h=311" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 5: Demiurge deletes/deactivates a secret</b></p>
 </div>
 
 
@@ -403,7 +295,7 @@ In /apihub-root/external-volume/config/domains/<subdomain>epi.json add below sec
 * skipOAuth configuration in /apihub-root/external-volume/config/domains/vault.json file
 
 
-Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <br> <a href="">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a> <br>   
+Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <br> <a href="https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a> <br>   
 
 ````
 "skipOAuth": [
@@ -444,6 +336,7 @@ The _SSO_DETECTED_ID_ is the first non-empty claim from the following table (in 
 | sub                | The token subject (userId)                     |
 
 
+
 # **Secrets Encryption Key**
 
 <p style='text-align: justify;'>
@@ -468,12 +361,12 @@ The SSO_SECRETS_ENCRYPTION_KEY should be injected in the environment by the Kube
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
-
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 # **Annex 1. Contributors**
 

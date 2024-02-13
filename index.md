@@ -4,6 +4,14 @@ layout: home
 nav_order: 1
 ---
 
+<p style='text-align: justify;'>The cornerstone principle driving the creation of OpenDSU is Digital Sovereignty — a foundational concept advocating for individuals, citizens, enterprises, organizations, and states to retain maximum control over their data, independent of intermediaries.
+</p>
+
+<p style='text-align: justify;'>The OpenDSU team introduced Hierarchical Blockchains, enabling seamless interoperability across applications. Data Sharing Units (DSUs) define OpenDSU, an evolving standard for off-chain data storage systems anchored in blockchains for security and data provenance.
+</p>
+
+<p style='text-align: justify;'>For more information, please read our RFC Documentation and watch the below videos.</p>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,11 +19,10 @@ nav_order: 1
 <title>YouTube Video Cards Slideshow</title>
 <style>
     .slideshow-container {
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    z-index: 1; /* Increase the z-index */
+        position: relative; /* Set the container as the positioning context */
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
     }
     .slideshow {
         display: flex;
@@ -24,8 +31,8 @@ nav_order: 1
     }
     .card {
         flex: 0 0 calc(50% - 20px);
-        margin: 10px;
-        padding: 20px;
+        margin: 3px;
+        padding: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
@@ -36,79 +43,75 @@ nav_order: 1
     h2 {
         margin-top: 10px;
     }
-      .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 10px;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        outline: none;
-        z-index: 1000; /* Increase the z-index */
-    }
+   .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    padding: 5px;
+    color: purple; /* Set color to purple */
+    background-color: transparent; /* Set background color to transparent */
+    border: none;
+    outline: none;
+    z-index: 1000; /* Increase the z-index */
+    font-size: 30px; /* Increase the font size */
+}
     .prev {
-        left: 0;
+        left: 30px;
     }
     .next {
-        right: 0;
+        right: 30px;
     }
 </style>
 </head>
 <body>
 
 <div class="slideshow-container">
-    <button class="prev" onclick="scrollSlides(-1)">❮</button>
     <div class="slideshow">
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 1</h2>
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=6l1jbqU3aq2Gf_IN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <b>OpenDSU Pitch in 3 minutes <br> (1)</b>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 2</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <b> Insights about Enteprise Blockchain Solutions (Adoption & Properites) <br> <b> (2) </b></b>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 3</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=s9Ep9lFXx-H33sv6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <b>Decentralised EPCIS with Digital Twins and OpenDSU <br> (3)</b>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 4</h2>
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/BB7XcK8Ptss?si=szd06PzJIvXtUx2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <b>OpenDSU Technical Introduction <br> (4) </b>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 5</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=3eWIn8wbNRMlybUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <b>OpenDSU Overview for Enterprise Architects and Business Stakeholders <br> (5) </b>
         </div>
         <div class="card">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
-            <h2>Video 6</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0A3bGUAajrM?si=KSaBfEwnUbs8ADiD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <b>Open DSU for Data Sharing in Enterprise Blockchain Systems and Digital Trust Ecosystems <br> (6)</b>
         </div>
     </div>
-    <button class="next" onclick="scrollSlides(1)">❯</button>
 </div>
+<button class="prev" onclick="scrollSlides(-1)">❮</button>
+<button class="next" onclick="scrollSlides(1)">❯</button>
 
 <script>
     let slideIndex = 0;
-    const slides = document.querySelector('.slideshow');
+    const container = document.querySelector('.slideshow-container');
     const cards = document.querySelectorAll('.card');
 
     function scrollSlides(n) {
-        slideIndex += n;
-        showSlides();
+        slideIndex = (slideIndex + n + cards.length) % cards.length;
+        const slideWidth = container.offsetWidth;
+        container.scrollLeft = slideIndex * slideWidth;
     }
-
-
-
-    function showSlides() {
-        if (slideIndex < 0) {
-            slideIndex = 0;
-        }
-        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
-    }
-
 </script>
 
 </body>
 </html>
+
+<br>
+
+ **Copyright** © 2018-2024 Axiologic Research and Contributors.

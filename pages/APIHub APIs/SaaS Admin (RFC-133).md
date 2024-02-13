@@ -21,7 +21,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [SaaS Admin (RFC-133)](#saas-admin-rfc-133)
 * [Abstract](#abstract)
 * [1. Domain Configuration](#1-domain-configuration)
   * [1.1. Path Parameters](#11-path-parameters)
@@ -63,11 +62,12 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+
+# **Abstract**
 
 This RFC enables us to get and update domain configurations.
 
-# 1. Domain Configuration
+# **1. Domain Configuration**
 
 Get the configuration for the specified domain.
 
@@ -90,7 +90,7 @@ Get the configuration for the specified domain.
 
 ### 1.2.1. Example: Application/JSON
 
-````
+```js
 {
 "anchoring": {
   "type": "FS",
@@ -106,9 +106,9 @@ Get the configuration for the specified domain.
 ],
 "mq_fsQueueLength": 1000
 }
-````
+```
 
-# 2. Update Domain Configuration
+# **2. Update Domain Configuration**
 
 Update the configuration for the specified domain.
 
@@ -130,7 +130,7 @@ Update the configuration for the specified domain.
 
 ### 2.2.1. Example: Application/JSON
 
-````
+```js
 {
 "anchoring": {
   "type": "FS",
@@ -146,7 +146,7 @@ Update the configuration for the specified domain.
 ],
 "mq_fsQueueLength": 1000
 }
-````
+```
 
 ## 2.3. Responses
 
@@ -157,7 +157,7 @@ Update the configuration for the specified domain.
 | 500         | An error occurred during the domain configuration update.  |
 
 
-# 3. Domain KeySSI Contracts Constitution
+# **3. Domain KeySSI Contracts Constitution**
 
 Get the domain keySSI for the contracts DSU specified inside the contracts constitution or null.
 
@@ -178,7 +178,7 @@ Get the domain keySSI for the contracts DSU specified inside the contracts const
 | 404         | Domain not found.                                                                           |
 
 
-# 4. Admin Component
+# **4. Admin Component**
 
 <p style='text-align: justify;'>
 
@@ -207,7 +207,7 @@ Insert the company domain based on the existing mainDomain. Company domains are 
 
 <b>Schema type</b>: Application/JSON <br>
 
-````
+```js
 {
  domainName: string
  example: csc.nvs
@@ -217,7 +217,8 @@ Insert the company domain based on the existing mainDomain. Company domains are 
  example: NOT_IMPLEMENTED
  cloneFromDomain: string
  example: csc
-````
+ }
+```
 
 ### 4.1.3. Responses
 
@@ -253,7 +254,7 @@ Disable the company domain. Disabled company domains will hold an "active: false
 
 <b>Schema type</b>: Application/JSON
 
-````
+```js
 {
  domainName:string
  example: csc.nvs
@@ -262,7 +263,7 @@ Disable the company domain. Disabled company domains will hold an "active: false
  signature:string
  example: NOT_IMPLEMENTED
 }
-````
+```
 
 ### 4.2.3. Responses
 
@@ -294,7 +295,7 @@ Add the DID of the admin in the admins table of the adminEnclave.
 
 <b>Schema type</b>: Application/JSON
 
-````
+```js
 {
  did: string
  example: did:ssi:name:vault.nvs:Demiurge/csc.admin
@@ -303,7 +304,7 @@ Add the DID of the admin in the admins table of the adminEnclave.
  signature: string
  example: NOT_IMPLEMENTED
 }
-````
+```
 
 ### 4.3.3. Responses
 
@@ -335,7 +336,7 @@ Add the DID of the admin in the admins table of the adminEnclave.
 
 <b>Schema type</b>: Application/JSON
 
-````
+```js
 {
  domain: string
  example: nvs.csc
@@ -346,7 +347,7 @@ Add the DID of the admin in the admins table of the adminEnclave.
  signature: string
  example: NOT_IMPLEMENTED
 }
-````
+```
 
 ### 4.4.3. Responses
 
@@ -381,7 +382,7 @@ Store company variables needed for booting new wallets. These are stored in the 
 
 <b>Schema type</b>: Application/JSON
 
-````
+```js
 {
 dnsDomain: string
 example: pharmaledger.app
@@ -394,7 +395,7 @@ example: 1668020801397
 signature: string
 example: NOT_IMPLEMENTED
 }
-````
+```
 
 ### 4.5.3. Responses
 
@@ -429,7 +430,7 @@ Register templates and hook default APIHub default deployment files with file te
 
 <b>Schema type</b>: Application/JSON
 
-````
+```js
 {
  path: string
  example: /demiurge-wallet/loader/environment.js
@@ -440,7 +441,7 @@ example: { "appName": "Demiurge", "vault": "server", "agent": "browser", "system
  signature: string
  example: NOT_IMPLEMENTED
 }
-````
+```
 
 ### 4.6.3. Responses
 
@@ -452,14 +453,18 @@ example: { "appName": "Demiurge", "vault": "server", "agent": "browser", "system
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+
+# **Annex 1. Contributors**
 
 
 | **Current Editors**                 | **Email**                    |

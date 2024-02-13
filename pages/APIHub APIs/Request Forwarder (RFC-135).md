@@ -5,8 +5,8 @@ parent: OpenDSU APIHub APIs
 nav_order: 16
 ---
 
-Request Forwarder (RFC-135)
-# **Request Forwarder (RFC-135)**
+
+# Request Forwarder (RFC-135)
 {: .no_toc }
 
 {: .feedback }
@@ -21,26 +21,31 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [**Request Forwarder (RFC-135)**](#request-forwarder-rfc-135)
 * [Abstract](#abstract)
-  * [1. Forward Request for Authenticated Client](#1-forward-request-for-authenticated-client)
+* [1. Forward Request for Authenticated Client](#1-forward-request-for-authenticated-client)
   * [1.1. Body Parameters](#11-body-parameters)
     * [1.1.1. Example: Application/JSON](#111-example-applicationjson)
+  * [1.2. Request Headers](#12-request-headers)
   * [1.3. Responses](#13-responses)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC describes the creation of a new forward request for the authenticated client.
-</p>## 1. Forward Request for Authenticated Client
+</p>
+
+# 1. **Forward Request for Authenticated Client**
 
 <p style='text-align: justify;'>ForwardRequest service creates a new request from APIHub with the provided options and body. It facilitates access to different resources where access is restricted.
 </p>
 	
 ````
-/forwardRequestForAuthenticatedClient
+ POST /forwardRequestForAuthenticatedClient
 ````
+
+
 
 ## 1.1. Body Parameters
 
@@ -51,7 +56,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ### 1.1.1. Example: Application/JSON
 
-```
+```js
 {
  "options": {
    "method": "POST"
@@ -81,13 +86,15 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
+# **Annex 1. Contributors**
 
 
 | **Current Editors**                 | **Email**                            |
