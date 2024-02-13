@@ -20,7 +20,7 @@ nav_order: 1
         justify-content: center;
     }
     .card {
-        flex: 0 0 calc(33.33% - 20px);
+        flex: 0 0 calc(50% - 20px);
         margin: 10px;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -30,36 +30,40 @@ nav_order: 1
         width: 100%;
         height: 200px;
     }
+    h2 {
+        margin-top: 10px;
+    }
 </style>
 </head>
 <body>
 
 <div class="slideshow">
     <div class="card">
-        <h2>Video 1</h2>
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+        <h2>Video 1</h2>
     </div>
     <div class="card">
-        <h2>Video 2</h2>
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+        <h2>Video 2</h2>
     </div>
     <div class="card">
-        <h2>Video 3</h2>
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+        <h2>Video 3</h2>
     </div>
     <div class="card">
-        <h2>Video 4</h2>
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+        <h2>Video 4</h2>
     </div>
     <div class="card">
-        <h2>Video 5</h2>
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+        <h2>Video 5</h2>
     </div>
     <div class="card">
-        <h2>Video 6</h2>
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+        <h2>Video 6</h2>
     </div>
 </div>
 
 </body>
 </html>
+
