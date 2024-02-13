@@ -65,7 +65,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
  "tokenLimit": 60000
 }
 ```
-**Contributors**
 
 **Contributors**
 
