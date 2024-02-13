@@ -66,7 +66,7 @@ For the beginning, the initial page is loaded, where there are SSApps that the u
 
 <p style='text-align: justify;'>
 
-MFA is an authentication method and a basic component of data privacy. In order for the user to get access to an online resource, application, or account, MFA requires the user to provide two or more verification factors. This should be used by both individuals and companies/enterprises as often as possible.
+  MFA is an authentication method and a basic component of data privacy. In order for the user to get access to an online resource, application, or account, MFA requires the user to provide two or more verification factors. This should be used by both individuals and companies/enterprises as often as possible.
 
 </p>
 
