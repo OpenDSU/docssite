@@ -57,14 +57,14 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>
 
 This RFC provides information about SSO Secrets management. All API calls should be authorized with a Bearer token.
 </p>
 
-# 1. Get SSO Secret
+# **1. Get SSO Secret**
 
 Access user SSO secrets for a particular appName.
 
@@ -89,13 +89,13 @@ Access user SSO secrets for a particular appName.
 
 | Status Code | Description                                                   |
 |:------------|:--------------------------------------------------------------|
-| 200         | Returns the secret for the specified user-id and appName      |
+| 200         | Returns the secret for the specified user-id and appName.     |
 | 403         | Unauthorized access.                                          |
 | 404         | A secret for the specified user-id and appName was not found. |
 | 500         | Wrong secret format or unauthorized access.                   |
 
 
-# 2. Put SSO Secret
+# **2. Put SSO Secret**
 
 Enable and add user SSO secret for a particular appName.
 
@@ -134,7 +134,7 @@ Enable and add user SSO secret for a particular appName.
 | 500         | Wrong secret format or unauthorized access.                   |
 
 
-# 3. Deactivate SSO Secret
+# **3. Deactivate SSO Secret**
 
 Deactivate the user SSO secret for a particular appName.
 
@@ -165,7 +165,7 @@ Deactivate the user SSO secret for a particular appName.
 | 404         | A secret for the specified “did” and “appName” was not found.  |
 
 
-# 4. Remove SSO Secret
+# **4. Remove SSO Secret**
 
 Deactivate and remove the user SSO secret for a particular appName.
 
@@ -196,7 +196,7 @@ Deactivate and remove the user SSO secret for a particular appName.
 | 404         | A secret for the specified “did” and “appName” was not found.  |
 
 
-# 5. Put DID Secret
+# **5. Put DID Secret**
 
 Write a secret with the provided name associated with the provided did.
 
@@ -208,7 +208,7 @@ Write a secret with the provided name associated with the provided did.
 | Name  | Type    | Value      | Description                                               |
 |:------|:--------|:-----------|:----------------------------------------------------------|
 | did   | string  | *required  | The DID of the user encoded in base 58.                   |
-| name  | string  | *required  | The name of the secret associated with the specified did  |
+| name  | string  | *required  | The name of the secret associated with the specified did. |
 
 
 ## 5.2. Request Headers
@@ -225,10 +225,10 @@ Write a secret with the provided name associated with the provided did.
 | 200         | Operation completed successfully.                                         |
 | 403         | Unauthorized access.                                                      |
 | 404         | A secret with the specified “name” for the specified “did” was not found. |
-| 555         | Server is in read-only mode                                               |
+| 555         | Server is in read-only mode.                                              |
 
 
-# 6. Get DID Secret
+# **6. Get DID Secret**
 
 Get the secret with the provided name for the provided did
 
@@ -240,7 +240,7 @@ Get the secret with the provided name for the provided did
 | Name  | Type    | Value      | Description                                               |
 |:------|:--------|:-----------|:----------------------------------------------------------|
 | did   | string  | *required  | The DID of the user encoded in base 58.                   |
-| name  | string  | *required  | The name of the secret associated with the specified did  |
+| name  | string  | *required  | The name of the secret associated with the specified did. |
 
 
 ## 6.2. Request Headers
@@ -257,10 +257,10 @@ Get the secret with the provided name for the provided did
 | 200         | Operation completed successfully.                                         |
 | 403         | Unauthorized access.                                                      |
 | 404         | A secret with the specified “name” for the specified “did” was not found. |
-| 555         | Server is in read-only mode                                               |
+| 555         | Server is in read-only mode.                                              |
 
 
-# 7. Delete DID Secret
+# **7. Delete DID Secret**
 
 Delete the secret with the provided name associated with the provided DID.
 
@@ -289,10 +289,21 @@ Delete the secret with the provided name associated with the provided DID.
 | 200         | Operation completed successfully.                                         |
 | 403         | Unauthorized access.                                                      |
 | 404         | A secret with the specified “name” for the specified “did” was not found. |
-| 555         | Server is in read-only mode                                               |
+| 555         | Server is in read-only mode.                                              |
 
 
-# Annex 1. Contributors
+**Contributors**
+
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
+
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
+
+
+
+# **Annex 1. Contributors**
 
 
 | **Current Editors**                 | **Email**                                |
