@@ -26,7 +26,7 @@ nav_order: 1
 	
     .video-item {
         flex: 0 0 auto;
-        margin-right: 10px;
+        margin-right: 0px;
         text-align: center;
     }
     
