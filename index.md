@@ -19,11 +19,10 @@ asd<br>
 <title>YouTube Video Cards Slideshow</title>
 <style>
     .slideshow-container {
+        position: relative; /* Set the container as the positioning context */
         width: 90%;
         margin: 0 auto;
         overflow: hidden;
-        position: relative;
-        z-index: 1; /* Increase the z-index */
     }
     .slideshow {
         display: flex;
