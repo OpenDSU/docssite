@@ -99,13 +99,18 @@ nav_order: 1
         showSlides();
     }
     function showSlides() {
+        const maxSlideIndex = cards.length - Math.ceil(slides.offsetWidth / (cards[0].offsetWidth + 100));
+        
         if (slideIndex < 0) {
             slideIndex = 0;
-        } else if (slideIndex > cards.length - Math.ceil(slides.offsetWidth / (cards[0].offsetWidth + 20))) {
-            slideIndex = cards.length - Math.ceil(slides.offsetWidth / (cards[0].offsetWidth + 20));
+        } else if (slideIndex > maxSlideIndex) {
+            slideIndex = maxSlideIndex;
         }
+        
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
+
+
 </script>
 
 </body>

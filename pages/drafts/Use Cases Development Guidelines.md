@@ -9,8 +9,8 @@ nav_order: 4
 # Use Cases Development Guidelines
 {: .no_toc }
 
-early draft
-
+{: .draft }
+A period when the community can review the RFC (comment Docs).
 
 **Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
 
@@ -46,7 +46,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [5.7. Control tower](#57-control-tower)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-# Abstract
+<p style='text-align: justify;'># Abstract
 The purpose of this document is to summarize a general approach that use-case implementation can be used to develop projects using OpenDSU. Besides providing insights on the development phases, this document opens the black box represented by the blockchain and the DSU Storages by explaining how the integration with the legacy system should work.
 
 # 1. Big Picture
@@ -60,7 +60,7 @@ We can see a DSU as a record in a table in a relational database for simplicity,
 A DSU is one unique technology enabling safe storage and safe transfer of data through key ownership. Still, DSUs can be created for different purposes, different processes and/or for different people. It is possible to configure these different DSUs under specific types to facilitate their replication.
 Each use case will have to develop specific DSU Types to achieve their goals. DSU Types are similar in their design to Object Oriented Programming classes or to the design of tables in relational database models. They are neither classes nor tables, but they play a similar role.
 In the following example, we can see that different DSUs were created for different steps of a product supply chain. We can imagine that different people would need different types of access to these DSUs. The transporter would need access to create and modify the shipment DSU, while the customer would only own a key to read the same DSU to see their order and know at what time they will receive the shipment.
-
+</p>
 | DSU           | Main KeySSI type | KeySSI for mutable Real DSU |
 |:--------------|:-----------------|:----------------------------|
 | Order         |                  |                             |
@@ -107,8 +107,8 @@ In the following example, we can see that different DSUs were created for differ
 
 ### Choose a Blockchain Domain for the Use Case
 
-In OpenDSU, blockchains are used for anchoring. In other words, all anchor IDs of the DSUs will be written in a decentralized and immutable ledger. In order for all actors present in the use case to communicate, we have to choose a common Blockchain Domain from which we will be able to get the correct ledger system (e.g. ePI).
-
+<p style='text-align: justify;'>In OpenDSU, blockchains are used for anchoring. In other words, all anchor IDs of the DSUs will be written in a decentralized and immutable ledger. In order for all actors present in the use case to communicate, we have to choose a common Blockchain Domain from which we will be able to get the correct ledger system (e.g. ePI).
+</p>
 
 ### Agents
 
@@ -125,7 +125,7 @@ In OpenDSU, blockchains are used for anchoring. In other words, all anchor IDs o
 
 
 # 3. Generic components for all use cases
-In this section, we assume that in all use cases we were able to identify agents, legacy applications, the blockchain used for anchoring DSUs, and the bricks storage used to store encrypted DSUs off-chain (or near-chain: some data directly anchored and other off-chain). The cloud and edge agents are special applications created independently for each use case but reusing the same general techniques.
+<p style='text-align: justify;'>In this section, we assume that in all use cases we were able to identify agents, legacy applications, the blockchain used for anchoring DSUs, and the bricks storage used to store encrypted DSUs off-chain (or near-chain: some data directly anchored and other off-chain). The cloud and edge agents are special applications created independently for each use case but reusing the same general techniques.
 The legacy applications include existing software such as SAP, ServiceNow etc., that will be integrated with Pharmaledger using a new component that we describe below as “DSU-Wizard”. In the following subchapters, we will describe the concept of agents and the DSU-Wizard. All information about the other components can be found in the OpenDSU documentation.
 
 ## Agents
@@ -164,7 +164,7 @@ AnchorIDs are stored on the ePI Blockchain (Consortium Blockchain). The ePI Bloc
 
 ## 5.7. Control tower
 
-
+</p>
 
 **Contributors**
 
