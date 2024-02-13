@@ -444,6 +444,7 @@ The _SSO_DETECTED_ID_ is the first non-empty claim from the following table (in 
 | sub                | The token subject (userId)                     |
 
 
+
 # **Secrets Encryption Key**
 
 <p style='text-align: justify;'>
