@@ -84,7 +84,7 @@ MFA offers much stronger security and protection against fraudsters. They might 
 
 <p style='text-align: justify;'>
 
-In steps 4 and 5, as shown in Figure 1, the return URL for a request is set to the APIHub's SSO Middleware and not to the application, so the authorization token is sent there. Then, the SSO middleware presents the authorization token to the IDP’s token endpoint to retrieve the access token and refresh token; both signed JWTs (JSON Web Tokens). JWTs can be signed using a secret or public key pair. In addition, the structure of a JWT allows you to make sure that the content has not been altered.
+  In steps 4 and 5, as shown in Figure 1, the return URL for a request is set to the APIHub's SSO Middleware and not to the application, so the authorization token is sent there. Then, the SSO middleware presents the authorization token to the IDP’s token endpoint to retrieve the access token and refresh token; both signed JWTs (JSON Web Tokens). JWTs can be signed using a secret or public key pair. In addition, the structure of a JWT allows you to make sure that the content has not been altered.
 
 </p>
 
