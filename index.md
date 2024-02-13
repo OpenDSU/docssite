@@ -106,9 +106,11 @@ asd
         showSlides();
     }
 
-    function showSlides() {
-        if (slideIndex < 0.3) {
-            slideIndex = 0.3;
+      function showSlides() {
+        if (slideIndex < 0) {
+            slideIndex = 0;
+        } else if (slideIndex > cards.length - 1) {
+            slideIndex = cards.length - 1;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
