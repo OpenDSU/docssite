@@ -13,19 +13,22 @@ nav_order: 1
 <title>YouTube Video Cards Slideshow</title>
 <style>
     .slideshow {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
-        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .card {
-        border: 1px solid #ccc;
-        margin-bottom: 20px;
+        flex: 0 0 calc(33.33% - 20px);
+        margin: 10px;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
     }
     iframe {
         width: 100%;
-        height: 300px;
+        height: 200px;
     }
 </style>
 </head>
