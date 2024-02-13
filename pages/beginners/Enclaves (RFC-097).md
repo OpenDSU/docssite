@@ -86,7 +86,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-
 * [Abstract](#abstract)
 * [1. OpenDSU SDK: “enclave” API Space](#1-opendsu-sdk-enclave-api-space)
   * [1.1 Enclave methods](#11-enclave-methods)
@@ -128,19 +127,36 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     * [Function storeReadForAliasSSI(forDID, sReadSSI, aliasSSI, callback)](#function-storereadforaliasssifordid-sreadssi-aliasssi-callback)
     * [Function getReadForKeySSI(forDID, keySSI, callback)](#function-getreadforkeyssifordid-keyssi-callback)
   * [1.8. DSU Resolver specific functions](#18-dsu-resolver-specific-functions)
+    * [Function createDSU(forDID, keySSI, options, callback)](#function-createdsufordid-keyssi-options-callback)
+    * [Function loadDSU(forDID, keySSI, options, callback)](#function-loaddsufordid-keyssi-options-callback)
+  * [1.9. W3C DIDs specific functions](#19-w3c-dids-specific-functions)
+    * [Function addPrivateKeyForDID(didDocument, privateKey, callback)](#function-addprivatekeyfordiddiddocument-privatekey-callback)
+    * [Function verifyForDID(forDID, didThatIsVerifying, hash, signature, callback)](#function-verifyfordidfordid-didthatisverifying-hash-signature-callback-)
+    * [1.9.1. Enclaves with Deterministic Key Derivation](#191-enclaves-with-deterministic-key-derivation)
+* [2. OpenDSU SDK implementations](#2-opendsu-sdk-implementations)
+  * [2.1. Initiating Functions in Enclave API](#21-initiating-functions-in-enclave-api)
+    * [Function initialiseWalletDBEnclave(keySSI, did)](#function-initialisewalletdbenclavekeyssi-did)
+    * [Function initialiseMemoryEnclave()](#function-initialisememoryenclave)
+    * [Function initialiseRemoteEnclave(clientDID, remoteDID)](#function-initialiseremoteenclaveclientdid-remotedid)
+    * [Function createEnclave(enclaveType, …args)](#function-createenclaveenclavetype-args)
+    * [Function registerEnclave(enclaveType, enclaveConstructor)](#function-registerenclaveenclavetype-enclaveconstructor)
+* [**3. Deployment**](#3-deployment)
+  * [3.1. EnclaveAdapters are typically separate containers](#31-enclaveadapters-are-typically-separate-containers)
+  * [3.2. Native Enclaves](#32-native-enclaves)
+* [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
 
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>OpenDSU Enclaves is a concept that allows storing sensitive data and controlling access to it in the most granular way possible. The concept represents or presents similarities with a database, a communication system based on Message Queues, or a Key Management System. The OpenDSU Enclaves concept has been and is being implemented and used for the first time, along with another OpenDSU concept named “Security Context”.
 </p>The idea of how OpenDSU evolved and how it continues to evolve is to no longer remove the secret keys and the private keys outside the enclave but to do all cryptographic operations inside the enclave. The concept of the enclave has been refactored with OpenDSU to convey more clearly that all operations with secret keys, signatures, and decryptions are made at the enclave level. After this step, it can be chosen where it is actually executed.
 
 
-# 1. OpenDSU SDK: “enclave” API Space
+# **1. OpenDSU SDK: “enclave” API Space**
 
 
 <div style="display: flex; justify-content: center;">
@@ -1032,7 +1048,7 @@ For the ePI use case, the slot field is initialized with 0 if it is not present 
 </p>
 
 
-# 2. OpenDSU SDK implementations
+# **2. OpenDSU SDK implementations**
 
 * APIHubEnclave: uses APIHub endpoints to send requests.
 * HighSecurityEnclave: uses APIHub endpoints to send requests but encrypts all requests, so they are readable only by the holder EnclaveDID (with the corresponding private key).
@@ -1097,7 +1113,7 @@ For the ePI use case, the slot field is initialized with 0 if it is not present 
 **Description:** This is used to register a new enclave constructor function under new enclave type.
 
 
-# 3. Deployment
+# **3. Deployment**
 
 <p style='text-align: justify;'>If the needs or functionality requirements involve that our enclave stores data in data systems, this can be achieved through a SqliteEnclave implementation that uses a file and a Sqlite engine to store data from the enclave type. Suppose we are talking about enclaves for mobile devices, then the OpenDSU concept will be based on its implementation in the use of enclaves or TEE mechanisms available on both iOS and Android.
 </p>
@@ -1163,14 +1179,16 @@ Some implementations are experimental or not stable:
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
