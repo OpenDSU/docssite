@@ -86,9 +86,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
-A DSU object is an entity that exists temporarily in the Execution Environment (EE) to manage the controlled access to data assembled from the brick storage. Once created, DSU objects can be understood as (micro) file systems containing data and code "booted" in a sandboxed part of the EE. It can also be understood as a key/value micro-database, with each path to a file being the key and the value being the content of that file.[Full DSU introduction](/https://www.google.com/url?q=https%3A%2F%2Fopendsu.com%2Frfc001&sa=D&source=docs/).
+A DSU object is an entity that exists temporarily in the Execution Environment (EE) to manage the controlled access to data assembled from the brick storage. Once created, DSU objects can be understood as (micro) file systems containing data and code "booted" in a sandboxed part of the EE. It can also be understood as a key/value micro-database, with each path to a file being the key and the value being the content of that file. [Full DSU introduction](/https://www.google.com/url?q=https%3A%2F%2Fopendsu.com%2Frfc001&sa=D&source=docs/).
 
 <p align="justify">This document presents all available DSU operations that allow developers to perform actions on a DSU instance. Important functions are used to perform file system operations such as read, write, delete etc. Advanced functions can be used for configuring DSUs.</p>
 
@@ -123,7 +123,7 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 
 <p align="justify">Note that in the demo example above, the instantiated DSU object is returned to the calling process for demonstrative purposes in subsequent examples. However, as most of the OpenDSU code is executed asynchronously, the recommended programming style is to apply operations on myDSU inside the callback(err, myDSU) function.</p>
 
-# 2. Concurrency and Synchronization
+# **2. Concurrency and Synchronization**
 
 <p align="justify">In OpenDSU release 2.0.x, batch mode operation is enforced for all DSUs. Any attempt to execute DSU operations outside batch mode will result in runtime exceptions. The recommended function to enter batch mode is beginOrAttachBatch, which operates asynchronously and returns a batchID. This batchID is crucial for invoking the cancelBatch and commitBatch functions.</p>
 
@@ -131,7 +131,7 @@ myDSU = resolver.createSeedDSU(seedSSI, (err, myDSU) =>{
 
 <p align="justify">This architecture leads to more streamlined and error-resistant workflows, and it aligns with robust software engineering principles.</p>
 
-# 3. File I/O Operations with DSU Objects
+# **3. File I/O Operations with DSU Objects**
 
 ## 3.1 Global overview and options
 
@@ -584,7 +584,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 <p style="text-align:center"><b>Example 2: Writing / Reading a data string to a DSU object</b></p>
 
 
-# 4. Batch operations on DSUs
+# 4. **Batch operations on DSUs**
 
 <p style='text-align: justify;'>A batch is a sequence of operations to be executed on the files available in a DSU object, before the resulting changes to the DSU are anchored altogether. Batch processing requires a call to <b>beginBatch()</b> or <b>beginOrAttachBatch()</b>. After all operations have been performed, a call to <b>commitBatch()</b> anchors the changes made within the batch. Alternatively, batch operations may be wrapped by a <b>batchFn</b> lazily submitted to <b>batch(batchFn)</b>. Note that no more than one batch process can be performed on the same DSU object at a time, and batch processing scheduled by <b>beginBatch()</b> has to be completed by <b>commitBatch()</b> or terminated by <b>cancelBatch()</b> before a new batch may be scheduled.</p>
 
@@ -739,7 +739,7 @@ Returns the KeySSI instance.
 | error     | Error object |                       |
 | keySSI    | string       |                       |
 
-# 5. Mounting DSUs into each other
+# **5. Mounting DSUs into each other**
 
 <p style='text-align: justify;'>The <b>mount()</b> method makes the contents of an external DSU container, as identified by <b>archiveSSI</b> available under the path <b>mountingPoint</b> of this DSU instance. If the flag <b>persistent</b> (default: true) is set, externally mounted DSU instances are stored persistently in the manifest file of this DSU instance. Otherwise, mounted DSUs are stored in a temporary variable of this DSU instance. Mounted dossiers represent DSUs mounted inside another DSU using the right keySSI (i.e. SeedSSI for read and write access or SReadSSI for read-only access).</p>
 
@@ -988,13 +988,12 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
-
-
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
 # Annex 1. Contributors
