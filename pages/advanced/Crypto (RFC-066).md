@@ -5,1846 +5,758 @@ parent: OpenDSU Advanced
 nav_order: 10
 ---
 
-Crypto (RFC-066)
+# **Crypto (RFC-066)**
 
-Abstract
+{: .no_toc }
 
-The “crypto” API space offers a set of portable cryptographic functions for OpenDSU and Self Sovereign Applications. Most of these functions have KeySSI as the first argument because the type of the KeySSI and its vn field (version number) indicate which cryptographic functions should be used to perform the requested operations (see RFC010 SeedSSI).
+{: .feedback }
+A period when the community can review the RFC (comment Docs).
 
-Among these operations, you will find basic functions such as symmetric encryption, hashing, signing/verification functions, as well as various other operations, such as the creation of JWT Tokens used in the creation of authentication tokens and credentials.
-1. Crypto functions
-1.1. Basic operations
+**Document Maintainers: Andi Gabriel Tan 2022. List of other contributors in Annex. 1.**
 
-Functions
-	
+**Copyright: MIT license**
 
-Description
+**Copyright** ©  2018-2022 Axiologic Research and Contributors.
 
-encodeBase58
-	
+This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
-Encode data with template SeedSSI’s encoding function.
+<!-- TOC -->
+* [Crypto (RFC-066)](#crypto-rfc-066)
+* [Abstract](#abstract)
+* [1. Crypto functions](#1-crypto-functions)
+  * [1.1. Basic operations](#11-basic-operations)
+  * [1.2. Advanced operations](#12-advanced-operations)
+  * [Function convertDerSignatureToASN1 (derSignature)](#function-convertdersignaturetoasn1-dersignature)
+  * [Function createAuthToken (holderSeedSSI, scope, credential, callback)](#function-createauthtoken-holderseedssi-scope-credential-callback)
+  * [Function createBloomFilter(options)](#function-createbloomfilteroptions)
+  * [Function createCredential(issuerSeedSSI, credentialSubjectSReadSSI, callback)](#function-createcredentialissuerseedssi-credentialsubjectsreadssi-callback)
+  * [Function createJWT(seedSSI, scope, credentials, options, callback)](#function-createjwtseedssi-scope-credentials-options-callback)
+  * [Function createPresentationToken(holderSeedSSI, scope, credential, callback)](#function-createpresentationtokenholderseedssi-scope-credential-callback)
+  * [Function decodeBase58(encodedData)](#function-decodebase58encodeddata)
+  * [Function encodeBase58(data)](#function-encodebase58data)
+  * [Function generateEncryptionKey(keySSI, callback)](#function-generateencryptionkeykeyssi-callback)
+  * [Function generateRandom(length)](#function-generaterandomlength)
+  * [Function getReadableSSI(ssi)](#function-getreadablessissi)
+  * [Function parseJWTSegments(jwt, callback)](#function-parsejwtsegmentsjwt-callback)
+  * [Function sha256(dataObj)](#function-sha256dataobj)
+  * [Function sign(keySSI, data, callback)](#function-signkeyssi-data-callback)
+  * [Function verifyAuthToken(jwt, listOfIssuers, callback)](#function-verifyauthtokenjwt-listofissuers-callback)
+  * [Function verifyJWT(jwt, rootOfTrustVerificationStrategy, callback)](#function-verifyjwtjwt-rootoftrustverificationstrategy-callback)
+  * [Function verifySignature(keySSI, data, signature, publicKey, callback)](#function-verifysignaturekeyssi-data-signature-publickey-callback)
+  * [Function getCryptoFunctionForKeySSI(keySSI, cryptoFunctionType)](#function-getcryptofunctionforkeyssikeyssi-cryptofunctiontype)
+  * [Function encrypt(data, encryptionKey)](#function-encryptdata-encryptionkey)
+  * [Function decrypt(data, encryptionKey)](#function-decryptdata-encryptionkey)
+  * [Function deriveEncryptionKey(password)](#function-deriveencryptionkeypassword)
+  * [Function generateKeyPair()](#function-generatekeypair)
+  * [Function convertPrivateKey(rawPrivateKey, outputFormat)](#function-convertprivatekeyrawprivatekey-outputformat)
+  * [Function convertPublicKey(rawPublicKey, outputFormat, curveName)](#function-convertpublickeyrawpublickey-outputformat-curvename)
+  * [Function getPublicKeyFromPrivateKey(rawPrivateKey, outputFormat)](#function-getpublickeyfromprivatekeyrawprivatekey-outputformat)
+  * [Function ecies_encrypt_ds(senderKeySSI, receiverKeySSI, data)](#function-ecies_encrypt_dssenderkeyssi-receiverkeyssi-data)
+  * [Function ecies_decrypt_ds(receiverKeySSI, data)](#function-ecies_decrypt_dsreceiverkeyssi-data)
+  * [Function createJWTForDID(did, scope, credentials, options, callback)](#function-createjwtfordiddid-scope-credentials-options-callback)
+  * [Function verifyDID_JWT(jwt, rootOfTrustVerificationStrategy, callback)](#function-verifydid_jwtjwt-rootoftrustverificationstrategy-callback)
+  * [Function verifyDIDAuthToken(jwt, listOfIssuers, callback)](#function-verifydidauthtokenjwt-listofissuers-callback)
+  * [Function createAuthTokenForDID(holderDID, scope, credential, callback)](#function-createauthtokenfordidholderdid-scope-credential-callback)
+  * [Function createCredentialForDID(did, credentialSubjectDID, callback)](#function-createcredentialfordiddid-credentialsubjectdid-callback)
+  * [Function base64UrlEncodeJOSE(data)](#function-base64urlencodejosedata)
+  * [Function base64UrlDecodeJOSE(data)](#function-base64urldecodejosedata)
+  * [Function sha256JOSE(data, encoding)](#function-sha256josedata-encoding)
+  * [Function convertKeySSIObjectToMnemonic(keySSIObject)](#function-convertkeyssiobjecttomnemonickeyssiobject)
+  * [Function convertMnemonicToKeySSIIdentifier(phrase, typeName, domain, vn)](#function-convertmnemonictokeyssiidentifierphrase-typename-domain-vn)
+  * [Function getRandomSecret(length)](#function-getrandomsecretlength)
+  * [An index of predefined possible JWT Errors:](#an-index-of-predefined-possible-jwt-errors)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
-decodeBase58
-	
+# Abstract
 
-Decode data with template SeedSSI’s decoding function.
+<p style='text-align: justify;'>The “crypto” API space offers a set of portable cryptographic functions for OpenDSU and Self Sovereign Applications. Most of these functions have KeySSI as the first argument because the type of the <a href="https://opendsu.com/rfc002">KeySSI</a> and its vn field (version number) indicate which cryptographic functions should be used to perform the requested operations (see <a href="https://opendsu.com/rfc010">RFC010 SeedSSI</a>).
+</p>
 
-generateEncryptionKey
-	
+<p style='text-align: justify;'>Among these operations, you will find basic functions such as symmetric encryption, hashing, signing/verification functions, as well as various other operations, such as the creation of JWT Tokens used in the creation of authentication tokens and credentials.
+</p>
 
-Generate an encryption key for selected KeySSI.
+# 1. Crypto functions
 
-generateRandom
-	
+## 1.1. Basic operations
 
-Generate a random string of the desired length.
+| Functions             | Description                                                                                                                                                             |
+|:----------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| encodeBase58          | Encode data with template SeedSSI’s encoding function.                                                                                                                  |
+| decodeBase58          | Decode data with template SeedSSI’s decoding function.                                                                                                                  |
+| generateEncryptionKey | Generate an encryption key for selected KeySSI.                                                                                                                         |
+| generateRandom        | Generate a random string of the desired length.                                                                                                                         |
+| sha256                | Is used to hash data using the sha256 algorithm.                                                                                                                        |
+| sign                  | Obtain signature from the hash of the message obtaining the private key from the KeySSI (it already contains it or it asks for this operation to happen in an enclave). |
+| verifySignature       | Verify a signature.                                                                                                                                                     |
 
-sha256
-	
 
-Is used to hash data using the sha256 algorithm.
+## 1.2. Advanced operations
 
-sign
-	
+| Functions                  | Description                                                                                       |
+|:---------------------------|:--------------------------------------------------------------------------------------------------|
+| convertDerSignatureToASN1  | Convert DER signature to ASN1.                                                                    |
+| createAuthToken            | Create an authentication token for a credential represented by a JWT.                             |
+| createBloomFilter          | Create a Bloom filter.                                                                            |
+| createCredential           | Create a credential represented by a JWT token.                                                   |
+| createJWT                  | Create a JWT Token signed with your seedSSI.                                                      |
+| createPresentationToken    | Create a presentation token represented by a JWT token.                                           |
+| getReadableSSI             | Returns a readable self-sovereign identifier.                                                     |
+| getCryptoFunctionForKeySSI |                                                                                                   |
+| parseJWTSegments           | Return an object containing the different JWT segments (header, body, signature, signatureInput). |
+| verifyAuthToken            | Verify an authentication JWT token with the list of issuers.                                      |
+| verifyJWT                  | Verify the validity of the JWT token.                                                             |
 
-Obtain signature from the hash of the message obtaining the private key from the KeySSI (it already contains it or it asks for this operation to happen in an enclave).
-
-verifySignature
-	
-
-Verify a signature.
-1.2. Advanced operations
-
-Functions
-	
-
-Description
-
-convertDerSignatureToASN1
-	
-
-Convert DER signature to ASN1.
-
-createAuthToken
-	
-
-Create an authentication token for a credential represented by a JWT.
-
-createBloomFilter
-	
-
-Create a Bloom filter.
-
-createCredential
-	
-
-Create a credential represented by a JWT token.
-
-createJWT
-	
-
-Create a JWT Token signed with your seedSSI.
-
-createPresentationToken
-	
-
-Create a presentation token represented by a JWT token.
-
-getReadableSSI
-	
-
-Returns a readable self-sovereign identifier.
-
-getCryptoFunctionForKeySSI
-	
-
-parseJWTSegments
-	
-
-Return an object containing the different JWT segments (header, body, signature, signatureInput).
-
-verifyAuthToken
-	
-
-Verify an authentication JWT token with the list of issuers.
-
-verifyJWT
-	
-
-Verify the validity of the JWT token.
-
+````
 //Load openDSU environment
-
 require("../privatesky/psknode/bundles/openDSU");
-
 //Load openDSU SDK
-
 const opendsu = require("opendsu");
-
 //Load crypto library
-
 const crypto = opendsu.loadApi("crypto");
-
 //Load keyssi library
-
 const keyssispace = opendsu.loadApi("keyssi");
-
 //Create a seedSSI
-
 const seedSSI = keyssispace.buildSeedSSI('default');
-
 const data = "some data";
-
 crypto.encrypt(seedSSI, data, (err, encryptedData) => {
-
   crypto.decrypt(seedSSI, encryptedData, (err, plainData) => {
-
       console.log(data === plainData.toString()); //Returns true
-
   });
-
 });
+````
 
-How to use
-Function convertDerSignatureToASN1(derSignature)
+<p style="text-align: center;">How to use</p>
 
-Description: DER (Distinguished Encoding Rules) is used to encode ASN.1. When using this function, we can decode the DER signature to obtain an ASN.1 certificate.
+## Function convertDerSignatureToASN1 (derSignature)
 
-Name
-	
+<p style='text-align: justify;'>
 
-Type
-	
+**Description:** DER (<a href="https://ldapwiki.com/wiki/Distinguished%20Encoding%20Rules">Distinguished Encoding Rules</a>) is used to encode ASN.1. When using this function, we can decode the DER signature to obtain an <a href="https://en.wikipedia.org/wiki/ASN.1">ASN.1 certificate</a>.
+</p>
 
-Value
-	
+| Name          | Type                     | Value      | Description                                  |
+|:--------------|:-------------------------|:-----------|:---------------------------------------------|
+| derSignature  | string (DER signature)   | *required  | the DER signature that you want to convert.  |
 
-Description
 
-derSignature
-	
+**Returns:** An <a href="https://en.wikipedia.org/wiki/Bloom_filter">ASN.1</a> certificate.
 
-string
+## Function createAuthToken (holderSeedSSI, scope, credential, callback)
 
-(DER signature)
-	
+**Description:** Create an authentication JWT token.
 
-*required
-	
+| Name                  | Type                                                                                                                                                                         | Value      | Description                                                        |
+|:----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:-------------------------------------------------------------------|
+| holderSeedSSI         | <a href="https://docs.google.com/document/d/e/2PACX-1vQGL5SmKZxE-Vg-TSQ2ZemRDLEr7vBYzvGU3Mnn_ZEpT5lNg4fJ5qdnp_OWQtB5hXDVN2xF50zTk_O_/pub?embedded=true ">SeedSSI</a>  object |            | The SeedSSI of the credential holder.                              |
+| scope (optional)      |                                                                                                                                                                              |            |                                                                    |
+| credential (optional) | JWT token (JSON object)                                                                                                                                                      |            | The credential you want to associate to the authentication token.  |
+| callback              | function                                                                                                                                                                     | *required  |                                                                    |
 
-the DER signature that you want to convert.
 
-Returns: An ASN.1 certificate.
-Function createAuthToken(holderSeedSSI, scope, credential, callback)
+**Callback parameters**
 
-Description: Create an authentication JWT token.
+| Name       | Type                     | Response example  |
+|:-----------|:-------------------------|:------------------|
+| err        | Error object             |                   |
+| authToken  | JWT token (JSON object)  |                   |
 
-Name
-	
 
-Type
-	
+**Description:** Contains the error. / The authentication token that was created.
 
-Value
-	
+## Function createBloomFilter(options)
 
-Description
+**Description:** Create a <a href="https://en.wikipedia.org/wiki/Bloom_filter">Bloom Filter</a>.
 
-holderSeedSSI
-	
+| Name                | Type         | Value  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|:--------------------|:-------------|:-------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| options (optional)  | JSON object  |        | Options you want to use for your Bloom filter. <br> Default options are the following: <br> { <br> <span style="color:green"> *// bit count*</span>  <br> **bitCount:** null, <br>  <span style="color:green"> *// number of k hash functions*</span> <br> **hashFunctionCount:** null, <br> <span style="color:green"> *// estimated number of elements from the collection*</span> <br> **estimatedElementCount:** 0, <br> <span style="color:green"> *// allowed probability of false positives*</span> <br> **falsePositiveTolerance:** 0.000001, <br> <br> <span style="color:green"> *// default function that returns the element's hash*</span> <br> **hashFunction:** <br> linearFowlerNollVoJenkinsHashFunction, <br> <br> <span style="color:green"> *// crypto hash function that returns the element's hash*</span> <br> **cryptoHashFunction:** sha2, <br> <span style="color:green"> *// number of crypto hash functions to be used (will be used at first before the default hashFunction)*</span> <br> **cryptoHashFunctionCount:** 0, <br> <span style="color:green"> *// crypto hash function secret*</span> <br> **cryptoSecret:** "secret", <br> <br> <span style="color:green"> *// strategy which interacts with the bit collection*</span> <br> **BitCollectionStrategy:** <br> InMemoryBitCollectionStrategy, <br> }                              |
 
-SeedSSI object
-	
 
-	
 
-The SeedSSI of the credential holder.
-
-scope (optional)
-	
-
-	
-
-	
-
-credential (optional)
-	
-
-JWT token
-
-(JSON object
-	
-
-	
-
-The credential you want to associate to the authentication token.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-authToken
-	
-
-JWT token
-
-(JSON object)
-	
-
-Description: Contains the error. / The authentication token that was created.
-Function createBloomFilter(options)
-
-Description: Create a Bloom Filter.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-options (optional)
-	
-
-JSON object
-	
-
-	
-
-Options you want to use for your Bloom filter.
-
-Default options are the following:
 
 {
-
    // bit count
-
    bitCount: null,
-
    // number of k hash functions
-
    hashFunctionCount: null,
-
    // estimated number of elements from the collection
-
    estimatedElementCount: 0,
-
    // allowed probability of false positives
-
    falsePositiveTolerance: 0.000001,
 
    // default function that returns the element's hash
-
    hashFunction: linearFowlerNollVoJenkinsHashFunction,
 
    // crypto hash function that returns the element's hash
-
    cryptoHashFunction: sha2,
-
    // number of crypto hash functions to be used (will be used at first before the default hashFunction)
-
    cryptoHashFunctionCount: 0,
-
    // crypto hash function secret
-
    cryptoSecret: "secret",
 
    // strategy which interacts with the bit collection
-
    BitCollectionStrategy: InMemoryBitCollectionStrategy,
-
 }
 
-Returns
+**Returns**
 
-Name
-	
+| Name                | Description                                                                                                                                                                            |
+|:--------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BloomFilter object  | A <a href="https://en.wikipedia.org/wiki/Bloom_filter">Bloom filter</a>  is a space-efficient probabilistic data structure <br>  >see operations available on BloomFilter. |
 
-Description
 
-BloomFilter object
-	
 
-A Bloom filter is a space-efficient probabilistic data structure
+## Function createCredential(issuerSeedSSI, credentialSubjectSReadSSI, callback)
 
->see operations available on BloomFilter.
-Function createCredential(issuerSeedSSI, credentialSubjectSReadSSI, callback)
+<p style='text-align: justify;'>
 
-Description: Create a credential represented by a JWT token. The credential will be created with the seedSSI of the issuer and another keySSI that will be used by the subject to read its credential.
+**Description:** Create a credential represented by a JWT token. The credential will be created with the seedSSI of the issuer and another keySSI that will be used by the subject to read its credential.
+</p>
 
-Name
-	
+| Name                                      | Type                                                    | Value      | Description                                                                                                                                |
+|:------------------------------------------|:--------------------------------------------------------|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| issuerSeedSSI                             | <a href="https://opendsu.com/rfc010">SeedSSI</a> object |            | The seedSSI represents the credential issuer.                                                                                              |
+| credentialSubjectSReadSSI <br> (optional) | SReadSSI object                                         |            | The sReadSSI that will be used by the subject to read its credential. <br> If not provided, the sReadSSI will be derived from the seedSSI. |
+| callback                                  | function                                                | *required  |                                                                                                                                            |
 
-Type
-	
 
-Value
-	
+**Callback parameters**
 
-Description
+| Name        | Type                    | Response example  |
+|:------------|:------------------------|:------------------|
+| err         | Error object            |                   |
+| credential  | JWT token <br> (string) |                   |
 
-issuerSeedSSI
-	
 
-SeedSSI object
-	
+**Description:** Contains the error. / The credential that was created and represented by a JWT Token.
 
-	
 
-The seedSSI represents the credential issuer.
+## Function createJWT(seedSSI, scope, credentials, options, callback)
 
-credentialSubjectSReadSSI
+**Description:** Create a JWT Token signed with your seedSSI.
 
-(optional)
-	
+| Name                        | Type                                                    | Value       | Description                                                             |
+|:----------------------------|:--------------------------------------------------------|:------------|:------------------------------------------------------------------------|
+| seedSSI                     | <a href="https://opendsu.com/rfc010">SeedSSI</a> object |             | The SeedSSI that you want to use to sign the JWT token.                 |
+| scope <br> (optional)       |                                                         |             | A credential can be linked to the JWT token.                            |
+| credentials <br> (optional) | JWT token <br> (string)                                 |             |                                                                         |
+| options <br> (optional)     | JSON object                                             |             | Can contain the subject, valability, or other parameters about the JWT. |
+| callback                    | function                                                | *required   |                                                                         |
 
-SReadSSI object
-	
 
-	
+**Callback parameters**
 
-The sReadSSI that will be used by the subject to read its credential.
+| Name | Type                    | Response example  |
+|:-----|:------------------------|:------------------|
+| err  | Error object            |                   |
+| jwt  | JWT token <br> (string) |                   |
 
-If not provided, the sReadSSI will be derived from the seedSSI.
 
-callback
-	
+**Description:** Contains the error. / A valid JWT token signed by the SeedSSI.
 
-function
-	
+## Function createPresentationToken(holderSeedSSI, scope, credential, callback)
 
-*required
-	
+**Description:** Create an authentication JWT token for a credential.
 
-Callback parameters
+| Name                  | Type                                                    | Value      | Description                                                         |
+|:----------------------|:--------------------------------------------------------|:-----------|:--------------------------------------------------------------------|
+| holderSeedSSI         | <a href="https://opendsu.com/rfc010">SeedSSI</a> object |            | The SeedSSI of the credential holder.                               |
+| scope <br> (optional) |                                                         |            |                                                                     |
+| credential            | JWT token <br> (string)                                 |            | The credentials for which you want to create a presentation token.  |
+| callback              | function                                                | *required  |                                                                     |
 
-Name
-	
 
-Type
-	
+**Callback parameters**
 
-Response example
+| Name       | Type                    | Response example  |
+|:-----------|:------------------------|:------------------|
+| err        | Error object            |                   |
+| presToken  | JWT token <br> (string) |                   |
 
-err
-	
+**Description:** Contains the error. / The presentation token that was created.
 
-Error object
-	
 
-credential
-	
+## Function decodeBase58(encodedData)
 
-JWT token
+**Description:** Decode data previously encoded in base58.
 
-(string)
-	
+| Name         | Type              | Value      | Description                   |
+|:-------------|:------------------|:-----------|:------------------------------|
+| encodedData  | string or buffer  | *required  | The data you want to decode.  |
 
-Description: Contains the error. / The credential that was created and represented by a JWT Token.
-Function createJWT(seedSSI, scope, credentials, options, callback)
 
-Description: Create a JWT Token signed with your seedSSI.
+**Returns**
 
-Name
-	
+| Name    | Description                                                                                                                                      |
+|:--------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
+| Buffer  | A buffer obtained by decoding the encodedData using the base58 decoding function. <br> You can apply buffer.toString() to get the initial data.  |
 
-Type
-	
 
-Value
-	
+## Function encodeBase58(data)
 
-Description
 
-seedSSI
-	
+**Description:** Encode data in base58.
 
-SeedSSI object
-	
 
-	
+| Name   | Type        | Value     | Description                            |
+|:-------|:------------|:----------|:---------------------------------------|
+| data   | string      |           | String you want to encode in Base 58.  |
 
-The SeedSSI that you want to use to sign the JWT token.
 
-scope
+**Returns**
 
-(optional)
-	
+| Name    | Description                                                               |
+|:--------|:--------------------------------------------------------------------------|
+| String  | A string containing the encoded data using the base58 encoding function.  |
 
-	
 
-	
+## Function generateEncryptionKey(keySSI, callback)
 
-A credential can be linked to the JWT token.
+**Description:** Generate an encryption key for your KeySSI.
 
-credentials
+| Name      | Type                                                   | Value      | Description                                             |
+|:----------|:-------------------------------------------------------|:-----------|:--------------------------------------------------------|
+| keySSI    | <a href="https://opendsu.com/rfc002">KeySSI</a> object |            | The KeySSI you want to generate an encryption key for.  |
+| callback  | function                                               | *required  |                                                         |
 
-(optional)
-	
 
-JWT token
+**Callback parameters**
 
-(string)
-	
+| Name           | Type         | Response example  |
+|:---------------|:-------------|:------------------|
+| err            | Error object |                   |
+| encryptionKey  | Buffer       |                   |
 
-	
 
-options
+**Description:** Contains the error./ Buffer of random bytes representing the encryption key that was generated.
 
-(optional)
-	
 
-JSON object
-	
+## Function generateRandom(length)
 
-	
+**Description:** Generate a random string of the desired length.
 
-Can contain the subject, valability, or other parameters about the JWT.
+| Name    | Type  | Value     | Description                                            |
+|:--------|:------|:----------|:-------------------------------------------------------|
+| length  | int   |           | The length of the random string you want to generate.  |
 
-callback
-	
 
-function
-	
+**Returns**
 
-*required
-	
+| Name    | Description                             |
+|:--------|:----------------------------------------|
+| String  | A random string of the desired length.  |
 
-Callback parameters
 
-Name
-	
+## Function getReadableSSI(ssi)
 
-Type
-	
+**Description:** Get the self-sovereign identifier of your keySSI in the readable format (not encoded).
 
-Response example
+| Name | Type                                                   | Value      | Description                                               |
+|:-----|:-------------------------------------------------------|:-----------|:----------------------------------------------------------|
+| ssi  | <a href="https://opendsu.com/rfc002">KeySSI</a> object |            | The KeySSI from which you want to obtain the identifier.  |
 
-err
-	
 
-Error object
-	
+**Returns**
 
-jwt
-	
 
-JWT token
+| Name    | Description                                                                                                             |
+|:--------|:------------------------------------------------------------------------------------------------------------------------|
+| String  | The self-sovereign identifier of your KeySSI in the following format: <br> _ssi:subtype:domain:specific:control:v0:hint_  |
 
-(string)
-	
 
-Description: Contains the error. / A valid JWT token signed by the SeedSSI.
-Function createPresentationToken(holderSeedSSI, scope, credential, callback)
+## Function parseJWTSegments(jwt, callback)
 
-Description: Create an authentication JWT token for a credential.
+**Description:**  Return an object containing the different JWT segments (header, body, signature, signatureInput).
 
-Name
-	
+| Name      | Type                    | Value      | Description                                     |
+|:----------|:------------------------|:-----------|:------------------------------------------------|
+| jwt       | JWT token <br> (string) |            | The JWT Token you want to parse into segments.  |
+| callback  | function                | *required  |                                                 |
 
-Type
-	
 
-Value
-	
+**Callback parameters**
 
-Description
+| Name      | Type         | Response example  |
+|:----------|:-------------|:------------------|
+| err       | Error object |                   |
+| segments  | Object       |                   |
 
-holderSeedSSI
-	
 
-SeedSSI object
-	
-
-	
-
-The SeedSSI of the credential holder.
-
-scope
-
-(optional)
-	
-
-	
-
-	
-
-credential
-	
-
-JWT token
-
-(string)
-	
-
-	
-
-The credentials for which you want to create a presentation token.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-presToken
-	
-
-JWT token
-
-(string)
-	
-
-Description: Contains the error. / The presentation token that was created.
-Function decodeBase58(encodedData)
-
-Description: Decode data previously encoded in base58.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-encodedData
-	
-
-string or buffer
-	
-
-*required
-	
-
-The data you want to decode.
-
-Returns
-
-Name
-	
-
-Description
-
-Buffer
-	
-
-A buffer obtained by decoding the encodedData using the base58 decoding function.
-
-You can apply buffer.toString() to get the initial data.
-Function encodeBase58(data)
-
-Description: Encode data in base58.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-data
-	
-
-string
-	
-
-	
-
-String you want to encode in Base 58.
-
-Returns
-
-Name
-	
-
-Description
-
-String
-	
-
- A string containing the encoded data using the base58 encoding function.
-Function generateEncryptionKey(keySSI, callback)
-
-Description: Generate an encryption key for your KeySSI.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-keySSI
-	
-
-KeySSI object
-	
-
-	
-
-The KeySSI you want to generate an encryption key for.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-encryptionKey
-	
-
-Buffer
-	
-
-Description: Contains the error./ Buffer of random bytes representing the encryption key that was generated.
-Function generateRandom(length)
-
-Description: Generate a random string of the desired length.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-length
-	
-
-int
-	
-
-	
-
-The length of the random string you want to generate.
-
-Returns
-
-Name
-	
-
-Description
-
-String
-	
-
-A random string of the desired length.
-Function getReadableSSI(ssi)
-
-Description: Get the self-sovereign identifier of your keySSI in the readable format (not encoded).
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-ssi
-	
-
-keySSI object
-	
-
-	
-
-The KeySSI from which you want to obtain the identifier.
-
-Returns
-
-Name
-	
-
-Description
-
-String
-	
-
-The self-sovereign identifier of your KeySSI in the following format:
-
-ssi:subtype:domain:specific:control:v0:hint
-Function parseJWTSegments(jwt, callback)
-
-Description:  Return an object containing the different JWT segments (header, body, signature, signatureInput).
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-jwt
-	
-
-JWT token
-
-(string)
-	
-
-	
-
-The JWT Token you want to parse into segments.
-
-callback
-	
-
-function
-	
-
-*required
-	
-
-Callback parameters
-
-Name
-	
-
-Type
-	
-
-Response example
-
-err
-	
-
-Error object
-	
-
-segments
-	
-
-Object
-	
-
-Description: Contains the error. / An object containing the different JWT segments:
-
+**Description:** Contains the error. / An object containing the different JWT segments:
 (header, body, signature, signatureInput).
-Function sha256(dataObj)
 
-Description: Hash your data with sha256 algorithm.
 
-Name
-	
+## Function sha256(dataObj)
 
-Type
-	
+**Description:** Hash your data with sha256 algorithm.
 
-Value
-	
+| Name     | Type    | Value      | Description                                  |
+|:---------|:--------|:-----------|:---------------------------------------------|
+| dataObj  | string  | *required  | The data from which you want to get a hash.  |
 
-Description
 
-dataObj
-	
+**Returns**
 
-string
-	
+| Name    | Description                                                                   |
+|:--------|:------------------------------------------------------------------------------|
+| String  | A string obtained by applying the sha256 hash function to the provided data.  |
 
-*required
-	
 
-The data from which you want to get a hash.
+## Function sign(keySSI, data, callback)
 
-Returns
+**Description:** Sign the data with 'sha256' and a keySSI (more precisely: the private key included as a specific string of the KeySSI) using <a href="https://nodejs.org/docs/latest-v12.x/api/crypto.html#crypto_crypto_createsign_algorithm_options">this function</a> internally.
 
-Name
-	
+| Name      | Type                                                   | Value      | Description                       |
+|:----------|:-------------------------------------------------------|:-----------|:----------------------------------|
+| keySSI    | <a href="https://opendsu.com/rfc002">KeySSI</a> object |            | The KeySSI you want to sign with. |
+| data      | any                                                    |            | The data you want to sign.        |
+| callback  | function                                               | *required  |                                   |
 
-Description
 
-String
-	
+**Callback parameters**
 
-A string obtained by applying the sha256 hash function to the provided data.
-Function sign(keySSI, data, callback)
+| Name       | Type                                                                           | Response example  |
+|:-----------|:-------------------------------------------------------------------------------|:------------------|
+| err        | Error object                                                                   |                   |
+| signature  | <a href="https://nodejs.org/api/crypto.html#crypto_class_sign">Sign</a> Object |                   |
 
-Description: Sign the data with 'sha256' and a keySSI (more precisely: the private key included as a specific string of the KeySSI) using this function internally.
 
-Name
-	
+**Description:** Contains the error./ The digital signature corresponding to your data.
 
-Type
-	
 
-Value
-	
+## Function verifyAuthToken(jwt, listOfIssuers, callback)
 
-Description
+**Description:** Verify an authentication JWT token with the list of issuers.
 
-keySSI
-	
+| Name          | Type                    | Value      | Description                                                                               |
+|:--------------|:------------------------|:-----------|:------------------------------------------------------------------------------------------|
+| jwt           | JWT token <br> (string) | *required  | The JWT token you want to verify.                                                         |
+| listOfIssuers | Array                   |            | A verified list of trusted issuers that is used to check credential issuer authenticity.  |
+| callback      | function                | *required  |                                                                                           |
 
-keySSI object
-	
 
-	
+**Callback parameters**
 
-The KeySSI you want to sign with.
+| Name    | Type         | Response example  |
+|:--------|:-------------|:------------------|
+| err     | Error object |                   |
+| status  | boolean      |                   |
 
-data
-	
 
-any
-	
+**Description:** Contains the error./ Return true if the JWT token is valid. Else, return false.
 
-	
 
-The data you want to sign.
+## Function verifyJWT(jwt, rootOfTrustVerificationStrategy, callback)
 
-callback
-	
+**Description:** Verify the validity of a JWT Token using a source that can be trusted.
 
-function
-	
+| Name                             | Type                    | Value      | Description                       |
+|:---------------------------------|:------------------------|:-----------|:----------------------------------|
+| jwt                              | JWT token <br> (string) | *required  | The JWT token you want to verify. |
+| rootOfTrustVerificationStrategy  |                         |            |                                   |
+| callback                         | function                | *required  |                                   |
 
-*required
-	
 
-Callback parameters
+**Callback parameters**
 
-Name
-	
+| Name    | Type         | Response example  |
+|:--------|:-------------|:------------------|
+| err     | Error object |                   |
+| status  | boolean      |                   |
 
-Type
-	
 
-Response example
+**Description:** Contains the error./ Return true if the JWT token is valid. Else return false.
 
-err
-	
 
-Error object
-	
+## Function verifySignature(keySSI, data, signature, publicKey, callback)
 
-signature
-	
+**Description:** Verify a signature to authenticate other users and to guarantee the authenticity of the data/message/document that you received.
 
-Sign Object
-	
+| Name                       | Type                                                                           | Value     | Description                                                                                                                              |
+|:---------------------------|:-------------------------------------------------------------------------------|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------|
+| keySSI                     | <a href="https://opendsu.com/rfc002">KeySSI</a> object                         |           | The KeySSI is used to get the right verification method.                                                                                 |
+| data                       | any                                                                            |           | The data you want to sign.                                                                                                               |
+| signature                  | <a href="https://nodejs.org/api/crypto.html#crypto_class_sign">Sign</a> Object |           | The digital signature that you received with the document or message.                                                                    |
+| publicKey <br> (optional)  | string                                                                         |           | Known public key of the sender. <br>  If you don’t know the publicKey, leave it empty to get the public key associated with the KeySSI.  |
+| callback                   | function                                                                       | *required |                                                                                                                                          |
 
-Description: Contains the error./ The digital signature corresponding to your data.
-Function verifyAuthToken(jwt, listOfIssuers, callback)
+**Callback parameters**
 
-Description: Verify an authentication JWT token with the list of issuers.
+| Name    | Type         | Response example  |
+|:--------|:-------------|:------------------|
+| err     | Error object |                   |
+| status  | boolean      |                   |
 
-Name
-	
+**Description:** Contains the error./ The signature will be verified using the KeySSI public key. If the signature can be verified, it will return true. Else, it will return false.
 
-Type
-	
 
-Value
-	
+## Function getCryptoFunctionForKeySSI(keySSI, cryptoFunctionType)
 
-Description
+**Description:** 
 
-jwt
-	
+| Name                | Type                                                   | Value     | Description                                  |
+|:--------------------|:-------------------------------------------------------|:----------|:---------------------------------------------|
+| keySSI              | <a href="https://opendsu.com/rfc002">KeySSI</a> object |           | The KeySSI is used to identify the function. |
+| cryptoFunctionType  | string                                                 |           | The function you want to get.                | 
 
-JWT token
 
-(string)
-	
+## Function encrypt(data, encryptionKey)
 
-*required
-	
+**Description:** Encrypt data using an encryption key.
 
-The JWT token you want to verify.
+| Name           | Type  | Value  | Description  |
+|:---------------|:------|:-------|:-------------|
+| data           |       |        |              |
+| encryptionKey  |       |        |              |
 
-listOfIssuers
-	
 
-Array
-	
+## Function decrypt(data, encryptionKey)
 
-	
+**Description:** Decrypt previously encoded data using an encryption key.
 
-A verified list of trusted issuers that is used to check credential issuer authenticity.
+| Name           | Type  | Value  | Description  |
+|:---------------|:------|:-------|:-------------|
+| data           |       |        |              |
+| encryptionKey  |       |        |              |
 
-callback
-	
 
-function
-	
+## Function deriveEncryptionKey(password)
 
-*required
-	
+**Description:** Derive an encryption key from a password.
 
-Callback parameters
+| Name      | Type  | Value  | Description  |
+|:----------|:------|:-------|:-------------|
+| password  |       |        |              |
 
-Name
-	
 
-Type
-	
+## Function generateKeyPair()
 
-Response example
+**Description:** Generate a key pair.
 
-err
-	
 
-Error object
-	
+## Function convertPrivateKey(rawPrivateKey, outputFormat)
 
-status
-	
+**Description:** Convert a certain private key to the desired output format.
 
-boolean
-	
+| Name          | Type    | Value  | Description  |
+|:--------------|:--------|:-------|:-------------|
+| rawPrivateKey |         |        |              |
+| outputFormat  | string  |        |              |
 
-Description: Contains the error./ Return true if the JWT token is valid. Else, return false.
-Function verifyJWT(jwt, rootOfTrustVerificationStrategy, callback)
 
-Description: Verify the validity of a JWT Token using a source that can be trusted.
+## Function convertPublicKey(rawPublicKey, outputFormat, curveName)
 
-Name
-	
+**Description:** Convert a certain public key to the desired output format.
 
-Type
-	
+| Name          | Type   | Value  | Description  |
+|:--------------|:-------|:-------|:-------------|
+| rawPrivateKey |        |        |              |
+| outputFormat  | string |        |              |
+| curveName     |        |        |              |
 
-Value
-	
 
-Description
+## Function getPublicKeyFromPrivateKey(rawPrivateKey, outputFormat)
 
-jwt
-	
+**Description:** Get the public key for the desired private key.
 
-JWT token
+| Name          | Type   | Value  | Description  |
+|:--------------|:-------|:-------|:-------------|
+| rawPrivateKey |        |        |              |
+| outputFormat  | string | “raw”  |              |
 
-(string)
-	
 
-*required
-	
+## Function ecies_encrypt_ds(senderKeySSI, receiverKeySSI, data)
 
-The JWT token you want to verify.
+**Description:** 
 
-rootOfTrustVerificationStrategy
-	
+| Name           | Type | Value  | Description  |
+|:---------------|:-----|:-------|:-------------|
+| senderKeySSI   |      |        |              |
+| receiverKeySSI |      |        |              |
+| data           |      |        |              |
 
-	
 
-	
+## Function ecies_decrypt_ds(receiverKeySSI, data)
 
-callback
-	
+**Description:** 
 
-function
-	
+| Name           | Type | Value  | Description  |
+|:---------------|:-----|:-------|:-------------|
+| receiverKeySSI |      |        |              |
+| data           |      |        |              |
 
-*required
-	
 
-Callback parameters
+## Function createJWTForDID(did, scope, credentials, options, callback)
 
-Name
-	
+**Description:** Create a JWT for a given DID.
 
-Type
-	
+| Name        | Type      | Value  | Description  |
+|:------------|:----------|:-------|:-------------|
+| did         |           |        |              |
+| scope       |           |        |              |
+| credentials |           |        |              |
+| options     |           |        |              |
+| callback    | function  |        |              |
 
-Response example
 
-err
-	
+## Function verifyDID_JWT(jwt, rootOfTrustVerificationStrategy, callback)
 
-Error object
-	
+**Description:** Verify the JWT for a given DID.
 
-status
-	
+| Name                            | Type      | Value  | Description  |
+|:--------------------------------|:----------|:-------|:-------------|
+| jwt                             |           |        |              |
+| rootOfTrustVerificationStrategy |           |        |              |
+| callback                        | function  |        |              |
 
-boolean
-	
 
-Description: Contains the error./ Return true if the JWT token is valid. Else return false.
-Function verifySignature(keySSI, data, signature, publicKey, callback)
+## Function verifyDIDAuthToken(jwt, listOfIssuers, callback)
 
-Description: Verify a signature to authenticate other users and to guarantee the authenticity of the data/message/document that you received.
+**Description:** Verify the authentication token for a given DID.
 
-Name
-	
+| Name           | Type      | Value  | Description  |
+|:---------------|:----------|:-------|:-------------|
+| jwt            |           |        |              |
+| listOfIssuers  |           |        |              |
+| callback       | function  |        |              |
 
-Type
-	
 
-Value
-	
+## Function createAuthTokenForDID(holderDID, scope, credential, callback)
 
-Description
+**Description:** Create an authentication token for a given DID.
 
-keySSI
-	
+| Name        | Type      | Value  | Description  |
+|:------------|:----------|:-------|:-------------|
+| holderDID   |           |        |              |
+| scope       |           |        |              |
+| credential  |           |        |              |
+| callback    | function  |        |              |
 
-keySSI object
-	
 
-	
+## Function createCredentialForDID(did, credentialSubjectDID, callback)
 
-The KeySSI is used to get the right verification method.
+**Description:** Create a credential for a given DID.
 
-data
-	
+| Name                 | Type      | Value  | Description  |
+|:---------------------|:----------|:-------|:-------------|
+| did                  |           |        |              |
+| credentialSubjectDID |           |        |              |
+| callback             | function  |        |              |
 
-any
-	
 
-	
+## Function base64UrlEncodeJOSE(data)
 
-The data you received and that was signed.
+**Description:** 
 
-signature
-	
+| Name           | Type           | Value  | Description  |
+|:---------------|:---------------|:-------|:-------------|
+| data           | Buffer object  |        |              |
 
-Sign Object
-	
 
-	
+## Function base64UrlDecodeJOSE(data)
 
-The digital signature that you received with the document or message.
+**Description:**
 
-publicKey
+| Name           | Type          | Value  | Description  |
+|:---------------|:--------------|:-------|:-------------|
+| data           |               |        |              |
 
-(optional)
-	
 
-string
-	
+## Function sha256JOSE(data, encoding)
 
-	
+**Description:** Encode data using the sha256 hashing mechanism.
 
-Known public key of the sender.
+| Name     | Type          | Value  | Description  |
+|:---------|:--------------|:-------|:-------------|
+| data     |               |        |              |
+| encoding |               |        |              |
 
-If you don’t know the publicKey, leave it empty to get the public key associated with the KeySSI.
 
-callback
-	
+## Function convertKeySSIObjectToMnemonic(keySSIObject)
 
-function
-	
+**Description:** Take a KeySSI Object and convert it to mnemonic.
 
-*required
-	
+| Name          | Type                                                   | Value     | Description |
+|:--------------|:-------------------------------------------------------|:----------|:------------|
+| keySSIObject  | <a href="https://opendsu.com/rfc002">KeySSI</a> object |           |             |
 
-Callback parameters
 
-Name
-	
+## Function convertMnemonicToKeySSIIdentifier(phrase, typeName, domain, vn)
 
-Type
-	
+**Description:** Take a mnemonic and convert it to a KeySSI Identifier.
 
-Response example
+| Name     | Type          | Value  | Description  |
+|:---------|:--------------|:-------|:-------------|
+| phrase   |               |        |              |
+| typeName |               |        |              |
+| domain   |               |        |              |
+| vn       |               |        |              | 
 
-err
-	
 
-Error object
-	
+## Function getRandomSecret(length)
 
-status
-	
+**Description:** Create a random secret of a given length.
 
-boolean
-	
+| Name    | Type     | Value      | Description                                       |
+|:--------|:---------|:-----------|:--------------------------------------------------|
+| length  | numeric  | *required  | The number of random bytes to encode.             |
 
-Description: Contains the error./ The signature will be verified using the KeySSI public key. If the signature can be verified, it will return true. Else, it will return false.
-Function getCryptoFunctionForKeySSI(keySSI, cryptoFunctionType)
 
-Description:
+## An index of predefined possible JWT Errors:
 
-Name
-	
+* EMPTY_JWT_PROVIDED
+* INVALID_JWT_FORMAT
+* INVALID_JWT_PRESENTATION
+* INVALID_JWT_HEADER
+* INVALID_JWT_BODY
+* INVALID_JWT_HEADER_TYPE
+* INVALID_JWT_ISSUER
+* INVALID_CREDENTIALS_FORMAT
+* JWT_TOKEN_EXPIRED
+* JWT_TOKEN_NOT_ACTIVE
+* INVALID_JWT_SIGNATURE
+* ROOT_OF_TRUST_VERIFICATION_FAILED
+* EMPTY_LIST_OF_ISSUERS_PROVIDED
+* INVALID_SSI_PROVIDED
 
-Type
-	
 
-Value
-	
+**Contributors**
 
-Description
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-keySSI
-	
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-keySSI object
-	
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-	
 
-The KeySSI is used to identify the function.
+# Annex 1. Contributors
 
-cryptoFunctionType
-	
-
-string
-	
-
-	
-
-The function you want to get.
-Function encrypt(data, encryptionKey)
-
-Description: Encrypt data using an encryption key.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-data
-	
-
-	
-
-	
-
-encryptionKey
-	
-
-	
-
-	
-
-Function decrypt(data, encryptionKey)
-
-Description: Decrypt previously encoded data using an encryption key.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-data
-	
-
-	
-
-	
-
-encryptionKey
-	
-
-	
-
-	
-
-Function deriveEncryptionKey(password)
-
-Description: Derive an encryption key from a password.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-password
-	
-
-	
-
-	
-
-Function generateKeyPair()
-
-Description: Generate a key pair.
-Function convertPrivateKey(rawPrivateKey, outputFormat)
-
-Description: Convert a certain private key to the desired output format.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-rawPrivateKey
-	
-
-	
-
-	
-
-outputFormat
-	
-
-string
-	
-
-	
-
-Function convertPublicKey(rawPublicKey, outputFormat, curveName)
-
-Description: Convert a certain public key to the desired output format.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-rawPrivateKey
-	
-
-	
-
-	
-
-outputFormat
-	
-
-string
-	
-
-	
-
-curveName
-	
-
-	
-
-	
-
-Function getPublicKeyFromPrivateKey(rawPrivateKey, outputFormat)
-
-Description: Get the public key for the desired private key.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-rawPrivateKey
-	
-
-	
-
-	
-
-outputFormat
-	
-
-string
-	
-
-“raw”
-	
-
-Function ecies_encrypt_ds(senderKeySSI, receiverKeySSI, data)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-senderKeySSI
-	
-
-	
-
-	
-
-receiverKeySSI
-	
-
-	
-
-	
-
-data
-	
-
-	
-
-	
-
-Function ecies_decrypt_ds(receiverKeySSI, data)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-receiverKeySSI
-	
-
-	
-
-	
-
-data
-	
-
-	
-
-	
-
-Function createJWTForDID(did, scope, credentials, options, callback)
-
-Description: Create a JWT for a given DID.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-did
-	
-
-	
-
-	
-
-scope
-	
-
-	
-
-	
-
-credentials
-	
-
-	
-
-	
-
-options
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Function verifyDID_JWT(jwt, rootOfTrustVerificationStrategy, callback)
-
-Description: Verify the JWT for a given DID.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-jwt
-	
-
-	
-
-	
-
-rootOfTrustVerificationStrategy
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Function verifyDIDAuthToken(jwt, listOfIssuers, callback)
-
-Description: Verify the authentication token for a given DID.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-jwt
-	
-
-	
-
-	
-
-listOfIssuers
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Function createAuthTokenForDID(holderDID, scope, credential, callback)
-
-Description: Create an authentication token for a given DID.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-holderDID
-	
-
-	
-
-	
-
-scope
-	
-
-	
-
-	
-
-credential
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Function createCredentialForDID(did, credentialSubjectDID, callback)
-
-Description: Create a credential for a given DID.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-did
-	
-
-	
-
-	
-
-credentialSubjectDID
-	
-
-	
-
-	
-
-callback
-	
-
-function
-	
-
-	
-
-Function base64UrlEncodeJOSE(data)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-data
-	
-
-Buffer object
-	
-
-	
-
-Function base64UrlDecodeJOSE(data)
-
-Description:
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-data
-	
-
-	
-
-	
-
-Function sha256JOSE(data, encoding)
-
-Description: Encode data using the sha256 hashing mechanism.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-data
-	
-
-	
-
-	
-
-encoding
-	
-
-	
-
-	
-
-Function convertKeySSIObjectToMnemonic(keySSIObject)
-
-Description: Take a KeySSI Object and convert it to mnemonic.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-keySSIObject
-	
-
-keySSI object
-	
-
-	
-
-Function convertMnemonicToKeySSIIdentifier(phrase, typeName, domain, vn)
-
-Description: Take a mnemonic and convert it to a KeySSI Identifier.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-phrase
-	
-
-	
-
-	
-
-typeName
-	
-
-	
-
-	
-
-domain
-	
-
-	
-
-	
-
-vn
-	
-
-	
-
-	
-
-Function getRandomSecret(length)
-
-Description: Create a random secret of a given length.
-
-Name
-	
-
-Type
-	
-
-Value
-	
-
-Description
-
-length
-	
-
-numeric
-	
-
-*required
-	
-
-The number of random bytes to encode.
-An index of predefined possible JWT Errors:
-
-    EMPTY_JWT_PROVIDED
-    INVALID_JWT_FORMAT
-    INVALID_JWT_PRESENTATION
-    INVALID_JWT_HEADER
-    INVALID_JWT_BODY
-    INVALID_JWT_HEADER_TYPE
-    INVALID_JWT_ISSUER
-    INVALID_CREDENTIALS_FORMAT
-    JWT_TOKEN_EXPIRED
-    JWT_TOKEN_NOT_ACTIVE
-    INVALID_JWT_SIGNATURE
-    ROOT_OF_TRUST_VERIFICATION_FAILED
-    EMPTY_LIST_OF_ISSUERS_PROVIDED
-    INVALID_SSI_PROVIDED
-
+| **Current Editors**                 | **Email**                               |
+|:------------------------------------|:----------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net            |
+| Cosmin Ursache                      | cosmin@axiologic.net                    |
+| Teodor Lupu                         | teodor@axiologic.net                    |
+| Andi-Gabriel Țan                    | andi@axiologic.net                      |
+| **Contributors Axiologic Research** | **Email**                               |
+| Adrian Ganga                        | adrian@axiologic.net                    |
+| Andi-Gabriel Țan                    | andi@axiologic.net                      |
+| Cosmin Ursache                      | cosmin@axiologic.net                    |
+| Daniel Sava                         | daniel@axiologic.net                    |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                  |
+| Teodor Lupu                         | teodor@axiologic.net                    |
+| Valentin Gérard                     | valentin@axiologic.net                  |
+| **PrivateSky Contributors**         | **Email**                               |
+| Alex Sofronie                       | alsofronie@gmail.com(DPO)               |
+| Cosmin Ursache                      | cos.ursache@gmail.com(UAIC)             |
+| Daniel Sava                         | sava.dumitru.daniel@gmail.com(HVS, AQS) |
+| Daniel Visoiu                       | visoiu.daniel.g@gmail.com(SGiant)       |
+| Lenuța Alboaie                      | lalboaie@gmail.com(UAIC)                |
+| Rafael Mastaleru                    | rafael@rms.ro(RMS)                      |
+| Sînică Alboaie                      | salboaie@gmail.com(UAIC)                |
+| Vlad Balmos                         | vlad.balmos@gmail.com(Code932)          |
+| **PharmaLedger**                    | **Email**                               |
+| Ana Balan                           | bam@rms.ro (RMS)                        |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                        |
+| Cosmin Ursache                      | cos@rms.ro (RMS)                        |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                        |
