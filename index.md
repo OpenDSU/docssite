@@ -103,8 +103,8 @@ nav_order: 1
     function showSlides() {
         if (slideIndex < 0) {
             slideIndex = 0;
-        } else if (slideIndex > cards.length - 6) {
-            slideIndex = cards.length - 6;
+        } else if (slideIndex > cards.length - 4) {
+            slideIndex = cards.length - 4;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
