@@ -19,6 +19,42 @@ The proposal has been accepted and has an implementation.
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
+<!-- TOC -->
+* [VersionLessDSUs (RFC-019)](#versionlessdsus-rfc-019)
+* [1. Specifications](#1-specifications)
+  * [1.1. Persistence](#11-persistence)
+    * [1.1.1 Return VersionLessDSU content](#111-return-versionlessdsu-content)
+  * [Path Parameters](#path-parameters)
+  * [Responses](#responses)
+    * [1.1.2 Overwrite VersionLessDSU content](#112-overwrite-versionlessdsu-content)
+  * [Path Parameters](#path-parameters-1)
+  * [Body Parameters](#body-parameters)
+  * [Responses](#responses-1)
+    * [1.1.3 Security](#113-security)
+  * [1.2. Resolver and VersionLessWalletEnclave](#12-resolver-and-versionlesswalletenclave)
+    * [1.2.1 Resolver](#121-resolver)
+    * [Function createVersionlessDSU(filePath, encryptionKey, domain, callback)](#function-createversionlessdsufilepath-encryptionkey-domain-callback)
+    * [1.2.2 VersionLessWalletEnclave](#122-versionlesswalletenclave)
+  * [Function enclaveAPI.initialiseVersionlessDSUEnclave(versionlessSSI)](#function-enclaveapiinitialiseversionlessdsuenclaveversionlessssi)
+  * [1.3. VersionLessDSU Serialisation](#13-versionlessdsu-serialisation)
+    * [1.3.1 Folders](#131-folders)
+    * [1.3.2 Files](#132-files)
+    * [1.3.3 Mounts](#133-mounts)
+  * [1.4. VersionLessDSU Behavior](#14-versionlessdsu-behavior)
+  * [1.5. VersionLessSSI](#15-versionlessssi)
+    * [1.5.1. VersionLessSSI description with examples](#151-versionlessssi-description-with-examples)
+    * [1.5.2. Specific parameters for VersionLessSSI subtypes](#152-specific-parameters-for-versionlessssi-subtypes)
+    * [1.5.3. VersionLessSSI family specific functions](#153-versionlessssi-family-specific-functions)
+  * [Function versionLessSSI.initialize(dlDomain, filePath, encryptionKey, vn, hint)](#function-versionlessssiinitializedldomain-filepath-encryptionkey-vn-hint)
+  * [Function versionLessSSI.getFilePath()](#function-versionlessssigetfilepath)
+  * [Function versionLessSSI.getEncryption()](#function-versionlessssigetencryption)
+  * [Function versionLessSSI.isEncrypted()](#function-versionlessssiisencrypted)
+  * [Function versionLessSSI.encrypt(data, callback)](#function-versionlessssiencryptdata-callback)
+  * [Function versionLessSSI.decrypt(data, callback)](#function-versionlessssidecryptdata-callback)
+    * [1.5.4. OpenDSU “keyssi” API space](#154-opendsu-keyssi-api-space)
+  * [Function createVersionlessSSI(domain, filePath, encryptionKey, vn, hint)](#function-createversionlessssidomain-filepath-encryptionkey-vn-hint)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
 
 # 1. Specifications
 
@@ -332,6 +368,13 @@ VersionLessSSIs can be easily created using specific method inside the OpenDSU �
 |:----------------|:-------------------------------------------------------------------|
 | VersionLessSSI  | The newly created VersionLessSSI based on the provided parameters  |
 
+**Contributors**
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 
 # Annex 1. Contributors
