@@ -99,17 +99,21 @@ asd<br>
     let slideIndex = 0;
     const slides = document.querySelector('.slideshow');
     const cards = document.querySelectorAll('.card');
+    const slideWidth = 100 / cards.length;
 
     function scrollSlides(n) {
         slideIndex += n;
+        if (slideIndex < 0) {
+            slideIndex = 0;
+        } else if (slideIndex >= cards.length) {
+            slideIndex = cards.length - 1;
+        }
         showSlides();
     }
 
     function showSlides() {
-        if (slideIndex < 0) {
-            slideIndex = 0;
-        }
-        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
+        const translateXValue = slideIndex * slideWidth;
+        slides.style.transform = `translateX(-${translateXValue}%)`;
     }
 </script>
 
