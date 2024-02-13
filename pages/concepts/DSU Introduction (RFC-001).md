@@ -24,6 +24,8 @@ The proposal has been accepted and has an implementation.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
  
 
+
+
 <!-- TOC -->
 * [Abstract](#abstract)
 * [Overview](#overview)
@@ -40,7 +42,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [8. OpenDSU and IPFS](#8-opendsu-and-ipfs)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-{:toc}
+
 
 
 
@@ -101,6 +103,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTiEAVJ1saLfnNokV3evu9neqBLxoEAm-19KhBil3Z3zB1aTJJN8pgP1oMQYWkU_h1_Fp4aC-z92yg5/pub?w=827&h=135" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Concepts</b></p>
 </div>
+
 
 # **2. Brick Storage**
 
