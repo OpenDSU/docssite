@@ -20,66 +20,50 @@ nav_order: 1
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YouTube Video Cards Slideshow</title>
 <style>
-        .slideshow-container {
+    .slideshow-container {
         position: relative; /* Set the container as the positioning context */
         width: 90%;
         margin: 0 auto;
         overflow: hidden;
     }
-    
     .slideshow {
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
     }
-    
     .card {
-        position: relative; /* Add this line */
         flex: 0 0 calc(50% - 20px);
         margin: 10px;
         padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
-    
     iframe {
         width: 100%;
         height: 200px;
     }
-    
     h2 {
         margin-top: 10px;
     }
-    
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 5px;
-        color: purple;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        z-index: 1000;
-        font-size: 40px;
-    }
-    
+   .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    padding: 5px;
+    color: purple; /* Set color to purple */
+    background-color: transparent; /* Set background color to transparent */
+    border: none;
+    outline: none;
+    z-index: 1000; /* Increase the z-index */
+    font-size: 30px; /* Increase the font size */
+}
     .prev {
-        left: 0;
+        left: 30px;
     }
-    
     .next {
-        right: 0;
+        right: 30px;
     }
-    
-    .card-number {
-        position: absolute;
-        bottom: 5px;
-        right: 5px;
-        font-size: 16px;
-    }
-
 </style>
 </head>
 <body>
