@@ -66,13 +66,13 @@ For the beginning, the initial page is loaded, where there are SSApps that the u
 
 <p style='text-align: justify;'>
 
-  MFA is an authentication method and a basic component of data privacy. In order for the user to get access to an online resource, application, or account, MFA requires the user to provide two or more verification factors. This should be used by both individuals and companies/enterprises as often as possible.
+MFA is an authentication method and a basic component of data privacy. In order for the user to get access to an online resource, application, or account, MFA requires the user to provide two or more verification factors. This should be used by both individuals and companies/enterprises as often as possible.
 
 </p>
 
 <p style='text-align: justify;'>
 
-  Authentication is performed by the IDP following authorization code flow and PKCE (Proof Key for Code Exchange). PKCE is a sample key for exchanging authorization codes. PKCE adds an extra level of security when a mobile device is used for the flow of authorization codes.
+Authentication is performed by the IDP following authorization code flow and PKCE (Proof Key for Code Exchange). PKCE is a sample key for exchanging authorization codes. PKCE adds an extra level of security when a mobile device is used for the flow of authorization codes.
 
 </p>
 
@@ -84,7 +84,7 @@ MFA offers much stronger security and protection against fraudsters. They might 
 
 <p style='text-align: justify;'>
 
-  In steps 4 and 5, as shown in Figure 1, the return URL for a request is set to the APIHub's SSO Middleware and not to the application, so the authorization token is sent there. Then, the SSO middleware presents the authorization token to the IDP’s token endpoint to retrieve the access token and refresh token; both signed JWTs (JSON Web Tokens). JWTs can be signed using a secret or public key pair. In addition, the structure of a JWT allows you to make sure that the content has not been altered.
+In steps 4 and 5, as shown in Figure 1, the return URL for a request is set to the APIHub's SSO Middleware and not to the application, so the authorization token is sent there. Then, the SSO middleware presents the authorization token to the IDP’s token endpoint to retrieve the access token and refresh token; both signed JWTs (JSON Web Tokens). JWTs can be signed using a secret or public key pair. In addition, the structure of a JWT allows you to make sure that the content has not been altered.
 
 </p>
 
