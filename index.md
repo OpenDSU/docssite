@@ -85,7 +85,7 @@ nav_order: 1
     <div class="container">
         <div class="wrapper">
             <div class="slider">
-                <img id="slide-1" src="1.jpg" alt="">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=DWsmnvjefra-tRtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <img id="slide-2" src="2.jpg" alt="">
                 <img id="slide-3" src="3.jpg" alt="">
                 <img id="slide-4" src="4.jpg" alt="">
@@ -105,10 +105,7 @@ nav_order: 1
                 </a>
             </div>
             <div class="small-cards">
-                <div class="small-card">Card 1</div>
-                <div class="small-card">Card 2</div>
-                <div class="small-card">Card 3</div>
-                <div class="small-card">Card 4</div>
+ 
             </div>
         </div>
     </div>
