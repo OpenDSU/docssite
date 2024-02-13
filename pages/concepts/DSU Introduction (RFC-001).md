@@ -4,16 +4,10 @@ layout: home
 parent: OpenDSU Concepts
 nav_order: 1
 ---
-<style>
-.imgMain{
-    display.block;
-    margin-left:70px;
-    margin-right:auto;
-} 
-</style>
 
 
-# **DSU Introduction**
+# **DSU Introduction (RFC-001)**
+
 {: .no_toc }
 
 
@@ -25,10 +19,12 @@ The proposal has been accepted and has an implementation.
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
  
+
+
 
 <!-- TOC -->
 * [Abstract](#abstract)
@@ -46,16 +42,18 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [8. OpenDSU and IPFS](#8-opendsu-and-ipfs)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-{:toc}
 
 
 
 
-# Abstract
+
+# **Abstract**
 
 <p align="justify">This RFC introduces the critical components of the OpenDSU project, such as DSU, as well as domain anchoring and brick storage services. Then, it introduces some essential mechanisms known as DSU mounting and DSU reconstruction. It also explains RFC’s role of keySSIs in the management of the DSU. Finally, it presents some primary use cases of DSUs.</p>
 
-# Overview
+
+# **Overview**
+
 <p align="justify">The main concept, the central thread on which OpenDSU is created, is based on Digital Sovereignty. Individuals, citizens, enterprises, organizations, or states should have as much control over data as possible and not give control to intermediaries.
 
 <p style='text-align: justify;'>Following our research in PrivateSky, but also according to those existing in OpenDSU, we have noted that having a single large blockchain containing all the world’s data is impossible. The vision envisaged from specific projects, for example, Ethereum, in which there is only one world in which everything happens uniformly, does not seem realistic. Therefore, the OpenDSU team introduced the concept of Hierarchical Blockchains, which are several blockchains that have a naming and identification system. Everything is done through blockchains, providing interoperability between applications, meaning it does not matter in which blockchain we anchor our data. We approach the data from the perspective of DSUs (Data Sharing Units), so that is where the name OpenDSU comes from. OpenDSU is an evolving standard that creates data storage systems that are off-chain but permanently anchored in a blockchain to obtain security properties and provenance to ensure the data’s quality.</p>
@@ -80,7 +78,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Now, owners of the same key or a special derivation of this key can find the reference to the map in the anchoring service. With this map, the agent can reconstruct the DSU in the execution environment for the user.</p>
 </p>
  
-# 1. Data Sharing Unit (DSU)
+# **1. Data Sharing Unit (DSU)**
 
 <p align="justify">From the perspective of OpenDSU, a DSU is an entity that exists temporarily in an execution environment (usually in a sandboxed container). Logically, a DSU can be understood as a micro-file system containing data and code booted in a sandboxed environment. It can also be understood as a key/value micro-database (each key being the path to a file and each value the contents of that file).</p>
 
@@ -106,7 +104,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     <p><b>Figure 3: Concepts</b></p>
 </div>
 
-# 2. Brick Storage
+
+# **2. Brick Storage**
 
 <p align="justify">Brick Storage represents a core element of the OpenDSU ecosystem. Bricks Storages are simple web services that store and retrieve bricks for clients that know the brick’s hash (or id). The basic implementation of Brick Storages is straightforward and offers a tool that works well in an open and permissionless network.
 
@@ -128,18 +127,17 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 More details are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.
 
-# 3. Anchoring
+# **3. Anchoring**
 
 <p align="justify">DSUs are anchored in the blockchain, and the anchoring feature brings the capability of digitally signing data and code in the initial version and any subsequent versions. In some situations, use cases can exist in which a centralized system provides DSU anchoring. For example, a use case that only needed anchoring could support better internal auditability. This example is excellent, as it could be later decentralized if needed or required.</p>
 
 More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html).
 
-# 4. DSU Mounting
+# **4. DSU Mounting**
 
 <p align="justify">The code in a DSU instance is not copied to each instantiation. Starting from the perspective that a DSU can be seen as a file system, this file system allows the mounting of a DSU in another DSU. The DSU mounted in all instances and containing the code is called <a href="https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html">DSU Types</a>. This DSU Type behaves similarly to a class compared to its instances. The DSU Type is a DSU in itself and, as such, is anchored and must have credentials (digital signatures) that mark it safe for use. It should also be noted that a DSU Type can be updated, leading to the automatic update of all instances. We also name the code from DSU Type as DSU constitution.
 
 
-<p style="text-align: justify;"> More details are available in <a href="https://www.opendsu.org/pages/concepts/DSU%20Mounting%20(RFC-006).html">DSU Mounting (RFC-006)</a>.</p>
 
 <p style='text-align: justify;'>DSUs are micro-ledgers and should provide security properties similar to smart contracts. Therefore,  the initial version of the DSU Type contains the code needed to validate new versions of the DSU Type. After updating the DSU Type itself, the code from the DSU Type will check that the current DSU versions follow the rules defined by the DSU Type constitution.</p>
 </p>
@@ -156,12 +154,12 @@ More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/p
 More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html).
 
 
-#  5. DSU Reconstruction
+#  **5. DSU Reconstruction**
 
 <p align="justify">DSUs are encrypted at rest and in transit using a key derived from an identifier we call KeySSI. A DSU can be imagined as a multi-directory file system with granular access and security properties for each “directory”. Instead of being stored as a whole, the files are stored as encrypted bricks. That is why we need DSU reconstruction to reassemble our files, and we reassemble them only for a limited time in an “execution environment”. These OpenDSU mechanisms implement the usage of “client-side encryption” as a means to enable data self-sovereignty.</p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/sxxX07ouZIs_uz-pM7CehWg/image?parent=e/2PACX-1vQgUa9ZZNk5FLV_zH_jfloqgvN7EBzPzsGUXnSo2wFqHAsJYpPYLiD87wVGFIE3CncyPynHAODnwokA&rev=241&drawingRevisionAccessToken=ZaZWcUQzP29xJA&h=342&w=493&ac=1" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS90f4gCb0G0KLUrq7AHthnpthMe5H2AYwAMKyp3nhHyFi0AQl0zJi3s0V7FDCzjBbWqrMThFv490ci/pub?w=713&h=493" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 6: DSU reconstruction</b></p>
 </div>
 
@@ -173,15 +171,16 @@ More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/page
 
 More details are available in [DSU Reconstruction (RFC-008)](https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html).
 
-# 6. KeySSI
+# **6. KeySSI**
 
 <p align="justify">The KeySSI concept's purpose is to provide blockchain-anchored identities for things and processes, and companies and individuals. They are used as secret symmetrical encryption/decryption keys for DSUs (or parts of the DSUs).</p>
 
 More details are available in [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).
 
-# 7. DSU Use Cases
+# **7. DSU Use Cases**
 
 Currently, DSUs can be used in three ways:
+
 <ol>
 
   <li>As a full-stack to develop Self Sovereign Applications (SSApps);</li>
@@ -228,8 +227,9 @@ SSApp Implementation is described in <a href="https://www.opendsu.org/pages/begi
 The Web APIs are secured mainly by a delegation of trust because all the calls are sent to a specific endpoint, which is well-known and secured by SSL (Secure Sockets Layer).
 Of course, from a security point of view, those two models have an excellent complementarity and a synergistic effect, thus increasing overall security. However, the availability of specific KeySSI to the servers implementing the Web APIs could create some inconveniences.
 The simplest case is when the required KeySSI is a parameter in the Web API and, therefore, comes from the client. In other cases, the KeySSI should be derived from the input parameters of the Web APIs using a well-defined method (a cryptographic method) or some sort of lookup tables or vaults hosted in a trusted environment.
-OpenDSU does not try to fix any specific rules about these Web APIs, and they should be DTE and use case-specific. However, a set of best practices regarding the security of retrieving the proper  KeySSI will be documented in the following chapters.
-APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
+OpenDSU does not try to fix any specific rules about these Web APIs, and they should be DTE and use case-specific. However, a set of best practices regarding the security of retrieving the proper  KeySSI will be documented in the following chapters.</p>
+
+ <a href="https://www.opendsu.org/pages/beginners/APIs%20Overview%20(RFC-060).html">APIs Overview (RFC-060)</a> can be used to implement Web APIs based on DSU APIs.
 
 
 ## 7.3 DSU Instances in Multiple Security Contexts
@@ -253,22 +253,26 @@ APIs Overview (RFC-060) can be used to implement Web APIs based on DSU APIs.</p>
 <p style='text-align: justify;'>Even within the same wallet, we can have hardware sandboxing or darkening mechanisms (for example, Trusted Execution Environments - TEEs), and thus, we have “differently powered” security contexts. When used in enterprise environments, these security contexts can be on different hardware systems, separate from the network. Even for average users, it is quite possible to use a web application that uses DSUs on a personal computer, with the sensitive keys stored safely on the mobile. In such a case, the execution environments from regular servers or web applications will have read access. However, they cannot sign anything in the user's name without their approval. OpenDSU promotes an elegant programming model called “executable choreographies'' that makes it easier to handle this unavoidable complexity.</p>
 
 
-# 8. OpenDSU and IPFS
+# **8. OpenDSU and IPFS**
 
 <p style='text-align: justify;'>DSU storage is a content-addressable service similar to IPFS (InterPlanetary File System). The main differences are:</p>
-<ol>
 
-<li><p style='text-align: justify;'>OpenDSU encrypts everything by default and can reconstruct data from big "archives" lazily. Imagine that each DSU is like an encrypted virtual file system stored in a cloud optimized for lazy loading. Blockchain is used as a naming service to preserve data history, similar to IPNS (InterPlanetary Name System), but with specific immutability properties.</p></li>
-<li>OpenDSU provides a concept called BDNS (Blockchain Domain Naming Service) that allows you to segregate data:</li>
-<ol type="a">
- <li>off-chain content as encrypted bricks;</li>
- <li>on-chain content in the form of anchors stored in multiple ledgers/blockchains.</li>
-</ol>
-chain content in the form of anchors stored in multiple ledgers/blockchains.
 
-<li><p style='text-align: justify;'>OpenDSU provides a concept called KeySSI that improves secret management and secret data sharing (each DSU has something that resembles a recovery key, but from this key, you could derive a read-only access key in a decentralized environment).</p></li>
+<p style='text-align: justify;'>1. OpenDSU encrypts everything by default and can reconstruct data from big "archives" lazily. Imagine that each DSU is like an encrypted virtual file system stored in a cloud optimized for lazy loading. Blockchain is used as a naming service to preserve data history, similar to IPNS (InterPlanetary Name System), but with specific immutability properties.
+</p>
 
-</ol>
+<p style='text-align: justify;'>2. OpenDSU provides a concept called <a href="https://www.opendsu.org/pages/APIHub%20APIs/BDNS%20(RFC-122).html">BDNS</a> (Blockchain Domain Naming Service) that allows you to segregate data:
+</p>
+
+
+ * off-chain content as encrypted bricks;
+ * on-chain content in the form of anchors stored in multiple ledgers/blockchains.
+
+
+<p style='text-align: justify;'>3. OpenDSU provides a concept called <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> that improves secret management and secret data sharing (each DSU has something that resembles a recovery key, but from this key, you could derive a read-only access key in a decentralized environment).
+</p>
+
+
 
 <p style='text-align: justify;'>OpenDSU is intended to be used in enterprise blockchain solutions, so the aim is performance and strict data control/ownership. OpenDSU could easily use IPFS as the actual storage, but in the performance tests from previous years, the results could have been better. In cases where decentralization requires data replication in a P2P network, the IPFS brick storage strategy for OpenDSU could be a viable solution. For now, the use cases where we use OpenDSU use cloud-based storage strictly controlled by different companies. In a way, this is also a form of decentralization: the blockchain anchoring unifies the anchoring of the DSU (to provide data integrity in a digital ecosystem like an entire industry), but the actual data belong to separate companies.
 </p>
@@ -276,18 +280,20 @@ chain content in the form of anchors stored in multiple ledgers/blockchains.
 <p style='text-align: justify;'>OpenDSU is an iteration of the IPFS intuition, providing new tools for programmers and architects.</p>
 
  
+
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|

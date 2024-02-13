@@ -86,7 +86,7 @@ This demonstration shows us 3 different SSApp:
 
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 |**Current Editors**                  | **Email**                                |
 |:------------------------------------|:-----------------------------------------|

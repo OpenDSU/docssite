@@ -101,11 +101,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 This RFC provides Documentation for the implementation of the APIHub and its configuration.
 
-# Purpose
+# **Purpose**
 
 <p style='text-align: justify;'>APIHub is an HTTP server that offers functionality to the OpenDSU SDK (typically openDSU wallets): encrypted bricks storage, blockchain anchoring, message queues (DID centered), KeySSI notifications, BDNS, and access to smart contracts. All these functionalities are grouped as "components'' that expose various endpoints.
 </p>
@@ -130,7 +130,7 @@ Most of the components are associated with "blockchain domains", and the endpoin
 <p style='text-align: justify;'>APIHub is extensible in the sense that you can add new components. However, this should not be abused. When possible, the components rely on “external adapters” in the sense that they delegate the actual implementation to some external systems that offer stronger implementation of the expected logic. To support the OpenDSU programmers' experience (make the development cycle faster and avoid the installation of many external systems),  all the components have a basic implementation that does not require an external system. For example, APIHub offers a simulated blockchain for anchoring and a simulated message queue. Sometimes, these “simulated” systems are good enough even for production but of course, do not offer all the expected properties (for example, the simulated blockchain is just a single node ledger).
 </p>
 
-# 1. APIHub Configuration
+# **1. APIHub Configuration**
 
 
 <div style="display: flex; justify-content: center;">
@@ -163,7 +163,7 @@ Most of the components are associated with "blockchain domains", and the endpoin
 | port                             | The port that the server uses to listen for requests. <br/>  <b>Default: </b>8080                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | host                             | If the host is omitted, the server will accept connections on the unspecified IPv6 address when IPv6 is available or the unspecified IPv4 address (0.0.0.0) otherwise.<br/> In most operating systems, listening to the unspecified IPv6 address may cause the net. The server to also listen on the unspecified IPv4 address (0.0.0.0).<br/> **Default**:0.0.0.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | preventRateLimit                 | A flag that determines if the APIHub’s throttling component is enabled. <br/>   <b>Default:</b> true (means that throttling is disabled)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| activeComponentcs                | An array that contains the names of the services/components that the server provides/uses.<br/>**Important note**: **staticServer** component should be the last in the activeComponents list because the server loads the middlewares in the order they are declared in activeComponents and staticServer handles the requests not processed by the other middlewares.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| activeComponents                 | An array that contains the names of the services/components that the server provides/uses.<br/>**Important note**: **staticServer** component should be the last in the activeComponents list because the server loads the middlewares in the order they are declared in activeComponents and staticServer handles the requests not processed by the other middlewares.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | componentsConfig                 | An object that contains the service's configurations. Each service declared in activeComponents should have the module property componentsConfig set. The module property is either a file system path to a module that contains the service or the name of a PrivateSky module. When you add a new component in the active components list you need to point to the index file that needs to be loaded.<br/>"activeComponents": [..."mq"...], <br/>"componentsConfig": { <br/> "mq":{<br/> "module": "./components/mqHub", <br/>  "function": "MQHub", <br/>  }<br/>}.<br/> If the index file set up by the “module” property doesn’t export only one method then we need to provide the “function” property to indicate which method needs to be called.The method exported by the module will be called with the server object that gives access to register new endpoints or middlewares. |
 | CORS                             | An object that contains the headers that are added on every OPTIONS response by the CORS middleware.<br/> <b>Default</b>: {<br/>"Access-Control-Allow-Methods" : "POST, GET, PUT, DELETE, OPTIONS"<br/>  "Access-Control-Allow-Credentials" : true,<br/> "Access-Control-Max-Age" : '3600',<br/> "Access-Control-Allow-Headers" : "Content-Type, <br/> Content-Length, X-Content-Length, Access-Control-Allow-Origin, User-Agent, Authorization"}<br/> <b>Example</b>:  <br/>"CORS": {<br/>   "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE, OPTIONS",<br/>  "Access-Control-Allow-Origin": "example.com"<br/> }                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | tokenBucket                      | Experimental feature for throttling <br/> <b>Default</b>: "tokenBucket": {<br/>  "cost": {<br/>  "low": 10<br/>  medium": 100<br/> "high": 500 <br/>}, "error": {<br/> "limitExceeded": "error_limit_exceeded",<br/> "badArgument": "error_bad_argument"<br/> },<br/> "startTokens": 6000,<br/>"tokenValuePerTime": 10,<br/>"unitOfTime": 100<br/>  }.<br/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -242,7 +242,7 @@ Most of the components are associated with "blockchain domains", and the endpoin
 
 
 
-# 2. Components
+# **2. Components**
 
 | **Components**            | **Description**                                                                                                                                        |
 |:--------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -259,7 +259,7 @@ Most of the components are associated with "blockchain domains", and the endpoin
 | Smart Contracts           | Allow the execution of commands in a domain.                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 
-# 3. Components specific configuration
+# **3. Components specific configuration**
 
 ## 3.1 Anchoring component configuration
 
@@ -314,14 +314,18 @@ Most of the components are associated with "blockchain domains", and the endpoin
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
