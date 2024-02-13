@@ -173,32 +173,6 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 | options (optional)  | JSON object  |        | Options you want to use for your Bloom filter. <br> Default options are the following: <br> { <br> <span style="color:green"> *// bit count*</span>  <br> **bitCount:** null, <br>  <span style="color:green"> *// number of k hash functions*</span> <br> **hashFunctionCount:** null, <br> <span style="color:green"> *// estimated number of elements from the collection*</span> <br> **estimatedElementCount:** 0, <br> <span style="color:green"> *// allowed probability of false positives*</span> <br> **falsePositiveTolerance:** 0.000001, <br> <br> <span style="color:green"> *// default function that returns the element's hash*</span> <br> **hashFunction:** <br> linearFowlerNollVoJenkinsHashFunction, <br> <br> <span style="color:green"> *// crypto hash function that returns the element's hash*</span> <br> **cryptoHashFunction:** sha2, <br> <span style="color:green"> *// number of crypto hash functions to be used (will be used at first before the default hashFunction)*</span> <br> **cryptoHashFunctionCount:** 0, <br> <span style="color:green"> *// crypto hash function secret*</span> <br> **cryptoSecret:** "secret", <br> <br> <span style="color:green"> *// strategy which interacts with the bit collection*</span> <br> **BitCollectionStrategy:** <br> InMemoryBitCollectionStrategy, <br> }                              |
 
 
-
-
-{
-   // bit count
-   bitCount: null,
-   // number of k hash functions
-   hashFunctionCount: null,
-   // estimated number of elements from the collection
-   estimatedElementCount: 0,
-   // allowed probability of false positives
-   falsePositiveTolerance: 0.000001,
-
-   // default function that returns the element's hash
-   hashFunction: linearFowlerNollVoJenkinsHashFunction,
-
-   // crypto hash function that returns the element's hash
-   cryptoHashFunction: sha2,
-   // number of crypto hash functions to be used (will be used at first before the default hashFunction)
-   cryptoHashFunctionCount: 0,
-   // crypto hash function secret
-   cryptoSecret: "secret",
-
-   // strategy which interacts with the bit collection
-   BitCollectionStrategy: InMemoryBitCollectionStrategy,
-}
-
 **Returns**
 
 | Name                | Description                                                                                                                                                                            |
@@ -209,10 +183,8 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 ## Function createCredential(issuerSeedSSI, credentialSubjectSReadSSI, callback)
 
-<p style='text-align: justify;'>
 
 **Description:** Create a credential represented by a JWT token. The credential will be created with the seedSSI of the issuer and another keySSI that will be used by the subject to read its credential.
-</p>
 
 | Name                                      | Type                                                    | Value      | Description                                                                                                                                |
 |:------------------------------------------|:--------------------------------------------------------|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------------|
