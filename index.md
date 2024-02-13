@@ -4,117 +4,109 @@ layout: home
 nav_order: 1
 ---
 
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Video Slideshow</title>
+<title>YouTube Video Cards Slideshow</title>
 <style>
-    .video-container {
-        position: relative;
-        margin-bottom: 20px;
-        overflow: hidden;
+    .slideshow-container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Increase the z-index */
     }
-    
-    .video-row {
+    .slideshow {
         display: flex;
         flex-wrap: nowrap;
         transition: transform 0.3s ease;
-        padding-left: 0%; /* Adjust space before videos */
-        padding-right: 0%; /* Adjust space after videos */
-        width: 98%; /* Adjust width of the video slider */
-        margin: 0 auto; /* Center the video slider */
     }
-    
-    .video-item {
-        flex: 0 0 auto;
-        margin-right: 10px;
+    .card {
+        flex: 0 0 calc(50% - 20px);
+        margin: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
-    
     iframe {
-        width: 240px; /* Adjust width of each video */
-        height: 135px; /* Adjust height of each video */
+        width: 100%;
+        height: 200px;
     }
-    
-    .video-name {
-        margin-top: 5px;
-        font-size: 14px;
-        color: #333;
+    h2 {
+        margin-top: 10px;
     }
-    
-    .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent; /* Remove black background */
-    color: purple; /* Change arrow color to purple */
-    padding: 15px; /* Increase padding for larger size */
-    border: none;
-    cursor: pointer;
-    z-index: 2; /* Ensure buttons are above videos */
-    font-size: 50px; /* Increase font size */
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        outline: none;
+        z-index: 1000; /* Increase the z-index */
     }
-    
     .prev {
         left: 0;
     }
-    
     .next {
         right: 0;
     }
 </style>
 </head>
 <body>
-<div class="video-container">
-    <button class="prev" onclick="scrollVideos(-1)">❮</button>
-    <div class="video-row">
-        <!-- Replace the following iframe src with the embed link of the playlist -->
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 1</div>
-        </div>
-        <div class="video-item">
-            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
-            <div class="video-name">Name of Video 2</div>
-        </div>
-        <!-- Repeat the same pattern for other videos -->
-    </div>
 
-    <button class="next" onclick="scrollVideos(1)">❯</button>
+<div class="slideshow-container">
+    <button class="prev" onclick="scrollSlides(-1)">❮</button>
+    <div class="slideshow">
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 1</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 2</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 3</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 4</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 5</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 6</h2>
+        </div>
+    </div>
+    <button class="next" onclick="scrollSlides(1)">❯</button>
 </div>
 
 <script>
-    let currentIndex = 0;
+    let slideIndex = 0;
+    const slides = document.querySelector('.slideshow');
+    const cards = document.querySelectorAll('.card');
 
-    function scrollVideos(direction) {
-        const videoContainer = document.querySelector('.video-container');
-        const videoRow = document.querySelector('.video-row');
-        const videoItems = document.querySelectorAll('.video-item');
-        const numVideos = videoItems.length;
-        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
-
-        currentIndex = (currentIndex + direction + numVideos) % numVideos;
-        const newPosition = -currentIndex * videoWidth;
-        videoRow.style.transform = `translateX(${newPosition}px)`;
+    function scrollSlides(n) {
+        slideIndex += n;
+        showSlides();
     }
+ }
+
+    function showSlides() {
+        if (slideIndex < 0) {
+            slideIndex = 0;
+        }
+        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
+    }
+
 </script>
 
 </body>
