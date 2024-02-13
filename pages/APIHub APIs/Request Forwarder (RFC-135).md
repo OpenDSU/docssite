@@ -42,7 +42,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 	
 ````
-/forwardRequestForAuthenticatedClient
+ POST /forwardRequestForAuthenticatedClient
 ````
 
 
@@ -55,7 +55,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ### 1.1.1. Example: Application/JSON
 
-```
+```js
 {
  "options": {
    "method": "POST"
