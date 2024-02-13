@@ -66,13 +66,13 @@ For the beginning, the initial page is loaded, where there are SSApps that the u
 
 <p style='text-align: justify;'>
 
-MFA is an authentication method and a basic component of data privacy. In order for the user to get access to an online resource, application, or account, MFA requires the user to provide two or more verification factors. This should be used by both individuals and companies/enterprises as often as possible.
+  MFA is an authentication method and a basic component of data privacy. In order for the user to get access to an online resource, application, or account, MFA requires the user to provide two or more verification factors. This should be used by both individuals and companies/enterprises as often as possible.
 
 </p>
 
 <p style='text-align: justify;'>
 
-Authentication is performed by the IDP following authorization code flow and PKCE (Proof Key for Code Exchange). PKCE is a sample key for exchanging authorization codes. PKCE adds an extra level of security when a mobile device is used for the flow of authorization codes.
+  Authentication is performed by the IDP following authorization code flow and PKCE (Proof Key for Code Exchange). PKCE is a sample key for exchanging authorization codes. PKCE adds an extra level of security when a mobile device is used for the flow of authorization codes.
 
 </p>
 
