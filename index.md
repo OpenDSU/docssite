@@ -50,10 +50,10 @@ nav_order: 1
         z-index: 1000; /* Increase the z-index */
     }
     .prev {
-        left: 0;
+        left: 30;
     }
     .next {
-        right: 0;
+        right: 30;
     }
 </style>
 </head>
