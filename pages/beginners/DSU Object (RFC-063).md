@@ -996,7 +996,7 @@ Returns an Error **err** if source **fsPath** or target **dsuPath** cannot be ac
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                          |
 |:------------------------------------|:-----------------------------------|

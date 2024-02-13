@@ -129,7 +129,7 @@ There are also family-specific functions that you can find on the dedicated page
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                          |
 |:------------------------------------|:-----------------------------------|
