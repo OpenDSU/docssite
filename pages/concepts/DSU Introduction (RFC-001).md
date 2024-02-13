@@ -7,6 +7,7 @@ nav_order: 1
 
 
 # **DSU Introduction (RFC-001)**
+
 {: .no_toc }
 
 
@@ -18,13 +19,12 @@ The proposal has been accepted and has an implementation.
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
  
 
 <!-- TOC -->
-
 * [Abstract](#abstract)
 * [Overview](#overview)
 * [1. Data Sharing Unit (DSU)](#1-data-sharing-unit-dsu)
@@ -45,7 +45,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p align="justify">This RFC introduces the critical components of the OpenDSU project, such as DSU, as well as domain anchoring and brick storage services. Then, it introduces some essential mechanisms known as DSU mounting and DSU reconstruction. It also explains RFC’s role of keySSIs in the management of the DSU. Finally, it presents some primary use cases of DSUs.</p>
 
