@@ -38,10 +38,9 @@ nav_order: 1
             box-shadow: 0 1.5rem 3rem -0.75rem rgba(0,0,0,0.25);
             border-radius: 0.5rem;
         }
-        .slider img{
+        .slider iframe{
             flex: 1 0 100%;
             scroll-snap-align: start;
-            object-fit: cover;
         }
         .nav{
             position: absolute;
@@ -85,10 +84,10 @@ nav_order: 1
     <div class="container">
         <div class="wrapper">
             <div class="slider">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=DWsmnvjefra-tRtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <img id="slide-2" src="2.jpg" alt="">
-                <img id="slide-3" src="3.jpg" alt="">
-                <img id="slide-4" src="4.jpg" alt="">
+                <iframe id="slide-1" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                <iframe id="slide-2" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                <iframe id="slide-3" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                <iframe id="slide-4" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="nav">
                 <a href="#slide-1">
