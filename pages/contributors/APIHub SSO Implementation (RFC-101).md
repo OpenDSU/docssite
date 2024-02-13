@@ -98,7 +98,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>
 
@@ -112,7 +112,7 @@ This RFC describes the implementation of the SSO authentication method in APIHub
 SSO (Single Sign-On) is a technology that unites several screens into a single screen to connect to different applications. With an SSO to access all SaaS (Software as a Service) applications on a single page, the user must enter login credentials (username, password etc) only once. This SaaS offers remote access to a set of applications. In an SSO system, the user establishes their identity once, and then they can access several different services instead of establishing their identity multiple times (over and over). SSO is an essential aspect of Identity and Access Management (IAM) or access control.
 </p>
 
-# 2. SSO support in APIHub
+# **2. SSO support in APIHub**
 
 
 <div style="display: flex; justify-content: center;">
@@ -127,7 +127,7 @@ SSO (Single Sign-On) is a technology that unites several screens into a single s
 </div>
 
 <div style="text-align:center;">
-<p><b>Figure 1: SSO support in APIHub</b></p>
+<p ><b>Figure 1: SSO support in APIHub</b></p>
 </div>
 
 
@@ -202,7 +202,7 @@ We started to consider the implications of the compromise. Initially, if a hacke
 In addition, we would like to understand the Recovery Phrase (RP) better. If the RP, stored on disk, is mapped to the SSO ID, then can it only be accessed by the SSO Middleware and provided to the wallet? In this case, is the encrypted version sent and decrypted by the client when the user has entered the PIN?
 </p>
 
-# 3. Authentication flow. Token encryption and verification
+# **3. Authentication flow. Token encryption and verification**
 
 ## 3.1. Authentication flow
 
@@ -281,7 +281,7 @@ The authentication token will be encrypted in an AES 256 GCM cookie. The encrypt
 The APIHub does not store the refresh token, but it encrypts it and puts it in a cookie for clients. This cookie also contains a timestamp, SSO username and SSO user ID. The encrypted token is encrypted with one of the two "SSO encryption keys" currently available.
 </p>
 
-# 4. Flow between SSO, Demiurge, and Enclaves
+# **4. Flow between SSO, Demiurge, and Enclaves**
 
 
 <div style="display: flex; justify-content: center;">
@@ -294,7 +294,6 @@ The APIHub does not store the refresh token, but it encrypts it and puts it in a
     title="Click to Zoom"
   />
 </div>
-
 <div style="text-align:center;">
 <p><b>Figure 3: First login with SSO</b></p>
 </div>
@@ -316,7 +315,6 @@ The first authentication with SSO starts when the SSO Middleware or Client puts 
     title="Click to Zoom"
   />
 </div>
-
 <div style="text-align:center;">
 <p><b>Figure 4: Client login to open a wallet</b></p>
 </div>
@@ -338,7 +336,6 @@ As shown in Figure 4 above, the client connection requires the secret to open a 
     title="Click to Zoom"
   />
 </div>
-
 <div style="text-align:center;">
 <p><b>Figure 5: Demiurge deletes/deactivates a secret</b></p>
 </div>
@@ -349,7 +346,7 @@ As shown in Figure 4 above, the client connection requires the secret to open a 
 In the figure above, we can see how Demiurge deletes/deactivates a secret. Starting from the Demiurge Wallet, the deletion/deactivation of a SSO secret occurs (1),  it arrives in the Secrets Component, then it deletes the registration message as DID using the APIHUb identity and obtains, in the execution environment, a private key used as identity - a token (2). Then, the message is received from the Message Queue Component (MQ Component), and the corresponding action is performed to get to the Enclave (3). From the MQ Component, a double confirmation takes place. After the first confirmation (4), the information arrives again in the Secret Component, a second confirmation (5) takes place, and it arrives again in the Demiurge Wallet.
 </p>
 
-# Configuration
+# **Configuration**
 
 * Apihub-root/external-volume/config/apihub.json:
   * Keep ‘true’ value for flags: ‘enableOAuth’, ‘enableLocalhostAuthorization’, and ‘serverAuthentication’
@@ -429,7 +426,7 @@ Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need t
 
 * To check, build the server locally and then use tunneling access ePI homepage and it should show a screen for SSO.
 
-# DID detection from the SSO tokens
+# **DID detection from the SSO tokens**
 
 When SSO is enabled, the DID for a user is generated based on one of the claims in the table below, obtained from the access token payload. The DID format is the following:
 
@@ -447,7 +444,7 @@ The _SSO_DETECTED_ID_ is the first non-empty claim from the following table (in 
 | sub                | The token subject (userId)                     |
 
 
-# Secrets Encryption Key
+# **Secrets Encryption Key**
 
 <p style='text-align: justify;'>
 When SSO is enabled and the access mode for the wallet is set to “sso-direct”, the  SSO_SECRETS_ENCRYPTION_KEY must be set. It is used to encrypt the wallet access credentials in the secrets APIHub component. The SSO_SECRETS_ENCRYPTION_KEY contains one or more base64 encoded 32-byte long buffers separated by commas. The first such buffer in the list is the current encryption key.  The encryption key can be changed by appending a new encryption key at the beginning of the  SSO_SECRETS_ENCRYPTION_KEY, as shown below:
@@ -478,7 +475,7 @@ The SSO_SECRETS_ENCRYPTION_KEY should be injected in the environment by the Kube
 3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                    |
 |:------------------------------------|:-----------------------------|
