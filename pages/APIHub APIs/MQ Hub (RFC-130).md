@@ -21,7 +21,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [MQ Hub (RFC-130)](#mq-hub-rfc-130)
 * [Abstract](#abstract)
 * [1. Create a JWT Token](#1-create-a-jwt-token)
   * [1.1. Path Parameters](#11-path-parameters)
@@ -79,7 +78,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 ### 1.2.1. Example: Application/JSON
 
-````
+```
 {  
 "token":"2iVr8jPNNyNojJQ2EKzTz66u5rg4.oakF1h2zHGqJ8Ub5cuwH8GPXzwE3EVPnP7QZRGH
 YtGkohWahc8sMXTnWUngejdRQGwgkgvoqaBYLAfgFw83ML9PvgDRJvyqQtR99mCjTjBHhYCtTi
@@ -96,7 +95,7 @@ DAE1CFyR7eFC7U3t8Bf7SGvQ5Txp7iUYVvQULeNop6NYKN.CkRvatu6DizRiw8M7C2xg41UzcSk
 VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 "expires": 1667925722000
 }
-````
+```
 
 # 2. Put a Message in the MQ
 
@@ -126,11 +125,11 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ### 2.3.1.Example: Application/JSON
 
-````
+```js
 {
    "message":"Content of message sent to the receiver DID"
 }
-````
+```
 
 ## 2.4. Responses
 
@@ -154,11 +153,11 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ## 3.1. Path Parameters
 
-| Name             | Type    | Value      | Description                                                                                                                                                                                                                                   |
-|:-----------------|:--------|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| domain           | string  | *required  | DID domain of the receiver (the DID who made the API call).                                                                                                                                                                                   |
-| hashDID          | string  | *required  | Sha256 hash of DID identifier. Example: _8wVnt83NUB3usrooEUWRhRChiyGQFDXBGC2uyt4LtndT_                                                                                                                                                        |
-| signatureOf Did  | string  | *required  | Signature of the signed token using the same DID document as for hashed DID. Example: _30460221009cee7b5876a30f7e590673eaefe75497341c 4927276237b4321888d48798ddfe02210083d8da4308f 9dea539023a773a15ff774e6c7e64b7983f772987fbfbb ca26488e._ |
+| Name             | Type    | Value      | Description                                                                                                                                                                                                                                         |
+|:-----------------|:--------|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| domain           | string  | *required  | DID domain of the receiver (the DID who made the API call).                                                                                                                                                                                         |
+| hashDID          | string  | *required  | Sha256 hash of DID identifier. Example: _8wVnt83NUB3usrooEUWRhRChiyGQFDXBGC2uyt4LtndT_                                                                                                                                                              |
+| signatureOf Did  | string  | *required  | Signature of the signed token using the same DID document as for hashed DID. <br/> Example: _30460221009cee7b5876a30f7e590673eaefe75497341c 4927276237b4321888d48798ddfe02210083d8da4308f 9dea539023a773a15ff774e6c7e64b7983f772987fbfbb ca26488e._ |
 
 
 ## 3.2. Request Headers
@@ -181,12 +180,12 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ### 3.3.1. Example: Application/JSON
 
-````
+```js
 {
    "message":"Welcome to application",
    "sender":"did:ssi:name:csc.senderIdentity"
 }
-````
+```
 
 # 4. Delete a MQ Message
 
@@ -199,12 +198,12 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ## 4.1. Path Parameters
 
-| Name             | Type    | Value      | Description                                                                                                                                                                                                                                  |
-|:-----------------|:--------|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| domain           | string  | *required  | DID domain of the receiver.                                                                                                                                                                                                                  |
-| hashDID          | string  | *required  | Sha256 hash of DID identifier.                                                                                                                                                                                                               |
-| messageID        | string  | *required  | Message ID that should be deleted from MQ on channel hashDID. Example: _56WGghXyP8N54zbRdTCEXRXWalW236Nktow3XN7NF BdY/1668006644827_                                                                                                         |
-| signature OfDid  | string  | *required  | Signature of the signed token using the same DID document as for hashedDID. Example: _30460221009cee7b5876a30f7e590673eaefe75497341c 4927276237b4321888d48798ddfe02210083d8da4308f 9dea539023a773a15ff774e6c7e64b7983f772987fbfbbc a26488e._ |
+| Name             | Type    | Value      | Description                                                                                                                                                                                                                                         |
+|:-----------------|:--------|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| domain           | string  | *required  | DID domain of the receiver.                                                                                                                                                                                                                         |
+| hashDID          | string  | *required  | Sha256 hash of DID identifier.                                                                                                                                                                                                                      |
+| messageID        | string  | *required  | Message ID that should be deleted from MQ on channel hashDID.  <br/> Example: _56WGghXyP8N54zbRdTCEXRXWalW236Nktow3XN7NF BdY/1668006644827_                                                                                                         |
+| signature OfDid  | string  | *required  | Signature of the signed token using the same DID document as for hashedDID.  <br/> Example: _30460221009cee7b5876a30f7e590673eaefe75497341c 4927276237b4321888d48798ddfe02210083d8da4308f 9dea539023a773a15ff774e6c7e64b7983f772987fbfbbc a26488e._ |
 
 ## 4.2. Request Headers
 
@@ -220,6 +219,7 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 | 200         | Operation executed successfully.                               |
 | 500         | An error occurred during deleting the message from the queue.  |
 
+
 # 5. Remove a MQ Message
 
 <p style='text-align: justify;'>Read and delete a message from the MQ. The message is deleted from the MQ prior to serving it to the client. However, this approach is not recommended, because the message can be lost due to a networking error before the client can consume it.
@@ -231,12 +231,12 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ## 5.1. Path Parameters
 
-| Name             | Type    | Value      | Description                                                                                                                                                                                                                                 |
-|:-----------------|:--------|:-----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| domain           | string  | *required  | DID domain of the receiver.                                                                                                                                                                                                                 |
-| hashDID          | string  | *required  | Sha256 hash of DID identifier.                                                                                                                                                                                                              |
-| messageID        | string  | *required  | Message ID that should be deleted from MQ on channel hashDID.Example: _56WGghXyP8N54zbRdTCEXRXWalW236Nktow3XN7NF BdY/1668006644827_                                                                                                         |
-| signature OfDid  | string  | *required  | Signature of the signed token using the same DID document as for hashedDID. Example: _30460221009cee7b5876a30f7e590673eaefe75497341c 4927276237b4321888d48798ddfe02210083d8da4308f 9dea539023a773a15ff774e6c7e64b7983f772987fbfbbc a26488e._|
+| Name             | Type    | Value      | Description                                                                                                                                                                                                                                   |
+|:-----------------|:--------|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| domain           | string  | *required  | DID domain of the receiver.                                                                                                                                                                                                                   |
+| hashDID          | string  | *required  | Sha256 hash of DID identifier.                                                                                                                                                                                                                |
+| messageID        | string  | *required  | Message ID that should be deleted from MQ on channel hashDID. <br/> Example: _56WGghXyP8N54zbRdTCEXRXWalW236Nktow3XN7NF BdY/1668006644827_                                                                                                    |
+| signature OfDid  | string  | *required  | Signature of the signed token using the same DID document as for hashedDID. <br/> Example: _30460221009cee7b5876a30f7e590673eaefe75497341c 4927276237b4321888d48798ddfe02210083d8da4308f 9dea539023a773a15ff774e6c7e64b7983f772987fbfbbc a26488e._ |
 
 ## 5.2. Request Headers
 
@@ -254,20 +254,30 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 ### 5.3.1. Example: Application/JSON
 
-````
+
+```js
 {
    "message":"Welcome to application",
    "sender":"did:ssi:name:csc.senderIdentity"
 }
-````
+```
+
+
+
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
+
+
+
+
+
 
 
 # Annex 1. Contributors
