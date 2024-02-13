@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-<p style='text-align: justify;'>The cornerstone principle driving the creation of OpenDSU is Digital Sovereignty—a foundational concept advocating for individuals, citizens, enterprises, organizations, and states to retain maximum control over their data, independent of intermediaries.
+<p style='text-align: justify;'>The cornerstone principle driving the creation of OpenDSU is Digital Sovereignty — a foundational concept advocating for individuals, citizens, enterprises, organizations, and states to retain maximum control over their data, independent of intermediaries.
 </p>
 
 <p style='text-align: justify;'>Our exploration of OpenDSU revealed the impracticality of consolidating global data into a single expansive blockchain, as envisioned by projects like Ethereum. The idealized vision of a uniformly governed digital landscape proves unattainable.
@@ -33,8 +33,8 @@ nav_order: 1
     }
     .card {
         flex: 0 0 calc(50% - 20px);
-        margin: 10px;
-        padding: 10px;
+        margin: 3px;
+        padding: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
@@ -72,12 +72,11 @@ nav_order: 1
     <div class="slideshow">
         <div class="card">
            <iframe width="560" height="315" src="https://www.youtube.com/embed/n6YiWk8t3W0?si=6l1jbqU3aq2Gf_IN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <b>OpenDSU Pitch in 3 minutes</b>
-            <p style='text-align: right;'> <b> (1) </b></p>
+            <b>OpenDSU Pitch in 3 minutes <br> <b>(1)</b></b>
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <b> Insights about Enteprise Blockchain Solutions (Adoption & Properites) <br> (2)</b>
+            <b> Insights about Enteprise Blockchain Solutions (Adoption & Properites) <br> <b> (2) </b></b>
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=s9Ep9lFXx-H33sv6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
