@@ -14,7 +14,7 @@ nav_order: 1
 <p style='text-align: justify;'>Hence, the OpenDSU team introduced Hierarchical Blockchains, enabling seamless interoperability across applications. Data Sharing Units (DSUs) define OpenDSU, an evolving standard for off-chain data storage systems anchored in blockchains for security and data provenance.
 </p>
 
-<p style='text-align: justify;'>Also, to better understand the OpenDSU Documentation, please, watch the below videos</p>
+<p style='text-align: justify;'>Also, to better understand the OpenDSU Documentation, please, watch the below videos:</p>
 
 <html lang="en">
 <head>
