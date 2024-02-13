@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-
+asd
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -100,16 +100,12 @@ nav_order: 1
         showSlides();
     }
 
-      function showSlides() {
-        const maxTranslate = (cards.length - 1) * (100 / cards.length);
-        const translate = slideIndex * (100 / cards.length);
-    
-        // Ensure that the translation doesn't exceed the maximum
-        const finalTranslate = translate <= maxTranslate ? translate : maxTranslate;
-    
-        slides.style.transform = `translateX(-${finalTranslate}%)`;
+    function showSlides() {
+        if (slideIndex < -1) {
+            slideIndex = -1;
+        }
+        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
-
 </script>
 
 </body>
