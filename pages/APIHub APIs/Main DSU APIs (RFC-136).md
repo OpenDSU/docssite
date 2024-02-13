@@ -58,6 +58,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
+
+# **Annex 1. Contributors**
+
 | **Current Editors**                 | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
 | Sînică Alboaie                      | sinica.alboaie@axiologic.net             |
