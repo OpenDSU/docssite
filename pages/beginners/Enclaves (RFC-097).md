@@ -885,9 +885,9 @@ Enclaves also expose the whole keySSI API.
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                    |
-|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the sReadSSI was stored.  | 
+| **Name** | **Type** | **Response example**                                                                                                         |
+|:---------|:---------|:-----------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the sReadSSI was stored. | 
 
 
 ### Function getReadForKeySSI(forDID, keySSI, callback)
@@ -905,12 +905,308 @@ Enclaves also expose the whole keySSI API.
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                      |
-|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the sReadSSI was retrieved. |
-| sReadSSI | any      | The read for the keySSI.                                                                                                  |
+| **Name** | **Type** | **Response example**                                                                                                            |
+|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call.  <br/>If err is undefined, the sReadSSI was retrieved. |
+| sReadSSI | any      | The read for the keySSI.                                                                                                        |
 
 ## 1.8. DSU Resolver specific functions
 
 * createDSU(forDID, keySSI, options, callback)
 * loadDSU(forDID, keySSI, options, callback)
+
+
+### Function createDSU(forDID, keySSI, options, callback)
+**Description:** Method that creates a DSU for the specified keySSI.
+
+
+
+| **Name** | **Type** | **Value** | **Description**                     |
+|:---------|:---------|:----------|:------------------------------------|
+| forDID   | string   | optional  | DID of the user executing the call. |
+| keySSI   | object   | *required | KeySSI for which to create the DSU. |
+| options  | object   | optional  | DSU option.                         |
+| callback | function | *required | Callback function.                  |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                                                                    |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call.<br/> If err is undefined, the DSU was created. |
+
+
+
+### Function loadDSU(forDID, keySSI, options, callback)
+
+**Description:** Method that loads a DSU with the specified keySSI.
+
+
+| **Name** | **Type** | **Value** | **Description**                     |
+|:---------|:---------|:----------|:------------------------------------|
+| forDID   | string   | optional  | DID of the user executing the call. |
+| keySSI   | object   | *required | KeySSI for which to load the DSU.   |
+| options  | object   | optional  | DSU option.                         |
+| callback | function | *required | Callback function.                  |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                                                                   |
+|:---------|:---------|:-----------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/>If err is undefined, the DSU was loaded. |
+| dsu      | object   | The loaded DSU.                                                                                                        |
+
+## 1.9. W3C DIDs specific functions
+
+
+* getDID(callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html#function-getdidcallback">here</a>
+* storeDID(forDID, storedDID, privateKeys, callback) 
+* addPrivateKeyForDID(didDocument, privateKey, callback)
+* generateDID(forDID, didMethod, ...args) - already described here
+* signForDID(forDID, didThatIsSigning, hash, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html#function-signfordidfordid-didthatissigning-hash">here</a>
+* verifyForDID(forDID, didThatIsVerifying, hash, signature, callback) 
+
+Enclaves also expose the whole W3C DIDs API. More information about this api can be found in <a href="https://www.opendsu.org/pages/advanced/W3C%20DIDs%20(RFC-082).html">RFC-082</a>
+
+
+
+### Function addPrivateKeyForDID(didDocument, privateKey, callback)
+
+**Description:** Method that adds a private key to the didDocuments’s private keys list.
+
+
+| **Name**    | **Type** | **Value** | **Description**               |
+|:------------|:---------|:----------|:------------------------------|
+| didDocument | object   | *required | The DID to update.            |
+| privateKey  | string   | *required | New private key to be loaded, |
+| callback    | function | *required | Callback function.            |
+
+
+**Callback parameters**
+
+| **Name** | **Type** | **Response example**                                                                                                           |
+|:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the private key was added. |
+| dsu      | object   | The loaded DSU.                                                                                                                |
+
+### Function verifyForDID(forDID, didThatIsVerifying, hash, signature, callback) 
+
+**Description:** Method that verifies the signature of a message for a specified did.
+
+
+| **Name**           | **Type** | **Value** | **Description**                                                         |
+|:-------------------|:---------|:----------|:------------------------------------------------------------------------|
+| forDID             | object   | optional  | DID of the user executing the call.                                     |
+| didThatIsVerifying | string   | *required | DID that will verify the signature of the message using its public key. |
+| hash               | string   | *required | Initial message.                                                        |
+| signature          | string   | *required | The signature of the message.                                           |
+| callback           | function | *required | Callback function.                                                      |
+
+
+**Callback parameters**
+
+| **Name**           | **Type** | **Response example**                                                                                                                    |
+|:-------------------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
+| err                | any      | Error message for errors that occurred during the execution of the call. <br/>If err is undefined, the verificationResult was received. |
+| verificationResult | any      | The verification result.                                                                                                                |
+
+
+
+### 1.9.1. Enclaves with Deterministic Key Derivation
+
+<p style='text-align: justify;'>Costs of the KMS systems (pay per key), backup problems or performance constraints created pressure on creating enclaves that derive the private keys used for SeedSSIs from a “generator key” and a deterministic “salt”.
+</p>
+
+<p style='text-align: justify;'>The goal of these types of enclaves is to reduce the number of private keys that are stored in an enclave. To do this, each enclave will support the concept of “Generator Slot” or simply “slot”. In each slot, a “generator key” is stored (a random number). 	The enclaves that support Deterministic Key Derivation (DKD) should take advantage of the “hint” part of a sReadSSI and create the corresponding SeedSSI by DKD. The hint part is a base58 encoded JSON with the fields “slot” and “path”. 
+</p>
+
+For the ePI use case, the slot field is initialized with 0 if it is not present and the path is a string: a GTIN value or a GTIN value concatenated with “/” and a batch number. Slot 0 always contains the private key of the enclave’s DID.
+
+
+**Example:**  
+
+```js
+
+ssi:sread:domain:hash_private_key_base58:public_key:v0:{slot:”1”, path:”/12345678901234/abcde”}
+
+```
+
+<p style='text-align: justify;'>When an enclave is requested to sign using a sRead KeySSI that has a path hint, it will use the hint to obtain the corresponding private key.
+</p>
+
+
+# 2. OpenDSU SDK implementations
+
+* APIHubEnclave: uses APIHub endpoints to send requests.
+* HighSecurityEnclave: uses APIHub endpoints to send requests but encrypts all requests, so they are readable only by the holder EnclaveDID (with the corresponding private key).
+* MobilePhoneEnclave: uses OpenDSU MQ to communicate with a mobile phone app acting as an enclave (and probably using a native enclave implementation).
+* WalletDBEnclave: uses an internal WalletDB inside of the wallet.
+* ComposedEnclave: delegates the actual actions to a set of logically unified enclaves (tries using them one by one until one succeeds in executing the request).
+
+## 2.1. Initiating Functions in Enclave API
+
+* initialiseWalletDBEnclave;
+* initialiseMemoryEnclave;
+* initialiseRemoteEnclave;
+* connectEnclave;
+* createEnclave;
+* registerEnclave.
+
+### Function initialiseWalletDBEnclave(keySSI, did)
+
+**Description:** This function will create and return a WalletDB enclave.
+
+
+| **Name**           | **Type** | **Value** | **Description**                 |
+|:-------------------|:---------|:----------|:--------------------------------|
+| keySSI             | object   | optional  | Enclave KeySSI.                 |
+| did                | string   | optional  | DID of the user executing call. |
+
+
+
+### Function initialiseMemoryEnclave()
+
+**Description:** This function will create and return a memory enclave. No parameters are required for the creation of this type of enclave.
+
+
+### Function initialiseRemoteEnclave(clientDID, remoteDID)
+
+**Description:** This function will create a client side enclave that will communicate with the remote server enclave.
+
+
+
+| **Name**  | **Type** | **Value** | **Description**        |
+|:----------|:---------|:----------|:-----------------------|
+| clientDID | string   | *required | DID of the client.     |
+| remoteDID | string   | *required | DID of remote enclave. |
+
+
+### Function createEnclave(enclaveType, …args)
+
+
+<b>Description</b>: This function will create an enclave with the specified type. All the supported types can be found in the <a href="https://github.com/OpenDSU/OpenDSU-core/blob/master/moduleConstants.js">moduleConstants.js file  ->  ENCLAVE_TYPES.</a>
+
+
+
+| **Name**    | **Type** | **Value** | **Description**                                  |
+|:------------|:---------|:----------|:-------------------------------------------------|
+| enclaveType | string   | *required | Desired enclave type.                            |
+| *args       | string   | *required | Parameters for the enclave constructor function. |
+
+
+
+### Function registerEnclave(enclaveType, enclaveConstructor)
+
+**Description:** This is used to register a new enclave constructor function under new enclave type.
+
+
+# 3. Deployment
+
+<p style='text-align: justify;'>If the needs or functionality requirements involve that our enclave stores data in data systems, this can be achieved through a SqliteEnclave implementation that uses a file and a Sqlite engine to store data from the enclave type. Suppose we are talking about enclaves for mobile devices, then the OpenDSU concept will be based on its implementation in the use of enclaves or TEE mechanisms available on both iOS and Android.
+</p>
+
+
+## 3.1. EnclaveAdapters are typically separate containers
+
+<p style='text-align: justify;'>Interaction with this OpenDSU Enclave concept can be done both directly and through layers or intermediaries. These may be represented by APIHub or can be the so-called EnclaveAdapter Interfaces. When we refer to APIHub intermediary, we are talking about the possibility that an instance of APIHub can expose a collection of APIs through which a user can have the opportunity to build or to upload but also to interact with enclaves.
+</p>
+
+<p style='text-align: justify;'> Depending on the degree of importance of the data stored in that enclave, it can use either an encrypted communication that allows remote access via APIHub to the enclave or an unsecured communication.
+</p>
+
+* Web APIs are similar to APIs of the Enclave instances from OpenDSU SDK.
+* All methods will have an enclaveDID parameter and typically require the signature of a "forDID" that was allowed by the enclave administrator to access the enclave elements (tables, keys etc.).
+* The enclave administrators can use the grantWriteAccess, grantReadAccess, revokeWriteAccess and revokeReadAccess methods to give or revoke write/read access to other DIDs.
+* The DID that created an Enclave element gets access by default.
+
+
+## 3.2. Native Enclaves
+
+
+<p style='text-align: justify;'>When we talk about the EnclaveAdapter Interface, we refer to a collection of native implementations plus a WebAPIs collection to facilitate the interaction and consumption of information stored in native enclaves or in enclaves that use as storage media available technologies such as LinuxTEE, iOSTEE, and AndroidTEE or Sqlite, but also any other type of system we want to use as a storage layer for our enclave.
+</p>
+
+<p style='text-align: justify;'>A Native Enclave offers http/https endpoints (the EnclaveAdapter web APIs) that can be used by the APIHubEnclave or HighSecurityEnclave from OpenDSU SDK, typically mediated by the WebAPIEnclave strategy from APIHub. A native enclave can be executed:
+</p>
+
+* on a remote server;
+* in a separate container in the same cluster;
+* as part of the native layer in a native application (mobile or desktop).
+
+
+**Possible Implementations**
+
+Some implementations are experimental or not stable:
+* SqliteEnclave: use sqlite as storage 
+* KMSEnclave: use a KMS  (local hardware or cloud KMS)
+* LinuxTEE: use the native TEE
+* iOSTEE: use the native TEE
+* AndroidTEE: use the native TEE
+
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQ1bdyecUXN36ZGf1gA5nXCbaiNOf1AG3uAZWQEUuZ9VdlwewfgxrOtIJCYONw8pQuBOpJeXHUzE4cf/pub?w=662&h=373" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
+
+<div style="text-align:center;">
+<p><b>Figure 5: Security Context</b></p>
+</div>
+
+
+
+
+
+**Contributors**
+
+
+1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+
+2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+
+
+# Annex 1. Contributors
+
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+
+
+
+
+
+
+
