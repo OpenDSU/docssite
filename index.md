@@ -8,92 +8,115 @@ nav_order: 1
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Carousel</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-V4I9nnAaRl6vtwXC1FgeP5VLPf7gJ6Y98zZHi1Y9qKWVMOmX41vpd4jg1ih0lKCK" crossorigin="anonymous">
-  <style>
-    .carousel-item {
-      text-align: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Video Slideshow</title>
+<style>
+    .video-container {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
     }
-    .video-card {
-      border-radius: 10px;
-      overflow: hidden;
+    
+    .video-row {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.3s ease;
     }
-    .video-card img {
-      max-width: 100%;
-      height: auto;
+	
+    .video-item {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        text-align: center;
     }
-  </style>
+    
+    iframe {
+        width: 320px;
+        height: 180px;
+    }
+    
+    .video-name {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+    
+    .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* Remove black background */
+    color: purple; /* Change arrow color to purple */
+    padding: 15px; /* Increase padding for larger size */
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 50px; /* Increase font size */
+    }
+    
+    .prev {
+        left: 0;
+    }
+    
+    .next {
+        right: 0;
+    }
+    iframe {
+    width: 240px; /* Decrease width to make videos smaller */
+    height: 135px; /* Decrease height proportionally */
+    }
+</style>
 </head>
 <body>
+<div class="video-container">
+    <button class="prev" onclick="scrollVideos(-1)">❮</button>
+    <div class="video-row">
+        <!-- Replace the following iframe src with the embed link of the playlist -->
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UULFWBkFj-M52u1UywvGOOVrkg" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 1</div>
+        </div>
+        <div class="video-item">
+            <iframe src="URL_OF_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+            <div class="video-name">Name of Video 2</div>
+        </div>
+        <!-- Repeat the same pattern for other videos -->
+    </div>
 
-<div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <div class="video-card">
-            <video controls>
-              <source src="video1.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="video-card">
-            <video controls>
-              <source src="video2.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="video-card">
-            <video controls>
-              <source src="video3.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <div class="video-card">
-            <video controls>
-              <source src="video4.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="video-card">
-            <video controls>
-              <source src="video5.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="video-card">
-            <video controls>
-              <source src="video6.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+    <button class="next" onclick="scrollVideos(1)">❯</button>
 </div>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-vVNwLqfF2Fln3WLNu0+29lW9vtoMJdJt5lWp80HME5tQoO27vkJfyn2u5I5+8+Mz" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-3OX5nfn3h+Ou+JvXmsce/JzV5J+QolhlwMa24lhi9YyaWfFZSx3g1jDrRg5p4zQg" crossorigin="anonymous"></script>
+<script>
+    let currentIndex = 0;
+
+    function scrollVideos(direction) {
+        const videoContainer = document.querySelector('.video-container');
+        const videoRow = document.querySelector('.video-row');
+        const videoItems = document.querySelectorAll('.video-item');
+        const numVideos = videoItems.length;
+        const videoWidth = videoItems[0].offsetWidth + parseInt(window.getComputedStyle(videoItems[0]).marginRight);
+
+        currentIndex = (currentIndex + direction + numVideos) % numVideos;
+        const newPosition = -currentIndex * videoWidth;
+        videoRow.style.transform = `translateX(${newPosition}px)`;
+    }
+</script>
+
 </body>
 </html>
