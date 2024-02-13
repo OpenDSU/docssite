@@ -5,7 +5,8 @@ parent: OpenDSU Advanced
 nav_order: 4
 ---
 
-# VersionLessDSUs (RFC-019)
+# **VersionLessDSUs (RFC-019)**
+
 {: .no_toc }
 
 {: .Accepted }
