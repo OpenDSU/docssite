@@ -157,6 +157,11 @@ BSidW1oziQQbB3vTNVc1ST7TbTdBefPiMv6p7Lwni9DsYAM1sjVDPdrhGDsTsKkcjp4Lecio4f81
     <p><b>Figure 1: High-level overview</b></p>
 </div>
 
+
+
+
+
+
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRCJ4PNwFeymG5dL1IV-ySuf8WEm1hKd4DLcC84u_HW_3vFgh-wmYK-cxH79dARHVX8i8-z1skznvnu/pub?w=938&h=241" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -180px;"/>
     <p><b>Figure 2: Ethereum Adapter in place of Blockchain Adapter</b></p>
