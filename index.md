@@ -70,19 +70,19 @@ nav_order: 1
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=s9Ep9lFXx-H33sv6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <b>Decentralised EPCIS with Digital Twins and OpenDSU</b>
+            <b>Decentralised EPCIS with Digital Twins and OpenDSU <br> (3)</b>
         </div>
         <div class="card">
            <iframe width="560" height="315" src="https://www.youtube.com/embed/BB7XcK8Ptss?si=szd06PzJIvXtUx2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <b>OpenDSU Technical Introduction</b>
+            <b>OpenDSU Technical Introduction <br> (4) </b>
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/HCkeFXyeJxg?si=3eWIn8wbNRMlybUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <b>OpenDSU Overview for Enterprise Architects and Business Stakeholders</b>
+            <b>OpenDSU Overview for Enterprise Architects and Business Stakeholders <br> (5) </b>
         </div>
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/0A3bGUAajrM?si=KSaBfEwnUbs8ADiD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <b>Open DSU for Data Sharing in Enterprise Blockchain Systems and Digital Trust Ecosystems</b>
+            <b>Open DSU for Data Sharing in Enterprise Blockchain Systems and Digital Trust Ecosystems <br> (6)</b>
         </div>
     </div>
 </div>
