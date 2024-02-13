@@ -4,7 +4,14 @@ layout: home
 nav_order: 1
 ---
 
-asd
+asd<br>
+<br>
+asd<br>
+asd<br>
+asd<br>
+asd<br>
+
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -100,9 +107,11 @@ asd
         showSlides();
     }
 
-    function showSlides() {
-        if (slideIndex < -1) {
-            slideIndex = -1;
+      function showSlides() {
+        if (slideIndex < 0) {
+            slideIndex = 0;
+        } else if (slideIndex > cards.length - 1) {
+            slideIndex = cards.length - 1;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
