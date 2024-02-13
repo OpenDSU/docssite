@@ -163,8 +163,11 @@ In the case of token authentication, a secondary service verifies a server reque
 </p>
 
 More details are available at the following links:
-<br><a href="https://www.google.com/url?q=https%3A%2F%2Fdatatracker.ietf.org%2Fdoc%2Fhtml%2Frfc6749%23section-1.3.1&sa=D&source=docs"></a>  
-<a href="https://www.google.com/url?q=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Factive-directory%2Fdevelop%2Fv2-oauth2-auth-code-flow&sa=D&source=docs"></a>    
+
+<a href="https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1">https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1</a>  
+<a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow">https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow</a>
+
+
 
 ## 3.2. Token encryption and verification
 
@@ -182,12 +185,12 @@ When a token expires, the client will perform the OAuth2.0 refresh token flow to
 
 <p style='text-align: justify;'>
 
-Signed tokens can verify the integrity of the claims contained within them, while encrypted tokens hide these affirmations from other third parties. When tokens are signed using public or private key pairs, the signature also certifies that only the party holding the private key is the one who signed. Public keys used for JWT verification are publicly available. JWKS is downloaded for the JWKS endpoint (e.g. <a href="">https://login.windows.net/common/discovery/keys</a>), which can be found at <a href="">https://issuer.example.com/.well-known/openid-configuration</a>  (a well-known URI discovery mechanism for the issuer).
+Signed tokens can verify the integrity of the claims contained within them, while encrypted tokens hide these affirmations from other third parties. When tokens are signed using public or private key pairs, the signature also certifies that only the party holding the private key is the one who signed. Public keys used for JWT verification are publicly available. JWKS is downloaded for the JWKS endpoint (e.g. <a href="https://login.windows.net/common/discovery/keys">https://login.windows.net/common/discovery/keys</a>), which can be found at <a href="">https://issuer.example.com/.well-known/openid-configuration</a>  (a well-known URI discovery mechanism for the issuer).
 </p>
 
 <p style='text-align: justify;'>
 
-The authentication token will be encrypted in an AES 256 GCM cookie. The encryption key is rotated. The cookie must be secure: HTTP only, secure, same site lax, cookie prefixes, not available on subdomains, expiration <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">(docs)</a>.
+The authentication token will be encrypted in an AES 256 GCM cookie. The encryption key is rotated. The cookie must be secure: HTTP only, secure, same site lax, cookie prefixes, not available on subdomains, expiration <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">(docs)</a>
 </p>
 
 <p style='text-align: justify;'>
@@ -292,7 +295,7 @@ In /apihub-root/external-volume/config/domains/<subdomain>epi.json add below sec
 * skipOAuth configuration in /apihub-root/external-volume/config/domains/vault.json file
 
 
-Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <br> <a href="">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a> <br>   
+Note: This setting is NOT set by the helm chart as of now (0.5.14)!!! You need to override the vault domain config! <br> <a href="https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49">https://github.com/PharmaLedger-IMI/helm-charts/blob/epi-0.5.14/charts/epi/values.yaml#L49</a> <br>   
 
 ````
 "skipOAuth": [
