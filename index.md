@@ -26,7 +26,7 @@ nav_order: 1
     .card {
         flex: 0 0 calc(50% - 20px);
         margin: 10px;
-        padding: 20px;
+        padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
@@ -63,7 +63,7 @@ nav_order: 1
     <div class="slideshow">
         <div class="card">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <h3>**Insights about Enteprise Blockchain Solutions (Adoption & Properites)**</h3>
+            <h3>Insights about Enteprise Blockchain Solutions (Adoption & Properites)</h3>
         </div>
         <div class="card">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
