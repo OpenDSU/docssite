@@ -4,59 +4,93 @@ layout: home
 nav_order: 1
 ---
 
-    
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pure CSS Image Slider</title>
     <style>
-        .video-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 10px;
-            padding-left: 15%;
-            padding-right: 15%;
-            width: 70%;
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            padding: 2rem;
+        }
+        .wrapper{
+            position: relative;
+            max-width: 48rem;
             margin: 0 auto;
         }
-
-        .video-container {
-            width: 218.27px;
-            height: 150.6px;
+        .slider{
+            display: flex;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            width: 100%;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0 1.5rem 3rem -0.75rem rgba(0,0,0,0.25);
+            border-radius: 0.5rem;
         }
-
-        .video-title {
-            text-align: center;
-            margin-top: 5px;
+        .slider img{
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            object-fit: cover;
+        }
+        .nav{
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;    
+        }
+        .nav a{
+            width: 7rem;
+            height: 4rem;
+            border-radius: .5rem;
+            overflow: hidden;
+            opacity: .7;
+            transition: opacity ease 250ms;
+            box-shadow: 0 1rem 1rem -0.75rem rgba(0,0,0,0.75);
+        }
+        .nav img{
+            width: 100%;
+            object-fit: cover;
+        }
+        .nav a:hover{
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="video-row">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/n6YiWk8t3W0?si=R8GYpQFhycDL3xJ6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-title">Video 1 Title</p>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/M25uLSmVRl0?si=4bl_aokGPNqFBFcR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-title">Video 2 Title</p>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/tYjIfKK4TOQ?si=GpXncvdI4sPvc8pc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-title">Video 3 Title</p>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/BB7XcK8Ptss?si=FsW2Bw6ua5jfhVHb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-title">Video 4 Title</p>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/HCkeFXyeJxg?si=ZpnXwsa9qghC2OMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-title">Video 5 Title</p>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/0A3bGUAajrM?si=3wLGPS6KBAfaJLVF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-title">Video 6 Title</p>
+    <div class="container">
+        <div class="wrapper">
+            <div class="slider">
+                <img id="slide-1" src="1.jpg" alt="">
+                <img id="slide-2" src="2.jpg" alt="">
+                <img id="slide-3" src="3.jpg" alt="">
+                <img id="slide-4" src="4.jpg" alt="">
+            </div>
+            <div class="nav">
+                <a href="#slide-1">
+                    <img src="1.jpg" alt="">
+                </a>
+                <a href="#slide-2">
+                    <img src="2.jpg" alt="">
+                </a>
+                <a href="#slide-3">
+                    <img src="3.jpg" alt="">
+                </a>
+                <a href="#slide-4">
+                    <img src="4.jpg" alt="">
+                </a>
+            </div>
         </div>
     </div>
 </body>
 </html>
+
