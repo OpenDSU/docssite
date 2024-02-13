@@ -103,7 +103,7 @@ nav_order: 1
 
     function showSlides() {
         if (slideIndex < 0) {
-            slideIndex = 0;
+            slideIndex = 6;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
