@@ -301,9 +301,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     Where filter has the following form :
 
        [“filed op value”, …]
-
        Example [“id == 1”, “price >= 3”]
-
        Supported operations: !=, ==, >=, <, <=, like
 
 
