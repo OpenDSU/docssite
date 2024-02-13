@@ -43,8 +43,7 @@ nav_order: 1
         top: 50%;
         transform: translateY(-50%);
         padding: 10px;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
+        color: purple; /* Set color to purple */
         border: none;
         outline: none;
         z-index: 1000; /* Increase the z-index */
