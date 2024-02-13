@@ -5,68 +5,6 @@ parent: OpenDSU Contributors
 nav_order: 22
 ---
 
-<style>
-  /* Styles for the modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-  }
-
-  /* Modal content */
-  .modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  /* Close button */
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-</style>
-<body>
-
-<div id="myModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
-  <img class="modal-content" id="img01" onclick="event.stopPropagation()">
-</div>
-
-<script>
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-</script>
-
-</body>
 
 # **APIHub SSO Implementation (RFC-101)**
 
@@ -115,22 +53,10 @@ SSO (Single Sign-On) is a technology that unites several screens into a single s
 # **2. SSO support in APIHub**
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vTzgjQKdK99ZP6uw-WGxGTYOq-5-WWHKEtXvJMNfQkuIftmpm2nrBiSAo-J3p66pqJm9Y9n_svLWerI/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
-
 <div style="text-align:center;">
-<p ><b>Figure 1: SSO support in APIHub</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTzgjQKdK99ZP6uw-WGxGTYOq-5-WWHKEtXvJMNfQkuIftmpm2nrBiSAo-J3p66pqJm9Y9n_svLWerI/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 1: SSO support in APIHub</b></p>
 </div>
-
-
 
 <p style='text-align: justify;'>
 
@@ -243,22 +169,10 @@ More details are available at the following links:
 ## 3.2. Token encryption and verification
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRriRp6lTPzLrYehbrCtwrdk-7-yeOJ78bmIJubAszvpFelzEMtbLIllQ6kwyk4qgQfurJ3pwaQDIQ5/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
-
 <div style="text-align:center;">
-<p><b>Figure 2: High-level view of the authentication flow</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRriRp6lTPzLrYehbrCtwrdk-7-yeOJ78bmIJubAszvpFelzEMtbLIllQ6kwyk4qgQfurJ3pwaQDIQ5/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 2: High-level view of the authentication flow</b></p>
 </div>
-
-
 
 
 <p style='text-align: justify;'>
@@ -284,18 +198,10 @@ The APIHub does not store the refresh token, but it encrypts it and puts it in a
 # **4. Flow between SSO, Demiurge, and Enclaves**
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vRiq19fw39iL8-GoLWNnH4Li6-y16Z7LWYDJ57R62O8rZ9tz85aRL_17uTGtco9kGtSiZzcOqAlO7m4/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
+
 <div style="text-align:center;">
-<p><b>Figure 3: First login with SSO</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRiq19fw39iL8-GoLWNnH4Li6-y16Z7LWYDJ57R62O8rZ9tz85aRL_17uTGtco9kGtSiZzcOqAlO7m4/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 3: First login with SSO</b></p>
 </div>
 
 
@@ -305,18 +211,10 @@ The first authentication with SSO starts when the SSO Middleware or Client puts 
 </p>
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vSfI5zyYDMxH7T1JBMNoNR46xHoJrcZs-Heq8cl9wLpHh0MaTSYVve6gxH0Au5JkzdOPT1n8_jkRYKU/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
+
 <div style="text-align:center;">
-<p><b>Figure 4: Client login to open a wallet</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSfI5zyYDMxH7T1JBMNoNR46xHoJrcZs-Heq8cl9wLpHh0MaTSYVve6gxH0Au5JkzdOPT1n8_jkRYKU/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 4: Client login to open a wallet</b></p>
 </div>
 
 
@@ -326,18 +224,9 @@ As shown in Figure 4 above, the client connection requires the secret to open a 
 </p>
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vTK8gPuDBNxxNFo_GIHb7WYwcnRLWAZHrIUyJ6xoqpabHLw7BmWtK2HnC1vQc3W3mEj5Gc_-MxteXjT/pub?w=960&h=720" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
 <div style="text-align:center;">
-<p><b>Figure 5: Demiurge deletes/deactivates a secret</b></p>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTK8gPuDBNxxNFo_GIHb7WYwcnRLWAZHrIUyJ6xoqpabHLw7BmWtK2HnC1vQc3W3mEj5Gc_-MxteXjT/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <p><b>Figure 5: Demiurge deletes/deactivates a secret</b></p>
 </div>
 
 
