@@ -243,16 +243,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 1.2. Access Control Enclave Methods
 
-<ol>
-  <li>getEnclaveDID()</li>
-  <li>grantAccess(forDID, elementType, elementAlias, accesType,  adminSignature, callback) </li>
-        <ol>
-            <li>elementType: “enclave”, “table”, “did”, “secretKey”,” publicKey”, queue</li>
-            <li>elementAlias can be a specific value (the name or alias of a specific element as string) or  the "*" wildcard</li>
-            <li>accesType can be “read” or “write” </li>
-        </ol>
- <li>revokeAccess(forDID, elementType, elementAlias, accesType, adminSignature, callback)</li>
-</ol>
+* getEnclaveDID()
+* grantAccess(forDID, elementType, elementAlias, accesType,  adminSignature, callback) 
+  * elementType: “enclave”, “table”, “did”, “secretKey”,” publicKey”, queue
+  * elementAlias can be a specific value (the name or alias of a specific element as string) or  the "*" wildcard
+  * accesType can be “read” or “write” 
+* revokeAccess(forDID, elementType, elementAlias, accesType, adminSignature, callback)
+
 
 
 
@@ -304,9 +301,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     Where filter has the following form :
 
        [“filed op value”, …]
-    Example [“id == 1”, “price >= 3”]
 
-    Supported operations: !=, ==, >=, <, <=, like
+       Example [“id == 1”, “price >= 3”]
+
+       Supported operations: !=, ==, >=, <, <=, like
 
 
 
@@ -326,7 +324,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | table       | string   | *required | Name of the table where the record should be inserted. |
 | pk          | any      | *required | Primary key of the record to insert.                   |
 | plainRecord | any      | *required | Record to be inserted.                                 |
-| encRecord   | any      | optional  | Encrypted record.This feature is experimental.         |
+| encRecord   | any      | optional  | Encrypted record. This feature is experimental.        |
 | callback    | function | *required | Callback function.                                     |
 
 
@@ -334,7 +332,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 | **Name** | **Type** | **Response example**                                                                                                                       |
 |:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the insert call.If err is undefined, the record was successfully inserted.  |
+| err      | any      | Error message for errors that occurred during the execution of the insert call. <br/>If err is undefined, the record was successfully inserted. |
 
 
 
@@ -353,10 +351,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                                |
-|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call.If err is undefined, the record was successfully retrieved. |
-| record   | any      | The retrieve record.                                                                                                                |
+| **Name** | **Type** | **Response example**                                                                                                                 |
+|:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/>If err is undefined, the record was successfully retrieved. |
+| record   | any      | The retrieve record.                                                                                                                 |
 
 
 
@@ -366,14 +364,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Description**: This function retrieves the records based on a specified filter.
 
 
-| **Name** | **Type** | **Value** | **Description**                                                                                                                                                      |
-|:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| forDID   | string   | *required | DID of the user executing the call.                                                                                                                                  |
-| table    |          | *required | Name of the table .                                                                                                                                                  |
-| filter   | array    | *required | The filter is an array of tuples <br/>[“field operation value”, …] <br/>Example [“id == 1”, “price >= 3”] <br/>Supported operations: !=, ==, >=, <, <=, like         |
-| sort     |          | optional  | By default the records are sorted in ascending order based on the filter field. This can be explicitly specified using “asc” or “desc”.                              |
-| max      |          | optional  | The maximum number of records to return. The default value is Infinity.                                                                                              |
-| callback | function | *required | Callback function.                                                                                                                                                   |
+| **Name** | **Type** | **Value** | **Description**                                                                                                                                              |
+|:---------|:---------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| forDID   | string   | *required | DID of the user executing the call.                                                                                                                          |
+| table    |          | *required | Name of the table .                                                                                                                                          |
+| filter   | array    | *required | The filter is an array of tuples <br/>[“field operation value”, …] <br/>Example [“id == 1”, “price >= 3”] <br/>Supported operations: !=, ==, >=, <, <=, like |
+| sort     |          | optional  | By default the records are sorted in ascending order based on the filter field. This can be explicitly specified using “asc” or “desc”.                      |
+| max      |          | optional  | The maximum number of records to return. <br/> The default value is Infinity.                                                                                |
+| callback | function | *required | Callback function.                                                                                                                                           |
 
 
 **Callback parameters**
@@ -399,9 +397,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                                    |
-|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the delete call.If err is undefined, the record was successfully deleted.|
+| **Name** | **Type** | **Response example**                                                                                                                            |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the delete call. <br/> If err is undefined, the record was successfully deleted. |
 
 
 ### Function updateRecords(forDID, table, pk, record, callback)
@@ -420,9 +418,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                                    |
-|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the record was successfully updated.|
+| **Name** | **Type** | **Response example**                                                                                                                |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the record was successfully updated. |
 
 
 ## 1.4. Use enclaves as Message Queues (experimental features)
@@ -449,16 +447,16 @@ When we refer to enclaves used as a communication system through Message Queues,
 | **Name**        | **Type** | **Value** | **Description**                     |
 |:----------------|:---------|:----------|:------------------------------------|
 | forDID          | string   | *required | DID of the user executing the call. |
-| queueName       | string   | *required | Name of the queue                   |
+| queueName       | string   | *required | Name of the queue.                  |
 | encryptedObject | any      | *required | The message to add in the queue.    |
 | callback        | function | *required | Callback function.                  |
 
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                             |
-|:---------|:---------|:---------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call.If err is undefined, the message was successfully added. |
+| **Name** | **Type** | **Response example**                                                                                                                    |
+|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the message was successfully added. |
 
 
 
@@ -471,39 +469,39 @@ When we refer to enclaves used as a communication system through Message Queues,
 | **Name**        | **Type** | **Value** | **Description**                     |
 |:----------------|:---------|:----------|:------------------------------------|
 | forDID          | string   | *required | DID of the user executing the call. |
-| queueName       | string   | *required | Name of the queue                   |
+| queueName       | string   | *required | Name of the queue.                  |
 | callback        | function | *required | Callback function.                  |
 
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                                                                                   |
-|:---------|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the queue size is retrieved.                                                             |
-| size     | int      | The current number of messages in the specified queue.                                                                                                                                 |
+| **Name** | **Type** | **Response example**                                                                                                             |
+|:---------|:---------|:---------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the queue size is retrieved. |
+| size     | int      | The current number of messages in the specified queue.                                                                           |
 
 
 
 ### Function listQueue(forDID, queueName, sortAfterInsertTime, onlyFirstN, callback)
 
 
-**Description:** Return a list of identifiers for the messages in the specified queue
+**Description:** Return a list of identifiers for the messages in the specified queue.
 
-| **Name**            | **Type** | **Value** | **Description**                                                                                  |
-|:--------------------|:---------|:----------|:-------------------------------------------------------------------------------------------------|
-| forDID              | string   | *required | DID of the user executing the call.                                                              |
-| queueName           | string   | *required | Name of the queue                                                                                |
-| sortAfterInsertTIme | string   | optional  | The order by which the items are sorted by time of insert in the queue. Default value is “asc”.  |
-| onlyFirsttN         | int      | optional  | Maximum number of messages to be returned.                                                       |
-| callback            | function | *required | Callback function.                                                                               |
+| **Name**            | **Type** | **Value** | **Description**                                                                                      |
+|:--------------------|:---------|:----------|:-----------------------------------------------------------------------------------------------------|
+| forDID              | string   | *required | DID of the user executing the call.                                                                  |
+| queueName           | string   | *required | Name of the queue.                                                                                   |
+| sortAfterInsertTIme | string   | optional  | The order by which the items are sorted by time of insert in the queue.<br/> Default value is “asc”. |
+| onlyFirsttN         | int      | optional  | Maximum number of messages to be returned.                                                           |
+| callback            | function | *required | Callback function.                                                                                   |
 
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                                               |
-|:---------|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the messages list is retrieved.                      |
-| messages | array    | List of message identifiers.                                                                                                                       |
+| **Name** | **Type** | **Response example**                                                                                                                |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the messages list is retrieved. |
+| messages | array    | List of message identifiers.                                                                                                        |
 
 
 
@@ -515,17 +513,17 @@ When we refer to enclaves used as a communication system through Message Queues,
 | **Name**  | **Type** | **Value** | **Description**                     |
 |:----------|:---------|:----------|:------------------------------------|
 | forDID    | string   | *required | DID of the user executing the call. |
-| queueName | string   | *required | Name of the queue                   |
+| queueName | string   | *required | Name of the queue.                  |
 | hash      | string   | *required | Hash of the object to be retrieved. |
 | callback  | function | *required | Callback function.                  |
 
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                     |
-|:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the message is retrieved.  |
-| messages | any      | The retrieved message.                                                                                                   |
+| **Name** | **Type** | **Response example**                                                                                                          |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the message is retrieved. |
+| messages | any      | The retrieved message.                                                                                                        |
 
 
 
@@ -537,16 +535,16 @@ When we refer to enclaves used as a communication system through Message Queues,
 | **Name**  | **Type** | **Value** | **Description**                     |
 |:----------|:---------|:----------|:------------------------------------|
 | forDID    | string   | *required | DID of the user executing the call. |
-| queueName | string   | *required | Name of the queue                   |
+| queueName | string   | *required | Name of the queue.                  |
 | hash      | string   | *required | Hash of the object to be deleted.   |
 | callback  | function | *required | Callback function.                  |
 
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                              |
-|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the delete call. If err is undefined, the message was deleted. |    
+| **Name** | **Type** | **Response example**                                                                                                                |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the delete call. <br/> If err is undefined, the message was deleted. |    
 
 
 
@@ -572,15 +570,15 @@ When we refer to enclaves used as a communication system through Message Queues,
 | **Name** | **Type** | **Value** | **Description**                     |
 |:---------|:---------|:----------|:------------------------------------|
 | forDID   | string   | *required | DID of the user executing the call. |
-| KeySSI   | string   | *required | KeySSI to store.                    |
+| keySSI   | string   | *required | KeySSI to store.                    |
 | callback | function | *required | Callback function.                  |
 
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                               |
-|:---------|:---------|:-----------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the insert call. If err is undefined, the keySSI was stored.        | 
+| **Name** | **Type** | **Response example**                                                                                                              |
+|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the insert call. <br/> If err is undefined, the keySSI was stored. | 
 
 
 ### Function createSeedSSI(forDID, hint, callback)
@@ -603,10 +601,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                            |
-|:---------|:---------|:--------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the insert call. | 
-| seedSSI  | any      | The created seed SSI.                                                           |
+| **Name** | **Type** | **Response example**                                                                                                                |
+|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the insert call. <br/>If err is undefined, the seed SSI was created. | 
+| seedSSI  | any      | The created seed SSI.                                                                                                               |
 
 
 
@@ -625,9 +623,9 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                     |
-|:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the insert call. If err is undefined, the DID was stored. | 
+| **Name** | **Type** | **Response example**                                                                                                           |
+|:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the insert call. <br/> If err is undefined, the DID was stored. | 
 
 
 ### Function generateDID(forDID, didMethod,...args)
@@ -644,10 +642,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                       |
-|:---------|:---------|:---------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call.If err is undefined, the generated DID is returned |
-| key      | any      | The generated DID.                                                                                                         |
+| **Name** | **Type** | **Response example**                                                                                                              |
+|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the generated DID is returned |
+| key      | any      | The generated DID.                                                                                                                |
 
 
 
@@ -662,15 +660,15 @@ When we refer to enclaves used as a communication system through Message Queues,
 | privateKey | string   | *required | Private key to store.                                               |
 | type       | string   | *required | Private key type.                                                   |
 | alias      | string   | optional  | Private key identifier, will be randomly generated if not specified |
-| callback   | function | *required | Callback function                                                   |
+| callback   | function | *required | Callback function.                                                  |
 
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                               |
-|:---------|:---------|:-----------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the stored private key is returned.  |
-| key      | any      | The stored private key.                                                                                                            |
+| **Name** | **Type** | **Response example**                                                                                                                    |
+|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the stored private key is returned. |
+| key      | any      | The stored private key.                                                                                                                 |
 
 
 
@@ -691,10 +689,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                            |
-|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the stored secret key is returned.|
-| key      | any      | The stored secret key.                                                                                                          |   
+| **Name** | **Type** | **Response example**                                                                                                                   |
+|:---------|:---------|:---------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the stored secret key is returned. |
+| key      | any      | The stored secret key.                                                                                                                 |   
 
 
 ### Function generateSecretKey(forDID, secretKeyAlias)
@@ -711,10 +709,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                                |
-|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the generated secret key is returned. |
-| key      | any      | The generated secret key.                                                                                                           |   
+| **Name** | **Type** | **Response example**                                                                                                                       |
+|:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/>  If err is undefined, the generated secret key is returned. |
+| key      | any      | The generated secret key.                                                                                                                  |   
 
 
 
@@ -742,10 +740,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name**  | **Type** | **Response example**                                                                                                      |
-|:----------|:---------|:--------------------------------------------------------------------------------------------------------------------------|
-| err       | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the signature is retrieved. |
-| signature | any      | The signed hash.                                                                                                          |   
+| **Name**  | **Type** | **Response example**                                                                                                            |
+|:----------|:---------|:--------------------------------------------------------------------------------------------------------------------------------|
+| err       | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the signature is retrieved. |
+| signature | any      | The signed hash.                                                                                                                |   
 
 
 ### Function signForKeySSI(forDID, keySSIThatIsSigning, hash)
@@ -762,10 +760,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name**  | **Type**  | **Response example**                                                                                                      |
-|:----------|:----------|:--------------------------------------------------------------------------------------------------------------------------|
-| err       | any       | Error message for errors that occurred during the execution of the call. If err is undefined, the signature is retrieved. |
-| signature | any       | The signed hash.                                                                                                          |                   
+| **Name**  | **Type**  | **Response example**                                                                                                            |
+|:----------|:----------|:--------------------------------------------------------------------------------------------------------------------------------|
+| err       | any       | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the signature is retrieved. |
+| signature | any       | The signed hash.                                                                                                                |                   
 
 
 
@@ -784,10 +782,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type**  | **Response example**                                                                                                              |
-|:---------|:----------|:----------------------------------------------------------------------------------------------------------------------------------|
-| err      | any       | Error message for errors that occurred during the execution of the call. If err is undefined, the encrypted message was received. |
-| message  | any       | The encrypted message.                                                                                                            |
+| **Name** | **Type**  | **Response example**                                                                                                                    |
+|:---------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any       | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the encrypted message was received. |
+| message  | any       | The encrypted message.                                                                                                                  |
 
 
 
@@ -807,10 +805,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                     |
-|:---------|:---------|:-------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. |
-| message  | any      | The decrypted message.                                                   |
+| **Name** | **Type** | **Response example**                                                                                                                    |
+|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the decrypted message was received. |
+| message  | any      | The decrypted message.                                                                                                                  |
 
 
 ### Function encryptMessage(forDID, didFrom, didTo, message)
@@ -829,10 +827,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                              |
-|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the encrypted message was received. |
-| message  | any      | The encrypted message.                                                                                                            |
+| **Name** | **Type** | **Response example**                                                                                                                    |
+|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the encrypted message was received. |
+| message  | any      | The encrypted message.                                                                                                                  |
 
 
 ### Function decryptMessage(forDID, didTo, encryptedMessage, callback)
@@ -850,10 +848,10 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 **Callback parameters**
 
-| **Name** | **Type** | **Response example**                                                                                                              |
-|:---------|:---------|:----------------------------------------------------------------------------------------------------------------------------------|
-| err      | any      | Error message for errors that occurred during the execution of the call. If err is undefined, the decrypted message was received  |
-| message  | any      | TheThe decrypted message.                                                                                                         |                                                                 
+| **Name** | **Type** | **Response example**                                                                                                                   |
+|:---------|:---------|:---------------------------------------------------------------------------------------------------------------------------------------|
+| err      | any      | Error message for errors that occurred during the execution of the call. <br/> If err is undefined, the decrypted message was received |
+| message  | any      | TheThe decrypted message.                                                                                                              |                                                                 
 
 
 ## 1.7. KeySSI specific functions
@@ -1026,11 +1024,11 @@ For the ePI use case, the slot field is initialized with 0 if it is not present 
 
 **Example:**  
 
-```js
 
-ssi:sread:domain:hash_private_key_base58:public_key:v0:{slot:”1”, path:”/12345678901234/abcde”}
 
-```
+    ssi:sread:domain:hash_private_key_base58:public_key:v0:{slot:”1”, path:”/12345678901234/abcde”}
+
+
 
 <p style='text-align: justify;'>When an enclave is requested to sign using a sRead KeySSI that has a path hint, it will use the hint to obtain the corresponding private key.
 </p>
