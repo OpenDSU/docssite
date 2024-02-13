@@ -110,8 +110,8 @@ asd<br>
       function showSlides() {
         if (slideIndex < 0) {
             slideIndex = 0;
-        } else if (slideIndex > cards.length - 1) {
-            slideIndex = cards.length - 1;
+        } else if (slideIndex > cards.length - 5) {
+            slideIndex = cards.length - 5;
         }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
