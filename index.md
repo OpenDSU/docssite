@@ -47,7 +47,7 @@ nav_order: 1
     }
    .prev, .next {
     cursor: pointer;
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
     padding: 5px;
