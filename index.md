@@ -92,20 +92,13 @@ nav_order: 1
 
 <script>
     let slideIndex = 0;
-    const slides = document.querySelector('.slideshow');
+    const container = document.querySelector('.slideshow-container');
     const cards = document.querySelectorAll('.card');
-    const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
 
     function scrollSlides(n) {
         slideIndex = (slideIndex + n + cards.length) % cards.length;
-        console.log("slideIndex: ", slideIndex);
-        showSlides();
-    }
-
-    function showSlides() {
-        const slideWidth = containerWidth / cards.length;
-        console.log("slideWidth: ", slideWidth);
-        slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+        const slideWidth = container.offsetWidth;
+        container.scrollLeft = slideIndex * slideWidth;
     }
 </script>
 
