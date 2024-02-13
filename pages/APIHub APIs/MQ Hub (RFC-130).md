@@ -49,12 +49,12 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>Message Queue Hub contains a set of APIs that facilitate communication between different entities using DIDs.
 </p>
 
-# 1. Create a JWT Token
+# **1. Create a JWT Token**
 
 <p style='text-align: justify;'>Request to create a new JWT signed token that will be used for authorization of using the rest of the APIs described in this section.
 </p>
@@ -97,7 +97,7 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 }
 ```
 
-# 2. Put a Message in the MQ
+# **2. Put a Message in the MQ**
 
 <p style='text-align: justify;'>PUT a new message in the MQ. The hashDID is the queue channel of the receiver of the message. The message is encrypted with the public key of the receiver DID, and it will be decrypted only by the receiver using his private key.
 </p>
@@ -142,7 +142,7 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 
 
 
-# 3. Get a MQ Message
+# **3. Get a MQ Message**
 
 <p style='text-align: justify;'>Get a message from the MQ. The process is performed under the authorization token, which enforces the privacy of the message by checking it against the signature of the DID.
 </p>
@@ -187,7 +187,7 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 }
 ```
 
-# 4. Delete a MQ Message
+# 4. **Delete a MQ Message**
 
 <p style='text-align: justify;'>Delete a message from the MQ. This API service deletes a message after it is consumed by the client. The decision on when to delete the message is left to the programmers. On OpenDSU, the messages are deleted after the DID document reads the new message.
 </p>
@@ -220,7 +220,7 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 | 500         | An error occurred during deleting the message from the queue.  |
 
 
-# 5. Remove a MQ Message
+# **5. Remove a MQ Message**
 
 <p style='text-align: justify;'>Read and delete a message from the MQ. The message is deleted from the MQ prior to serving it to the client. However, this approach is not recommended, because the message can be lost due to a networking error before the client can consume it.
 </p>
@@ -275,12 +275,9 @@ VM1vBA6etakD62wFSLv7UNbJ2xhpQwqxppezG5Mr4ZGdDALd5yXGoosRQYp",
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
+   
 
-
-
-
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                         | **Email**                                 |
 |:--------------------------------------------|:------------------------------------------|
