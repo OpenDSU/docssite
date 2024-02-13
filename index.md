@@ -12,12 +12,16 @@ nav_order: 1
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YouTube Video Cards Slideshow</title>
 <style>
-    .slideshow {
+    .slideshow-container {
         width: 90%;
         margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .slideshow {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        transition: transform 0.3s ease;
     }
     .card {
         flex: 0 0 calc(50% - 20px);
@@ -33,36 +37,78 @@ nav_order: 1
     h2 {
         margin-top: 10px;
     }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        outline: none;
+        z-index: 100;
+    }
+    .prev {
+        left: 0;
+    }
+    .next {
+        right: 0;
+    }
 </style>
 </head>
 <body>
 
-<div class="slideshow">
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-        <h2>Video 1</h2>
+<div class="slideshow-container">
+    <button class="prev" onclick="scrollSlides(-1)">❮</button>
+    <div class="slideshow">
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 1</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 2</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 3</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 4</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 5</h2>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+            <h2>Video 6</h2>
+        </div>
     </div>
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-        <h2>Video 2</h2>
-    </div>
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-        <h2>Video 3</h2>
-    </div>
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-        <h2>Video 4</h2>
-    </div>
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
-        <h2>Video 5</h2>
-    </div>
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
-        <h2>Video 6</h2>
-    </div>
+    <button class="next" onclick="scrollSlides(1)">❯</button>
 </div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.slideshow');
+    const cards = document.querySelectorAll('.card');
+
+    function scrollSlides(n) {
+        slideIndex += n;
+        showSlides();
+    }
+
+    function showSlides() {
+        if (slideIndex < 0) {
+            slideIndex = 0;
+        } else if (slideIndex >= cards.length - 2) {
+            slideIndex = cards.length - 2;
+        }
+        slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
+    }
+</script>
 
 </body>
 </html>
