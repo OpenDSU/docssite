@@ -96,14 +96,11 @@ nav_order: 1
     const cards = document.querySelectorAll('.card');
 
     function scrollSlides(n) {
-        slideIndex += n;
+        slideIndex = (slideIndex + n + cards.length) % cards.length;
         showSlides();
     }
 
     function showSlides() {
-        if (slideIndex < 0) {
-            slideIndex = 0;
-        }
         slides.style.transform = `translateX(-${(slideIndex * (100 / cards.length))}%)`;
     }
 </script>
