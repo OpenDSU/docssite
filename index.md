@@ -35,7 +35,7 @@ nav_order: 1
     h2 {
         margin-top: 10px;
     }
-    .prev, .next {
+      .prev, .next {
         cursor: pointer;
         position: absolute;
         top: 50%;
@@ -45,7 +45,7 @@ nav_order: 1
         color: white;
         border: none;
         outline: none;
-        z-index: 100;
+        z-index: 1000; /* Increase the z-index */
     }
     .prev {
         left: 0;
