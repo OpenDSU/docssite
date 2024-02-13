@@ -63,7 +63,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <img alt="" align="center" src="" class="imgMain"/>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT8HF35FYQLodVYan16WdKhkczQ533oxylNIcek34-kbfnFlQFoYaufuEr_hx6-CV_wNFZFmOL78LHP/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -150px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT8HF35FYQLodVYan16WdKhkczQ533oxylNIcek34-kbfnFlQFoYaufuEr_hx6-CV_wNFZFmOL78LHP/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-bottom: -150px; margin-top: -70px;"/>
     <p><b>Figure 1: GET and PUT on /versionlessdsu/:anchorId:</b></p>
 </div>
 
@@ -184,7 +184,7 @@ WalletEnclaves that use VersionLessDSUs exist as VersionLessWalletEnclave enclav
 
 The generic approach of creating an Enclave is also supported for creating VersionLessDSU Enclaves:</p>
 
-<span style="background-color: #D0D0D0">const ENCLAVE_TYPE = openDSU.constants.ENCLAVE_TYPES.VERSIONLESS_DSU_ENCLAVE;
+<span style="background-color: #EEEEEE">const ENCLAVE_TYPE = openDSU.constants.ENCLAVE_TYPES.VERSIONLESS_DSU_ENCLAVE;
 const versionlessDSUEnclave = enclaveAPI.createEnclave(ENCLAVE_TYPE);</span>
 
 ## 1.3. VersionLessDSU Serialisation
