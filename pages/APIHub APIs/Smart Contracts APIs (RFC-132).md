@@ -21,7 +21,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [Smart Contracts APIs (RFC-132)](#smart-contracts-apis-rfc-132)
 * [Abstract](#abstract)
 * [1. BDNS Entries](#1-bdns-entries)
   * [1.1. Path Parameters](#11-path-parameters)
@@ -52,9 +51,9 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
-# 1. BDNS Entries
+# **1. BDNS Entries**
 Get the BDNS entry using contract calls for the specified domain.
 
     GET /contracts/{domain}/bdns-entries/{entry}/
@@ -74,7 +73,7 @@ Get the BDNS entry using contract calls for the specified domain.
 | 404         | Invalid entry specified.                                                                |
 | 500         | Contracts not booted.                                                                   |
 
-# 2. Latest Block Info
+# **2. Latest Block Info**
 
 Send the lastestBlockInfo command to the worker.
 
@@ -94,7 +93,7 @@ Send the lastestBlockInfo command to the worker.
 | 400         | Worker allocation failure, invalid domain or body. |
 | 500         | Error executing the command.                       |
 
-# 3. Safe Command
+# **3. Safe Command**
 
 Send the safe command to the worker.
 
@@ -116,14 +115,14 @@ Send the safe command to the worker.
 
 ### 3.2.1. Example: Application/JSON 
 
-````
+```js
 {
   domain:"csc",
   contractName: "anchoring",
   methodName: "anchoring",
   params: [...methodParams]
 }
-````
+```
 
 ## 3.3. Responses
 
@@ -134,7 +133,7 @@ Send the safe command to the worker.
 | 500         | Error executing the command.                       |
 
 
-# 4. Nonced Command
+# **4. Nonced Command**
 
 Send the nonced command to the worker.
 
@@ -156,14 +155,14 @@ Send the nonced command to the worker.
 
 ### 4.2.1. Example: Application/JSON
 
-````
+```js
 {
   domain:"csc",
   contractName: "anchoring",
   methodName: "anchoring",
   params: [...methodParams]
 }
-````
+```
 
 ## 4.3. Responses
 
@@ -174,7 +173,7 @@ Send the nonced command to the worker.
 | 500         | Error executing the command.                       |
 
 
-# 5. PBlock Added
+# **5. PBlock Added**
 
 Send PBlock to validate the worker.
 
@@ -196,14 +195,14 @@ Send PBlock to validate the worker.
 
 ### 5.2.1. Example: Application/JSON
 
-````
+```js
 {
   domain:"csc",
   contractName: "anchoring",
   methodName: "anchoring",
   params: [...methodParams]
 }
-````
+```
 
 ## 5.3. Responses
 
@@ -214,7 +213,7 @@ Send PBlock to validate the worker.
 | 500         | Error executing the command.                       |
 
 
-# 6. Validator Not Inclusion
+# **6. Validator Not Inclusion**
 
 Set domain validator as non-inclusion to consensus phase.
 
@@ -236,14 +235,14 @@ Set domain validator as non-inclusion to consensus phase.
 
 ### 6.2.1. Example: Application/JSON
 
-````
+```js
 {
   domain: "csc",
   contractName: "anchoring",
   methodName: "anchoring",
   params: [...methodParams]
 }
-````
+```
 
 ## 6.3. Responses
 
@@ -253,15 +252,21 @@ Set domain validator as non-inclusion to consensus phase.
 | 400         | Worker allocation failure, invalid domain or body. |
 | 500         | Error executing the command.                       |
 
+
+
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-# Annex 1. Contributors
+
+
+
+# **Annex 1. Contributors**
 
 
 | **Current Editors**                 | **Email**                          |
