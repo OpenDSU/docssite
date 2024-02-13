@@ -203,7 +203,7 @@ The APIHub does not store the refresh token, but it encrypts it and puts it in a
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRiq19fw39iL8-GoLWNnH4Li6-y16Z7LWYDJ57R62O8rZ9tz85aRL_17uTGtco9kGtSiZzcOqAlO7m4/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQBf8w9kipVc3PN81MM0GVbXbNqHbzesU7ApAdszsZG1eKYbB7KOg9IEijukDpM7raBo1MYMOatSKKz/pub?w=747&h=302" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: First login with SSO</b></p>
 </div>
 
