@@ -32,10 +32,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [AppBuilderService](#appbuilderservice)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-{:toc}
 
 
-# Abstract
+
+# **Abstract**
 
 <p style='text-align: justify;'>DSUs are data, verifiable code. Through the use of cryptographic techniques, they are encrypted and identifiable in a certain way. DSUs can be assimilated into the programming model because there are DSU instances and classes.
 </p>
@@ -92,25 +92,27 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | BDSU                  | **KeySSIs**: HashLinkSSI <br> **Anchoring**: None <br> **Versioning**: None <br> **Other**: contains a JSON with information about a Blockchain Domain |
 
 
-# 1. Public Methods from dt API
+# **1. Public Methods from dt API**
 
 ## Function getDossierBuilder(sourceDSU, varStore)
 
 **Description**: Creates a new MappingEngine Object.
 
-|**Name**       | **Type**   | **Value**  | **Description**                                                                    |
-|sourceDSU  | object |        | This will perform all OPERATIONS from the sourceDSU as a source and not the fs.|
-|varStore   | object |        |                                                                                |
-	
+| **Name**  | **Type** | **Value** | **Description**                                                                 |
+|:----------|:---------|:----------|:--------------------------------------------------------------------------------|
+| sourceDSU | object   |           | This will perform all OPERATIONS from the sourceDSU as a source and not the fs. |
+| varStore  | object   |           |                                                                                 |
 
-	
+
 
 ## Function initialiseBuildWallet(callback)
 
 **Description**: Initialise a new wallet.
 
-|**Name**       | **Type**    | **Value**      | **Description**   |
-|callback  | function | *required  |               |
+| **Name** | **Type** | **Value** | **Description** |
+|:---------|:---------|:----------|:----------------|
+| callback | function | *required |                 |
+
 
 
 
@@ -138,26 +140,26 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 **Description:**
 
-
-|**Name**         | **Type**   | **Value**  | **Description**                                                                            |
-|environment  | object |        | Typically comes from an environment.js file which is the SSApps. Overrides some options|
-|opts         | object |        | Options object mimicking                                                               |
-	
+| **Name**    | **Type** | **Value** | **Description**                                                                                    |
+|:------------|:---------|:----------|:---------------------------------------------------------------------------------------------------|
+| environment | object   |           | Typically comes from an environment.js file which is the SSApps. Overrides some options            |
+| opts        | object   |           |Options object mimicking                                                                                                     |
 
 
 
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+# **Annex 1. Contributors**
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
