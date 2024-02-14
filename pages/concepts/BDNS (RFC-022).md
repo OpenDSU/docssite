@@ -24,7 +24,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [BDNS (RFC-022)](#bdns-rfc-022)
   * [Abstract](#abstract)
 * [1. Hierarchical Blockchains and Naming Schema](#1-hierarchical-blockchains-and-naming-schema)
 * [2. Blockchain Domain Name System (BDNS) Concepts Summary](#2-blockchain-domain-name-system-bdns-concepts-summary)
@@ -32,13 +31,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [3.1 BDNS Domains example: a root and subdomain](#31-bdns-domains-example-a-root-and-subdomain)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-{:toc}
 
 
 
 
 
-## Abstract
+
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC presents the vision and the technical details that explain BDNS concepts. BDNS concept is used by the OpenDSU KeySSI as explained in <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI (RFC-002)</a>. For developers, the existing support for BDNS is documented in <a href="https://www.opendsu.org/pages/contributors/BDNS%20(RFC-067).html">BDNS (RFC-067)</a> and <a href="https://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">KeySSI (RFC-068)</a>.
 </p>
@@ -61,7 +60,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>While, theoretically, the current level of BDNS functionality could be simulated using DNS, BDNS offers a simpler way of handling the change of the DNS root servers, and it allows faster experimentation for future extensions such as blockchain-to-blockchain anchoring by allowing new types of records.
 </p>
 
-# 1. Hierarchical Blockchains and Naming Schema
+
+# **1. Hierarchical Blockchains and Naming Schema**
 
 <p style='text-align: justify;'>OpenDSU proposes an approach to improve the concept of heterogeneous blockchains in the enterprise area (applications developed around the idea of digital wallets). OpenDSU does not intend to offer a solution for cryptocurrency-centric applications that require a global consensus or atomic transactions between multiple blockchains.
 </p>
@@ -107,20 +107,23 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Anchoring the ledgers into a parent ledger allows better security and auditability for the enterprise use cases and has a positive effect on simplifying the governance of complex blockchain platforms comprising numerous use cases and numerous actors with conflicting interests. There are multiple ways of implementing the anchoring between ledgers. However, OpenDSU does not currently offer implementation and only focuses on anchoring the DSUs in the ledgers. BDNS offers just a naming service for DSUs. Future efforts are required to generalize this approach for anchoring between ledgers.
 </p>
 
-# 2. Blockchain Domain Name System (BDNS) Concepts Summary
-
-|**Concept**          |**Description**                                                                                       |
-|BDNS             |Equivalent to the internet DNS for blockchains (distributed ledgers in general).                  |
-|BDNS Root Info   |A BDNS file containing the information about all root domains  and eventually other BDNS domains. |
-|BDNS Domain      |A string with alphanumeric identifiers separated by “.” characters.                               |
-|BDNS Root Domain |A BDNS domain without any “.” (a single identifier).                                              |
-|BDNS SubDomain   |A domain that contains additional prefixes to a BDNS Root Domain.                                 |
-
-<p style="text-align:center"> <b>Table: SeedSSI’s family subtypes</b></p>
+# **2. Blockchain Domain Name System (BDNS) Concepts Summary**
 
 
+| **Concept**       | **Description**                                                                                                                                      |
+|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| BDNS              | Equivalent to the internet DNS for blockchains (distributed ledgers in general).                                                                     |
+| BDNS Root Info    | A BDNS file containing the information about all root domains  and eventually other BDNS domains.                                                    |
+| BDNS Domain       | A string with alphanumeric identifiers separated by “.” characters.                                                                                  |
+| BDNS Root Domain  | A BDNS domain without any “.” (a single identifier)                                                                                                  |
+| BDNS SubDomain    | A domain that contains additional prefixes to a BDNS Root Domain                                                                                                                                                     |
 
-# 3. BDNS.hosts file (BDNS Root Info)
+
+<p style="text-align:center"> <b>Table 1: BDNS specific terminology summary</b></p>
+
+
+
+# **3.BDNS.hosts file (BDNS Root Info)**
 
 <p style='text-align: justify;'>Creating a system that can replace DNS would be complicated, and the maturation of such a system could take several years. In this sense, it is perfectly normal for OpenDSU-based systems to use a very simplified version that resembles the idea of host files from Unix systems.
 </p>
@@ -130,7 +133,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## 3.1 BDNS Domains example: a root and subdomain
 
-````
+```js
 {
 "demoroot": {
    "brickStorages": [
@@ -138,8 +141,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
      “https://example2.com”,
    ],
    "anchoringServices": [
-     “https://example1.com”,
-     “https://example2.com”,
+     “ https://example1.com”,
+     “ https://example2.com”,
    ]
  },
 "demo1.demoroot": {
@@ -153,7 +156,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
    ]
  }
 }
-````
+```
 
 
 This is the config for one root domain, “demoroot”, and a subdomain. Depending on their record type (“brickStorage” or “anchorService”), the endpoints are the addresses for either the node on which the Brick Storage service is running or the node running the Anchoring Service.
@@ -166,21 +169,23 @@ The below table describes the existing record types for BDNS domains.
 | anchoringServices | List of URLs that offer anchoring services for the domain.     |
 | notifications     | List of URLs that offer notification services for the domain.  |
 
-<p style="text-align:center"> <b>Table: SeedSSI’s family subtypes</b></p>
+<p style="text-align:center"> <b>Table 2: BDNS Domains record types</b></p>
 
 
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+
+# **Annex 1. Contributors**
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
