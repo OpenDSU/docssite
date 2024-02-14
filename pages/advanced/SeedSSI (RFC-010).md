@@ -51,9 +51,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-#  Abstract 
+#  **Abstract** 
 
-<p style='text-align: justify;'><b>SeedSSI</b> is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
+<p style='text-align: justify;'><b>SeedSSI</b> is the highest key of the SeedSSI family. Seed identifiers are used to create and identify <a href="https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html">DSUs</a> that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
 </p>
 
 <p style='text-align: justify;'><b>SReadSSI </b>is the first key that can be derived from the SeedSSI and shared. It grants “read” access to the DSU created with the SeedSSI that it was derived from.
@@ -63,7 +63,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-<p style='text-align: justify;'>The SeedSSI family is currently the easiest and most used way to generate and interact with [DSU Objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html).
+<p style='text-align: justify;'>The SeedSSI family is currently the easiest and most used way to generate and interact with <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html">DSU Objects</a>.
 </p>
 
 <div style="text-align:center;">
@@ -79,11 +79,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
-| **SubType** | **Description**                                                                                                                                                                                                                                    |
-|:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| seed        | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU).  <br/> Example of SeedSSI:  <br/> _<i>ssi:seed:domain:private_key_base64::v0_ </i>                                 |
-| sread       | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_ |
-| sza         | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions.  <br/> Example of SzaSSI: <br/><i>_ssi:sza:domain::public_key:v0_</i>                                                          |
+| **SubType** | **Description**                                                                                                                                                                                                                                                  |
+|:------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| seed        | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU).  <br/> Example of SeedSSI:  <br/> _<i>ssi:seed:domain:private_key_base64::v0_ </i>                                        |
+| sread       | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU.  <br/> Example of SReadSSI: <i>_ssi:sread:domain:hash_private_key_base64:public_key:v0_</i> |
+| sza         | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions.  <br/> Example of SzaSSI: <br/><i>_ssi:sza:domain::public_key:v0_</i>                                                                 |
 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
@@ -139,11 +139,6 @@ The identifier contains the subtype and the domain. This is very important for f
 | sReadSSI object  | A sReadSSI object is returned. |
 
 
-| **Name**  | **Description** |
-|:----------|:----------------|
-|           | The private key |
-
-
 
 ### Function seedSSI.getPrivateKey(format)
 
@@ -164,9 +159,9 @@ The identifier contains the subtype and the domain. This is very important for f
 
 **Description**: Derive your seedSSI and return a sReadSSI.
 
-| **Name** | **Type** | **Value** | **Description**                                                                                                                                                                  |
-|:---------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| format   | String   |           | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. |
+| **Name** | **Type** | **Value** | **Description**                                                                                                                                                                                                                                                                                                          |
+|:---------|:---------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| format   | String   |           | The parameter can be set to “pem” to specify that you want to get the public key in the the [pem (private enhanced](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format. <br/>Alternatively, it can be used “raw” to specify that you want the raw secp256k1 public key. <br/>By default, the pem format is returned. |
 
 **Returns**
 
