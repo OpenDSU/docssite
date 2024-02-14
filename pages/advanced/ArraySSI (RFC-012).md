@@ -67,15 +67,17 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # Abstract
 
-ArraySSIs are created from multiple inputs that are easy to remember for the user. In our example, inputs are represented by company identifiers, serial numbers and product identifiers, but they could also be something else like name and telephone number. They may be different, depending on the use case.
-
+<p style='text-align: justify;'>ArraySSIs are created from multiple inputs that are easy to remember for the user. In our example, inputs are represented by company identifiers, serial numbers and product identifiers, but they could also be something else like name and telephone number. They may be different, depending on the use case.
+</p>
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRRgaOtM48UEJ3onBjtSeM1w3gC6QU-ajrTe_jntzGLFdeE6e9GAWq03jZJpUs6K2ijzPXYzLxkTZSC/pub?w=1010&h=419" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 1: ConstSSI generated from serialization numbers</b></p>
 </div>
 
-There are no restrictions regarding the number of inputs we can use to create the ArraySSI. For example, adding a fourth input like GTIN can make the key more robust. Then, the array of inputs passes through a key derivation function, and the result is encoded to obtain the specific identifier of the ArraySSI. Next, the ArraySSI is derived to get a [ConstSSI] (https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html) that can be used to create and resolve DSUs.
+<p style='text-align: justify;'>There are no restrictions regarding the number of inputs we can use to create the ArraySSI. For example, adding a fourth input like GTIN can make the key more robust. Then, the array of inputs passes through a key derivation function, and the result is encoded to obtain the specific identifier of the ArraySSI. Next, the ArraySSI is derived to get a <a href="https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html">ConstSSI</a>  that can be used to create and resolve DSUs.
+</p>
+
 
 | **Subtype** | **Description**                                                                                                                             |
 |:------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -107,7 +109,8 @@ As stated before, the specific string of the ArraySSI corresponds to the array o
 
 ## Function arraySSI.derive()
 
-**Description**: Derive your arraySSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the arraySSI using the array of inputs. It is then possible to create and load a DSU using the ConstSSI.
+<p style='text-align: justify;'><b>Description</b>: Derive your arraySSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the arraySSI using the array of inputs. It is then possible to create and load a DSU using the ConstSSI.
+</p>
 
 **Returns**
 
@@ -153,6 +156,9 @@ As stated before, the specific string of the ArraySSI corresponds to the array o
 |:------------|:-------------|:---------------------|
 | err         | Error object |                      |
 | anchorValue |              |                      |
+
+<p style='text-align: justify;'><b>Description:</b> Contains a message and the error. / The anchor value that was just created.
+</p>
 
 
 # 3. Common KeySSI functions from KeySSIMixin
@@ -251,13 +257,14 @@ Description:
 **Description**: 
 **Returns**
 
-| **Name** | **Description**                                    |
-|:---------|:---------------------------------------------------|
-| _subtype |                                                    |
+| **Name**               | **Description**                                    |
+|:-----------------------|:---------------------------------------------------|
+| _subtypeSpecificString |                                                    |
 
 ## Function getDLDomain()
 
 **Description**: 
+
 **Returns**
 
 | **Name**   | **Description**                                                          |
@@ -267,6 +274,7 @@ Description:
 ## Function getControlString()
 
 **Description**: 
+
 **Returns**
 
 | **Name**       | **Description**                                                           |
@@ -276,6 +284,7 @@ Description:
 ## Function getHint()
 
 **Description**: 
+
 **Returns**
 
 
@@ -528,6 +537,35 @@ Description:
 # 4. Cryptographic algorithms used by ArraySSIs (advanced)
 
 In this paragraph, we present the algorithms that ArraySSIs use. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the [nodejs crypto](https://www.google.com/url?q=https://nodejs.org/docs/latest-v12.x/api/crypto.html%23crypto_crypto&sa=D&source=editors&ust=1706689753751749&usg=AOvVaw1oBuR4o3EAv5yT5kJpa3TH) library.
+
+
+| **Type** | **Operations**           | **Algorithms**                                                                                                                    |
+|:---------|:-------------------------|:----------------------------------------------------------------------------------------------------------------------------------|
+| Default  | KeyDerivation            | crypto.deriveKey ([aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode), password, iterations).                        |
+|          | EncryptionKey Generation | Generate a random encryption key compatible with the <a href="https://en.wikipedia.org/wiki/Galois/Counter_Mode">aes-256-gcm</a>. |
+|          | enconding                | <a href="https://learnmeabitcoin.com/technical/base58">Base58 </a> enconding                                                      |
+|          | deconding                | <a href="https://learnmeabitcoin.com/technical/base58">Base58 </a> deconding                                                      |
+
+
+
+
+
+
+
+
+**Contributors**
+
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
+
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
+
+
+
+
+
 
 # Annex 1. Contributors
 
