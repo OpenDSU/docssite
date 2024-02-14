@@ -5,7 +5,7 @@ parent: OpenDSU Advanced
 nav_order: 4
 ---
 
-# **VersionLessDSUs (RFC-019)**
+# **VersionLessDSUs**
 
 {: .no_toc }
 
@@ -57,7 +57,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# 1. Specifications
+# **1. Specifications**
 
 <p style='text-align: justify;'>With the creation of <b>VersionLessDSUs</b>, we desired to create an optimised mechanism for storing edge wallets (e.g. mobile applications). In some cases, keeping all those versions and even having to do calls towards anchoring and bricking can be cumbersome or requires having an APIHub server embedded in the client application. The alternative is to have just a simple persistence to read or store the state of the DSU.
 </p>
@@ -257,7 +257,7 @@ VersionLessSSI is used for handling VersionLessDSU operations (read and update) 
 
 ### 1.5.3. VersionLessSSI family specific functions
 
-(Common functions for all KeySSIs are available <a href="https://opendsu.com/rfc002">here</a>)
+(Common functions for all KeySSIs are available <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">here</a>)
 
 ## Function versionLessSSI.initialize(dlDomain, filePath, encryptionKey, vn, hint)
 
@@ -371,14 +371,13 @@ VersionLessSSIs can be easily created using specific method inside the OpenDSU â
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 
 | **Current Editors**                 | **Email**                               |
