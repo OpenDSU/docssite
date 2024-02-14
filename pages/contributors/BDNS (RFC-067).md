@@ -87,10 +87,10 @@ const seedSSI = keyssispace.createSeedSSI('default');
 **Description:** Gets the raw information about a blockchain domain.
 
 
-| Name     | Type     | Value     | Description                                       |
-|:---------|:---------|:----------|:--------------------------------------------------|
-| dlDomain | string   | *required | THe blockchain domain you want information about. |
-| callback | function |           |                                                   |
+| Name     | Type     | Value      | Description                                       |
+|:---------|:---------|:-----------|:--------------------------------------------------|
+| dlDomain | string   | *required  | THe blockchain domain you want information about. |
+| callback | function | *required  |                                                   |
 
 
 
@@ -110,10 +110,10 @@ const seedSSI = keyssispace.createSeedSSI('default');
 **Description:** Gets addresses of brick storages associated with the provided dlDomain.
 
 
-| **Name** | **Type** | **Value** | **Description**                                        |
-|:---------|:---------|:----------|:-------------------------------------------------------|
-| dlDomain | string   | *required | The blockchain domain that you want information about. |
-| callback | function |           |                                                        |
+| **Name** | **Type** | **Value**  | **Description**                                        |
+|:---------|:---------|:-----------|:-------------------------------------------------------|
+| dlDomain | string   | *required  | The blockchain domain that you want information about. |
+| callback | function | *required  |                                                        |
 
 
 
