@@ -53,18 +53,18 @@ nav_order: 1
 
 <div class="row">
   <div class="card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/n6YiWk8t3W0?si=6l1jbqU3aq2Gf_IN" frameborder="0" allowfullscreen></iframe>
     <div class="title">Title for Video 1</div>
   </div>
 
   <div class="card">
     <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-    <div class="title">Title for Video 2</div>
+    <div class="title">OpenDSU Pitch in 3 minutes</div>
   </div>
 
   <div class="card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-    <div class="title">Title for Video 3</div>
+    <iframe src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" frameborder="0" allowfullscreen></iframe>
+    <div class="title">Insights about Enteprise Blockchain Solutions (Adoption & Properites)</div>
   </div>
 </div>
 
