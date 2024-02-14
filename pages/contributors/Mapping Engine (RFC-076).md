@@ -5,7 +5,7 @@ parent: OpenDSU Contributors
 nav_order: 17
 ---
 
-# **Mapping Engine (RFC-076)**
+# **Mapping Engine**
 {: .no_toc }
 
 {: .feedback }
@@ -32,16 +32,16 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRCRspWLroLWI8YEOrAcCWXZCwN6TI8gl2atRE8Wpfzxdk_WIPOarEeV6xhl_DTijdylQGyGmauRK8q/pub?w=1160&h=591" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
 </div>
 
 
-## 1. Public functions from the Mapping Engine
+## **1. Public functions from the Mapping Engine**
 
-### Function getMappingEngine(persistenceDSU, options)
+### **Function getMappingEngine(persistenceDSU, options)**
 
 **Description:** Creates a new MappingEngine Object.
 
@@ -53,21 +53,25 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 	
 
-### Function getMessagesPipe
+### **Function getMessagesPipe**
 
 **Description:** Returns the pipe and waits for messages that will later be matched and mapped to certain functions.
 
 
-### Function getErrorsMap
+### **Function getErrorsMap**
 
-<p style='text-align: justify;'><b>Description: Returns an error map for different types of errors that might occur while receiving messages or while mapping them.</b>
+<p style='text-align: justify;'>
+
+**Description:** Returns an error map for different types of errors that might occur while receiving messages or while mapping them.
 </p>
 
 
 
-### Function defineMapping(matchFunction, mappingFunction)
+### **Function defineMapping(matchFunction, mappingFunction)**
 
-<p style='text-align: justify;'><b>Description</b>: After the message is received and digested, this function is used to map that message to the desired method.
+<p style='text-align: justify;'>
+
+**Description:** After the message is received and digested, this function is used to map that message to the desired method.
 </p>
 
 
@@ -78,7 +82,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function defineApi(name, implementation)
+### **Function defineApi(name, implementation)**
 
 **Description:** Selects a function that will represent the implementation for a certain API.
 
@@ -93,14 +97,16 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
