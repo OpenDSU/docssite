@@ -129,9 +129,6 @@ The LIGHT_DB_SERVER_ADDRESS environment variable is used to instruct APIHub inst
 
 1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
-<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
-
 
 | **Current Editors**                 | **Email**                               |
 |:------------------------------------|:----------------------------------------|
