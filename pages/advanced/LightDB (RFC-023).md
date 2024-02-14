@@ -98,7 +98,7 @@ The LightDB Client is a class equipped with functions that facilitate CRUD opera
 The LightDB enclave is based on a single endpoint that takes CRUD commands for working with records in databases that store records in tables. By default, an embedded database is used (LokiJS), but, following the standard interface, other databases could be used for the actual storage. The endpoint allows a command with a variable number of arguments and, in a way, it could be seen as a remote function call interface.
 </p>
 
-https://github.com/OpenDSU/LokiEnclaveFacade/blob/master/LightDBServer.js
+<a href="https://github.com/OpenDSU/LokiEnclaveFacade/blob/master/LightDBServer.js">https://github.com/OpenDSU/LokiEnclaveFacade/blob/master/LightDBServer.js</a>
 
 ````
 PUT /createDatabase/:dbName
