@@ -65,7 +65,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>ArraySSIs are created from multiple inputs that are easy to remember for the user. In our example, inputs are represented by company identifiers, serial numbers and product identifiers, but they could also be something else like name and telephone number. They may be different, depending on the use case.
 </p>
@@ -83,7 +83,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 |:------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
 | array       | An arraySSI is built using an array of multiple identifiers, such as productID, companyID etc. Example:  ssi:array:domain:encodedArray::v0  |
 
-# 1. Type-specific and control substrings
+# **1. Type-specific and control substrings**
 
 As stated before, the specific string of the ArraySSI corresponds to the array of inputs that passes through a key derivation function. The result of the derivation is used to get the specific string.
 
@@ -91,7 +91,7 @@ As stated before, the specific string of the ArraySSI corresponds to the array o
 |:-------|:-------------------------|:-------------------|
 | array  | encoded(KDF(array))      | none               |
 
-# 2. Specific functions for ArraySSI
+# **2. Specific functions for ArraySSI**
 
 
 (Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
@@ -114,9 +114,9 @@ As stated before, the specific string of the ArraySSI corresponds to the array o
 
 **Returns**
 
-| **Name**                                                                             | **Description**                 |
-|:-------------------------------------------------------------------------------------|:--------------------------------|
-| [constSSI](https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html) object  | A constSSI object is returned.  |
+| **Name**                                                                              | **Description**                 |
+|:--------------------------------------------------------------------------------------|:--------------------------------|
+| [constSSI](https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html) object   | A constSSI object is returned.  |
 
 ## Function arraySSI.getEncryptionKey()
 
@@ -161,7 +161,7 @@ As stated before, the specific string of the ArraySSI corresponds to the array o
 </p>
 
 
-# 3. Common KeySSI functions from KeySSIMixin
+# **3. Common KeySSI functions from KeySSIMixin**
 
 ## Function autoload(identifier)
 
@@ -534,7 +534,7 @@ Description:
 
 **Description**: Contains a message and the error. / The anchor value that was just created.
 
-# 4. Cryptographic algorithms used by ArraySSIs (advanced)
+# **4. Cryptographic algorithms used by ArraySSIs (advanced)**
 
 In this paragraph, we present the algorithms that ArraySSIs use. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the [nodejs crypto](https://www.google.com/url?q=https://nodejs.org/docs/latest-v12.x/api/crypto.html%23crypto_crypto&sa=D&source=editors&ust=1706689753751749&usg=AOvVaw1oBuR4o3EAv5yT5kJpa3TH) library.
 
@@ -567,7 +567,7 @@ In this paragraph, we present the algorithms that ArraySSIs use. These algorithm
 
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                 |
 |:-------------------------------------|:------------------------------------------|
