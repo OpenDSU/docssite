@@ -12,7 +12,7 @@ nav_order: 1
 
 <p style='text-align: justify;'>For more information, please read our RFC Documentation and watch the below videos.</p>
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
