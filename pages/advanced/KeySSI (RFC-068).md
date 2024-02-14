@@ -113,7 +113,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 ## Function createHashLinkSSI(domain, hash, vn, hint)
 
-**Description:** Create a <a href="https://opendsu.com/rfc015">HashLinkSSI</a> object. The HashLinkSSI is used to reference each brick of the DSUs. This should be handled manually by OpenDSU.
+**Description:** Create a <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> object. The HashLinkSSI is used to reference each brick of the DSUs. This should be handled manually by OpenDSU.
 
 
 | Name                  | Type    | Value      | Description                                             |
@@ -241,14 +241,14 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 **Returns**
 
-| Name                                                                                                                                      | Description                                                           |
-|:------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|
-| <a href="https://docs.google.com/document/d/1JP6LS0LnSkICdg8uP7NSOipUz3DTrBwTuRNttzukK_o/edit#heading=h.903pkgpopah5">KeySSI object</a>   | A template keySSI object of the chosen type is created and returned.  |
+| Name                                                                                                                                       | Description                                                           |
+|:-------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|
+| <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI object</a>                                                 | A template keySSI object of the chosen type is created and returned.  |
 
 
 ## Function createTemplateSymmetricalEncryptionSSI(domain, encryptionKey, control, vn, hint, callback)
 
-**Description:** Build a template <a href="https://docs.google.com/document/d/e/2PACX-1vQG4_toy41-z4wudec2WtE03dBwOw5EProlP1ZP4fMt7ClUg3ftPy7Hyf3Q4EkWolkefxkoDTDHJ0H4/pub?embedded=true">SymmetricalEncryptionSSI</a> instance that can be used to encrypt and decrypt the bricks.
+**Description:** Build a template <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI%20(RFC-016).html">SymmetricalEncryptionSSI</a> instance that can be used to encrypt and decrypt the bricks.
 
 | Name                          | Type             | Value     | Description                                                                                                                               |
 |:------------------------------|:-----------------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------|
@@ -272,9 +272,9 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 **Returns**
 
-| Name                                                                                                                                                                                         | Description                                                            |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------|
-| <a href="https://docs.google.com/document/d/e/2PACX-1vQG4_toy41-z4wudec2WtE03dBwOw5EProlP1ZP4fMt7ClUg3ftPy7Hyf3Q4EkWolkefxkoDTDHJ0H4/pub?embedded=true">SymmetricalEncryptionSSI</a>  object | A template SymmetricalEncryptionSSI instance is created and returned.  |
+| Name                                                                                                                                                                                          | Description                                                            |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------|
+| <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI%20(RFC-016).html">SymmetricalEncryptionSSI</a>  object                                                           | A template SymmetricalEncryptionSSI instance is created and returned.  |
 
 
 ## Function createTemplateWalletSSI(domain, arrayWIthCredentials, hint)
@@ -310,7 +310,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                                                                                                           | Description                                                      |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------|
-| <a href="https://docs.google.com/document/d/1JP6LS0LnSkICdg8uP7NSOipUz3DTrBwTuRNttzukK_o/edit#heading=h.903pkgpopah5">KeySSI object</a> object | An instance of the corresponding KeySSI is created and returned. |
+| <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI object</a> object | An instance of the corresponding KeySSI is created and returned. |
 
 
 ## Function createConstSSI(domain, constString, vn, hint)
