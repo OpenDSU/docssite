@@ -5,7 +5,7 @@ parent: OpenDSU Advanced
 nav_order: 5
 ---
 
-# **LightDB (RFC-023)**
+# **LightDB**
 
 {: .no_toc }
 
@@ -36,23 +36,23 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [4. Deployment configurations](#4-deployment-configurations)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>
 
 This RFC provides an in-depth examination of LightDB, a generic storage service tailored for ApiHub that aims to enhance the scalability of ApiHub. This RFC elucidates the core idea behind LightDB, emphasizing the importance of stateless ApiHub components and the adoption of LightDB or disk storage, bolstering the flexibility of traffic routing via load balancers. Although LightDB is not intrinsically designed for scalability, it accommodates CRUD operations, thus serving ApiHub components effectively. This RFC also presents the LightDB Endpoints technical description that dives into the technicalities of the LightDB, underpinned by a singular endpoint allowing  commands. The embedded database, LokiJS, used by the default implementation, can be substituted, adhering to the standard interface, and rendering the endpoint as a remote function call interface. The RFC also offers insights into the deployment strategies of an external LightDB endpoint. By default, ApiHub comes with an internal LightDB component, but from an environment variable, it is possible to direct ApiHub instances towards an external endpoint. This RFC endeavors to equip developers and architects with comprehensive knowledge of LightDB's integration with OpenDSU and ApiHub.
 </p>
 
-# 1. LighDB Concept and Purpose
+# **1. LighDB Concept and Purpose**
 
 <p style='text-align: justify;'>
 
 LightDB serves as a generic storage mechanism for ApiHub components, enabling the scalability of ApiHub. It is recommended that ApiHub components avoid state storage in memory (between calls) and instead utilize LightDB or a disk storage (which can be sourced from a network file system). This configuration facilitates load balancers or load distribution systems to freely direct traffic to any ApiHub instance. While LightDB itself isn't designed to inherently scale, ApiHub components have the option to employ other LightDB implementations that provide scalable operations.
 </p>
 
-# 2. LigtDB Client
+# **2. LigtDB Client**
 
-https://github.com/OpenDSU/OpenDSU-core/blob/master/enclave/impl/LightDBEnclaveClient.js 
+<a href="https://github.com/OpenDSU/OpenDSU-core/blob/master/enclave/impl/LightDBEnclaveClient.js">https://github.com/OpenDSU/OpenDSU-core/blob/master/enclave/impl/LightDBEnclaveClient.js </a>
 
 <p style='text-align: justify;'>
 
@@ -91,14 +91,14 @@ The LightDB Client is a class equipped with functions that facilitate CRUD opera
 
 **Description:** Delete a record from the queue.
 
-# 3. LighDB Endpoints
+# **3. LighDB Endpoints**
 
 <p style='text-align: justify;'>
 
 The LightDB enclave is based on a single endpoint that takes CRUD commands for working with records in databases that store records in tables. By default, an embedded database is used (LokiJS), but, following the standard interface, other databases could be used for the actual storage. The endpoint allows a command with a variable number of arguments and, in a way, it could be seen as a remote function call interface.
 </p>
 
-https://github.com/OpenDSU/LokiEnclaveFacade/blob/master/LightDBServer.js
+<a href="https://github.com/OpenDSU/LokiEnclaveFacade/blob/master/LightDBServer.js">https://github.com/OpenDSU/LokiEnclaveFacade/blob/master/LightDBServer.js</a>
 
 ````
 PUT /createDatabase/:dbName
@@ -118,7 +118,7 @@ command.params
 The first element in params is a DID, used to verify the signature from body.signature. The signature is signing the command object (commandName, params).
 </p>
 
-# 4. Deployment configurations
+# **4. Deployment configurations**
 
 <p style='text-align: justify;'>
 
@@ -127,11 +127,7 @@ The LIGHT_DB_SERVER_ADDRESS environment variable is used to instruct APIHub inst
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
-
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
 
 | **Current Editors**                 | **Email**                               |
