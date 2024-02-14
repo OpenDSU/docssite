@@ -52,7 +52,7 @@ LightDB serves as a generic storage mechanism for ApiHub components, enabling th
 
 # **2. LigtDB Client**
 
-https://github.com/OpenDSU/OpenDSU-core/blob/master/enclave/impl/LightDBEnclaveClient.js 
+<a href="https://github.com/OpenDSU/OpenDSU-core/blob/master/enclave/impl/LightDBEnclaveClient.js">https://github.com/OpenDSU/OpenDSU-core/blob/master/enclave/impl/LightDBEnclaveClient.js </a>
 
 <p style='text-align: justify;'>
 
