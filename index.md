@@ -37,8 +37,8 @@ nav_order: 1
     box-sizing: border-box; /* Include padding and border in the width calculation */
   }
   .card iframe {
-    width: 100%; /* Set the iframe width to 100% */
-    height: 150px; /* Set a fixed height for the iframe */
+    width: 100%;
+    height: 180px;
     border: none;
     border-radius: 8px;
   }
@@ -54,12 +54,12 @@ nav_order: 1
 <div class="row">
   <div class="card">
     <iframe src="https://www.youtube.com/embed/n6YiWk8t3W0?si=6l1jbqU3aq2Gf_IN" frameborder="0" allowfullscreen></iframe>
-    <div class="title">OpenDSU Pitch in 3 minutes</div>
+    <div class="title">OpenDSU Pitch in 3 minutes <br> </div>
   </div>
 
   <div class="card">
     <iframe src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" frameborder="0" allowfullscreen></iframe>
-    <div class="title">Insights about Enterprise Blockchain Solutions (Adoption & Properties)</div>
+    <div class="title">Insights about Enteprise Blockchain Solutions (Adoption & Properites)</div>
   </div>
 
   <div class="card">
@@ -87,7 +87,6 @@ nav_order: 1
 
 </body>
 </html>
-
 
 
 <br>
