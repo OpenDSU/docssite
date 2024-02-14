@@ -37,7 +37,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC presents the vision and the technical details that explain BDNS concepts. BDNS concept is used by the OpenDSU KeySSI as explained in <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI (RFC-002)</a>. For developers, the existing support for BDNS is documented in <a href="https://www.opendsu.org/pages/contributors/BDNS%20(RFC-067).html">BDNS (RFC-067)</a> and <a href="https://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">KeySSI (RFC-068)</a>.
 </p>
@@ -60,7 +60,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>While, theoretically, the current level of BDNS functionality could be simulated using DNS, BDNS offers a simpler way of handling the change of the DNS root servers, and it allows faster experimentation for future extensions such as blockchain-to-blockchain anchoring by allowing new types of records.
 </p>
 
-# 1. Hierarchical Blockchains and Naming Schema
+
+# **1. Hierarchical Blockchains and Naming Schema**
 
 <p style='text-align: justify;'>OpenDSU proposes an approach to improve the concept of heterogeneous blockchains in the enterprise area (applications developed around the idea of digital wallets). OpenDSU does not intend to offer a solution for cryptocurrency-centric applications that require a global consensus or atomic transactions between multiple blockchains.
 </p>
@@ -106,7 +107,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Anchoring the ledgers into a parent ledger allows better security and auditability for the enterprise use cases and has a positive effect on simplifying the governance of complex blockchain platforms comprising numerous use cases and numerous actors with conflicting interests. There are multiple ways of implementing the anchoring between ledgers. However, OpenDSU does not currently offer implementation and only focuses on anchoring the DSUs in the ledgers. BDNS offers just a naming service for DSUs. Future efforts are required to generalize this approach for anchoring between ledgers.
 </p>
 
-# 2. Blockchain Domain Name System (BDNS) Concepts Summary
+# **2. Blockchain Domain Name System (BDNS) Concepts Summary**
 
 
 | **Concept**       | **Description**                                                                                                                                      |
@@ -122,7 +123,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 3. BDNS.hosts file (BDNS Root Info)
+# **3.BDNS.hosts file (BDNS Root Info)**
 
 <p style='text-align: justify;'>Creating a system that can replace DNS would be complicated, and the maturation of such a system could take several years. In this sense, it is perfectly normal for OpenDSU-based systems to use a very simplified version that resembles the idea of host files from Unix systems.
 </p>
@@ -140,8 +141,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
      “https://example2.com”,
    ],
    "anchoringServices": [
-     “https://example1.com”,
-     “https://example2.com”,
+     “ https://example1.com”,
+     “ https://example2.com”,
    ]
  },
 "demo1.demoroot": {
@@ -184,7 +185,7 @@ The below table describes the existing record types for BDNS domains.
 
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 |**Current Editors**                  |**Email**                                 |
 |:------------------------------------|:-----------------------------------------|
