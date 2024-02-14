@@ -16,8 +16,12 @@ A period when the community can review the RFC (comment Docs).
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
+
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
+
 
 <!-- TOC -->
 * [Abstract](#abstract-)
@@ -49,13 +53,18 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 #  Abstract 
 
-SeedSSI is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
+<p style='text-align: justify;'><b>SeedSSI</b> is the highest key of the SeedSSI family. Seed identifiers are used to create and identify DSUs that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
+</p>
 
-SReadSSI is the first key that can be derived from the SeedSSI and shared. It grants “read” access to the DSU created with the SeedSSI that it was derived from.
+<p style='text-align: justify;'><b>SReadSSI </b>is the first key that can be derived from the SeedSSI and shared. It grants “read” access to the DSU created with the SeedSSI that it was derived from.
+</p>
 
-SzaSSI is then derived from the sReadSSI (or two times from the SeedSSI). It provides no access to the DSU but can serve as proof that the DSU (and the seedSSI it was generated from) exists and was anchored (blockchain-based timestamping).
+<p style='text-align: justify;'><b>SzaSSI </b>is then derived from the sReadSSI (or two times from the SeedSSI). It provides no access to the DSU but can serve as proof that the DSU (and the seedSSI it was generated from) exists and was anchored (blockchain-based timestamping).
+</p>
 
-The SeedSSI family is currently the easiest and most used way to generate and interact with [DSU Objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html).
+
+<p style='text-align: justify;'>The SeedSSI family is currently the easiest and most used way to generate and interact with [DSU Objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html).
+</p>
 
 <div style="text-align:center;">
 
@@ -66,20 +75,20 @@ The SeedSSI family is currently the easiest and most used way to generate and in
 <p><b>Figures 1 and 2: SeedSSI family derivation(1) and relationship with DSU(2)</b></p>
 </div>
 
-# 1. SeedSSI’s family subtypes with examples
+# **1. SeedSSI’s family subtypes with examples**
 
 Here is a summary of the different subtypes present in the SeedSSI family, from the highest to the lowest key. The subtype is accompanied by a short description and an example of the key in the OpenDSU’s ssi format.
 
 | **SubType** | **Description**                                                                                                                                                                                                                                    |
 |:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| seed        | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU). Example of SeedSSI: _ssi:seed:domain:private_key_base64::v0_                                                |
+| seed        | Owning a SeedSSI provides total control over the generated DSU and allows users to anchor new versions of the DSU (to modify the DSU).  <br/> Example of SeedSSI:  <br/> _<i>ssi:seed:domain:private_key_base64::v0_ </i>                                 |
 | sread       | DSUs generated with SeedSSIs are encrypted using the derived sReadSSI key. Owning a sReadSSI provides read access by allowing the owner to decrypt the anchored DSU. Example of SReadSSI: _ssi:sread:domain:hash_private_key_base64:public_key:v0_ |
-| sza         | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions. Example of SzaSSI: _ssi:sza:domain::public_key:v0_                                                                      |
+| sza         | Owning a SzaSSI provides no access. Having a szaSSI indicates that a KeySSI exists and has a specified number of versions.  <br/> Example of SzaSSI: <br/><i>_ssi:sza:domain::public_key:v0_</i>                                                          |
 
 <p style="text-align:center"> <b>Table: SeedSSI’s family subtypes </b></p>
 
 
-# 2. Type-specific and control substrings
+# **2. Type-specific and control substrings**
 
 The identifier contains the subtype and the domain. This is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU it is resolved to. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 
@@ -91,7 +100,7 @@ The identifier contains the subtype and the domain. This is very important for f
 
 
 
-# 3. Specific functions for SeedSSI’s family subtypes
+# **3. Specific functions for SeedSSI’s family subtypes**
 
 (Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
 
@@ -120,7 +129,8 @@ The identifier contains the subtype and the domain. This is very important for f
 
 ### Function seedSSI.derive() 
 
-**Description**: Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
+<p style='text-align: justify;'><b>Description:</b> Derive your seedSSI and return a sReadSSI. In the derivation process, the dlDomain is conserved. The private key of the seedSSI is hashed (sha256) to create the type-specific substring, and the public key of the seedSSI is hashed (sha256) to create the control substring. Vn and Hint are conserved.
+</p>
 
 **Returns**
 
@@ -199,7 +209,7 @@ The identifier contains the subtype and the domain. This is very important for f
 
 Callback parameters
 
-  | **Name**  | **Type**     | **Response example** |
+| **Name**  | **Type**     | **Response example** |
 |:----------|:-------------|:---------------------|
 | err       | Error object |                      |
 | signature |              |                      |
@@ -208,11 +218,10 @@ Callback parameters
 
 **Returns**
 
-| **Name**  | **Description**                                 |
-|:----------|:------------------------------------------------|
-| keyPair   | A pair with the private key and the public key. 
+| **Name**   | **Description**                                 |
+|:-----------|:------------------------------------------------|
+| keyPair    | A pair with the private key and the public key. |
 
-                 
 ### Function seedSSI.getTypeName()
 
 **Description**: 
@@ -230,12 +239,12 @@ Callback parameters
 
 **Description**: Initialize the sReadSSI with desired parameters.
 
-| **Name**                   | **Type**      | **Value**    | **Description**                                                                  |
-|:-----------------------|:----------|:---------|:-----------------------------------------------------------------------------|
-| dlDomain               | String    | *required| The blockchain domain wanted to be used.                                     |
-| Vn (optional)          | String    |          | The version number of the SeedSSI you want to use. Default value: “v0”.      |
-| Hint (optional)        | String    |          | Optional information for the keySSI resolver.Default value: undefined.       |
-| callback               | function  | *required|                                                                              |
+| **Name**                | **Type**   | **Value** | **Description**                                                          |
+|:------------------------|:-----------|:----------|:-------------------------------------------------------------------------|
+| dlDomain                | String     | *required | The blockchain domain wanted to be used.                                 |
+| Vn (optional)           | String     |           | The version number of the SeedSSI you want to use. Default value: “v0”.  |
+| Hint (optional)         | String     |           | Optional information for the keySSI resolver.Default value: undefined.   |
+| callback                | function   | *required |                                                                          |
 
 Callback parameters
 
@@ -252,9 +261,9 @@ Callback parameters
 
 **Returns**
 
-| **Name**          | **Description**                  |
-|:--------------|:-----------------------------|
-| szaSSI object | A szaSSI object is returned. 
+| **Name**         | **Description**               |
+|:-----------------|:------------------------------|
+| szaSSI object    | A szaSSI object is returned.  |
 
 
 ### Function sReadSSI.getEncryptionKey()
@@ -338,7 +347,7 @@ Callback parameters
 
 
 
-# 4. Cryptographic algorithms used by SeedSSIs (advanced)
+# **4. Cryptographic algorithms used by SeedSSIs (advanced)**
 
 In this chapter, we present the algorithms that the SeedSSI and its derivations use to perform cryptographic operations. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the [NodeJS crypto](https://nodejs.org/docs/latest-v12.x/api/crypto.html#crypto_crypto) library.
 
@@ -360,7 +369,23 @@ In this chapter, we present the algorithms that the SeedSSI and its derivations 
 
 
 
-# Annex 1. Contributors
+
+
+**Contributors**
+
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
+
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
+
+
+
+
+
+
+# **Annex 1. Contributors**
 
 |**Current Editors**                  | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
