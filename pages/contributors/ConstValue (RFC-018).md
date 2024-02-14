@@ -6,7 +6,7 @@ nav_order: 6
 ---
 
 
-# **ConstValue**
+# **ConstValue (RFC-018)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).

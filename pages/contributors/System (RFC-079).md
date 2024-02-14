@@ -6,7 +6,7 @@ nav_order: 20
 ---
 
 
-# **System**
+# **System (RFC-079)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
@@ -30,20 +30,21 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [Function getBaseURL()](#function-getbaseurl)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This API space allows the user to configure environment variables of the OpenDSU system.</p>
 
-# 1. System functions
+# **1. System functions**
 
 ## Function getFS()
 
-<p style='text-align: justify;'><b>Description</b>: This function is used to load the File System (fs) module.
+<p style='text-align: justify;'><b>Description:</b> This function is used to load the File System (<a href="https://nodejs.org/api/fs.html#fs_file_system">fs</a>) module.
 </p>
+
 
 ## Function getPath()
 
-<p style='text-align: justify;'><b>Description</b>: This function is used to load the path module.
+<p style='text-align: justify;'><b>Description:</b> This function is used to load the <a href="https://nodejs.org/api/path.html">path</a> module.
 </p>
 
 ## Function getEnvironmentVariable(name)
@@ -75,18 +76,21 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'><b>Description</b>: This function is used to load the base URL module.</p>
 
 
+
+
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
