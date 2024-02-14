@@ -67,7 +67,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | 500             | Invalid KeySSI.                                                                                                                                                                                                   |
 
 
-#  2. Streaming Wallet Content
+#  **2. Streaming Wallet Content**
 
 <p style='text-align: justify;'>Streaming the content of the "requestedPath" from the wallet identified with provided "keySSI".</p>
 
