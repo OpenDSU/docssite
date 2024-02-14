@@ -60,19 +60,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ### **Function getErrorsMap**
 
-<p style='text-align: justify;'>
-
-<b>Description:<b/> Returns an error map for different types of errors that might occur while receiving messages or while mapping them.
-</p>
+**Description:** Returns an error map for different types of errors that might occur while receiving messages or while mapping them.
 
 
 
 ### **Function defineMapping(matchFunction, mappingFunction)**
 
-<p style='text-align: justify;'>
-
-<b>Description:</b> After the message is received and digested, this function is used to map that message to the desired method.
-</p>
+**Description:** After the message is received and digested, this function is used to map that message to the desired method.
 
 
 | **Name**        | **Type** | **Value** | **Description**                                                                                                                   |
