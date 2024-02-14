@@ -6,7 +6,7 @@ nav_order: 16
 ---
 
 
-# **Message Queues (RFC-073)**
+# **Message Queues**
 {: .no_toc }
 
 {: .feedback }
@@ -31,15 +31,15 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The Message Queues “MQ” API space offers a set of portable functions for sending and receiving messages towards message queues identified by KeySSIs.
 </p>
 
 
-# 1. Message queues functions in OpenDSU
+# **1. Message queues functions in OpenDSU**
 
-## Function getMQHandlerForDID(didDocument, domain, timeout)
+## **Function getMQHandlerForDID(didDocument, domain, timeout)**
 
 <p style='text-align: justify;'><b>Description:</b> Get an observable object that receives messages from the fromKeySSI if the asKeySSI has the rights to read those messages.
 </p>
@@ -60,41 +60,45 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 2. APIHUB Endpoints
+# **2. APIHUB Endpoints**
 
 **MappingEngine**
 
+```js
     put /mappingEngine/domain/  < messages ( array of messages)
+```
 
 **Notifications**
 
+```js
     put /notification/send/domain/anchorID   < message signed by corresponding keyssi
 
     get /notification/get/domain/anchorID  > notification
-
+```
 
 **Server settings:** 
 
+```js
     notification_expiration: 60 seconds
     notification_client_timeout : 60 (60 seconds)
     notification_maxSize: 1 (1k)
     notification_queue_length: 10
-
+```
 
 **MQ**
 
+```js
     put /mq/domain/put/hashDID/  < message
     get /mq/domain/nonce > nonce
     get /mq/domain/get/hashDID/nonce/signature_of_did  > {messageID, message}
     get /mq/domain/take/hashDID/nonce/signature_of_did  > message
     delete /mq/domain/delete/hashDID/messageID/signature_of_did
-
+```
 
 
 Server settings: 
 
-
-
+```js
     mq_client_timeout: 60 (60 seconds)
     mq_nonce_from_smartcontract:false
     mq_nonce_from_expiring_uuid:true
@@ -102,33 +106,37 @@ Server settings:
     mq_throttling: 2  (2  messages/second)
     mq_allow_ unregistered_did: false
     mq_maxSize: 10 (10k)
-
+```
 
 
 **Hosting**
 
+```js
     put /hosting/domain/mq/allow/hashDID/validatorSignature
     put /hosting/domain/mq/quota/hashDID/validatorSignature  < number of messages
     put /hosting/domain/mq/throttling/hashDID/validatorSignature  < number of messages/second
     put /hosting/domain/notifications/allow/anchorID/validatorSignature
-
+```
 
 **Configurations files**
 
+```js
     domain: validatorDID
-
+```
 
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
