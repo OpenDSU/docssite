@@ -4,7 +4,7 @@ layout: home
 parent: OpenDSU Contributors
 nav_order: 19
 ---
-# **Config**
+# **Config (RFC-078)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
