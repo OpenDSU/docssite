@@ -5,7 +5,7 @@ parent: OpenDSU Contributors
 nav_order: 13
 ---
 
-# **Anchoring (RFC-069)**
+# **Anchoring**
 {: .no_toc }
 
 {: .feedback }
@@ -41,7 +41,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 
 <p style='text-align: justify;'>This API space offers a set of portable functions for DSU anchoring. The agent should handle these operations, so it will probably not have to use these functions. More information about OpenDSU Anchoring can be found in<a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html"> Anchoring (RFC-005)</a>.
@@ -49,7 +49,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 1. Anchoring functions
+# **1. Anchoring functions**
 
 ```js
 
@@ -93,7 +93,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
    
 
 
-## Function createAnchor(dsuKeySSI, callback)
+## **Function createAnchor(dsuKeySSI, callback)**
 
 **Description:** Creates a new anchor with a certain version of the DSU identified by the dsuKeySSI parameter.
 
@@ -115,7 +115,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 
 
-## Function createNFT(nftKeySSI, callback)
+## **Function createNFT(nftKeySSI, callback)**
 
 **Description:** Creates a new anchor with a certain NFT identified by the nftKeySSI parameter.
 
@@ -137,7 +137,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 
 
-## Function appendToAnchor(dsuKeySSI, newShlSSI, previousShlSSI, zkpValue, callback)
+## **Function appendToAnchor(dsuKeySSI, newShlSSI, previousShlSSI, zkpValue, callback)**
 
 **Description:** Appends a new version of the DSU to an existing anchor.
 
@@ -163,7 +163,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 
 
-## Function getAllVersions(keySSI, authToken, callback)
+## **Function getAllVersions(keySSI, authToken, callback)**
 
 <p style='text-align: justify;'><b>Description:</b> Get a list of versions of the DSU identified by the provided KeySSI. Those versions are represented as signed HashLinkSSIs. 
 </p>
@@ -171,7 +171,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 | **Name**             | **Type**                | **Value** | **Description**                                                                                   |
 |:---------------------|:------------------------|:----------|:--------------------------------------------------------------------------------------------------|
-| KeySSI               | KeySSI object           | *required | The KeySSI associated with the DSU from which you want to get the information about its versions. |
+| KeySSI               | KeySSI object           |           | The KeySSI associated with the DSU from which you want to get the information about its versions. |
 | authToken (optional) | JWT Token (Json format) |           | A JWT authentication token.                                                                       |
 | callback             | function                | *required |                                                                                                   |
 
@@ -190,7 +190,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 
 
-## Function getLastVersion(keySSI, authToken, callback)
+## **Function getLastVersion(keySSI, authToken, callback)**
 
 **Description:**
 
@@ -214,7 +214,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 </p>
 
 
-## Function getAnchoringBehaviour(persistenceStrategy)
+## **Function getAnchoringBehaviour(persistenceStrategy)**
 
 **Description:** Creates a new AnchoringAbstractBehaviour object.
 
@@ -225,9 +225,9 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 
 
-# 2. AnchoringX Functions, exposed by RemotePersistence
+# **2. AnchoringX Functions, exposed by RemotePersistence**
 
-## Function createAnchor(capableOfSigningKeySSI, anchorValue, callback)
+## **Function createAnchor(capableOfSigningKeySSI, anchorValue, callback)**
 
 **Description:**
 
@@ -249,7 +249,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 **Description:** Contains a message and the error.
 
 
-## Function appendAnchor(capableOfSigningKeySSI, anchorValue, callback)
+## **Function appendAnchor(capableOfSigningKeySSI, anchorValue, callback)**
 
 **Description:**
 
@@ -271,7 +271,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 
 
-## Function getAllVersions(keySSI, callback)
+## **Function getAllVersions(keySSI, callback)**
 
 <p style='text-align: justify;'><b>Description:</b> Get a list of versions of the DSU identified by the provided KeySSI. Those versions are represented as signed HashLinkSSIs. 
 </p>
@@ -298,7 +298,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 
 
-## Function getLastVersion(keySSI, callback)
+## **Function getLastVersion(keySSI, callback)**
 
 **Description:**
 
@@ -322,7 +322,7 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 
 
 
-## Function createOrUpdateMultipleAnchors(anchors, callback)
+## **Function createOrUpdateMultipleAnchors(anchors, callback)**
 
 **Description:**
 
@@ -343,14 +343,16 @@ anchoring.addVersion(seedSSI, newHLSSI, lastHLSSI, 'zkpValue', (err, status) => 
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
