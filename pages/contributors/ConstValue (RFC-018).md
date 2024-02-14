@@ -5,7 +5,8 @@ parent: OpenDSU Contributors
 nav_order: 6
 ---
 
-# **ConstValue**
+
+# **ConstValue (RFC-018)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
@@ -27,7 +28,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# 1. Specifications
+# **1. Specifications**
 
 <p style='text-align: justify;'>With the creation of ConstValueSSI, OpenDSU tries to create a deterministic BrickMap for ConstDSUs. Typically, BrickMaps get encrypted using the encryption key of an external KeySSI, such as the SReadSSI or ConstSSI. The encryption is deterministic. However, if someone adds files or mounts DSUs in the ConstDSU, new bricks are required, and they will be encrypted with new random keys. ConstValueSSIs are useful in some corner cases, like when we want to be able to restore data from lost backups. The BrickMap for a ConstValueDSU is stored in the blockchain, therefore it cannot be lost.
 </p>
@@ -72,46 +73,46 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
 
-| **Current Editors**                  | **Email**                                |
-|:-------------------------------------|:-----------------------------------------|
-| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
-| Cosmin Ursache                       | cosmin@axiologic.net                     |
-| Teodor Lupu                          | teodor@axiologic.net                     |
-| Andi-Gabriel Țan                     | andi@axiologic.net                       |
-| **Contributors Axiologic Research**  | **Email**                                |
-| Adrian Ganga                         | adrian@axiologic.net                     |
-| Andi-Gabriel Țan                     | andi@axiologic.net                       |
-| Cosmin Ursache                       | cosmin@axiologic.net                     |
-| Daniel Sava                          | daniel@axiologic.net                     |
-| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
-| Valentin Gérard                      | valentin@axiologic.net                   |
-| **PrivateSky Contributors**          | **Email**                                |
-| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
-| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
-| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
-| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
-| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
-| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
-| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
-| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
-| **PharmaLedger Contributors**        | **Email**                                |
-| Ana Balan                            | bam@rms.ro (RMS)                         |
-| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
-| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
-| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+
+# **Annex 1. Contributors**
+
+| **Current Editors**                 | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net             |
+| Daniel Sava                         | daniel@axiologic.net                     |
+| **Contributors Axiologic Research** | **Email**                                |
+| Adrian Ganga                        | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| Cosmin Ursache                      | cosmin@axiologic.net                     |
+| Daniel Sava                         | daniel@axiologic.net                     |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
+| Valentin Gérard                     | valentin@axiologic.net                   |
+| **PrivateSky Contributors**         | **Email**                                |
+| Alex Sofronie                       | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                      | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                         | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                       | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                      | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                    | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                      | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                         | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**       | **Email**                                |
+| Ana Balan                           | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                     | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                      | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                         |
 
 
 

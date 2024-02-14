@@ -6,7 +6,7 @@ nav_order: 7
 ---
 
 
-# **Self-Validating Data**
+# **Self-Validating Data (RFC-036)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
@@ -29,12 +29,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Overview
+# **Overview**
 
 <p style='text-align: justify;'>In this document, we introduce the concept and vision of Self Validating Data (SVD), focusing primarily on the applications that could be developed using this technology. Our research so far consists of elements of cryptography, smart contracts, blockchain and executable choreographies.
 </p>
 
-# 1. Introduction
+# **1. Introduction**
 
 <p style='text-align: justify;'>In this RFC, we present usable protocols in decentralized communication and collaboration. Some of the applications developed will be the following: email replacement systems, personal digital assistants, business systems based on executable choreographies, multi-advice book publishing platforms, digital encyclopedias by reinventing the peer-review system, and last but not least, improving the concept of the digital forum.
 </p>
@@ -81,7 +81,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </div>
   
 
-# 2. Technical presentation of SVD
+# **2. Technical presentation of SVD**
 
 <p style='text-align: justify;'>Any SVD should be seen as a data structure shared with multiple untrusting actors. These actors will validate the correctness of the data whenever they use or update the data structure. To enable this validation, the data structures should be represented in a way that reveals the whole change history with provenance metadata and associated code that helps verify the business requirements associated with data. This code can be grouped into “primitive operations” and “state operations”. Primitive operations offer methods of verifying signatures (and help programmers work with cryptography) and interact with the current execution environment of the SVD. The state operations offer the SVD user methods to read and manipulate the current state.
 </p>
@@ -169,18 +169,19 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|

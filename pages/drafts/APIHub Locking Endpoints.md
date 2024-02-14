@@ -6,7 +6,7 @@ nav_order: 3
 ---
 
 
-# **APIHub Locking Endpoints (RFC-104)**
+# **APIHub Locking Endpoints**
 
 {: .no_toc }
 
@@ -29,14 +29,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>
 
 OpenDSU wallets in enterprise use cases require a synchronization mechanism in order to avoid unnecessary anchoring conflicts that could impact the user experience. This RFC describes some simple APIs that can solve this issue.
 </p>
 
-# APIHub Locking Component
+# **APIHub Locking Component**
 
 | Status Code | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |:------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,7 +44,7 @@ OpenDSU wallets in enterprise use cases require a synchronization mechanism in o
 | /unlock     | **Query Params:**  <br>  secret: is an arbitrary string  <br> id: is any string <br> <br> **HTTP  Return Code:** 200 in if the operation succeeded; <br>  404 if failed to release the lock because doesn’t exist; <br>  500 if the lock cannot be released because of a server error; <br> <br> **Example:** <br> The following request will release the lock on object “123” <br>  /unlock?key=secret&id=123                                                                                                                                                              |
 
 
-# Lock Implementation
+# **Lock Implementation**
 
 <p style='text-align: justify;'>
 
@@ -54,13 +54,15 @@ A lock is a file containing the “lock” file in a folder in /apihub-root/exte
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-# Annex 1. Contributors
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
+
+# **Annex 1. Contributors**
 
 
 | **Current Editors**                 | **Email**                               |

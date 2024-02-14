@@ -6,7 +6,7 @@ nav_order: 12
 ---
 
 
-# **HTTP**
+# **HTTP (RFC-071)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
@@ -32,14 +32,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The “HTTP” API space offers a set of portable functions to manage HTTP requests. The functions of this API are also adapted to the environment where it is used. The environment can be a browser, a service worker, or a node application.
 </p>
 
-# 1. HTTP functions
+# **1. HTTP functions**
 
-````
+```js
 //Load openDSU environment
 
 require("../privatesky/psknode/bundles/openDSU");
@@ -55,7 +55,9 @@ const keyssispace = opendsu.loadApi("keyssi");
 //Load http library
 
 const http = opendsu.loadApi("http");
-````
+
+```
+
 <p style="text-align:center"> <b>How to use</b></p>
 
 
@@ -166,18 +168,21 @@ const http = opendsu.loadApi("http");
 </p>
 
 
+
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|

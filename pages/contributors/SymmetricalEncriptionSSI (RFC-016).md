@@ -34,12 +34,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>SymmetricalEncryptionSSIs are used to encrypt the data bricks from the <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storage</a>. Each brick is encrypted using a different SymmetricalEncryptionSSI, in order to make it very difficult for attackers to steal data from <a href="https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html">DSUs</a>. Special bricks called BrickMaps keep track of each <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">SymmetricalEncryptionSSI</a> along with its associated HashLinkSSIs. They are used to reconstruct DSUs in the client execution environment.
 </p>
 
-# 1. SymmetricalEncryptionSSI subtype description with example
+# **1. SymmetricalEncryptionSSI subtype description with example**
 
 <p style='text-align: justify;'>It is not possible to derive the SymmetricalEncryptionSSI. There is only one type: ‘se’.</p>
 
@@ -48,20 +48,23 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | se        | SymmetricalEncryptionSSI is used as a symmetric encryption key to encrypt data from the DSU to the Brick storage when anchoring it to the blockchain. Moreover, it is used to decrypt the bricks from the Brick Storage when reconstructing the DSU in your local execution environment. <br/> Example:  <br/> ssi:se:domain:encryptionKey::v0 |
 
 
-# 2. Type-specific and control substring
+# **2. Type-specific and control substring**
 
 <p style='text-align: justify;'>The identifier contains the subtype and the domain. That is very important in order to find the correct brick storage and anchoring services associated with the keySSI and the DSU. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 </p>
 
-| **Type**  | **Type Specific substring**                                                                                                                        | **Control substring**  |
-|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------|
-| se        | An encryption key (by default it is a symmetric key generated with  [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm).   | empty                  |
+| **Type**  | **Type Specific substring**                                                                                                                                    | **Control substring**  |
+|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------|
+| se        | An encryption key (by default it is a symmetric key generated with  <a href="https://en.wikipedia.org/wiki/Galois/Counter_Mode">aes-256-gcm</a>  algorithm).   | empty                  |
 
 
-# 3. SymmetricalEncryptionSSI specific functions
+# **3. SymmetricalEncryptionSSI specific functions**
 
-## Function symKey.getEncryptionKey()
-<p style='text-align: justify;'><b>Description</b>: Get the encryption key associated with the KeySSI. By default, the encryption key is a symmetric key generated with the aes-256-gcm algorithm (equal to its specific string).
+## **Function symKey.getEncryptionKey()**
+
+<p style='text-align: justify;'>
+
+<b>Description</b>: Get the encryption key associated with the KeySSI. By default, the encryption key is a symmetric key generated with the <a href="https://en.wikipedia.org/wiki/Galois/Counter_Mode">aes-256-gcm</a> algorithm (equal to its specific string).
 </p>
 
 **Returns** 
@@ -71,7 +74,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | String   | The encryption key. |
 
 
-## Function symKey.load(subtype, dlDomain, encryptionKey, control, vn, hint)
+## **Function symKey.load(subtype, dlDomain, encryptionKey, control, vn, hint)**
 
 <p style='text-align: justify;'><b>Description</b>: Load the SymmetricalEncryptionSSI with your own parameters. If the encryptionKey is empty, it will generate a new one.
 </p>
@@ -96,7 +99,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function symKey.getTypeName()
+## **Function symKey.getTypeName()**
 **Description**:
 **Returns** 
 
@@ -106,19 +109,19 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | SSITypes.SYMMETRICAL_ENCRYPTION_SSI | A string representing the type of the SSI.                   |
 
 
-
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
