@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 
-# **HashLinkSSI, SignedHashLinkSSI**
+# **HashLinkSSI, SignedHashLinkSSI (RFC-015)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
@@ -32,7 +32,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+
+# **Abstract**
 <p style='text-align: justify;'>Bricks’ content is encrypted using the encryption key of an external secret KeySSI, such as the SReadSSI. The hash that is returned is used to create a HashLinkSSI. The owners of the DSU (i.e. owning a SeedSSI) or other users that got access to a derived SReadSSI can find and decrypt the bricks.
 </p>
 
@@ -42,14 +43,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </div>
 
 
-# 1. HashLinkSSI description with examples
+# **1. HashLinkSSI description with examples**
 
-| **Type** | **Purpose and description**                                                                                                        |
-|:---------|:-----------------------------------------------------------------------------------------------------------------------------------|
-| hl       | Owning a HashLinkSSI provides no access unless accompanied by an “external secret”. <br/>  Example: <br/> ssi:hl:domain:hash::v0.  |
+| **Type** | **Purpose and description**                                                                                                              |
+|:---------|:-----------------------------------------------------------------------------------------------------------------------------------------|
+| hl       | Owning a HashLinkSSI provides no access unless accompanied by an “external secret”. <br/>  Example: <br/> <i>ssi:hl:domain:hash::v0</i>. |
 
 
-# 2. Specific parameters for HashLinkSSI subtypes
+# **2. Specific parameters for HashLinkSSI subtypes**
 
 | **Type** | **Type Specific Identifier**  | **Hash function** | **Control Key** | **Encryption**           | **Hint description**                 |
 |:---------|:------------------------------|:------------------|:----------------|:-------------------------|:-------------------------------------|
@@ -58,7 +59,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style="text-align:center"> <b>Table 1: HashLinkSSIs algorithms</b></p>
 
 
-# 3. HashLinkSSI family-specific functions
+# **3. HashLinkSSI family-specific functions**
 
 ## Function HashLinkSSI.initialize(dlDomain, array, vn, hint)
 **Description**: Initialize a WalletSSI with your own parameters.
@@ -94,18 +95,20 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
