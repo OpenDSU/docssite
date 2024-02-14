@@ -14,6 +14,7 @@ nav_order: 1
 
 
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -23,7 +24,7 @@ nav_order: 1
   .row {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* Make items stretch vertically */
     flex-wrap: wrap;
     margin: 0 -10px;
   }
@@ -35,6 +36,8 @@ nav_order: 1
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box; /* Include padding and border in the width calculation */
+    display: flex;
+    flex-direction: column;
   }
   .card iframe {
     width: 100%;
@@ -46,6 +49,7 @@ nav_order: 1
     font-size: 18px;
     font-weight: bold;
     margin-top: 8px;
+    text-align: center; /* Center the title */
   }
 </style>
 </head>
@@ -54,12 +58,12 @@ nav_order: 1
 <div class="row">
   <div class="card">
     <iframe src="https://www.youtube.com/embed/n6YiWk8t3W0?si=6l1jbqU3aq2Gf_IN" frameborder="0" allowfullscreen></iframe>
-    <div class="title" style="text-align: center;">OpenDSU Pitch in 3 minutes <br> </div>
-    </div>
+    <div class="title">OpenDSU Pitch in 3 minutes</div>
+  </div>
 
   <div class="card">
     <iframe src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" frameborder="0" allowfullscreen></iframe>
-    <div class="title">Insights about Enteprise Blockchain Solutions (Adoption & Properites)</div>
+    <div class="title">Insights about Enterprise Blockchain Solutions (Adoption & Properties)</div>
   </div>
 
   <div class="card">
@@ -87,6 +91,7 @@ nav_order: 1
 
 </body>
 </html>
+
 
 
 <br>
