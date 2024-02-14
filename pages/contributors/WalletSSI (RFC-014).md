@@ -20,6 +20,7 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
+* [WalletSSI](#walletssi)
 * [Overview](#overview)
 * [Abstract](#abstract)
 * [1. Type-specific and control substring](#1-type-specific-and-control-substring)
@@ -33,7 +34,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Overview
+# **Overview**
 
 <p style='text-align: justify;'>The vision we are working on is getting bigger and, as time goes on, we improve it and promote it. This involves a change in the Internet and the idea of a web browser, or rather a change in a concept that arises, where instead of browsing the sites and interacting with different servers, there is a synergy between a browser and a wallet so that the user can use different functionalities or applications in a Self-Sovereign way. There is a way in which, from a browser, we can explore various self-sovereign applications, but make sure they do not start extracting data and sending it to servers or start spying or profiling users and so on.
 </p>
@@ -41,7 +42,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Currently, we have the technology to build SSApps and create this browser expansion. We mention browsers because we use certain technologies when we embed these SSApps into Wallets. The code can be generalized with other technologies, and so can the implementation. The important thing is that the new browser, capable of running these SSApps, must behave like a wallet, it must take care of personal keys and it must be able to mediate the user’s interaction with cryptography. It must also ensure a high level of key management quality.
 </p>
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>Wallets can be used to store different kinds of KeySSIs and personal user data. WalletSSIs use the same principles as <a href="https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html">ArraySSIs</a>, but are used to identify and manage wallets. It is expected to have the credentials necessary to access the wallet in the array (like a username and password), but we could theoretically add more credentials, such as an answer to a question.
 </p>
@@ -61,7 +62,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | wallet      | A WalletSSI is basically an ArraySSI that is used for wallet identification. <br/> Example: <br/>  ssi:array:domain:encodedArray::v0 |
 
 
-# 1. Type-specific and control substring
+# **1. Type-specific and control substring**
 
 <p style='text-align: justify;'>The identifier contains the subtype and the domain. That is very important for finding the correct brick storage and anchoring services associated with the keySSI and the DSU. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 </p>
@@ -71,12 +72,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | wallet   | encoded(KDF(arrayOfCredentials)) | none                  |
 
 
-# 2. Specific functions for WalletSSIs
+# **2. Specific functions for WalletSSIs**
 
 <p style='text-align: justify;'>(Common functions for all KeySSIs are available <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">here</a>)
 </p>
 
-## Function walletSSI.initialize(dlDomain, array, vn, hint)
+## **Function walletSSI.initialize(dlDomain, array, vn, hint)**
 
 **Description**: Initialize a WalletSSI with your own parameters.
 
@@ -88,7 +89,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | hint (optional)  | string   |           | Optional information for the keySSI resolver. <br/>    Default value: undefined                   |
 
 
-## Function walletSSI.derive()
+## **Function walletSSI.derive()**
 
 <p style='text-align: justify;'><b>Description</b>: Derive your WalletSSI and return a constSSI. The constSSI will conserve all parameters from the ArraySSI, except for a control substring that will be added. The specific substring of the ConstSSI will be the same as the one calculated during the initialization of the WalletSSI using the array of inputs. It is then possible to create and load a DSU using the ConstSSI.
 </p>
@@ -102,7 +103,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function walletSSI.getEncryptionKey()
+## **Function walletSSI.getEncryptionKey()**
 
 **Description**: Get the encryption key associated with the WalletSSI.
 
@@ -115,7 +116,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## Function walletSSI.getTypeName()
+## **Function walletSSI.getTypeName()**
 
 **Description**: 
 
@@ -127,7 +128,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | SSITypes.WALLET_SSI | A string representing the type of the SSI.                                                                                               |
 
 
-## Function walletSSI.createAnchorValue(brickMapHash, previousAnchorValue, callback)
+## **Function walletSSI.createAnchorValue(brickMapHash, previousAnchorValue, callback)**
 
 **Description**:
 
@@ -150,7 +151,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'><b>Description</b>: Contains a message and the error. / The anchor value that was just created.
 </p>
 
-# 3. Cryptographic algorithms used by WalletSSIs (advanced)
+# **3. Cryptographic algorithms used by WalletSSIs (advanced)**
 
 <p style='text-align: justify;'>In this paragraph, we present the algorithms that WalletSSI used. These algorithms can differ according to the type of KeySSI used and its version number. Most of the functions use the <a href="https://www.google.com/url?q=https://nodejs.org/docs/latest-v12.x/api/crypto.html%23crypto_crypto&sa=D&source=editors&ust=1707127872112744&usg=AOvVaw2x-LIIbf5iPN6DiqXaldb4">NodeJS crypto</a> library.
 </p>
@@ -158,24 +159,23 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | **Name**      | **Type**                 | **Algorithms**                                                                                                                                     -                    |
 |:--------------|:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Default       | keyDerivation            | crypto.deriveKey('aes-256-gcm', password, iterations)                                                                                                                   |
-| Default       | encryptionKeyGeneration  | Generate a random encryption key compatible with the [aes-256-gcm](Generate a random encryption key compatible with the aes-256-gcm algorithm.) algorithm.              |
+| Default       | encryptionKeyGeneration  | Generate a random encryption key compatible with the [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm.              |
 | Default       | encoding                 | [Base58](https://www.google.com/url?q=https://learnmeabitcoin.com/technical/base58&sa=D&source=editors&ust=1707127872117712&usg=AOvVaw3ftCbYUTC4tIkHXK65-7or) encoding. |
 | Default       | decoding                 | [Base58](https://www.google.com/url?q=https://learnmeabitcoin.com/technical/base58&sa=D&source=editors&ust=1707127872117712&usg=AOvVaw3ftCbYUTC4tIkHXK65-7or) decoding. |
-
 
 
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
-
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
@@ -189,6 +189,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | Cosmin Ursache                       | cosmin@axiologic.net                     |
 | Daniel Sava                          | daniel@axiologic.net                     |
 | Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Teodor Lupu                          | teodor@axiologic.net                     |
 | Valentin Gérard                      | valentin@axiologic.net                   |
 | **PrivateSky Contributors**          | **Email**                                |
 | Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
