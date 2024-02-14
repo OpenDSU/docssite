@@ -37,8 +37,8 @@ nav_order: 1
     box-sizing: border-box; /* Include padding and border in the width calculation */
   }
   .card iframe {
-    width: 100%;
-    height: 180px;
+    width: 100%; /* Set the iframe width to 100% */
+    height: 150px; /* Set a fixed height for the iframe */
     border: none;
     border-radius: 8px;
   }
@@ -59,7 +59,7 @@ nav_order: 1
 
   <div class="card">
     <iframe src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" frameborder="0" allowfullscreen></iframe>
-    <div class="title">Insights about Enteprise Blockchain Solutions (Adoption & Properites)</div>
+    <div class="title">Insights about Enterprise Blockchain Solutions (Adoption & Properties)</div>
   </div>
 
   <div class="card">
@@ -87,6 +87,7 @@ nav_order: 1
 
 </body>
 </html>
+
 
 
 <br>
