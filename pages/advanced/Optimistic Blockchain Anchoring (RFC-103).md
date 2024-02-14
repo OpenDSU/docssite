@@ -4,7 +4,7 @@ layout: home
 parent: OpenDSU Advanced
 nav_order: 16
 ---
-# **Optimistic Blockchain Anchoring**
+# **Optimistic Blockchain Anchoring (RFC-103)**
 
 {: .accepted }
 The proposal has been accepted and has an implementation.
@@ -25,12 +25,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC presents the concept of Optimistic Blockchain Anchoring. It is an introduction providing explanations about the way OBA works, its components, its flow and steps.
 </p>
 
-# 1. Optimistic Blockchain Anchoring (OBA)
+# **1. Optimistic Blockchain Anchoring (OBA)**
 
 <p style='text-align: justify;'>OBA (Optimistic Blockchain Anchoring) is an optimized anchoring strategy that is, at the moment, created specially for Quorum, but could be used for other blockchain networks on other blockchain technologies. OBA’s purpose is to offer quick feedback (lower the response time of the blockchain anchoring process, which translates into higher rates of anchoring) when dealing with slow blockchain networks.
 </p>
@@ -93,44 +93,41 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>In the last case (happy path), in which the anchoring was successful (Anchoring is Successful), we specify that the steps are represented by the deletion of the transaction from the pending queue and then logged in the following form: information INFO 0x02, which means that the operation is successful.
 </p>
 
+
+
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
 
-| **Current Editors**                  | **Email**                                |
-|:-------------------------------------|:-----------------------------------------|
-| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
-| Cosmin Ursache                       | cosmin@axiologic.net                     |
-| Teodor Lupu                          | teodor@axiologic.net                     |
-| Andi-Gabriel Țan                     | andi@axiologic.net                       |
-| **Contributors Axiologic Research**  | **Email**                                |
-| Adrian Ganga                         | adrian@axiologic.net                     |
-| Andi-Gabriel Țan                     | andi@axiologic.net                       |
-| Cosmin Ursache                       | cosmin@axiologic.net                     |
-| Daniel Sava                          | daniel@axiologic.net                     |
-| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
-| Valentin Gérard                      | valentin@axiologic.net                   |
-| **PrivateSky Contributors**          | **Email**                                |
-| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
-| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
-| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
-| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
-| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
-| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
-| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
-| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
-| **PharmaLedger Contributors**        | **Email**                                |
-| Ana Balan                            | bam@rms.ro (RMS)                         |
-| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
-| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
-| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
+
+
+# **Annex 1. Contributors**
+
+| **Current Editors**                 | **Email**                                |
+|:------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                      | sinica.alboaie@axiologic.net             |
+| Rafael Mastaleru                    | rafael@rms.ro                            |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
+| Teodor Lupu                         | teodor@axiologic.net                     |
+| **Contributors Axiologic Research** | **Email**                                |
+| Adrian Ganga                        | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                    | andi@axiologic.net                       |
+| Cosmin Ursache                      | cosmin@axiologic.net                     |
+| Daniel Sava                         | daniel@axiologic.net                     |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
+| Teodor Lupu                         | teodor@axiologic.net                     |
+| **PharmaLedger Contributors**       | **Email**                                |
+| Ana Balan                           | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                     | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                      | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                         |
 
