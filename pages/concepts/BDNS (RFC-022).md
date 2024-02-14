@@ -137,22 +137,22 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 {
 "demoroot": {
    "brickStorages": [
-     “https://example1.com”,
-     “https://example2.com”,
+     "https://example1.com",
+     "https://example2.com",
    ],
    "anchoringServices": [
-     “ https://example1.com”,
-     “ https://example2.com”,
+     "https://example1.com",
+     "https://example2.com",
    ]
  },
 "demo1.demoroot": {
    "brickStorages": [
-     “https://example1.com”,
-     “https://example2.com”,
+     "https://example1.com",
+     "https://example2.com",
    ],
    "anchoringServices": [
-     “https://example1.com”,
-     “https://example2.com”,
+     "https://example1.com",
+     "https://example2.com",
    ]
  }
 }
