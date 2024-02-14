@@ -19,6 +19,12 @@ nav_order: 1
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YouTube Video Cards</title>
 <style>
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   .card {
     width: 300px;
     border: 1px solid #ccc;
@@ -42,35 +48,43 @@ nav_order: 1
 </head>
 <body>
 
-<div class="card">
-  <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-  <div class="title">Title for Video 1</div>
+<div class="row">
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+    <div class="title">Title for Video 1</div>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+    <div class="title">Title for Video 2</div>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+    <div class="title">Title for Video 3</div>
+  </div>
 </div>
 
-<div class="card">
-  <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-  <div class="title">Title for Video 2</div>
+<div class="row">
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+    <div class="title">Title for Video 4</div>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+    <div class="title">Title for Video 5</div>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+    <div class="title">Title for Video 6</div>
+  </div>
 </div>
 
-<div class="card">
-  <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-  <div class="title">Title for Video 3</div>
-</div>
+</body>
+</html>
 
-<div class="card">
-  <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-  <div class="title">Title for Video 4</div>
-</div>
-
-<div class="card">
-  <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
-  <div class="title">Title for Video 5</div>
-</div>
-
-<div class="card">
-  <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
-  <div class="title">Title for Video 6</div>
-</div>
 
 </body>
 </html>
