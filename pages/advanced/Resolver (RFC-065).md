@@ -1,5 +1,5 @@
 ---
-title: Resolver (RFC-065) 
+title: Resolver
 layout: home
 parent: OpenDSU Advanced
 nav_order: 9
@@ -53,14 +53,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The “Resolver” API space allows developers to create <a href="https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html">DSU instances</a> by resolving <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSIs</a>. A DSU instance is similar to a file system where users can read and/or write files if they possess the right key. All operations available on DSUs are presented in DSU Object (<a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html">RFC-063</a>).
 </p>
 
 
 
-# 1. Resolver functions
+# **1. Resolver functions**
 
 
 ```js
@@ -380,14 +380,15 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
