@@ -21,7 +21,6 @@ A period when the community can review the RFC (comment Docs).
 This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
 
 <!-- TOC -->
-* [Crypto (RFC-066)](#crypto-rfc-066)
 * [Abstract](#abstract)
 * [1. Crypto functions](#1-crypto-functions)
   * [1.1. Basic operations](#11-basic-operations)
