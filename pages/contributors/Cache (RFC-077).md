@@ -122,15 +122,15 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## Function put(key, value, callback)
 
-<p style='text-align: justify;'>**Description**: Store a key/value pair in the cache.
-</p>
+**Description**: Store a key/value pair in the cache.
 
 
-| **Name**    | **Type**      | **Value**    | **Description**                                                                    |
-|:------------|:--------------|:-------------|:-----------------------------------------------------------------------------------|
-| key         | string        | *required    | The key you want to associate value to.                         |
-| value       | string        | *required    |            The new value for the key.                                                                        |
-| callback    | function      | *required    |                                                                                                              |
+
+| **Name**    | **Type**      | **Value**    | **Description**                                                                     |
+|:------------|:--------------|:-------------|:------------------------------------------------------------------------------------|
+| key         | string        | *required    | The key you want to associate value to.                                             |
+| value       | string        | *required    | The new value for the key.                                                          |
+| callback    | function      | *required    |                                                                                     |
 
 
 **Callback parameters**
