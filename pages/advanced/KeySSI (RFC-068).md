@@ -67,7 +67,7 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 
 # 1. KeySSI functions
 
-````
+```js
 //Load openDSU environment
 require("../privatesky/psknode/bundles/openDSU");
 //Load openDSU SDK
@@ -83,7 +83,7 @@ const templateSSI = keyssispace.createTemplateKeySSI('dom','specificStr','contro
 const walletSSI = keyssispace.createTemplateWalletSSI('dom',[cred1,cred2],'hint','vn');
 //Or use parse to generate a keySSI from a string
 const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hint:vn');
-````
+```
 
 <p style="text-align: center;">How to use</p>
 
