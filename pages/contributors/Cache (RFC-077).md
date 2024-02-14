@@ -117,7 +117,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-**Description:** Contains a message and the error./ The content identified by the key.
+**Description**:Contains a message and the error./ The content identified by the key.
 
 
 ## Function put(key, value, callback)
