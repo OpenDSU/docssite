@@ -1,5 +1,5 @@
 ---
-title: CredentialsDSU (RFC-057)
+title: CredentialsDSU
 layout: home
 parent: OpenDSU Contributors
 nav_order: 9
@@ -14,7 +14,7 @@ nav_order: 9
 } 
 </style>
 
-# **CredentialsDSU(RFC 057)**
+# **CredentialsDSU**
 {: .no_toc }
 
 
@@ -46,9 +46,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
-# 1. Public Methods from the Credentials API
+# **1. Public Methods from the Credentials API**
 
 
 ## Function createJWTVerifiableCredential(issuer, subject, options, callback)
@@ -236,11 +236,12 @@ These are different preset errors for several behaviours that might occur, for e
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
 # Annex 1. Contributors

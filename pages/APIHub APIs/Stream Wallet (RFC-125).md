@@ -6,7 +6,7 @@ nav_order: 6
 ---
 
 
-# **Stream Wallet (RFC-125)**
+# **Stream Wallet**
 {: .no_toc }
 
 {: .feedback }
@@ -37,11 +37,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC provides information on wallet operations using streams.</p>
 
-#  1. Stream Wallet Creation
+#  **1. Stream Wallet Creation**
 
 <p style='text-align: justify;'>Create a wallet for the specified "userId" on the specified "domain". The operation creates the enclaves and stores the enclaveKeySSIs in the environment.json configuration. The "userId" is stored in a metadata.json file.</p>
 
@@ -67,7 +67,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | 500             | Invalid KeySSI.                                                                                                                                                                                                   |
 
 
-#  2. Streaming Wallet Content
+#  **2. Streaming Wallet Content**
 
 <p style='text-align: justify;'>Streaming the content of the "requestedPath" from the wallet identified with provided "keySSI".</p>
 
@@ -120,16 +120,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
-
+2. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                                       |
 |:-------------------------------------|:----------------------------------------------------------------|
@@ -146,16 +144,4 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | Teodor Lupu                          | teodor@axiologic.net                                            |
 | Valentin Gérard                      | valentin@axiologic.net                                          |
 | **PrivateSky Contributors**          | **Email**                                                       |
-| Alex Sofronie                        | alsofronie@gmail.com (DPO)                                      |
-| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)                                    |
-| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS)                        |
 | Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)                              |
-| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                                       |
-| Rafael Mastaleru                     | rafael@rms.ro (RMS)                                             |
-| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                                       |
-| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)                                 |
-| **PharmaLedger Contributors**        | **Email**                                                       |
-| Ana Balan                            | bam@rms.ro (RMS)                                                |
-| Bogdan Mastahac                      | mab@rms.ro (RMS)                                                |
-| Cosmin Ursache                       | cos@rms.ro (RMS)                                                |
-| Rafael Mastaleru                     | raf@rms.ro (RMS)                                                |

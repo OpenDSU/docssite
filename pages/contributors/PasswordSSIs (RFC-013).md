@@ -8,7 +8,7 @@ nav_order: 2
 
 # **PasswordSSIs**
 
-{: .obsolete }
+{: .replaced }
 The RFC is not needed anymore or has been replaced.
 
 **Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**

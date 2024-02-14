@@ -7,7 +7,7 @@ nav_order: 9
 
 
 
-# **Logging (RFC-128)**
+# **Logging**
 {: .no_toc }
 
 {: .feedback }
@@ -23,7 +23,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-
 * [Abstract](#abstract)
 * [1.Add Log](#1add-log)
   * [1.1 Path Parameters](#11-path-parameters)
@@ -41,12 +40,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>Handles read/write log message operations. The Logging API service provides support for storing and retrieving log files using anchorId and logLevel criteria.</p>
 
 
-# 1.Add Log
+# **1.Add Log**
 
 <p style='text-align: justify;'>Stores to the provided log message or file content, and will be associated with the provided anchorId and log level.</p>
 	
@@ -95,7 +94,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 2. Read Log
+# **2. Read Log**
 
 <p style='text-align: justify;'>Get the logs stored for the provided anchorId. Return all log records found with information about the uploaded date, level, and anchorId.</p>
 	
@@ -141,16 +140,15 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                                                         |
 |:-------------------------------------|:----------------------------------------------------------------------------------|

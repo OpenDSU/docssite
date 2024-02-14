@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 
-# **Bricking (RFC-123)**
+# **Bricking**
 {: .no_toc }
 
 {: .feedback }
@@ -41,14 +41,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>Storage Service for all the bricks generated from DSUs. The "bricking" API space offers a set of portable functions for creating and reading bricks. The operations exposed by the Bricking service are used in the context of construction and reconstruction of the DSU by the OpenDSU SDK.</p>
 
 
 
 
-# 1. Put Brick
+# **1. Put Brick**
 
 <p style='text-align: justify;'>Stores the encrypted content of the brick on the Brick storage and returns the hashLink for later access.</p>
 	
@@ -85,7 +85,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 2. Download multiple Bricks
+# **2. Download multiple Bricks**
 
 <p style='text-align: justify;'>Get the encrypted content of the brick for each hashLink in the provided list of hashLinks.</p>
 	
@@ -122,7 +122,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 3.Get Brick
+# **3.Get Brick**
 
 <p style='text-align: justify;'>Get the encrypted content of the brick identified by the provided hash link.</p>
 
@@ -152,7 +152,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 4.Store Transaction
+# **4.Store Transaction**
 
 <p style='text-align: justify;'>Store transactions in Bricks Storage. Usually, the stored data is represented by the anchorData. When the maximum number of transactionsPerBlock is reached, the block is built and stored in Bricks Storage.</p>
 	
@@ -174,14 +174,17 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                                                        |
 |:------------------------------------|:-----------------------------------------------------------------|

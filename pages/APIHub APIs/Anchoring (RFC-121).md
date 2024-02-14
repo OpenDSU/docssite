@@ -5,7 +5,7 @@ parent: OpenDSU APIHub APIs
 nav_order: 2
 ---
 
-# **Anchoring  Endpoint (RFC-121)**
+# **Anchoring  Endpoint**
 {: .no_toc }
 
 {: .feedback }
@@ -42,12 +42,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC presents the process of creating anchors, adding a new HashLink to an AnchorId, creating or updating multiple anchors within the same request, and Getting all versions of an anchor.
 </p>
 
-# Overview
+# **Overview**
 
 <p style='text-align: justify;'>The Anchoring component is an essential part of the APIHub of the OpenDSU. It provides a direct connection with the blockchain network and applies a security and validation context to any change operation in the landscape of the brick storage.</p>
 
@@ -55,7 +55,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 1. Create Anchor
+# **1. Create Anchor**
 
 <p style='text-align: justify;'>Create a new Anchor for a newly created brick. We call appendAnchor for any sub-sequenced update operation on the content of the DSU. The invocation still requires two HashLinks, but the last HashLink can be the same as the new HashLink or null, as both choices are valid.</p>
 	
@@ -95,7 +95,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 2. Append to Anchor
+# **2. Append to Anchor**
 
 <p style='text-align: justify;'>Append a new HashLink to an anchorId. The anchorId will already have a series of HashLinks attached, so when a new HashLink is attached, the previous HashLink must be provided to validate the change operation on the brick. The whole collection of HashLinks will provide access to all versions of the DSU.</p>
 
@@ -134,7 +134,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | 500             | Fallback generic error response.                               |
 
 
-# 3. Create or Update Multiple Anchors
+# **3. Create or Update Multiple Anchors**
 
 <p style='text-align: justify;'>Create or update multiple anchors in the same request in order to increase performance or when transactions are made.</p>
 
@@ -173,7 +173,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | 500             | Fallback generic error response.                                                         |
 
 
-# 4. Get All Versions
+# **4. Get All Versions**
 
 <p style='text-align: justify;'>Get all the versions of an anchor. Useful to obtain all HashLinks. To receive all the HashLinks required for an anchorId, an invocation of getAllVersions is necessary for accessing the content referred by a KeySSI. We need the list of HashLinks as we connect each HashLink  with a specific DSU or a version of a DSU.</p>
 	
@@ -205,14 +205,17 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                                                        |
 |:------------------------------------|:-----------------------------------------------------------------|

@@ -6,7 +6,7 @@ nav_order: 8
 ---
 
 
-# **Static Server (RFC-127)**
+# **Static Server**
 {: .no_toc }
 
 {: .feedback }
@@ -41,7 +41,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 This RFC covers Static Servers, which deliver static file content from the current location.
 
@@ -92,7 +92,7 @@ This RFC covers Static Servers, which deliver static file content from the curre
 
 
 
-# 2. Upload File to specified folder
+# **2. Upload File to specified folder**
 
 <p style='text-align: justify;'>Upload the contents of a file into a specified folder. It is used in the context of wallets that are booted using service workers.</p>
 	
@@ -139,7 +139,7 @@ This RFC covers Static Servers, which deliver static file content from the curre
      } 
 
 
-# 3. Download File
+# **3. Download File**
 
 <p style='text-align: justify;'>Download the contents of the file identified by the filepath. It is used in the context of wallets that are booted using service workers.</p>
 	
@@ -170,16 +170,16 @@ This RFC covers Static Servers, which deliver static file content from the curre
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
 
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                                | **Email**                                                                     |
 |:---------------------------------------------------|:------------------------------------------------------------------------------|
