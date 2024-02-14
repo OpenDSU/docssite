@@ -20,9 +20,13 @@ nav_order: 2
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
 
-One of OpenDSU’s objectives is to provide a solution to the famous trilemma regarding naming systems known as Zooko’s Triangle. It is challenging to design a naming system with human-meaningful identifiers that are also secure and decentralized. The trilemma tells us you can only choose two. But we think there is a workaround: Human Meaningful Identifiers could be resolved to cryptographically safe identifiers using a key derivation function.[1] Obtained identifiers would be secure and self-certifying, as well as provide the required levels of decentralization and security.
+
+
+# **Abstract**
+
+<p style='text-align: justify;'>One of OpenDSU’s objectives is to provide a solution to the famous trilemma regarding naming systems known as Zooko’s Triangle. It is challenging to design a naming system with human-meaningful identifiers that are also secure and decentralized. The trilemma tells us you can only choose two. But we think there is a workaround: Human Meaningful Identifiers could be resolved to cryptographically safe identifiers using a key derivation function.[1] Obtained identifiers would be secure and self-certifying, as well as provide the required levels of decentralization and security.
+</p>
 
 
 <div style="text-align:center;">
@@ -39,17 +43,17 @@ Compared to randomly generated identifiers, the ConstSSI is based on human meani
     <p><b>Figure 2: ConstSSI family </b></p>
 </div>
 
-# 1. ConstSSI subtypes derivation with examples
+# **1. ConstSSI subtypes derivation with examples**
 
-A constSSI is built from the hash of readable strings embedded in other keySSI such as [ArraySSI](https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html), [PasswordSSI](https://www.opendsu.org/pages/contributors/PasswordSSIs%20(RFC-013).html), and [WalletSSI](https://www.opendsu.org/pages/contributors/WalletSSI%20(RFC-014).html).
+A constSSI is built from the hash of readable strings embedded in other keySSI such as [ArraySSI](https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html), and [WalletSSI](https://www.opendsu.org/pages/contributors/WalletSSI%20(RFC-014).html).
 
-| **SubType** | **Description**                                                                                                                                                                                                                                                                 |
-|:------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| const       | Owning a ConstSSI provides read access to the immutable DSU anchored by the ConstSSI. However, the DSU is encrypted, and you need the ConstSSI in order to read it. See the Security Considerations to understand the security aspects. Example: _ssi:const:domain:string::v0_  |
-| cza         | Owning a czaSSI provides no access. Having a czaSSI indicates that a ConstSSI exists and has only a version (it redirects to an immutable DSU). Example: ssi:sza:domain:hash::v0.                                                                                               |
+| **SubType** | **Description**                                                                                                                                                                                                                                                                                     |
+|:------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| const       | Owning a ConstSSI provides read access to the immutable DSU anchored by the ConstSSI. However, the DSU is encrypted, and you need the ConstSSI in order to read it. See the Security Considerations to understand the security aspects.  <br/> Example:  <br/> <i>_ssi:const:domain:string::v0_</i> |
+| cza         | Owning a czaSSI provides no access. Having a czaSSI indicates that a ConstSSI exists and has only a version (it redirects to an immutable DSU). <br/> Example: <br/> <i>ssi:sza:domain:hash::v0.</i>                                                                                                       |
 
 
-# 2. Type-specific and control substrings
+# **2. Type-specific and control substrings**
 
 The “control key” part of the ConstSSI is always empty, which means the anchor can not be updated (it is immutable, constant value, read-only).
 
@@ -59,7 +63,7 @@ The “control key” part of the ConstSSI is always empty, which means the anch
 | cza      |                             | Hash of the public key |
 
 
-# 3. Specific functions for ConstSSI
+# **3. Specific functions for ConstSSI**
 
 (Common functions for all keySSI types are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
 
@@ -98,7 +102,7 @@ The “control key” part of the ConstSSI is always empty, which means the anch
 | String   | The encryption key  |
 
 
-The encryption key
+
 ## Function const.getTypeName()
 
 **Description**: 
@@ -131,7 +135,7 @@ The encryption key
 **Description**: Contains a message and the error. / The anchor value that was just created.
 
 
-# 4. Cryptographic algorithms used by ConstSSIs (advanced)
+# **4. Cryptographic algorithms used by ConstSSIs (advanced)**
 
 Algorithms used for cryptographic operations can differ according to the type of keySSI that is used and its version number. Most of the functions use the [nodejs](https://www.google.com/url?q=https://nodejs.org/docs/latest-v12.x/api/crypto.html%23crypto_crypto&sa=D&source=editors&ust=1706607081104078&usg=AOvVaw1DljX3frZ2fzzNiA4otEna) crypto library.
 
@@ -148,7 +152,25 @@ Algorithms used for cryptographic operations can differ according to the type of
 |             | keyPairGenerator            | Use an elliptic curve ‘[secp256k1](https://www.google.com/url?q=https://wiki.trezor.io/Secp256k1&sa=D&source=editors&ust=1706527954017796&usg=AOvVaw2mte0BWYD7g5QNei4oq3nb)’ to generate a key pair (public/private key).                                                                                                                                                            |
 
 
-# Annex 1. Contributors
+
+
+
+
+
+**Contributors**
+
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
+
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
+
+
+
+
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                                                   |
 |:------------------------------------|:------------------------------------------------------------|
