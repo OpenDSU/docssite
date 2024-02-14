@@ -53,9 +53,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>The identifier contains the subtype and the domain. That is very important in order to find the correct brick storage and anchoring services associated with the keySSI and the DSU. After these two attributes, we have the type-specific and the control substring. The table below presents the content of these attributes.
 </p>
 
-| **Type**  | **Type Specific substring**                                                                                                                        | **Control substring**  |
-|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------|
-| se        | An encryption key (by default it is a symmetric key generated with  [aes-256-gcm](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm).   | empty                  |
+| **Type**  | **Type Specific substring**                                                                                                                                    | **Control substring**  |
+|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------|
+| se        | An encryption key (by default it is a symmetric key generated with  <a href="https://en.wikipedia.org/wiki/Galois/Counter_Mode">aes-256-gcm</a>  algorithm).   | empty                  |
 
 
 # **3. SymmetricalEncryptionSSI specific functions**
@@ -64,7 +64,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <p style='text-align: justify;'>
 
-<b>Description</b>: Get the encryption key associated with the KeySSI. By default, the encryption key is a symmetric key generated with the <a href="(https://en.wikipedia.org/wiki/Galois/Counter_Mode)">aes-256-gcm</a> algorithm (equal to its specific string).
+<b>Description</b>: Get the encryption key associated with the KeySSI. By default, the encryption key is a symmetric key generated with the <a href="https://en.wikipedia.org/wiki/Galois/Counter_Mode">aes-256-gcm</a> algorithm (equal to its specific string).
 </p>
 
 **Returns** 
