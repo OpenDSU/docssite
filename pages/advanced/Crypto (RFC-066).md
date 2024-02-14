@@ -68,15 +68,18 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
 
-<p style='text-align: justify;'>The “crypto” API space offers a set of portable cryptographic functions for OpenDSU and Self Sovereign Applications. Most of these functions have KeySSI as the first argument because the type of the <a href="https://opendsu.com/rfc002">KeySSI</a> and its vn field (version number) indicate which cryptographic functions should be used to perform the requested operations (see <a href="https://opendsu.com/rfc010">RFC010 SeedSSI</a>).
+
+
+# **Abstract**
+
+<p style='text-align: justify;'>The “crypto” API space offers a set of portable cryptographic functions for OpenDSU and Self Sovereign Applications. Most of these functions have KeySSI as the first argument because the type of the <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> and its vn field (version number) indicate which cryptographic functions should be used to perform the requested operations (see <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">RFC010 SeedSSI</a>).
 </p>
 
 <p style='text-align: justify;'>Among these operations, you will find basic functions such as symmetric encryption, hashing, signing/verification functions, as well as various other operations, such as the creation of JWT Tokens used in the creation of authentication tokens and credentials.
 </p>
 
-# 1. Crypto functions
+# **1. Crypto functions**
 
 ## 1.1. Basic operations
 
@@ -107,7 +110,9 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 | verifyAuthToken            | Verify an authentication JWT token with the list of issuers.                                      |
 | verifyJWT                  | Verify the validity of the JWT token.                                                             |
 
-````
+
+
+```js
 //Load openDSU environment
 require("../privatesky/psknode/bundles/openDSU");
 //Load openDSU SDK
@@ -124,7 +129,7 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
       console.log(data === plainData.toString()); //Returns true
   });
 });
-````
+```
 
 <p style="text-align: center;">How to use</p>
 
@@ -132,7 +137,7 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 <p style='text-align: justify;'>
 
-**Description:** DER (<a href="https://ldapwiki.com/wiki/Distinguished%20Encoding%20Rules">Distinguished Encoding Rules</a>) is used to encode ASN.1. When using this function, we can decode the DER signature to obtain an <a href="https://en.wikipedia.org/wiki/ASN.1">ASN.1 certificate</a>.
+<b>Description:</b> DER (<a href="https://ldapwiki.com/wiki/Distinguished%20Encoding%20Rules">Distinguished Encoding Rules</a>) is used to encode ASN.1. When using this function, we can decode the DER signature to obtain an <a href="https://en.wikipedia.org/wiki/ASN.1">ASN.1 certificate</a>.
 </p>
 
 | Name          | Type                     | Value      | Description                                  |
@@ -146,12 +151,12 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Create an authentication JWT token.
 
-| Name                  | Type                                                                                                                                                                         | Value      | Description                                                        |
-|:----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:-------------------------------------------------------------------|
-| holderSeedSSI         | <a href="https://docs.google.com/document/d/e/2PACX-1vQGL5SmKZxE-Vg-TSQ2ZemRDLEr7vBYzvGU3Mnn_ZEpT5lNg4fJ5qdnp_OWQtB5hXDVN2xF50zTk_O_/pub?embedded=true ">SeedSSI</a>  object |            | The SeedSSI of the credential holder.                              |
-| scope (optional)      |                                                                                                                                                                              |            |                                                                    |
-| credential (optional) | JWT token (JSON object)                                                                                                                                                      |            | The credential you want to associate to the authentication token.  |
-| callback              | function                                                                                                                                                                     | *required  |                                                                    |
+| Name                  | Type                                                                                | Value      | Description                                                        |
+|:----------------------|:------------------------------------------------------------------------------------|:-----------|:-------------------------------------------------------------------|
+| holderSeedSSI         | SeedSSI object                                                                      |            | The SeedSSI of the credential holder.                              |
+| scope (optional)      |                                                                                     |            |                                                                    |
+| credential (optional) | JWT token (JSON object)                                                             |            | The credential you want to associate to the authentication token.  |
+| callback              | function                                                                            | *required  |                                                                    |
 
 
 **Callback parameters**
@@ -186,11 +191,11 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Create a credential represented by a JWT token. The credential will be created with the seedSSI of the issuer and another keySSI that will be used by the subject to read its credential.
 
-| Name                                      | Type                                                    | Value      | Description                                                                                                                                |
-|:------------------------------------------|:--------------------------------------------------------|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| issuerSeedSSI                             | <a href="https://opendsu.com/rfc010">SeedSSI</a> object |            | The seedSSI represents the credential issuer.                                                                                              |
-| credentialSubjectSReadSSI <br> (optional) | SReadSSI object                                         |            | The sReadSSI that will be used by the subject to read its credential. <br> If not provided, the sReadSSI will be derived from the seedSSI. |
-| callback                                  | function                                                | *required  |                                                                                                                                            |
+| Name                                      | Type                                                                                         | Value      | Description                                                                                                                                |
+|:------------------------------------------|:---------------------------------------------------------------------------------------------|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| issuerSeedSSI                             | <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a> object |            | The seedSSI represents the credential issuer.                                                                                              |
+| credentialSubjectSReadSSI <br> (optional) | SReadSSI object                                                                              |            | The sReadSSI that will be used by the subject to read its credential. <br> If not provided, the sReadSSI will be derived from the seedSSI. |
+| callback                                  | function                                                                                     | *required  |                                                                                                                                            |
 
 
 **Callback parameters**
@@ -208,13 +213,13 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Create a JWT Token signed with your seedSSI.
 
-| Name                        | Type                                                    | Value       | Description                                                             |
-|:----------------------------|:--------------------------------------------------------|:------------|:------------------------------------------------------------------------|
-| seedSSI                     | <a href="https://opendsu.com/rfc010">SeedSSI</a> object |             | The SeedSSI that you want to use to sign the JWT token.                 |
-| scope <br> (optional)       |                                                         |             | A credential can be linked to the JWT token.                            |
-| credentials <br> (optional) | JWT token <br> (string)                                 |             |                                                                         |
-| options <br> (optional)     | JSON object                                             |             | Can contain the subject, valability, or other parameters about the JWT. |
-| callback                    | function                                                | *required   |                                                                         |
+| Name                        | Type                                                                                         | Value       | Description                                                             |
+|:----------------------------|:---------------------------------------------------------------------------------------------|:------------|:------------------------------------------------------------------------|
+| seedSSI                     | <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a> object |             | The SeedSSI that you want to use to sign the JWT token.                 |
+| scope <br> (optional)       |                                                                                              |             | A credential can be linked to the JWT token.                            |
+| credentials <br> (optional) | JWT token <br> (string)                                                                      |             |                                                                         |
+| options <br> (optional)     | JSON object                                                                                  |             | Can contain the subject, valability, or other parameters about the JWT. |
+| callback                    | function                                                                                     | *required   |                                                                         |
 
 
 **Callback parameters**
@@ -231,12 +236,12 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Create an authentication JWT token for a credential.
 
-| Name                  | Type                                                    | Value      | Description                                                         |
-|:----------------------|:--------------------------------------------------------|:-----------|:--------------------------------------------------------------------|
-| holderSeedSSI         | <a href="https://opendsu.com/rfc010">SeedSSI</a> object |            | The SeedSSI of the credential holder.                               |
-| scope <br> (optional) |                                                         |            |                                                                     |
-| credential            | JWT token <br> (string)                                 |            | The credentials for which you want to create a presentation token.  |
-| callback              | function                                                | *required  |                                                                     |
+| Name                  | Type                                                                                         | Value      | Description                                                         |
+|:----------------------|:---------------------------------------------------------------------------------------------|:-----------|:--------------------------------------------------------------------|
+| holderSeedSSI         | <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a> object |            | The SeedSSI of the credential holder.                               |
+| scope <br> (optional) |                                                                                              |            |                                                                     |
+| credential            | JWT token <br> (string)                                                                      |            | The credentials for which you want to create a presentation token.  |
+| callback              | function                                                                                     | *required  |                                                                     |
 
 
 **Callback parameters**
@@ -287,10 +292,10 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Generate an encryption key for your KeySSI.
 
-| Name      | Type                                                   | Value      | Description                                             |
-|:----------|:-------------------------------------------------------|:-----------|:--------------------------------------------------------|
-| keySSI    | <a href="https://opendsu.com/rfc002">KeySSI</a> object |            | The KeySSI you want to generate an encryption key for.  |
-| callback  | function                                               | *required  |                                                         |
+| Name      | Type                                                                                       | Value      | Description                                             |
+|:----------|:-------------------------------------------------------------------------------------------|:-----------|:--------------------------------------------------------|
+| keySSI    | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> object |            | The KeySSI you want to generate an encryption key for.  |
+| callback  | function                                                                                   | *required  |                                                         |
 
 
 **Callback parameters**
@@ -324,9 +329,9 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Get the self-sovereign identifier of your keySSI in the readable format (not encoded).
 
-| Name | Type                                                   | Value      | Description                                               |
-|:-----|:-------------------------------------------------------|:-----------|:----------------------------------------------------------|
-| ssi  | <a href="https://opendsu.com/rfc002">KeySSI</a> object |            | The KeySSI from which you want to obtain the identifier.  |
+| Name | Type                                                                                       | Value      | Description                                               |
+|:-----|:-------------------------------------------------------------------------------------------|:-----------|:----------------------------------------------------------|
+| ssi  | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">keySSI</a> object |            | The KeySSI from which you want to obtain the identifier.  |
 
 
 **Returns**
@@ -379,11 +384,11 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Sign the data with 'sha256' and a keySSI (more precisely: the private key included as a specific string of the KeySSI) using <a href="https://nodejs.org/docs/latest-v12.x/api/crypto.html#crypto_crypto_createsign_algorithm_options">this function</a> internally.
 
-| Name      | Type                                                   | Value      | Description                       |
-|:----------|:-------------------------------------------------------|:-----------|:----------------------------------|
-| keySSI    | <a href="https://opendsu.com/rfc002">KeySSI</a> object |            | The KeySSI you want to sign with. |
-| data      | any                                                    |            | The data you want to sign.        |
-| callback  | function                                               | *required  |                                   |
+| Name      | Type                                                                                       | Value      | Description                       |
+|:----------|:-------------------------------------------------------------------------------------------|:-----------|:----------------------------------|
+| keySSI    | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">keySSI</a> object |            | The KeySSI you want to sign with. |
+| data      | any                                                                                        |            | The data you want to sign.        |
+| callback  | function                                                                                   | *required  |                                   |
 
 
 **Callback parameters**
@@ -445,13 +450,13 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Verify a signature to authenticate other users and to guarantee the authenticity of the data/message/document that you received.
 
-| Name                       | Type                                                                           | Value     | Description                                                                                                                              |
-|:---------------------------|:-------------------------------------------------------------------------------|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------|
-| keySSI                     | <a href="https://opendsu.com/rfc002">KeySSI</a> object                         |           | The KeySSI is used to get the right verification method.                                                                                 |
-| data                       | any                                                                            |           | The data you want to sign.                                                                                                               |
-| signature                  | <a href="https://nodejs.org/api/crypto.html#crypto_class_sign">Sign</a> Object |           | The digital signature that you received with the document or message.                                                                    |
-| publicKey <br> (optional)  | string                                                                         |           | Known public key of the sender. <br>  If you don’t know the publicKey, leave it empty to get the public key associated with the KeySSI.  |
-| callback                   | function                                                                       | *required |                                                                                                                                          |
+| Name                       | Type                                                                                       | Value     | Description                                                                                                                              |
+|:---------------------------|:-------------------------------------------------------------------------------------------|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------|
+| keySSI                     | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> object |           | The KeySSI is used to get the right verification method.                                                                                 |
+| data                       | any                                                                                        |           | The data you want to sign.                                                                                                               |
+| signature                  | <a href="https://nodejs.org/api/crypto.html#crypto_class_sign">Sign</a> Object             |           | The digital signature that you received with the document or message.                                                                    |
+| publicKey <br> (optional)  | string                                                                                     |           | Known public key of the sender. <br>  If you don’t know the publicKey, leave it empty to get the public key associated with the KeySSI.  |
+| callback                   | function                                                                                   | *required |                                                                                                                                          |
 
 **Callback parameters**
 
@@ -467,10 +472,10 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** 
 
-| Name                | Type                                                   | Value     | Description                                  |
-|:--------------------|:-------------------------------------------------------|:----------|:---------------------------------------------|
-| keySSI              | <a href="https://opendsu.com/rfc002">KeySSI</a> object |           | The KeySSI is used to identify the function. |
-| cryptoFunctionType  | string                                                 |           | The function you want to get.                | 
+| Name                | Type                                                                                       | Value     | Description                                  |
+|:--------------------|:-------------------------------------------------------------------------------------------|:----------|:---------------------------------------------|
+| keySSI              | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> object |           | The KeySSI is used to identify the function. |
+| cryptoFunctionType  | string                                                                                     |           | The function you want to get.                | 
 
 
 ## Function encrypt(data, encryptionKey)
@@ -649,9 +654,9 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 
 **Description:** Take a KeySSI Object and convert it to mnemonic.
 
-| Name          | Type                                                   | Value     | Description |
-|:--------------|:-------------------------------------------------------|:----------|:------------|
-| keySSIObject  | <a href="https://opendsu.com/rfc002">KeySSI</a> object |           |             |
+| Name          | Type                                                                                       | Value     | Description |
+|:--------------|:-------------------------------------------------------------------------------------------|:----------|:------------|
+| keySSIObject  | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> object |           |             |
 
 
 ## Function convertMnemonicToKeySSIIdentifier(phrase, typeName, domain, vn)
@@ -693,16 +698,22 @@ crypto.encrypt(seedSSI, data, (err, encryptedData) => {
 * INVALID_SSI_PROVIDED
 
 
+
+
+
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                               |
 |:------------------------------------|:----------------------------------------|
