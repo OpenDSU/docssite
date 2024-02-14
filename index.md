@@ -54,8 +54,8 @@ nav_order: 1
 <div class="row">
   <div class="card">
     <iframe src="https://www.youtube.com/embed/n6YiWk8t3W0?si=6l1jbqU3aq2Gf_IN" frameborder="0" allowfullscreen></iframe>
-    <div class="title">OpenDSU Pitch in 3 minutes <br> </div>
-  </div>
+    <div class="title" style="text-align: center;">OpenDSU Pitch in 3 minutes <br> </div>
+    </div>
 
   <div class="card">
     <iframe src="https://www.youtube.com/embed/RYxe61jE_J8?si=boFeN1F96bZQWeCD" frameborder="0" allowfullscreen></iframe>
