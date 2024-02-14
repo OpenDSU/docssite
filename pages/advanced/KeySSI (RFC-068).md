@@ -78,7 +78,7 @@ const keyssispace = opendsu.loadApi("keyssi");
 const arraySSI = keyssispace.createArraySSI('domain',['openDsu',16],'vn','hint');
 const HashLinkSSI = keyssispace.crearzHashLinkSSI( 'dom','specificStr','control','hint','vn');
 const seedSSI = keyssispace.createSeedSSI('dom','specificStr','control','hint','vn');
-const SymetricalEncryptionSSI =keyssispace.createTemplateSymetricalEncryptionSSI( 'dom',’encryptionKey’,'control','hint','vn');
+const SymetricalEncryptionSSI =keyssispace.createTemplateSymetricalEncryptionSSI( 'dom','encryptionKey','control','hint','vn');
 const templateSSI = keyssispace.createTemplateKeySSI('dom','specificStr','control','hint','vn');
 const walletSSI = keyssispace.createTemplateWalletSSI('dom',[cred1,cred2],'hint','vn');
 //Or use parse to generate a keySSI from a string
