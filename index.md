@@ -75,13 +75,13 @@ nav_order: 1
   </div>
 
   <div class="card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
-    <div class="title">Title for Video 5</div>
+    <iframe src="https://www.youtube.com/embed/HCkeFXyeJxg?si=3eWIn8wbNRMlybUU" frameborder="0" allowfullscreen></iframe>
+    <div class="title">OpenDSU Overview for Enterprise Architects and Business Stakeholders </div>
   </div>
 
   <div class="card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
-    <div class="title">Title for Video 6</div>
+    <iframe src="https://www.youtube.com/embed/0A3bGUAajrM?si=KSaBfEwnUbs8ADiD" frameborder="0" allowfullscreen></iframe>
+    <div class="title">Open DSU for Data Sharing in Enterprise Blockchain Systems and Digital Trust Ecosystems</div>
   </div>
 </div>
 
