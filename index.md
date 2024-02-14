@@ -13,6 +13,7 @@ nav_order: 1
 <p style='text-align: justify;'>For more information, please read our RFC Documentation and watch the below videos.</p>
 
 
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -24,14 +25,16 @@ nav_order: 1
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0 -10px;
   }
   .card {
-    width: 300px;
+    width: calc(33.33% - 20px); /* Adjusted width to accommodate 3 cards per row */
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding and border in the width calculation */
   }
   .card iframe {
     width: 100%;
@@ -81,10 +84,6 @@ nav_order: 1
     <div class="title">Title for Video 6</div>
   </div>
 </div>
-
-</body>
-</html>
-
 
 </body>
 </html>
