@@ -7,7 +7,7 @@ nav_order: 10
 
 
 
-# **Database (RFC-061)**
+# **Database**
 {: .no_toc }
 
 {: .feedback }
@@ -62,7 +62,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 
 
@@ -76,7 +76,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 1.Creating a database object
+# **1.Creating a database object**
 
 <p style='text-align: justify;'>Accessing the DataBase is handled through the DB library of the openDSU module. Calls are handled through a BasicDB instance with a storageStrategy object that handles the underlying data storage and conflictResolvingStrategy.
 </p>
@@ -228,7 +228,7 @@ let myDB = db.getBasicDB()
 
 ```
 
-# 2. Database instances
+# **2. Database instances**
 
 <p style='text-align: justify;'>Database objects instantiated as described in Section 1 <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html#1creating-a-database-object">(Creating a database object)</a> provide methods to query, insert, update or remove data in the form of <b>record</b> entries associated with a unique <b>key</b>: see readKey() and writeKey() methods. Optionally, keys may be grouped by context <b>tableName</b>: see getRecord(), updateRecord(), insertRecord() and deleteRecord(). The same <b>key</b> may occur in multiple context entries with different names, but keys without context or within the same context <b>tableName</b> are required to be unique (see Diagram 2.1). The <b>key</b> or <b>record</b> pairs within a context <b>tableName</b> maintain a versioned history of their modification or deletion events, whereas keys stored without context do not. Restrictions to the possible data type(s) of key and record may apply, according to the storage strategy employed by this database instance (see <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html#4-storage-strategies">Storage strategies</a>).
 </p>
@@ -615,14 +615,15 @@ let myDB = db.getBasicDB()
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
