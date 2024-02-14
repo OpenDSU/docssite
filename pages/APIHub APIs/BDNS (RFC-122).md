@@ -5,7 +5,7 @@ parent: OpenDSU APIHub APIs
 nav_order: 3
 ---
 
-# BDNS
+# **BDNS**
 {: .no_toc }
 
 {: .feedback }
@@ -27,12 +27,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 <p style='text-align: justify;'>The "BDNS" API space offers a set of portable functions used to request information about the blockchain domain used by your DSU. The agents should handle these operations automatically to get the anchoring service associated with the domain, the brick storage location and more information.
 </p>
 
 
-# 1. Get BDNS configuration
+# **1. Get BDNS configuration**
 <p style='text-align: justify;'>Get the loaded BDNS configuration. The result is the completed configuration. Because loading BDNS configuration can take some time, accessing the endpoint sometimes can result in errors. In case of error, the result may be a partially loaded configuration.
 </p>
 
@@ -79,15 +79,17 @@ GET /bdns Get the loaded BDNS configuration.
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
+
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                 |
 |:-------------------------------------|:------------------------------------------|
