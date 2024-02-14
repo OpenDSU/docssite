@@ -62,7 +62,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <p style='text-align: justify;'>
 
-**Description:** Returns an error map for different types of errors that might occur while receiving messages or while mapping them.
+<b>Description:<b/> Returns an error map for different types of errors that might occur while receiving messages or while mapping them.
 </p>
 
 
@@ -71,7 +71,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <p style='text-align: justify;'>
 
-**Description:** After the message is received and digested, this function is used to map that message to the desired method.
+<b>Description:</b> After the message is received and digested, this function is used to map that message to the desired method.
 </p>
 
 
