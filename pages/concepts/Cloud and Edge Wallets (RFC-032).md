@@ -81,8 +81,8 @@ TOC
 <p style='text-align: justify;'>Cloud Agents are easy to integrate into existing systems, but their use tends to create a specific type of centralization, a confident trust in a specific node. Depending on the level at which the problem appears, difficulties may occur.
 </p>
 
-<a href="">More details on Enclaves are available in <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">Enclaves (RFC-097)</a>.
-</a>
+More details on Enclaves are available in <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">Enclaves (RFC-097</a>.
+
 
 # **3. Edge Agents**
 
