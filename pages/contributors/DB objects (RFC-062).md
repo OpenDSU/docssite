@@ -6,7 +6,7 @@ nav_order: 11
 ---
 
 
-# **DB objects (RFC-062)**
+# **DB objects**
 {: .no_toc }
 
 {: .feedback }
@@ -45,7 +45,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>Operations available on the different types of databases provided by the <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html">Database</a> API are all available in this RFC. The BasicDB is created using a storage strategy. Several storage strategies are available, but if a person wants to create a custom strategy, all the following functions must be present in his storage strategy.
 </p>
@@ -55,7 +55,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# 1. DB Types summary
+# 1. **DB Types summary**
 
 | **Type** | **Description**                     |
 |:---------|:------------------------------------|
@@ -63,9 +63,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-## 1.1 BasicDB
+## **1.1 BasicDB**
 
-### Function addIndex(tableName, fieldname, forceReindex, callback)
+### **Function addIndex(tableName, fieldname, forceReindex, callback)**
 
 <p style='text-align: justify;'><b>Description:</b> Add an index to all the values from a specific field in your table. It can be used to locate the data in your database faster.
 </p>
@@ -90,7 +90,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Description**: An error object containing a message.
 
 
-### Function getIndexedFields(tableName, callback)
+### **Function getIndexedFields(tableName, callback)**
 
 **Description:** Returns the list of the indexed fields in the specified table.
 
@@ -113,7 +113,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function beginBatch()
+### **Function beginBatch()**
 
 **Description:** Start a batch of operations on your DSU without anchoring changes.
 
@@ -125,7 +125,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | callback function | Prevent anchoring after each operation.  |
 
 
-### Function cancelBatch(callback)
+### **Function cancelBatch(callback)**
 
 **Description:** Cancel the batch of operations in progress.
 
@@ -145,7 +145,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Description:** An error object containing a message.
 
 
-### Function commitBatch(callback)
+### **Function commitBatch(callback)**
 
 **Description:** Anchor the changes from the batch of operations on your DSU.
 
@@ -167,7 +167,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function deleteRecord(tableName, key, callback)
+### **Function deleteRecord(tableName, key, callback)**
 
 <p style='text-align: justify;'><b>Description: </b>Delete a record by incrementing the record’s version number and setting the new record “delete property” to true. The old version of the record is saved.
 </p>
@@ -197,19 +197,19 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function filter(tableName, query, sort, limit, callback)
+### **Function filter(tableName, query, sort, limit, callback)**
 
 **Description:** Returns the list of records satisfying the conditions in the specified query.
 
 
 
-| **Name**         | **Type**                   | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|:-----------------|:---------------------------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| tableName        | string                     | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| query (optional) | string or array of strings |           | The conditions applied on the table tableName.A query can contain a condition (as a string) or an array of conditions. A condition has the format “field operator value”, where field is the field on which the condition is applied, the operator is one of <,<=,>,>=,==, like, and the value is the value to which the field values are compared. In the case of the like operator, the value is a string representing a regular expression. If the query is not provided, the function will return all the records in table tableName.                                                                                                                                                     |
-| sort (optional)  | string                     |           | Indicates if the returned array of records is sorted ascending or descending. The sort argument can have one of the values “asc” or “dsc”. By default, it has the value “asc”.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| limit (optional) | number                     |           | The maximum number of records returned by the filter function. By default limit is Infinity, so all the records that satisfy the query are returned.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| callback         | function                   | *required |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Name**         | **Type**                   | **Value** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|:-----------------|:---------------------------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tableName        | string                     | *required | Name of the table inside your database.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| query (optional) | string or array of strings |           | The conditions applied on the table tableName.A query can contain a condition (as a string) or an array of conditions. A condition has the format “field operator value”, where field is the field on which the condition is applied, the operator is one of <,<=,>,>=,==, like, and the value is the value to which the field values are compared. In the case of the like operator, the value is a string representing a regular expression. If the query is not provided, the function will return all the records in table tableName. |
+| sort (optional)  | string                     |           | Indicates if the returned array of records is sorted ascending or descending. The sort argument can have one of the values “asc” or “dsc”. By default, it has the value “asc”.                                                                                                                                                                                                                                                                                                                                                            |
+| limit (optional) | number                     |           | The maximum number of records returned by the filter function. By default limit is Infinity, so all the records that satisfy the query are returned.                                                                                                                                                                                                                                                                                                                                                                                      |
+| callback         | function                   | *required |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 
 
@@ -226,7 +226,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-### Function getHistory(tableName, key, callback)
+### **Function getHistory(tableName, key, callback)**
 
 **Description:** Get the history of a record, including the deleted versions in a callback.
 
@@ -255,7 +255,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function getRecord(tableName, key, callback)
+### **Function getRecord(tableName, key, callback)**
 
 **Description:** Get a single row from a table.
 
@@ -283,7 +283,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function insertRecord(tableName, key, record, callback)
+### **Function insertRecord(tableName, key, record, callback)**
 
 **Description:** Insert a record, and return an error if it already exists.
 
@@ -311,7 +311,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function updateRecord(tableName, key, record, callback)
+### **Function updateRecord(tableName, key, record, callback)**
 
 **Description:** Update a record, and return an error if it does not exist.
 
@@ -338,7 +338,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function writeKey(tableName, key, value, callback)
+### **Function writeKey(tableName, key, value, callback)**
 
 **Description:** Allows the insertion of a value of any type associated with the specified key, like in a key/value database.
 
@@ -354,9 +354,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 **Callback parameters**
 
 
-| **Name** | **Type**        | **Response example** |
-|:---------|:----------------|:---------------------|
-| err      | Error object    |                      |      
+| **Name** | **Type**     | **Response example** |
+|:---------|:-------------|:---------------------|
+| err      | Error object |                      |      
+
 
 
 
@@ -365,7 +366,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-### Function readKey(tableName, key, callback)
+### **Function readKey(tableName, key, callback)**
 
 **Description:** Reads the value associated with the provided key.
 
@@ -391,18 +392,19 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
