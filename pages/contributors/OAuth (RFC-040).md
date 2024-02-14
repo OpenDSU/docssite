@@ -67,7 +67,7 @@ function closeModal() {
 
 </body>
 
-# **OAuth (RFC-040)**
+# **OAuth**
 {: .no_toc }
 
 {: .feedback }
@@ -92,13 +92,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC introduces general information related to the OAuth protocol, how it is used within the application, and configurations of the OAuth component.</p>
 
 
 
-# 1. Overwiew
+# **1. Overwiew**
 
 ## 1.1  Authorization code flow with PKCE
 
@@ -141,7 +141,7 @@ In the<b> second step</b>, a request is made to an endpoint in the SSO server. T
 </p>
 
 
-# 2. The OAuthMiddleware component 
+# **2. The OAuthMiddleware component** 
 
 
 <div style="display: flex; justify-content: center;">
@@ -171,7 +171,7 @@ In the<b> second step</b>, a request is made to an endpoint in the SSO server. T
 </p>
 
 
-# 3. Configuration
+# **3. Configuration**
 
 <p style='text-align: justify;'>The OAuthMiddleware component is configurable via the <i>apihub.json</i> file. Below are the fields that need to be configured in order to enable SSO for an application previously registered with an SSO provider. The table describes each field in more detail.</p>
 
@@ -229,14 +229,15 @@ In the<b> second step</b>, a request is made to an endpoint in the SSO server. T
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
