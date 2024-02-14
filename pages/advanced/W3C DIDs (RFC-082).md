@@ -69,7 +69,7 @@ function closeModal() {
 </body>
 
 
-# **W3C DIDs(RFC-082)**
+# **W3C DIDs**
 {: .no_toc }
 
 {: .feedback }
@@ -108,7 +108,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This API allows the creation and resolution of OpenDSU identifiers <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">(keySSIs)</a> that are compatible with the W3C DID specifications. A DID is like a URI resolved to a DID document. A DID Document is mostly a collection of public keys and possibly other metadata (e.g. endpoints). In OpenDSU, we transform these documents into Javascript objects capable of offering other functionalities:
 </p>
@@ -136,7 +136,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>A <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">security context</a> is just an abstraction for the secure storage part of a wallet. Typically each security context embeds one or two “<a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">Enclaves</a>” (See also RFC097).
 </p>
 
-# Overview
+# **Overview**
 
 <p style='text-align: justify;'>We are using the concept of DID and the standards related to DID that are already implemented, but we will also implement other DID methods, and we will have our philosophy and our way of using these DIDs.
 </p>
@@ -213,7 +213,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <b>The Blockchain Domain is used to discover the endpoints for message queues</b>.
 
-<b>Simple methods used by others (e.g., GS1):</b>
+<b>Simple methods used by others (e.g., [GS1](https://ro.wikipedia.org/wiki/GS1)):</b>
 
 * <b>did:key</b> use a public key as identifier
 * <b>did:web </b>use a WEB URL as identifier
@@ -222,7 +222,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-# 1. W3C DID Methods supported by OpenDSU
+# **1. W3C DID Methods supported by OpenDSU**
 
 There are currently four DID Methods implemented, briefly described in the table below.
 
@@ -365,9 +365,9 @@ There are currently four DID Methods implemented, briefly described in the table
 
 
 
-# 3. DID Documents instances using the Security Context APIs
+# **3. DID Documents instances using the Security Context APIs**
 
-# 4. APIs that you could expect in a DID document instance
+# **4. APIs that you could expect in a DID document instance**
 
 <p style='text-align: justify;'>When resolving a DID identifier you obtain a DID document. Here is a summary of all operations available for DID documents.
 </p>
@@ -388,7 +388,7 @@ There are currently four DID Methods implemented, briefly described in the table
 
 
 
-# 5. Message communication between DIDs
+# 5. **Message communication between DIDs**
 
 
 <div style="display: flex; justify-content: center;">
@@ -406,7 +406,7 @@ There are currently four DID Methods implemented, briefly described in the table
 
 
 
-# 6. CommunicationHub concept
+# **6. CommunicationHub concept**
 
 * getCommunicationHub() -> CommHub
 
@@ -420,14 +420,15 @@ There are currently four DID Methods implemented, briefly described in the table
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
