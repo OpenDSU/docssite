@@ -185,12 +185,12 @@ DSU API //to move later to OpenDSU sdk when implemented
 
 **Description:**
 
-| Name       | Type  | Value     | Description    |
-|:-----------|:------|:----------|:---------------|
-| fsPath     |       |           |                |
-| dsuPath    |       |           |                |
-| options    |       |           |                |
-| callback   |       |           |                | 
+| Name     | Type  | Value     | Description    |
+|:---------|:------|:----------|:---------------|
+| path     |       |           |                |
+| data     |       |           |                |
+| options  |       |           |                |
+| callback |       |           |                | 
 
 **Callback parameters**
 
@@ -204,12 +204,11 @@ DSU API //to move later to OpenDSU sdk when implemented
 
 **Description:**
 
-| Name       | Type  | Value     | Description    |
-|:-----------|:------|:----------|:---------------|
-| fsPath     |       |           |                |
-| dsuPath    |       |           |                |
-| options    |       |           |                |
-| callback   |       |           |                | 
+| Name     | Type  | Value     | Description    |
+|:---------|:------|:----------|:---------------|
+| path     |       |           |                |
+| callback |       |           |                |
+
 
 **Callback parameters**
 
@@ -223,12 +222,10 @@ DSU API //to move later to OpenDSU sdk when implemented
 
 **Description:**
 
-| Name       | Type  | Value     | Description    |
-|:-----------|:------|:----------|:---------------|
-| fsPath     |       |           |                |
-| dsuPath    |       |           |                |
-| options    |       |           |                |
-| callback   |       |           |                | 
+| Name     | Type  | Value     | Description    |
+|:---------|:------|:----------|:---------------|
+| path     |       |           |                |
+| callback |       |           |                |
 
 **Callback parameters**
 
@@ -238,16 +235,15 @@ DSU API //to move later to OpenDSU sdk when implemented
 
 
 
-## Function listFile(path, callback)
+## Function listFolder(path, callback)
 
 **Description:**
 
-| Name       | Type  | Value     | Description    |
-|:-----------|:------|:----------|:---------------|
-| fsPath     |       |           |                |
-| dsuPath    |       |           |                |
-| options    |       |           |                |
-| callback   |       |           |                | 
+| Name     | Type  | Value     | Description    |
+|:---------|:------|:----------|:---------------|
+| path     |       |           |                |
+| callback |       |           |                |
+
 
 **Callback parameters**
 
@@ -272,7 +268,242 @@ DSU API //to move later to OpenDSU sdk when implemented
 |       |       |                      |
 
 
+## Function rename(oldPath, newPath, options, callback)
 
+**Description:**
+
+| Name     | Type  | Value     | Description    |
+|:---------|:------|:----------|:---------------|
+| oldPath  |       |           |                |
+| newPath  |       |           |                |
+| options  |       |           |                |
+| callback |       |           |                | 
+
+**Callback parameters**
+
+| Name  | Type  | Response example     | 
+|:------|:------|:---------------------|
+|       |       |                      |
+
+## Function delete(path, options, callback)
+
+**Description:**
+
+| Name     | Type  | Value     | Description    |
+|:---------|:------|:----------|:---------------|
+| path     |       |           |                |
+| options  |       |           |                |
+| callback |       |           |                | 
+
+**Callback parameters**
+
+| Name  | Type  | Response example     | 
+|:------|:------|:---------------------|
+|       |       |                      |
+
+
+# DSU API functions
+
+## Function call(functionName, arg1,....argn, callback)
+
+**Description:**
+
+| Name         | Type  | Value     | Description    |
+|:-------------|:------|:----------|:---------------|
+| functionName |       |           |                |
+| arg1         |       |           |                |
+| argn         |       |           |                | 
+| callback     |       |           |                | 
+
+**Callback parameters**
+
+| Name  | Type  | Response example     | 
+|:------|:------|:---------------------|
+|       |       |                      |
+
+
+## Function getObject()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+**Callback parameters**
+
+| Name  | Type  | Response example     | 
+|:------|:------|:---------------------|
+|       |       |                      |
+
+## Function putObject()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+**Callback parameters**
+
+| Name  | Type  | Response example     | 
+|:------|:------|:---------------------|
+|       |       |                      |
+
+## Function setItem()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+**Callback parameters**
+
+| Name  | Type  | Response example     | 
+|:------|:------|:---------------------|
+|       |       |                      |
+
+
+## Function getItem()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+**Callback parameters**
+
+| Name  | Type  | Response example     | 
+|:------|:------|:---------------------|
+|       |       |                      |
+
+
+## Function deleteObjects()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+**Callback parameters**
+
+| Name  | Type  | Response example     | 
+|:------|:------|:---------------------|
+|       |       |                      |
+
+
+# Dsu Storage functions
+
+## Function setObject()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+## Function getObject()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+
+## Function setItem()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+
+## Function getItem()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+
+## Function uploadFile()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+
+## Function uploadMultipleFiles()
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+
+## Function removeFile()//warming obsolete
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
+
+## Function removeFile(s)//warming obsolete
+
+**Description:**
+
+| Name        | Type  | Value     | Description    |
+|:------------|:------|:----------|:---------------|
+|             |       |           |                |
+|             |       |           |                |
+|             |       |           |                | 
+|             |       |           |                | 
 
 
 
