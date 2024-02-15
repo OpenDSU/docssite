@@ -5,7 +5,7 @@ parent: OpenDSU Concepts
 nav_order: 9
 ---
 
-# SSApp Architecture (RFC-028)
+# **SSApp Architecture (RFC-028)**
 {: .no_toc }
 
 {: .feedback }
