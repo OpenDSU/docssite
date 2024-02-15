@@ -69,7 +69,7 @@ function closeModal() {
 </body>
 
 
-# **W3C DIDs**
+# **W3C DIDs (RFC-082)**
 {: .no_toc }
 
 {: .feedback }
