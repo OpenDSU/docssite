@@ -70,7 +70,7 @@ A workspace is needed in order to be able to run a SSApp. The easiest way to cre
    <li>npm run dev-install</li>
    <li>npm run server</li>
   <li>while the server is still running, open a new terminal and execute the following command: npm run build-all</li>
-
+  
 </ol>
 
 <p style='text-align: justify;'>A more detailed tutorial for creating a workspace can be found in <a href="https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html">OpenDSU RFC 114</a> - OpenDSU Workspace Tutorial.
