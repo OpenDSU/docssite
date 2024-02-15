@@ -7,7 +7,7 @@ nav_order: 3
 
 
 
-# **Advanced Tutorial (RFC-115)**
+# **Advanced Tutorial**
 {: .no_toc }
 
 {: .feedback }
@@ -41,7 +41,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Prerequisites
+# **Prerequisites**
 
 
 
@@ -55,11 +55,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </ol>
     
 
-# 1. Create your Password Manager
+# **1. Create your Password Manager**
 
 <p style='text-align: justify;'>The Password Manager is a Self-Sovereign Application with an intuitive user interface that can help you store and access your passwords in a safe and organized manner. This tutorial presents the steps you should follow to be able to clone, run and make changes to the Password Manager SSApp.</p>
 
-## 1.1 Create a workspace
+## **1.1 Create a workspace**
 
 A workspace is needed in order to be able to run a SSApp. The easiest way to create one is by cloning the template workspace found <a href="https://github.com/webcardinal/tutorial-workspace">her</a>e, installing the necessary dependencies and executing all the actions found in the octopus.json file, starting a server and building all its elements. Here are the commands you can use to create a workspace from the existing template:
 
@@ -77,7 +77,7 @@ A workspace is needed in order to be able to run a SSApp. The easiest way to cre
 </p>
 
 
-## 1.2 Add the Password Manager SSApp to your workspace
+## **1.2 Add the Password Manager SSApp to your workspace**
 
 <p style='text-align: justify;'>OpenDSU provides a template Password Manager SSApp which can be found <a href="https://github.com/OpenDSU/password-manager-tutorial">here</a>. In order to add it to the workspace, we have to execute the following commands:
 </p>
@@ -110,7 +110,7 @@ A workspace is needed in order to be able to run a SSApp. The easiest way to cre
 </p>
 
 
-## 1.3 Test successful integration into workspace
+## **1.3 Test successful integration into workspace**
 
 To run your application, simply open an incognito window in Google Chrome and access <i>localhost:8080/password-manager-wallet/loader</i>. You can also edit the <i>apihub-root/index.html</i> file of your workspace, and then access <i>localhost:8080</i> and be redirected to the password manager with the simple click of a button. In order to do this, replace the <i>href</i> attribute of the button with "/password-manager-wallet/loader". You might also want to change the text on the button from “Nothing here yet” to “My Password Manager”, for example, since now the button actually links to an application. For more information about how to use the workspace, check out <a href="https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html">RFC 114</a> - Developers Tutorial. This is how the end result should look like:
 
@@ -120,7 +120,7 @@ To run your application, simply open an incognito window in Google Chrome and ac
 </div>
 
 
-# 2. Password Manager SSApp description
+# **2. Password Manager SSApp description**
 
 <p style='text-align: justify;'>A password manager is very useful in order to keep one’s passwords somewhere safe and easily accessible. The flow of this specific Password Manager application is the following: the user can add one or more categories for different types of passwords. After at least one category exists, the user can save passwords by completing a form where they enter their name (or their username, if they wish), the domain for which that password will be used, their email address linked to that account, they choose a category to which the password belongs (examples of possible categories: streaming services, business, work, personal etc.) and then they enter their password and confirm it (in order to avoid any possible typos that may have occurred while entering the password the first time).
 </p>
@@ -129,7 +129,7 @@ To run your application, simply open an incognito window in Google Chrome and ac
 </p>
 
 
-# 3.How to create a page in a SSApp
+# **3.How to create a page in a SSApp**
 
 <p style='text-align: justify;'>SSApps are based on a MVC (model-view-controller) architectural pattern. This allows for easier control over different elements of the application. The user interacts indirectly with the model, with the help of the view and the controller. Therefore, a page from a SSApp usually consists of 3 different files: the HTML file (containing the static content that can be found on the page), the CSS file (containing the stylesheet for that particular page) and the controller (a JavaScript file that contains instructions about how to handle different inputs from the user). The controller can dynamically change the content of both the page and the model, thus creating a link between the user interface and the operations happening on the backend side of the application.
 </p>
@@ -138,7 +138,7 @@ To run your application, simply open an incognito window in Google Chrome and ac
 </p>
 
 
-## 3.1 Creating a page
+## **3.1 Creating a page**
 
 First of all, if we want to create a new page for our application we have to create its HTML file, the file that will be rendered by the browser. Go to ../code/pages. You should pick an easy-to-understand name that very briefly describes the purpose of the page you want to create. As an example, we will create a page that we can use to add a new category (although this page already exists). Let’s say we name this file add-category.html. As you can see, the name of the file is descriptive of the page that we are creating and also easy to remember. Make sure that the file has the .html extension. Inside the page, we will be using a webcardinal component called page-template. This is a custom component representing a container element which can have different slots (“page-title” and “page-content”). Inside this element, we should add typical html container elements. For the “page-title” slot we can use a <span> element, since it only contains some text, while for the “page-content” slot it is best to use a <div> element, or something similar, which can, in turn, contain other elements. Because we want to take advantage of the webcardinal set of functionalities, we will populate this slot with a <webc-container> element. This element also has a controller attribute, which we will describe in the further steps. The HTML file should now look similar to this:
 
@@ -187,7 +187,7 @@ After creating the HTML file, don’t forget to add it to the pages array in the
 ```
 
 
-## 3.2 Creating the CSS file
+## **3.2 Creating the CSS file**
 
 CSS files are typically linked to HTML files and contain instructions about styling different elements from the page. By using CSS, we are able to specify elements’ size, colors, backgrounds, visibility and transparency etc. We can tweak the style of these elements by adding classes or IDs to certain elements in the HTML file. It is a good idea to also use an intuitive name for the CSS file, for example, add-category.css. To use the newly created CSS file, add this link at the beginning of the HTML document, outside of any other elements, like this:
 
@@ -196,9 +196,9 @@ CSS files are typically linked to HTML files and contain instructions about styl
 
 
 
-## 3.3 Creating the controller
+## **3.3 Creating the controller**
 
-Any page controller is actually a class that extends the WebcController class of the WebCardinal framework. This class has a constructor function that is called when the corresponding HTML page is loaded by the browser and it also has other functions. It is recommended that you use an intuitive name for this file so that it will be easier to find later on, when you want to make changes. Let’s call it AddCategoryController.js. You can begin creating your controller from the example below:
+Any page controller is actually a class that extends the WebcController class of the WebCardinal framework. This class has a constructor function that is called when the corresponding HTML page is loaded by the browser and it also has other functions. It is recommended that you use an intuitive name for this file so that it will be easier to find later on, when you want to make changes. Let’s call it _AddCategoryController.js_. You can begin creating your controller from the example below:
 
 
 
@@ -224,7 +224,7 @@ class AddCategoryController extends WebcController {
 
 ```
 
-# 4. How to use OpenDSU APIs in SSApps
+# **4. How to use OpenDSU APIs in SSApps**
 
 The classic Service design pattern can be used with ease to create a data layer between the controllers and OpenDSU APIs. In our tutorial, we propose to take a closer look at a simple Service called CategoryManagerService that uses the <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">OpenDSU Enclave</a> concept as a database.
 
@@ -318,18 +318,19 @@ addCategoryListener() {
 
 ```
 
-
+ 
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**              |
 |:------------------------------------|:-----------------------|
