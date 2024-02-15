@@ -14,7 +14,7 @@ nav_order: 9
 } 
 </style>
 
-# **CredentialsDSU**
+# **CredentialsDSU (RFC-057)**
 {: .no_toc }
 
 
@@ -244,7 +244,7 @@ These are different preset errors for several behaviours that might occur, for e
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                                                |
 |:------------------------------------|:---------------------------------------------------------|
