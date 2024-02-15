@@ -5,7 +5,7 @@ parent: OpenDSU Advanced
 nav_order: 5
 ---
 
-# **LightDB**
+# **LightDB (RFC-023)**
 
 {: .no_toc }
 
