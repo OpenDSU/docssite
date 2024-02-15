@@ -107,7 +107,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 In order to be able to follow this guide, first you need to do the following steps:
 
 <ol>
-    <li> Install or update Node (including NPM) to version 14.15 or newer;</li>
+    <li>Install or update Node (including NPM) to version 14.15 or newer;</li>
     <li>Install or update Git. </li>
 </ol>
 
@@ -118,29 +118,23 @@ In order to be able to follow this guide, first you need to do the following ste
 <p style='text-align: justify;'>In order to create and run a SSApp, first we need to create a workspace. We will start from a <a href="https://github.com/webcardinal/tutorial-workspace">tutorial workspace</a> that bundles all the necessary dependencies for building and running SSApps. You can read more about how this is done <a href="https://github.com/webcardinal/tutorial-workspace#readme">here</a>. Here are all the steps you need to follow for creating a workspace:
 </p>
 
-<ol>
-    <li>Clone tutorial-workspace from GitHub:</li>
+
+1. Clone tutorial-workspace from GitHub:
 
 ```js
-
 git clone https://github.com/webcardinal/tutorial-workspace
-
 ```
 
-   <li>Go inside the [tutorial-workspace] directory:</li> 
+2. Go inside the [tutorial-workspace] directory:
 
 ```js
-
 cd tutorial-workspace
-
 ```
 
- <li>Install all the necessary dependencies for a working development setup:</li>
+3. Install all the necessary dependencies for a working development setup:
 
 ```js
-
 npm run dev-install
-
 ```
 
 </ol>
@@ -149,27 +143,18 @@ npm run dev-install
 
 **Note:** All the dependencies from the workspace can be found in the octopus.json file.
 
-<ol>
- <li>Launch the server:</li>
+
+1. Launch the server:
 
 ```js
-
 npm run server
-
 ```
 
- <li>Scan all the apps and wallets in the configuration and run the build script:</li>
+2. Scan all the apps and wallets in the configuration and run the build script:
 
 ```js
-
-    npm run build-all
-
+npm run build-all
 ```
-
-</ol>
-
-
-
 
 **Note:** Run this in a different terminal without closing the terminal that keeps the server running!
 
@@ -203,19 +188,16 @@ npm run server
 
 We will start with a simple <a href="">SSapp template</a>. First, open a terminal in the root folder of your workspace.
 
-<ol>
-<li> Clone the template repo:</li>
+
+1. Clone the template repo:
 
 ```js
-
 git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com/OpenDSU/ssapp-template</a> helloworld-ssapp
-
 ```
 
-<li> Remove .git files and install dependencies:</li>
+2. Remove .git files and install dependencies:
 
 ```js
-
     cd helloworld-ssapp && rm -rf .git && npm install && cd ..
 ```
 
@@ -225,45 +207,33 @@ git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com
 
 <p style='text-align: justify;'><b>Note</b>: This command first enters the helloworld-ssapp folder, then removes the .git files and installs the necessary dependencies, and then navigates back to the initial folder (the parent of helloworld-ssapp). Please note that, for the next steps of creating your SSApp, the server should be running in a separate terminal.</p>
    
-<ol>
-    <li> Bind the newly created helloworld-ssapp to a new wallet:</li>
+
+1. Bind the newly created helloworld-ssapp to a new wallet:
 
 ```js
-
 npm run bind-wallet helloworld-wallet helloworld-ssapp
-
 ```
 
-   <li>Prepare a loader for our newly created wallet:</li>
+2. Prepare a loader for our newly created wallet:
 
 ```js
-
 npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenDSU/trust-loader
-
 ```
-     
- <ol>
 
-<li>Configure the loader:</li>
+
+1. Configure the loader:
 
 ```js
-
-     mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-config-files/*  trust-loader-config/helloworld-wallet/loader
-     
+mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-config-files/*  trust-loader-config/helloworld-wallet/loader
 ```
 
 <p style='text-align: justify;'><b>Note:</b> This will create the needed folders and will add some default configuration files that can be accessed <a href="https://github.com/webcardinal/tutorial-workspace/tree/master/default-loader-config-files">here</a>. Each SSApp needs its own environment.js file (here, you can set a certain enclave type and other parameters, like different types of domains etc.) and a config-constants.js file (here, you can set global variables like the application name, default messages for the user etc).</p>
 
-<li> Rebuild the workspace:</li>
+2. Rebuild the workspace:
 
 ```js
-
-       npm run build-all
-       
+npm run build-all
 ```
-
- </ol>
-</ol>
 
 
 <p style='text-align: justify;'>We’re almost done! Our application can now be accessed at this link: <a href="http://localhost:8080/helloworld-wallet/loader/">http://localhost:8080/helloworld-wallet/loader</a>. The last thing we need to do is to be able to access our new application through the application loader.
@@ -332,9 +302,7 @@ npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenD
 <p style='text-align: justify;'>In order to apply these changes we can rebuild everything inside the workspace:</p>
 
 ```js
-
 npm run build-all
-
 ```
 
 <p style='text-align: justify;'>Restart the server to clean cached pages.</p>
@@ -362,7 +330,6 @@ For a really cool app, the next step is checking out the <a href="https://opends
 The opendsu-sdk module is added as a dependency in the octopus.json file in your workspace:
 
 ```js
-
 {
 
 "workDir": ".",
@@ -402,7 +369,6 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 ]
 
 }
-
 ```
 
 
@@ -444,20 +410,17 @@ At build, the octopus will first clone the contents of <a href="https://github.c
     
 
 ```js
-
     {
     "my_module": {
      "deps": "my_module",
      "autoLoad": true
     }
     }
-    
 ```
 
 <p style='text-align: justify;'>There should also be a file called <b>package.json</b>, that defines the build command. This file should look something like this:</p>
 
 ```js
-
     {
     ...
     "scripts": {
@@ -465,12 +428,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
     "build": "node ../node_modules/octopus/scripts/run build devmode"
     }
     }
-    
 ```
-
-
-
-
 
 
 <p style='text-align: justify;'>We also need the <b>octopus.json</b> file. This file contains instructions for our build, necessary dependencies etc. For now, we will create the file and specify the build command, which will run the <b>pskbuild.js</b> script. The specified folder --source is the parent folder of the created module. The bundle will be created at the specified --output location after running the npm build command in the module folder.
@@ -479,8 +437,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 
 ```js
-
-
 {
  "workDir": ".",
  "dependencies": [],
@@ -501,8 +457,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
    }
  ]
 }
-
-
 ```
 
 
@@ -532,7 +486,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 
 ```js
-
 {
  "anchoring": {
    "type": "FS",
@@ -547,7 +500,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
    "/anchor/vault"
  ]
 }
-
 ```
 
 
@@ -556,7 +508,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
  
 
 ```js
-
 {
  "altimanager": {
    "replicas": [],
@@ -571,7 +522,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
    ]
  }
 }
-
 ```
 
 
