@@ -137,9 +137,6 @@ cd tutorial-workspace
 npm run dev-install
 ```
 
-</ol>
-
-
 
 **Note:** All the dependencies from the workspace can be found in the octopus.json file.
 
@@ -200,8 +197,6 @@ git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com
 ```js
     cd helloworld-ssapp && rm -rf .git && npm install && cd ..
 ```
-
-</ol>
 
 
 
