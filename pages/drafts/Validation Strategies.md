@@ -15,7 +15,8 @@ A period when the community can review the RFC (comment Docs).
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
+
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 
@@ -58,8 +59,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## createPresentation(validationStrategyName, ...args)
 
-**Description:** 
-<p style='text-align: justify;'>This function allows the user to create a verifiable presentation. Presentations can be used to combine and present a set of different verifiable credentials. They are packaged in a way that makes all the claims inside the presentation verifiable by a verifier (the one that will receive the presentation). More information is available on the <a href="https://www.w3.org/TR/vc-data-model/#presentations-0">w3c website</a>.
+<p style='text-align: justify;'><b>Description</b>: This function allows the user to create a verifiable presentation. Presentations can be used to combine and present a set of different verifiable credentials. They are packaged in a way that makes all the claims inside the presentation verifiable by a verifier (the one that will receive the presentation). More information is available on the <a href="https://www.w3.org/TR/vc-data-model/#presentations-0">w3c website</a>.
 </p>
 
 **Parameters:**
@@ -72,9 +72,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## getStrategy(validationStrategyName)
 
-**Description:** 
-
-<p style='text-align: justify;'>Get the strategy used to issue, sign and verify credentials and presentations.</p>
+**Description:** Get the strategy used to issue, sign and verify credentials and presentations.
 
 **Parameters:**
 
@@ -82,6 +80,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 |:------------------------|:---------|:---------------|
 | validationStrategyName  | string   |                |
 | ...args                 |          |                |
+
+
+
 
 ## issueCredential(validationStrategyName, ...args)
 
