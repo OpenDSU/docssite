@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 
-# Use Cases Development Guidelines
+# **Use Cases Development Guidelines (RFC-020)**
 {: .no_toc }
 
 {: .draft }
@@ -16,11 +16,13 @@ A period when the community can review the RFC (comment Docs).
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
+
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [Use Cases Development Guidelines](#use-cases-development-guidelines)
+
+
 * [Abstract](#abstract)
 * [1. Big Picture](#1-big-picture)
   * [2.1. Development Process from the OpenDSU Perspective](#21-development-process-from-the-opendsu-perspective)
@@ -52,7 +54,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 # 1. Big Picture
-<p style='text-align: justify;'>Use cases will always involve different actors. In order to exchange data in a secure way with OpenDSU they will need an OpenDSU agent or wallet that will take care of all OpenDSU-related operations, such as the storage of the DSU’s key, the bricks storage in a local or remote server, or the anchoring of keys’ Anchor IDs in the blockchain. These agents can either be used locally (which is optimal to attain data self-sovereignty) or remotely in the cloud when it’s necessary (for example if you need the agent to be available 24 hours a day). We will often have a mix of local agents (or edge) where the most sensitive data will be stored and cloud agents to get the benefits of cloud storage, such as availability.
+<p style='text-align: justify;'>Use cases will always involve <b>different actors</b>. In order to exchange data in a secure way with OpenDSU they will need an<b> OpenDSU agent</b> or <b>wallet</b> that will take care of all OpenDSU-related operations, such as the storage of the DSU’s key, the bricks storage in a local or remote server, or the anchoring of keys’ Anchor IDs in the blockchain. These agents can either be used locally (which is optimal to attain data self-sovereignty) or remotely in the cloud when it’s necessary (for example if you need the agent to be available 24 hours a day). We will often have a mix of local agents (or edge) where the most sensitive data will be stored and cloud agents to get the benefits of cloud storage, such as availability.
 The data stored in the DSU is only accessible using the associated keys. These keys will be resolved to obtain necessary information about the brick storages or anchoring services that will allow the agents to reconstruct the DSU in its execution environment. These mechanisms allow the keys’ owners to keep data hidden from the other actors. The highest key of a family (SeedSSI) is providing total control over the DSU it is associated with. In order for these key owners to share control of their DSU, they can send the same key to their collaborators. They can also decide to give restricted access to their DSU without sharing the original key, by using key derivation processes to create new keys that they will be able to share safely (e.g. SReadSSI, for read-only access). Use cases should use a mix of keys to create access control policies for their DSUs.</p>
 
 ## 2.1. Development Process from the OpenDSU Perspective
