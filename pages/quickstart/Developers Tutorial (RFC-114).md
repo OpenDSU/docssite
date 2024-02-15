@@ -119,19 +119,19 @@ In order to be able to follow this guide, first you need to do the following ste
 </p>
 
 
-1. Clone tutorial-workspace from GitHub:
+* Clone tutorial-workspace from GitHub:
 
 ```js
 git clone https://github.com/webcardinal/tutorial-workspace
 ```
 
-2. Go inside the [tutorial-workspace] directory:
+* Go inside the [tutorial-workspace] directory:
 
 ```js
 cd tutorial-workspace
 ```
 
-3. Install all the necessary dependencies for a working development setup:
+* Install all the necessary dependencies for a working development setup:
 
 ```js
 npm run dev-install
@@ -141,13 +141,13 @@ npm run dev-install
 **Note:** All the dependencies from the workspace can be found in the octopus.json file.
 
 
-1. Launch the server:
+* Launch the server:
 
 ```js
 npm run server
 ```
 
-2. Scan all the apps and wallets in the configuration and run the build script:
+* Scan all the apps and wallets in the configuration and run the build script:
 
 ```js
 npm run build-all
@@ -186,13 +186,13 @@ npm run build-all
 We will start with a simple <a href="">SSapp template</a>. First, open a terminal in the root folder of your workspace.
 
 
-1. Clone the template repo:
+* Clone the template repo:
 
 ```js
 git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com/OpenDSU/ssapp-template</a> helloworld-ssapp
 ```
 
-2. Remove .git files and install dependencies:
+* Remove .git files and install dependencies:
 
 ```js
     cd helloworld-ssapp && rm -rf .git && npm install && cd ..
@@ -203,20 +203,20 @@ git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com
 <p style='text-align: justify;'><b>Note</b>: This command first enters the helloworld-ssapp folder, then removes the .git files and installs the necessary dependencies, and then navigates back to the initial folder (the parent of helloworld-ssapp). Please note that, for the next steps of creating your SSApp, the server should be running in a separate terminal.</p>
    
 
-1. Bind the newly created helloworld-ssapp to a new wallet:
+* Bind the newly created helloworld-ssapp to a new wallet:
 
 ```js
 npm run bind-wallet helloworld-wallet helloworld-ssapp
 ```
 
-2. Prepare a loader for our newly created wallet:
+* Prepare a loader for our newly created wallet:
 
 ```js
 npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenDSU/trust-loader
 ```
 
 
-1. Configure the loader:
+* Configure the loader:
 
 ```js
 mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-config-files/*  trust-loader-config/helloworld-wallet/loader
@@ -224,7 +224,7 @@ mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-co
 
 <p style='text-align: justify;'><b>Note:</b> This will create the needed folders and will add some default configuration files that can be accessed <a href="https://github.com/webcardinal/tutorial-workspace/tree/master/default-loader-config-files">here</a>. Each SSApp needs its own environment.js file (here, you can set a certain enclave type and other parameters, like different types of domains etc.) and a config-constants.js file (here, you can set global variables like the application name, default messages for the user etc).</p>
 
-2. Rebuild the workspace:
+* Rebuild the workspace:
 
 ```js
 npm run build-all
