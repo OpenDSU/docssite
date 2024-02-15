@@ -70,13 +70,13 @@ The JWT signature is computed in two steps:
 
 ### **1.2.2.Relevant APIs in OpenDSU SDK**
 
-| API              | Description                                                                                                                        | API family    |
-|:-----------------|:-----------------------------------------------------------------------------------------------------------------------------------|:--------------|
-| createJWT        | createJWT(issuer:SeedSSI, scope:string,credentials:array, options,  callback) **Returns:** a valid JWT token signed by the SeedSSI | crypto        |
-| verifyJWT        | verifyJWT(JWT, rootOfTrustVerificationStrategy, callback) **Returns:** calls the callback with success (true) or error             | crypto        |
-| createCredential | createCredential(issuer:SeedSSI,credentialSubject, callback)                                                                       |               |
-| createAuthToken  | createAuthToken(seedSSI, scope, credential, callback)                                                                              |               |
-| verifyAuthToken  | verifyAuthToken (jwt,listOfIssuers, callback)                                                                                      |               |
+| API              | Description                                                                                                                              | API family    |
+|:-----------------|:-----------------------------------------------------------------------------------------------------------------------------------------|:--------------|
+| createJWT        | createJWT(issuer:SeedSSI, scope:string,credentials:array, options,  callback) <br> <br> **Returns:** a valid JWT token signed by the SeedSSI | crypto        |
+| verifyJWT        | verifyJWT(JWT, rootOfTrustVerificationStrategy, callback)<br><br> **Returns:** calls the callback with success (true) or error                   | crypto        |
+| createCredential | createCredential(issuer:SeedSSI,credentialSubject, callback)                                                                             |               |
+| createAuthToken  | createAuthToken(seedSSI, scope, credential, callback)                                                                                    |               |
+| verifyAuthToken  | verifyAuthToken (jwt,listOfIssuers, callback)                                                                                            |               |
 
 skipAuthorisation: [“bricks/get-brick/epi”,“bricks/get-brick/:ssi:zsa:epi:”]
 
