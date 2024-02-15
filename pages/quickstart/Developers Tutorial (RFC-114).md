@@ -307,8 +307,6 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 </div>
 
 
-
-
 **There we go!** 
 
 
