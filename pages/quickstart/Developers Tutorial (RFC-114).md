@@ -161,7 +161,7 @@ In order to be able to follow this guide, first you need to do the following ste
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=313&h=221" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQK_6l6UoHxvatBPspTftpkMSaXexoqjwidBjUIVf13DWVm4duiK9GAZwLhylXzfJtY75ytI_n6Z-5u/pub?w=330&h=239" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
