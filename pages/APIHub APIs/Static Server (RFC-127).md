@@ -6,7 +6,7 @@ nav_order: 8
 ---
 
 
-# **Static Server**
+# **Static Server (RFC-127)**
 {: .no_toc }
 
 {: .feedback }

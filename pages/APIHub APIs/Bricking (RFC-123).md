@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 
-# **Bricking**
+# **Bricking (RFC-123)**
 {: .no_toc }
 
 {: .feedback }
