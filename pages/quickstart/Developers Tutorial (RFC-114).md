@@ -7,96 +7,6 @@ nav_order: 2
 
 
 
-
-
-# **Developers Tutorial (RFC-114)**
-{: .no_toc }
-
-{: .feedback }
-A period when the community can review the RFC (comment Docs)
-
-**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
-
-**Copyright: MIT license**
-
-**Copyright** © 2018-2024 Axiologic Research and Contributors.
-
-This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
-
-
-
-
-<!-- TOC -->
-* [Prerequisites](#prerequisites)
-* [1. Create your workspace](#1-create-your-workspace)
-* [2.Create your SSAPP](#2create-your-ssapp)
-* [3. Customize your SSAPP](#3-customize-your-ssapp)
-* [4. Modules and Bundles](#4-modules-and-bundles)
-  * [4.1  Modules](#41--modules)
-  * [4.2  Bundles](#42--bundles)
-* [5. Configure Domain](#5-configure-domain)
-* [Annex 1. Contributors](#annex-1-contributors)
-<!-- TOC -->
-
-
-
-test
-
-# **Prerequisites**
-
-In order to be able to follow this guide, first you need to do the following steps:
-
-<ol>
-    <li> Install or update Node (including NPM) to version 14.15 or newer;</li>
-    <li>Install or update Git. </li>
-</ol>
-
-
-
-# **1. Create your workspace**
-
-<p style='text-align: justify;'>In order to create and run a SSApp, first we need to create a workspace. We will start from a <a href="https://github.com/webcardinal/tutorial-workspace">tutorial workspace</a> that bundles all the necessary dependencies for building and running SSApps. You can read more about how this is done <a href="https://github.com/webcardinal/tutorial-workspace#readme">here</a>. Here are all the steps you need to follow for creating a workspace:
-</p>
-
-<ol>
-    <li>Clone tutorial-workspace from GitHub:</li>
-
-     git clone https://github.com/webcardinal/tutorial-workspace
-
-   <li>Go inside the [tutorial-workspace] directory:</li> 
-
-    cd tutorial-workspace
-
- <li>Install all the necessary dependencies for a working development setup:</li>
-
-    npm run dev-install
-</ol>
-
-
-
-**Note:** All the dependencies from the workspace can be found in the octopus.json file.
-
-<ol>
- <li>Launch the server:</li>
-
-    npm run server
-
- <li>Scan all the apps and wallets in the configuration and run the build script:</li>
-
-    npm run build-all
-</ol>
-
-
-
-
-**Note:** Run this in a different terminal without closing the terminal that keeps the server running!
-
-<ol>
-
-<li> Now,  you should be able to see the application loader:</li>
-
-</ol>
-
 <style>
   /* Styles for the modal /
   .modal {
@@ -160,6 +70,96 @@ function closeModal() {
 
 </body>
 
+
+
+# **Developers Tutorial (RFC-114)**
+{: .no_toc }
+
+{: .feedback }
+A period when the community can review the RFC (comment Docs)
+
+**Document Maintainers: Andi Gabriel Tan 2024. List of other contributors in Annex. 1.**
+
+**Copyright: MIT license**
+
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
+
+This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
+
+
+
+
+<!-- TOC -->
+* [Prerequisites](#prerequisites)
+* [1. Create your workspace](#1-create-your-workspace)
+* [2.Create your SSAPP](#2create-your-ssapp)
+* [3. Customize your SSAPP](#3-customize-your-ssapp)
+* [4. Modules and Bundles](#4-modules-and-bundles)
+  * [4.1  Modules](#41--modules)
+  * [4.2  Bundles](#42--bundles)
+* [5. Configure Domain](#5-configure-domain)
+* [Annex 1. Contributors](#annex-1-contributors)
+<!-- TOC -->
+
+
+
+
+
+# **Prerequisites**
+
+In order to be able to follow this guide, first you need to do the following steps:
+
+<ol>
+    <li> Install or update Node (including NPM) to version 14.15 or newer;</li>
+    <li>Install or update Git. </li>
+</ol>
+
+
+
+# **1. Create your workspace**
+
+<p style='text-align: justify;'>In order to create and run a SSApp, first we need to create a workspace. We will start from a <a href="https://github.com/webcardinal/tutorial-workspace">tutorial workspace</a> that bundles all the necessary dependencies for building and running SSApps. You can read more about how this is done <a href="https://github.com/webcardinal/tutorial-workspace#readme">here</a>. Here are all the steps you need to follow for creating a workspace:
+</p>
+
+<ol>
+    <li>Clone tutorial-workspace from GitHub:</li>
+
+     git clone https://github.com/webcardinal/tutorial-workspace
+
+   <li>Go inside the [tutorial-workspace] directory:</li> 
+
+    cd tutorial-workspace
+
+ <li>Install all the necessary dependencies for a working development setup:</li>
+
+    npm run dev-install
+</ol>
+
+
+
+**Note:** All the dependencies from the workspace can be found in the octopus.json file.
+
+<ol>
+ <li>Launch the server:</li>
+
+    npm run server
+
+ <li>Scan all the apps and wallets in the configuration and run the build script:</li>
+
+    npm run build-all
+</ol>
+
+
+
+
+**Note:** Run this in a different terminal without closing the terminal that keeps the server running!
+
+<ol>
+
+<li> Now,  you should be able to see the application loader:</li>
+
+</ol>
+
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
@@ -171,7 +171,7 @@ function closeModal() {
   />
 </div>
 
- 
+
 
 <p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace.
 </p>
