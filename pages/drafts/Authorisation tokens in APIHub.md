@@ -6,7 +6,7 @@ nav_order: 6
 ---
 
 
-# Authorization Tokens in APIHub
+# **Authorization Tokens in APIHub**
 {: .no_toc }
 
 {: .draft }
@@ -33,17 +33,17 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
-# 1. APIHub as an OpenDSU Cloud Agent
+# **1. APIHub as an OpenDSU Cloud Agent**
 
-## 1.1.Token-based authorization in APIHub
+## **1.1.Token-based authorization in APIHub**
 
-## 1.2. KeySSI-based JWT Tokens 
+## **1.2. KeySSI-based JWT Tokens** 
 
-<p style='text-align: justify;'> The JWT signature is computed in two steps:
+The JWT signature is computed in two steps:
 1. Obtain the hash of the JWT Header and the Payload.
-2. Sign the hash with the private key of the “iss” obtained from the SeedSSI.</p>
+2. Sign the hash with the private key of the “iss” obtained from the SeedSSI.
 
 | JWT Header Fields  | Details            |
 |:-------------------|:-------------------|
@@ -61,14 +61,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | nbf                   | Not Before Time                                                                                                                                                                                                                        |
 | exp                   | Expiration Time                                                                                                                                                                                                                        |
 
-### 1.2.1. Threat model
+### **1.2.1. Threat model**
 
 * Improperly signed JWT Token
 * Stolen SeedSSI used to create valid JWT Tokens
 * Stolen JWT Token 
 * Corrupted APIHub 
 
-### 1.2.2.Relevant APIs in OpenDSU SDK
+### **1.2.2.Relevant APIs in OpenDSU SDK**
 
 | API              | Description                                                                                                                        | API family    |
 |:-----------------|:-----------------------------------------------------------------------------------------------------------------------------------|:--------------|
@@ -78,6 +78,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | createAuthToken  | createAuthToken(seedSSI, scope, credential, callback)                                                                              |               |
 | verifyAuthToken  | verifyAuthToken (jwt,listOfIssuers, callback)                                                                                      |               |
 
+skipAuthorisation: [“bricks/get-brick/epi”,“bricks/get-brick/:ssi:zsa:epi:”]
 
 | KeySSIs           |        |
 |:------------------|:-------|
@@ -90,27 +91,24 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | Authentication Token | Signed by User SSI  Binds User Credentials                            |
 
 
-# 2. Type of Wallets
+# **2. Type of Wallets**
 
-## 2.1. SeedSSI Wallet
+## **2.1. SeedSSI Wallet**
 
-## 2.2. SecretSSI Wallets
+## **2.2. SecretSSI Wallets**
 
-
-
-
-
-
-
+ 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-# Annex 1. Contributors
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
