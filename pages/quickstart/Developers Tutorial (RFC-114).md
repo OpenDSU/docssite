@@ -122,19 +122,25 @@ In order to be able to follow this guide, first you need to do the following ste
     <li>Clone tutorial-workspace from GitHub:</li>
 
 ```js
+
 git clone https://github.com/webcardinal/tutorial-workspace
+
 ```
 
    <li>Go inside the [tutorial-workspace] directory:</li> 
 
 ```js
+
 cd tutorial-workspace
+
 ```
 
  <li>Install all the necessary dependencies for a working development setup:</li>
 
 ```js
+
 npm run dev-install
+
 ```
 
 </ol>
@@ -146,11 +152,20 @@ npm run dev-install
 <ol>
  <li>Launch the server:</li>
 
-    npm run server
+```js
+
+npm run server
+
+```
 
  <li>Scan all the apps and wallets in the configuration and run the build script:</li>
 
+```js
+
     npm run build-all
+
+```
+
 </ol>
 
 
@@ -192,6 +207,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 <li> Clone the template repo:</li>
 
 ```js
+
 git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com/OpenDSU/ssapp-template</a> helloworld-ssapp
 
 ```
@@ -199,6 +215,7 @@ git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com
 <li> Remove .git files and install dependencies:</li>
 
 ```js
+
     cd helloworld-ssapp && rm -rf .git && npm install && cd ..
 ```
 
@@ -212,13 +229,17 @@ git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com
     <li> Bind the newly created helloworld-ssapp to a new wallet:</li>
 
 ```js
+
 npm run bind-wallet helloworld-wallet helloworld-ssapp
+
 ```
 
    <li>Prepare a loader for our newly created wallet:</li>
 
 ```js
+
 npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenDSU/trust-loader
+
 ```
      
  <ol>
@@ -226,7 +247,9 @@ npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenD
 <li>Configure the loader:</li>
 
 ```js
+
      mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-config-files/*  trust-loader-config/helloworld-wallet/loader
+     
 ```
 
 <p style='text-align: justify;'><b>Note:</b> This will create the needed folders and will add some default configuration files that can be accessed <a href="https://github.com/webcardinal/tutorial-workspace/tree/master/default-loader-config-files">here</a>. Each SSApp needs its own environment.js file (here, you can set a certain enclave type and other parameters, like different types of domains etc.) and a config-constants.js file (here, you can set global variables like the application name, default messages for the user etc).</p>
@@ -234,7 +257,9 @@ npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenD
 <li> Rebuild the workspace:</li>
 
 ```js
+
        npm run build-all
+       
 ```
 
  </ol>
@@ -307,7 +332,9 @@ npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenD
 <p style='text-align: justify;'>In order to apply these changes we can rebuild everything inside the workspace:</p>
 
 ```js
+
 npm run build-all
+
 ```
 
 <p style='text-align: justify;'>Restart the server to clean cached pages.</p>
@@ -417,17 +444,20 @@ At build, the octopus will first clone the contents of <a href="https://github.c
     
 
 ```js
+
     {
     "my_module": {
      "deps": "my_module",
      "autoLoad": true
     }
     }
+    
 ```
 
 <p style='text-align: justify;'>There should also be a file called <b>package.json</b>, that defines the build command. This file should look something like this:</p>
 
 ```js
+
     {
     ...
     "scripts": {
@@ -435,6 +465,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
     "build": "node ../node_modules/octopus/scripts/run build devmode"
     }
     }
+    
 ```
 
 
@@ -502,7 +533,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 ```js
 
-
 {
  "anchoring": {
    "type": "FS",
@@ -517,8 +547,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
    "/anchor/vault"
  ]
 }
-
-
 
 ```
 
@@ -543,7 +571,6 @@ At build, the octopus will first clone the contents of <a href="https://github.c
    ]
  }
 }
-
 
 ```
 
