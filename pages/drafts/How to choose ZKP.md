@@ -5,7 +5,7 @@ parent: OpenDSU Drafts
 nav_order: 7
 ---
 
-# **How to choose a ledger. When to choose ZKP**
+# **How to choose a ledger. When to choose ZKP (RFC-038)**
 {: .no_toc }
 
 {: .draft }
