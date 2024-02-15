@@ -5,7 +5,7 @@ parent: OpenDSU Drafts
 nav_order: 2
 ---
 
-# Ethereum Adapter
+# **Ethereum Adapter (RFC-027)**
 {: .no_toc }
 
 {: .feedback }
@@ -16,7 +16,8 @@ A period when the community can review the RFC (comment Docs).
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
+
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
@@ -32,7 +33,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# 1. Ethereum Adapter
+
+
+# **1. Ethereum Adapter**
 
 <p style='text-align: justify;'>The purpose of the Ethereum Adapter is to offer an HTTP interface to be used by the ApiHub anchoring component when configured to do the anchoring into a Quorum/Ethereum private network-based Blockchain. Ethereum Adapter uses a custom-designed smart contract in order to store anchor information and an organization account used to sign any written transaction. Configuration of the Ethereum Adapter can be made using environment variables as follows:
 </p>
@@ -70,7 +73,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | statusCannotAppendConstAnchor                 | Error     | 107        |                                                                                                   |
 
 
-# 2. Smart Contract methods
+# **2. Smart Contract methods**
 
 ## Function createAnchor(anchorId, newAnchorValue)
 
@@ -154,24 +157,43 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | **GET**        | /health                               |                  |
 
 
+
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-# Annex 1. Contributors
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-| **Current Editors**                 | **Email**                                                        |
-|:------------------------------------|:-----------------------------------------------------------------|
-| Sînică Alboaie                      | sinica.alboaie@axiologic.net                                     |
-| Andi-Gabriel Țan                   | andi@axiologic.net                                                |
-| Teodor Lupu                         | teodor@axiologic.net                                             |
-| **Contributors Axiologic Research** | **Email**                                                        |
-| Adrian Ganga                        | adrian@axiologic.net                                             |
-| Andi-Gabriel Țan                    | andi@axiologic.net                                               |
-| Cosmin Ursache                      | cosmin@axiologic.net                                             |
-| Daniel Sava                         | daniel@axiologic.net                                             |
-| Nicoleta Mihalache                  | nicoleta@axiologic.net                                           |
-| Teodor Lupu                         | teodor@axiologic.net                                             |
 
- 
+# **Annex 1. Contributors**
+
+| **Current Editors**                 | **Email**                                     |
+|:------------------------------------|:----------------------------------------------|
+| Andi-Gabriel Țan                    | andi@axiologic.net                            |
+| **Contributors Axiologic Research** | **Email**                                     |
+| Adrian Ganga                        | adrian@axiologic.net                          |
+| Andi-Gabriel Țan                    | andi@axiologic.net                            |
+| Cosmin Ursache                      | cosmin@axiologic.net                          |
+| Daniel Sava                         | daniel@axiologic.net                          |
+| Nicoleta Mihalache                  | nicoleta@axiologic.net                        |
+| Valentin Gérard                     | valentin@axiologic.net                        |
+| **PrivateSky Contributors**         | **Email**                                     |
+| Alex Sofronie                       | alsofronie@gmail.com(DPO)                     |
+| Cosmin Ursache                      | cos.ursache@gmail.com(UAIC)                   |
+| Daniel Sava                         | sava.dumitru.daniel@gmail.com(HVS, AQS)       |
+| Daniel Visoiu                       | visoiu.daniel.g@gmail.com(SGiant)             |
+| Lenuta Alboaie                      | lalboaie@gmail.com(UAIC)                      |
+| Rafael Mastaleru                    | rafael@rms.ro(RMS)                            |
+| Sînică Alboaie                      | salboaie@gmail.com(UAIC)                      |
+| Vlad Balmos                         | vlad.balmos@gmail.com(Code932)                |
+| **PharmaLedger**                    | **Email**                                     | 
+| Ana Balan                           | bam@rms.ro (RMS)                              |
+| Bogdan Mastahac                     | mab@rms.ro (RMS)                              |
+| Cosmin Ursache                      | cos@rms.ro (RMS)                              |
+| Rafael Mastaleru                    | raf@rms.ro (RMS)                              |
+
+

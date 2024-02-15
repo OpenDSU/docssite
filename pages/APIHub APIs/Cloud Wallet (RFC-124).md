@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 
-# **Cloud Wallet**
+# **Cloud Wallet (RFC-124)**
 {: .no_toc }
 
 {: .feedback }

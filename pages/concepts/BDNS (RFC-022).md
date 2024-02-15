@@ -5,7 +5,7 @@ parent: OpenDSU Concepts
 nav_order: 8
 ---
 
-# BDNS (RFC-022)
+# **BDNS (RFC-022)**
 {: .no_toc }
 
 {: .feedback }

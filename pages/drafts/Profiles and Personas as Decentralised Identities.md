@@ -5,7 +5,7 @@ parent: OpenDSU Drafts
 nav_order: 8
 ---
 
-# Profiles and Personas as Decentralised Identities
+# **Profiles and Personas as Decentralised Identities (RFC-043)**
 {: .no_toc }
 
 {: .draft }
@@ -24,7 +24,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 <p style='text-align: justify;'>OpenDSU aims to be neutral regarding emerging and  existing standards in the identity management and cryptographic primitives standardized by the DTEs in upper layers (L2-L4). However, since DSUs can easily function as wallets, agents, or DKMs, we recommend the usage of a special DSU Type that we call DSU Profiles (DSUProfile). To maximize the interoperability of the DTEs, we plan to standardize the DSUProfiles and gradually add support to well-known and widely adopted identity systems. The DSU Profile aims to function as a portable wallet for the user and the company that aims to be able to store private keys and to offer control over its identities.
 </p>
 
@@ -50,13 +50,15 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|

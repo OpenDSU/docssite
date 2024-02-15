@@ -5,7 +5,7 @@ parent: OpenDSU Contributors
 nav_order: 3
 ---
 
-# **WalletSSI**
+# **WalletSSI (RFC-014)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).

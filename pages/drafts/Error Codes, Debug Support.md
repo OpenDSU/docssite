@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 
-# **Error Codes, Debug Support**
+# **Error Codes, Debug Support (RFC-021)**
 {: .no_toc }
 
 {: .draft }
@@ -23,12 +23,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 * [1. Error codes](#1-error-codes)
 * [2. General Guide for types of logs](#2-general-guide-for-types-of-logs)
-* [2. Control of output in automated tests](#2-control-of-output-in-automated-tests)
+* [3. Control of output in automated tests](#2-control-of-output-in-automated-tests)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
 
-# 1. Error codes
+# **1. Error codes**
 
 
 | **Code**                           | **Component**  | **Description**               |
@@ -39,7 +39,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | 0x5xx                              | BDNS           |                               |
 | 0x6xx                              | JWTIssuer      |                               |
 
-# 2. General Guide for types of logs
+# **2. General Guide for types of logs**
 
 | Level     | Description                                                                              |
 |:----------|:-----------------------------------------------------------------------------------------|
@@ -87,7 +87,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * "Failed to write data to log file; disk possibly full."
 * "Critical security breach detected; user session terminated."
 
-# 3. Control of output in automated tests
+# **3. Control of output in automated tests**
 
 **$$.debug.verbosityLevel()**
 
@@ -100,25 +100,27 @@ Used by the logger to decide if it outputs a log or not
 - info in production
 - debug in tests
 
+
+
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-# Annex 1. Contributors
 
-| **Current Editors**                 | **Email**                                                        |
-|:------------------------------------|:-----------------------------------------------------------------|
-| Sînică Alboaie                      | sinica.alboaie@axiologic.net                                     |
-| Andi-Gabriel Țan                   | andi@axiologic.net                                                |
-| Teodor Lupu                         | teodor@axiologic.net                                             |
-| **Contributors Axiologic Research** | **Email**                                                        |
-| Adrian Ganga                        | adrian@axiologic.net                                             |
-| Andi-Gabriel Țan                    | andi@axiologic.net                                               |
-| Cosmin Ursache                      | cosmin@axiologic.net                                             |
-| Daniel Sava                         | daniel@axiologic.net                                             |
-| Nicoleta Mihalache                  | nicoleta@axiologic.net                                           |
-| Teodor Lupu                         | teodor@axiologic.net                                             |
+# **Annex 1. Contributors**
+
+| **Current Editors**                   | **Email**                                         |
+|:--------------------------------------|:--------------------------------------------------|
+| Andi-Gabriel Țan                      | andi@axiologic.net                                |
+| **Contributors Axiologic Research**   | **Email**                                         |
+| Sînică Alboaie                        | sinica.alboaie@axiologic.net                      |
+| Daniel Sava                           | daniel@axiologic.net                              |
+| Cosmin Ursache                        | cosmin@axiologic.net                              |
+
+
 
 
 

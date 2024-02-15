@@ -6,6 +6,18 @@ nav_order: 2
 ---
 
 
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vS8ZZudcJsoUoN4iIcIl92GbvLPx0QkRztIHxijVBNLDhw5ZPNlkswvrrKKhsJNliDD7ehj_WVmrrhS/pub?w=1600&h=797" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
+
+
 # **Developers Tutorial (RFC-114)**
 {: .no_toc }
 
@@ -95,10 +107,10 @@ In order to be able to follow this guide, first you need to do the following ste
 </ol>
 
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=313&h=221" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
-</div>
 
+<div style="text-align:center;">
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=313&h=221" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+</div>
 
 
 <p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace.

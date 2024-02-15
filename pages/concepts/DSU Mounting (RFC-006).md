@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 
-# DSU Mounting (RFC-006)
+# **DSU Mounting (RFC-006)**
 {: .no_toc }
 
 

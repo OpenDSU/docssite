@@ -5,7 +5,7 @@ parent: OpenDSU Contributors
 nav_order: 14
 ---
 
-# **Bricking**
+# **Bricking (RFC-070)**
 {: .no_toc }
 
 

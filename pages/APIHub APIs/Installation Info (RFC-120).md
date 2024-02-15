@@ -7,7 +7,7 @@ nav_order: 1
 
 
 
-# **Installation Info**
+# **Installation Info (RFC-120)**
 {: .no_toc }
 
 {: .feedback }
