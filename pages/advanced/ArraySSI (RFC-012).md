@@ -5,7 +5,7 @@ parent: OpenDSU Advanced
 nav_order: 3
 ---
 
-# ArraySSI (RFC-012)
+# **ArraySSI (RFC-012)**
 {: .no_toc }
 
 {: .feedback }

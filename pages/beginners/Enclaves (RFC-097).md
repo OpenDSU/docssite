@@ -70,7 +70,7 @@ function closeModal() {
 
 
 
-# Enclaves (RFC-097)
+# **Enclaves (RFC-097)**
 {: .no_toc }
 
 

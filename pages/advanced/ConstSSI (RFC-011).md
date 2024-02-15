@@ -5,7 +5,7 @@ parent: OpenDSU Advanced
 nav_order: 2
 ---
 
-# ConstSSI (RFC-011)
+# **ConstSSI (RFC-011)**
 <!-- TOC -->
 * [Abstract](#abstract)
 * [1. ConstSSI subtypes derivation with examples](#1-constssi-subtypes-derivation-with-examples)
