@@ -5,7 +5,7 @@ parent: OpenDSU Contributors
 nav_order: 14
 ---
 
-# **Bricking (RFC-070)**
+# **Bricking**
 {: .no_toc }
 
 
@@ -31,12 +31,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The “bricking” API space offers a set of portable functions for creating and reading bricks. However, the agent should handle brick management (storage and reconstruction) automatically, and you will not have to use them. More information on brick storage can be found in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.
 </p>
 
-# 1. Bricking functions
+# **1. Bricking functions**
 
 ```js
 //Load openDSU environment
@@ -96,7 +96,7 @@ bricking.putBrick(seedSSI, 'hello', (err, brickHash) =>{
 
 
 
-## Function getBrick(hashLinkSSI, authToken, callback)
+## **Function getBrick(hashLinkSSI, authToken, callback)**
 
 **Description:** Retrieve a brick from a hashLinkSSI.
 
@@ -120,7 +120,7 @@ bricking.putBrick(seedSSI, 'hello', (err, brickHash) =>{
 
 
 
-## Function getMultipleBricks(hashLinkSSIList, authToken, callback)
+## **Function getMultipleBricks(hashLinkSSIList, authToken, callback)**
 
 **Description**: Retrieve multiple bricks from a hashLinkSSI list.
 
@@ -145,7 +145,7 @@ bricking.putBrick(seedSSI, 'hello', (err, brickHash) =>{
 
 
 
-## Function putBrick(domain, brick, authToken, callback)
+## **Function putBrick(domain, brick, authToken, callback)**
 
 **Description:** Add a brick to a domain.
 
@@ -173,7 +173,7 @@ bricking.putBrick(seedSSI, 'hello', (err, brickHash) =>{
 
 
 
-## Function constructBricksFromData(keySSI, data, options, callback)
+## **Function constructBricksFromData(keySSI, data, options, callback)**
 
 **Description:** Create bricks from data.
 
@@ -187,27 +187,19 @@ bricking.putBrick(seedSSI, 'hello', (err, brickHash) =>{
 | callback | function                                                                                    | *required |                                                          |
 
 
-**Callback parameters**
-
-| **Name** | **Type** | **Response example** |
-|:---------|:---------|:---------------------|
-|          |          |                      |
-|          |          |                      |
-
-
-
-
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                                |
 |:------------------------------------|:-----------------------------------------|

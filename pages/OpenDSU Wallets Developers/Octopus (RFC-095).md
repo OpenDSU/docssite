@@ -7,7 +7,7 @@ nav_order: 1
 
 
 
-# **Octopus(RFC-095)**
+# **Octopus**
 {: .no_toc }
 
 {: .feedback }
@@ -42,12 +42,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>This RFC presents the installation, configuration, and use of a new tool called Octopus, designed to solve user data privacy issues. Octopus is a JavaScript tool that works behind web and mobile applications. Technically speaking, Octopus is an adaptive and extendable JavaScript task runner built without dependencies to handle all installation dependencies, updates, builds and so on. Dependency is a term widely used in software to refer to situations where one piece of software depends on another. The Octopus tool contains a collection of actions and scripts that are useful when it is necessary to automate different types of development tasks.</p>
 
 
-# 1. Introduction
+# **1. Introduction**
 
 <p style='text-align: justify;'>OpenDSU, as a technology, has its first implementation in JavaScript (JS). Many managers or dependency management tools are required for JS projects using NGS (Next Generation Sequencing) to run.
 </p>
@@ -63,9 +63,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-# 2. Installation and configuration
+# **2. Installation and configuration**
 
-## 2.1 Installation
+## **2.1 Installation**
 
 <p style='text-align: justify;'>Octopus presents a mechanism called Octopus Freeze. This mechanism allows two configuration levels to exist for the dependencies used in a project. Specifically, when the project is in development, it can use Octopus in its normal state, represented by the Octopus.json configuration file. This file may contain one or more lists of tasks, dependencies, and modeled processes for use in project development. When someone wants to do a “release”, they propose a stable state of the current project. Therefore, the versions of each dependency or library used in part in the Octopus configuration must be saved in order to replicate the current project's state as stable. So, Octopus provides a process called Octopus Freeze, using a command like:
 </p>
@@ -107,10 +107,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 npm install
 # to run octopus after installing:
 npm run octopus
-
 ```
 
-## 2.2 Configuration
+## **2.2 Configuration**
 
 <p style='text-align: justify;'>The configuration file for the Octopus task-runner mainly uses JSON (JavaScript Object Notation) type. JSON is a text format that is a completely independent language, but it uses conventions that are familiar to programmers of the C language family (C++, C#, Java, JavaScript, Python etc.). JSON is built on two structures: a collection of name/value pairs (this is realized as an object, a dictionary, a structure or a list of keys) and an ordered list of values (this is realized as an array, a vector, a list or a string).
 </p>
@@ -136,7 +135,7 @@ npm run octopus
 <p style='text-align: justify;'>Other Octopus tasks in the same file or separate files can be accessed. This feature represents Octopus' adaptability to be able to execute as many tasks as needed to either create a development environment, a test environment or a production environment, but also to perform certain automated tasks for programmers or testers within these environments. There is no limit to the number of tasks that can be detailed in the Octopus configuration file or the actions that Octopus must execute. Octopus executes in a sequence all of the tasks found in the JSON configuration file called Octopus.json.
 </p>
 
-<p style='text-align: justify;'>The structure of the Octopus.json<b></b> file is represented by a dictionary of tasks organized by purpose:
+<p style='text-align: justify;'>The structure of the <b>Octopus.json</b> file is represented by a dictionary of tasks organized by purpose:
 </p>
 
 
@@ -172,7 +171,7 @@ Each action is an object with the following structure:
   }
 ```
 
-## 2.3 Examples
+## **2.3 Examples**
 
 If we need to use Octopus as a dependency manager, we can have the following configuration:
 
@@ -238,15 +237,15 @@ npm run octopus
 <p style='text-align: justify;'>Examples of an <b>Octopus.json</b> file can be found at <a href="https://raw.githubusercontent.com/PrivateSky/privatesky/master/octopus.json">this link</a>
 </p>
 
-# 3. Actions
+# **3. Actions**
 
 <p style='text-align: justify;'>Octopus includes a wide range of useful actions for automating different types of development tasks. Octopus has a plugin mechanism to allow the collection of actions to be extended. This collection can always be extended with new actions through the APIs exposed by Octopus. Octopus allows creating, copying, moving and deleting files or directories. An important action of Octopus is smartClone, which clones and updates a repository. The main Octopus actions are presented and described in the table below:</p>
 
 
 | **Name**        | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |:----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <b>checksum</b> | Checksum is used to calculate the checksum of a specific file/Dir passed via {String}<b>action.src</b> and compare the result with a pre-recorded attribute passed via <b>{String}action.expectedChecksum</b>.<br/> The checksum can be calculated with specific options. <br/>{String}<b>action.algorithm</b>, {String}<b>action.encoding</b>.                                                                                                                                            |
-| <b>clone </b>   | Clone used to make a git clone of repo {String}<b>dependency.src</b> in a specific location {String}<b>action.target.</b> Optional clone options can be specified in {Object}<b>action.options</b>.<br/>Optional credentials: username and password can be specified in {Object}dependency.credentials.                                                                                                                                                                                    |
+| <b>checksum</b> | Checksum is used to calculate the checksum of a specific file/Dir passed via {String}<b>action.src</b> and compare the result with a pre-recorded attribute passed via {String}<b>action.expectedChecksum</b>.<br/> The checksum can be calculated with specific options. <br/>{String}<b>action.algorithm</b>, {String}<b>action.encoding</b>.                                                                                                                                            |
+| <b>clone</b>    | Clone used to make a git clone of repo {String}<b>dependency.src</b> in a specific location {String}<b>action.target.</b> Optional clone options can be specified in {Object}<b>action.options</b>.<br/>Optional credentials: username and password can be specified in {Object}dependency.credentials.                                                                                                                                                                                    |
 | <b>commit</b>   | Commit action can be used in release scripts to automate the push of a new version.<br/> Commit is used to automate steps like git add -A, commit and push into a repo {String}<b>dependency.src</b> in a specific location {String}<b>action.target.</b> <br/> Optional clone options can be specified in {Object}<b>action.options.</b> <br/> Optional credentials: username and password can be specified in  {Object}<b>dependency.credentials</b>.                                    |
 | <b>copy</b>     | Copy a file or a directory, from {String}<b>dependency.src</b> to {String}<b>action.target</b>. <br/>Note: If <b>src</b> is a directory, it will copy everything inside of the directory, not the entire directory itself. <br/>Note: If <b>src</b> is a file, the target cannot be a directory.                                                                                                                                                                                           |
 | <b>execute</b>  | Execute action can be used to extend the capabilities of Octopus to execute specific terminal commands passed via {String}<b>action.cmd </b>argument.<br/>Optional can be passed command arguments via {Array}<b>action.args</b>. <br/>Optional can receive options like cwd, stdio configuration etc. via {Object}<b>action.options</b>.                                                                                                                                                  |
@@ -257,17 +256,17 @@ npm run octopus
 | <b>remove</b>   | Remove a file or directory from a specified path {String}<b>action.target</b>                                                                                                                                                                                                                                                                                                                                                                                                              |
 | smartClone      | SmartClone action tries to execute a git clone command and if it finds the repo already cloned and the origin remote matches {String}<b>dependency.src</b> then executes git pull in order to update the repo. All properties found in {Object}<b>action.options </b>are passed to the git clone command as arguments.                                                                                                                                                                     |
 
+<p style='text-align: center;'><b>Table 1: Octopus actions</b></p> 
 
-
-# 4. Octopus as a module
+# **4. Octopus as a module**
 
 <p style='text-align: justify;'>JS (JavaScript) modules allow us to split our code into two separate files. The Octopus module is composed of a <b>Runner</b> class and an <b>ActionRegistry</b> class.
 </p>
 
 
-## 4.1 Runner class
+## **4.1 Runner class**
 
-### Function run(configfileOrObject, configTarget, callback)
+### **Function run(configfileOrObject, configTarget, callback)**
 
 **Description**: Allows configuration to be executed.
 
@@ -289,7 +288,7 @@ npm run octopus
 
 **Description**: Contains a message and the error.
 
-### Example
+### **Example**
 
 Basic config with one target and one task that executes an echo command with "Hello World!".
 
@@ -317,9 +316,9 @@ octopus.run(config, "install", function(err, result){
 });
 ```
 
-## 4.2  Action register class
+## **4.2  Action register class**
 
-### Function registerActionHandler(name, handler, overwrite)
+### **Function registerActionHandler(name, handler, overwrite)**
 
 **Description**: Allows to extend or overwrite actions collection.
 
@@ -333,7 +332,7 @@ octopus.run(config, "install", function(err, result){
 
 
 
-### Example
+### **Example**
 
 Register a new action called echo to display a custom string to the console.
 
@@ -376,17 +375,20 @@ octopus.run(config, "demo", function(err, result){
 ```
 
 
+
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
