@@ -146,7 +146,7 @@ First of all, if we want to create a new page for our application we have to cre
 ```js
 <page-template>
 
- <span slot="page-title" Add Category></span>
+ <span slot="page-title" Add Category> </span>
 
  <div slot="page-content">
 
