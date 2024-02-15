@@ -228,7 +228,6 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 </p>
 
 
-
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
@@ -242,6 +241,8 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 
 
+
+
 <p style='text-align: justify;'>The code of the SSApp is located in <b>helloworld-ssapp/code</b>. Let’s make some changes to this app.
 </p>
 
@@ -251,7 +252,6 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 <p style='text-align: justify;'>First, let’s change the title of our application. For this, we need to modify the loader configuration constants file.
 </p>
-
 
 
 <div style="display: flex; justify-content: center;">
@@ -267,8 +267,11 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 
 
+
+
 <p style='text-align: justify;'>Currently, the application has a homepage that is dynamically loaded by the Webcardinal router. We can see the HTML in helloworld-ssapp/code/pages/home.html. Let’s change the page content.
 </p>
+
 
 <div style="display: flex; justify-content: center;">
   <img 
@@ -283,6 +286,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 
 
+
 <p style='text-align: justify;'>In order to apply these changes we can rebuild everything inside the workspace:</p>
 
 
@@ -291,9 +295,18 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 <p style='text-align: justify;'>Restart the server to clean cached pages.</p>
 
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTj2fVbJTv_rJWYnC_n6N8fOCEcLM43x4BpIrtOadA_g1AahWQSmr_ZYfO5O4CDgQaqLhwYhMB0K30H/pub?w=942&h=139" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vTj2fVbJTv_rJWYnC_n6N8fOCEcLM43x4BpIrtOadA_g1AahWQSmr_ZYfO5O4CDgQaqLhwYhMB0K30H/pub?w=942&h=139" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+
 
 
 **There we go!** 
@@ -378,6 +391,8 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 
 
+
+
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
@@ -388,6 +403,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
     title="Click to Zoom"
   />
 </div>
+
 
 
 <p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:</p>
