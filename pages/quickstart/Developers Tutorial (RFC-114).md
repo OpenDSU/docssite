@@ -71,7 +71,7 @@ function closeModal() {
 
 
 
-# **Developers Tutorial (RFC-114)**
+# **Developers Tutorial**
 {: .no_toc }
 
 {: .feedback }
@@ -121,15 +121,22 @@ In order to be able to follow this guide, first you need to do the following ste
 <ol>
     <li>Clone tutorial-workspace from GitHub:</li>
 
-     git clone https://github.com/webcardinal/tutorial-workspace
+```js
+git clone https://github.com/webcardinal/tutorial-workspace
+```
 
    <li>Go inside the [tutorial-workspace] directory:</li> 
 
-    cd tutorial-workspace
+```js
+cd tutorial-workspace
+```
 
  <li>Install all the necessary dependencies for a working development setup:</li>
 
-    npm run dev-install
+```js
+npm run dev-install
+```
+
 </ol>
 
 
@@ -170,7 +177,7 @@ In order to be able to follow this guide, first you need to do the following ste
 </div>
 
 
-<p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace.
+<p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace., available in this document: <a href="https://opendsu.com/rfc113">WebCardinal Beginners Tutorial</a>.
 </p>
 
 
@@ -184,11 +191,16 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 <ol>
 <li> Clone the template repo:</li>
 
-    git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com/OpenDSU/ssapp-template</a> helloworld-ssapp
+```js
+git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com/OpenDSU/ssapp-template</a> helloworld-ssapp
+
+```
 
 <li> Remove .git files and install dependencies:</li>
 
+```js
     cd helloworld-ssapp && rm -rf .git && npm install && cd ..
+```
 
 </ol>
 
@@ -199,22 +211,32 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 <ol>
     <li> Bind the newly created helloworld-ssapp to a new wallet:</li>
 
-    npm run bind-wallet helloworld-wallet helloworld-ssapp
+```js
+npm run bind-wallet helloworld-wallet helloworld-ssapp
+```
 
    <li>Prepare a loader for our newly created wallet:</li>
 
-     npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenDSU/trust-loader
+```js
+npm run add-loader apihub-root/helloworld-wallet/loader https://github.com/OpenDSU/trust-loader
+```
+     
  <ol>
 
 <li>Configure the loader:</li>
 
+```js
      mkdir -p trust-loader-config/helloworld-wallet/loader && cp -r default-loader-config-files/*  trust-loader-config/helloworld-wallet/loader
+```
 
 <p style='text-align: justify;'><b>Note:</b> This will create the needed folders and will add some default configuration files that can be accessed <a href="https://github.com/webcardinal/tutorial-workspace/tree/master/default-loader-config-files">here</a>. Each SSApp needs its own environment.js file (here, you can set a certain enclave type and other parameters, like different types of domains etc.) and a config-constants.js file (here, you can set global variables like the application name, default messages for the user etc).</p>
 
 <li> Rebuild the workspace:</li>
 
+```js
        npm run build-all
+```
+
  </ol>
 </ol>
 
@@ -284,8 +306,9 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 <p style='text-align: justify;'>In order to apply these changes we can rebuild everything inside the workspace:</p>
 
-
-            npm run build-all
+```js
+npm run build-all
+```
 
 <p style='text-align: justify;'>Restart the server to clean cached pages.</p>
 
@@ -297,10 +320,11 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 
 **There we go!** 
 
+For a really cool app, the next step is checking out the <a href="https://opendsu.com/rfc113">WebCardinal Beginners Tutorial</a>, where you can learn about WebCardinal controllers, events, or how to add new pages and components.
 
 # **4. Modules and Bundles**
 
-<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus (RFC-095)</a>.
+<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus</a>.
 </p>
 
 
@@ -365,7 +389,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 </p>
 
 
-<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to  Octopus actions.</p>
+<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to  <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus actions</a>.</p>
 
 
 ## 4.2 Bundles
@@ -392,18 +416,18 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 <p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:</p>
     
 
-
+```js
     {
     "my_module": {
      "deps": "my_module",
      "autoLoad": true
     }
     }
+```
 
+<p style='text-align: justify;'>There should also be a file called <b>package.json</b>, that defines the build command. This file should look something like this:</p>
 
-<p style='text-align: justify;'>There should also be a file called package.json, that defines the build command. This file should look something like this:</p>
-
-
+```js
     {
     ...
     "scripts": {
@@ -411,7 +435,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
     "build": "node ../node_modules/octopus/scripts/run build devmode"
     }
     }
-
+```
 
 
 
@@ -457,12 +481,12 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 </p>
 
 
-<p style='text-align: justify;'><b>Note:</b> For example, after installing the opendsu-sdk module, the opendsu-sdk/psknode/bundels/iframeBoot.js file should be included in the index.html file of your application in order to use the OpenDSU API.
+<p style='text-align: justify;'><b>Note:</b> For example, after installing the opendsu-sdk module, the <em>opendsu-sdk/psknode/bundels/iframeBoot.js</em> file should be included in the <em>index.html</em> file of your application in order to use the OpenDSU API.
 </p>
 
 
 
-<p style='text-align: justify;'>As a good practice, all the dependencies of your applications should be defined in the octopus.json file of your workspace, using the target property to place them where needed.</p>
+<p style='text-align: justify;'>As a good practice, all the dependencies of your applications should be defined in the <em>octopus.json</em> file of your workspace, using the target property to place them where needed.</p>
 
 
 
@@ -471,7 +495,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 # **5. Configure Domain**
 
-<p style='text-align: justify;'>Go to apihub-root/external-volumes/config/domains/ and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
+<p style='text-align: justify;'>Go to <em>apihub-root/external-volumes/config/domains/</em> and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
 </p>
 
 
@@ -499,7 +523,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 ```
 
 
-<p style='text-align: justify;'>Then, go to apihub-root/external-volumes/config/bdns.hosts and add a configuration for your domain:</p>
+<p style='text-align: justify;'>Then, go to <em>apihub-root/external-volumes/config/bdns.hosts</em> and add a configuration for your domain:</p>
 
 
 
@@ -526,24 +550,24 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 
 
-<p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS (RFC-022)</a>.
+<p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS</a>.
 </p>
 
 
-
+ 
 **Contributors**
+
 
 1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
 
-
-
-
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                                                                    |
 |:------------------------------------|:-----------------------------------------------------------------------------|
