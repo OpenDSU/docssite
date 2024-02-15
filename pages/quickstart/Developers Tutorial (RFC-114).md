@@ -17,16 +17,6 @@ nav_order: 2
   />
 </div>
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vR90OH5n1HKkw272eFTWOH0Y3OrRSeuZHb4UW7vhAwwNGt6ZN8opYCMTqXxOglCoICGsMRoqxinMw7F/pub?w=1540&h=774" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
-</div>
 
 # **Developers Tutorial (RFC-114)**
 {: .no_toc }
