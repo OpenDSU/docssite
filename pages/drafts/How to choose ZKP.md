@@ -5,7 +5,7 @@ parent: OpenDSU Drafts
 nav_order: 7
 ---
 
-# How to choose a ledger. When to choose ZKP
+# **How to choose a ledger. When to choose ZKP**
 {: .no_toc }
 
 {: .draft }
@@ -27,15 +27,15 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Abstract
+# **Abstract**
 
-# 1. No size fits all: Choosing the right ledger
+# **1. No size fits all: Choosing the right ledger**
 
-<p style='text-align: justify;'>A Distributed Ledger is not located somewhere abstractly in the cloud, but is under the control of concrete entities. These entities provide access to a replica of a ledger via a “gateway” controlled by somebody. External customers can access the blockchain through these "gateways". From this perspective, we identified three patterns of interaction with distributed ledgers:
+<p style='text-align: justify;'>A Distributed Ledger is not located somewhere abstractly in the cloud, but is under the control of concrete entities. These entities provide access to a replica of a ledger via a “gateway” controlled by somebody. External customers can access the blockchain through these "gateways". From this perspective, we identified three patterns of interaction with distributed ledgers:</p>
 
 * CGA (Centralised Gateway Archetype): the clients trust a central gateway;
 * DGA (Decentralised Gateway Archetype): the clients ask multiple gateways and decide who to trust by a form of voting;
-* NGA (NO Gateway Archetype): is based on the DGA plus a communication method between the clients and gateways that prevent any profiling or censorship attempts from the gateway (e.g. TOR).</p>
+* NGA (NO Gateway Archetype): is based on the DGA plus a communication method between the clients and gateways that prevent any profiling or censorship attempts from the gateway (e.g. TOR).
 
 <p style='text-align: justify;'>In the table above, we provide a crude rating of the previously introduced system archetypes by also exploring the effects that different gateway archetypes have on a variety of performance and security properties. We employ a Likert scale for rating purposes, where a value of 1 entails low guarantees regarding a specific property up to a maximum value of 5. The scale is relative to the set of options considered here, e.g. we intrinsically assume that BFT DLs are the worst in terms of performance compared to SLs. For each of the examined properties, we treat each archetype in a “black box” fashion, i.e. we are concerned with the guarantees regarding a specific property that it provides to the clients interacting with it. Cells in the table that have one value imply that it applies to all gateway archetypes for that particular property. We model the service provided by each archetype as an abstract state machine, i.e. it is composed of a persistent state and a state transition function. We assume a transaction-based interaction pattern among clients and the individual stateful archetypes. Clients submit (signed) arbitrary requests (transactions) to the service, which are input to the state transition function, along with the service’s state, and are executed in an atomic fashion. Note that the notion of privacy in the examined properties here relates to the service’s ability to monitor network-related traffic and perform correlations to derive information about the attributes of the client (or entity that is issuing the requests in general), i.e. we do not examine privacy regarding the contents of the transaction itself.
 As a general rule of thumb, combinations of centralized (system and gateway) archetypes provide the best possible performance in terms of latency and throughput, as illustrated in the following Diagram.</p>
@@ -49,7 +49,7 @@ As a general rule of thumb, combinations of centralized (system and gateway) arc
 <p style='text-align: justify;'>In regards to DL, we consider that its total ordering across all transactions, even in the crash fault model, is considered fairly equivalent to the tamper resilience guarantees of “SL & Anchoring”. Regarding auditability, the interesting cases are “SL & Anchoring” and “DL & Anchoring” where these exhibits guarantee better auditability in the context of this property, compared to their non-anchored counterparts. However, we stress that these guarantees are directly dependent on the anchoring period, i.e., how frequently the service’s state is anchored on the BFT (public) blockchain. Depending on the use case of these system archetypes, the auditability guarantees of the aforementioned approaches may or may not be acceptable.
 </p>
 
-# 2. Blockchain use cases: auditability or trustless collaborations
+# **2. Blockchain use cases: auditability or trustless collaborations**
 
 <p style='text-align: justify;'>The following table maps the different cases where blockchain is useful for auditability. This table is created based on the insight that there is a risk of paying an unnecessarily high price to use blockchains that provide worldwide transparency and strict consistency as fast as possible. Most enterprise use cases are nothing not like cryptocurrency payments. One simple argument for this idea is this: how billion-dollar industries might have survived without blockchains.
 </p>
@@ -59,7 +59,7 @@ The table should be clear enough by itself, except maybe the idea of Independent
 The OpenDSU way of thinking starts from the idea that having a single blockchain technology or a single blockchain deployment pattern that covers all the use cases of an industry is hardly friendly, benevolent, or competent advice. It will not work, or the price will be astronomical high. With OpenDSU, we propose a unified approach for the architecture, reusable code where possible, but we do not fix things regarding the blockchain technologies that can be used and we do not fix deployment patterns. The anchoring can and will be implemented in ledgers with different capabilities and deployed in different ways. The deployment part is essential because, even with the most advanced privacy-preserving technology available, the most sensible decision is to not share data, anchors, zero-knowledge proofs, anonymized transactions etc. if there is no real business or technical need for sharing. The major goal of OpenDSU is to facilitate sharing and auditability in the best privacy-preserving way.</p>
 
 
-# 3. OpenDSU and Confidentiality Constraints. OpenDSU and ZKP
+# **3. OpenDSU and Confidentiality Constraints. OpenDSU and ZKP**
 
 <p style='text-align: justify;'>We have identified 3 major use-case categories where blockchain can be used to solve business problems between multiple companies (choreographies). Each use-case category has different constraints regarding confidentiality and verifiability, as explained in the following table:
 </p>
@@ -81,16 +81,18 @@ To deepen this discussion, there are two major directions in which we could use 
 Typically, the third party creates some useful software and it can promote and commercially position its solution in some form of “blockchain as a utility”. In most cases, the anchoring/DSU model can remove the need for revealing any data to the software creator or the utility provider. DSUs are moving the computation off-chain, that is, in wallets or agents controlled by participants, and not by the utility providers. In one way or another, even with ZKP, you should have the computation on encrypted data off-chain (to generate proofs).
 We recognize that OpenDSU’s validation made at the anchoring level could not suffice. The only major disadvantage is the risk of spamming: an attacker creates numerous versions of DSUs to block the progress of some business process. In enterprise solutions, this attack will be noticed and the attacker can be punished. There are cases for ZKP when the off-chain logic involves choreographies between many companies and you want them all to be able to validate all transactions without revealing data to others. The question is whether in most situations simpler and safer solutions can be found based on digital signatures and encryption. These boring solutions will suffice in many cases and are safer and much simpler to understand and program. ZKP sounds perfect and general for all cases, but there is a price to pay, that is difficult to estimate. The risks of new and complex cryptography, but also the potential performance issues when scaling to the level of millions/billions of people/processes are reducing the appeal for ZKP usage.</p>
 
-
+ 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-# Annex 1. Contributors
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
