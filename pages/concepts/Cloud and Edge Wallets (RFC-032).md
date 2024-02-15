@@ -5,7 +5,7 @@ parent: OpenDSU Concepts
 nav_order: 10
 ---
 
-# Cloud and Edge Wallets  (RFC-032)
+# **Cloud and Edge Wallets  (RFC-032)**
 {: .no_toc }
 
 
