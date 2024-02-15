@@ -62,7 +62,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 ## **1.1 Create a workspace**
 
 A workspace is needed in order to be able to run a SSApp. The easiest way to create one is by cloning the template workspace found <a href="https://github.com/webcardinal/tutorial-workspace">her</a>e, installing the necessary dependencies and executing all the actions found in the octopus.json file, starting a server and building all its elements. Here are the commands you can use to create a workspace from the existing template:
-
+ 
 <ol>
 
    <li> git clone https://github.com/webcardinal/tutorial-workspace</li> 
