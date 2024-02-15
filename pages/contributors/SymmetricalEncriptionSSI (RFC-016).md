@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 
-# **SymmetricalEncriptionSSI**
+# **SymmetricalEncriptionSSI (RFC-016)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
