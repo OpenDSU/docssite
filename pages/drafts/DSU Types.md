@@ -6,7 +6,7 @@ nav_order: 10
 ---
 
 
-# DSU Types - DT (RFC-076)
+# **DSU Types - DT (RFC-085)**
 {: .no_toc }
 
 {: .draft }
@@ -21,12 +21,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The “DT” API space offers a set of portable functions for defining DSU Types.
 </p>
 
-# DSU Types functions
+# **1. DSU Types functions**
 
 //in construction 
 
@@ -518,7 +518,7 @@ DSU API //to move later to OpenDSU sdk when implemented
 
 3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
