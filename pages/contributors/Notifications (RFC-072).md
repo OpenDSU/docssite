@@ -5,7 +5,7 @@ parent: OpenDSU Contributors
 nav_order: 15
 ---
 
-# **Notifications (RFC-072)**
+# **Notifications**
 {: .no_toc }
 
 {: .feedback }
@@ -30,12 +30,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <!-- TOC -->
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The purpose of the “notifications” API space is to offer a set of portable functions for sending and receiving KeySSI-based notifications</p>
 
 
-# 1. Notifications functions
+# **1. Notifications functions**
 
 
 ```js
@@ -73,7 +73,7 @@ notifications.publish(seedSSI,"hello", (err, status) =>{
 
 
 
-## Function getObservableHandler(keySSI, timeout)
+## **Function getObservableHandler(keySSI, timeout)**
 
 **Description**: Get notifications observable object for the selected keySSI.
 
@@ -92,7 +92,7 @@ notifications.publish(seedSSI,"hello", (err, status) =>{
 
 
 
-## Function publish(keySSI, message, timeout, callback)
+## **Function publish(keySSI, message, timeout, callback)**
 
 <p style='text-align: justify;'><b>Description</b>: Push notification to the selected keySSI via its associated notifications endpoint.</p>
 
@@ -116,7 +116,7 @@ notifications.publish(seedSSI,"hello", (err, status) =>{
 
 
 
-## Function unsubscribe(observable)
+## **Function unsubscribe(observable)**
 
 **Description**: Unsubscribe from notifications.
 
@@ -127,7 +127,7 @@ notifications.publish(seedSSI,"hello", (err, status) =>{
 **Returns**: This function does not return anything.
 
 
-## Function isSubscribed(observable)
+## **Function isSubscribed(observable)**
 
 **Description**: Check if there exists a subscription.
 
@@ -138,18 +138,18 @@ notifications.publish(seedSSI,"hello", (err, status) =>{
 
 **Returns:** A boolean value.
 
-
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|

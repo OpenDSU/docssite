@@ -5,7 +5,7 @@ parent: OpenDSU APIHub APIs
 nav_order: 3
 ---
 
-# **BDNS**
+# **BDNS (RFC-122)**
 {: .no_toc }
 
 {: .feedback }
@@ -17,6 +17,7 @@ A period when the community can review the RFC (comment Docs).
 **Copyright: MIT license**
 
  **Copyright** © 2018-2024 Axiologic Research and Contributors.
+
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
@@ -51,7 +52,7 @@ GET /bdns Get the loaded BDNS configuration.
 
 ### 1.1.1. Schema: application/json
 
-````
+```js
 {
  "default": {
    "replicas": [],
@@ -73,12 +74,11 @@ GET /bdns Get the loaded BDNS configuration.
    "anchoringServices": [
      "$ORIGIN"
    ],
-````
+   
+```
 
 
 **Contributors**
-
-
 
 1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
@@ -86,7 +86,6 @@ GET /bdns Get the loaded BDNS configuration.
 
 3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
-
 
 
 # **Annex 1. Contributors**

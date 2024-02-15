@@ -4,13 +4,13 @@ layout: home
 nav_order: 1
 ---
 
-<p style='text-align: justify;'>The cornerstone principle driving the creation of OpenDSU is Digital Sovereignty — a foundational concept advocating for individuals, citizens, enterprises, organizations, and states to retain maximum control over their data, independent of intermediaries.
-</p>
+OpenDSU is an open-source framework licensed under the MIT License, representing the culmination of several research projects funded by the European Union, with its inception dating back to 2015. This framework marks a significant milestone in blockchain technology development for the enterprise sector, offering a sophisticated and flexible solution for applications that demand high levels of security, decentralization, and data protection. At the core of OpenDSU lies the concept of the Data Sharing Unit (DSU), an autonomous entity designed to ensure data integrity, confidentiality, and accessibility over time, crafted with "privacy by design" and "security by design" principles in mind.
 
-<p style='text-align: justify;'>The OpenDSU team introduced Hierarchical Blockchains, enabling seamless interoperability across applications. Data Sharing Units (DSUs) define OpenDSU, an evolving standard for off-chain data storage systems anchored in blockchains for security and data provenance.
-</p>
+Each DSU is individually encrypted with a unique key, thereby ensuring the security and privacy of the stored data. This approach allows each information unit to be securely managed and shared without compromising its confidentiality or integrity. The anchoring of DSUs in a blockchain or distributed ledger (including the option for a local ledger with a single node) adds an additional layer of security and transparency, ensuring the data's immutability and traceability in any context.
 
-<p style='text-align: justify;'>For more information, please read our RFC Documentation and watch the below videos.</p>
+OpenDSU stands out for its flexibility and extensibility, providing a unified framework for cryptographic key management and incorporating support for decentralized identifiers in line with W3C DIDs standards. This facilitates the development of robust authentication solutions in the enterprise environment, where security and compliance are paramount. Furthermore, the framework supports the creation of digital wallets, enabling users and organizations to securely manage digital identities and cryptographic assets in an efficient manner.
+
+In conclusion, OpenDSU is an innovative and adaptable solution for the development of enterprise blockchain applications, addressing the complex needs for security, decentralization, and data protection. By embedding privacy and security design principles from the outset, OpenDSU establishes a new standard in blockchain application development, offering the necessary tools to navigate the challenges of the digital age with confidence and integrity.
 
 
 

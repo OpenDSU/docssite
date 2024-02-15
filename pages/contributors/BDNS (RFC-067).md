@@ -14,7 +14,7 @@ nav_order: 12
 } 
 </style>
 
-# **BDNS (RFC-067)**
+# **BDNS**
 {: .no_toc }
 
 
@@ -47,11 +47,11 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Abstract
+# **Abstract**
 
 <p style='text-align: justify;'>The “BDNS” API space offers a set of portable functions used to request information about the blockchain domain used by your DSU. These operations should be handled automatically by the agents to get the anchoring service associated with the domain, the location of the brick storage as well as other information.</p>
 
-# 1. BDNS functions
+# **1. BDNS functions**
 
 <b>Load (use is described later for each function):</b>  
 
@@ -77,21 +77,20 @@ const bdns = opendsu.loadApi("bdns");
 
 const seedSSI = keyssispace.createSeedSSI('default');
 
-
 //BDNS functions
 
 ```
 
 
-## Function getRawInfo(dlDomain, callback)
+## **Function getRawInfo(dlDomain, callback)**
 
 **Description:** Gets the raw information about a blockchain domain.
 
 
-| Name     | Type     | Value     | Description                                       |
-|:---------|:---------|:----------|:--------------------------------------------------|
-| dlDomain | string   | *required | THe blockchain domain you want information about. |
-| callback | function | *required |                                                   |
+| Name     | Type     | Value      | Description                                       |
+|:---------|:---------|:-----------|:--------------------------------------------------|
+| dlDomain | string   | *required  | THe blockchain domain you want information about. |
+| callback | function | *required  |                                                   |
 
 
 
@@ -106,15 +105,15 @@ const seedSSI = keyssispace.createSeedSSI('default');
 
 
 
-## Function getBrickStorages(dlDomain, callback)
+## **Function getBrickStorages(dlDomain, callback)**
 
 **Description:** Gets addresses of brick storages associated with the provided dlDomain.
 
 
-| **Name** | **Type** | **Value** | **Description**                                        |
-|:---------|:---------|:----------|:-------------------------------------------------------|
-| dlDomain | string   | *required | The blockchain domain that you want information about. |
-| callback | function | *required |                                                        |
+| **Name** | **Type** | **Value**  | **Description**                                        |
+|:---------|:---------|:-----------|:-------------------------------------------------------|
+| dlDomain | string   | *required  | The blockchain domain that you want information about. |
+| callback | function | *required  |                                                        |
 
 
 
@@ -131,7 +130,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 
 
 
-## Function getAnchoringServices(dlDomain, callback)
+## **Function getAnchoringServices(dlDomain, callback)**
 
 **Description:** Gets addresses of anchoring services for the provided dlDomain.
 
@@ -157,7 +156,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 
 
 
-## Function getContractServices(dlDomain, callback)
+## **Function getContractServices(dlDomain, callback)**
 
 <p style='text-align: justify;'><b>Description</b>: Gets addresses of contract services for the provided dlDomain. If no callback function is given, the function is not asynchronous anymore, and it will return a promise.</p>
 
@@ -166,7 +165,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 | **Name** | **Type** | **Value** | **Description**         |
 |:---------|:---------|:----------|:------------------------|
 | dlDomain | string   | *required | The blockchain domain . |
-| callback | function | *required |                         |
+| callback | function |           |                         |
 
 
 **Callback parameters**
@@ -182,7 +181,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 
 
 
-## Function getReplicas(dlDomain, callback)
+## **Function getReplicas(dlDomain, callback)**
 
 **Description:** Gets addresses of replicas for the provided dlDomain.
 
@@ -190,7 +189,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 | **Name** | **Type** | **Value** | **Description**         |
 |:---------|:---------|:----------|:------------------------|
 | dlDomain | string   | *required | The blockchain domain . |
-| callback | function | *required |                         |
+| callback | function |           |                         |
 
 
 
@@ -206,7 +205,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 <p style='text-align: justify;'><b>Description</b>: Contains an error or an object with an array of URL addresses of replicas associated with the provided dlDomain.</p>
 
 
-## Function getNotificationEndpoints(dlDomain, callback)
+## **Function getNotificationEndpoints(dlDomain, callback)**
 
 **Description:** Gets the notification endpoints of the given dlDomain.
 
@@ -231,7 +230,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 
 
 
-## Function getMQEndpoints(dlDomain, callback)
+## **Function getMQEndpoints(dlDomain, callback)**
 
 **Description:** Gets the message queue endpoints of the given dlDomain.
 
@@ -239,7 +238,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 | **Name** | **Type** | **Value** | **Description**         |
 |:---------|:---------|:----------|:------------------------|
 | dlDomain | string   | *required | The blockchain domain . |
-| callback | function | *required |                         |
+| callback | function |           |                         |
 
 
 
@@ -256,7 +255,7 @@ const seedSSI = keyssispace.createSeedSSI('default');
 
 
 
-## Function setBDNSHosts(bdnsHosts)
+## **Function setBDNSHosts(bdnsHosts)**
 
 **Description:** Sets up the list of hosts.
 
@@ -267,18 +266,19 @@ const seedSSI = keyssispace.createSeedSSI('default');
 
 
 
-
 **Contributors**
 
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
-# Annex 1. Contributors
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                 | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
