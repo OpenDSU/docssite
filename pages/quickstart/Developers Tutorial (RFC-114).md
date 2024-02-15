@@ -4,11 +4,8 @@ layout: home
 parent: OpenDSU Quick Start
 nav_order: 2
 ---
-
-
-
 <style>
-  /* Styles for the modal /
+  /* Styles for the modal */
   .modal {
     display: none;
     position: fixed;
@@ -21,7 +18,7 @@ nav_order: 2
     background-color: rgba(0,0,0,0.9);
   }
 
-  / Modal content /
+  /* Modal content */
   .modal-content {
     margin: auto;
     display: block;
@@ -29,7 +26,7 @@ nav_order: 2
     max-height: 90%;
   }
 
-  / Close button */
+  /* Close button */
   .close {
     position: absolute;
     top: 15px;
@@ -72,6 +69,8 @@ function closeModal() {
 
 
 
+
+
 # **Developers Tutorial (RFC-114)**
 {: .no_toc }
 
@@ -88,7 +87,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-
 <!-- TOC -->
 * [Prerequisites](#prerequisites)
 * [1. Create your workspace](#1-create-your-workspace)
@@ -100,7 +98,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [5. Configure Domain](#5-configure-domain)
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
-
 
 
 
@@ -159,6 +156,7 @@ In order to be able to follow this guide, first you need to do the following ste
 <li> Now,  you should be able to see the application loader:</li>
 
 </ol>
+
 
 <div style="display: flex; justify-content: center;">
   <img 
@@ -229,9 +227,20 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 <p style='text-align: justify;'>We can do this by modifying the <b>apihub-root/index.html file.</b> Then, we need to replace the address with the one of our application and also change the text of our button. These changes can be seen below:
 </p>
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT18eCvQ_vtpGL1RcFu4Bnr4cpM98IOUwcXyoUbS5tqRpzh6wWOLHo9-sJ0lZBrAhl14mEzW_duSN55/pub?w=1226&h=445" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vT18eCvQ_vtpGL1RcFu4Bnr4cpM98IOUwcXyoUbS5tqRpzh6wWOLHo9-sJ0lZBrAhl14mEzW_duSN55/pub?w=1226&h=445" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+
+
 
 
 <p style='text-align: justify;'>The code of the SSApp is located in <b>helloworld-ssapp/code</b>. Let’s make some changes to this app.
@@ -244,18 +253,38 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 <p style='text-align: justify;'>First, let’s change the title of our application. For this, we need to modify the loader configuration constants file.
 </p>
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQNrlWqMR_SwuWp6RUkRiaYdTqj0Mof7lY0b02eopQ040qxPmsnYO8RgOWDHoOkHWNBL2DUe0yD2irH/pub?w=1707&h=314" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQNrlWqMR_SwuWp6RUkRiaYdTqj0Mof7lY0b02eopQ040qxPmsnYO8RgOWDHoOkHWNBL2DUe0yD2irH/pub?w=1707&h=314" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+
+
 
 
 <p style='text-align: justify;'>Currently, the application has a homepage that is dynamically loaded by the Webcardinal router. We can see the HTML in helloworld-ssapp/code/pages/home.html. Let’s change the page content.
 </p>
 
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTo-PIwKvpOHj-5oVq19gk8Ulw1yCsLczG-pS3DpgXv3rvFFzXzW42jshIVUjiqNHEqLxxtr6x3tM-5/pub?w=1467&h=340" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vTo-PIwKvpOHj-5oVq19gk8Ulw1yCsLczG-pS3DpgXv3rvFFzXzW42jshIVUjiqNHEqLxxtr6x3tM-5/pub?w=1467&h=340" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+
 
 
 <p style='text-align: justify;'>In order to apply these changes we can rebuild everything inside the workspace:</p>
@@ -266,9 +295,18 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 <p style='text-align: justify;'>Restart the server to clean cached pages.</p>
 
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTj2fVbJTv_rJWYnC_n6N8fOCEcLM43x4BpIrtOadA_g1AahWQSmr_ZYfO5O4CDgQaqLhwYhMB0K30H/pub?w=942&h=139" class="imgMain" style="max-width: 100%; margin-left: 0px;"/>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vTj2fVbJTv_rJWYnC_n6N8fOCEcLM43x4BpIrtOadA_g1AahWQSmr_ZYfO5O4CDgQaqLhwYhMB0K30H/pub?w=942&h=139" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+
 
 
 **There we go!** 
@@ -351,9 +389,22 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 </p>
 <p style='text-align: justify;'>Let’s say that, in your workspace, you have a module with certain functionalities. This module should have a file called index.js that exports the functionalities you want to expose.</p>
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQOcPI_kQRIJuaXUN1nzs8v_Q4LwOhfI0yZ6t_PFGpsEy8SkwsnGh4NM2ZAdRV0gKXpcFdihonwNyr9/pub?w=1443&h=520" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+
+
+
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQOcPI_kQRIJuaXUN1nzs8v_Q4LwOhfI0yZ6t_PFGpsEy8SkwsnGh4NM2ZAdRV0gKXpcFdihonwNyr9/pub?w=1443&h=520" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+
 
 <p style='text-align: justify;'>In your module, you should create a build folder containing a file named build.json. This file specifies the name and dependencies of the module we want to build. Here’s an example:</p>
     
