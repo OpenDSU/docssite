@@ -46,26 +46,6 @@ nav_order: 2
 </style>
 <body>
 
-<div id="myModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
-  <img class="modal-content" id="img01" onclick="event.stopPropagation()">
-</div>
-
-<script>
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-</script>
-
-</body>
 
 
 # **Developers Tutorial (RFC-114)**
