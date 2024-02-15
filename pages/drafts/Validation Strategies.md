@@ -5,7 +5,7 @@ parent: OpenDSU Drafts
 nav_order: 5
 ---
 
-# Validation Strategies
+# **Validation Strategies (RFC-029)**
 {: .no_toc }
 
 {: .draft }
@@ -20,7 +20,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [Validation Strategies](#validation-strategies)
 * [Validation strategies functions](#validation-strategies-functions)
     * [createPresentation(validationStrategyName, ...args)](#createpresentationvalidationstrategyname-args)
     * [getStrategy(validationStrategyName)](#getstrategyvalidationstrategyname)
@@ -33,7 +32,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 * [Annex 1. Contributors](#annex-1-contributors)
 <!-- TOC -->
 
-# Validation strategies functions
+
+
+# **Validation strategies functions**
 
 
 | Functions                  | Description                                                                                                                               |
@@ -55,10 +56,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | verifyCredential           | Verify claims inside a credential with the strategy of your choice                                                                              |
 | verifySignature            | Verify the signature of a credential or a presentation with the strategy of your choice                                                         |
 
-### createPresentation(validationStrategyName, ...args)
+## createPresentation(validationStrategyName, ...args)
 
 **Description:** 
-<p style='text-align: justify;'> This function allows the user to create a verifiable presentation. Presentations can be used to combine and present a set of different verifiable credentials. They are packaged in a way that makes all the claims inside the presentation verifiable by a verifier (the one that will receive the presentation). More information is available on the w3c website.
+<p style='text-align: justify;'>This function allows the user to create a verifiable presentation. Presentations can be used to combine and present a set of different verifiable credentials. They are packaged in a way that makes all the claims inside the presentation verifiable by a verifier (the one that will receive the presentation). More information is available on the <a href="https://www.w3.org/TR/vc-data-model/#presentations-0">w3c website</a>.
 </p>
 
 **Parameters:**
@@ -69,9 +70,10 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | ...args                 |          |                |
 
 
-### getStrategy(validationStrategyName)
+## getStrategy(validationStrategyName)
 
 **Description:** 
+
 <p style='text-align: justify;'>Get the strategy used to issue, sign and verify credentials and presentations.</p>
 
 **Parameters:**
@@ -81,22 +83,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | validationStrategyName  | string   |                |
 | ...args                 |          |                |
 
-### issueCredential(validationStrategyName, ...args)
+## issueCredential(validationStrategyName, ...args)
 
-**Description:** 
-<p style='text-align: justify;'>Issue credential with the strategy of your choice.</p>
-
-**Parameters:**
-
-| Parameter               | Type     | Description    |
-|:------------------------|:---------|:---------------|
-| validationStrategyName  |          |                |
-| ...args                 |          |                |
-
-### registerValidationStrategy(validationStrategyName, ...args)
-
-**Description:** 
-<p style='text-align: justify;'>Register a new presentation or update an existing one from the strategy’s registry.</p>
+**Description:** Issue credential with the strategy of your choice.
 
 **Parameters:**
 
@@ -105,10 +94,22 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | validationStrategyName  |          |                |
 | ...args                 |          |                |
 
-### sign(validationStrategyName, ...args)
+## registerValidationStrategy(validationStrategyName, ...args)
 
-**Description:** 
-<p style='text-align: justify;'>Sign credential or presentation with the strategy of your choice.</p>
+**Description:** Register a new presentation or update an existing one from the strategy’s registry.
+
+**Parameters:**
+
+| Parameter               | Type     | Description    |
+|:------------------------|:---------|:---------------|
+| validationStrategyName  |          |                |
+| ...args                 |          |                |
+
+##  sign(validationStrategyName, ...args)
+
+
+
+**Description:** Sign credential or presentation with the strategy of your choice.
 
 **Parameters:**
 
@@ -118,10 +119,9 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | ...args                 |          |                |
 
 
-### validatePresentation(allowedImplementationArray, useCase, environmentData, presentationSerialisation, (err, result) =>{})
+## validatePresentation(allowedImplementationArray, useCase, environmentData, presentationSerialisation, (err, result) =>{})
 
-**Description:** 
-<p style='text-align: justify;'>Get a handler to a shared ledger.</p>
+**Description:** Get a handler to a shared ledger.
 
 **Parameters:**
 
@@ -142,8 +142,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## verifyCredential(validationStrategyName, ...args)
 
-**Description:** 
-<p style='text-align: justify;'>Verify claims inside a credential with the strategy of your choice.</p>
+**Description:** Verify claims inside a credential with the strategy of your choice.
 
 **Parameters:**
 
@@ -155,8 +154,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 ## verifySignature(validationStrategyName, ...args)
 
-**Description:** 
-<p style='text-align: justify;'>Verify the signature of a credential or a presentation with the strategy of your choice.</p>
+**Description:** Verify the signature of a credential or a presentation with the strategy of your choice.
 
 **Parameters:**
 
@@ -169,13 +167,16 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 **Contributors**
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
+2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
+3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-# Annex 1. Contributors
+
+
+# **Annex 1. Contributors**
 
 | **Current Editors**                  | **Email**                                |
 |:-------------------------------------|:-----------------------------------------|
