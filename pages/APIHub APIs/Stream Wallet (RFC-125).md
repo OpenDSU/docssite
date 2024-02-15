@@ -6,7 +6,7 @@ nav_order: 6
 ---
 
 
-# **Stream Wallet**
+# **Stream Wallet (RFC-125)**
 {: .no_toc }
 
 {: .feedback }

@@ -5,7 +5,7 @@ parent: OpenDSU APIHub APIs
 nav_order: 2
 ---
 
-# **Anchoring  Endpoint**
+# **Anchoring  Endpoint (RFC-121)**
 {: .no_toc }
 
 {: .feedback }
