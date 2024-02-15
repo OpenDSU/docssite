@@ -146,19 +146,19 @@ First of all, if we want to create a new page for our application we have to cre
 ```js
 <page-template>
 
-<span slot="page-title">Add Category</span>
+ <span slot="page-title" Add Category></span>
 
-   <div slot="page-content">
+ <div slot="page-content">
 
-       <webc-container>
+    <webc-container>
 
            <!--Here you can have a form to fill out the necessary-->
 
            <!--fields in order to be able to add a new category. -->
 
- </webc-container>
+   </webc-container>
 
- </div>
+  </div>
 
 </page-template>
 
