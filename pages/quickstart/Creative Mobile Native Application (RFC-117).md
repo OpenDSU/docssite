@@ -92,8 +92,8 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
      * <p style='text-align: justify;'>change the distribution version from the mobile/config/scan-app/ios/PSKNodeServer/PSKNodeServer/Resources/BuildConfig.xconfig file</p>
 
 * **For Android:**
-    * <p style='text-align: justify;'>change the value to your SDK path in mobile/config/scan-app/android/app/local.properties file (put the path to local sdk - ex: /home/username/Android/Sdk)
-   </p>
+  * <p style='text-align: justify;'>change the value to your SDK path in mobile/config/scan-app/android/app/local.properties file (put the path to local sdk - ex: /home/username/Android/Sdk)</p>
+   
   
     * npm run server
     * npm run server
