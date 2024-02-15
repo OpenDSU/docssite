@@ -6,7 +6,7 @@ nav_order: 3
 ---
 
 
-# **APIHub Locking Endpoints**
+# **APIHub Locking Endpoints (RFC-104)**
 
 {: .no_toc }
 
@@ -57,9 +57,7 @@ A lock is a file containing the “lock” file in a folder in /apihub-root/exte
 
 1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+2. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 # **Annex 1. Contributors**
