@@ -6,16 +6,68 @@ nav_order: 2
 ---
 
 
-<div style="display: flex; justify-content: center;">
-  <img 
-    alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vS8ZZudcJsoUoN4iIcIl92GbvLPx0QkRztIHxijVBNLDhw5ZPNlkswvrrKKhsJNliDD7ehj_WVmrrhS/pub?w=1600&h=797" 
-    class="imgMain" 
-    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
-    onclick="openModal(this.src)"
-    title="Click to Zoom"
-  />
+<style>
+  /* Styles for the modal /
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  / Modal content /
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  / Close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+<body>
+
+<div id="myModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
+  <img class="modal-content" id="img01" onclick="event.stopPropagation()">
 </div>
+
+<script>
+function openModal(imgSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+</script>
+
+</body>
 
 
 # **Developers Tutorial (RFC-114)**
@@ -28,7 +80,7 @@ A period when the community can review the RFC (comment Docs)
 
 **Copyright: MIT license**
 
- **Copyright** © 2018-2024 Axiologic Research and Contributors.
+**Copyright** © 2018-2024 Axiologic Research and Contributors.
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
@@ -51,7 +103,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 
-# Prerequisites
+# **Prerequisites**
 
 In order to be able to follow this guide, first you need to do the following steps:
 
@@ -62,7 +114,7 @@ In order to be able to follow this guide, first you need to do the following ste
 
 
 
-# 1. Create your workspace
+# **1. Create your workspace**
 
 <p style='text-align: justify;'>In order to create and run a SSApp, first we need to create a workspace. We will start from a <a href="https://github.com/webcardinal/tutorial-workspace">tutorial workspace</a> that bundles all the necessary dependencies for building and running SSApps. You can read more about how this is done <a href="https://github.com/webcardinal/tutorial-workspace#readme">here</a>. Here are all the steps you need to follow for creating a workspace:
 </p>
@@ -107,10 +159,17 @@ In order to be able to follow this guide, first you need to do the following ste
 </ol>
 
 
-
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=313&h=221" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=313&h=221" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
 
 
 <p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace.
@@ -120,7 +179,7 @@ In order to be able to follow this guide, first you need to do the following ste
 
 
 
-# 2.Create your SSAPP
+# **2.Create your SSAPP**
 
 We will start with a simple <a href="">SSapp template</a>. First, open a terminal in the root folder of your workspace.
 
@@ -178,7 +237,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 </p>
 
 
-# 3. Customize your SSAPP
+# **3. Customize your SSAPP**
 
 
 <p style='text-align: justify;'>First, let’s change the title of our application. For this, we need to modify the loader configuration constants file.
@@ -214,19 +273,19 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 **There we go!** 
 
 
-# 4. Modules and Bundles
+# **4. Modules and Bundles**
 
 <p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus (RFC-095)</a>.
 </p>
 
 
 
-## 4.1  Modules
+## **4.1  Modules**
 
 
 The opendsu-sdk module is added as a dependency in the octopus.json file in your workspace:
 
-````
+```js
 
 {
 
@@ -268,9 +327,7 @@ The opendsu-sdk module is added as a dependency in the octopus.json file in your
 
 }
 
-````
-
-
+```
 
 
 
@@ -377,7 +434,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 
 
-# 5. Configure Domain
+# **5. Configure Domain**
 
 <p style='text-align: justify;'>Go to apihub-root/external-volumes/config/domains/ and create a new file with the name of your domain. We will use the “enable” property to specify the apihub modules enabled for the domain:
 </p>
@@ -439,15 +496,13 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 
 
-
 **Contributors**
 
+1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
 
-1. <p style='text-align: justify;'><a href="www.axiologic.net">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="www.opendsu.com">www.opendsu.com</a> site.
+2. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+<a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
-2. <p style='text-align: justify;'><a href="www.pharmaledger.eu">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
-
-3. <a href="www.privatesky.xyz">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. https://profs.info.uaic.ro/~ads/PrivateSky/
 
 
 
