@@ -45,7 +45,7 @@ In conclusion, OpenDSU is an innovative and adaptable solution for the developme
     border-radius: 8px;
   }
   .title {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     margin-top: 8px;
     text-align: center; /* Center the title */
