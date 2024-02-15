@@ -170,6 +170,7 @@ In order to be able to follow this guide, first you need to do the following ste
 </div>
 
 
+
 <p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace.
 </p>
 
