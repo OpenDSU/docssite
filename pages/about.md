@@ -17,15 +17,15 @@ nav_order: 11
 
 <p>Release notes</p>
 <ol>
-  <li>Major RFCs approved (check the opendsu.com site). The DSU APIs proven stable in OpenDSU SDK will be preserved in all future versions.</li>
-<li>Release 2.0.0 declares the "legacy" DSU APIs stable. However, we changed the caching mechanism of the DSU (removed any long-term caching). We introduced "startOrAttachBatch" as the best method for working in batch mode.</li>
-<li>Release 2.0.1 is declared the first production-ready release. (It does not have changes on public APIs but has many stability and security-related fixes).</li>
+ <li>Major RFCs approved (check the opendsu.com site). The DSU APIs proven stable in OpenDSU SDK will be preserved in all future versions.</li>
+ <li>Release 2.0.0 declares the "legacy" DSU APIs stable. However, we changed the caching mechanism of the DSU (removed any long-term caching). We introduced "startOrAttachBatch" as the best method for working in batch mode.</li>
+ <li>Release 2.0.1 is declared the first production-ready release. (It does not have changes on public APIs but has many stability and security-related fixes).</li>
 </ol>
 
-<p style='text-align: justify;'>More details can be found <a href="https://github.com/OpenDSU/opendsu-sdk/tags">here</a>
+<p style='text-align: justify;'>More details can be found <a href="https://github.com/OpenDSU/opendsu-sdk/tags">here</a>.
 </p>
 
-<p style='text-align: justify;'>  OpenDSU open source code and documentation were obtained from the PrivateSky research project (2015-2021) coordinated by Alexandru Ioan Cuza University from Iasi in collaborations with the following companies: Axiologic Research (original code contributor), Heaven Solutions, Romsoft, Code932, DPO, Space Giant, Junio, AquaSoft. The initial code of PrivateSky used open source code (MIT licensed) from Axiologic Research belonging to the SwarmESB Research project about executable choreographies (2010-2015) All the code and documentation of OpenDSU and PrivateSky are licensed using the MIT Open Source license. After 2020, the PharmaLedger project building an innovative blockchain platform for the Pharma Industry started contributing to the OpenDSU code and is using OpenDSU as their main architectural approach. The copyright belongs to the original authors: persons or companies, but everything that is published under PrivateSky Github repositories and OpenDSU Github repositories is licensed as MIT.
+<p style='text-align: justify;'> OpenDSU open source code and documentation were obtained from the PrivateSky research project (2015-2021) coordinated by Alexandru Ioan Cuza University from Iasi in collaborations with the following companies: Axiologic Research (original code contributor), Heaven Solutions, Romsoft, Code932, DPO, Space Giant, Junio, AquaSoft. The initial code of PrivateSky used open source code (MIT licensed) from Axiologic Research belonging to the <a href="https://github.com/SwarmESB">SwarmESB Research project about executable choreographies</a> (2010-2015) All the code and documentation of OpenDSU and PrivateSky are licensed using the MIT Open Source license. After 2020, the PharmaLedger project building an innovative blockchain platform for the Pharma Industry started contributing to the OpenDSU code and is using OpenDSU as their main architectural approach. The copyright belongs to the original authors: persons or companies, but everything that is published under <a href="https://github.com/PrivateSky">PrivateSky Github repositorie</a>s and<a href="https://github.com/opendsu"> OpenDSU Github repositories</a> is licensed as MIT.
 </p>
 
 
@@ -77,5 +77,6 @@ nav_order: 11
 
 **MIT License**
 
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION</p>
-
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+<p style='text-align: justify;'>sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION</p>
+</p>
