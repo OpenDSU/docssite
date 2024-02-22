@@ -1,9 +1,9 @@
 description: https://www.opendsu.org
 theme: just-the-docs
 
-#logo: "/logo/logo.png"
+logo: "/assets/images/logo.png"
 
-favicon_ico: "/logo/logo.png"
+favicon_ico: "/assets/images/logo.png"
 
 url: https://www.opendsu.org
 
