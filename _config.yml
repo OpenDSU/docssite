@@ -22,8 +22,12 @@ aux_links_new_tab: true
 
 # External navigation links
 nav_external_links:
-  - title: OpenDSU on GitHub
-    url: https://github.com/opendsu/
+  - logo: "/assets/images/logo.png"
+      - title: "OpenDSU"
+      - email: "mailto:your.email@gmail.com"
+      - external: true
+        title: "OpenDSU on GitHub"
+        url: "https://github.com/opendsu/"
 
 # Back to top link
 back_to_top: true
@@ -61,5 +65,6 @@ callouts:
 
 
 aux_links:
-  OpenDSU on GitHub: https://github.com/opendsu/
   Youtube: https://www.youtube.com/@opendsu4783
+
+  OpenDSU on GitHub: https://github.com/opendsu/
