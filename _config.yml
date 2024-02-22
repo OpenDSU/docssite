@@ -64,4 +64,4 @@ callouts:
 aux_links:
   GitHub: https://github.com/opendsu/
   Youtube: https://www.youtube.com/@opendsu4783
-  Contact us: mailto:opendsu@axiologic.net
+  "Contact us": "\033[1;34m\u001b[4mmailto:opendsu@axiologic.net\u001b[0m"
