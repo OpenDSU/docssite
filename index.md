@@ -3,6 +3,17 @@ title: Home
 layout: home
 nav_order: 1
 ---
+sss
+Here's our logo (hover to see the title text):
+
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+Reference-style: 
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
 
 <p style='text-align: justify;'><b>OpenDSU</b> is an open-source framework licensed under the <a href="https://en.wikipedia.org/wiki/MIT_License">MIT License</a>, representing the culmination of several research projects funded by the <a href="https://european-union.europa.eu/">European Union</a>, with its inception dating back to 2015. This framework marks a significant milestone in blockchain technology development for the enterprise sector, offering a sophisticated and flexible solution for applications that demand high levels of security, decentralization, and data protection. At the core of OpenDSU lies the concept of the <b>Data Sharing Unit</b> (<b>DSU</b>), an autonomous entity designed to ensure data integrity, confidentiality, and accessibility over time, crafted with "privacy by design" and "security by design" principles in mind.
 </p>
