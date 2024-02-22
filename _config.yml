@@ -1,10 +1,9 @@
-title: OpenDSU Project
 description: https://www.opendsu.org
 theme: just-the-docs
 
-#logo: "LOGO.png"
+#logo: "/logo/logo.png"
 
-favicon_ico: "LOGO.png"
+favicon_ico: "/logo/logo.png"
 
 url: https://www.opendsu.org
 
