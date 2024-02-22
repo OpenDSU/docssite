@@ -1,4 +1,4 @@
-logo: "/assets/images/logos.png"
+logo: "/assets/images/logo.png"
 description: https://www.opendsu.org
 theme: just-the-docs
 
@@ -63,4 +63,5 @@ callouts:
 
 aux_links:
   Youtube: https://www.youtube.com/@opendsu4783
-  OpenDSU on GitHub: https://github.com/opendsu/
+  GitHub: https://github.com/opendsu/
+  Contact us: mailto:opendsu@axiologic.net
