@@ -9,7 +9,7 @@ nav_order: 5
 
 {: .no_toc }
 
-{: .Accepted }
+{: .accepted }
 The proposal has been accepted and has an implementation.
 
 
