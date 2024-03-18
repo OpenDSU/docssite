@@ -54,19 +54,29 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
   * [7.1. Path Parameters](#71-path-parameters)
   * [7.2. Request Headers](#72-request-headers)
   * [7.3. Responses](#73-responses)
-* [8. Become SysAdmin](#8-become-sysadmin-)
+* [**8. Become SysAdmin**](#8-become-sysadmin)
   * [8.1. Request Headers](#81-request-headers)
   * [8.2. Responses](#82-responses)
-* [9. Make SysAdmin](#9-make-sysadmin-)
+* [**9. Make SysAdmin**](#9-make-sysadmin)
   * [9.1. Path Parameters](#91-path-parameters)
   * [9.2. Request Headers](#92-request-headers)
   * [9.3. Responses](#93-responses)
-* [10. Delete Admin](#10-delete-admin-)
+* [**10. Delete Admin**](#10-delete-admin)
   * [10.1. Path Parameters](#101-path-parameters)
   * [10.2. Request Headers](#102-request-headers)
   * [10.3. Responses](#103-responses)
-* [11. Associate APIKey](#11-associate-apikey)
+* [**11. Associate APIKey**](#11-associate-apikey)
   * [11.1. Path Parameters](#111-path-parameters)
+  * [11.2. Request Headers](#112-request-headers)
+  * [11.3. Responses](#113-responses)
+* [**12. Delete APIKey**](#12-delete-apikey)
+  * [12.1. Path Parameters](#121-path-parameters)
+  * [12.2. Request Headers](#122-request-headers)
+  * [12.3. Responses](#123-responses)
+* [**13. Get APIKey**](#13-get-apikey)
+  * [13.1. Path Parameters](#131-path-parameters)
+  * [13.2. Request Headers](#132-request-headers)
+  * [13.3. Responses](#133-responses)
 * [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
 
@@ -85,17 +95,17 @@ This RFC provides information about SSO Secrets management. All API calls should
 <p style='text-align: justify;'>
 
 The "secrets" component within APIHub is designed to store application secrets, which can be any type of secret. 
-	For example, this set of APIs documented in this RFC  could be used to custom-implement API keys by a solution using APIHub, which allows for the rapid creation of authorisation mechanisms. Additionally, after the authentication flow ends, in the context of using digital wallets, a secret is required to access the wallet once the authentication flow concludes. This secrets component is made accessible through APIs that enable controlled access to these secrets. Various types of secrets are available, as can be seen in the following table.
+<br>For example, this set of APIs documented in this RFC  could be used to custom-implement API keys by a solution using APIHub, which allows for the rapid creation of authorisation mechanisms. Additionally, after the authentication flow ends, in the context of using digital wallets, a secret is required to access the wallet once the authentication flow concludes. This secrets component is made accessible through APIs that enable controlled access to these secrets. Various types of secrets are available, as can be seen in the following table.
 
 </p>
 
-| Secret Type     | Description    |
-|:----------------|:--------|
-| Server Secret   | These secrets will never leave the server. The APIs do not expose them.  |
-| SSO Secrets <br> (App Secrets)  | The secret is linked to the user identifier established by the server in the tokens. Within the middleware, this is conveyed through the "user-id" field in the request. Moreover, these secrets are organised based on an "app name," allowing the same user to have distinct secrets for each application. Currently, no access control is planned to be implemented at the application level, meaning an application can access the secrets of the current user from another application.  |
-| DID Secrets  | The secret is tied to the control of a DID, with all requests being signed by the specific DID. These secrets must be encrypted using the DID public key for security reasons.   |
-| Admin APIKey  | Manages APIKeys that grant administrative roles for managing other secrets. The owner of an Admin APIKey can create, update, and delete secret API keys for different users.  |
-| UserID APIKey  | APIKeys are secrets linked to a specific "user-id" and “application name”, enabling personalised access control.  |
+| Secret Type                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|:----------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Server Secret                     | These secrets will never leave the server. The APIs do not expose them.                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| SSO Secrets <br> (App Secrets)    | The secret is linked to the user identifier established by the server in the tokens. Within the middleware, this is conveyed through the "user-id" field in the request. Moreover, these secrets are organised based on an "app name," allowing the same user to have distinct secrets for each application. Currently, no access control is planned to be implemented at the application level, meaning an application can access the secrets of the current user from another application.            |
+| DID Secrets                       | The secret is tied to the control of a DID, with all requests being signed by the specific DID. These secrets must be encrypted using the DID public key for security reasons.                                                                                                                                                                                                                                                                                                                          |
+| Admin APIKey                      | Manages APIKeys that grant administrative roles for managing other secrets. The owner of an Admin APIKey can create, update, and delete secret API keys for different users.                                                                                                                                                                                                                                                                                                                            |
+| UserID APIKey                     | APIKeys are secrets linked to a specific "user-id" and “application name”, enabling personalised access control.                                                                                                                                                                                                                                                                                                                                                                                        |
 
 <p style='text-align: justify;'>
 
@@ -118,16 +128,16 @@ Access user SSO secrets for a particular appName.
 
 ## 1.1. Path Parameters
 
-| Name     | Type    | Value      |Description                         |
-|:---------|:--------|:-----------:------------------------------------|
-| appName  | string  | *required  |  The application name for which the secret is requested.  |
+| Name     | Type    | Value      | Description                                             |
+|:---------|:--------|:-----------|:--------------------------------------------------------|
+| appName  | string  | *required  | The application name for which the secret is requested. |
 
 
 ## 1.2. Request Headers
 
-| Name           | Type    | Value     | Description                                            |
-|:---------------|:--------|:----------|:-------------------------------------------------------|
-| authorization  | string  | *request  | Bearer authorization token.  It is used to obtain the  “user-id” on the server side.    |
+| Name           | Type    | Value     | Description                                                                              |
+|:---------------|:--------|:----------|:-----------------------------------------------------------------------------------------|
+| authorization  | string  | *request  | Bearer authorization token.  It is used to obtain the  “user-id” on the server side.     |
 
 
 ## 1.3. Responses
@@ -335,7 +345,7 @@ Delete the secret with the provided name associated with the provided DID.
 | 555         | Server is in read-only mode.                                              |
 
 
-# 8. Become SysAdmin 
+# **8. Become SysAdmin**
 
 <p style='text-align: justify;'>
 
@@ -345,7 +355,7 @@ Add an Admin API Key associated with the current user (user-id). It will fail if
 
 This API is intended to be used only once at the initialisation of the system.
 
-  PUT /becomeSysAdmin 
+     PUT /becomeSysAdmin 
 
 ## 8.1. Request Headers
 
@@ -367,7 +377,7 @@ In the body, there is a secret that it is used as a secret that allows any user 
 | 403         | Unauthorized access.                                                      |
 | 555         | Server is in read-only mode                                               |
 
-# 9. Make SysAdmin 
+# **9. Make SysAdmin**
 
 <p style='text-align: justify;'>
 
@@ -375,7 +385,7 @@ Create a new Admin APIKey and associate it with another user. It must be authent
 
 </p>
 
-  PUT /becomeSysAdmin{user-id} 
+    PUT /becomeSysAdmin{user-id} 
 
 ## 9.1. Path Parameters
 
@@ -400,13 +410,13 @@ The request's body will contain the APIKey, which can be any string.
 | 403         | Unauthorized access.                                                      |
 | 555         | Server is in read-only mode                                               |
 
-# 10. Delete Admin 
+# **10. Delete Admin**
 
 
 Delete an Admin APIKey.  It requires authentication using an Admin APIKey. 
 Create a new Admin APIKey and associate it with another user. It must be authenticated and authorised using an Admin API Key. 
 
-  PUT /deleteAdmin/{user-id} 
+    PUT /deleteAdmin/{user-id} 
 
 
 ## 10.1. Path Parameters
@@ -433,7 +443,7 @@ The request's body will contain the APIKey, which can be any string.
 | 403         | Unauthorized access.                                                      |
 | 555         | Server is in read-only mode                                               |
 
-# 11. Associate APIKey
+# **11. Associate APIKey**
 
 <p style='text-align: justify;'>
 
@@ -441,9 +451,7 @@ Create or update an APIKey for a specific application, use the key name and asso
 
 </p>
 
-  PUT /associateAPIKey}/{appName}/{name}  
- 
-
+    PUT /associateAPIKey}/{appName}/{name}  
 
 ## 11.1. Path Parameters
 
@@ -454,130 +462,91 @@ Create or update an APIKey for a specific application, use the key name and asso
 | user-id   | string  | *required  | The the "user-id”                                          |
 
 
-11.2. Request Headers
-Name
-Type
-Value
-Description
-adminKey
-string
-*required
-Bearer authorisation token that can be used to obtain the “user-id” and check if it has an associated admin key.
+## 11.2. Request Headers
 
+| Name      | Type    | Value      | Description                                                                                                           |
+|:----------|:--------|:-----------|:----------------------------------------------------------------------------------------------------------------------|
+| appName   | string  | *required  | Bearer authorisation token that can be used to obtain the “user-id” and check if it has an associated admin key.      |   
+
+<p style='text-align: justify;'>
 
 The request's BODY will contain the APIKey, which can be any string but usually also contains the list of roles (e.g. read or write).
-11.3. Responses
-Status Code
-Description
-200
-Operation completed successfully.
-403
-Unauthorized access.
-555
-Server is in read-only mode
 
+</p>
 
+## 11.3. Responses
 
+| Status Code | Description                                                               |
+|:------------|:--------------------------------------------------------------------------|
+| 200         | Operation completed successfully.                                         |
+| 403         | Unauthorized access.                                                      |
+| 555         | Server is in read-only mode                                               |
 
+# **12. Delete APIKey**
 
-
-
-12. Delete APIKey
 Delete an API key for a specific application and user (user-id). It must be called with an Admin API Key. 
 
 
-
-/deleteAPIKey}/{appName}/{api-name}   
-
-
-11.1. Path Parameters
-Name
-Type
-Value
-Description
-appName
-string
-*required
-The application name. It can also be used as a role.
-api-name
-string
-*required
-The name of the API Key secret associated with a “user-id”
-
-11.2. Request Headers
-Name
-Type
-Value
-Description
-adminKey
-string
-*required
-Bearer authorisation token that can be used to obtain the “user-id” and check if it has an associated admin key.
+    PUT /deleteAPIKey}/{appName}/{api-name}
 
 
-11.3. Responses
-Status Code
-Description
-200
-Operation completed successfully.
-403
-Unauthorized access.
-555
-Server is in read-only mode
+## 12.1. Path Parameters
+
+| Name     | Type    | Value      | Description                                                      |
+|:---------|:--------|:-----------|:-----------------------------------------------------------------|
+| appName  | string  | *required  | The application name. It can also be used as a role.             |
+| api-Name | string  | *required  | The name of the API Key secret associated with a “user-id”       |
+
+## 12.2. Request Headers
+
+| Name       | Type    | Value      | Description                                                                                                       |
+|:-----------|:--------|:-----------|:------------------------------------------------------------------------------------------------------------------|
+| adminKey   | string  | *required  | Bearer authorisation token that can be used to obtain the “user-id” and check if it has an associated admin key.  |
+
+## 12.3. Responses
+
+| Status Code | Description                                                               |
+|:------------|:--------------------------------------------------------------------------|
+| 200         | Operation completed successfully.                                         |
+| 403         | Unauthorized access.                                                      |
+| 555         | Server is in read-only mode                                               |
 
 
+# **13. Get APIKey**
 
+<p style='text-align: justify;'>
 
-
-
-
-13. Get APIKey
 The GetAPIKey operation retrieves the API key associated with an application and the current user (user-id). It needs to be called by a user authenticated as the current user. The obtained API Key can then be used to authorise API requests. Typically, authorisation is handled automatically by specialised middleware, and clients are not required to supply the APIKey, as it is linked to the “user-id” by an administrator. Custom-created authorisation middleware for each API will verify an API Key associated with the current user for all pertinent operations. However, an “authorisation header” is also supported for cases where automation must be implemented to allow users with an API key to make requests in a user's name. 
 
+</p>
 
-/deleteAPIKey}/{appName}/{api-name}   
+  GET /deleteAPIKey}/{appName}/{api-name} 
 
 
-11.1. Path Parameters
-Name
-Type
-Value
-Description
-appName
-string
-*required
-The application name. It can also be used as a role.
-api-name
-string
-*required
-The name of the API Key secret associated with a “user-id”
+## 13.1. Path Parameters
 
-11.2. Request Headers
-Name
-Type
-Value
-Description
-authorisation
-string
-*required
-Bearer authorisation token that can be used to obtain the “user-id” and check if it has an associated admin key.
+| Name     | Type    | Value      | Description                                                      |
+|:---------|:--------|:-----------|:-----------------------------------------------------------------|
+| appName  | string  | *required  | The application name. It can also be used as a role.             |
+| api-Name | string  | *required  | The name of the API Key secret associated with a “user-id”       |
+
+## 13.2. Request Headers
+
+| Name          | Type    | Value      | Description                                                                                                         |
+|:--------------|:--------|:-----------|:--------------------------------------------------------------------------------------------------------------------|
+| authorisation | string  | *required  | Bearer authorisation token that can be used to obtain the “user-id” and check if it has an associated admin key.    | 
 
 
 The request's body will contain the APIKey, which can be any string (depending on the application authorisation methods).
-11.3. Responses
-Status Code
-Description
-200
-Operation completed successfully.
-403
-Unauthorized access.
-555
-Server is in read-only mode
 
 
+## 13.3. Responses
 
-
-
+| Status Code | Description                                                               |
+|:------------|:--------------------------------------------------------------------------|
+| 200         | Operation completed successfully.                                         |
+| 403         | Unauthorized access.                                                      |
+| 555         | Server is in read-only mode                                               |
 
 
 **Contributors**
