@@ -100,7 +100,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>We will need the following concepts introduced in this RFC to make these interactions possible.
 </p>
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTiEAVJ1saLfnNokV3evu9neqBLxoEAm-19KhBil3Z3zB1aTJJN8pgP1oMQYWkU_h1_Fp4aC-z92yg5/pub?w=827&h=135" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSMgD1hKdumqQSgP9tZwaQZTLwgtmgJ-pfhLlMvxCPOnj7koOSf7EdEGKUf51AhPWYEOI1jXgII1YmZ/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 3: Concepts</b></p>
 </div>
 
