@@ -1,10 +1,8 @@
-title: OpenDSU Project
+logo: "/assets/images/logo.png"
 description: https://www.opendsu.org
 theme: just-the-docs
 
-#logo: "/LOGO/DSU LOGO.png"
 
-favicon_ico: "/LOGO/DSU LOGO.png"
 
 url: https://www.opendsu.org
 
@@ -64,4 +62,6 @@ callouts:
 
 
 aux_links:
-  OpenDSU on GitHub: https://github.com/opendsu/
+  GitHub: https://github.com/opendsu/
+  Youtube: https://www.youtube.com/@opendsu4783
+  Contact us: mailto:opendsu@axiologic.net

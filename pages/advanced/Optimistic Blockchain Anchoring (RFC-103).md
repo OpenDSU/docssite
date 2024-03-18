@@ -4,7 +4,72 @@ layout: home
 parent: OpenDSU Advanced
 nav_order: 16
 ---
+<style>
+  /* Styles for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  /* Modal content */
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+<body>
+
+<div id="myModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
+  <img class="modal-content" id="img01" onclick="event.stopPropagation()">
+</div>
+
+<script>
+function openModal(imgSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+</script>
+
+</body>
+
+
 # **Optimistic Blockchain Anchoring (RFC-103)**
+
 
 {: .accepted }
 The proposal has been accepted and has an implementation.
@@ -38,19 +103,36 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>The general schema is shown in the figure below. It explains the operating principle more clearly. The OpenDSU SDK sends requests via web services to APIHub, more precisely to anchor strategies from APIHub, and then, they are sent to the Ethereum Adapter (used as an intermediary). The Ethereum Adapter can be later removed from this schema by adding new strategies to the OBA to gain extra capabilities and lower the response time even more. For now, the ETH Adapter is the one that sends requests to Quorum, blockchain or blockchain networks.
 </p>
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQe1azoQQoYH8f_cqJGyd8Jt3A6bAZvX3ol8ax7gC6HBPB_uSFH15JgCNUmJ04bXoUYh1NCXfp4-xJa/pub?w=1247&h=422" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
-    <p><b>Figure 1: Optimistic Blockchain Anchoring</b></p>
-</div>
 
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQe1azoQQoYH8f_cqJGyd8Jt3A6bAZvX3ol8ax7gC6HBPB_uSFH15JgCNUmJ04bXoUYh1NCXfp4-xJa/pub?w=1247&h=422" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
+</div>
+<p style='text-align: center;'><b>Figure 1: Optimistic Blockchain Anchoring</b></p>
 
 <p style='text-align: justify;'>Inside the APIHub diagram, we can observe the Optimistic Blockchain Anchoring (OBA) steps. The process of implementing the OBA starts with checking the anchors, more specifically, verifying the correctness of the anchoring requests by comparing it with the last hash of the HashLink in the anchor. These cryptographic checks/verifications show if the anchoring request is correct. The optimistic execution is made, which means that synchronization/queries of the Quorum Network are not required. These transactions are put in a pending queue so they can be synchronized later with Quorum. The transactions are sent regularly to Quorum (see Figure 2: OBA Pending queue) and, depending on their success or failure, they are retried later.
 </p>
 
-<div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ7vyU-Gzu7-m3Ckbypb7LHc-L9mWibteEZZXd7sd5y016yx-B1fTBQslUGXOrPqNzCvokwqnapjjW1/pub?w=1650&h=1055" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
-    <p><b>Figure 2: OBA pending queue</b></p>
+
+<div style="display: flex; justify-content: center;">
+  <img 
+    alt="" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vQ7vyU-Gzu7-m3Ckbypb7LHc-L9mWibteEZZXd7sd5y016yx-B1fTBQslUGXOrPqNzCvokwqnapjjW1/pub?w=1650&h=1055" 
+    class="imgMain" 
+    style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
+    onclick="openModal(this.src)"
+    title="Click to Zoom"
+  />
 </div>
+
+<p style='text-align: center;'><b>Figure 2: OBA pending queue</b></p>
+
 
 
 <p style='text-align: justify;'>The synchronization algorithm (OBA pending queue) is based on the following rules: each transaction has a field called tc (transaction counter), which is incremented at every attempt to synchronize, and another field called schedule. The “schedule” field can have three values: null, sent string, or timestamp (when the transaction is scheduled for synchronization). The algorithm is carried out in 2 stages, called Timer 1 and Timer 2. In the first stage (Timer 1 configured by default), the current implementation happens during the ten seconds after an APIHub Restart. In the second stage (Timer 2), the implementation happens repeatedly every seventeen seconds.
