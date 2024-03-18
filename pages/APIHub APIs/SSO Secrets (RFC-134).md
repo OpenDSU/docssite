@@ -581,17 +581,9 @@ Server is in read-only mode
 | **Current Editors**                 | **Email**                                |
 |:------------------------------------|:-----------------------------------------|
 | Sînică Alboaie                      | sinica.alboaie@axiologic.net             |
-| Rafael Mastaleru                    | rafael@rms.ro                            |
-| Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
 | **Contributors Axiologic Research** | **Email**                                |
 | Adrian Ganga                        | adrian@axiologic.net                     |
 | Andi-Gabriel Țan                    | andi@axiologic.net                       |
 | Cosmin Ursache                      | cosmin@axiologic.net                     |
 | Daniel Sava                         | daniel@axiologic.net                     |
 | Nicoleta Mihalache                  | nicoleta@axiologic.net                   |
-| **PharmaLedger**                    | **Email**                                |
-| Ana Balan                           | bam@rms.ro (RMS)                         |
-| Bogdan Mastahac                     | mab@rms.ro (RMS)                         |
-| Cosmin Ursache                      | cos@rms.ro (RMS)                         |
-| Rafael Mastaleru                    | raf@rms.ro (RMS)                         |
-
