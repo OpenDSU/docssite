@@ -94,8 +94,8 @@ This RFC provides information about SSO Secrets management. All API calls should
 
 <p style='text-align: justify;'>
 
-The "secrets" component within APIHub is designed to store application secrets, which can be any type of secret. 
-<br>For example, this set of APIs documented in this RFC  could be used to custom-implement API keys by a solution using APIHub, which allows for the rapid creation of authorisation mechanisms. Additionally, after the authentication flow ends, in the context of using digital wallets, a secret is required to access the wallet once the authentication flow concludes. This secrets component is made accessible through APIs that enable controlled access to these secrets. Various types of secrets are available, as can be seen in the following table.
+The "secrets" component within APIHub is designed to store application secrets.
+<br>API keys by a solution using APIHub, which allows for the rapid creation of authorisation mechanisms. Additionally, after the authentication flow ends, in the context of using digital wallets, a secret is required to access the wallet once the authentication flow concludes. This secrets component is made accessible through APIs that enable controlled access to these secrets. Various types of secrets are available, as can be seen in the following table.
 
 </p>
 
