@@ -55,7 +55,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 + The different KeySSI families that were designed for different use cases, their **specificity and the functions that are specific** to each family;
 + The functions that are common to all KeySSIs and necessary to get useful information about our keys.
 
-**Note**: For creating different types of keySSIs, the code can be checked at <a href="ttps://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">KeySSI (RFC-068)</a>.
+**Note**: For creating different types of keySSIs, the code can be checked at <a href="https://www.opendsu.org/pages/advanced/KeySSI-(RFC-068).html">KeySSI (RFC-068)</a>.
 
 #  **1. Introduction**
 
@@ -70,7 +70,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 <p style='text-align: justify;'>Typically (but not always), KeySSIs are anchored in ledgers for integrity and traceability using a special KeySSI called Zero Access SSI (szaSSI). Having a szaSSI gives the user access only to a list of hashes (the versions of the anchored DSU) but nothing else. Without an upper-level KeySSI, the szaSSI has no practical value except giving access to the number of versions of a DSU.</p>
 
 
-**API note**: <a href="https://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">The KeySSI (RFC-068</a>) is used to create the different KeySSIs.
+**API note**: <a href="https://www.opendsu.org/pages/advanced/KeySSI-(RFC-068).html">The KeySSI (RFC-068</a>) is used to create the different KeySSIs.
 
 
 
@@ -79,7 +79,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 <p style='text-align: justify;'>The syntax of KeySSI is inspired by the W3C DID and is similar to it, but has several key differences, such as - it starts with the “ssi” string. It allows users to define additional attributes, such as types, ledger domains etc. Equivalent to the DID method string, SSI also consists of types (or subtypes). The purpose of types is not to introduce incompatible methods to W3C DIDs, but rather to add different types of KeySSIs. The different KeySSI types are designed to be compatible, which allows for a standard KeySSI resolver to implement all the standard types. Another unique aspect of the SSI syntax compared to the W3C DIDs is that the 3rd group in the identifier represents a ledger/blockchain domain. OpenDSU is based on the objective that a KeySSI supports multiple hierarchical ledgers/blockchains. The current definition of the blockchain domain and the proposed implementation on resolving these domains are part of the OpenDSU specification and may be found in the BDNS chapters.</p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSqiP8BHLsLk1yMOsKsGqC9Vdrxj1YdX19vkzQSxT63n0kyeDMlvul16hYArNUtcJYUKtm-EgHZx_gj/pub?w=1155&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSqiP8BHLsLk1yMOsKsGqC9Vdrxj1YdX19vkzQSxT63n0kyeDMlvul16hYArNUtcJYUKtm-EgHZx_gj/pub?w=1155&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-top: 15px;"/>
 <p style="text-align:center"><b>Figure 1: Syntax of KeySSI Identifiers</b></p>
 
 </div>
@@ -91,7 +91,7 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 *ssi:za:ePI.pharma:HASHSERIALISATION:HASHPUBLICKEY:vn*
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTs-IY2kQcZn4VcjkHR7OOdI9IbcFpTF9rZHqkpcjzZviutZ2PWGZUf8bPkJPR44f-hQ0XISPejgNwq/pub?w=1151&h=390" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vTs-IY2kQcZn4VcjkHR7OOdI9IbcFpTF9rZHqkpcjzZviutZ2PWGZUf8bPkJPR44f-hQ0XISPejgNwq/pub?w=1151&h=390" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-top: 15px;"/>
     <p><b>Figure 2: Syntax of KeySSI Identifiers</b></p>
 </div>
 
@@ -114,16 +114,15 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vR8lcW0OSys173fC2-av2t0IdUpb0JhFdZtLI0diyTF7wZG7pm02U2znSdqV1qbP2mpvtq-zodNg8oP/pub?w=874&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vR8lcW0OSys173fC2-av2t0IdUpb0JhFdZtLI0diyTF7wZG7pm02U2znSdqV1qbP2mpvtq-zodNg8oP/pub?w=874&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-top: 15px;"/>
     <p><b>Figure 3:  KeySSI Resolvers role</b></p>
 </div>
 
 
 <p style='text-align: justify;'>KeySSI Resolvers are libraries loaded in the DSU reconstruction environments. OpenDSU implements client-side encryption, therefore avoiding the need for any delegation of trust to any intermediaries or certificate authorities. The KeySSI resolver can call an adapter to a ledger or blockchain and call the Brick Storage, but its usage of any other intermediary Web API is not recommended. The node doing the resolving (the DSU reconstruction environments) should provide the result as an instance of a DSU. The reconstruction environment of DSUs should handle the decryption and the other operations required for resolving a KeySSI to a DSU.</p>
 
-
-<p style='text-align: justify;'>The KeySSI Resolvers should benefit from the <a href="https://www.opendsu.org/pages/contributors/BDNS%20(RFC-067).html">BDNS</a> (Blockchain Domain Name System) and other schemes to create a trustless KeySSI resolver so that, when possible, there should be multiple “gateways” for the “anchoring service” as opposed to just one. The “anchoring service” is located where a specific anchor is stored in the ledger. When required, a multiple gateways approach will introduce better decentralization and security, since the difficulty of attacking the network increases with the number of nodes making up the network (see implementation recommendations).</p>
-
+<p style='text-align: justify;'>The KeySSI Resolvers should benefit from the <a href="https://www.opendsu.org/pages/contributors/BDNS-(RFC-067).html">BDNS</a> (Blockchain Domain Name System) and other schemes to create a trustless KeySSI resolver so that, when possible, there should be multiple “gateways” for the “anchoring service” as opposed to just one. The “anchoring service” is located where a specific anchor is stored in the ledger. When required, a multiple gateways approach will introduce better decentralization and security, since the difficulty of attacking the network increases with the number of nodes making up the network (see implementation recommendations).
+</p>
 
 
 # **4. KeySSIs families**
@@ -132,10 +131,10 @@ This RFC introduces one of the main components of OpenDSU: the concept of KeySSI
 
 | **Family**                                                                                                      | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |:----------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [SeedSSIs](https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html)                                     | SeedSSI identifiers are a good method for identifying DSUs that are not shared with many people. A good example is the DSUs that implement some form of digital wallet for users and companies.                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| [ConstSSis](https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html)                                   | Aim to provide human-readable identifiers that can be remembered easily.This RFC also contains information about **ArraySSI**, **WalletSSI** and **PasswordSSI**, since they are all derived to obtain constSSIs.                                                                                                                                                                                                                                                                                                                                                                                                   |
-| [HashLinkSSIs](https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html)    | Brick-pointing KeySSIs that allow finding and decrypting un-anchored bricks/DSUs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| [SymetricalEncryptionSSI](https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI%20(RFC-016).html) | SymetricalEncryptionSSIs are used with HashLinkSeedSSIs for bricks’ construction and reconstruction.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| [SeedSSIs](https://www.opendsu.org/pages/advanced/SeedSSI-(RFC-010).html)                                       | SeedSSI identifiers are a good method for identifying DSUs that are not shared with many people. A good example is the DSUs that implement some form of digital wallet for users and companies.                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| [ConstSSis](https://www.opendsu.org/pages/advanced/ConstSSI-(RFC-011).html)                                     | Aim to provide human-readable identifiers that can be remembered easily.This RFC also contains information about **ArraySSI**, **WalletSSI** and **PasswordSSI**, since they are all derived to obtain constSSIs.                                                                                                                                                                                                                                                                                                                                                                                                   |
+| [HashLinkSSIs](https://www.opendsu.org/pages/contributors/HashLinkSSI,-SignedHashLinkSSI-(RFC-015).html)        | Brick-pointing KeySSIs that allow finding and decrypting un-anchored bricks/DSUs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| [SymetricalEncryptionSSI](https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI-(RFC-016).html)   | SymetricalEncryptionSSIs are used with HashLinkSeedSSIs for bricks’ construction and reconstruction.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 
 
@@ -149,7 +148,6 @@ How to use KeySSI functions:
 variable = keySSI.function();
 dlDomain = keySSI.getDLDomain();
 seedKeyIdentifier = seedSSI.getIdentifier();
-
 ```
 
 
@@ -197,9 +195,9 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 
 **Description**: Retrieve the keySSI anchor identifier.
 
-| **Name** | **Description**                                                                                                                         |
-|:---------|:----------------------------------------------------------------------------------------------------------------------------------------|
-| String   | Your KeySSI anchor Identifier. It is used for [Anchoring](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html) operations |
+| **Name** | **Description**                                                                                                                        |
+|:---------|:---------------------------------------------------------------------------------------------------------------------------------------|
+| String   | Your KeySSI anchor Identifier. It is used for [Anchoring](https://www.opendsu.org/pages/concepts/Anchoring-(RFC-005).html) operations  |
 
 
 
@@ -209,7 +207,7 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 
 | **Name** | **Description**                                                                                                                                              |
 |:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| String   | Your KeySSI control string. It is used for [Anchoring](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html) operations for validation purposes |
+| String   | Your KeySSI control string. It is used for [Anchoring](https://www.opendsu.org/pages/concepts/Anchoring-(RFC-005).html) operations for validation purposes   |
 
 
 
@@ -220,7 +218,7 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 
 | **Name**  | **Description**                                                                                                                                                                                           |
 |:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| string    | Your keySSI DL Domain. It represents the ledger/blockchain domain name, and the personal key that was created and used. More info in [BDNS](https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html) |
+| string    | Your keySSI DL Domain. It represents the ledger/blockchain domain name, and the personal key that was created and used. More info in [BDNS](https://www.opendsu.org/pages/concepts/BDNS-(RFC-022).html)   |
 
 
 
