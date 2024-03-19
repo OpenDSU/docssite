@@ -20,46 +20,47 @@ The proposal has been accepted and has an implementation.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [Abstract](#abstract)
-* [1. Brick Storages mechanism](#1-brick-storages-mechanism)
+* [**Brick Storages (RFC-003)**](#brick-storages-rfc-003)
+* [**Abstract**](#abstract)
+* [**1. Brick Storages mechanism**](#1-brick-storages-mechanism)
   * [1.1 General Operations](#11-general-operations)
   * [1.2 General Operations](#12-general-operations)
   * [1.3. Notes](#13-notes)
-* [2. BrickMaps](#2-brickmaps)
+* [**2. BrickMaps**](#2-brickmaps)
   * [2.1 Data structure](#21-data-structure)
   * [2.2 Strategies for Versioning](#22-strategies-for-versioning)
     * [2.2.1 A diff for each version](#221-a-diff-for-each-version)
     * [2.2.2 First BrickMap and Latest Diff](#222-first-brickmap-and-latest-diff)
     * [2.2.3 First BrickMap and Latest Version](#223-first-brickmap-and-latest-version)
-* [3. Annexes](#3-annexes)
+* [**3. Annexes**](#3-annexes)
   * [3.1 BrickMap JSON Structure](#31-brickmap-json-structure)
   * [3.2 Options](#32-options)
-* [Annex 1. Contributors](#annex-1-contributors)
+* [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
 
 
 # **Abstract**
-
-<p style='text-align: justify;'>The basic implementation of Brick Storages is very simple and aims to provide a storage solution that works well for open and permissionless networks. They are simple web services capable of storing <a href="https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html">DSUs</a>’ content safely into storages that are shared with multiple users or organizations. Anyone with the <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> associated with a particular DSU can use it to reconstruct the same DSU using the bricks. This mechanism allows users of the network to collaborate safely and efficiently without giving up ownership of their data. In this RFC, we describe the storage mechanism known as “bricks” in the OpenDSU ecosystem.</p>
+<p style='text-align: justify;'>The basic implementation of Brick Storages is very simple and aims to provide a storage solution that works well for open and permissionless networks. They are simple web services capable of storing <a href="https://www.opendsu.org/pages/concepts/DSU-Introduction-(RFC-001).html">DSUs’</a> content safely into storages that are shared with multiple users or organizations. Anyone with the <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI</a> associated with a particular DSU can use it to reconstruct the same DSU using the bricks. This mechanism allows users of the network to collaborate safely and efficiently without giving up ownership of their data. In this RFC, we describe the storage mechanism known as “bricks” in the OpenDSU ecosystem.
+</p>
 
 # **1. Brick Storages mechanism**
 
 ## 1.1 General Operations
 
-<p style='text-align: justify;'>To store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data before being stored in the storage medium using hash as identifiers. One of these bricks, however, is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the <b>BrickMa</b>p. When a DSU is created with a KeySSI, an <a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html">anchor identifier</a> is derived from the key. Now, each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> will be created and associated with the anchor identifier to keep track of all different BrickMap versions.</p>
-
+<p style='text-align: justify;'>To store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data before being stored in the storage medium using hash as identifiers. One of these bricks, however, is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the <b>BrickMap</b>. When a DSU is created with a KeySSI, an <a href="https://www.opendsu.org/pages/concepts/Anchoring-(RFC-005).html">anchor identifier</a> is derived from the key. Now, each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,-SignedHashLinkSSI-(RFC-015).html">HashLinkSSI</a> will be created and associated with the anchor identifier to keep track of all different BrickMap versions.
+</p>
 
 ## 1.2 General Operations
 
-<p style='text-align: justify;'>Each brick within the brick storage (except the BrickMap) is encrypted using a different symmetric key called <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI%20(RFC-016).html">SymmetricalEncryptionSSI</a>. This key makes it very hard for attackers to obtain the full content of a DSU. Even if the attacker would find the symmetric key for a brick (which is unlikely), it could only decrypt this single brick. Fortunately, we don’t have to remember all these encryption keys. The BrickMap will keep track of them for us, along with the associated <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSIs</a> referencing the bricks.
+<p style='text-align: justify;'>Each brick within the brick storage (except the BrickMap) is encrypted using a different symmetric key called <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI-(RFC-016).html">SymmetricalEncryptionSSI</a>. This key makes it very hard for attackers to obtain the full content of a DSU. Even if the attacker would find the symmetric key for a brick (which is unlikely), it could only decrypt this single brick. Fortunately, we don’t have to remember all these encryption keys. The BrickMap will keep track of them for us, along with the associated <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,-SignedHashLinkSSI-(RFC-015).html">HashLinkSSIs</a> referencing the bricks.
 </p>
 
-<p style='text-align: justify;'>Unlike data bricks, BrickMaps are encrypted using the KeySSI encryption key. This thing allows the KeySSI owner to access the BrickMap while preventing access to other users.</p>
+<p style='text-align: justify;'>Unlike data bricks, BrickMaps are encrypted using the KeySSI encryption key. This thing allows the KeySSI owner to access the BrickMap while preventing access to other users.
+</p>
 
 ## 1.3. Notes
 
-
-<p style='text-align: justify;'>While BrickMaps associated with DSUs stay constant and immutable once they are anchored, DSUs are flexible and, most times, do not remain constant and can even be deleted. That is why we have multiple BrickMaps that exist in the history of each DSU.  While the latest BrickMap can be used to reconstruct the latest version of the DSU, it is also possible to reconstruct previous versions of the DSU using previous <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSIs</a>. This is possible because data bricks not used anymore in the latest DSU version are not deleted from the off-chain storage, in order to keep it auditable.
+<p style='text-align: justify;'>While BrickMaps associated with DSUs stay constant and immutable once they are anchored, DSUs are flexible and, most times, do not remain constant and can even be deleted. That is why we have multiple BrickMaps that exist in the history of each DSU. While the latest BrickMap can be used to reconstruct the latest version of the DSU, it is also possible to reconstruct previous versions of the DSU using previous <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,-SignedHashLinkSSI-(RFC-015).html">HashLinkSSIs</a>. This is possible because data bricks not used anymore in the latest DSU version are not deleted from the off-chain storage, in order to keep it auditable.
 </p>
 
 # **2. BrickMaps**
@@ -93,7 +94,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <p style='text-align: justify;'>This strategy will only check that a trusted party signed the latest version; therefore, nothing else is verified. While it performs well, this strategy cannot be used with untrusted parties.</p>
 
-# 3. Annexes
+# **3. Annexes**
 
 ## 3.1 BrickMap JSON Structure
 ```
