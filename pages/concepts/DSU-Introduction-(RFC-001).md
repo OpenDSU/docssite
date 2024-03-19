@@ -150,11 +150,12 @@ More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/page
 
 
 More details are available in <a href="https://www.opendsu.org/pages/concepts/DSU-Mounting-(RFC-006).html">DSU Mounting (RFC-006)</a>.
-<br>
+<br></br>
 More details are available in <a href="https://www.opendsu.org/pages/concepts/DSU-Types-(RFC-007).html">DSU Types (RFC-007)</a>.
-<br><br>
+<br></br>
 
 # **5. DSU Reconstruction**
+# **6. DSU Reconstruction**
 
 <p align="justify">DSUs are encrypted at rest and in transit using a key derived from an identifier we call KeySSI. A DSU can be imagined as a multi-directory file system with granular access and security properties for each “directory”. Instead of being stored as a whole, the files are stored as encrypted bricks. That is why we need DSU reconstruction to reassemble our files, and we reassemble them only for a limited time in an “execution environment”. These OpenDSU mechanisms implement the usage of “client-side encryption” as a means to enable data self-sovereignty.</p>
 
