@@ -125,7 +125,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p align="justify">Supplementary sophistications are required only in cases where we have to implement access revocation to the shared data or implement an expiration date for access to data as requested by a third party.</p>
 
 
-More details are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.
+More details are available in <a href="https://www.opendsu.org/pages/concepts/Brick-Storages-(RFC-003).html">Brick Storages (RFC-003)</a>.
 
 # **3. Anchoring**
 
