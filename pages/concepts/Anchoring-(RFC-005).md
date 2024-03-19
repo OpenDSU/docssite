@@ -21,16 +21,18 @@ The proposal has been accepted and has an implementation.
 
 
 <!-- TOC -->
-* [Abstract](#abstract)
-* [Overview](#overview)
-* [1. Implicit Anchors](#1-implicit-anchors)
+* [**Anchoring(RFC-005)**](#anchoringrfc-005)
+* [**Abstract**](#abstract)
+* [**Overview**](#overview)
+* [**1. Implicit Anchors**](#1-implicit-anchors)
   * [1.1 Transactions as Implicit Anchors](#11-transactions-as-implicit-anchors)
   * [1.2 Zero Knowledge Anchors](#12-zero-knowledge-anchors)
-* [2. Explicit Anchors](#2-explicit-anchors)
+* [**2. Explicit Anchors**](#2-explicit-anchors)
   * [2.1 Anchors with Attached ZKP Values](#21-anchors-with-attached-zkp-values)
-* [3. Special SSIs for Anchor Values](#3-special-ssis-for-anchor-values)
+* [**3. Special SSIs for Anchor Values**](#3-special-ssis-for-anchor-values)
+  * [SignedHashLinkSSI](#signedhashlinkssi)
   * [3.1 TransferSSI](#31-transferssi)
-* [Annex 1. Contributors](#annex-1-contributors)
+* [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
 
 
@@ -129,7 +131,7 @@ Another method of anchoring is based on Zero-Knowledge Proofs (ZKP). OpenDSU sup
 
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRxmLerLYQoqcXXJF8GUDbM8Y-MsDPNUoOOWqvCXOrIorMeJVXPCba6FAp4_aXNbUXOKLNLV9bjB5gb/pub?w=1221&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRxmLerLYQoqcXXJF8GUDbM8Y-MsDPNUoOOWqvCXOrIorMeJVXPCba6FAp4_aXNbUXOKLNLV9bjB5gb/pub?w=1221&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-top: 5px;"/>
 </div>
 
 <p style='text-align: justify;'>Signature of the current owner can be described by the following “formula”:
@@ -143,7 +145,7 @@ Another method of anchoring is based on Zero-Knowledge Proofs (ZKP). OpenDSU sup
 ## 3.1 TransferSSI
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRyemtr-uI8MqPHex6Zk3WNWPVZ8EV58Y4kaE-6vmegaYPhW6hYBdHOsV95atTLGL13a-pnOfIyNUdk/pub?w=1230&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vRyemtr-uI8MqPHex6Zk3WNWPVZ8EV58Y4kaE-6vmegaYPhW6hYBdHOsV95atTLGL13a-pnOfIyNUdk/pub?w=1230&h=100" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-top: 5px;"/>
 </div>
 
 
