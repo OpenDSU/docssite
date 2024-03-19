@@ -113,7 +113,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 <p style='text-align: justify;'>DSUs are flexible and can be updated (and even deleted). These get implemented by having multiple BrickMaps referenced within the same anchor, allowing us to have a history of each DSU.</p>
-</p>
+</p> 
 
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLywlGNSsOE7PFBpcDpgQmOCvzRDCOhGssLrBp47Rz7j9w4psp2xmfFQfF9HARmj6la04u_s47q2tq/pub?w=267&h=241" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
