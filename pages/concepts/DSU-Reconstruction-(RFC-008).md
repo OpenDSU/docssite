@@ -40,14 +40,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-| **Number** | **Name**             | **Link**                                                                                                  |
-|:-----------|:---------------------|:----------------------------------------------------------------------------------------------------------|
-| RFC 001    | DSU Introduction     | [DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html)  |
-| RFC 002    | KeySSIs Introduction | [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)                        |
-| RFC 003    | Brick storages       | [Brick Storages](https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html)                |
-| RFC 005    | Anchoring            | [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)                  |
-| RFC 070    | Bricking             | [Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html)                |
-| RFC 075    | Security Context     | [Security Context (RFC-075)](https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html) |
+| **Number** | **Name**             | **Link**                                                                                                   |
+|:-----------|:---------------------|:-----------------------------------------------------------------------------------------------------------|
+| RFC 001    | DSU Introduction     | [DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU-Introduction-(RFC-001).html)   |
+| RFC 002    | KeySSIs Introduction | [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html)                         |
+| RFC 003    | Brick storages       | [Brick Storages](https://www.opendsu.org/pages/concepts/Brick-Storages-(RFC-003).html)                 |
+| RFC 005    | Anchoring            | [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring-(RFC-005).html)                   |
+| RFC 070    | Bricking             | [Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking-(RFC-070).html#bricking-rfc-070)                 |
+| RFC 075    | Security Context     | [Security Context (RFC-075)](https://www.opendsu.org/pages/beginners/Security-Context-(RFC-075).html#security-context-rfc-075)  |
 
 
 
@@ -98,15 +98,15 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 More details are available at the following links:
 
-[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html)                                                                                                                                                                                                               
-[KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)  
-[Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html)  
-[Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html) 
+[DSU Introduction (RFC-001)](https://www.opendsu.org/pages/concepts/DSU-Introduction-(RFC-001).html)                                                                                                                                                                                                               
+[KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html)  
+[Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring-(RFC-005).html)  
+[Bricking (RFC-070)](https://www.opendsu.org/pages/contributors/Bricking-(RFC-070).html#bricking-rfc-070) 
 
 
 # **2. Bricks Storage**
 
-<p style='text-align: justify;'>Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI,  an <a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html">anchor identifier</a> is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> will be created and associated with the anchor identifier to keep track of all different BrickMap versions.
+<p style='text-align: justify;'>Bricks Storage is a brick storage service. In order to store DSUs safely in a shared storage, OpenDSU will first split the DSUs into many pieces called bricks. Each brick contains a small amount of encrypted data and will be stored in the storage environment using hashes as identifiers. One of these bricks is remarkable and contains the secret map that will be used to reconstruct the entire DSU in the correct order. It is called the BrickMap. When a DSU is created with a KeySSI, an <a href="https://www.opendsu.org/pages/concepts/Anchoring-(RFC-005).html">anchor identifier</a> is derived from the key. Each time our DSU is updated and anchored in the blockchain, a new brick containing the BrickMap represented by its <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,-SignedHashLinkSSI-(RFC-015).html#hashlinkssi-signedhashlinkssi-rfc-015">HashLinkSSI</a> will be created and associated with the anchor identifier to keep track of all different BrickMap versions.
 </p>
 
 <p style='text-align: justify;'>The BrickMap is a special brick stored along with the other bricks in the brick storage. It is used to reconstruct the DSU execution environment by retrieving bricks from the brick storage.
@@ -141,9 +141,9 @@ More details are available at the following links:
 </p>
 
 
-More details are available in Bricks Storages [RFC-003](https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html)                                                                                                                        
+More details are available in Bricks Storages [RFC-003](https://www.opendsu.org/pages/concepts/Brick-Storages-(RFC-003).html).                                                                                                                      
 
-More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html).
+More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/contributors/Bricking-(RFC-070).html#bricking-rfc-070).
 
 
 # **3. DSU Reconstruction from Bricks**
@@ -151,7 +151,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 <p style='text-align: justify;'>DSUs are encrypted at rest and in transit using a key derived from an identifier called KeySSI. A DSU can be imagined as a multi-directory file system with granular access and security properties for each “directory”. Instead of being stored as a whole, the files are stored as encrypted bricks. That is why we need DSU reconstruction to reassemble our files, and we reassemble them only for a limited time in an “Execution Environment”. These OpenDSU mechanisms implement “client-side encryption” as a means to enable Data Self-Sovereignty.
 </p>
 
-<p style='text-align: justify;'>An execution environment is typically a sandbox that obtains the correct key (a <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a>) to gain access rights to decrypt the DSU. This “execution environment” can exist on the client/edge device or somewhere externally, such as in the cloud or on a server. OpenDSU implementation standards propose the usage of JavaScript VMs and web assembly to deploy these sandboxes. Sandboxes will perform a “DSU reconstruction” operation that can be compared to the booting of a computer and is designed to recognize different “DSU Types” that will control how validation of subsequent versions of DSUs will be handled.
+<p style='text-align: justify;'>An execution environment is typically a sandbox that obtains the correct key (a <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI</a>) to gain access rights to decrypt the DSU. This “execution environment” can exist on the client/edge device or somewhere externally, such as in the cloud or on a server. OpenDSU implementation standards propose the usage of JavaScript VMs and web assembly to deploy these sandboxes. Sandboxes will perform a “DSU reconstruction” operation that can be compared to the booting of a computer and is designed to recognize different “DSU Types” that will control how validation of subsequent versions of DSUs will be handled.
 </p>
 
 
@@ -203,7 +203,7 @@ More details are available in Bricking [RFC-070](https://www.opendsu.org/pages/c
 
 2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+3. <a href="https://www.privatesky.xyz/">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. 
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 

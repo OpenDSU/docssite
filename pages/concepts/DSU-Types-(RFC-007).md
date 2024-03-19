@@ -153,7 +153,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+3. <a href="https://www.privatesky.xyz/">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. 
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
