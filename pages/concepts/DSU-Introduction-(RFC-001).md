@@ -148,9 +148,10 @@ More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/page
 <p style='text-align: justify;'>We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called <a href="https://www.opendsu.org/pages/concepts/DSU-Reconstruction-(RFC-008).html">DSU Reconstruction</a>.
 </p>
 
-More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/pages/concepts/DSU-Mounting-(RFC-006).html).
 
-More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/pages/concepts/DSU-Types-(RFC-007).html).
+More details are available in <a href="https://www.opendsu.org/pages/concepts/DSU-Mounting-(RFC-006).html">DSU Mounting (RFC-006)</a>.
+
+More details are available in <a href="https://www.opendsu.org/pages/concepts/DSU-Types-(RFC-007).html">DSU Types (RFC-007)</a>.
 
 
 #  **5. DSU Reconstruction**
@@ -194,7 +195,7 @@ These three use cases will be developed in the following subsections.
 ## 7.1 DSU-Based Self Sovereign Applications (SSApps)
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS5ONxCu4XObPwLCM17j2ZxjaHzgcLGb7q-4lMXjbFI-Uorb4cvI35z9wHpoZvx-Umo6rmYc5zbYHPv/pub?w=419&h=173" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vS5ONxCu4XObPwLCM17j2ZxjaHzgcLGb7q-4lMXjbFI-Uorb4cvI35z9wHpoZvx-Umo6rmYc5zbYHPv/pub?w=419&h=173" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-top: 15px;"/>
     <p><b>Figure 7: SSApps as DSUs containing UI Code</b></p>
 </div>
 
@@ -210,7 +211,7 @@ These three use cases will be developed in the following subsections.
 SSApp Architecture is described in <a href="https://www.opendsu.org/pages/concepts/SSApps-Architecture-(RFC-028).html">SSApp Architecture (RFC-028)</a>.
 
 
-SSApp Implementation is described in <a href="https://www.opendsu.org/pages/beginners/SSapp%20implementation(RFC%20034).html">SSApp implementation (RFC-034)</a>.
+SSApp Implementation is described in <a href="https://www.opendsu.org/pages/beginners/SSapp-Implementation(RFC-034).html">SSApp Implementation (RFC-034)</a>.
 
 
 
@@ -228,7 +229,7 @@ Of course, from a security point of view, those two models have an excellent com
 The simplest case is when the required KeySSI is a parameter in the Web API and, therefore, comes from the client. In other cases, the KeySSI should be derived from the input parameters of the Web APIs using a well-defined method (a cryptographic method) or some sort of lookup tables or vaults hosted in a trusted environment.
 OpenDSU does not try to fix any specific rules about these Web APIs, and they should be DTE and use case-specific. However, a set of best practices regarding the security of retrieving the proper  KeySSI will be documented in the following chapters.</p>
 
- <a href="https://www.opendsu.org/pages/beginners/APIs%20Overview%20(RFC-060).html">APIs Overview (RFC-060)</a> can be used to implement Web APIs based on DSU APIs.
+ <a href="https://www.opendsu.org/pages/beginners/APIs-Overview-(RFC-060).html">APIs Overview (RFC-060)</a> can be used to implement Web APIs based on DSU APIs.
 
 
 ## 7.3 DSU Instances in Multiple Security Contexts
@@ -241,7 +242,7 @@ OpenDSU does not try to fix any specific rules about these Web APIs, and they sh
 </p>
 
 <div style="text-align:center;">
-    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ7UCvYtwvs9LnOVOgGlGvJAQRJlPnaIDwofDpA_2RA3h1fy8wqlbwFMbBwLkakp5yh2PvfYrEG39o_/pub?w=1151&h=347" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+    <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQ7UCvYtwvs9LnOVOgGlGvJAQRJlPnaIDwofDpA_2RA3h1fy8wqlbwFMbBwLkakp5yh2PvfYrEG39o_/pub?w=1151&h=347" class="imgMain" style="max-width: 69%; margin-left: 0px; margin-top: 15px;"/>
     <p><b>Figure 9: Security Context Exemplification</b></p>
 </div>
 
@@ -260,17 +261,15 @@ OpenDSU does not try to fix any specific rules about these Web APIs, and they sh
 <p style='text-align: justify;'>1. OpenDSU encrypts everything by default and can reconstruct data from big "archives" lazily. Imagine that each DSU is like an encrypted virtual file system stored in a cloud optimized for lazy loading. Blockchain is used as a naming service to preserve data history, similar to IPNS (InterPlanetary Name System), but with specific immutability properties.
 </p>
 
-<p style='text-align: justify;'>2. OpenDSU provides a concept called <a href="https://www.opendsu.org/pages/APIHub%20APIs/BDNS%20(RFC-122).html">BDNS</a> (Blockchain Domain Naming Service) that allows you to segregate data:
+<p style='text-align: justify;'>2. OpenDSU provides a concept called <a href="https://www.opendsu.org/pages/concepts/BDNS-(RFC-022).html">BDNS</a> (Blockchain Domain Naming Service) that allows you to segregate data:
 </p>
 
 
  * off-chain content as encrypted bricks;
  * on-chain content in the form of anchors stored in multiple ledgers/blockchains.
 
-
-<p style='text-align: justify;'>3. OpenDSU provides a concept called <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a> that improves secret management and secret data sharing (each DSU has something that resembles a recovery key, but from this key, you could derive a read-only access key in a decentralized environment).
+<p style='text-align: justify;'>3. OpenDSU provides a concept called <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI</a> that improves secret management and secret data sharing (each DSU has something that resembles a recovery key, but from this key, you could derive a read-only access key in a decentralized environment).
 </p>
-
 
 
 <p style='text-align: justify;'>OpenDSU is intended to be used in enterprise blockchain solutions, so the aim is performance and strict data control/ownership. OpenDSU could easily use IPFS as the actual storage, but in the performance tests from previous years, the results could have been better. In cases where decentralization requires data replication in a P2P network, the IPFS brick storage strategy for OpenDSU could be a viable solution. For now, the use cases where we use OpenDSU use cloud-based storage strictly controlled by different companies. In a way, this is also a form of decentralization: the blockchain anchoring unifies the anchoring of the DSU (to provide data integrity in a digital ecosystem like an entire industry), but the actual data belong to separate companies.
