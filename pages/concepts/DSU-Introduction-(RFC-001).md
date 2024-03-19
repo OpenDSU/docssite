@@ -131,27 +131,26 @@ More details are available in <a href="https://www.opendsu.org/pages/concepts/Br
 
 <p align="justify">DSUs are anchored in the blockchain, and the anchoring feature brings the capability of digitally signing data and code in the initial version and any subsequent versions. In some situations, use cases can exist in which a centralized system provides DSU anchoring. For example, a use case that only needed anchoring could support better internal auditability. This example is excellent, as it could be later decentralized if needed or required.</p>
 
-More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html).
+More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/pages/concepts/Anchoring-(RFC-005).html).
 
 # **4. DSU Mounting**
 
 <p align="justify">The code in a DSU instance is not copied to each instantiation. Starting from the perspective that a DSU can be seen as a file system, this file system allows the mounting of a DSU in another DSU. The DSU mounted in all instances and containing the code is called <a href="https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html">DSU Types</a>. This DSU Type behaves similarly to a class compared to its instances. The DSU Type is a DSU in itself and, as such, is anchored and must have credentials (digital signatures) that mark it safe for use. It should also be noted that a DSU Type can be updated, leading to the automatic update of all instances. We also name the code from DSU Type as DSU constitution.
 
 
-
-<p style='text-align: justify;'>DSUs are micro-ledgers and should provide security properties similar to smart contracts. Therefore,  the initial version of the DSU Type contains the code needed to validate new versions of the DSU Type. After updating the DSU Type itself, the code from the DSU Type will check that the current DSU versions follow the rules defined by the DSU Type constitution.</p>
+<p style='text-align: justify;'>The code in a DSU instance is not copied to each instantiation. Starting from the perspective that a DSU can be seen as a file system, this file system allows the mounting of a DSU in another DSU. The DSU mounted in all instances and containing the code is called <a href="https://www.opendsu.org/pages/concepts/DSU-Types-(RFC-007).html">DSU Types</a>. This DSU Type behaves similarly to a class compared to its instances. The DSU Type is a DSU in itself and, as such, is anchored and must have credentials (digital signatures) that mark it safe for use. It should also be noted that a DSU Type can be updated, leading to the automatic update of all instances. We also name the code from DSU Type as DSU constitution.
 </p>
 <div style="text-align:center;">
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vSSdFjMT3QJDCy-8DwD2nbAUwofoH6_q3Mi8qkLhMViUvkN_grcndvupAUEvIu94sLobFWub1k7Rp5O/pub?w=927&h=274" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 5: DSU Instances and DSU Types</b></p>
 </div>
 
+<p style='text-align: justify;'>We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called <a href="https://www.opendsu.org/pages/concepts/DSU-Reconstruction-(RFC-008).html">DSU Reconstruction</a>.
+</p>
 
-<p align="justify">We can also observe that DSU mounting can mount arbitrary DSUs and make them look like they are part of the root DSU. The mounting of the code is just an example of the concept's usefulness. DSUs are light containers that can boot minimal “operating systems” that we call DSU Types. What we obtain is a file system with mounting concepts. This booting will usually be called <a href="https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html">DSU Reconstruction</a>.</p>
+More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/pages/concepts/DSU-Mounting-(RFC-006).html).
 
-More details are available in [DSU Mounting (RFC-006)](https://www.opendsu.org/pages/concepts/DSU%20Mounting%20(RFC-006).html).
-
-More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html).
+More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/pages/concepts/DSU-Types-(RFC-007).html).
 
 
 #  **5. DSU Reconstruction**
@@ -163,19 +162,19 @@ More details are available in [DSU Types (RFC-007)](https://www.opendsu.org/page
     <p><b>Figure 6: DSU reconstruction</b></p>
 </div>
 
-
-<p align="justify">An execution environment is typically a sandbox that obtains the correct key (a <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI</a>) to gain access rights to decrypt the DSU. This “execution environment” can exist externally on the client/edge device or elsewhere, such as in the cloud or a server. OpenDSU implementation standards propose the usage of JavaScript VMs (Virtual Machines) and web assembly to deploy these sandboxes.
+<p style='text-align: justify;'>An execution environment is typically a sandbox that obtains the correct key (a <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI</a>) to gain access rights to decrypt the DSU. This “execution environment” can exist externally on the client/edge device or elsewhere, such as in the cloud or a server. OpenDSU implementation standards propose the usage of JavaScript VMs (Virtual Machines) and web assembly to deploy these sandboxes.
+</p>
 
 <p style='text-align: justify;'>Sandboxes will perform a “DSU reconstruction” operation that can be compared to the booting of a computer and is designed to recognize different “DSU Types” that will control how validation of subsequent versions of DSUs will be handled.</p>
 </p>
 
-More details are available in [DSU Reconstruction (RFC-008)](https://www.opendsu.org/pages/concepts/DSU%20Reconstruction%20(RFC-008).html).
+More details are available in [DSU Reconstruction (RFC-008)](https://www.opendsu.org/pages/concepts/DSU-Reconstruction-(RFC-008).html).
 
 # **6. KeySSI**
 
 <p align="justify">The KeySSI concept's purpose is to provide blockchain-anchored identities for things and processes, and companies and individuals. They are used as secret symmetrical encryption/decryption keys for DSUs (or parts of the DSUs).</p>
 
-More details are available in [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).
+More details are available in [KeySSI (RFC-002)](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html).
 
 # **7. DSU Use Cases**
 
@@ -208,7 +207,7 @@ These three use cases will be developed in the following subsections.
 </ol>
 
 
-SSApp Architecture is described in <a href="https://www.opendsu.org/pages/concepts/SSApps%20Architecture%20(RFC-028).html">SSApp Architecture (RFC-028)</a>.
+SSApp Architecture is described in <a href="https://www.opendsu.org/pages/concepts/SSApps-Architecture-(RFC-028).html">SSApp Architecture (RFC-028)</a>.
 
 
 SSApp Implementation is described in <a href="https://www.opendsu.org/pages/beginners/SSapp%20implementation(RFC%20034).html">SSApp implementation (RFC-034)</a>.
