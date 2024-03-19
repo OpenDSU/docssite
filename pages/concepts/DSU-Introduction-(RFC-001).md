@@ -119,7 +119,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     <img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQLywlGNSsOE7PFBpcDpgQmOCvzRDCOhGssLrBp47Rz7j9w4psp2xmfFQfF9HARmj6la04u_s47q2tq/pub?w=267&h=241" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
     <p><b>Figure 4: Brick Storage & Brick Map</b></p>
 </div>
-
+ 
 
 
 <p align="justify">Supplementary sophistications are required only in cases where we have to implement access revocation to the shared data or implement an expiration date for access to data as requested by a third party.</p>
