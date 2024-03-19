@@ -21,13 +21,14 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [Abstract](#abstract)
-* [Overview](#overview)
-* [1. DSU Versions](#1-dsu-versions)
-* [2. Bricks Storage](#2-bricks-storage)
-* [3. DSU Reconstruction from Bricks](#3-dsu-reconstruction-from-bricks)
-* [4. Security Context (SC) and DSU Reconstruction](#4-security-context-sc-and-dsu-reconstruction)
-* [Annex 1. Contributors](#annex-1-contributors)
+* [**DSU Reconstruction (RFC-008)**](#dsu-reconstruction-rfc-008)
+* [**Abstract**](#abstract)
+* [**Overview**](#overview)
+* [**1. DSU Versions**](#1-dsu-versions)
+* [**2. Bricks Storage**](#2-bricks-storage)
+* [**3. DSU Reconstruction from Bricks**](#3-dsu-reconstruction-from-bricks)
+* [**4. Security Context (SC) and DSU Reconstruction**](#4-security-context-sc-and-dsu-reconstruction)
+* [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
 
 
