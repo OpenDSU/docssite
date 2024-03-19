@@ -25,11 +25,12 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [Abstract](#abstract)
-* [Introduction](#introduction)
-* [1. Description of the Mounting Process](#1-description-of-the-mounting-process)
-* [2. Example](#2-example)
-* [Annex 1. Contributors](#annex-1-contributors)
+* [**DSU Mounting (RFC-006)**](#dsu-mounting-rfc-006)
+* [**Abstract**](#abstract)
+* [**Introduction**](#introduction)
+* [**1. Description of the Mounting Process**](#1-description-of-the-mounting-process)
+* [**2. Example**](#2-example)
+* [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
 
 
@@ -51,7 +52,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>OpenDSU aims to facilitate the creation of a blockchain that supports multiple blockchains. Furthermore, it should support blockchains with various capabilities and security models (heterogeneous blockchains). For OpenDSU, the primary purpose of these blockchains is to function as an authentication mechanism for the DSU.
 </p>
 
-<p style='text-align: justify;'>More details about DSUs are available in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.</p>
+More details about DSUs are available in <a href="https://www.opendsu.org/pages/concepts/Brick-Storages-(RFC-003).html">Brick Storages (RFC-003)</a>.
 
 # **1. Description of the Mounting Process**
 
@@ -94,8 +95,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>In figure 2, we present a more complex case. In the SSApp concept, we have mounted inside DSUs for wallets and SSApps, a DSU that holds the PoD (Point of Delivery) needed for the SSApp execution. In this way, the users can write some of their own data in their wallets or SSApps, but the user has no write rights over the code. The code can be signed, or a third party can maintain it. The term “constitution” in the figure represents the code of DSU-Type (concept explained above).
 </p>
 
-<p style='text-align: justify;'>More details are available in <a href="https://www.opendsu.org/pages/concepts/SSApps%20Architecture%20(RFC-028).html">SSapps Architecture (RFC-028)</a>.
-</p>
+More details are available in <a href="https://www.opendsu.org/pages/concepts/SSApps-Architecture-(RFC-028).html#ssapp-architecture-rfc-028">SSapps Architecture (RFC-028)</a>.
 
 <p style='text-align: justify;'>The mounting operation can be done both for writing, using KeySSIs that allow writing, and in read-only mode. Generally, the mounting is available for the operating system in the same way as for a file system: for reading, writing, or both.
 </p>
@@ -106,7 +106,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>Security Context is an important concept introduced by OpenDSU, to try and give the OpenDSU programmers the insight that working with secrets, cryptographic materials, private keys, public keys, and confidential/private records is always associated with a security context. We treat each wallet as a Security Context (SC). The wallet incorporates broader things, such as the interface, code and different types of sensitive data storage. It can also mount DSUs and it can have external databases.
 </p>
 
-More details are available in <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">Security Context (RFC-075)</a>.
+More details are available in <a href="https://www.opendsu.org/pages/beginners/Security-Context-(RFC-075).html#security-context-rfc-075">Security Context (RFC-075)</a>.
 
 <p style='text-align: justify;'>Contextual mounting allows sharing DSUs with varied access for different actors in the system. An actor is a computing entity that participates in the process, such as a person, a robot, an application, an organization, or a system. An actor can simultaneously send (in response to a message it receives) a finite number of messages to other actors. In our case, actors will be able to see that there is some content, but they will not be able to open it unless they have access to another communication channel at the corresponding key. Once they have access to the key, they must upload it in their security context to receive access rights. The actors will receive read or write rights, depending on the key they receive through the external communication channel.
 </p>
@@ -117,9 +117,9 @@ More details are available in <a href="https://www.opendsu.org/pages/beginners/S
 <p style='text-align: justify;'>A DID is the same as a URI that is resolved in a DID document. A DID document is a collection of public keys and other metadata. This data allows classification, organization, and storage of other data, in digital format.
 </p>
 
-More details are available in <a href="https://www.opendsu.org/pages/advanced/W3C%20DIDs%20(RFC-082).html">W3C DIDs (RFC-082)</a>.
+More details are available in <a href="https://www.opendsu.org/pages/advanced/W3C-DIDs-(RFC-082).html#w3c-dids-rfc-082">W3C DIDs (RFC-082)</a>.
 
-More details are available in <a href="https://www.opendsu.org/pages/contributors/Message%20Queues%20(RFC-073).html">Message Queues (RFC-073)</a>.
+More details are available in <a href="https://www.opendsu.org/pages/contributors/Message-Queues-(RFC-073).html#message-queues-rfc-073">Message Queues (RFC-073)</a>.
 
 # **2. Example**
 
@@ -194,7 +194,7 @@ assert.callback("Trying to mount ", (testFinishCallback) => {
 
 2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 
-3. PrivateSky Research Project: MIT licensed content accordingly with the contracts. 
+3. <a href="https://www.privatesky.xyz/">PrivateSky Research Project</a>: MIT licensed content accordingly with the contracts. 
 <a href="https://profs.info.uaic.ro/~ads/PrivateSky/"> https://profs.info.uaic.ro/~ads/PrivateSky/</a>
 
 
