@@ -22,12 +22,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [Abstract](#abstract)
-* [Introduction](#introduction)
-* [Syntax of KeySSI identifiers](#syntax-of-keyssi-identifiers)
-* [Trustless KeySSI Resolvers](#trustless-keyssi-resolvers)
-* [KeySSIs families](#keyssis-families)
-* [KeySSIs common functions](#keyssis-common-functions)
+* [**KeySSI (RFC-002)**](#keyssi-rfc-002)
+* [**Abstract**](#abstract)
+* [**1. Introduction**](#1-introduction)
+* [**2. Syntax of KeySSI identifiers**](#2-syntax-of-keyssi-identifiers)
+* [**3. Trustless KeySSI Resolvers**](#3-trustless-keyssi-resolvers)
+* [**4. KeySSIs families**](#4-keyssis-families)
+* [**5. KeySSIs common functions**](#5-keyssis-common-functions)
   * [Function keySSI.autoLoad(identifier)](#function-keyssiautoloadidentifier)
   * [Function keySSI.cast(newType)](#function-keyssicastnewtype)
   * [Function keySSI.clone()](#function-keyssiclone)
@@ -42,7 +43,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
   * [Function keySSI.getSpecificString()](#function-keyssigetspecificstring)
   * [Function keySSI.getVn()](#function-keyssigetvn)
   * [Function keySSI.load(subType, dlDomain, subtypeSpecificString, control, vn, hint)](#function-keyssiloadsubtype-dldomain-subtypespecificstring-control-vn-hint)
-* [Annex 1. Contributors](#annex-1-contributors)
+* [**Annex 1. Contributors**](#annex-1-contributors)
 <!-- TOC -->
 
 
@@ -337,6 +338,7 @@ seedKeyIdentifier = seedSSI.getIdentifier();
 
 
 1. <p style='text-align: justify;'><a href="https://www.axiologic.net/">Axiologic Research</a>: New content and improvements. Original texts under PharmaLedger Association and Novartis funding. MIT licensed content accordingly with the contracts. Publish and maintain the <a href="https://www.opendsu.org/">www.opendsu.org</a> site.
+</p>
 
 2. <p style='text-align: justify;'><a href="https://pharmaledger.org/">PharmaLedger Project</a>: Review, feedback, observations, new content, and corrections MIT licensed accordingly with the consortium agreements.
 </p>
