@@ -152,8 +152,7 @@ More details are available in [Anchoring (RFC-005)](https://www.opendsu.org/page
 More details are available in <a href="https://www.opendsu.org/pages/concepts/DSU-Mounting-(RFC-006).html">DSU Mounting (RFC-006)</a>.
 <br><br>
 More details are available in <a href="https://www.opendsu.org/pages/concepts/DSU-Types-(RFC-007).html">DSU Types (RFC-007)</a>.
-<br>
-
+<br><br>
 
 # **5. DSU Reconstruction**
 
