@@ -23,7 +23,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**DSU Types (RFC-007)**](#dsu-types-rfc-007)
 * [**Abstract**](#abstract)
 * [**1. Public Methods from dt API**](#1-public-methods-from-dt-api)
   * [Function getDossierBuilder(sourceDSU, varStore)](#function-getdossierbuildersourcedsu-varstore)
