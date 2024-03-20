@@ -145,7 +145,7 @@ There are also family-specific functions that you can find on the dedicated page
 | Nicoleta Mihalache                  | nicoleta@axiologic.net             |
 | Teodor Lupu                         | teodor@axiologic.net               |
 | Valentin Gérard                     | valentin@axiologic.net             |
-| **PrivatSky Contributors**          | **Email**                          | 
+| **PrivateSky Contributors**         | **Email**                          | 
 | Alex Sofronie                       | alsofronie@gmail.com(DPO)          |
 | Cosmin Ursache                      | cosmin@axiologic.net(UAIC)         |
 | Daniel Sava                         | daniel@axiologic.net(HVS, AQS)     |
