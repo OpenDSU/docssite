@@ -73,7 +73,7 @@ A workspace is needed in order to be able to run a SSApp. The easiest way to cre
   
 </ol>
 
-<p style='text-align: justify;'>A more detailed tutorial for creating a workspace can be found in <a href="https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html">OpenDSU RFC 114</a> - OpenDSU Workspace Tutorial.
+<p style='text-align: justify;'>A more detailed tutorial for creating a workspace can be found in <a href="https://www.opendsu.org/pages/quickstart/Developers-Tutorial-(RFC-114).html">OpenDSU RFC 114</a> - OpenDSU Workspace Tutorial.
 </p>
 
 
@@ -112,7 +112,7 @@ A workspace is needed in order to be able to run a SSApp. The easiest way to cre
 
 ## **1.3 Test successful integration into workspace**
 
-To run your application, simply open an incognito window in Google Chrome and access <i>localhost:8080/password-manager-wallet/loader</i>. You can also edit the <i>apihub-root/index.html</i> file of your workspace, and then access <i>localhost:8080</i> and be redirected to the password manager with the simple click of a button. In order to do this, replace the <i>href</i> attribute of the button with "/password-manager-wallet/loader". You might also want to change the text on the button from “Nothing here yet” to “My Password Manager”, for example, since now the button actually links to an application. For more information about how to use the workspace, check out <a href="https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html">RFC 114</a> - Developers Tutorial. This is how the end result should look like:
+To run your application, simply open an incognito window in Google Chrome and access <i>localhost:8080/password-manager-wallet/loader</i>. You can also edit the <i>apihub-root/index.html</i> file of your workspace, and then access <i>localhost:8080</i> and be redirected to the password manager with the simple click of a button. In order to do this, replace the <i>href</i> attribute of the button with "/password-manager-wallet/loader". You might also want to change the text on the button from “Nothing here yet” to “My Password Manager”, for example, since now the button actually links to an application. For more information about how to use the workspace, check out <a href="https://www.opendsu.org/pages/quickstart/Developers-Tutorial-(RFC-114).html">RFC 114</a> - Developers Tutorial. This is how the end result should look like:
 
 
 <div style="text-align:center;">
@@ -217,7 +217,7 @@ class AddCategoryController extends WebcController {
 
 # **4. How to use OpenDSU APIs in SSApps**
 
-The classic Service design pattern can be used with ease to create a data layer between the controllers and OpenDSU APIs. In our tutorial, we propose to take a closer look at a simple Service called CategoryManagerService that uses the <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">OpenDSU Enclave</a> concept as a database.
+The classic Service design pattern can be used with ease to create a data layer between the controllers and OpenDSU APIs. In our tutorial, we propose to take a closer look at a simple Service called CategoryManagerService that uses the <a href="https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html">OpenDSU Enclave</a> concept as a database.
 
 
 The <i>CategoryManagerService.js</i> file exposes a method (getCategoryManagerServiceInstance) for retrieving the ready-to-use singleton instance of our service. The purpose of this method is to obtain an OpenDSU Enclave instance and make it available for our service to use.
@@ -258,7 +258,7 @@ let getCategoryManagerServiceInstance = function (callback) {
 
 ```
 
-As you can see, in this method, we load the OpenDSU SDK by calling require(“opendsu”). In order to get our Main Enclave instance, we load and call the OpenDSU <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">Security Context</a>. Once we have the enclave instance, we can proceed with the singleton service instance initialization. We use the singleton design pattern because it is easy to provide the controllers with an instance of our service which doesn’t have any state, it just uses the OpenDSU Enclave as a Database to interact with.
+As you can see, in this method, we load the OpenDSU SDK by calling require(“opendsu”). In order to get our Main Enclave instance, we load and call the OpenDSU <a href="https://www.opendsu.org/pages/beginners/Security-Context-(RFC-075).html">Security Context</a>. Once we have the enclave instance, we can proceed with the singleton service instance initialization. We use the singleton design pattern because it is easy to provide the controllers with an instance of our service which doesn’t have any state, it just uses the OpenDSU Enclave as a Database to interact with.
 
 
 

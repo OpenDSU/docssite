@@ -44,7 +44,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 # **Abstract**
 
 
-<p style='text-align: justify;'>This API space offers a set of portable functions for DSU anchoring. The agent should handle these operations, so it will probably not have to use these functions. More information about OpenDSU Anchoring can be found in<a href="https://www.opendsu.org/pages/concepts/Anchoring%20(RFC-005).html"> Anchoring (RFC-005)</a>.
+<p style='text-align: justify;'>This API space offers a set of portable functions for DSU anchoring. The agent should handle these operations, so it will probably not have to use these functions. More information about OpenDSU Anchoring can be found in<a href="https://www.opendsu.org/pages/concepts/Anchoring-(RFC-005).html"> Anchoring (RFC-005)</a>.
 </p>
 
 

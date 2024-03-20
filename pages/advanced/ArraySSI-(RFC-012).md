@@ -75,7 +75,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
     <p><b>Figure 1: ConstSSI generated from serialization numbers</b></p>
 </div>
 
-<p style='text-align: justify;'>There are no restrictions regarding the number of inputs we can use to create the ArraySSI. For example, adding a fourth input like GTIN can make the key more robust. Then, the array of inputs passes through a key derivation function, and the result is encoded to obtain the specific identifier of the ArraySSI. Next, the ArraySSI is derived to get a <a href="https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html">ConstSSI</a>  that can be used to create and resolve DSUs.
+<p style='text-align: justify;'>There are no restrictions regarding the number of inputs we can use to create the ArraySSI. For example, adding a fourth input like GTIN can make the key more robust. Then, the array of inputs passes through a key derivation function, and the result is encoded to obtain the specific identifier of the ArraySSI. Next, the ArraySSI is derived to get a <a href="https://www.opendsu.org/pages/advanced/ConstSSI-(RFC-011).html">ConstSSI</a>  that can be used to create and resolve DSUs.
 </p>
 
 
@@ -94,7 +94,7 @@ As stated before, the specific string of the ArraySSI corresponds to the array o
 # **2. Specific functions for ArraySSI**
 
 
-(Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
+(Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html).)
 
 ## Function arraySSI.initialize(dlDomain, arr, vn, hint)
 
@@ -116,7 +116,7 @@ As stated before, the specific string of the ArraySSI corresponds to the array o
 
 | **Name**                                                                              | **Description**                 |
 |:--------------------------------------------------------------------------------------|:--------------------------------|
-| [constSSI](https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html) object   | A constSSI object is returned.  |
+| [constSSI](https://www.opendsu.org/pages/advanced/ConstSSI-(RFC-011).html) object   | A constSSI object is returned.  |
 
 ## Function arraySSI.getEncryptionKey()
 

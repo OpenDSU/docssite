@@ -33,7 +33,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **Abstract**
 
-<p style='text-align: justify;'>The “bricking” API space offers a set of portable functions for creating and reading bricks. However, the agent should handle brick management (storage and reconstruction) automatically, and you will not have to use them. More information on brick storage can be found in <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storages (RFC-003)</a>.
+<p style='text-align: justify;'>The “bricking” API space offers a set of portable functions for creating and reading bricks. However, the agent should handle brick management (storage and reconstruction) automatically, and you will not have to use them. More information on brick storage can be found in <a href="https://www.opendsu.org/pages/concepts/Brick-Storages-(RFC-003).html">Brick Storages (RFC-003)</a>.
 </p>
 
 # **1. Bricking functions**
@@ -153,7 +153,7 @@ bricking.putBrick(seedSSI, 'hello', (err, brickHash) =>{
 
 | **Name**  | **Type**                                                                                    | **Value** | **Description**                                                                              |
 |:----------|:--------------------------------------------------------------------------------------------|:----------|:---------------------------------------------------------------------------------------------|
-| domain    | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html"> KeySSI</a> object | *required | The KeySSI associated with the blockchain and brick storage where you want to add the brick. |
+| domain    | <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html"> KeySSI</a> object | *required | The KeySSI associated with the blockchain and brick storage where you want to add the brick. |
 | brick     | ReadableStream or string                                                                    | *required | The brick content you want to add to the brick storages.                                     |
 | authToken | JWT token                                                                                   |           | A JWT authentication token.                                                                  |
 | callback  | function                                                                                    | *required |                                                                                              |
@@ -181,7 +181,7 @@ bricking.putBrick(seedSSI, 'hello', (err, brickHash) =>{
 
 | **Name** | **Type**                                                                                    | **Value** | **Description**                                          |
 |:---------|:--------------------------------------------------------------------------------------------|:----------|:---------------------------------------------------------|
-| KeySSI   | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html"> KeySSI</a> object | *required | The KeySSI of the blockchain domain.                     |
+| KeySSI   | <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html"> KeySSI</a> object | *required | The KeySSI of the blockchain domain.                     |
 | data     | buffer                                                                                      | *required |                                                          |
 | options  |                                                                                             |           |                                                          |
 | callback | function                                                                                    | *required |                                                          |

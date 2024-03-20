@@ -82,7 +82,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 <p align="justify">An important concept introduced by OpenDSU is the concept of Security Context. Its purpose is to give programmers who work with OpenDSU the intuition that working with secrets, cryptographic material, private keys, secret keys, and confidential/private records is always associated with a Security Context. Every Wallet is treated as a Security Context. A Wallet incorporates wider things such as interface, code, and different types of sensitive data storage. Also, it can mount the DSUs or have external databases. However, as seen in the above diagram, the most relevant is the Security Context concept, which has two components: the Main Enclave and the Shared Enclave. Every Wallet, and therefore every Security Context, has a Main Enclave that is instantiated and owned by the Digital Wallet. In other words, if this Wallet belongs to an organization and OpenDSU is focused on creating a programming framework for Enterprise applications, then the data does not belong to each individual, meaning we do not have the sovereignty goal at the user/owner level, but at the organization level. Therefore, OpenDSU offers the ability to share these enclaves, these sensitive data storage systems. So, OpenDSU introduces this enclave concept as an abstraction of sensitive data storage.</p>
 
-In this RFC, we present the Security Context API without going into too much detail about enclave APIs. Enclave APIs will be described in [Enclave RFC-097](https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html). Any Wallet has a “Main DSU” and a “Security Context”.
+In this RFC, we present the Security Context API without going into too much detail about enclave APIs. Enclave APIs will be described in [Enclave RFC-097](https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html). Any Wallet has a “Main DSU” and a “Security Context”.
 
 The Main DSU can:
 
@@ -471,7 +471,7 @@ Here is the list of operations available on the security context object created 
 | **Name**  | **Type**                                                                                   | **Value**  | **Description**                                                                  | 
 |:----------|:-------------------------------------------------------------------------------------------|:-----------|:---------------------------------------------------------------------------------|
 | forDID    | string                                                                                     | *required  | The identity of the keySSI holder.                                               |
-| keySSI    | [keySSI](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html) object  or string | *required  | The keySSI object or the identifier of the keySSI with which you want to sign.   |
+| keySSI    | [keySSI](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html) object  or string | *required  | The keySSI object or the identifier of the keySSI with which you want to sign.   |
 | data      | Buffer or string                                                                           | *required  | The data you want to sign.                                                       |
 | callback  | function                                                                                   | *required  |                                                                                  |
 

@@ -53,30 +53,30 @@ In order to use the API, it is need to call the function opendsu.loadApi(apiSpac
 
 | **API Space**                                                                              | **Purpose**                                                                               |
 |:-------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|
-| [Anchoring](https://www.opendsu.org/pages/contributors/Anchoring%20(RFC-069).html)         | Anchoring service                                                                         |
-| [BDNS](https://www.opendsu.org/pages/contributors/BDNS%20(RFC-067).html)                   | Handling Blockchain Domain Name Service                                                   |
-| [Bricking](https://www.opendsu.org/pages/contributors/Bricking%20(RFC-070).html)           | Bricks Storages                                                                           |
-| [Cache](https://www.opendsu.org/pages/contributors/Cache%20(RFC-077).html)                 | Utilities for caching                                                                     |
-| [Config](https://www.opendsu.org/pages/contributors/Config%20(RFC-078).html)               | Utilities for openDSu environment configurations                                          |
-| [Credentials](https://www.opendsu.org/pages/contributors/CredentialsDSU%20(RFC-057).html)  |                                                                                           |
-| [Crypto](https://www.opendsu.org/pages/advanced/Crypto%20(RFC-066).html)                   | Recommended Crypto APIs                                                                   |
-| [DB](https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html)                 | DSU based databases                                                                       |
-| [DT](https://www.opendsu.org/pages/concepts/DSU%20Types%20(RFC-007).html)                  | DSU Types                                                                                 |
-| [Enclave](https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html)               | Private data storage                                                                      |
-| [Error reporting](https://www.opendsu.org/pages/beginners/APIHub%20(RFC-064).html)         | Custom error management                                                                   |
-| [HTTP](https://www.opendsu.org/pages/advanced/HTTP%20(RFC-071).html)                       | Http client APIs                                                                          |
-| [KeySSI](https://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html)                   | KeySSI manipulation                                                                       |
-| [Ledger](https://www.opendsu.org/pages/contributors/Ledger%20(RFC-080).html)               |                                                                                           |
+| [Anchoring](https://www.opendsu.org/pages/contributors/Anchoring-(RFC-069).html)         | Anchoring service                                                                         |
+| [BDNS](https://www.opendsu.org/pages/contributors/BDNS-(RFC-067).html)                   | Handling Blockchain Domain Name Service                                                   |
+| [Bricking](https://www.opendsu.org/pages/contributors/Bricking-(RFC-070).html)           | Bricks Storages                                                                           |
+| [Cache](https://www.opendsu.org/pages/contributors/Cache-(RFC-077).html)                 | Utilities for caching                                                                     |
+| [Config](https://www.opendsu.org/pages/contributors/Config-(RFC-078).html)               | Utilities for openDSu environment configurations                                          |
+| [Credentials](https://www.opendsu.org/pages/contributors/CredentialsDSU-(RFC-057).html)  |                                                                                           |
+| [Crypto](https://www.opendsu.org/pages/advanced/Crypto-(RFC-066).html)                   | Recommended Crypto APIs                                                                   |
+| [DB](https://www.opendsu.org/pages/contributors/Database-(RFC-061).html)                 | DSU based databases                                                                       |
+| [DT](https://www.opendsu.org/pages/concepts/DSU-Types-(RFC-007).html)                  | DSU Types                                                                                 |
+| [Enclave](https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html)               | Private data storage                                                                      |
+| [Error reporting](https://www.opendsu.org/pages/beginners/APIHub-(RFC-064).html)         | Custom error management                                                                   |
+| [HTTP](https://www.opendsu.org/pages/advanced/HTTP-(RFC-071).html)                       | Http client APIs                                                                          |
+| [KeySSI](https://www.opendsu.org/pages/advanced/KeySSI-(RFC-068).html)                   | KeySSI manipulation                                                                       |
+| [Ledger](https://www.opendsu.org/pages/contributors/Ledger-(RFC-080).html)               |                                                                                           |
 | lock                                                                                       | New                                                                                       |
-| [m2dsu](https://www.opendsu.org/pages/contributors/Mapping%20Engine%20(RFC-076).html)      | Message To DSU operations Mapping Engine                                                  |
-| [mq](https://www.opendsu.org/pages/contributors/Message%20Queues%20(RFC-073).html)         | KeySSIs based Message Queues                                                              |
-| [Notifications](https://www.opendsu.org/pages/contributors/Notifications%20(RFC-072).html) | KeySSIs based Notifications                                                               |
-| [OAuth](https://www.opendsu.org/pages/contributors/OAuth%20(RFC-040).html)                 |                                                                                           |
-| [Resolver](https://www.opendsu.org/pages/advanced/Resolver%20(RFC-065).html)               | Obtain DSU Representations using a resolver and handlers.                                 |
-| [SC](https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html)          | Security Context                                                                          |
-| [System](https://www.opendsu.org/pages/contributors/System%20(RFC-079).html)               | This API space allows the user to configure environment variables of the OpenDSU system.  |
+| [m2dsu](https://www.opendsu.org/pages/contributors/Mapping-Engine-(RFC-076).html)      | Message To DSU operations Mapping Engine                                                  |
+| [mq](https://www.opendsu.org/pages/contributors/Message-Queues-(RFC-073).html)         | KeySSIs based Message Queues                                                              |
+| [Notifications](https://www.opendsu.org/pages/contributors/Notifications-(RFC-072).html) | KeySSIs based Notifications                                                               |
+| [OAuth](https://www.opendsu.org/pages/contributors/OAuth-(RFC-040).html)                 |                                                                                           |
+| [Resolver](https://www.opendsu.org/pages/advanced/Resolver-(RFC-065).html)               | Obtain DSU Representations using a resolver and handlers.                                 |
+| [SC](https://www.opendsu.org/pages/beginners/Security-Context-(RFC-075).html)          | Security Context                                                                          |
+| [System](https://www.opendsu.org/pages/contributors/System-(RFC-079).html)               | This API space allows the user to configure environment variables of the OpenDSU system.  |
 | utils                                                                                      | OpenDSU related utility APIs                                                              |
-| [w3cdid](https://www.opendsu.org/pages/advanced/W3C%20DIDs%20(RFC-082).html)               |                                                                                           |
+| [w3cdid](https://www.opendsu.org/pages/advanced/W3C-DIDs-(RFC-082).html)               |                                                                                           |
 | workers                                                                                    | NEW                                                                                       |
 
 
@@ -109,12 +109,12 @@ const http = opendsu.loadApi("http");
 # **2. Operations on DSUs**
 
 
-[Click here to know all operations available on DSU objects](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html)
+[Click here to know all operations available on DSU objects](https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html)
 
 # **3. Operations on KeySSIs**
 
 
-[Click here to know all common operations available for every KeySSI](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html)
+[Click here to know all common operations available for every KeySSI](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html)
 
 There are also family-specific functions that you can find on the dedicated pages of each family.
 

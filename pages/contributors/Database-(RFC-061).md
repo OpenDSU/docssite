@@ -230,7 +230,7 @@ let myDB = db.getBasicDB()
 
 # **2. Database instances**
 
-<p style='text-align: justify;'>Database objects instantiated as described in Section 1 <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html#1creating-a-database-object">(Creating a database object)</a> provide methods to query, insert, update or remove data in the form of <b>record</b> entries associated with a unique <b>key</b>: see readKey() and writeKey() methods. Optionally, keys may be grouped by context <b>tableName</b>: see getRecord(), updateRecord(), insertRecord() and deleteRecord(). The same <b>key</b> may occur in multiple context entries with different names, but keys without context or within the same context <b>tableName</b> are required to be unique (see Diagram 2.1). The <b>key</b> or <b>record</b> pairs within a context <b>tableName</b> maintain a versioned history of their modification or deletion events, whereas keys stored without context do not. Restrictions to the possible data type(s) of key and record may apply, according to the storage strategy employed by this database instance (see <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html#4-storage-strategies">Storage strategies</a>).
+<p style='text-align: justify;'>Database objects instantiated as described in Section 1 <a href="https://www.opendsu.org/pages/contributors/Database-(RFC-061).html#1creating-a-database-object">(Creating a database object)</a> provide methods to query, insert, update or remove data in the form of <b>record</b> entries associated with a unique <b>key</b>: see readKey() and writeKey() methods. Optionally, keys may be grouped by context <b>tableName</b>: see getRecord(), updateRecord(), insertRecord() and deleteRecord(). The same <b>key</b> may occur in multiple context entries with different names, but keys without context or within the same context <b>tableName</b> are required to be unique (see Diagram 2.1). The <b>key</b> or <b>record</b> pairs within a context <b>tableName</b> maintain a versioned history of their modification or deletion events, whereas keys stored without context do not. Restrictions to the possible data type(s) of key and record may apply, according to the storage strategy employed by this database instance (see <a href="https://www.opendsu.org/pages/contributors/Database-(RFC-061).html#4-storage-strategies">Storage strategies</a>).
 </p>
 
 
@@ -446,8 +446,8 @@ let myDB = db.getBasicDB()
 
 | **Method**                                                                                                | **Parameters** | **Description**                                                      |
 |:----------------------------------------------------------------------------------------------------------|:---------------|:---------------------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/contributors/DB%20objects%20(RFC-062).html">addIndex</a>           |                | Add an index to all the values from a specific field in your table.  |
-| <a href="https://www.opendsu.org/pages/contributors/DB%20objects%20(RFC-062).html"> getIndexedFields </a> |                | Returns the list of the indexed fields in the specified table.       |
+| <a href="https://www.opendsu.org/pages/contributors/DB-objects-(RFC-062).html">addIndex</a>           |                | Add an index to all the values from a specific field in your table.  |
+| <a href="https://www.opendsu.org/pages/contributors/DB-objects-(RFC-062).html"> getIndexedFields </a> |                | Returns the list of the indexed fields in the specified table.       |
 
 
 ## 2.3. Batch operations

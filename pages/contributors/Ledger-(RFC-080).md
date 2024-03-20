@@ -40,7 +40,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 | **Name**           | **Type**                                                                                    | **Value**    | **Description**                                                                      |
 |:-------------------|:--------------------------------------------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------|
-| keySSI             | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI object </a> |              |                                                                                      |
+| keySSI             | <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI object </a> |              |                                                                                      |
 | constitutionKeySSI |                                                                                             |              |                                                                                      |
 
 

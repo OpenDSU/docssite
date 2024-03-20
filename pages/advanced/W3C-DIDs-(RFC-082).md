@@ -110,7 +110,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **Abstract**
 
-<p style='text-align: justify;'>This API allows the creation and resolution of OpenDSU identifiers <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">(keySSIs)</a> that are compatible with the W3C DID specifications. A DID is like a URI resolved to a DID document. A DID Document is mostly a collection of public keys and possibly other metadata (e.g. endpoints). In OpenDSU, we transform these documents into Javascript objects capable of offering other functionalities:
+<p style='text-align: justify;'>This API allows the creation and resolution of OpenDSU identifiers <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">(keySSIs)</a> that are compatible with the W3C DID specifications. A DID is like a URI resolved to a DID document. A DID Document is mostly a collection of public keys and possibly other metadata (e.g. endpoints). In OpenDSU, we transform these documents into Javascript objects capable of offering other functionalities:
 </p>
 
 * Send encrypted messages to an OpenDSU queue associated with this DID;
@@ -133,7 +133,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </ol>
 
 
-<p style='text-align: justify;'>A <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">security context</a> is just an abstraction for the secure storage part of a wallet. Typically each security context embeds one or two “<a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">Enclaves</a>” (See also RFC097).
+<p style='text-align: justify;'>A <a href="https://www.opendsu.org/pages/beginners/Security-Context-(RFC-075).html">security context</a> is just an abstraction for the secure storage part of a wallet. Typically each security context embeds one or two “<a href="https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html">Enclaves</a>” (See also RFC097).
 </p>
 
 # **Overview**

@@ -55,7 +55,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **Abstract**
 
-<p style='text-align: justify;'>The “Resolver” API space allows developers to create <a href="https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html">DSU instances</a> by resolving <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSIs</a>. A DSU instance is similar to a file system where users can read and/or write files if they possess the right key. All operations available on DSUs are presented in DSU Object (<a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html">RFC-063</a>).
+<p style='text-align: justify;'>The “Resolver” API space allows developers to create <a href="https://www.opendsu.org/pages/concepts/DSU-Introduction-(RFC-001).html">DSU instances</a> by resolving <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSIs</a>. A DSU instance is similar to a file system where users can read and/or write files if they possess the right key. All operations available on DSUs are presented in DSU Object (<a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html">RFC-063</a>).
 </p>
 
 
@@ -116,7 +116,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 
 | **Name**       | **Type**                                                                             | **Value** | **Description**              |
 |:---------------|:-------------------------------------------------------------------------------------|:----------|:-----------------------------|
-| templateKeySSI | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI </a> | *required |                              |
+| templateKeySSI | <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI </a> | *required |                              |
 | options        | Json object                                                                          |           | Set to undefined by default. |
 | callback       | function                                                                             | *required |                              |
 
@@ -126,7 +126,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 | **Name** | **Type**                                                                                          | **Response example** |
 |:---------|:--------------------------------------------------------------------------------------------------|:---------------------|
 | err      | ErrorWrapper object                                                                               |                      |
-| dsu      | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html">Dsu instance </a> |                      |
+| dsu      | <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html">Dsu instance </a> |                      |
 
 <p style='text-align: justify;'><b>Description</b>: Contains a message and the error. / Reference to the DSU instance that was just created.
 </p>
@@ -153,7 +153,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 | **Name** | **Type**                                                                             | **Response example** |
 |:---------|:-------------------------------------------------------------------------------------|:---------------------|
 | err      | ErrorWrapper object                                                                  |                      |
-| dsu      | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI </a> |                      |
+| dsu      | <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI </a> |                      |
 
 
 <p style='text-align: justify;'><b>Description</b>: Contains a message and the error./ Reference to the DSU instance that was just created.
@@ -169,14 +169,14 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 
 | **Name**  | **Type**                                                                                   | **Value**  | **Description**                                                                     |
 |:----------|:-------------------------------------------------------------------------------------------|:-----------|:------------------------------------------------------------------------------------|
-| dsuKeySSI | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI object</a> |            | KeySSI corresponds to the DSU from which you want to get a handler.                 |
+| dsuKeySSI | <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI object</a> |            | KeySSI corresponds to the DSU from which you want to get a handler.                 |
 
 
 **Returns**
 
 | **Name**   | **Type**                                                                                                | **Description**                                                                       |
 |:-----------|:--------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|
-| dsuHandler | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html">DSUHandler instance</a> | Reference to the DSU handler corresponding to your KeySSI.                            |
+| dsuHandler | <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html">DSUHandler instance</a> | Reference to the DSU handler corresponding to your KeySSI.                            |
 
 
 ## Function invalidateDSUCache(dsuKeySSI)
@@ -186,7 +186,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 
 | **Name**    | **Type**                                                                                   | **Value**   | **Description**                                                                      |
 |:------------|:-------------------------------------------------------------------------------------------|:------------|:-------------------------------------------------------------------------------------|
-| dsuKeySSI   | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI object</a> |             | KeySSI corresponds to the DSU from which you want to invalidate the cache.                                                                                     |
+| dsuKeySSI   | <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI object</a> |             | KeySSI corresponds to the DSU from which you want to invalidate the cache.                                                                                     |
 
 
 <p style='text-align: justify;'><b>Returns</b>: This function does not return anything.</p>
@@ -199,7 +199,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 
 | **Name** | **Type**                                                                                   | **Value** | **Description**                                        |
 |:---------|:-------------------------------------------------------------------------------------------|:----------|:-------------------------------------------------------|
-| KeySSI   | <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI object</a> | *required | The keySSI from which you want to load a DSU instance. |
+| KeySSI   | <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI object</a> | *required | The keySSI from which you want to load a DSU instance. |
 | options  | JSON object                                                                                |           | Set to undefined by default.                           |
 | callback | function                                                                                   | *required |                                                        |
 
@@ -210,7 +210,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 | **Name** | **Type**                                                                                                | **Response example** |
 |:---------|:--------------------------------------------------------------------------------------------------------|:---------------------|
 | err      | ErrorWrapper object                                                                                     |                      |
-| dsu      | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html">DSUHandler instance</a> |                      |
+| dsu      | <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html">DSUHandler instance</a> |                      |
 
 
 <p style='text-align: justify;'><b>Description</b>: Contains a message and the error. / Reference to the DSU instance that was just loaded.
@@ -252,7 +252,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 | **Name**- | **Type**                                                                                           | **Response example** |
 |:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
 | err       | ErrorWrapper object                                                                                |                      |
-| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html"> DSU instance </a> |                      |
 
 
 **Description:** Contains a message and the error. / Reference to the DSU instance that was just created.
@@ -275,7 +275,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 | **Name**- | **Type**                                                                                           | **Response example** |
 |:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
 | err       | ErrorWrapper object                                                                                |                      |
-| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html"> DSU instance </a> |                      |
 
 
 **Description**: Contains a message and the error. / Reference to the seedDSU that was just loaded.
@@ -300,7 +300,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 | **Name**- | **Type**                                                                                           | **Response example** |
 |:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
 | err       | ErrorWrapper object                                                                                |                      |
-| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html"> DSU instance </a> |                      |
 
 
 **Description**: Contains a message and the error. / Reference to the constDSU that was just created.
@@ -325,7 +325,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 | **Name**- | **Type**                                                                                           | **Response example** |
 |:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
 | err       | ErrorWrapper object                                                                                |                      |
-| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html"> DSU instance </a> |                      |
 
 
 **Description:** Contains a message and the error. / Reference to the DSU array that was just created.
@@ -350,7 +350,7 @@ resolver.createDSU(seedSSI, (err, dsuInstance) =>{
 | **Name**- | **Type**                                                                                           | **Response example** |
 |:----------|:---------------------------------------------------------------------------------------------------|:---------------------|
 | err       | ErrorWrapper object                                                                                |                      |
-| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html"> DSU instance </a> |                      |
+| dsu       | <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html"> DSU instance </a> |                      |
 
 
 **Description**: Contains a message and the error. / Reference to the DSU instance that was just loaded.

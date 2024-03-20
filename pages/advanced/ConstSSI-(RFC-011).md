@@ -45,7 +45,7 @@ Compared to randomly generated identifiers, the ConstSSI is based on human meani
 
 # **1. ConstSSI subtypes derivation with examples**
 
-A constSSI is built from the hash of readable strings embedded in other keySSI such as [ArraySSI](https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html), and [WalletSSI](https://www.opendsu.org/pages/contributors/WalletSSI%20(RFC-014).html).
+A constSSI is built from the hash of readable strings embedded in other keySSI such as [ArraySSI](https://www.opendsu.org/pages/advanced/ArraySSI-(RFC-012).html), and [WalletSSI](https://www.opendsu.org/pages/contributors/WalletSSI-(RFC-014).html).
 
 | **SubType** | **Description**                                                                                                                                                                                                                                                                                     |
 |:------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -65,7 +65,7 @@ The “control key” part of the ConstSSI is always empty, which means the anch
 
 # **3. Specific functions for ConstSSI**
 
-(Common functions for all keySSI types are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
+(Common functions for all keySSI types are available [here](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html).)
 
 ## Function constSSI.initialize(dlDomain, constArray, vn, hint)
 

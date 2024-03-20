@@ -61,10 +61,10 @@ This API space allows the user to set up custom error reporting.
 
 | **Functions**                                                                                           | **Description**                                                                                            |
 |:--------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/contributors/System%20(RFC-079).html">getFS</a>                  | This function is used to load the <a href="https://nodejs.org/api/fs.html#fs_file_system"></a> (fs) module |
-| <a href="https://www.opendsu.org/pages/contributors/System%20(RFC-079).html">getPath</a>                | This function is used to load the path module.                                                             |
-| <a href="https://www.opendsu.org/pages/contributors/System%20(RFC-079).html">getEnvironmentVariable</a> | Get the value of the selected environment variable.                                                        |
-| <a href="https://www.opendsu.org/pages/contributors/System%20(RFC-079).html">setEnvironmentVariable</a> | Set a value for the selected environment variable.                                                         |
+| <a href="https://www.opendsu.org/pages/contributors/System-(RFC-079).html">getFS</a>                  | This function is used to load the <a href="https://nodejs.org/api/fs.html#fs_file_system"></a> (fs) module |
+| <a href="https://www.opendsu.org/pages/contributors/System-(RFC-079).html">getPath</a>                | This function is used to load the path module.                                                             |
+| <a href="https://www.opendsu.org/pages/contributors/System-(RFC-079).html">getEnvironmentVariable</a> | Get the value of the selected environment variable.                                                        |
+| <a href="https://www.opendsu.org/pages/contributors/System-(RFC-079).html">setEnvironmentVariable</a> | Set a value for the selected environment variable.                                                         |
 
 
 
@@ -87,7 +87,7 @@ This API space allows the user to set up custom error reporting.
 
 | **Nam**e            | **Description**                                                                                                                                                                                                                                                                                                                     |
 |:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ErrorWrapper object | A new ErrorWrapper object containing information about an issue, such as the previous error that led to the actual error, a debug message, and other information the developer judged relevantly.><a href="https://www.opendsu.org/pages/contributors/Cache%20(RFC-077).html">see operations available on ErrorWrapper object </a>. |
+| ErrorWrapper object | A new ErrorWrapper object containing information about an issue, such as the previous error that led to the actual error, a debug message, and other information the developer judged relevantly.><a href="https://www.opendsu.org/pages/contributors/Cache-(RFC-077).html">see operations available on ErrorWrapper object </a>. |
 
 
 

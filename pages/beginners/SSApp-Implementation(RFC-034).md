@@ -38,7 +38,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **Abstract**
 
-<p style='text-align: justify;'>This RFC is designed to help developers create their first SSApp using HTML, Javascript and CSS. As a reminder, SSApps are DSUs that contain data and code including the user interface (UI) code that will be loaded by an agent if the corresponding keySSI is provided (see <a href="https://www.opendsu.org/pages/concepts/SSApps%20Architecture%20(RFC-028).html">SSApp Architecture</a>). All the applications used by OpenDSU in one form or another have a Wallet.
+<p style='text-align: justify;'>This RFC is designed to help developers create their first SSApp using HTML, Javascript and CSS. As a reminder, SSApps are DSUs that contain data and code including the user interface (UI) code that will be loaded by an agent if the corresponding keySSI is provided (see <a href="https://www.opendsu.org/pages/concepts/SSApps-Architecture-(RFC-028).html">SSApp Architecture</a>). All the applications used by OpenDSU in one form or another have a Wallet.
 </p>
 
 <div style="text-align:center;">
@@ -61,7 +61,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **1. Get Started**
 
-The best way to understand SSApps is to start with the [tutorial](https://www.opendsu.org/pages/quickstart/Developers%20Tutorial%20(RFC-114).html), where you will learn how to create your first and very simple SSApp.
+The best way to understand SSApps is to start with the [tutorial](https://www.opendsu.org/pages/quickstart/Developers-Tutorial-(RFC-114).html), where you will learn how to create your first and very simple SSApp.
 
 # **2. Go further with the ePi-workspace demonstration**
 

@@ -154,7 +154,7 @@ The OpenDSU “resolver” API space provides methods for interacting with Versi
 | Name | Type                           | Response example  |                                                                  
 |:-----|:-------------------------------|:------------------|
 | err  | ErrorWrapper object            |                   |                                                                  
-| dsu  | [VersionLessDSU instance](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html) |                   |
+| dsu  | [VersionLessDSU instance](https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html) |                   |
 
 **Description:** Contains a message and the error. / Reference to the VersionLessDSU that was just created.
 
@@ -257,7 +257,7 @@ VersionLessSSI is used for handling VersionLessDSU operations (read and update) 
 
 ### 1.5.3. VersionLessSSI family specific functions
 
-(Common functions for all KeySSIs are available <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">here</a>)
+(Common functions for all KeySSIs are available <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">here</a>)
 
 ## Function versionLessSSI.initialize(dlDomain, filePath, encryptionKey, vn, hint)
 

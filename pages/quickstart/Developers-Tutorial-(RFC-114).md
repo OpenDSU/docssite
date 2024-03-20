@@ -314,7 +314,7 @@ For a really cool app, the next step is checking out the <a href="https://opends
 
 # **4. Modules and Bundles**
 
-<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus</a>.
+<p style='text-align: justify;'>Your application might also need some other modules or reusable components. You can add them to your workspace or WebCardinal application using <a href="https://www.opendsu.org/pages/OpenDSU-Wallets-Developers/Octopus-(RFC-095).html">Octopus</a>.
 </p>
 
 
@@ -377,7 +377,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 </p>
 
 
-<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to  <a href="https://www.opendsu.org/pages/OpenDSU%20Wallets%20Developers/Octopus%20(RFC-095).html">Octopus actions</a>.</p>
+<p style='text-align: justify;'>For each dependency, you can specify a list of actions. For all the possible actions, please refer to  <a href="https://www.opendsu.org/pages/OpenDSU-Wallets-Developers/Octopus-(RFC-095).html">Octopus actions</a>.</p>
 
 
 ## 4.2 Bundles
@@ -522,7 +522,7 @@ At build, the octopus will first clone the contents of <a href="https://github.c
 
 
 
-<p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS%20(RFC-022).html">BDNS</a>.
+<p style='text-align: justify;'>If you want to learn more about domains, check out <a href="https://www.opendsu.org/pages/concepts/BDNS-(RFC-022).html">BDNS</a>.
 </p>
 
 

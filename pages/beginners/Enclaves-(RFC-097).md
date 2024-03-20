@@ -176,7 +176,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </div>
 
 
-<p style='text-align: justify;'>As presented in Security Context <a href="https://www.opendsu.org/pages/beginners/Security%20Context%20(RFC-075).html">RFC-075</a> , the enclave is a system for storing Private Keys for DIDs, Secret Keys for symmetric AES type encryption or records represented in tabular form, as a database. These records may contain different types of data, more or less sensitive, but if the user has decided to treat them, then he probably has a reason to put them inside the Wallet and the Enclave. An essential function of the enclave is to keep the KeySSIs to which the Wallet has access.
+<p style='text-align: justify;'>As presented in Security Context <a href="https://www.opendsu.org/pages/beginners/Security-Context-(RFC-075).html">RFC-075</a> , the enclave is a system for storing Private Keys for DIDs, Secret Keys for symmetric AES type encryption or records represented in tabular form, as a database. These records may contain different types of data, more or less sensitive, but if the user has decided to treat them, then he probably has a reason to put them inside the Wallet and the Enclave. An essential function of the enclave is to keep the KeySSIs to which the Wallet has access.
 </p>The OpenDSU system provides automation in how to work with private keys or even with secret keys. Solving a KeySSI leads us to obtain a DSU instance that results in automatic registers of that KeySSI in an enclave. These KeySSIs are in a hierarchy. For example, we have a KeySSI from which we derive a less powerful one, and we can continue to have weaker and weaker levels of power and role. If at the level of an application, i.e. at the level of a Security Context or a Wallet, we used a strong KeySSI at a certain point, we automatically registered it, and if the code shows that we only have local access to a derived KeySSI, i.e. a less powerful one, we automatically get access to the functionalities that require a higher level of access.
 
 
@@ -285,7 +285,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 | **Name** | **Type** | **Response example**                                                                                                                      |
 |:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------------|
 | err      | any      | Error message for errors that occurred during the execution of the delete call. If err is undefined, the record was successfully deleted  |
-| res      | string   | The identifier of a  <a href="https://www.opendsu.org/pages/advanced/W3C%20DIDs%20(RFC-082).html">DID document</a>                        |
+| res      | string   | The identifier of a  <a href="https://www.opendsu.org/pages/advanced/W3C-DIDs-(RFC-082).html">DID document</a>                        |
 
 
 ### Function grantWriteAccess(forDID, callback)
@@ -597,7 +597,7 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 ### Function createSeedSSI(forDID, hint, callback)
 
-<p style='text-align: justify;'><b>Description: </b>This function is used to generate a Seed SSI. For additional information see <a href="https://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">RFC-068</a>
+<p style='text-align: justify;'><b>Description: </b>This function is used to generate a Seed SSI. For additional information see <a href="https://www.opendsu.org/pages/advanced/KeySSI-(RFC-068).html">RFC-068</a>
 </p>
 
 **Description:** This function is used to store a key SSI.
@@ -651,7 +651,7 @@ When we refer to enclaves used as a communication system through Message Queues,
 |:----------|:---------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | forDID    | string   | *required | DID of the user executing the call.                                                                                                                           |
 | didMethod | string   | *required | The DID method.                                                                                                                                               |
-| args      | array    | *required | Arguments required for DID creation. For additional information see<a href="https://www.opendsu.org/pages/advanced/W3C%20DIDs%20(RFC-082).html"> RFC-082 </a> |
+| args      | array    | *required | Arguments required for DID creation. For additional information see<a href="https://www.opendsu.org/pages/advanced/W3C-DIDs-(RFC-082).html"> RFC-082 </a> |
 
 
 **Callback parameters**
@@ -870,14 +870,14 @@ When we refer to enclaves used as a communication system through Message Queues,
 
 ## 1.7. KeySSI specific functions
 
-* storeKeySSI(forDID, keySSI, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html#function-storesecretkeyfordid-secretkey-alias">here</a>
+* storeKeySSI(forDID, keySSI, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html#function-storesecretkeyfordid-secretkey-alias">here</a>
 * storeReadForAliasSSI(forDID, sReadSSI, aliasSSI, callback)
 * getReadForKeySSI(forDID, keySSI, callback)
-* signForKeySSI(forDID, keySSI, hash, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html#function-signforkeyssifordid-keyssithatissigning-hash">here</a>
+* signForKeySSI(forDID, keySSI, hash, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html#function-signforkeyssifordid-keyssithatissigning-hash">here</a>
 
 Enclaves also expose the whole keySSI API. 
 
-<p style='text-align: justify;'>More information about this api can be found in <a href="https://www.opendsu.org/pages/advanced/KeySSI%20(RFC-068).html">RFC-068</a>
+<p style='text-align: justify;'>More information about this api can be found in <a href="https://www.opendsu.org/pages/advanced/KeySSI-(RFC-068).html">RFC-068</a>
 </p>
 
 
@@ -972,14 +972,14 @@ Enclaves also expose the whole keySSI API.
 ## 1.9. W3C DIDs specific functions
 
 
-* getDID(callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html#function-getdidcallback">here</a>
+* getDID(callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html#function-getdidcallback">here</a>
 * storeDID(forDID, storedDID, privateKeys, callback) 
 * addPrivateKeyForDID(didDocument, privateKey, callback)
 * generateDID(forDID, didMethod, ...args) - already described here
-* signForDID(forDID, didThatIsSigning, hash, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html#function-signfordidfordid-didthatissigning-hash">here</a>
+* signForDID(forDID, didThatIsSigning, hash, callback) - already described <a href="https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html#function-signfordidfordid-didthatissigning-hash">here</a>
 * verifyForDID(forDID, didThatIsVerifying, hash, signature, callback) 
 
-Enclaves also expose the whole W3C DIDs API. More information about this api can be found in <a href="https://www.opendsu.org/pages/advanced/W3C%20DIDs%20(RFC-082).html">RFC-082</a>
+Enclaves also expose the whole W3C DIDs API. More information about this api can be found in <a href="https://www.opendsu.org/pages/advanced/W3C-DIDs-(RFC-082).html">RFC-082</a>
 
 
 

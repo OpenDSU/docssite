@@ -75,13 +75,13 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 <p style='text-align: justify;'>In the case of using a Cloud Agent, we have instantiated a wallet at the APIHub level. Remote enclaves  will generally be used to implement these wallets.
 </p>
 
-<p style='text-align: justify;'>The figure above suggests that a client has access to APIHub and Cloud Agent. The Cloud Agents concept has a larger spectrum, but we recommend using remote enclaves according to <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">RFC 097</a>. OpenDSU introduced the enclave concept to allow us to store sensitive data and control access to it. All operations with secret keys, signatures, and decryption are done at the enclave level.
+<p style='text-align: justify;'>The figure above suggests that a client has access to APIHub and Cloud Agent. The Cloud Agents concept has a larger spectrum, but we recommend using remote enclaves according to <a href="https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html">RFC 097</a>. OpenDSU introduced the enclave concept to allow us to store sensitive data and control access to it. All operations with secret keys, signatures, and decryption are done at the enclave level.
 </p>
 
 <p style='text-align: justify;'>Cloud Agents are easy to integrate into existing systems, but their use tends to create a specific type of centralization, a confident trust in a specific node. Depending on the level at which the problem appears, difficulties may occur.
 </p>
 
-More details on Enclaves are available in <a href="https://www.opendsu.org/pages/beginners/Enclaves%20(RFC-097).html">Enclaves (RFC-097</a>.
+More details on Enclaves are available in <a href="https://www.opendsu.org/pages/beginners/Enclaves-(RFC-097).html">Enclaves (RFC-097</a>.
 
 
 # **3. Edge Agents**
@@ -98,7 +98,7 @@ More details on Enclaves are available in <a href="https://www.opendsu.org/pages
 </div>
 
 
-<p style='text-align: justify;'>An Edge Agent can be a web application in the form of an SSApp (see <a href="https://www.opendsu.org/pages/beginners/SSapp%20implementation(RFC%20034).html">RFC 034</a>). It is an application that has custom code in which there may appear, in particular cases, problems to solve. Custom code means any code or any metadata that is part of the application. Custom code is software code programmed by the partner, the end-user, or any third party. It is used to connect two systems.
+<p style='text-align: justify;'>An Edge Agent can be a web application in the form of an SSApp (see <a href="https://www.opendsu.org/pages/beginners/SSapp-implementation(RFC-034).html">RFC 034</a>). It is an application that has custom code in which there may appear, in particular cases, problems to solve. Custom code means any code or any metadata that is part of the application. Custom code is software code programmed by the partner, the end-user, or any third party. It is used to connect two systems.
 </p>
 
 <p style='text-align: justify;'>The <b>Edge Agent</b>, besides custom code, has at its core the Wallet concept to ensure a better decentralization of trustless properties. In our implementations that integrate the wallet in the browser, we use a concept called trust-loader.
@@ -107,7 +107,7 @@ More details on Enclaves are available in <a href="https://www.opendsu.org/pages
 <p style='text-align: justify;'>Generally, the safest way to implement these Edge Agents is to use a mobile or a native application, which, based on our technologies, can be implemented as a wrapper as a container for a browser, so that we can create portable applications. The trust is obtained from the fact that it is a notable instance, particular to each agent user. In some implementations, the APIHub is embedded inside the mobile Edge Agent.
 </p>
 
-More details on SSApps are available in SSapp Implementation (<a href="https://www.opendsu.org/pages/beginners/SSapp%20implementation(RFC%20034).html">RFC-034</a>.)
+More details on SSApps are available in SSapp Implementation (<a href="https://www.opendsu.org/pages/beginners/SSapp-implementation(RFC-034).html">RFC-034</a>.)
 
 # 4**. DSU: No size fits all**
 

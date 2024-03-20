@@ -98,7 +98,7 @@ A DSU object is an entity that exists temporarily in the Execution Environment (
 
 # **1. Creating and Configuring a DSU Instance**
 
-Creating a DSU container requires a KeySSI object. A DSU object is instantiated through the Resolver API see [RFC065](https://www.opendsu.org/pages/advanced/Resolver%20(RFC-065).html), by calling resolver.createSeedDSU() as sketched in the code example below (Example 1).
+Creating a DSU container requires a KeySSI object. A DSU object is instantiated through the Resolver API see [RFC065](https://www.opendsu.org/pages/advanced/Resolver-(RFC-065).html), by calling resolver.createSeedDSU() as sketched in the code example below (Example 1).
 
 ```js
 //Load openDSU environment, openDSU SDK, resolver library
@@ -722,7 +722,7 @@ Returns the KeySSI instance.
 
 ### Function getKeySSIAsString(KeySSIType, callback)
 
-**Description**: Lazy wrapper for [getKeySSIAsObject](https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html) for providing the identifier String of the computed **KeySSI** object to the callback function.
+**Description**: Lazy wrapper for [getKeySSIAsObject](https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html) for providing the identifier String of the computed **KeySSI** object to the callback function.
 
 <p style='text-align: justify;'>Returns an Error err if KeySSIType is not any of the registered KeySSI types or if this DSU instance's KeySSI object cannot be transformed to an object of type KeySSIType.</p>
 

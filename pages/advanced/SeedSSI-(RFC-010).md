@@ -53,7 +53,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 #  **Abstract** 
 
-<p style='text-align: justify;'><b>SeedSSI</b> is the highest key of the SeedSSI family. Seed identifiers are used to create and identify <a href="https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html">DSUs</a> that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
+<p style='text-align: justify;'><b>SeedSSI</b> is the highest key of the SeedSSI family. Seed identifiers are used to create and identify <a href="https://www.opendsu.org/pages/concepts/DSU-Introduction-(RFC-001).html">DSUs</a> that are not shared with many people. A good example would be the DSUs that implement digital wallets for users and companies. Owning a SeedSSI allows the user to anchor new versions of the DSU (“write” access).
 </p>
 
 <p style='text-align: justify;'><b>SReadSSI </b>is the first key that can be derived from the SeedSSI and shared. It grants “read” access to the DSU created with the SeedSSI that it was derived from.
@@ -63,7 +63,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </p>
 
 
-<p style='text-align: justify;'>The SeedSSI family is currently the easiest and most used way to generate and interact with <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html">DSU Objects</a>.
+<p style='text-align: justify;'>The SeedSSI family is currently the easiest and most used way to generate and interact with <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html">DSU Objects</a>.
 </p>
 
 <div style="text-align:center;">
@@ -102,7 +102,7 @@ The identifier contains the subtype and the domain. This is very important for f
 
 # **3. Specific functions for SeedSSI’s family subtypes**
 
-(Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html).)
+(Common functions for all keySSIs are available [here](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html).)
 
 ## 3.1 SeedSSI
 
@@ -122,7 +122,7 @@ The identifier contains the subtype and the domain. This is very important for f
 
 |**Name**       |**Type**          |**Response example**                                                             |
 |err            |Error object      |                                                                                 |
-|keySSI         |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html) |
+|keySSI         |Error object      | [keySSI Object](https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html) |
 
 
 **Description**: Contains a message and the error. / The template keySSI object of the chosen type that was created.

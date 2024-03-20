@@ -47,7 +47,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **Abstract**
 
-<p style='text-align: justify;'>Operations available on the different types of databases provided by the <a href="https://www.opendsu.org/pages/contributors/Database%20(RFC-061).html">Database</a> API are all available in this RFC. The BasicDB is created using a storage strategy. Several storage strategies are available, but if a person wants to create a custom strategy, all the following functions must be present in his storage strategy.
+<p style='text-align: justify;'>Operations available on the different types of databases provided by the <a href="https://www.opendsu.org/pages/contributors/Database-(RFC-061).html">Database</a> API are all available in this RFC. The BasicDB is created using a storage strategy. Several storage strategies are available, but if a person wants to create a custom strategy, all the following functions must be present in his storage strategy.
 </p>
 
 <p style='text-align: justify;'><b>Warning:</b> the OpenDSU DBs are NOT key/value databases, but databases containing records organized as tables! These records have a primary key, but they can also be indexed on any of their fields. Additionally, we should note that no schema definition is required, and heterogeneous objects could be freely inserted (but some standard fields would make it more valuable).

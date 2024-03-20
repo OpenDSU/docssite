@@ -36,7 +36,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **Abstract**
 
-<p style='text-align: justify;'>SymmetricalEncryptionSSIs are used to encrypt the data bricks from the <a href="https://www.opendsu.org/pages/concepts/Brick%20Storages%20(RFC-003).html">Brick Storage</a>. Each brick is encrypted using a different SymmetricalEncryptionSSI, in order to make it very difficult for attackers to steal data from <a href="https://www.opendsu.org/pages/concepts/DSU%20Introduction%20(RFC-001).html">DSUs</a>. Special bricks called BrickMaps keep track of each <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">SymmetricalEncryptionSSI</a> along with its associated HashLinkSSIs. They are used to reconstruct DSUs in the client execution environment.
+<p style='text-align: justify;'>SymmetricalEncryptionSSIs are used to encrypt the data bricks from the <a href="https://www.opendsu.org/pages/concepts/Brick-Storages-(RFC-003).html">Brick Storage</a>. Each brick is encrypted using a different SymmetricalEncryptionSSI, in order to make it very difficult for attackers to steal data from <a href="https://www.opendsu.org/pages/concepts/DSU-Introduction-(RFC-001).html">DSUs</a>. Special bricks called BrickMaps keep track of each <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,-SignedHashLinkSSI-(RFC-015).html">SymmetricalEncryptionSSI</a> along with its associated HashLinkSSIs. They are used to reconstruct DSUs in the client execution environment.
 </p>
 
 # **1. SymmetricalEncryptionSSI subtype description with example**

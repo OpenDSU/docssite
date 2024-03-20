@@ -44,7 +44,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **Abstract**
 
-<p style='text-align: justify;'>Wallets can be used to store different kinds of KeySSIs and personal user data. WalletSSIs use the same principles as <a href="https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html">ArraySSIs</a>, but are used to identify and manage wallets. It is expected to have the credentials necessary to access the wallet in the array (like a username and password), but we could theoretically add more credentials, such as an answer to a question.
+<p style='text-align: justify;'>Wallets can be used to store different kinds of KeySSIs and personal user data. WalletSSIs use the same principles as <a href="https://www.opendsu.org/pages/advanced/ArraySSI-(RFC-012).html">ArraySSIs</a>, but are used to identify and manage wallets. It is expected to have the credentials necessary to access the wallet in the array (like a username and password), but we could theoretically add more credentials, such as an answer to a question.
 </p>
 
 
@@ -54,7 +54,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 </div>
 
 
-<p style='text-align: justify;'>Similar to <a href="https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html">ArraySSI</a> and <a href="https://www.opendsu.org/pages/contributors/PasswordSSIs%20(RFC-013).html">PasswordSSI</a>, <a href="https://www.opendsu.org/pages/contributors/WalletSSI%20(RFC-014).html">WalletSSI</a> can be used to derive a <a href="https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html">ConstSSI</a>, which provides access to a DSU.
+<p style='text-align: justify;'>Similar to <a href="https://www.opendsu.org/pages/advanced/ArraySSI-(RFC-012).html">ArraySSI</a> and <a href="https://www.opendsu.org/pages/contributors/PasswordSSIs-(RFC-013).html">PasswordSSI</a>, <a href="https://www.opendsu.org/pages/contributors/WalletSSI-(RFC-014).html">WalletSSI</a> can be used to derive a <a href="https://www.opendsu.org/pages/advanced/ConstSSI-(RFC-011).html">ConstSSI</a>, which provides access to a DSU.
 </p>
 
 | **SubType** | **Description**                                                                                                                      |
@@ -74,7 +74,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 # **2. Specific functions for WalletSSIs**
 
-<p style='text-align: justify;'>(Common functions for all KeySSIs are available <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">here</a>)
+<p style='text-align: justify;'>(Common functions for all KeySSIs are available <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">here</a>)
 </p>
 
 ## **Function walletSSI.initialize(dlDomain, array, vn, hint)**
@@ -99,7 +99,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 | **SubType**                                                                          | **Description**                                                                                                                        |
 |:-------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------|
-| [constSSI](https://www.opendsu.org/pages/advanced/ConstSSI%20(RFC-011).html) object  | A constSSI object is returned.                                                                                                         |
+| [constSSI](https://www.opendsu.org/pages/advanced/ConstSSI-(RFC-011).html) object  | A constSSI object is returned.                                                                                                         |
 
 
 

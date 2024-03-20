@@ -60,10 +60,10 @@ This document is licensed under <a href="https://en.wikipedia.org/wiki/MIT_Licen
 <p style='text-align: justify;'>Self Sovereignty assumes that identity control belongs to the company's individual and does not belong to an intermediary. The most common type of identity on the internet is the Federated Identity. For example, whenever a user logs into Facebook, they use a Facebook-controlled identity. Facebook may censor or impersonate the user (i.e. log in on their behalf) because, in fact, it controls the user’s identity. The vision of the SSI is to give this control to the company’s people, which is achievable by using cryptographic systems and signing with private keys.
 </p>
 
-<p style='text-align: justify;'>The main objective of these identifiers is to create and access <a href="https://www.opendsu.org/pages/beginners/DSU%20Object%20(RFC-063).html">DSUs</a> where files are encrypted and stored in a secure way. These identifiers can be resolved to obtain all kinds of useful information, such as the encryption key necessary to decrypt the DSU later on.
+<p style='text-align: justify;'>The main objective of these identifiers is to create and access <a href="https://www.opendsu.org/pages/beginners/DSU-Object-(RFC-063).html">DSUs</a> where files are encrypted and stored in a secure way. These identifiers can be resolved to obtain all kinds of useful information, such as the encryption key necessary to decrypt the DSU later on.
 </p>
 
-<p style='text-align: justify;'>It is also possible to create different levels of access rights to DSU instances using KeySSI derivation. There are different KeySSI “families” designed for different use cases. You can learn more about it in the complete <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI introduction</a>.
+<p style='text-align: justify;'>It is also possible to create different levels of access rights to DSU instances using KeySSI derivation. There are different KeySSI “families” designed for different use cases. You can learn more about it in the complete <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI introduction</a>.
 </p>
 
 # **1. KeySSI functions**
@@ -90,11 +90,11 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 <p style="text-align: center;">How to use</p>
 
 
-**This API is only used for building KeySSIs. KeySSI common functions are available <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">here</a>. There is also a set of specific functions available for each different type of KeySSI.**
+**This API is only used for building KeySSIs. KeySSI common functions are available <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">here</a>. There is also a set of specific functions available for each different type of KeySSI.**
 
 ## Function createArraySSI(domain, arr, vn, hint)
 
-**Description:** Build an <a href="https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html">ArraySSI</a> object. ArraySSIs are created using an array of strings that a user can remember, such as company and employee names. From this ArraySSI, a constSSI will be derived to get a more secure identifier using a derivation function.
+**Description:** Build an <a href="https://www.opendsu.org/pages/advanced/ArraySSI-(RFC-012).html">ArraySSI</a> object. ArraySSIs are created using an array of strings that a user can remember, such as company and employee names. From this ArraySSI, a constSSI will be derived to get a more secure identifier using a derivation function.
 
 | Name                  | Type            | Value      | Description                                                                               |
 |:----------------------|:----------------|:-----------|:------------------------------------------------------------------------------------------|
@@ -108,12 +108,12 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                                                           | Description                                                                                              |
 |:-----------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/advanced/ArraySSI%20(RFC-012).html">ArraySSI</a> object | An arraySSI instance is created and returned. The main purpose of the ArraySSI is to derive a constSSI.  |
+| <a href="https://www.opendsu.org/pages/advanced/ArraySSI-(RFC-012).html">ArraySSI</a> object | An arraySSI instance is created and returned. The main purpose of the ArraySSI is to derive a constSSI.  |
 
 
 ## Function createHashLinkSSI(domain, hash, vn, hint)
 
-**Description:** Create a <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> object. The HashLinkSSI is used to reference each brick of the DSUs. This should be handled manually by OpenDSU.
+**Description:** Create a <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,-SignedHashLinkSSI-(RFC-015).html">HashLinkSSI</a> object. The HashLinkSSI is used to reference each brick of the DSUs. This should be handled manually by OpenDSU.
 
 
 | Name                  | Type    | Value      | Description                                             |
@@ -128,12 +128,12 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                                                                                          | Description                                                                                               |
 |:------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,%20SignedHashLinkSSI%20(RFC-015).html">HashLinkSSI</a> object | A HashLinkSSI object is created and returned. HashLinkSSIs are used to reference each brick of the DSUs.  |
+| <a href="https://www.opendsu.org/pages/contributors/HashLinkSSI,-SignedHashLinkSSI-(RFC-015).html">HashLinkSSI</a> object | A HashLinkSSI object is created and returned. HashLinkSSIs are used to reference each brick of the DSUs.  |
 
 
 ## Function createSeedSSI(domain, vn, hint, callback)
 
-**Description:**  Create and initialise a <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a> key. A SeedSSI is used to create and access a DSU. It provides complete control over the DSU. It can be derived to obtain a SReadSSI key that will give read-only access to the DSU that was created with the associated SeedSSI.
+**Description:**  Create and initialise a <a href="https://www.opendsu.org/pages/advanced/SeedSSI-(RFC-010).html">SeedSSI</a> key. A SeedSSI is used to create and access a DSU. It provides complete control over the DSU. It can be derived to obtain a SReadSSI key that will give read-only access to the DSU that was created with the associated SeedSSI.
 
 
 | Name                 | Type     | Value     | Description                                             |
@@ -149,7 +149,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 | Name     | Type                                                                                         | Response example  |
 |:---------|:---------------------------------------------------------------------------------------------|:------------------|
 | err      | ErrorWrapper object                                                                          |                   |
-| seedSSI  | <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a> Object |                   |
+| seedSSI  | <a href="https://www.opendsu.org/pages/advanced/SeedSSI-(RFC-010).html">SeedSSI</a> Object |                   |
 
 
 **Description:** Contains a message and the error./The seedSSI that was just created.
@@ -158,7 +158,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                    | Description                                  |
 |:--------------------------------------------------------|:---------------------------------------------|
-| <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a> object | A SeedSSI instance is created and returned.  |
+| <a href="https://www.opendsu.org/pages/advanced/SeedSSI-(RFC-010).html">SeedSSI</a> object | A SeedSSI instance is created and returned.  |
 
 
 ## Function createSignedHashLinkSSI(domain, hashLink, timestamp, signature, vn, hint)
@@ -185,7 +185,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 ## Function createTemplateSeedSSI(domain, specificString, control, vn, hint, callback)
 
-**Description:** This function is used to create a template version of <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a> key. To create a real SeedSSI, you should use the above function – createSeedSSI.
+**Description:** This function is used to create a template version of <a href="https://www.opendsu.org/pages/advanced/SeedSSI-(RFC-010).html">SeedSSI</a> key. To create a real SeedSSI, you should use the above function – createSeedSSI.
 
 | Name                           | Type             | Value     | Description                                                                                                |
 |:-------------------------------|:-----------------|:----------|:-----------------------------------------------------------------------------------------------------------|
@@ -202,7 +202,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 | Name             | Type                                                    | Response example  |
 |:-----------------|:--------------------------------------------------------|:------------------|
 | err              | ErrorWrapper object                                     |                   |
-| templateSeedSSI  | <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a>  Object                          |                   |
+| templateSeedSSI  | <a href="https://www.opendsu.org/pages/advanced/SeedSSI-(RFC-010).html">SeedSSI</a>  Object                          |                   |
 
 
 **Description:** Contains a message and the error./The templateSeedSSI that was just created.
@@ -211,7 +211,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                    | Description                                           |
 |:--------------------------------------------------------|:------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/advanced/SeedSSI%20(RFC-010).html">SeedSSI</a> object | A template SeedSSI instance is created and returned.  |
+| <a href="https://www.opendsu.org/pages/advanced/SeedSSI-(RFC-010).html">SeedSSI</a> object | A template SeedSSI instance is created and returned.  |
 
 
 ## Function createTemplateKeySSI(ssiType, domain, specificString, control, vn, hint, callback)
@@ -243,12 +243,12 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                                                                                                       | Description                                                           |
 |:-------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI object</a>                                                 | A template keySSI object of the chosen type is created and returned.  |
+| <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI object</a>                                                 | A template keySSI object of the chosen type is created and returned.  |
 
 
 ## Function createTemplateSymmetricalEncryptionSSI(domain, encryptionKey, control, vn, hint, callback)
 
-**Description:** Build a template <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI%20(RFC-016).html">SymmetricalEncryptionSSI</a> instance that can be used to encrypt and decrypt the bricks.
+**Description:** Build a template <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI-(RFC-016).html">SymmetricalEncryptionSSI</a> instance that can be used to encrypt and decrypt the bricks.
 
 | Name                          | Type             | Value     | Description                                                                                                                               |
 |:------------------------------|:-----------------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------|
@@ -274,12 +274,12 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                                                                                                                                                          | Description                                                            |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI%20(RFC-016).html">SymmetricalEncryptionSSI</a>  object                                                           | A template SymmetricalEncryptionSSI instance is created and returned.  |
+| <a href="https://www.opendsu.org/pages/contributors/SymmetricalEncriptionSSI-(RFC-016).html">SymmetricalEncryptionSSI</a>  object                                                           | A template SymmetricalEncryptionSSI instance is created and returned.  |
 
 
 ## Function createTemplateWalletSSI(domain, arrayWIthCredentials, hint)
 
-**Description:** Build a <a href="https://www.opendsu.org/pages/contributors/WalletSSI%20(RFC-014).html">WalletSSI object</a>. WalletSSIs are used to identify wallets.
+**Description:** Build a <a href="https://www.opendsu.org/pages/contributors/WalletSSI-(RFC-014).html">WalletSSI object</a>. WalletSSIs are used to identify wallets.
 
 | Name                                 | Type            | Value      | Description                                             |
 |:-------------------------------------|:----------------|:-----------|:--------------------------------------------------------|
@@ -292,7 +292,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                             | Description                                             |
 |:-----------------------------------------------------------------|:--------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/contributors/WalletSSI%20(RFC-014).html">WalletSSI object</a> object | A template WalletSSI instance is created and returned.  |
+| <a href="https://www.opendsu.org/pages/contributors/WalletSSI-(RFC-014).html">WalletSSI object</a> object | A template WalletSSI instance is created and returned.  |
 
 
 ## Function parse(ssiString, options)
@@ -310,7 +310,7 @@ const parsedSeedSSI= keyssispace.parse('ssi:seed:default:specificStr:control:hin
 
 | Name                                                                                                                                           | Description                                                      |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------|
-| <a href="https://www.opendsu.org/pages/concepts/KeySSI%20(RFC-002).html">KeySSI object</a> object | An instance of the corresponding KeySSI is created and returned. |
+| <a href="https://www.opendsu.org/pages/concepts/KeySSI-(RFC-002).html">KeySSI object</a> object | An instance of the corresponding KeySSI is created and returned. |
 
 
 ## Function createConstSSI(domain, constString, vn, hint)
