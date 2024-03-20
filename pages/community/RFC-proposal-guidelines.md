@@ -135,4 +135,4 @@ Use references to improve and illustrate your proposal. To add a reference selec
 
 [1] RFC origin and definition - <a href="https://en.wikipedia.org/wiki/Request_for_Comments">https://en.wikipedia.org/wiki/Request_for_Comments</a>
 
-[2] “Maker Governance Proposal System - <a href="https://vote.makerdao.com">https://vote.makerdao.com/</a>
+[2] Maker Governance Proposal System - <a href="https://vote.makerdao.com">https://vote.makerdao.com/</a>

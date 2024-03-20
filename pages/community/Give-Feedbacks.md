@@ -5,92 +5,47 @@ parent: Community
 nav_order: 2
 ---
 
-How to submit an RFC proposal
+# **How to submit an RFC proposal**
 
-Go here to get the template https://opendsu.com/rfchowto and send your proposal to opendsu@axiologic.net.
+Go here to get the template <a href="https://docs.google.com/document/d/1gePhhEygme3oo74i-bzWKQgA_yjMAMGskw4U6g--XVY/edit">https://opendsu.com/rfchowto</a> and send your proposal to <a href="">opendsu@axiologic.net</a>.
 
-RFC Status
+# **RFC Status**
 
-Proposal
-	
+| Proposal           | The RFC is proposed (nice to have) but has no content.                                                                                                                          |
+|:-------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Early Draft        | The RFC has some texts.                                                                                                                                                         |
+| Draft              | The RFC is being drafted.                                                                                                                                                       |
+| Feedback           | The community can review and give feedback on the RFC. Typically the OpenDSU features are mature and can be used in projects. Minor changes could come but no breaking changes. |
+| Submitted          | Under review by the OpenDSU approval committee.                                                                                                                                 |
+| Rejected           | The RFC has been rejected.                                                                                                                                                      |
+| Accepted           | The proposal has been accepted and has an implementation.                                                                                                                       |
+| Obsolete/Replaced  | The RFC is not needed anymore or has been replaced.                                                                                                                             |
 
-The RFC is proposed (nice to have) but has no content.
 
-Early Draft
-	
+<p style='text-align: justify;'>Typically, in similar internet communities, the talks and discussions happen early, and then the implementations follow (or not). We try to minimize the talking and encourage doing, so the RFCs are written after the implementation is good enough and can be tested by developers.
+</p>
 
-The RFC has some texts.
-
-Draft
-	
-
-The RFC is being drafted.
-
-Feedback
-	
-
-The community can review and give feedback on the RFC. Typically the OpenDSU features are mature and can be used in projects. Minor changes could come but no breaking changes.
-
-Submitted
-	
-
-Under review by the OpenDSU approval committee.
-
-Rejected
-	
-
-The RFC has been rejected.
-
-Accepted
-	
-
-The proposal has been accepted and has an implementation.
-
-Obsolete/Replaced
-	
-
-The RFC is not needed anymore or has been replaced.
-
-Typically, in similar internet communities, the talks and discussions happen early, and then the implementations follow (or not). We try to minimize the talking and encourage doing, so the RFCs are written after the implementation is good enough and can be tested by developers.
-
-RFC by Categories
+# **RFC by Categories**
 
 Each of these categories represents a tab on the OpenDSU documentation website menu.
 
 Click on a category to go directly to the corresponding list of RFCs.
 
-Category
-	
+| Category                                 | Description  |
+|:-----------------------------------------|:-------------|
+| [OpenDSU Concepts](##1-opendsu-concepts) |              |
+| OpenDSU for Beginners                    |              |
+| OpenDSU Advanced                         |              |
+| OpenDSU Contributors                     |              |
+| OpenDSU Wallets Developers               |              |
+| OpenDSU APIHub APIs                      |              |
+| OpenDSU for DevOPS                       |              |
+| OpenDSU Quick Start                      |              |
 
-Description
 
-OpenDSU Concepts
-	
+# **RFC Index table**
 
-OpenDSU for Beginners
-	
-
-OpenDSU Advanced
-	
-
-OpenDSU Contributors
-	
-
-OpenDSU Wallets Developers
-	
-
-OpenDSU APIHub APIs
-	
-
-OpenDSU for DevOPS
-	
-
-OpenDSU Quick Start
-	
-
-RFC Index table
-
-1. OpenDSU Concepts
+## 1. OpenDSU Concepts
 
 RFC link
 	
@@ -257,7 +212,7 @@ Cloud Wallet and KMS
 
 Proposal
 
-2. OpenDSU for Beginners
+## 2. OpenDSU for Beginners
 
 RFC link
 	
@@ -347,7 +302,7 @@ APIHub Configuration
 
 Feedback
 
-3. OpenDSU Advanced
+## 3. OpenDSU Advanced
 
 RFC link
 	
@@ -547,7 +502,7 @@ Optimistic Blockchain Anchoring
 
 Accepted
 
-4. OpenDSU Contributors
+## 4. OpenDSU Contributors
 
 RFC link
 	
@@ -802,7 +757,7 @@ APIHub SSO Implementation
 
 Feedback
 
-5. OpenDSU Wallets Developers
+## 5. OpenDSU Wallets Developers
 
 RFC link
 	
@@ -826,7 +781,7 @@ Octopus
 
 Feedback
 
-6. OpenDSU APIHub APIs
+## 6. OpenDSU APIHub APIs
 
 RFC link
 	
@@ -1037,7 +992,7 @@ APIHUb Throttling and Readiness
 
 Feedback
 
-7. OpenDSU for DevOPS
+## 7. OpenDSU for DevOPS
 
 RFC link
 	
@@ -1127,7 +1082,7 @@ APIHub Installation
 
 Feedback
 
-8. OpenDSU Quick Start
+## 8. OpenDSU Quick Start
 
 RFC link
 	
