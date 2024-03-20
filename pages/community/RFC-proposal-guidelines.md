@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 
-# **RFC 000 templateCategory**
+# **templateCategory (RFC-000)**
 
 {: .feedback }
 A period when the community can review the RFC (comment Docs).
@@ -19,29 +19,44 @@ A period when the community can review the RFC (comment Docs).
 
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
  
+<!-- TOC -->
+* [**Abstract**](#abstract)
+* [**1. RFC template main proposition**](#1-rfc-template-main-proposition)
+  * [1.1. RFC Headers](#11-rfc-headers)
+    * [1.1.2. RFC Subject](#112-rfc-subject)
+    * [1.1.3. RFC Identifier](#113-rfc-identifier)
+    * [1.1.4. RFC Categories](#114-rfc-categories)
+    * [1.1.5. RFC Status](#115-rfc-status)
+    * [1.1.6. RFC Contributors](#116-rfc-contributors)
+    * [1.1.7. RFC Table of Content](#117-rfc-table-of-content)
+  * [1.2. RFC Content](#12-rfc-content)
+    * [1.2.1. Abstract](#121-abstract)
+    * [1.2.2. Main proposition](#122-main-proposition)
+    * [1.2.3. References](#123-references)
+<!-- TOC -->
 
-# Abstract
+# **Abstract**
 
 The purpose of this RFC is to provide a Google Docs template that will be used to propose new RFCs.  
 
-<p style='text-align: justify;'>As a reminder, "a RFC is authored by individuals or groups of engineers and computer scientists in the form of a memorandum describing methods, behaviors, research, or innovations applicable to the working of the Internet and Internet-connected systems. It is submitted either for peer review or to convey new concepts or information"[1].
-</p>
+As a reminder, "a RFC is authored by individuals or groups of engineers and computer scientists in the form of a memorandum describing methods, behaviors, research, or innovations applicable to the working of the Internet and Internet-connected systems. It is submitted either for peer review or to convey new concepts or information"[1].
+
 
 To submit a new proposal, create a copy of this template (<a href="https://docs.google.com/document/d/1gePhhEygme3oo74i-bzWKQgA_yjMAMGskw4U6g--XVY/edit#heading=h.leaepr4b4whq">here</a>), modify it and send a sharing link to <a href="">opendsu@axiologic.net</a>
 
-# 1- RFC template main proposition
+# **1. RFC template main proposition**
 
-## 1.1- RFC Headers
+## 1.1. RFC Headers
 
-### 1.1.2- RFC Subject
+### 1.1.2. RFC Subject
 
 Subject of the RFC should replace “Template”
 
-### 1.1.3- RFC Identifier
+### 1.1.3. RFC Identifier
 
 The correct identifier of the RFC should replace 000
 
-### 1.1.4- RFC Categories
+### 1.1.4. RFC Categories
 
 There is currently five different categories:
 
@@ -54,10 +69,10 @@ There is currently five different categories:
 | Rules           | Rules of the OpenDSU ecosystem                                                     |
 
 
-### 1.1.5- RFC Status
+### 1.1.5. RFC Status
 
-<p style='text-align: justify;'>We defined a set of different status inspired from Maker Governance[2] where community voting is replaced by a period of community feedback and the review of OpenDSU governance board:
-</p>
+We defined a set of different status inspired from Maker Governance[2] where community voting is replaced by a period of community feedback and the review of OpenDSU governance board:
+
 
 | Draft              | The RFC is being drafted                                    |
 |:-------------------|:------------------------------------------------------------|
@@ -75,25 +90,25 @@ Figure 1: RFC lifecycle
 
 Figure 2: RFC overwriting
 
-### 1.1.6 - RFC Contributors
+### 1.1.6. RFC Contributors
 
 Name and mail address of RFC contributors
 
-### 1.1.7- RFC Table of Content
+### 1.1.7. RFC Table of Content
 
 RFC must contain a table of contents
 
-## 1.2- RFC Content
+## 1.2. RFC Content
 
-### 1.2.1- Abstract
+### 1.2.1. Abstract
 
 RFCs must contain an abstract (500 words max) that describes the proposal
 
-### 1.2.2- Main proposition
+### 1.2.2. Main proposition
 
 The main RFC proposition, you are free to use any format you like to make an adapted proposal for the selected subject.
 
-### 1.2.3- References
+### 1.2.3. References
 
 Use references to improve and illustrate your proposal. To add a reference select the text you want to add reference for and click on Insert>Footnote.
 
@@ -118,6 +133,6 @@ Use references to improve and illustrate your proposal. To add a reference selec
 | Rafael Mastaleru                                              | raf@rms.ro (RMS)                             |
 
 
-[1] RFC origin and definition - https://en.wikipedia.org/wiki/Request_for_Comments
+[1] RFC origin and definition - <a href="https://en.wikipedia.org/wiki/Request_for_Comments">https://en.wikipedia.org/wiki/Request_for_Comments</a>
 
-[2] “Maker Governance Proposal System.” https://vote.makerdao.com/.
+[2] “Maker Governance Proposal System - <a href="https://vote.makerdao.com">https://vote.makerdao.com/</a>
