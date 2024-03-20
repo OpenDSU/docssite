@@ -20,7 +20,6 @@ The proposal has been accepted and has an implementation.
 This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT_License)
 
 <!-- TOC -->
-* [**Brick Storages (RFC-003)**](#brick-storages-rfc-003)
 * [**Abstract**](#abstract)
 * [**1. Brick Storages mechanism**](#1-brick-storages-mechanism)
   * [1.1 General Operations](#11-general-operations)

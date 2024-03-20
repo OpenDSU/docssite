@@ -21,7 +21,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**DSU Reconstruction (RFC-008)**](#dsu-reconstruction-rfc-008)
 * [**Abstract**](#abstract)
 * [**Overview**](#overview)
 * [**1. DSU Versions**](#1-dsu-versions)

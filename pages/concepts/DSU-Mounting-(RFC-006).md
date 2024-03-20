@@ -25,7 +25,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**DSU Mounting (RFC-006)**](#dsu-mounting-rfc-006)
 * [**Abstract**](#abstract)
 * [**Introduction**](#introduction)
 * [**1. Description of the Mounting Process**](#1-description-of-the-mounting-process)

@@ -27,7 +27,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**DSU Introduction (RFC-001)**](#dsu-introduction-rfc-001)
 * [**Abstract**](#abstract)
 * [**Overview**](#overview)
 * [**1. Data Sharing Unit (DSU)**](#1-data-sharing-unit-dsu)

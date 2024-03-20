@@ -21,7 +21,6 @@ The proposal has been accepted and has an implementation.
 
 
 <!-- TOC -->
-* [**Anchoring(RFC-005)**](#anchoringrfc-005)
 * [**Abstract**](#abstract)
 * [**Overview**](#overview)
 * [**1. Implicit Anchors**](#1-implicit-anchors)

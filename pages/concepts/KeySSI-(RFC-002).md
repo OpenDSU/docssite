@@ -22,7 +22,6 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 
 
 <!-- TOC -->
-* [**KeySSI (RFC-002)**](#keyssi-rfc-002)
 * [**Abstract**](#abstract)
 * [**1. Introduction**](#1-introduction)
 * [**2. Syntax of KeySSI identifiers**](#2-syntax-of-keyssi-identifiers)
