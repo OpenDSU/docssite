@@ -2,7 +2,7 @@
 title: LightDB 
 layout: home
 parent: OpenDSU Advanced
-nav_order: 5
+nav_order: 6
 ---
 
 # **LightDB (RFC-023)**
