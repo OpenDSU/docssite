@@ -1,7 +1,7 @@
 ---
 title: APIHub Locking Endpoints
 layout: home
-parent: OpenDSU Drafts
+parent: OpenDSU Advanced
 nav_order: 3
 ---
 
