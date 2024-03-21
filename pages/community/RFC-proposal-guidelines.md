@@ -86,7 +86,12 @@ We defined a set of different status inspired from Maker Governance[2] where com
 
 The figures above represent the lifecycle of a RFC:
 
+<img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vQGWyTvVTDdlo-2ogTVnm-4bDYKoJpnhsn5KHsIzUhcqPXUa3k8KyLnd-_J6k1ApbjDh03Yy5bqfzTc/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
+
+
 Figure 1: RFC lifecycle
+
+<img alt="" src="https://docs.google.com/drawings/d/e/2PACX-1vROWyFu2gBweYzF7JBftSRyCSkGlCVnuwOMPCQ45_PQ7VztFGKXB4RqjdYAiHms3VmbVUBWzZV4f9Dt/pub?w=960&h=720" class="imgMain" style="max-width: 69%; margin-left: 0px;"/>
 
 Figure 2: RFC overwriting
 
