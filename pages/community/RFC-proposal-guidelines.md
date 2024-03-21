@@ -120,25 +120,34 @@ The main RFC proposition, you are free to use any format you like to make an ada
 
 Use references to improve and illustrate your proposal. To add a reference select the text you want to add reference for and click on Insert>Footnote.
 
-| **Current Editors**                                           | **Email**                                    |
-|:--------------------------------------------------------------|:---------------------------------------------|
-| Robu Veronica                                                 | veronica@axiologic.net                       |
-| **RFC Authors**                                               | **Email**                                    |
-| Adrian Ganga                                                  | adrian@axiologic.net (Axiologic Research)    |
-| Valentin Gérard                                               | valentin@axiologic.net (Axiologic Research)  |
-| **PrivateSky Contributors and Reviewers**                     | **Email**                                    | 
-| Alex Sofronie                                                 | alsofronie@gmail.com(DPO)                    |
-| Cosmin Ursache                                                | cosmin@axiologic.net(UAIC)                   |
-| Daniel Sava                                                   | daniel@axiologic.net(HVS, AQS)               |
-| Daniel Visoiu                                                 | visoiu.daniel.g@gmail.com(SGiant)            |
-| Lenuta Alboaie                                                | lalboaie@gmail.com(UAIC)                     |
-| Rafael Mastaleru                                              | raf@rms.ro (RMS)                             |
-| Sînică Alboaie                                                | sinica.alboaie@axiologic.net(UAIC)           |   
-| Vlad Balmos                                                   | vlad.balmos@gmail.com(Code932)               |
-| **PharmaLedger & Weld Galaxy Contributors and Reviewers**     | **Email**                                    |
-| Ana Balan                                                     | bam@rms.ro (RMS)                             |
-| Bogdan Mastahac                                               | mab@rms.ro (RMS)                             |
-| Rafael Mastaleru                                              | raf@rms.ro (RMS)                             |
+
+| **Current Editors**                  | **Email**                                |
+|:-------------------------------------|:-----------------------------------------|
+| Sînică Alboaie                       | sinica.alboaie@axiologic.net             |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Teodor Lupu                          | teodor@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| **Contributors Axiologic Research**  | **Email**                                |
+| Adrian Ganga                         | adrian@axiologic.net                     |
+| Andi-Gabriel Țan                     | andi@axiologic.net                       |
+| Cosmin Ursache                       | cosmin@axiologic.net                     |
+| Daniel Sava                          | daniel@axiologic.net                     |
+| Nicoleta Mihalache                   | nicoleta@axiologic.net                   |
+| Valentin Gérard                      | valentin@axiologic.net                   |
+| **PrivateSky Contributors**          | **Email**                                |
+| Alex Sofronie                        | alsofronie@gmail.com (DPO)               |
+| Cosmin Ursache                       | cos.ursache@gmail.com (UAIC)             |
+| Daniel Sava                          | sava.dumitru.daniel@gmail.com (HVS, AQS) |
+| Daniel Visoiu                        | visoiu.daniel.g@gmail.com (SGiant)       |
+| Lenuța Alboaie                       | lalboaie@gmail.com (UAIC)                |
+| Rafael Mastaleru                     | rafael@rms.ro (RMS)                      |
+| Sînică Alboaie                       | salboaie@gmail.com (UAIC)                |
+| Vlad Balmos                          | vlad.balmos@gmail.com (Code932)          |
+| **PharmaLedger Contributors**        | **Email**                                |
+| Ana Balan                            | bam@rms.ro (RMS)                         |
+| Bogdan Mastahac                      | mab@rms.ro (RMS)                         |
+| Cosmin Ursache                       | cos@rms.ro (RMS)                         |
+| Rafael Mastaleru                     | raf@rms.ro (RMS)                         |
 
 
 [1] RFC origin and definition - <a href="https://en.wikipedia.org/wiki/Request_for_Comments">https://en.wikipedia.org/wiki/Request_for_Comments</a>

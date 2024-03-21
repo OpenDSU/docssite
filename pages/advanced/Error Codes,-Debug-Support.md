@@ -1,8 +1,8 @@
 ---
 title: Error Codes, Debug Support
 layout: home
-parent: OpenDSU Drafts
-nav_order: 1
+parent: OpenDSU Advanced
+nav_order: 6
 ---
 
 

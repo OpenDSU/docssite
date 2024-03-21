@@ -1,8 +1,8 @@
 ---
 title: Ethereum Adapter
 layout: home
-parent: OpenDSU Drafts
-nav_order: 2
+parent: OpenDSU Advanced
+nav_order: 7
 ---
 
 # **Ethereum Adapter (RFC-027)**
