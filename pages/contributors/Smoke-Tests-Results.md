@@ -20,11 +20,11 @@ nav_order: 1
         }
       })
       .then(function(html) {
-        document.getElementById('test-report-content').innerHTML = html;
+        document.getElementById('smoke-test-report-content').innerHTML = html;
       })
       .catch(function(error) {
         console.error('Error fetching the report:', error);
-        document.getElementById('test-report-content').innerHTML = `<p>Error loading report. Please check it at the following url: ${url}</p>`;
+        document.getElementById('smoke-test-report-content').innerHTML = `<p>Error loading report. Please check it at the following url: ${url}</p>`;
       });
   });
 </script>
