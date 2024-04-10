@@ -20,7 +20,9 @@ nav_order: 1
         }
       })
       .then(function(html) {
-        document.getElementById('smoke-test-report-content').innerHTML = html;
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, 'text/html');
+        document.getElementById('smoke-test-report-content').appendChild(doc.body);
       })
       .catch(function(error) {
         console.error('Error fetching the report:', error);
