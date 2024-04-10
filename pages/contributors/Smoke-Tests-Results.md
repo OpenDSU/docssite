@@ -22,8 +22,7 @@ nav_order: 1
       .then(function(html) {
         let iframe = document.createElement('iframe');
         iframe.frameBorder=0;
-        iframe.width="100%";
-        iframe.height="100%";
+        iframe.style = "width: 65vw; height: 100%; position: fixed;"
         iframe.id="display";
         document.getElementById('smoke-test-report-content').appendChild(iframe);
         let iframeDoc = iframe.contentWindow.document;
