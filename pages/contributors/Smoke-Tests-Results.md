@@ -20,9 +20,11 @@ nav_order: 1
         }
       })
       .then(function(html) {
-        let parser = new DOMParser();
-        let doc = parser.parseFromString(html, 'text/html');
-        document.getElementById('smoke-test-report-content').appendChild(doc.body);
+        document.getElementById('smoke-test-report-content').innerHtml = `<iframe id="display"></iframe>`;
+        let iframeDoc = document.querySelector('display').contentWindow.document;
+        iframeDoc.open('text/html', 'replace');
+        iframeDoc.write(html);
+        iframeDoc.close();        
       })
       .catch(function(error) {
         console.error('Error fetching the report:', error);
