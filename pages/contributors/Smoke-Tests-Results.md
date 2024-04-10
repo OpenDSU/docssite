@@ -21,7 +21,7 @@ nav_order: 1
       })
       .then(function(html) {
         document.getElementById('smoke-test-report-content').innerHtml = `<iframe id="display"></iframe>`;
-        let iframeDoc = document.querySelector('display').contentWindow.document;
+        let iframeDoc = document.getElementById('display').contentWindow.document;
         iframeDoc.open('text/html', 'replace');
         iframeDoc.write(html);
         iframeDoc.close();        
