@@ -1,4 +1,3 @@
-![image](https://github.com/OpenDSU/docssite/assets/75758105/effb87e9-4aff-46c7-bdac-45284affd77c)---
 title: Developers Tutorial 
 layout: home
 parent: OpenDSU Quick Start
