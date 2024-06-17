@@ -107,7 +107,7 @@ This document is licensed under [MIT license.](https://en.wikipedia.org/wiki/MIT
 In order to be able to follow this guide, first you need to do the following steps:
 
 <ol>
-    <li>Install or update Node (including NPM) to version 14.15 or newer;</li>
+    <li>Install or update Node (including NPM) to version 18.17.1 or newer;</li>
     <li>Install or update Git. </li>
 </ol>
 
@@ -134,7 +134,7 @@ cd tutorial-workspace
 * Install all the necessary dependencies for a working development setup:
 
 ```js
-npm run dev-install
+npm install
 ```
 
  
@@ -165,7 +165,7 @@ npm run build-all
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vT1e6pC7PkF8x0T6vNyTdsg8TVtr6LVKfjKoItsk4Rqy-MLYwaHc_ttPKFyWIaZrh9auDuQQBv4hXR_/pub?w=313&h=221" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vS2rQN2rq03mR7PlkYmMJo3XDYy9OG40NPkmGisiUX7Y59I6OfxBdRXNNNtUM-1hAP4ScXYgTOnrtGU/pub?w=960&h=720" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
@@ -189,7 +189,7 @@ We will start with a simple <a href="">SSapp template</a>. First, open a termina
 * Clone the template repo:
 
 ```js
-git clone <a href="https://github.com/OpenDSU/ssapp-template">https://github.com/OpenDSU/ssapp-template</a> helloworld-ssapp
+git clone https://github.com/OpenDSU/ssapp-template helloworld-ssapp
 ```
 
 * Remove .git files and install dependencies:
