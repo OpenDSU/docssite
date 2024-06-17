@@ -1,4 +1,4 @@
----
+![image](https://github.com/OpenDSU/docssite/assets/75758105/effb87e9-4aff-46c7-bdac-45284affd77c)---
 title: Developers Tutorial 
 layout: home
 parent: OpenDSU Quick Start
@@ -157,7 +157,9 @@ npm run build-all
 
 <ol>
 
-<li> Now,  you should be able to see the application loader:</li>
+<li> Now,  you should be able to see the application loader and a text saying: 
+<p style='text-align: justify;'>To install the Demo execute the cmd: npm run install-demo To install the DSU Explorer execute the cmd: npm run install-explorer For any information refer with confidence to the readme file from the workspace tutorial and OpenDSU website.</p>
+</li>
 
 </ol>
 
@@ -165,14 +167,13 @@ npm run build-all
 <div style="display: flex; justify-content: center;">
   <img 
     alt="" 
-    src="https://docs.google.com/drawings/d/e/2PACX-1vS2rQN2rq03mR7PlkYmMJo3XDYy9OG40NPkmGisiUX7Y59I6OfxBdRXNNNtUM-1hAP4ScXYgTOnrtGU/pub?w=960&h=720" 
+    src="https://docs.google.com/drawings/d/e/2PACX-1vTx999NZSA47INCk2pVWromRiQ8H9jp4I8H8yjIjkbfEfrwzonS419fVbcxdAtmFr9Eyy70f2XHoL3K/pub?w=960&h=720" 
     class="imgMain" 
     style="max-width: 100%; cursor: pointer; transition: max-width 0.3s ease-in-out;"
     onclick="openModal(this.src)"
     title="Click to Zoom"
   />
 </div>
-
 
 <p style='text-align: justify;'>This means that the workspace is up and running, and you can create and load a simple SSApp. If you want to load a WebCardinal application rather than an SSApp in your workspace, check out the tutorial for the Creation of a WebCardinal Application in a workspace., available in this document: <a href="https://opendsu.com/rfc113">WebCardinal Beginners Tutorial</a>.
 </p>
