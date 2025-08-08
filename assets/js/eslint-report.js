@@ -88,7 +88,7 @@
     }
 
     function fetchAndRender() {
-        var url = 'https://raw.githubusercontent.com/Axiologic/outfinity-gift/eslint-reports/eslint-report.json';
+        var url = 'https://raw.githubusercontent.com/OutfinityResearch/outfinity-gift/eslint-reports/eslint-report.json';
         var content = document.getElementById('eslint-report-content');
         if (!content) return;
 
